@@ -1,0 +1,59 @@
+
+version: '3.7'
+services:
+
+  eureka-serviceregistry:
+    build: ./EurekaServer
+    container_name: eurekaServerRegistry
+    restart: on-failure
+    networks:
+      - xml
+    ports:
+      - "8761:8761"
+
+  eureka-oglas-service:
+    build: ./OglasService
+    container_name: eurekaOglasService
+    restart: on-failure
+    networks:
+      - xml
+    ports:
+      - "8092:8092"
+    environment:
+      - REGISTRY_HOST=eureka-serviceregistry
+    depends_on:
+      - eureka-serviceregistry
+
+  eureka-zahtev-service:
+    build: ./ZahtevService
+    container_name: eurekaZahtevService
+    restart: on-failure
+    networks:
+      - xml
+    ports:
+      - "8093:8093"
+    environment:
+      - REGISTRY_HOST=eureka-serviceregistry
+    depends_on:
+      - eureka-serviceregistry
+
+  gateway-service:
+    build: ./GatewayService
+    container_name: gatewayService
+    restart: on-failure
+    networks:
+      - xml
+    ports:
+      - "8662:8662"
+    environment:
+      - REGISTRY_HOST=eureka-serviceregistry
+    depends_on:
+      - eureka-serviceregistry
+      - eureka-oglas-service
+      - eureka-zahtev-service
+
+networks:
+  xml:
+    name: xml
+    driver: bridge
+
