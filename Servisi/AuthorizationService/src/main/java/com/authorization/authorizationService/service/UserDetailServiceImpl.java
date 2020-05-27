@@ -1,5 +1,7 @@
 package com.authorization.authorizationService.service;
 
+import com.authorization.authorizationService.dto.UserDTO;
+import com.authorization.authorizationService.exceptions.NotFoundException;
 import com.authorization.authorizationService.model.AuthUserDetail;
 import com.authorization.authorizationService.model.User;
 import com.authorization.authorizationService.repository.UserDetailRepository;
@@ -28,7 +30,41 @@ public class UserDetailServiceImpl implements UserDetailsService {
         UserDetails userDetails = new AuthUserDetail(optionalUser.get());
         new AccountStatusUserDetailsChecker().check(userDetails);
         return userDetails;
-
-
     }
+
+    public User createUser(UserDTO userdto) {
+        User user = this.userDetailRepository.save(new User(userdto));
+        return user;
+    }
+
+    public User update(UserDTO userdto) {
+        User user = this.userDetailRepository.findById(userdto.getId())
+                .orElseThrow(() -> new NotFoundException("Oglas with that id does not exist!"));
+
+        user.setAccountNonExpired(userdto.isAccountNonExpired());
+        user.setAccountNonLocked(userdto.isAccountNonLocked());
+        user.setCredentialsNonExpired(userdto.isCredentialsNonExpired());
+        user.setEmail(userdto.getEmail());
+        user.setEnabled(userdto.isEnabled());
+        user.setId(userdto.getId());
+        user.setPassword(userdto.getPassword());
+        user.setRoles(userdto.getRoles());
+        user.setUsername(userdto.getUsername());
+
+        return this.userDetailRepository.save(user);
+    }
+
+    public void delete(Long id) {
+        userDetailRepository.deleteById(id);
+        return;
+    }
+
+    public boolean verify(Long userId) {
+        if (!this.userDetailRepository.findById(userId).isPresent()) {
+            throw new NotFoundException("Consumer with that id does not exist!");
+        }
+
+        return true;
+    }
+
 }

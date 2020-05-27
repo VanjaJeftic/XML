@@ -1,23 +1,17 @@
-package com.oglas;
+package com.profil.Profilservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
-public class OglasServiceApplication {
+public class ProfilserviceApplication {
 
-	@RequestMapping("/health")
-    public String home() {
-        return "Hello world";
-    }
-	
 	public static void main(String[] args) {
-		SpringApplication.run(OglasServiceApplication.class, args);
+		SpringApplication.run(ProfilserviceApplication.class, args);
 	}
 
 }

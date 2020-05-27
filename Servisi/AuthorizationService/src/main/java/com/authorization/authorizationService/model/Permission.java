@@ -1,5 +1,6 @@
 package com.authorization.authorizationService.model;
 
+import com.authorization.authorizationService.dto.PermissionDTO;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -28,5 +29,10 @@ public class Permission implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Permission(PermissionDTO dto) {
+        this.id = dto.getId();
+        this.name = dto.getName();
     }
 }
