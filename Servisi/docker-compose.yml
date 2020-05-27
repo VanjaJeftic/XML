@@ -62,6 +62,19 @@ services:
     depends_on:
       - eureka-serviceregistry
 
+  profil:
+    build: ./ProfileService
+    container_name: eurekaProfileService
+    restart: on-failure
+    networks:
+      - xml
+    ports:
+      - "8101:8101"
+    environment:
+      - REGISTRY_HOST=eureka-serviceregistry
+    depends_on:
+      - eureka-serviceregistry
+
   authorization:
     build: ./AuthorizationService
     container_name: eurekaAuthorizationServer
@@ -148,6 +161,7 @@ services:
       - mail
       - message
       - search
+      - profil
 
 networks:
   xml:
