@@ -4,6 +4,7 @@ import com.oglas.dto.OglasDTO;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="oglas")
@@ -16,17 +17,11 @@ public class Oglas implements Serializable {
     @Column(name="user_id")
     private Long user_id; //kreira oglas
 
-    @Column(name="agent_id")
-    private Long agent_id; //kreira oglas- vucemo iz Agent Serice
-
     @Column(name="vozilo_id")
     private Long vozilo_id;
 
     @Column(name="mesto")
     private String mesto;
-
-    // @Column(name="slike")
-    //private ArrayList<String> slike;
 
     @Column(name="cena")
     private Double cena;
@@ -36,6 +31,12 @@ public class Oglas implements Serializable {
 
     @Column(name="cenaspopust")
     private Double cenaspopust;
+
+    @Column(name="slobodanod")
+    private LocalDateTime slobodanOd;
+
+    @Column(name="slovbodando")
+    private LocalDateTime slobodando;
 
     public Long getId() {
         return id;
@@ -47,14 +48,6 @@ public class Oglas implements Serializable {
 
     public void setUser_id(Long user_id) {
         this.user_id = user_id;
-    }
-
-    public Long getAgent_id() {
-        return agent_id;
-    }
-
-    public void setAgent_id(Long agent_id) {
-        this.agent_id = agent_id;
     }
 
     public void setId(Long id) {
@@ -93,21 +86,6 @@ public class Oglas implements Serializable {
         this.cenaspopust = cenaspopust;
     }
 
-    public Oglas(OglasDTO dto) {
-        this.id = dto.getId();
-        this.vozilo_id = dto.getVozilo_id();
-        this.mesto = dto.getMesto();
-        this.cena = dto.getCena();
-        this.popust = dto.getCena();
-        this.cenaspopust = dto.getCenaspopust();
-        this.agent_id=dto.getAgent_id();
-        this.user_id=dto.getUser_id();
-    }
-
-    public Oglas() {
-    }
-
-
     public Long getVozilo_id() {
         return vozilo_id;
     }
@@ -115,4 +93,38 @@ public class Oglas implements Serializable {
     public void setVozilo_id(Long vozilo_id) {
         this.vozilo_id = vozilo_id;
     }
-}
+
+    public LocalDateTime getSlobodanOd() {
+        return slobodanOd;
+    }
+
+    public void setSlobodanOd(LocalDateTime slobodanOd) {
+        this.slobodanOd = slobodanOd;
+    }
+
+    public LocalDateTime getSlobodando() {
+        return slobodando;
+    }
+
+    public void setSlobodando(LocalDateTime slobodando) {
+        this.slobodando = slobodando;
+    }
+
+    public Oglas(OglasDTO dto) {
+        this.id = dto.getId();
+        this.vozilo_id = dto.getVozilo_id();
+        this.mesto = dto.getMesto();
+        this.cena = dto.getCena();
+        this.popust = dto.getCena();
+        this.cenaspopust = dto.getCenaspopust();
+        this.user_id=dto.getUser_id();
+        this.slobodando=dto.getSlobodando();
+        this.slobodanOd=dto.getSlobodanod();
+    }
+
+
+
+    public Oglas() {
+    }
+
+ }

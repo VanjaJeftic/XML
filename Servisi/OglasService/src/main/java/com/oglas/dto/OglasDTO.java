@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 
 public class OglasDTO {
 
@@ -11,10 +12,9 @@ public class OglasDTO {
 
     private Long vozilo_id;
 
-    private String mesto;
+    private Long user_id;
 
-    // @Column(name="slike")
-    //private ArrayList<String> slike;
+    private String mesto;
 
     private Double cena;
 
@@ -22,25 +22,9 @@ public class OglasDTO {
 
     private Double cenaspopust;
 
-    private Long user_id;
+    private LocalDateTime slobodanod;
 
-    private Long agent_id;
-
-    public Long getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
-    }
-
-    public Long getAgent_id() {
-        return agent_id;
-    }
-
-    public void setAgent_id(Long agent_id) {
-        this.agent_id = agent_id;
-    }
+    private LocalDateTime slobodando;
 
     public Long getId() {
         return id;
@@ -56,6 +40,14 @@ public class OglasDTO {
 
     public void setVozilo_id(Long vozilo_id) {
         this.vozilo_id = vozilo_id;
+    }
+
+    public Long getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 
     public String getMesto() {
@@ -90,17 +82,47 @@ public class OglasDTO {
         this.cenaspopust = cenaspopust;
     }
 
-    public OglasDTO(Long agent_id, Long user_id,Long id, Long vozilo_id, String mesto, Double cena, Double popust, Double cenaspopust) {
+    public LocalDateTime getSlobodanod() {
+        return slobodanod;
+    }
+
+    public void setSlobodanod(LocalDateTime slobodanod) {
+        this.slobodanod = slobodanod;
+    }
+
+    public LocalDateTime getSlobodando() {
+        return slobodando;
+    }
+
+    public void setSlobodando(LocalDateTime slobodando) {
+        this.slobodando = slobodando;
+    }
+
+    public OglasDTO(Long id, Long vozilo_id, Long user_id, String mesto, Double cena, Double popust, Double cenaspopust, LocalDateTime slobodanod, LocalDateTime slobodando) {
         this.id = id;
         this.vozilo_id = vozilo_id;
+        this.user_id = user_id;
         this.mesto = mesto;
         this.cena = cena;
         this.popust = popust;
         this.cenaspopust = cenaspopust;
-        this.user_id=user_id;
-        this.agent_id=agent_id;
+        this.slobodanod = slobodanod;
+        this.slobodando = slobodando;
     }
 
     public OglasDTO() {
     }
+
+    public OglasDTO(Long vozilo_id, Long user_id, String mesto, Double cena, Double popust, Double cenaspopust, LocalDateTime slobodanod, LocalDateTime slobodando) {
+        this.vozilo_id = vozilo_id;
+        this.user_id = user_id;
+        this.mesto = mesto;
+        this.cena = cena;
+        this.popust = popust;
+        this.cenaspopust = cenaspopust;
+        this.slobodanod = slobodanod;
+        this.slobodando = slobodando;
+    }
+
+
 }
