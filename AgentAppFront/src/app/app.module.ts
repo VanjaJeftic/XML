@@ -1,4 +1,3 @@
-import { TokenInterceptor } from './interceptor/TokenInterceptor';
 import { AngularMaterialModule } from './angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -9,10 +8,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './components/userComponent/user/user.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AgentComponent } from './components/userComponent/agent/agent.component';
 import { AdministratorComponent } from './components/userComponent/administrator/administrator.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
+import { OglasComponent } from './components/oglas/oglas.component';
+import { VoziloDetailsDialogComponent } from './components/oglas/vozilo-details-dialog/vozilo-details-dialog.component';
+import { MyShopCartItemsComponent } from './components/oglas/my-shop-cart-items/my-shop-cart-items.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     UserComponent,
     AgentComponent,
     AdministratorComponent,
-    HomePageComponent
+    OglasComponent,
+    VoziloDetailsDialogComponent,
+    MyShopCartItemsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,11 +34,8 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptor,
-    multi: true
-  }],
+  entryComponents: [VoziloDetailsDialogComponent],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,18 +1,26 @@
 package com.agentApp.app.models;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="oglas")
-public class Oglas {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Oglas implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name="vozilo_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="vozilo_id", referencedColumnName = "id")
     private Vozilo vozilo;
 
     @Column(name="mesto")
@@ -29,6 +37,10 @@ public class Oglas {
 
     @Column(name="cenaspopust")
     private Double cenaspopust;
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "oglas", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Zahtev> zahtevi = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -78,6 +90,14 @@ public class Oglas {
         this.cenaspopust = cenaspopust;
     }
 
-    public Oglas() {
+    public Set<Zahtev> getZahtevi() {
+		return zahtevi;
+	}
+
+	public void setZahtevi(Set<Zahtev> zahtevi) {
+		this.zahtevi = zahtevi;
+	}
+
+	public Oglas() {
     }
 }

@@ -1,12 +1,16 @@
 package com.agentApp.app.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="vozilo")
-public class Vozilo {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Vozilo implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,10 +45,14 @@ public class Vozilo {
     @Column(name="cdw")
     private boolean cdw;//kupovine Collision Damage Waiver protekcije
 
-    @JsonIgnore
-    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    //@JsonIgnore
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+    
+    @JsonIgnore
+    @OneToOne(mappedBy = "vozilo")
+    private Oglas oglas;
 
     public Long getId() {
         return id;
@@ -54,78 +62,88 @@ public class Vozilo {
         this.id = id;
     }
 
-    public MarkaVozila getMarkaVozila() {
-        return markaVozila;
-    }
+    
 
-    public void setMarkaVozila(MarkaVozila markaVozila) {
-        this.markaVozila = markaVozila;
-    }
+	public MarkaVozila getMarkaVozila() {
+		return markaVozila;
+	}
 
-    public ModelVozila getModelVozila() {
-        return modelVozila;
-    }
+	public void setMarkaVozila(MarkaVozila markaVozila) {
+		this.markaVozila = markaVozila;
+	}
 
-    public void setModelVozila(ModelVozila modelVozila) {
-        this.modelVozila = modelVozila;
-    }
+	public ModelVozila getModelVozila() {
+		return modelVozila;
+	}
 
-    public KlasaVozila getKlasaVozila() {
-        return klasaVozila;
-    }
+	public void setModelVozila(ModelVozila modelVozila) {
+		this.modelVozila = modelVozila;
+	}
 
-    public void setKlasaVozila(KlasaVozila klasaVozila) {
-        this.klasaVozila = klasaVozila;
-    }
+	public KlasaVozila getKlasaVozila() {
+		return klasaVozila;
+	}
 
-    public TipGoriva getTipgoriva() {
-        return tipgoriva;
-    }
+	public void setKlasaVozila(KlasaVozila klasaVozila) {
+		this.klasaVozila = klasaVozila;
+	}
 
-    public void setTipgoriva(TipGoriva tipgoriva) {
-        this.tipgoriva = tipgoriva;
-    }
+	public TipGoriva getTipgoriva() {
+		return tipgoriva;
+	}
 
-    public VrstaMenjaca getVrstamenjaca() {
-        return vrstamenjaca;
-    }
+	public void setTipgoriva(TipGoriva tipgoriva) {
+		this.tipgoriva = tipgoriva;
+	}
 
-    public void setVrstamenjaca(VrstaMenjaca vrstamenjaca) {
-        this.vrstamenjaca = vrstamenjaca;
-    }
+	public VrstaMenjaca getVrstamenjaca() {
+		return vrstamenjaca;
+	}
 
-    public String getPredjeniKm() {
-        return predjeniKm;
-    }
+	public void setVrstamenjaca(VrstaMenjaca vrstamenjaca) {
+		this.vrstamenjaca = vrstamenjaca;
+	}
 
-    public void setPredjeniKm(String predjeniKm) {
-        this.predjeniKm = predjeniKm;
-    }
+	public String getPredjeniKm() {
+		return predjeniKm;
+	}
 
-    public String getBrSedistaDeca() {
-        return BrSedistaDeca;
-    }
+	public void setPredjeniKm(String predjeniKm) {
+		this.predjeniKm = predjeniKm;
+	}
 
-    public void setBrSedistaDeca(String brSedistaDeca) {
-        BrSedistaDeca = brSedistaDeca;
-    }
+	public String getBrSedistaDeca() {
+		return BrSedistaDeca;
+	}
 
-    public boolean isCdw() {
-        return cdw;
-    }
+	public void setBrSedistaDeca(String brSedistaDeca) {
+		BrSedistaDeca = brSedistaDeca;
+	}
 
-    public void setCdw(boolean cdw) {
-        this.cdw = cdw;
-    }
+	public boolean isCdw() {
+		return cdw;
+	}
 
-    public User getAgent() {
-        return user;
-    }
+	public void setCdw(boolean cdw) {
+		this.cdw = cdw;
+	}
 
-    public void setAgent(User agent) {
-        this.user = agent;
-    }
+	public User getUser() {
+		return user;
+	}
 
-    public Vozilo() {
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Oglas getOglas() {
+		return oglas;
+	}
+
+	public void setOglas(Oglas oglas) {
+		this.oglas = oglas;
+	}
+
+	public Vozilo() {
     }
 }

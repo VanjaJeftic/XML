@@ -2,19 +2,24 @@ package com.agentApp.app.models;
 
 import org.hibernate.annotations.ColumnDefault;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name="zahtev")
-public class Zahtev {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Zahtev implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name="oglas_id")
+    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "oglas_id")
     private Oglas oglas;
 
     @Column(name="bundle_id")
@@ -23,8 +28,9 @@ public class Zahtev {
     @Column(name="bundle")
     private boolean bundle;
 
-    @Column(name="podnosilac")
-    private Long podnosilac;
+    @ManyToOne
+    @JoinColumn(name = "podnosilac_id")
+    private Korisnik podnosilac;
 
     @Column(name="preuzimanje")
     private LocalDateTime preuzimanje;
@@ -67,11 +73,11 @@ public class Zahtev {
         this.bundle = bundle;
     }
 
-    public Long getPodnosilac() {
+    public Korisnik getPodnosilac() {
         return podnosilac;
     }
 
-    public void setPodnosilac(Long podnosilac) {
+    public void setPodnosilac(Korisnik podnosilac) {
         this.podnosilac = podnosilac;
     }
 

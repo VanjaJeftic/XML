@@ -11,13 +11,34 @@ insert into users (firstname, password, lastname, username, adress, city, countr
 insert into users (firstname, password, lastname, username, adress, city, country, phonenumber, uloga, enabled, last_password_reset_date, aktiviran) values ('Nebojsa', '$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra', 'Milosevic', 'milos@gmail.com', 'Cirpanova 2', 'Novi Sad', 'RS', '0641287', 'LEKAR', true, '2017-10-01 21:58:58.508-07', true);
 insert into users (firstname, password, lastname, username, adress, city, country, phonenumber, uloga, enabled, last_password_reset_date, aktiviran) values ('Srdjan', '$2a$04$Vbug2lwwJGrvUXTj6z7ff.97IzVBkrJ1XfApfGNl.Z695zqcnPYra', 'Ivanovic', 'srdjan@gmail.com', 'Almaska', 'Novi Sad', 'RS', '0641287', 'LEKAR', true, '2017-10-01 21:58:58.508-07', true);
 
-INSERT INTO AUTHORITY (name) VALUES ('ROLE_ADMIN');
-INSERT INTO AUTHORITY (name) VALUES ('ROLE_AGENT');
-INSERT INTO AUTHORITY (name) VALUES ('ROLE_USER');
+insert into korisnik (user_id, aktivan, blokiran, uklonjen, odbijenizahtevi) values (3, true, false, false, 0);
+insert into korisnik (user_id, aktivan, blokiran, uklonjen, odbijenizahtevi) values (4, true, false, false, 0);
+insert into korisnik (user_id, aktivan, blokiran, uklonjen, odbijenizahtevi) values (5, true, false, false, 0);
 
-INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (3, 1);
-INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (1, 3);
-INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (8, 2);
-INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (5, 1);
-INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (10, 1);
-INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (11, 1);
+insert into klasavozila (naziv) values ('klasa1');
+insert into klasavozila (naziv) values ('klasa2');
+
+insert into markavozila (naziv) values ('marka1');
+insert into markavozila (naziv) values ('marka2');
+
+insert into modelvozila (naziv) values ('model1');
+insert into modelvozila (naziv) values ('model2');
+
+insert into tipgoriva (naziv) values ('Tip Goriva 1');
+insert into tipgoriva (naziv) values ('Tip Goriva 2');
+
+insert into vrstamenjaca (naziv) values ('Vrsta menjaca 1');
+insert into vrstamenjaca (naziv) values ('Vrsta menjaca 2');
+
+insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id, tipgoriva_id, vrstamenjaca_id) values (1, false, 1, 1, 1, 1, 1);
+insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id, tipgoriva_id, vrstamenjaca_id) values (1, true, 1, 1, 2, 1, 2);
+insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id, tipgoriva_id, vrstamenjaca_id) values (2, true, 2, 2, 2, 2, 2);
+
+insert into oglas (vozilo_id, mesto) values (1, 'Novi Sad');
+insert into oglas (vozilo_id, mesto) values (1, 'Beograd');
+insert into oglas (vozilo_id, mesto) values (2, 'Ugljevik');
+insert into oglas (vozilo_id, mesto) values (2, 'Bijeljina');
+insert into oglas (vozilo_id, mesto) values (3, 'Sarajevo');
+
+insert into zahtev (oglas_id, podnosilac_id, bundle, bundle_id) values (1, 1, false, 1);
+insert into zahtev (oglas_id, podnosilac_id, bundle, bundle_id) values (1, 2, false, 1);

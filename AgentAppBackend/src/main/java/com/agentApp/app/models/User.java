@@ -1,20 +1,29 @@
 package com.agentApp.app.models;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "users")
-public class User implements UserDetails {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class User implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
@@ -59,13 +68,8 @@ public class User implements UserDetails {
 	@Column(name = "aktiviran", nullable = false)
 	private boolean nalogAktiviran;
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinTable(name = "user_authority", 
-				joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-				inverseJoinColumns = @JoinColumn(name = "authority_id", referencedColumnName = "id"))
-	private List<Authority> authorities;
 
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Set<Vozilo> vozila = new HashSet<Vozilo>();
 
@@ -155,14 +159,6 @@ public class User implements UserDetails {
 		this.uloga = uloga;
 	}
 	
-	public void setAuthorities(List<Authority> authorities) {
-        this.authorities = authorities;
-    }
-	
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities(){
-		return this.authorities;
-	}
 	
 	public java.sql.Timestamp getLastPasswordResetDate() {
         return lastPasswordResetDate;
@@ -179,29 +175,7 @@ public class User implements UserDetails {
 		this.firstname = firstname;
 	}
 
-	@JsonIgnore
-	@Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @JsonIgnore
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @JsonIgnore
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-	@Override
-	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return this.enabled;
-	}
+	
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
