@@ -36,13 +36,14 @@ public class OglasService {
         Oglas oglas = this.oglasRepository.findById(oglasdto.getId())
                 .orElseThrow(() -> new NotFoundException("Oglas with that id does not exist!"));
 
-        oglas.setAgent_id(oglasdto.getId());
         oglas.setCena(oglasdto.getCena());
         oglas.setCenaspopust(oglasdto.getCenaspopust());
         oglas.setId(oglasdto.getId());
         oglas.setMesto(oglasdto.getMesto());
         oglas.setVozilo_id(oglas.getVozilo_id());
         oglas.setUser_id(oglas.getUser_id());
+        oglas.setSlobodanOd(oglasdto.getSlobodanod());
+        oglas.setSlobodando(oglasdto.getSlobodando());
 
         return this.oglasRepository.save(oglas);
     }
