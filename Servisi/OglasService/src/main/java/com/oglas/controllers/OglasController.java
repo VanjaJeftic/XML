@@ -12,6 +12,7 @@ import com.oglas.service.VoziloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -36,6 +37,7 @@ public class OglasController {
 	}
 
 	@PostMapping("/create")
+	@PreAuthorize("hasAuthority('create_oglas')")
 	public ResponseEntity<?> create(@RequestBody OglasVoziloDTO ovDTO) {
 
 		VoziloDTO vDTO=new VoziloDTO();
@@ -67,6 +69,7 @@ public class OglasController {
 	}
 
 	@PutMapping("/update")
+	@PreAuthorize("hasAuthority('update_oglas')")
 	public ResponseEntity<?> update(@RequestBody OglasDTO oglasDTO) {
 		Optional<Oglas> oglasdata = oglasRepository.findById(oglasDTO.getId());
 		if(oglasdata.isPresent()){
@@ -80,6 +83,8 @@ public class OglasController {
 	}
 
 	@DeleteMapping("/delete/{id}")
+	//@PreAuthorize("hasRole('ROLE_operator')")
+	@PreAuthorize("hasAuthority('delete_oglas')")
 	public ResponseEntity<HttpStatus> delete(@PathVariable("id") Long id) {
 		try {
 			oglasService.delete(id);

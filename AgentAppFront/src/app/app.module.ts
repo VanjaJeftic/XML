@@ -1,3 +1,4 @@
+import { TokenInterceptor } from './interceptor/TokenInterceptor';
 import { AngularMaterialModule } from './angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,9 +9,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './components/userComponent/user/user.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AgentComponent } from './components/userComponent/agent/agent.component';
 import { AdministratorComponent } from './components/userComponent/administrator/administrator.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { AdministratorComponent } from './components/userComponent/administrator
     LoginComponent,
     UserComponent,
     AgentComponent,
-    AdministratorComponent
+    AdministratorComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,11 @@ import { AdministratorComponent } from './components/userComponent/administrator
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
