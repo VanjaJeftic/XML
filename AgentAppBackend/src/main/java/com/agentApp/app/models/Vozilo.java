@@ -1,12 +1,24 @@
 package com.agentApp.app.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="vozilo")
-public class Vozilo {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Vozilo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,10 +53,14 @@ public class Vozilo {
     @Column(name="cdw")
     private boolean cdw;//kupovine Collision Damage Waiver protekcije
 
-    @JsonIgnore
-    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    //@JsonIgnore
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "vozilo")
+    private Oglas oglas;
 
     public Long getId() {
         return id;
@@ -118,12 +134,20 @@ public class Vozilo {
         this.cdw = cdw;
     }
 
-    public User getAgent() {
-        return user;
+    public User getUser() {
+	return user;
     }
 
-    public void setAgent(User agent) {
-        this.user = agent;
+    public void setUser(User user) {
+	this.user = user;
+    }
+
+    public Oglas getOglas() {
+	return oglas;
+     }
+
+    public void setOglas(Oglas oglas) {
+	this.oglas = oglas;
     }
 
     public Vozilo() {

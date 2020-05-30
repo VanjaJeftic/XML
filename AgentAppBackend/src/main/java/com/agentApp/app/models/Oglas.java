@@ -1,18 +1,35 @@
 package com.agentApp.app.models;
 
-import javax.persistence.*;
-import java.util.ArrayList;
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="oglas")
-public class Oglas {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Oglas implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name="vozilo_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="vozilo_id", referencedColumnName = "id")
     private Vozilo vozilo;
 
     @Column(name="mesto")
@@ -29,6 +46,10 @@ public class Oglas {
 
     @Column(name="cenaspopust")
     private Double cenaspopust;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "oglas", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Zahtev> zahtevi = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -76,6 +97,14 @@ public class Oglas {
 
     public void setCenaspopust(Double cenaspopust) {
         this.cenaspopust = cenaspopust;
+    }
+
+    public Set<Zahtev> getZahtevi() {
+		return zahtevi;
+    }
+
+    public void setZahtevi(Set<Zahtev> zahtevi) {
+		this.zahtevi = zahtevi;
     }
 
     public Oglas() {
