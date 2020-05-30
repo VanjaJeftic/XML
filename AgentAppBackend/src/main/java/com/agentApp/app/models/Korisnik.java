@@ -1,6 +1,9 @@
 package com.agentApp.app.models;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,6 +30,10 @@ public class Korisnik {
 
     @Column(name="odbijenizahtevi")
     private int odbijeniZahtevi;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "podnosilac", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Zahtev> zahtevi = new HashSet<>();
 
     public Long getId() {
         return id;
