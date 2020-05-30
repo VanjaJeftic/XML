@@ -11,16 +11,15 @@ public class VoziloDTO {
 
     private String modelVozila;
 
-
     private String klasaVozila;
 
-    private String tipgoriva;
+    private String tipGoriva;
 
-    private String vrstamenjaca;
+    private String vrstaMenjaca;
 
     private String predjeniKm;
 
-    private String BrSedistaDeca;
+    private String brsedistadeca;
 
     private boolean cdw;//kupovine Collision Damage Waiver protekcije
 
@@ -59,19 +58,19 @@ public class VoziloDTO {
     }
 
     public String getTipgoriva() {
-        return tipgoriva;
+        return tipGoriva;
     }
 
     public void setTipgoriva(String tipgoriva) {
-        this.tipgoriva = tipgoriva;
+        this.tipGoriva = tipgoriva;
     }
 
     public String getVrstamenjaca() {
-        return vrstamenjaca;
+        return vrstaMenjaca;
     }
 
     public void setVrstamenjaca(String vrstamenjaca) {
-        this.vrstamenjaca = vrstamenjaca;
+        this.vrstaMenjaca = vrstamenjaca;
     }
 
     public String getPredjeniKm() {
@@ -83,11 +82,11 @@ public class VoziloDTO {
     }
 
     public String getBrSedistaDeca() {
-        return BrSedistaDeca;
+        return brsedistadeca;
     }
 
     public void setBrSedistaDeca(String brSedistaDeca) {
-        BrSedistaDeca = brSedistaDeca;
+        brsedistadeca = brSedistaDeca;
     }
 
     public boolean isCdw() {
@@ -113,10 +112,10 @@ public class VoziloDTO {
         this.markaVozila = markaVozila;
         this.modelVozila = modelVozila;
         this.klasaVozila = klasaVozila;
-        this.tipgoriva = tipgoriva;
-        this.vrstamenjaca = vrstamenjaca;
+        this.tipGoriva = tipgoriva;
+        this.vrstaMenjaca = vrstamenjaca;
         this.predjeniKm = predjeniKm;
-        BrSedistaDeca = brSedistaDeca;
+        brsedistadeca = brSedistaDeca;
         this.cdw = cdw;
         this.user_id = user_id;
     }
@@ -126,10 +125,10 @@ public class VoziloDTO {
         this.markaVozila = markaVozila;
         this.modelVozila = modelVozila;
         this.klasaVozila = klasaVozila;
-        this.tipgoriva = tipgoriva;
-        this.vrstamenjaca = vrstamenjaca;
+        this.tipGoriva = tipgoriva;
+        this.vrstaMenjaca = vrstamenjaca;
         this.predjeniKm = predjeniKm;
-        BrSedistaDeca = brSedistaDeca;
+        brsedistadeca = brSedistaDeca;
         this.cdw = cdw;
         this.user_id = user_id;
     }

@@ -1,0 +1,48 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="/" class="navlogo">Rent-A-Car</a></div>
+    <span class="nav-tool-items">
+      <a mat-button mat-raised-button routerLink="/register" routerLinkActive="active">Napravi nalog</a>
+    </span>
+  </mat-toolbar>
+
+  <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box scrollable-content">
+      <mat-card-header>
+        <mat-card-title>Novo vozilo</mat-card-title>
+      </mat-card-header>
+  
+      <form class="form" (submit)="onSubmit()">
+  
+        <mat-card-content>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Marka vozila" [(ngModel)]="vozilo.markaVozila" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Model vozila" [(ngModel)]="vozilo.modelVozila" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+
+        
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Klasa vozila" [(ngModel)]="vozilo.klasaVozila" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Vrsta menjaca" [(ngModel)]="vozilo.vrstaMenjaca" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Tip goriva" [(ngModel)]="vozilo.tipGoriva" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Broj sedista za decu" [(ngModel)]="vozilo.brsedistaDeca" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+  
+        </mat-card-content>
+  
+        <button mat-stroked-button color="primary" class="btn-block" type="submit">Potvrdi</button>
+  
+      </form>
+    </mat-card>
+  </div>
