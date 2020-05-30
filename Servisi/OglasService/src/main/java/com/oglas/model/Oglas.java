@@ -37,8 +37,21 @@ public class Oglas implements Serializable {
 
     @Column(name="slovbodando")
     private LocalDateTime slobodando;
+    
+    @Column(name="cdw")
+    private Boolean cdw;
+    
+    
 
-    public Long getId() {
+    public Boolean getCdw() {
+		return cdw;
+	}
+
+	public void setCdw(Boolean cdw) {
+		this.cdw = cdw;
+	}
+
+	public Long getId() {
         return id;
     }
 
@@ -120,6 +133,7 @@ public class Oglas implements Serializable {
         this.user_id=dto.getUser_id();
         this.slobodando=dto.getSlobodando();
         this.slobodanOd=dto.getSlobodanod();
+        this.cdw=dto.getCdw();
     }
 
 

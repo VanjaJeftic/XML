@@ -57,20 +57,20 @@ public class VoziloDTO {
         this.klasaVozila = klasaVozila;
     }
 
-    public String getTipgoriva() {
+    public String getTipGoriva() {
         return tipGoriva;
     }
 
-    public void setTipgoriva(String tipgoriva) {
-        this.tipGoriva = tipgoriva;
+    public void setTipGoriva(String tipGoriva) {
+        this.tipGoriva = tipGoriva;
     }
 
-    public String getVrstamenjaca() {
+    public String getVrstaMenjaca() {
         return vrstaMenjaca;
     }
 
-    public void setVrstamenjaca(String vrstamenjaca) {
-        this.vrstaMenjaca = vrstamenjaca;
+    public void setVrstaMenjaca(String vrstaMenjaca) {
+        this.vrstaMenjaca = vrstaMenjaca;
     }
 
     public String getPredjeniKm() {
@@ -81,13 +81,7 @@ public class VoziloDTO {
         this.predjeniKm = predjeniKm;
     }
 
-    public String getBrSedistaDeca() {
-        return brsedistadeca;
-    }
-
-    public void setBrSedistaDeca(String brSedistaDeca) {
-        brsedistadeca = brSedistaDeca;
-    }
+  
 
     public boolean isCdw() {
         return cdw;
@@ -105,31 +99,29 @@ public class VoziloDTO {
         this.user_id = user_id;
     }
 
-    public VoziloDTO() {
+    
+    
+    public String getBrsedistadeca() {
+		return brsedistadeca;
+	}
+
+	public void setBrsedistadeca(String brsedistadeca) {
+		this.brsedistadeca = brsedistadeca;
+	}
+
+	public VoziloDTO() {
     }
 
-    public VoziloDTO(String markaVozila, String modelVozila, String klasaVozila, String tipgoriva, String vrstamenjaca, String predjeniKm, String brSedistaDeca, boolean cdw, Long user_id) {
+    public VoziloDTO(String markaVozila, String modelVozila, String klasaVozila, String tipGoriva, String vrstaMenjaca, String predjeniKm, String brsedistadeca, boolean cdw, Long user_id) {
         this.markaVozila = markaVozila;
         this.modelVozila = modelVozila;
         this.klasaVozila = klasaVozila;
-        this.tipGoriva = tipgoriva;
-        this.vrstaMenjaca = vrstamenjaca;
+        this.tipGoriva = tipGoriva;
+        this.vrstaMenjaca = vrstaMenjaca;
         this.predjeniKm = predjeniKm;
-        brsedistadeca = brSedistaDeca;
+        this.brsedistadeca = brsedistadeca;
         this.cdw = cdw;
         this.user_id = user_id;
     }
 
-    public VoziloDTO(Long id, String markaVozila, String modelVozila, String klasaVozila, String tipgoriva, String vrstamenjaca, String predjeniKm, String brSedistaDeca, boolean cdw, Long user_id) {
-        this.id = id;
-        this.markaVozila = markaVozila;
-        this.modelVozila = modelVozila;
-        this.klasaVozila = klasaVozila;
-        this.tipGoriva = tipgoriva;
-        this.vrstaMenjaca = vrstamenjaca;
-        this.predjeniKm = predjeniKm;
-        brsedistadeca = brSedistaDeca;
-        this.cdw = cdw;
-        this.user_id = user_id;
-    }
 }
