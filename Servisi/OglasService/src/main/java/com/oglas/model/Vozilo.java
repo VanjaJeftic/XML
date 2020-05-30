@@ -46,11 +46,11 @@ public class Vozilo {
     private String klasaVozila;
 
     @Column(name="tipgoriva_id")
-    private String tipgoriva;
+    private String tipGoriva;
 
 
     @Column(name="vrstamenjaca_id")
-    private String vrstamenjaca;
+    private String vrstaMenjaca;
 
     @Column(name="predjenikm")
     private String predjeniKm;
@@ -97,19 +97,19 @@ public class Vozilo {
     }
 
     public String getTipgoriva() {
-        return tipgoriva;
+        return tipGoriva;
     }
 
-    public void setTipgoriva(String tipgoriva) {
-        this.tipgoriva = tipgoriva;
+    public void setTipGoriva(String tipGoriva) {
+        this.tipGoriva = tipGoriva;
     }
 
     public String getVrstamenjaca() {
-        return vrstamenjaca;
+        return vrstaMenjaca;
     }
 
-    public void setVrstamenjaca(String vrstamenjaca) {
-        this.vrstamenjaca = vrstamenjaca;
+    public void setVrstaMenjaca(String vrstaMenjaca) {
+        this.vrstaMenjaca = vrstaMenjaca;
     }
 
     public String getPredjeniKm() {
@@ -124,8 +124,8 @@ public class Vozilo {
         return BrSedistaDeca;
     }
 
-    public void setBrSedistaDeca(String brSedistaDeca) {
-        BrSedistaDeca = brSedistaDeca;
+    public void setBrsedistadeca(String brsedistadeca) {
+        BrSedistaDeca = brsedistadeca;
     }
 
     public boolean isCdw() {
@@ -152,10 +152,10 @@ public class Vozilo {
         this.markaVozila = markaVozila;
         this.modelVozila = modelVozila;
         this.klasaVozila = klasaVozila;
-        this.tipgoriva = tipgoriva;
-        this.vrstamenjaca = vrstamenjaca;
+        this.tipGoriva = tipgoriva;
+        this.vrstaMenjaca = vrstamenjaca;
         this.predjeniKm = predjeniKm;
-        BrSedistaDeca = brSedistaDeca;
+        this.BrSedistaDeca = brSedistaDeca;
         this.cdw = cdw;
         this.user_id = user_id;
     }
@@ -164,10 +164,10 @@ public class Vozilo {
         this.markaVozila = voziloDTO.getMarkaVozila();
         this.modelVozila = voziloDTO.getModelVozila();
         this.klasaVozila = voziloDTO.getKlasaVozila();
-        this.tipgoriva = voziloDTO.getTipgoriva();
-        this.vrstamenjaca = voziloDTO.getVrstamenjaca();
+        this.tipGoriva = voziloDTO.getTipGoriva();
+        this.vrstaMenjaca = voziloDTO.getVrstaMenjaca();
         this.predjeniKm = voziloDTO.getPredjeniKm();
-        BrSedistaDeca = voziloDTO.getPredjeniKm();
+        this.BrSedistaDeca = voziloDTO.getBrsedistadeca();
         this.cdw = voziloDTO.isCdw();
         this.user_id = voziloDTO.getUser_id();
     }

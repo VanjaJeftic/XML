@@ -25,8 +25,18 @@ public class OglasDTO {
     private LocalDateTime slobodanod;
 
     private LocalDateTime slobodando;
+    
+    private Boolean cdw;
 
-    public Long getId() {
+    public Boolean getCdw() {
+		return cdw;
+	}
+
+	public void setCdw(Boolean cdw) {
+		this.cdw = cdw;
+	}
+
+	public Long getId() {
         return id;
     }
 
@@ -98,7 +108,7 @@ public class OglasDTO {
         this.slobodando = slobodando;
     }
 
-    public OglasDTO(Long id, Long vozilo_id, Long user_id, String mesto, Double cena, Double popust, Double cenaspopust, LocalDateTime slobodanod, LocalDateTime slobodando) {
+    public OglasDTO(Long id, Long vozilo_id, Long user_id, String mesto, Double cena, Double popust, Double cenaspopust, LocalDateTime slobodanod, LocalDateTime slobodando,Boolean cdw) {
         this.id = id;
         this.vozilo_id = vozilo_id;
         this.user_id = user_id;
@@ -108,12 +118,13 @@ public class OglasDTO {
         this.cenaspopust = cenaspopust;
         this.slobodanod = slobodanod;
         this.slobodando = slobodando;
+        this.cdw=cdw;
     }
 
     public OglasDTO() {
     }
 
-    public OglasDTO(Long vozilo_id, Long user_id, String mesto, Double cena, Double popust, Double cenaspopust, LocalDateTime slobodanod, LocalDateTime slobodando) {
+    public OglasDTO(Long vozilo_id, Long user_id, String mesto, Double cena, Double popust, Double cenaspopust, LocalDateTime slobodanod, LocalDateTime slobodando,Boolean cdw) {
         this.vozilo_id = vozilo_id;
         this.user_id = user_id;
         this.mesto = mesto;
@@ -122,6 +133,7 @@ public class OglasDTO {
         this.cenaspopust = cenaspopust;
         this.slobodanod = slobodanod;
         this.slobodando = slobodando;
+        this.cdw=cdw;
     }
 
 

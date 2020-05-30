@@ -12,6 +12,7 @@ import com.oglas.service.VoziloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -37,26 +38,16 @@ public class OglasController {
 
 	@PostMapping("/create")
 	//@PreAuthorize("hasAuthority('create_oglas')")
-	public ResponseEntity<?> create(@RequestBody OglasVoziloDTO ovDTO) {
 
-		VoziloDTO vDTO=new VoziloDTO();
+	public ResponseEntity<?> create(@RequestBody OglasDTO ovDTO) {
 
-		vDTO.setMarkaVozila(ovDTO.getMarkaVozila());
-		vDTO.setModelVozila(ovDTO.getModelVozila());
-		vDTO.setKlasaVozila(ovDTO.getKlasaVozila());
-		vDTO.setTipgoriva(ovDTO.getTipgoriva());
-		vDTO.setVrstamenjaca(ovDTO.getVrstamenjaca());
-		vDTO.setPredjeniKm(ovDTO.getPredjeniKm());
-		vDTO.setBrSedistaDeca(ovDTO.getBrSedistaDeca());
-		vDTO.setCdw(ovDTO.isCdw());
-		vDTO.setUser_id(vDTO.getUser_id());
 
-		Vozilo vozilo=this.voziloService.createVozilo(vDTO);
+	
 
 		OglasDTO oDTO=new OglasDTO();
 
 		oDTO.setUser_id(ovDTO.getUser_id());
-		oDTO.setVozilo_id(vozilo.getId());
+		oDTO.setVozilo_id(ovDTO.getVozilo_id());
 		oDTO.setMesto(ovDTO.getMesto());
 		oDTO.setCena(ovDTO.getCena());
 		oDTO.setPopust(ovDTO.getPopust());

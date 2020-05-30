@@ -26,7 +26,7 @@ public class VoziloService {
 
     public Vozilo createVozilo(VoziloDTO vozilodto) {
 
-        this.userConnection.verify(vozilodto.getUser_id());
+       // this.userConnection.verify(vozilodto.getUser_id());
 
         Vozilo vozilo = this.voziloRepository.save(new Vozilo(vozilodto));
 
@@ -38,15 +38,15 @@ public class VoziloService {
                 .orElseThrow(() -> new NotFoundException("Vozilo with that id does not exist!"));
 
        vozilo.setUser_id(vozilodto.getUser_id());
-       vozilo.setBrSedistaDeca(vozilodto.getBrSedistaDeca());
+       vozilo.setBrsedistadeca(vozilodto.getBrsedistadeca());
        vozilo.setCdw(vozilodto.isCdw());
        vozilo.setId(vozilodto.getId());
        vozilo.setKlasaVozila(vozilodto.getKlasaVozila());
        vozilo.setMarkaVozila(vozilodto.getMarkaVozila());
        vozilo.setModelVozila(vozilodto.getModelVozila());
        vozilo.setPredjeniKm(vozilodto.getPredjeniKm());
-       vozilo.setTipgoriva(vozilodto.getTipgoriva());
-       vozilo.setVrstamenjaca(vozilodto.getVrstamenjaca());
+       vozilo.setTipGoriva(vozilodto.getTipGoriva());
+       vozilo.setVrstaMenjaca(vozilodto.getVrstaMenjaca());
 
         return this.voziloRepository.save(vozilo);
     }
