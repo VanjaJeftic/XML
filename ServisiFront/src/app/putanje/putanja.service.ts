@@ -21,12 +21,12 @@ export class PutanjaService {
         return this._user_info_url;
     }
 
-  private _novi_oglas_url=this._oglas_url+"novoVozilo";
+  private _novi_oglas_url=this._oglas_url+"vozilo/novoVozilo";
     get novoVozilo():string{
         return this._novi_oglas_url;
     }
 
-    private _pravi_oglas_url=this._oglas_url+"create";
+    private _pravi_oglas_url=this._oglas_url+"oglas/create";
     get noviOglas():string{
         return this._pravi_oglas_url;
     }

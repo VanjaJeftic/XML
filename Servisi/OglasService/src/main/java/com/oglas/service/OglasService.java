@@ -39,6 +39,7 @@ public class OglasService {
                 .orElseThrow(() -> new NotFoundException("Oglas with that id does not exist!"));
 
         oglas.setCena(oglasdto.getCena());
+        oglas.setPopust(oglasdto.getPopust());
         oglas.setCenaspopust(oglasdto.getCenaspopust());
         oglas.setId(oglasdto.getId());
         oglas.setMesto(oglasdto.getMesto());
