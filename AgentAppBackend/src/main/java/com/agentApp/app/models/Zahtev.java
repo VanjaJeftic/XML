@@ -1,19 +1,31 @@
 package com.agentApp.app.models;
 
-import org.hibernate.annotations.ColumnDefault;
-
-import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="zahtev")
-public class Zahtev {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Zahtev implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name="oglas_id")
     private Oglas oglas;
 
@@ -23,8 +35,9 @@ public class Zahtev {
     @Column(name="bundle")
     private boolean bundle;
 
-    @Column(name="podnosilac")
-    private Long podnosilac;
+    @ManyToOne
+    @JoinColumn(name = "podnosilac_id")
+    private Korisnik podnosilac;
 
     @Column(name="preuzimanje")
     private LocalDateTime preuzimanje;
@@ -67,31 +80,31 @@ public class Zahtev {
         this.bundle = bundle;
     }
 
-    public Long getPodnosilac() {
-        return podnosilac;
-    }
+    public Korisnik getPodnosilac() {
+		return podnosilac;
+	}
 
-    public void setPodnosilac(Long podnosilac) {
-        this.podnosilac = podnosilac;
-    }
+	public void setPodnosilac(Korisnik podnosilac) {
+		this.podnosilac = podnosilac;
+	}
 
-    public LocalDateTime getPreuzimanje() {
-        return preuzimanje;
-    }
+	public LocalDateTime getPreuzimanje() {
+		return preuzimanje;
+	}
 
-    public void setPreuzimanje(LocalDateTime preuzimanje) {
-        this.preuzimanje = preuzimanje;
-    }
+	public void setPreuzimanje(LocalDateTime preuzimanje) {
+		this.preuzimanje = preuzimanje;
+	}
 
-    public LocalDateTime getPovratak() {
-        return povratak;
-    }
+	public LocalDateTime getPovratak() {
+		return povratak;
+	}
 
-    public void setPovratak(LocalDateTime povratak) {
-        this.povratak = povratak;
-    }
+	public void setPovratak(LocalDateTime povratak) {
+		this.povratak = povratak;
+	}
 
-    public String getStatus() {
+	public String getStatus() {
         return status;
     }
 

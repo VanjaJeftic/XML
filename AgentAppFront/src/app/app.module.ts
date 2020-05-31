@@ -13,6 +13,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AgentComponent } from './components/userComponent/agent/agent.component';
 import { AdministratorComponent } from './components/userComponent/administrator/administrator.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     UserComponent,
     AgentComponent,
     AdministratorComponent,
-    HomePageComponent
+    HomePageComponent,
+    VoziloDetailsComponent
   ],
   imports: [
     BrowserModule,

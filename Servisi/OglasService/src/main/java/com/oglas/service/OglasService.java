@@ -56,5 +56,17 @@ public class OglasService {
          oglasRepository.deleteById(id);
         return;
     }
+    
+    public boolean verify(Long id) {
+    	try {
+    		Oglas o = oglasRepository.findById(id).get();
+        	if(o != null)
+        		return true;
+        	return false;
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+    }
 
 }

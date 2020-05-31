@@ -21,3 +21,35 @@ INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (8, 2);
 INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (5, 1);
 INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (10, 1);
 INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (11, 1);
+
+insert into korisnik (user_id, aktivan, blokiran, uklonjen, odbijenizahtevi) values (3, true, false, false, 0);
+insert into korisnik (user_id, aktivan, blokiran, uklonjen, odbijenizahtevi) values (4, true, false, false, 0);
+insert into korisnik (user_id, aktivan, blokiran, uklonjen, odbijenizahtevi) values (5, true, false, false, 0);
+
+insert into klasavozila (naziv) values ('klasa1');
+insert into klasavozila (naziv) values ('klasa2');
+
+insert into markavozila (naziv) values ('marka1');
+insert into markavozila (naziv) values ('marka2');
+
+insert into modelvozila (naziv) values ('model1');
+insert into modelvozila (naziv) values ('model2');
+
+insert into tipgoriva (naziv) values ('Tip Goriva 1');
+insert into tipgoriva (naziv) values ('Tip Goriva 2');
+
+insert into vrstamenjaca (naziv) values ('Vrsta menjaca 1');
+insert into vrstamenjaca (naziv) values ('Vrsta menjaca 2');
+
+insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id, tipgoriva_id, vrstamenjaca_id) values (1, false, 1, 1, 1, 1, 1);
+insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id, tipgoriva_id, vrstamenjaca_id) values (1, true, 1, 1, 2, 1, 2);
+insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id, tipgoriva_id, vrstamenjaca_id) values (2, true, 2, 2, 2, 2, 2);
+
+insert into oglas (vozilo_id, mesto) values (1, 'Novi Sad');
+insert into oglas (vozilo_id, mesto) values (1, 'Beograd');
+insert into oglas (vozilo_id, mesto) values (2, 'Ugljevik');
+insert into oglas (vozilo_id, mesto) values (2, 'Bijeljina');
+insert into oglas (vozilo_id, mesto) values (3, 'Sarajevo');
+
+insert into zahtev (oglas_id, podnosilac_id, bundle, bundle_id) values (1, 1, false, 1);
+insert into zahtev (oglas_id, podnosilac_id, bundle, bundle_id) values (1, 2, false, 1);

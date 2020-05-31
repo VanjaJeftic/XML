@@ -51,6 +51,34 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
     }
+//=======================mozda treba Get umesto Put ??????
+    @GetMapping("/blokirajUsera/{id}")
+    public ResponseEntity<HttpStatus> blokirajUsera(@PathVariable("id") Long id) {
+        try {
+            userService.blokirajUsera(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
+        }
+    }
 
+    @GetMapping("/odblokirajUsera/{id}")
+    public ResponseEntity<HttpStatus> odblokirajUsera(@PathVariable("id") Long id) {
+        try {
+            userService.odblokirajUsera(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
+        }
+    }
+
+    @GetMapping("/verify/{id_usera}")
+    public boolean verify(@PathVariable("id_usera") Long id_usera){
+        return userService.verify(id_usera);
+//		if(postoji)
+//			return new ResponseEntity<>(HttpStatus.OK);
+//		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+    }
 
 }

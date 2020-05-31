@@ -1,3 +1,4 @@
+
 package com.oglas.controllers;
 
 import com.oglas.dto.OglasDTO;
@@ -76,6 +77,15 @@ public class OglasController {
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
 		}
+	}
+	
+	@GetMapping("/verify/{oglas_id}")
+	public boolean verify(@PathVariable("oglas_id") Long oglas_id){
+		return oglasService.verify(oglas_id);
+//		if(postoji)
+//			return new ResponseEntity<>(HttpStatus.OK);
+//		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		
 	}
 
 
