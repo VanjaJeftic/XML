@@ -10,6 +10,9 @@ export class PraviOglasService {
   constructor(private http:HttpClient) { }
 
   public saveOglas(oglas:Oglas){
-    return this.http.post('http://localhost:8092/create',oglas);
+    console.log("Saljel "+oglas.mesto+oglas.cena+oglas.slobodanod)
+    return this.http.post('http://localhost:8092/oglas/create',oglas).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
   }
 }

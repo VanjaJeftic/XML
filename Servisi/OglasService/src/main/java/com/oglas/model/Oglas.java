@@ -128,7 +128,7 @@ public class Oglas implements Serializable {
         this.vozilo_id = dto.getVozilo_id();
         this.mesto = dto.getMesto();
         this.cena = dto.getCena();
-        this.popust = dto.getCena();
+        this.popust = dto.getPopust();
         this.cenaspopust = dto.getCenaspopust();
         this.user_id=dto.getUser_id();
         this.slobodando=dto.getSlobodando();

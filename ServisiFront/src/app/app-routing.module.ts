@@ -16,8 +16,8 @@ const routes: Routes = [
   { path: 'administrator', component:  AdministratorComponent },
   { path: 'agent', component: AgentComponent },
   { path: 'user', component: UserComponent },
-  { path: 'novoVozilo', component: NoviOglasComponent },
-  { path: 'create', component: PraviOglasComponent }
+  { path: 'vozilo/novoVozilo', component: NoviOglasComponent },
+  { path: 'oglas/create', component: PraviOglasComponent }
 ];
 
 @NgModule({

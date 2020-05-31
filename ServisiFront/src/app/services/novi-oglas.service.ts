@@ -11,6 +11,8 @@ export class NoviOglasService {
 
   public saveVozilo(vozilo:Vozilo){
     console.log("save"+ vozilo.modelVozila +vozilo.tipGoriva + vozilo.vrstaMenjaca);
-    return this.http.post('http://localhost:8092/novoVozilo',vozilo);
+    return this.http.post('http://localhost:8092/vozilo/novoVozilo',vozilo).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
   }
 }

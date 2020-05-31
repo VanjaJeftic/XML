@@ -1,3 +1,4 @@
+
 package com.oglas.controllers;
 
 import com.oglas.dto.OglasDTO;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(value = "/oglas")
 public class OglasController {
 
 	@GetMapping("/hello-worlds")
@@ -27,7 +30,9 @@ public class OglasController {
 
 	private OglasService oglasService;
 	private VoziloService voziloService;
+	@Autowired
 	private OglasRepository oglasRepository;
+	@Autowired
 	private VoziloRepository voziloRepository;
 
 	@Autowired
@@ -35,21 +40,15 @@ public class OglasController {
 		this.oglasService=oglasService;
 		this.voziloService=voziloService;
 	}
+	
+	
 
 	@PostMapping("/create")
 	//@PreAuthorize("hasAuthority('create_oglas')")
 	public ResponseEntity<?> create(@RequestBody OglasDTO ovDTO) {
 
-		OglasDTO oDTO=new OglasDTO();
-
-		oDTO.setUser_id(ovDTO.getUser_id());
-		oDTO.setVozilo_id(ovDTO.getVozilo_id());
-		oDTO.setMesto(ovDTO.getMesto());
-		oDTO.setCena(ovDTO.getCena());
-		oDTO.setPopust(ovDTO.getPopust());
-		oDTO.setCenaspopust(ovDTO.getCenaspopust());
-
-		Oglas oglas = this.oglasService.createOrder(oDTO);
+		System.out.println("Usao"+ovDTO.getMesto()+ovDTO.getCena()+ovDTO.getPopust());
+		Oglas oglas = this.oglasService.createOrder(ovDTO);
 
 		return new ResponseEntity<>(oglas, HttpStatus.OK);
 	}
