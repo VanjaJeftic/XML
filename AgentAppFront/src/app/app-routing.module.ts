@@ -1,3 +1,4 @@
+import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
 import { UserComponent } from './components/userComponent/user/user.component';
 import { AgentComponent } from './components/userComponent/agent/agent.component';
 import { AdministratorComponent } from './components/userComponent/administrator/administrator.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'administrator', component:  AdministratorComponent },
   { path: 'agent', component: AgentComponent },
-  { path: 'user', component: UserComponent }
+  { path: 'user', component: UserComponent},
+  { path: 'vozilo/:id', component: VoziloDetailsComponent}
 ];
 
 @NgModule({

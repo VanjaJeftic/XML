@@ -15,8 +15,13 @@ export class PutanjaService {
         return this._login_url;
     }
   
-  private _user_info_url = this._app_url + 'user/getUserInfo'
+  private _user_info_url = this._app_url + 'user/getUserInfo';
     get userInfo(): string{
         return this._user_info_url;
+    }
+  
+  private _oglas_url = this._app_url + 'oglas';
+    get get_oglas_url(): string {
+      return this._oglas_url;
     }
 }

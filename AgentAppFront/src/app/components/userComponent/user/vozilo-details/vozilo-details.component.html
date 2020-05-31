@@ -1,0 +1,56 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="/user" class="navlogo">Rent-A-Car Korisnik</a></div>
+    <span class="nav-tool-items">
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
+    </span>
+</mat-toolbar>  
+
+<div class="dialog" fxLayout="row" fxLayoutAlign="center center" style="margin-top: 120px;margin-left: 400px;" *ngIf="oglas">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Rezervisi</mat-card-title>
+        </mat-card-header>
+        <form class="form" #formControl="ngForm">
+            <mat-card-content>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Vlasnik</mat-label>
+                    <input [(ngModel)]="oglas.vozilo.user.username" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Mesto Preuzimanja</mat-label>
+                    <input [(ngModel)]="oglas.mesto" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Marka Vozila</mat-label>
+                    <input [(ngModel)]="oglas.vozilo.markaVozila.naziv" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Klasa Vozila</mat-label>
+                    <input [(ngModel)]="oglas.vozilo.klasaVozila.naziv" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Model Vozila</mat-label>
+                    <input [(ngModel)]="oglas.vozilo.modelVozila.naziv" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Tip Goriva</mat-label>
+                    <input [(ngModel)]="oglas.vozilo.tipgoriva.naziv" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Vrsta Menjaca</mat-label>
+                    <input [(ngModel)]="oglas.vozilo.vrstamenjaca.naziv" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                </mat-form-field>
+
+            </mat-card-content>
+            <button mat-raised-button color="primary" (click)="onRezervisi()"
+                [disabled]="!formControl.valid">Rezervisi</button>
+        </form>
+    </mat-card>
+</div>

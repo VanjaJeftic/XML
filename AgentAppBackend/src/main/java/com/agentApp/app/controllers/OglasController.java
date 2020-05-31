@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,5 +26,11 @@ public class OglasController {
 	public ResponseEntity<?> getAllOglasi(){
 		List<Oglas> oglasi = oglasService.getAllOglasi();
 		return new ResponseEntity<List<Oglas>>(oglasi, HttpStatus.OK);
+	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<?> getOglas(@PathVariable("id") Long id){
+		Oglas o = oglasService.findOneOglas(id);
+		return new ResponseEntity<Oglas>(o, HttpStatus.OK);
 	}
 }
