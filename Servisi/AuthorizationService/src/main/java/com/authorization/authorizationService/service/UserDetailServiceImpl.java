@@ -67,4 +67,28 @@ public class UserDetailServiceImpl implements UserDetailsService {
         return true;
     }
 
+    public boolean blokirajUsera(Long id) {
+        User user = userDetailRepository.findById(id).orElse(null);
+        System.out.println("blokiran user je: " + id);
+        if (user != null) {
+            user.setNalogAktivan(false);
+            userDetailRepository.save(user);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public boolean odblokirajUsera(Long id) {
+        User user = userDetailRepository.findById(id).orElse(null);
+        if (user != null) {
+            user.setNalogAktivan(true);
+            userDetailRepository.save(user);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

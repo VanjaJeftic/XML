@@ -15,9 +15,18 @@ public class UserDTO {
     private boolean credentialsNonExpired;
     private boolean accountNonLocked;
     private List<Role> roles;
+    private boolean nalogAktivan;
 
     public UserDTO() {
 
+    }
+
+    public boolean isNalogAktivan() {
+        return nalogAktivan;
+    }
+
+    public void setNalogAktivan(boolean nalogAktivan) {
+        this.nalogAktivan = nalogAktivan;
     }
 
     public List<Role> getRoles() {
@@ -92,7 +101,7 @@ public class UserDTO {
         this.accountNonLocked = accountNonLocked;
     }
 
-    public UserDTO(List<Role>roles,Long id, String username, String password, String email, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked) {
+    public UserDTO(List<Role>roles,Long id, String username, String password, String email, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked,boolean nalogAktivan) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -102,5 +111,6 @@ public class UserDTO {
         this.credentialsNonExpired = credentialsNonExpired;
         this.accountNonLocked = accountNonLocked;
         this.roles=roles;
+        this.nalogAktivan=nalogAktivan;
     }
 }
