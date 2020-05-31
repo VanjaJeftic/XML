@@ -38,11 +38,7 @@ public class OglasController {
 
 	@PostMapping("/create")
 	//@PreAuthorize("hasAuthority('create_oglas')")
-
 	public ResponseEntity<?> create(@RequestBody OglasDTO ovDTO) {
-
-
-	
 
 		OglasDTO oDTO=new OglasDTO();
 

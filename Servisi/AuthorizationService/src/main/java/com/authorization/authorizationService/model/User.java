@@ -21,6 +21,7 @@ public class User implements Serializable {
         this.credentialsNonExpired = user.isCredentialsNonExpired();
         this.accountNonLocked = user.isAccountNonLocked();
         this.roles = user.getRoles();
+        this.nalogAktivan=user.isNalogAktivan();
     }
 
     @Id
@@ -41,7 +42,8 @@ public class User implements Serializable {
     private boolean credentialsNonExpired;
     @Column(name = "account_non_locked")
     private boolean accountNonLocked;
-
+    @Column(name = "nalogaktivan")
+    private boolean nalogAktivan;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "role_user", joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
@@ -52,6 +54,13 @@ public class User implements Serializable {
     public User(User user) {
     }
 
+    public boolean isNalogAktivan() {
+        return nalogAktivan;
+    }
+
+    public void setNalogAktivan(boolean nalogAktivan) {
+        this.nalogAktivan = nalogAktivan;
+    }
 
     public Long getId() {
         return id;
