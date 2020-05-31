@@ -1,3 +1,4 @@
+import { MyShopCartItemsComponent } from './components/userComponent/user/my-shop-cart-items/my-shop-cart-items.component';
 import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
 import { UserComponent } from './components/userComponent/user/user.component';
 import { AgentComponent } from './components/userComponent/agent/agent.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'administrator', component:  AdministratorComponent },
   { path: 'agent', component: AgentComponent },
   { path: 'user', component: UserComponent},
+  { path: 'cart', component: MyShopCartItemsComponent },
   { path: 'vozilo/:id', component: VoziloDetailsComponent}
 ];
 

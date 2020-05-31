@@ -48,6 +48,40 @@
                     <input [(ngModel)]="oglas.vozilo.vrstamenjaca.naziv" matInput [ngModelOptions]="{standalone: true}" required disabled>
                 </mat-form-field>
 
+                <!-- ******************************************************************************************************* -->
+
+                <!-- Datum Preuzimanja -->
+                <mat-form-field class="full-width">
+                    <input [(ngModel)]="datumPreuzimanja" matInput [matDatepicker]="picker1" placeholder="Datum Preuzimanja"
+                        [ngModelOptions]="{standalone: true}" required disabled>
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1 disabled="false"></mat-datepicker>
+                </mat-form-field>
+
+                <!-- Vreme Preuzimanja -->
+                <p style="color: rgb(153, 152, 152);">Vreme Preuzimanja:</p>
+                <div class="ngx-timepicker-field-example">
+                    <ngx-timepicker-field [(ngModel)]="timeFrom" [ngModelOptions]="{standalone: true}"
+                        [defaultTime]="'12:00'" [format]="24" [controlOnly]="true"></ngx-timepicker-field>
+                </div>
+
+                <!-- ******************************************************************************************************* -->
+
+                <!-- Datum Povratka -->
+                <mat-form-field class="full-width">
+                    <input [(ngModel)]="datumPovratka" matInput  [matDatepicker]="picker2" placeholder="Datum Povratka"
+                        [ngModelOptions]="{standalone: true}" required disabled>
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2 disabled="false"></mat-datepicker>
+                </mat-form-field>
+
+                <!-- Vreme Povratka -->
+                <p style="color: rgb(153, 152, 152);">Vreme Povratka:</p>
+                <div class="ngx-timepicker-field-example">
+                    <ngx-timepicker-field [(ngModel)]="timeTo" [ngModelOptions]="{standalone: true}"
+                        [defaultTime]="'12:00'" [format]="24" [controlOnly]="true"></ngx-timepicker-field>
+                </div>
+
             </mat-card-content>
             <button mat-raised-button color="primary" (click)="onRezervisi()"
                 [disabled]="!formControl.valid">Rezervisi</button>

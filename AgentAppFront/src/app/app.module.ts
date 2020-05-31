@@ -2,6 +2,7 @@ import { TokenInterceptor } from './interceptor/TokenInterceptor';
 import { AngularMaterialModule } from './angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { AgentComponent } from './components/userComponent/agent/agent.component
 import { AdministratorComponent } from './components/userComponent/administrator/administrator.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
+import { MyShopCartItemsComponent } from './components/userComponent/user/my-shop-cart-items/my-shop-cart-items.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-d
     AgentComponent,
     AdministratorComponent,
     HomePageComponent,
-    VoziloDetailsComponent
+    VoziloDetailsComponent,
+    MyShopCartItemsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-d
     BrowserAnimationsModule,
     AngularMaterialModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaterialTimepickerModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

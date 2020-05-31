@@ -1,12 +1,27 @@
 package com.agentApp.app.controllers;
 
+import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.agentApp.app.dto.ShopCartItemsDTO;
+import com.agentApp.app.dto.ZahtevDTO;
+import com.agentApp.app.models.Korisnik;
+import com.agentApp.app.models.User;
+import com.agentApp.app.models.Zahtev;
 import com.agentApp.app.services.KorisnikService;
 import com.agentApp.app.services.OglasService;
+import com.agentApp.app.services.UserService;
 import com.agentApp.app.services.ZahtevService;
 
 @RestController
@@ -20,65 +35,52 @@ public class ZahtevController {
 	private OglasService oglasService;
 	@Autowired
 	private KorisnikService korisnikService;
+	@Autowired
+	private UserService userService;
 	
-//	@GetMapping
-//	public List<Zahtev> getAllZahtevi(){
-//		Oglas o = oglasService.findOneOglas(1L);
-//		Korisnik k = korisnikService.findOneKorisnik(1L);
-//		Long groupID = zahtevService.getLastGroupID() + 1;
-//		
-//		Zahtev z = new Zahtev();
-//		z.setOglas(o);
-//		z.setBundle(false);
-//		z.setPodnosilac(k);
-//		Zahtev z2 = new Zahtev();
-//		z2.setOglas(o);
-//		z2.setBundle(true);
-//		z2.setPodnosilac(k);
-//		Zahtev z3 = new Zahtev();
-//		z3.setOglas(o);
-//		z3.setBundle(true);
-//		z3.setPodnosilac(k);
-//		
-//		ShopCartItemDTO cart = new ShopCartItemDTO();
-//		cart.getZahtevi().add(z);
-//		cart.getZahtevi().add(z2);
-//		cart.getZahtevi().add(z3);
-//		
-//		Set<User> vlasnici = new HashSet<>();
-//		Set<Zahtev> forBundle = new HashSet<Zahtev>();
-//		
-//		for(Zahtev zahtev : cart.getZahtevi()) {
-//			vlasnici.add(zahtev.getOglas().getVozilo().getUser());
-//			if(zahtev.isBundle()) {
-//				forBundle.add(zahtev);
-//			}else {
-//				zahtev.setBundle_id(0L);
-//				zahtevService.saveZahtev(zahtev);
-//			}
-//		}
-//		for(User vlasnik : vlasnici) {
+//	@PostMapping()
+//	public ResponseEntity<?> create(@RequestBody ZahtevDTO zahtevDTO){
+//		Zahtev zahtev = new Zahtev(zahtevDTO);
+//		Zahtev z = zahtevService.saveZahtev(zahtev);
+//		return new ResponseEntity<Zahtev>(z, HttpStatus.OK);
+//	}
+	
+	@PostMapping
+	public void create(@RequestBody ShopCartItemsDTO shopCartItemsDTO, Principal p){
+		List<User> vlasnici = userService.findAll();
+		List<Zahtev> forBundle = new ArrayList<Zahtev>();
+		Long groupID = zahtevService.getLastGroupID();
+		User u = userService.findByUsername(p.getName());
+		Korisnik podnosilac = korisnikService.findByUserId(u.getId());
+		
+		for(ZahtevDTO zahtevDTO : shopCartItemsDTO.getZahtevi()) {
+			Zahtev z = new Zahtev(zahtevDTO);
+			z.setPodnosilac(podnosilac);
+			if(zahtevDTO.isBundle()) {
+				forBundle.add(z);
+			}else {
+				z.setBundle_id(0L);
+				zahtevService.saveZahtev(z);
+			}
+		}
+//		for(User vlasnik: vlasnici) {
 //			for(Zahtev zahtev : forBundle) {
-//				if(zahtev.getOglas().getVozilo().getUser().equals(vlasnik)) {
+//				if(zahtev.getOglas().getVozilo().getUser().getId().equals(vlasnik.getId())) {
 //					zahtev.setBundle_id(groupID);
 //					zahtevService.saveZahtev(zahtev);
 //				}
 //			}
 //			groupID++;
 //		}
-//		
-//		
-////		for(Zahtev zahtev : cart.getZahtevi()) {
-////			
-////			for(User user : vlasnici) {
-////				if(zahtev.getOglas().getVozilo().getUser().equals(user) && zahtev.isBundle()) {
-////					z.setBundle_id(groupID);
-////					zahtevService.saveZahtev(z);
-////				}
-////			}
-////		}
-//		
-//		//zahtevService.saveZahtev(z);
-//		return zahtevService.getAllZahtevi();
-//	}
+//		for(ZahtevDTO zDTO : shopCartItemsDTO.getZahtevi()) {
+//			for(User user : vlasnici) {
+//				if(zDTO.getOglas().getVoziloDTO().getUser().getId().equals(user.getId()) && zDTO.isBundle()) {
+//					Zahtev newZ = new Zahtev(zDTO);
+//					newZ.setBundle_id(groupID);
+//					zahtevService.saveZahtev(newZ);
+//				}
+//			}
+//			groupID++;
+//		}
+	}
 }

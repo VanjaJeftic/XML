@@ -37,4 +37,8 @@ export class UserComponent implements OnInit {
   onOdjaviMe(){
     this.authService.logout();
   }
+
+  shopCart(){
+    this.router.navigateByUrl('cart');
+  }
 }
