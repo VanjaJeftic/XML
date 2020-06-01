@@ -6,7 +6,7 @@
   </mat-toolbar>
 
   <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-    <mat-card class="box scrollable-content">
+    <mat-card >
       <mat-card-header>
         <mat-card-title>Novo vozilo</mat-card-title>
       </mat-card-header>
@@ -43,6 +43,19 @@
             <input matInput placeholder="Broj sedista za decu" [(ngModel)]="vozilo.brsedistadeca" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
   
+          <!--upload slike odavde-->
+
+          <div class="container row">
+            <div class="col-md-6">
+                <input type="file" (change)="onSelect($event)"  [(ngModel)]="image" [ngModelOptions]="{standalone: true}" required multiple/>
+                <img *ngFor= 'let url of urls' [src]="url" height="100"/>
+            </div>
+        </div>
+        <hr />
+     
+          <!--dovde upload-->
+
+
         </mat-card-content>
   
         <button mat-stroked-button color="primary" class="btn-block" type="submit">Potvrdi</button>
