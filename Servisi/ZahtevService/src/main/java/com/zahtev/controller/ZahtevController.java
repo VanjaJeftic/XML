@@ -26,17 +26,55 @@ public class ZahtevController {
 	private ZahtevService zahtevService;
 	
 	@PostMapping("/zahtev")
-	public List<Zahtev> create(@RequestBody ShopCartItemsDTO listaZahteva) {
+	public void create(@RequestBody ShopCartItemsDTO listaZahteva) {
 
-		List<Zahtev> validno = new ArrayList<>();
-		for(ZahtevDTO zahtevDTO : listaZahteva.getZahtevi()) {
-			boolean postoji = oglasConnection.verify(zahtevDTO.getOglas_id());
+		List<Long> vlasnici = new ArrayList<>();
+		List<ZahtevDTO> forBundle = new ArrayList<>();
+		Long groupID = zahtevService.getLastGroupID();
+		Long podnosilac = 3L;
+		
+		for(ZahtevDTO z : listaZahteva.getZahtevi()) {
+			vlasnici.add(z.getOglas().getVozilo().getUser().getId());
+		}
+
+		for(ZahtevDTO z : listaZahteva.getZahtevi()) {
+			boolean postoji = oglasConnection.verify(z.getOglas().getId());
 			if(postoji) {
-				Zahtev saved = zahtevService.save(new Zahtev(zahtevDTO));
-				validno.add(saved);
+				Zahtev newZahtev = new Zahtev(z);
+				newZahtev.setPodnosilac_id(3L);
+				newZahtev.setStatus("PENDING");
+				if(z.isBundle()) {
+					forBundle.add(z);
+				}else {
+					newZahtev.setBundle_id(0L);
+					zahtevService.save(newZahtev);
+				}
 			}
 		}
-		return validno;
+		//BUNDLE Zahtevi
+		for(ZahtevDTO zahtev : forBundle) {
+			for(Long vlasnik : vlasnici) {
+				if(zahtev.getOglas().getVozilo().getUser().getId().equals(vlasnik)) {
+					Zahtev newZahtev = new Zahtev(zahtev);
+					newZahtev.setBundle_id(groupID);
+					newZahtev.setStatus("PENDING");
+					newZahtev.setPodnosilac_id(3L);
+					zahtevService.save(newZahtev);
+				}
+			}
+			groupID++;
+		}
+		
+		//STARO
+//		List<Zahtev> validno = new ArrayList<>();
+//		for(ZahtevDTO zahtevDTO : listaZahteva.getZahtevi()) {
+//			boolean postoji = oglasConnection.verify(zahtevDTO.getOglas_id());
+//			if(postoji) {
+//				Zahtev saved = zahtevService.save(new Zahtev(zahtevDTO));
+//				validno.add(saved);
+//			}
+//		}
+//		return validno;
 		
 	}
 }

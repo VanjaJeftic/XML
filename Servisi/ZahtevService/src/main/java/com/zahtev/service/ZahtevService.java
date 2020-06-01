@@ -1,5 +1,7 @@
 package com.zahtev.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +16,10 @@ public class ZahtevService {
 	
 	public Zahtev save(Zahtev z) {
 		return this.zahtevRepository.save(z);
+	}
+	public Long getLastGroupID() {
+		List<Zahtev> zahtevi = zahtevRepository.findAll();
+		int size = zahtevi.size() - 1;
+		return (zahtevi.get(size)).getBundle_id();
 	}
 }

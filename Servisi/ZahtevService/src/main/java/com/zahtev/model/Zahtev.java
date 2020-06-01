@@ -46,10 +46,10 @@ public class Zahtev implements Serializable{
 	}
 	public Zahtev(ZahtevDTO zahtevDTO) {
 		super();
-		this.oglas_id = zahtevDTO.getOglas_id();
+		this.oglas_id = zahtevDTO.getOglas().getId();
 		this.bundle_id = zahtevDTO.getBundle_id();
 		this.bundle = zahtevDTO.isBundle();
-		this.podnosilac_id = zahtevDTO.getPodnosilac_id();
+		//this.podnosilac_id = zahtevDTO.getPodnosilac_id();
 		this.preuzimanje = zahtevDTO.getPreuzimanje();
 		this.povratak = zahtevDTO.getPovratak();
 		this.status = zahtevDTO.getStatus();

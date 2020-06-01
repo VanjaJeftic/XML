@@ -4,10 +4,10 @@ import java.time.LocalDateTime;
 
 public class ZahtevDTO {
 
-	private Long oglas_id;
+	private OglasDTO oglas;
 	private Long bundle_id;
 	private boolean bundle;
-	private Long podnosilac_id;
+	//private Long podnosilac_id;
 	private LocalDateTime preuzimanje;
 	private LocalDateTime povratak;
 	private String status;
@@ -15,14 +15,17 @@ public class ZahtevDTO {
 	public ZahtevDTO() {
 		// TODO Auto-generated constructor stub
 	}
-
-	public Long getOglas_id() {
-		return oglas_id;
+	
+	
+	public OglasDTO getOglas() {
+		return oglas;
 	}
 
-	public void setOglas_id(Long oglas_id) {
-		this.oglas_id = oglas_id;
+
+	public void setOglas(OglasDTO oglas) {
+		this.oglas = oglas;
 	}
+
 
 	public Long getBundle_id() {
 		return bundle_id;
@@ -40,13 +43,13 @@ public class ZahtevDTO {
 		this.bundle = bundle;
 	}
 
-	public Long getPodnosilac_id() {
-		return podnosilac_id;
-	}
-
-	public void setPodnosilac_id(Long podnosilac_id) {
-		this.podnosilac_id = podnosilac_id;
-	}
+//	public Long getPodnosilac_id() {
+//		return podnosilac_id;
+//	}
+//
+//	public void setPodnosilac_id(Long podnosilac_id) {
+//		this.podnosilac_id = podnosilac_id;
+//	}
 
 	public LocalDateTime getPreuzimanje() {
 		return preuzimanje;

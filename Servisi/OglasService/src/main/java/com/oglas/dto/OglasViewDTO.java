@@ -4,6 +4,7 @@ import com.oglas.model.Oglas;
 
 public class OglasViewDTO {
 	
+	private Long id;
 	private String mesto;
 	private VoziloViewDTO vozilo;
 	
@@ -12,8 +13,18 @@ public class OglasViewDTO {
 	}
 	
 	public OglasViewDTO(Oglas o, VoziloViewDTO v) {
+		this.id = o.getId();
 		this.mesto = o.getMesto();
 		this.vozilo = v;
+	}
+
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getMesto() {
