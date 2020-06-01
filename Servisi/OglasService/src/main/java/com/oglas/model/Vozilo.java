@@ -158,6 +158,7 @@ public class Vozilo {
         this.BrSedistaDeca = brSedistaDeca;
         this.cdw = cdw;
         this.user_id = user_id;
+
     }
 
     public Vozilo(VoziloDTO voziloDTO){

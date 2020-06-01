@@ -1,5 +1,7 @@
 package com.oglas.dto;
 
+import com.oglas.model.ImageModel;
+
 import javax.persistence.*;
 
 
@@ -19,9 +21,12 @@ public class VoziloDTO {
 
     private String predjeniKm;
 
+
     private String brsedistadeca;
 
     private boolean cdw;//kupovine Collision Damage Waiver protekcije
+
+
 
     private Long user_id;
 
@@ -99,8 +104,7 @@ public class VoziloDTO {
         this.user_id = user_id;
     }
 
-    
-    
+
     public String getBrsedistadeca() {
 		return brsedistadeca;
 	}
