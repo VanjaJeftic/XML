@@ -2,10 +2,15 @@ package com.oglas.service;
 
 import com.oglas.connections.UserConnection;
 import com.oglas.dto.OglasDTO;
+import com.oglas.dto.UserViewDTO;
 import com.oglas.exceptions.NotFoundException;
 import com.oglas.model.Oglas;
 import com.oglas.repository.OglasRepository;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -68,5 +73,16 @@ public class OglasService {
 			return false;
 		}
     }
-
+    
+    public List<Oglas> allOglasi(){
+    	return (List<Oglas>) this.oglasRepository.findAll();
+    }
+    
+    public Oglas getOneOglas(Long id) {
+    	return this.oglasRepository.findById(id).get();
+    }
+    
+    public UserViewDTO getUser(Long id) {
+    	return this.userConnection.getUser(id);
+    }
 }

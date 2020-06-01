@@ -90,5 +90,9 @@ public class UserDetailServiceImpl implements UserDetailsService {
             return false;
         }
     }
+    
+    public User getUser(Long id) {
+    	return userDetailRepository.findById(id).orElse(null);
+    }
 
 }

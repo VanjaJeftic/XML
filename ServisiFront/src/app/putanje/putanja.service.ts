@@ -8,6 +8,8 @@ export class PutanjaService {
   private _app_url = 'http://localhost:8662/';
   private _authentication_url = 'http://localhost:8662/auth';
   private _oglas_url='http://localhost:8092/'
+  private _oglas_service_url = this._app_url + 'oglas';
+  private _zahtev_service_url = this._app_url + 'zahtev';
 
   constructor() { }
 
@@ -29,5 +31,15 @@ export class PutanjaService {
     private _pravi_oglas_url=this._oglas_url+"oglas/create";
     get noviOglas():string{
         return this._pravi_oglas_url;
+    }
+
+  private _get_oglas_service_url = this._oglas_service_url + '/oglas';
+    get get_oglas_url(): string {
+      return this._get_oglas_service_url;
+    }
+  
+  private _send_zahtev_service_url = this._zahtev_service_url + '/zahtev';
+    get get_zahtev_url(): string {
+      return this._send_zahtev_service_url;
     }
 }

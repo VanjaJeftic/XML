@@ -1,0 +1,90 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="/user" class="navlogo">Rent-A-Car Korisnik</a></div>
+    <span class="nav-tool-items">
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
+    </span>
+</mat-toolbar>  
+
+<div class="dialog" fxLayout="row" fxLayoutAlign="center center" style="margin-top: 120px;margin-left: 400px;" *ngIf="oglas">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Rezervisi</mat-card-title>
+        </mat-card-header>
+        <form class="form" #formControl="ngForm">
+            <mat-card-content>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Vlasnik</mat-label>
+                    <input [(ngModel)]="oglas.vozilo.user.firstname" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Mesto Preuzimanja</mat-label>
+                    <input [(ngModel)]="oglas.mesto" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Marka Vozila</mat-label>
+                    <input [(ngModel)]="oglas.vozilo.markaVozila" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Klasa Vozila</mat-label>
+                    <input [(ngModel)]="oglas.vozilo.klasaVozila" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Model Vozila</mat-label>
+                    <input [(ngModel)]="oglas.vozilo.modelVozila" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Tip Goriva</mat-label>
+                    <input [(ngModel)]="oglas.vozilo.tipgoriva" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Vrsta Menjaca</mat-label>
+                    <input [(ngModel)]="oglas.vozilo.vrstamenjaca" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                </mat-form-field>
+
+                <!-- ******************************************************************************************************* -->
+
+                <!-- Datum Preuzimanja -->
+                <mat-form-field class="full-width">
+                    <input [(ngModel)]="datumPreuzimanja" matInput [matDatepicker]="picker1" placeholder="Datum Preuzimanja"
+                        [ngModelOptions]="{standalone: true}" required disabled>
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1 disabled="false"></mat-datepicker>
+                </mat-form-field>
+
+                <!-- Vreme Preuzimanja -->
+                <p style="color: rgb(153, 152, 152);">Vreme Preuzimanja:</p>
+                <div class="ngx-timepicker-field-example">
+                    <ngx-timepicker-field [(ngModel)]="timeFrom" [ngModelOptions]="{standalone: true}"
+                        [defaultTime]="'12:00'" [format]="24" [controlOnly]="true"></ngx-timepicker-field>
+                </div>
+
+                <!-- ******************************************************************************************************* -->
+
+                <!-- Datum Povratka -->
+                <mat-form-field class="full-width">
+                    <input [(ngModel)]="datumPovratka" matInput  [matDatepicker]="picker2" placeholder="Datum Povratka"
+                        [ngModelOptions]="{standalone: true}" required disabled>
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2 disabled="false"></mat-datepicker>
+                </mat-form-field>
+
+                <!-- Vreme Povratka -->
+                <p style="color: rgb(153, 152, 152);">Vreme Povratka:</p>
+                <div class="ngx-timepicker-field-example">
+                    <ngx-timepicker-field [(ngModel)]="timeTo" [ngModelOptions]="{standalone: true}"
+                        [defaultTime]="'12:00'" [format]="24" [controlOnly]="true"></ngx-timepicker-field>
+                </div>
+
+            </mat-card-content>
+            <button mat-raised-button color="primary" (click)="onRezervisi()"
+                [disabled]="!formControl.valid">Rezervisi</button>
+        </form>
+    </mat-card>
+</div>

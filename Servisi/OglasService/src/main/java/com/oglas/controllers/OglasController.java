@@ -2,8 +2,11 @@
 package com.oglas.controllers;
 
 import com.oglas.dto.OglasDTO;
+import com.oglas.dto.OglasViewDTO;
 import com.oglas.dto.OglasVoziloDTO;
+import com.oglas.dto.UserViewDTO;
 import com.oglas.dto.VoziloDTO;
+import com.oglas.dto.VoziloViewDTO;
 import com.oglas.model.Oglas;
 import com.oglas.model.Vozilo;
 import com.oglas.repository.OglasRepository;
@@ -16,6 +19,7 @@ import org.springframework.http.ResponseEntity;
 //import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -41,6 +45,24 @@ public class OglasController {
 		this.voziloService=voziloService;
 	}
 	
+	@GetMapping
+	public List<Oglas> allOglasi(){
+		List<Oglas> oglasi = this.oglasService.allOglasi();
+		return oglasi;
+	}
+	
+	@GetMapping("/{id}")
+	public OglasViewDTO getOneOglas(@PathVariable("id") Long id ) {
+		//UserViewDTO user = oglasService.getUser(3L);
+		UserViewDTO user = new UserViewDTO();
+		user.setFirstname("Goran");
+		Oglas o = oglasService.getOneOglas(id);
+		Vozilo v = voziloService.getVozilo(o.getVozilo_id());
+		VoziloViewDTO vozilo = new VoziloViewDTO(v);
+		vozilo.setUser(user);
+		OglasViewDTO oglas = new OglasViewDTO(o, vozilo);
+		return oglas;
+	}
 	
 
 	@PostMapping("/create")

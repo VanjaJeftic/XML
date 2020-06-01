@@ -2,6 +2,7 @@ import { TokenInterceptor } from './interceptor/TokenInterceptor';
 import { AngularMaterialModule } from './angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,8 @@ import { NoviOglasComponent } from './components/userComponent/user/novi-oglas/n
 import { NoviOglasService } from './services/novi-oglas.service';
 import { PraviOglasComponent } from './components/userComponent/user/pravi-oglas/pravi-oglas.component'
 import { PraviOglasService } from './services/pravi-oglas.service';
+import { MyShopCartItemsComponent } from './components/userComponent/user/my-shop-cart-items/my-shop-cart-items.component';
+import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +30,8 @@ import { PraviOglasService } from './services/pravi-oglas.service';
     HomePageComponent,
     NoviOglasComponent,
     PraviOglasComponent,
+    MyShopCartItemsComponent,
+    VoziloDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,8 @@ import { PraviOglasService } from './services/pravi-oglas.service';
     BrowserAnimationsModule,
     AngularMaterialModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaterialTimepickerModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

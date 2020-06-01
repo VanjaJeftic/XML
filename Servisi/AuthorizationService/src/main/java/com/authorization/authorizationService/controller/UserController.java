@@ -80,5 +80,12 @@ public class UserController {
 //		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
     }
+    
+//**************************************************************************************
+    //Dobavljanje podataka o Useru
+    @GetMapping("/{id}")
+    public User getUser(@PathVariable("id") Long id) {
+    	return userService.getUser(id);
+    }
 
 }

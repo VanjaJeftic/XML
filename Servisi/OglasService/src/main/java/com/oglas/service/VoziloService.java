@@ -55,5 +55,9 @@ public class VoziloService {
         voziloRepository.deleteById(id);
         return;
     }
+    
+    public Vozilo getVozilo(Long id) {
+    	return this.voziloRepository.findById(id).get();
+    }
 
 }
