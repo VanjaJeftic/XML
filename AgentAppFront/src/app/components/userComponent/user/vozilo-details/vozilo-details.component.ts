@@ -89,24 +89,10 @@ export class VoziloDetailsComponent implements OnInit {
       this.shopCartItem.push(this.zahtev);
       window.localStorage.setItem('ShopCartItem', JSON.stringify(this.shopCartItem));
     }
-
-    // this.posaljiZahtev(this.zahtev).subscribe(
-    //   data => {
-    //     console.log(data);
-    //   }
-    // );
   }
 
   onOdjaviMe(){
+    window.localStorage.clear();
     this.authService.logout();
   }
-
-  posaljiZahtev(zahtev){
-    let headers = new HttpHeaders({
-      'Accept' : 'application/json',
-      'Content-Type' : 'application/json'
-    });
-    return this.http.post('http://localhost:8088/zahtev', zahtev, {headers: headers});
-  }
-
 }

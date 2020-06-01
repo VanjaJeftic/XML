@@ -129,6 +129,7 @@ public class Zahtev implements Serializable {
     	super();
     	this.preuzimanje = zahtevDTO.getPreuzimanje();
     	this.povratak = zahtevDTO.getPovratak();
+    	this.bundle = zahtevDTO.isBundle();
     }
     
 }

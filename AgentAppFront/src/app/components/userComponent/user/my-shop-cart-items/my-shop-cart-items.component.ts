@@ -1,3 +1,4 @@
+import { ZahtevService } from './../../../../services/zahtev.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ShopCartItems } from './../../../../models/shop-cart-items';
 import { Zahtev } from './../../../../models/zahtev';
@@ -17,7 +18,7 @@ export class MyShopCartItemsComponent implements OnInit {
 
   sendShopCart: ShopCartItems = new ShopCartItems();
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private zahtevService: ZahtevService) { }
 
   ngOnInit() {
     this.shopCartItems = JSON.parse(window.localStorage.getItem('ShopCartItem'));
@@ -39,20 +40,15 @@ export class MyShopCartItemsComponent implements OnInit {
     for(let z of this.shopCartItems){
       this.sendShopCart.zahtevi.push(z);
     }
-    
-    this.sendPostShopCartItems(this.sendShopCart).subscribe(
+
+    this.zahtevService.rezervisi(this.sendShopCart).subscribe(
       data => {
         console.log('Sacuvano!');
+        window.localStorage.clear();
       }
     );
-  
+    
   }
 
-  sendPostShopCartItems(shopCart){
-    let headers = new HttpHeaders({
-      'Accept' : 'application/json',
-      'Content-Type' : 'application/json'
-    });
-    return this.http.post('http://localhost:8088/zahtev', shopCart, {headers: headers});
-  }
+  
 }

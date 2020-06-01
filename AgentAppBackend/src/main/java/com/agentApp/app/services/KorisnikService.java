@@ -1,5 +1,7 @@
 package com.agentApp.app.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +17,10 @@ public class KorisnikService {
 	public Korisnik findOneKorisnik(Long id) {
 		return korisnikRepository.findById(id).get();
 	}
-	public Korisnik findByUserId(Long id) {
-		return korisnikRepository.findByUserId(id);
+	public Korisnik findOneByUserId(Long id) {
+		return korisnikRepository.findOneByUserId(id);
+	}
+	public List<Korisnik> findAllKorisnik(){
+		return korisnikRepository.findAll();
 	}
 }

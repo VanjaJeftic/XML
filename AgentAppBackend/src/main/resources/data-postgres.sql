@@ -22,7 +22,7 @@ INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (5, 1);
 INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (10, 1);
 INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (11, 1);
 
-insert into korisnik (user_id, aktivan, blokiran, uklonjen, odbijenizahtevi) values (3, true, false, false, 0);
+insert into korisnik (user_id, aktivan, blokiran, uklonjen, odbijenizahtevi) values (1, true, false, false, 0);
 insert into korisnik (user_id, aktivan, blokiran, uklonjen, odbijenizahtevi) values (4, true, false, false, 0);
 insert into korisnik (user_id, aktivan, blokiran, uklonjen, odbijenizahtevi) values (5, true, false, false, 0);
 

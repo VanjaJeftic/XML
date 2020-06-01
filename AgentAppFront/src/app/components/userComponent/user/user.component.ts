@@ -35,6 +35,7 @@ export class UserComponent implements OnInit {
   }
 
   onOdjaviMe(){
+    window.localStorage.clear();
     this.authService.logout();
   }
 

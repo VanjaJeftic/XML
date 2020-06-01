@@ -6,5 +6,5 @@ import com.agentApp.app.models.Korisnik;
 
 public interface KorisnikRepository extends JpaRepository<Korisnik, Long> {
 
-	Korisnik findByUserId(Long id);
+	Korisnik findOneByUserId(Long id);
 }
