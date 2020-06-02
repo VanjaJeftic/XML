@@ -7,6 +7,7 @@ import com.oglas.exceptions.NotFoundException;
 import com.oglas.model.Oglas;
 import com.oglas.repository.OglasRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,5 +85,16 @@ public class OglasService {
     
     public UserViewDTO getUser(Long id) {
     	return this.userConnection.getUser(id);
+    }
+    
+    public List<Oglas> findOglasiByVoziloID(Long id){
+    	List<Oglas> found = new ArrayList<Oglas>();
+    	List<Oglas> oglasi = (List<Oglas>) oglasRepository.findAll();
+    	for(Oglas o : oglasi) {
+    		if(o.getVozilo_id() == id) {
+    			found.add(o);
+    		}
+    	}
+    	return found;
     }
 }

@@ -3,11 +3,15 @@ package com.oglas.model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.oglas.dto.TerminZauzecaDTO;
@@ -28,6 +32,10 @@ public class TerminZauzeca implements Serializable {
     
     @Column(name="zauzetdo")
     private LocalDateTime zauzetdo;
+    
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "vehicle_id")
+    private Vozilo vehicle;
 
 	public Long getId() {
 		return id;
@@ -59,6 +67,15 @@ public class TerminZauzeca implements Serializable {
 
 	public void setZauzetdo(LocalDateTime zauzetdo) {
 		this.zauzetdo = zauzetdo;
+	}
+	
+
+	public Vozilo getVehicle() {
+		return vehicle;
+	}
+
+	public void setVehicle(Vozilo vehicle) {
+		this.vehicle = vehicle;
 	}
 
 	public TerminZauzeca() {

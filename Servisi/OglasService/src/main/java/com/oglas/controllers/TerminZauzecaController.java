@@ -11,13 +11,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import com.oglas.dto.TerminZauzecaDTO;
+import com.oglas.dto.TerminZauzecaZahtevDTO;
+import com.oglas.model.Oglas;
 import com.oglas.model.TerminZauzeca;
+import com.oglas.model.Vozilo;
 import com.oglas.repository.TerminZauzecaRepository;
+import com.oglas.service.OglasService;
 import com.oglas.service.TerminZauzecaService;
+import com.oglas.service.VoziloService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -28,6 +34,10 @@ public class TerminZauzecaController {
 	private TerminZauzecaRepository terminRepository;
 	private TerminZauzecaService terminServis;
 	
+	@Autowired
+	private VoziloService voziloServis;
+	@Autowired
+	private OglasService oglasServis;
 	
 	@Autowired
 	public TerminZauzecaController(TerminZauzecaRepository terminRepository, TerminZauzecaService terminServis) {
@@ -36,6 +46,20 @@ public class TerminZauzecaController {
 		this.terminServis = terminServis;
 	}
 
+	@PostMapping
+	public List<Oglas> zauzece(@RequestBody TerminZauzecaDTO termin){
+		TerminZauzecaZahtevDTO tzz = new TerminZauzecaZahtevDTO();
+		Vozilo vozilo = voziloServis.getVozilo(termin.getVozilo_id());
+		//TerminZauzeca newTermin = new TerminZauzeca(termin);
+		terminServis.createTermin(termin);
+		List<Oglas> oglasiZaVozilo = oglasServis.findOglasiByVoziloID(vozilo.getId());
+		for(Oglas o : oglasiZaVozilo) {
+			tzz.getOglasi().add(o.getId());
+		}
+		boolean ok = this.terminServis.zauzece(tzz);
+		
+		return oglasiZaVozilo;
+	}
 
 
 	@PostMapping("/createTermin")
