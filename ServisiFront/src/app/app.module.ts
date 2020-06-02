@@ -20,6 +20,8 @@ import { PraviOglasComponent } from './components/userComponent/user/pravi-oglas
 import { PraviOglasService } from './services/pravi-oglas.service';
 import { MyShopCartItemsComponent } from './components/userComponent/user/my-shop-cart-items/my-shop-cart-items.component';
 import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
+import { MojaVozilaComponent } from './components/userComponent/agent/moja-vozila/moja-vozila.component';
+import { TerminZauzecaDialogComponent } from './components/userComponent/agent/termin-zauzeca-dialog/termin-zauzeca-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,8 @@ import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-d
     PraviOglasComponent,
     MyShopCartItemsComponent,
     VoziloDetailsComponent,
+    MojaVozilaComponent,
+    TerminZauzecaDialogComponent,
   ],
   imports: [
     BrowserModule,

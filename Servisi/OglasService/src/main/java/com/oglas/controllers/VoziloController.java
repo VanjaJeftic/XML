@@ -2,7 +2,9 @@ package com.oglas.controllers;
 
 import com.oglas.dto.OglasDTO;
 import com.oglas.dto.OglasVoziloDTO;
+import com.oglas.dto.UserViewDTO;
 import com.oglas.dto.VoziloDTO;
+import com.oglas.dto.VoziloViewDTO;
 import com.oglas.model.ImageModel;
 import com.oglas.model.Oglas;
 import com.oglas.model.Vozilo;
@@ -35,6 +37,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.zip.DataFormatException;
@@ -54,6 +57,22 @@ public class VoziloController {
 
     @Autowired
     private VoziloRepository voziloRepository;
+    
+    @GetMapping
+    public List<VoziloViewDTO> allVozila(){		//Prepraviti da vraca vozila za ulogovanog korisnika
+    	List<VoziloViewDTO> agentskaVozila = new ArrayList<>();
+    	UserViewDTO user = new UserViewDTO();
+		user.setFirstname("Goran");
+		user.setId(2L);						//Prepraviti na ulogovanog agenta
+		
+    	List<Vozilo> vozila = voziloService.getVozila(user.getId());
+    	for(Vozilo v : vozila) {
+    		VoziloViewDTO agentskoVozilo = new VoziloViewDTO(v);
+    		agentskoVozilo.setUser(user);
+    		agentskaVozila.add(agentskoVozilo);
+    	}
+    	return agentskaVozila;
+    }
 
     @PostMapping("/novoVozilo")
     public BodyBuilder uplaodImage(@RequestParam("vozilomarka") String markaVozila,

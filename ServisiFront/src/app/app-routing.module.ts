@@ -1,3 +1,4 @@
+import { MojaVozilaComponent } from './components/userComponent/agent/moja-vozila/moja-vozila.component';
 import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
 import { UserComponent } from './components/userComponent/user/user.component';
 import { AgentComponent } from './components/userComponent/agent/agent.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'vozilo/novoVozilo', component: NoviOglasComponent },
   { path: 'vozilo/:id', component: VoziloDetailsComponent },
+  { path: 'vozila', component: MojaVozilaComponent },
   { path: 'oglas/create', component: PraviOglasComponent },
   { path: 'cart', component: MyShopCartItemsComponent },
 ];
