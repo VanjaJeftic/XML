@@ -2,16 +2,97 @@
     <div><a href="/" class="navlogo">Rent-A-Car Korisnik</a></div>
     <span class="nav-tool-items">
       <a mat-button mat-raised-button routerLink="/cart" routerLinkActive="active" (click)="shopCart()">Shopping Cart</a>
-      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
+      <a mat-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
     </span>
 </mat-toolbar>  
 
 <!-- OGLASI -->
 
-<div style="padding:20px;margin-top:30px;">
+<mat-card class="card-container">
+    <mat-card-header class="header-container" style="width: 100%;">
+      <mat-card-title><h1>Oglasi</h1></mat-card-title>
+    </mat-card-header>
     
-  <p style="font-size: 18px;">Oglasi:</p>
-    <table mat-table [dataSource]="oglasiSource" matSort class="mat-elevation-z8">
+    <mat-card-content class="content-container" style="display: inline-flex; width: 100%;">
+      <mat-grid-list class="content-left" cols="2" rowHeight="2:1">
+        <mat-grid-tile
+            *ngFor="let oglas of oglasiSource" style="margin: 15px;">
+            <mat-card class="oglas-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{oglas.vozilo.modelVozila.naziv}} </mat-card-title>
+                <mat-card-subtitle>{{oglas.vozilo.klasaVozila.naziv}}</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  {{oglas.vozilo.user.firstname}}
+                </p>
+                <p>
+                  {{oglas.mesto}}
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="onRezervisi(element)">Rezervisi</button>
+              </mat-card-actions>
+            </mat-card>
+
+        </mat-grid-tile>
+      </mat-grid-list>
+      
+      <div class="content-right">
+        <div class="search-container">
+        <mat-grid-list cols="3" rowHeight="4:1">
+          <mat-grid-tile [colspan]="3"> <h3>Pretraga</h3> </mat-grid-tile>
+        </mat-grid-list>
+        <hr>
+        <mat-form-field appearance="outline">
+          <mat-label>Mesto:</mat-label>
+          <input matInput placeholder="Unesite mesto">
+          <mat-icon matSuffix>location_city</mat-icon>
+        </mat-form-field>
+        <hr>
+        <mat-form-field>
+          <mat-label>Datum iznajmljivanja:</mat-label>
+          <input matInput [matDatepicker]="dp1" disabled>
+          <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+          <mat-datepicker #dp1 disabled="false"></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Datum vracanja:</mat-label>
+          <input matInput [matDatepicker]="dp2" disabled>
+          <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+          <mat-datepicker #dp2 disabled="false"></mat-datepicker>
+        </mat-form-field>
+        <hr>
+        <mat-form-field appearance="outline">
+          <mat-label>Marka:</mat-label>
+          <input matInput placeholder="Unesite marku">
+          <mat-icon matSuffix>directions_car</mat-icon>
+        </mat-form-field>
+        <hr>
+        <mat-form-field appearance="outline">
+          <mat-label>Model:</mat-label>
+          <input matInput placeholder="Unesite model">
+          <mat-icon matSuffix>directions_car</mat-icon>
+        </mat-form-field>
+        <hr>
+        <mat-form-field appearance="outline">
+          <mat-label>Minimalna cena:</mat-label>
+          <input matInput placeholder="Unesite cenu">
+          <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Maksimalna cena:</mat-label>
+          <input matInput placeholder="Unesite cenu">
+          <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+        <hr>
+        <button mat-raised-button color="primary" color="primary" style="width: 100%;">Pretrazi 
+          <mat-icon>search</mat-icon></button>
+        </div>
+      </div>
+
+    <!-- <table mat-table [dataSource]="oglasiSource" matSort class="mat-elevation-z8">
 
       <ng-container matColumnDef="Vlasnik">
         <th mat-header-cell *matHeaderCellDef> Vlasnik</th>
@@ -40,7 +121,6 @@
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-
-    <router-outlet></router-outlet>
-</div>
+    </table> -->
+  </mat-card-content>
+</mat-card>

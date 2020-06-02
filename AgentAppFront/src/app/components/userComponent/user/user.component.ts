@@ -15,7 +15,7 @@ import { MatTableDataSource } from '@angular/material';
 export class UserComponent implements OnInit {
 
   displayedColumns: string[] = ['Vlasnik', 'Mesto', 'Klasa', 'Model' ,'zakazi']
-  oglasiSource;
+  oglasiSource: Oglas[] = [];
 
   constructor(private authService: AuthenticationService, private oglasService: OglasService, private router: Router) { }
 
@@ -23,7 +23,8 @@ export class UserComponent implements OnInit {
 
     this.oglasService.getAllOglasi().subscribe(
       data => {
-        this.oglasiSource = new MatTableDataSource(data);
+        this.oglasiSource = data;
+        console.log(this.oglasiSource);
       }
     );
 
