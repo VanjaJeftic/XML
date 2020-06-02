@@ -57,6 +57,7 @@ public class OglasController {
 		UserViewDTO user = new UserViewDTO();
 		user.setFirstname("Goran");
 		Oglas o = oglasService.getOneOglas(id);
+		user.setId(o.getUser_id());
 		Vozilo v = voziloService.getVozilo(o.getVozilo_id());
 		VoziloViewDTO vozilo = new VoziloViewDTO(v);
 		vozilo.setUser(user);

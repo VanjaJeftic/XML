@@ -25,4 +25,9 @@ public class ZahtevService {
 		int size = zahtevi.size() - 1;
 		return (zahtevi.get(size)).getBundle_id();
 	}
+	public List<Zahtev> getAllZahtevi(){
+		List<Zahtev> zahtevi = zahtevRepository.findAll();
+		return zahtevi;
+	}
+	
 }

@@ -41,12 +41,12 @@ export class MyShopCartItemsComponent implements OnInit {
     }
 
     console.log(this.sendShopCart);
-    // this.zahtevService.rezervisi(this.sendShopCart).subscribe(
-    //   data => {
-    //     console.log('Sacuvano!');
-    //     window.localStorage.clear();
-    //   }
-    // );
+    this.zahtevService.rezervisi(this.sendShopCart).subscribe(
+      data => {
+        console.log('Sacuvano!');
+        window.localStorage.clear();
+      }
+    );
     
   }
 }

@@ -1,8 +1,9 @@
+import { OglasView } from './../../../../models/oglas-view';
 import { AuthenticationService } from './../../../../services/authentication.service';
 import { OglasService } from './../../../../services/oglas.service';
 import { Zahtev } from './../../../../models/zahtev';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-vozilo-details',
@@ -13,7 +14,7 @@ export class VoziloDetailsComponent implements OnInit {
 
   shopCartItem: Zahtev[] = [];
 
-  oglas;
+  oglas: OglasView;
   zahtev:Zahtev = new Zahtev();
 
   datumPreuzimanja: Date;
@@ -21,7 +22,8 @@ export class VoziloDetailsComponent implements OnInit {
   timeFrom: Date;
   timeTo: Date;
 
-  constructor(private route: ActivatedRoute, private oglasService: OglasService, private authService: AuthenticationService) { }
+  constructor(private route: ActivatedRoute, private oglasService: OglasService, private authService: AuthenticationService,
+              private router: Router) { }
 
   ngOnInit() {
     let idOglasa = parseInt(this.route.snapshot.paramMap.get('id'));
@@ -76,6 +78,7 @@ export class VoziloDetailsComponent implements OnInit {
     this.zahtev.preuzimanje = preuzimanje;
     this.zahtev.povratak = povratak;
     this.zahtev.oglas = this.oglas;
+    this.zahtev.oglas.id = this.oglas.id;
     console.log(this.zahtev);
 
     this.shopCartItem = JSON.parse(window.localStorage.getItem('ShopCartItem'));
@@ -92,5 +95,9 @@ export class VoziloDetailsComponent implements OnInit {
   onOdjaviMe(){
     window.localStorage.clear();
     this.authService.logout();
+  }
+
+  onShoppingCart(){
+    this.router.navigateByUrl('cart');
   }
 }

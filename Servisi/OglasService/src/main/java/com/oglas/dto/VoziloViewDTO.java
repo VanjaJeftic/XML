@@ -20,6 +20,7 @@ public class VoziloViewDTO {
 	}
 	
 	public VoziloViewDTO(Vozilo v) {
+		this.id = v.getId();
 		this.markaVozila = v.getMarkaVozila();
     	this.modelVozila = v.getModelVozila();
     	this.klasaVozila = v.getKlasaVozila();

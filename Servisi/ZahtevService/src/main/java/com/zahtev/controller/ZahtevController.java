@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +21,7 @@ import com.zahtev.model.Zahtev;
 import com.zahtev.service.ZahtevService;
 
 @RestController
+@CrossOrigin(origins = "*")
 //@RequestMapping(value = "/zahtev")
 public class ZahtevController {
 	
@@ -25,11 +30,18 @@ public class ZahtevController {
 	@Autowired
 	private ZahtevService zahtevService;
 	
+	@GetMapping("/test")
+	public String zahtevi(){
+//		List<Zahtev> zahtevi = zahtevService.getAllZahtevi();
+//		return zahtevi;
+		return "Hello from ZahteviService";
+	}
+	
 	@PostMapping("/zahtev")
-	public void create(@RequestBody ShopCartItemsDTO listaZahteva) {
+	public ResponseEntity<?> create(@RequestBody ShopCartItemsDTO listaZahteva) {
 
 		Set<Long> vlasnici = new HashSet<>();
-		List<ZahtevDTO> forBundle = new ArrayList<>();
+		Set<ZahtevDTO> forBundle = new HashSet<>();
 		Long groupID = zahtevService.getLastGroupID() + 1;
 		Long podnosilac = 3L;
 		
@@ -47,14 +59,15 @@ public class ZahtevController {
 				if(z.isBundle()) {
 					forBundle.add(z);
 				}else {
+					System.out.println("Nije bundle zahtev, id: " + z.getOglas().getId());
 					newZahtev.setBundle_id(0L);
 					zahtevService.save(newZahtev);
 				}
 			}
 		}
 		//BUNDLE Zahtevi
-		for(ZahtevDTO zahtev : forBundle) {
-			for(Long vlasnik : vlasnici) {
+		for(Long vlasnik : vlasnici) {
+			for(ZahtevDTO zahtev : forBundle) {
 				if(zahtev.getOglas().getVozilo().getUser().getId().equals(vlasnik)) {
 					Zahtev newZahtev = new Zahtev(zahtev);
 					newZahtev.setBundle_id(groupID);
@@ -65,7 +78,7 @@ public class ZahtevController {
 			}
 			groupID++;
 		}
-		
+		return new ResponseEntity<>(HttpStatus.OK);
 		//STARO
 //		List<Zahtev> validno = new ArrayList<>();
 //		for(ZahtevDTO zahtevDTO : listaZahteva.getZahtevi()) {
