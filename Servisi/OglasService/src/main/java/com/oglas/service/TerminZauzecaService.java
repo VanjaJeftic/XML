@@ -4,13 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.oglas.repository.TerminZauzecaRepository;
+import com.oglas.connections.ZahtevConnection;
 import com.oglas.dto.TerminZauzecaDTO;
+import com.oglas.dto.TerminZauzecaZahtevDTO;
 import com.oglas.exceptions.NotFoundException;
 import com.oglas.model.TerminZauzeca;
 @Service
 public class TerminZauzecaService {
 
 	private TerminZauzecaRepository terminRepository;
+	@Autowired
+	private ZahtevConnection zahtevConnection;
 
 	@Autowired
 	public TerminZauzecaService(TerminZauzecaRepository terminRepository) {
@@ -39,5 +43,9 @@ public class TerminZauzecaService {
 	 public void delete(Long id) {
 	        terminRepository.deleteById(id);
 	        return;
-	    }
+	 }
+	 
+	 public boolean zauzece(TerminZauzecaZahtevDTO tzz) {
+		 return this.zahtevConnection.zauzece(tzz);
+	 }
 }

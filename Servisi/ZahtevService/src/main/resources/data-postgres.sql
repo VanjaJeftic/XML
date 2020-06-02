@@ -1,0 +1,1 @@
+insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, povratak, status) values (1, 0, false, 3, '2020-05-24T19:00', '2020-05-25T20:00', 'PENDING');

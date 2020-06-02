@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.zahtev.connections.OglasConnection;
 import com.zahtev.dto.ShopCartItemsDTO;
+import com.zahtev.dto.TerminZauzecaZahtevDTO;
 import com.zahtev.dto.ZahtevDTO;
 import com.zahtev.model.Zahtev;
 import com.zahtev.service.ZahtevService;
@@ -89,6 +90,23 @@ public class ZahtevController {
 //			}
 //		}
 //		return validno;
-		
+	}
+	
+	@PostMapping("/zauzece")
+	public boolean zauzece(@RequestBody TerminZauzecaZahtevDTO terminZahtev){
+		List<Zahtev> zahtevi = this.zahtevService.getAllZahtevi();
+		if(zahtevi == null || zahtevi.size() < 1) {
+			System.out.println("Broj zahteva: " + zahtevi.size());
+			return false;
+		}
+		for(Long id : terminZahtev.getOglasi()) {
+			for(Zahtev z : zahtevi) {
+				if(z.getOglas_id() == id) {
+					z.setStatus("CANCELED");
+					this.zahtevService.save(z);
+				}
+			}
+		}
+		return true;
 	}
 }
