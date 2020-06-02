@@ -1,13 +1,13 @@
 package com.zahtev.controller;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zahtev.connections.OglasConnection;
@@ -28,10 +28,11 @@ public class ZahtevController {
 	@PostMapping("/zahtev")
 	public void create(@RequestBody ShopCartItemsDTO listaZahteva) {
 
-		List<Long> vlasnici = new ArrayList<>();
+		Set<Long> vlasnici = new HashSet<>();
 		List<ZahtevDTO> forBundle = new ArrayList<>();
-		Long groupID = zahtevService.getLastGroupID();
+		Long groupID = zahtevService.getLastGroupID() + 1;
 		Long podnosilac = 3L;
+		
 		
 		for(ZahtevDTO z : listaZahteva.getZahtevi()) {
 			vlasnici.add(z.getOglas().getVozilo().getUser().getId());
@@ -41,7 +42,7 @@ public class ZahtevController {
 			boolean postoji = oglasConnection.verify(z.getOglas().getId());
 			if(postoji) {
 				Zahtev newZahtev = new Zahtev(z);
-				newZahtev.setPodnosilac_id(3L);
+				newZahtev.setPodnosilac_id(podnosilac);
 				newZahtev.setStatus("PENDING");
 				if(z.isBundle()) {
 					forBundle.add(z);
@@ -58,7 +59,7 @@ public class ZahtevController {
 					Zahtev newZahtev = new Zahtev(zahtev);
 					newZahtev.setBundle_id(groupID);
 					newZahtev.setStatus("PENDING");
-					newZahtev.setPodnosilac_id(3L);
+					newZahtev.setPodnosilac_id(podnosilac);
 					zahtevService.save(newZahtev);
 				}
 			}

@@ -19,6 +19,9 @@ public class ZahtevService {
 	}
 	public Long getLastGroupID() {
 		List<Zahtev> zahtevi = zahtevRepository.findAll();
+		if(zahtevi == null || zahtevi.size() == 0) {
+			return 0L;
+		}
 		int size = zahtevi.size() - 1;
 		return (zahtevi.get(size)).getBundle_id();
 	}

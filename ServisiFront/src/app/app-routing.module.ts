@@ -18,8 +18,8 @@ const routes: Routes = [
   { path: 'administrator', component:  AdministratorComponent },
   { path: 'agent', component: AgentComponent },
   { path: 'user', component: UserComponent },
-  { path: 'vozilo/:id', component: VoziloDetailsComponent },
   { path: 'vozilo/novoVozilo', component: NoviOglasComponent },
+  { path: 'vozilo/:id', component: VoziloDetailsComponent },
   { path: 'oglas/create', component: PraviOglasComponent },
   { path: 'cart', component: MyShopCartItemsComponent },
 ];
