@@ -1,9 +1,9 @@
 import { PutanjaService } from './../putanje/putanja.service';
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpHeaders, HttpClient, } from '@angular/common/http';
 import { map, catchError} from 'rxjs/operators'
 import { Router } from '@angular/router';
+import { Headers, RequestOptions, Http, Response, URLSearchParams } from '@angular/http';
 
 @Injectable({
   providedIn: 'root'
@@ -17,17 +17,33 @@ export class AuthenticationService {
   login(username, password){
     const loginHeaders = new HttpHeaders({
       'Accept' : 'application/json',
-      'Content-Type' : 'application/json'
+      'Content-Type' : 'application/x-www-form-urlencoded; charset=utf-8"'
     });
     const body = {
       'username' : username,
-      'password' : password
+      'password' : password,
+    };
+
+    var data = {
+      grant_type:"password", 
+      username: username, 
+        password: password, 
+        client_id: "ecom_app"
     };
 
     return this.sendPostForLogin(this.putanjeService.login_url, body, loginHeaders)
-              .pipe(map((res => {
-                console.log('Login Success!');
-                this.saveTokenInStorage(res.accessToken);
+              .pipe(map((res => {var token=(res.loginHeaders()['x-token'] .headers()['x-token']);
+              sessionStorage.setItem("xtoken", token);
+               return $http.get(sessionStorage.getItem('apiUrl')+'/customer/customer')
+               .then(
+                   function(response){
+                     return response.data;
+                   }, 
+                   function(errResponse){
+                     console.error('Error while getting user info '+errResponse);
+                     return $q.reject(errResponse);
+                   }
+               );
               })));
   }
 
@@ -99,5 +115,50 @@ export class AuthenticationService {
 
       }
       throw error;
-  }
+  
+  validateUser: function(body){ 
+		  
+    var data = {
+          grant_type:"password", 
+          username: userCredentialDTO.userName, 
+            password: userCredentialDTO.password, 
+            client_id: "ecom_app"
+        };
+    
+   var encodedData = $httpParamSerializer(data);
+    var authUrl=sessionStorage.getItem('apiUrl')+"/security/oauth/token"
+    var req = {
+              method: 'POST', 
+              url: authUrl,
+              headers: {
+                  "Content-type": "application/x-www-form-urlencoded; charset=utf-8"
+              },
+              data: encodedData
+          };
+
+     return $http(req)
+    .then(
+        function(response){
+             var token=(response.headers()['x-token']);
+           sessionStorage.setItem("xtoken", token);
+            return $http.get(sessionStorage.getItem('apiUrl')+'/customer/customer')
+            .then(
+                function(response){
+                  return response.data;
+                }, 
+                function(errResponse){
+                  console.error('Error while getting user info '+errResponse);
+                  return $q.reject(errResponse);
+                }
+            );
+        }, 
+        function(errResponse){
+          console.error('Error while validating user'+errResponse);
+          return $q.reject(errResponse);
+        }
+    );  
+    
+    
+
+     }
 }

@@ -10,9 +10,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@Configuration
-public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
-
+//@Configuration
+public class WebSecurityConfiguration /*extends WebSecurityConfigurerAdapter*/ {
+/*
 
     @Autowired
     private UserDetailsService userDetailsService;
@@ -31,5 +31,5 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-    }
+    }*/
 }
