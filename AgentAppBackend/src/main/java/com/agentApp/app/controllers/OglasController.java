@@ -33,4 +33,8 @@ public class OglasController {
 		Oglas o = oglasService.findOneOglas(id);
 		return new ResponseEntity<Oglas>(o, HttpStatus.OK);
 	}
+
+
+
+
 }
