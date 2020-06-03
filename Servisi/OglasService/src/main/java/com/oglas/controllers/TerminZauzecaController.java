@@ -48,10 +48,14 @@ public class TerminZauzecaController {
 
 	@PostMapping
 	public List<Oglas> zauzece(@RequestBody TerminZauzecaDTO termin){
+		
+		System.out.println("Termin je: " + termin.getZauzetod());
+		
 		TerminZauzecaZahtevDTO tzz = new TerminZauzecaZahtevDTO();
 		Vozilo vozilo = voziloServis.getVozilo(termin.getVozilo_id());
-		//TerminZauzeca newTermin = new TerminZauzeca(termin);
+		
 		terminServis.createTermin(termin);
+		
 		List<Oglas> oglasiZaVozilo = oglasServis.findOglasiByVoziloID(vozilo.getId());
 		for(Oglas o : oglasiZaVozilo) {
 			tzz.getOglasi().add(o.getId());
