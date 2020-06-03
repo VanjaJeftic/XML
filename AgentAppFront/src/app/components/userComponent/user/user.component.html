@@ -41,13 +41,27 @@
       
       <div class="content-right">
         <div class="search-container">
-        <mat-grid-list cols="3" rowHeight="4:1">
-          <mat-grid-tile [colspan]="3"> <h3>Pretraga</h3> </mat-grid-tile>
+        <mat-grid-list cols="5" rowHeight="3:3">
+          <mat-grid-tile [colspan]="3"> <h2>Pretraga</h2> </mat-grid-tile>
+          <mat-grid-tile [colspan]="1">
+            <div>
+              <button mat-mini-fab style="background-color: rgb(107, 182, 138);" (click)="resetuj()" aria-label="Resetuj">
+                <mat-icon >autorenew</mat-icon>
+              </button>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="1">
+            <div >
+              <button mat-mini-fab color="primary" (click)="onPretrazi(mesto.value)" aria-label="Pretraga">
+                <mat-icon>search</mat-icon>
+              </button>
+            </div>
+          </mat-grid-tile>
         </mat-grid-list>
         <hr>
         <mat-form-field appearance="outline">
           <mat-label>Mesto:</mat-label>
-          <input matInput placeholder="Unesite mesto">
+          <input #mesto matInput placeholder="Unesite mesto">
           <mat-icon matSuffix>location_city</mat-icon>
         </mat-form-field>
         <hr>
@@ -87,7 +101,7 @@
           <mat-icon matSuffix>attach_money</mat-icon>
         </mat-form-field>
         <hr>
-        <button mat-raised-button color="primary" color="primary" style="width: 100%;">Pretrazi 
+        <button mat-raised-button color="primary" (click)="onPretrazi(mesto.value)" color="primary" style="width: 100%;">Pretrazi 
           <mat-icon>search</mat-icon></button>
         </div>
       </div>

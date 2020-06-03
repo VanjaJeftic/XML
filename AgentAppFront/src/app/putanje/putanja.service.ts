@@ -29,4 +29,7 @@ export class PutanjaService {
   get get_zahtev_url(): string{
     return this._zahtev_url;
   }
+  get get_search_url(): string{
+    return this._app_url + 'search';
+  }
 }
