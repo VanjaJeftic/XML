@@ -21,4 +21,9 @@ public class OglasService {
 	public List<Oglas> getAllOglasi(){
 		return oglasRepository.findAll();
 	}
+
+
+
+
+
 }

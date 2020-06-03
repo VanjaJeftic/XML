@@ -1,0 +1,22 @@
+.buttonPotvrdi {
+    background-color: green; /* Green */
+    border: none;
+    color: white;
+    padding: 13px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+
+  .buttonKorakUnazad {
+    background-color: gray; /* Green */
+    border: none;
+    color: white;
+    padding: 13px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
