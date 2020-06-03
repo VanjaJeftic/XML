@@ -52,6 +52,8 @@ public class TerminZauzecaController {
 		System.out.println("Termin je: " + termin.getZauzetod());
 		
 		TerminZauzecaZahtevDTO tzz = new TerminZauzecaZahtevDTO();
+		tzz.setPreuzimanje(termin.getZauzetod());
+		tzz.setPovratak(termin.getZauzetdo());
 		Vozilo vozilo = voziloServis.getVozilo(termin.getVozilo_id());
 		
 		terminServis.createTermin(termin);
