@@ -99,6 +99,7 @@ public class ZahtevController {
 			System.out.println("Broj zahteva: " + zahtevi.size());
 			return false;
 		}
+		System.out.println("Uci ce u for petlju!");
 		for(Long id : terminZahtev.getOglasi()) {
 			for(Zahtev z : zahtevi) {
 				if(z.getOglas_id() == id) {

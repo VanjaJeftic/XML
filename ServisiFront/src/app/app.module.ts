@@ -46,6 +46,7 @@ import { TerminZauzecaDialogComponent } from './components/userComponent/agent/t
     HttpClientModule,
     NgxMaterialTimepickerModule
   ],
+  entryComponents: [TerminZauzecaDialogComponent],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
