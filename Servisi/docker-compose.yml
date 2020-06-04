@@ -18,11 +18,36 @@ services:
       - xml
     ports:
       - "8092:8092"
+    links:
+      - postgresql-oglas
     environment:
-      - REGISTRY_HOST=eureka-serviceregistry
+      REGISTRY_HOST: eureka-serviceregistry
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: root
+      DATABASE_DOMAIN: postgresql-oglas
+      DATABASE_SCHEMA: oglas
     depends_on:
       - eureka-serviceregistry
-  
+
+  eureka-authorization-service:
+    build: ./AuthorizationService
+    container_name: eurekaAuthorizationService
+    restart: on-failure
+    networks:
+      - xml
+    ports:
+      - "8095:8095"
+    links:
+      - postgresql-mikros
+    environment:
+      REGISTRY_HOST: eureka-serviceregistry
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: root
+      DATABASE_DOMAIN: postgresql-mikros
+      DATABASE_SCHEMA: mikros
+    depends_on:
+      - eureka-serviceregistry
+
   eureka-zahtev-service:
     build: ./ZahtevService
     container_name: eurekaZahtevService
@@ -31,8 +56,14 @@ services:
       - xml
     ports:
       - "8093:8093"
+    links:
+      - postgresql-zahtev
     environment:
-      - REGISTRY_HOST=eureka-serviceregistry
+      REGISTRY_HOST: eureka-serviceregistry
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: root
+      DATABASE_DOMAIN: postgresql-zahtev
+      DATABASE_SCHEMA: zahtev
     depends_on:
       - eureka-serviceregistry
 
@@ -70,19 +101,6 @@ services:
       - xml
     ports:
       - "8101:8101"
-    environment:
-      - REGISTRY_HOST=eureka-serviceregistry
-    depends_on:
-      - eureka-serviceregistry
-
-  authorization:
-    build: ./AuthorizationService
-    container_name: eurekaAuthorizationServer
-    restart: on-failure
-    networks:
-      - xml
-    ports:
-      - "8095:8095"
     environment:
       - REGISTRY_HOST=eureka-serviceregistry
     depends_on:
@@ -154,14 +172,46 @@ services:
       - eureka-serviceregistry
       - eureka-oglas-service
       - eureka-zahtev-service
-      - admin
-      - agentvehicle
-      - authorization
-      - commentrating
-      - mail
-      - message
-      - search
-      - profil
+      - eureka-authorization-service
+      
+  postgresql-oglas:
+    image: postgres
+    container_name: postgresql-oglas
+    restart: always
+    networks:
+      - xml
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: oglas
+    ports:
+      - 5432:5432
+
+  postgresql-zahtev:
+    image: postgres
+    container_name: postgresql-zahtev
+    restart: always
+    networks:
+      - xml
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: zahtev
+    ports:
+      - 5433:5432
+
+  postgresql-mikros:
+    image: postgres
+    container_name: postgresql-mikros
+    restart: always
+    networks:
+      - xml
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: mikros
+    ports:
+      - 5434:5432
 
 networks:
   xml:
