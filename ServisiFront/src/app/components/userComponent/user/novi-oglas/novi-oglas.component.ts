@@ -39,9 +39,6 @@ export class NoviOglasComponent implements OnInit {
     }
   }
 
-  // public onFileChanged(event) {
-  //   this.selectedFile = event.target.files[0];
-  // }
 
   public onSubmit(): void{
     event.preventDefault();
@@ -53,27 +50,6 @@ export class NoviOglasComponent implements OnInit {
   }
 
 
-/*
-  onUpload() {
-    console.log(this.selectedFile);
-    
-    //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
-    const uploadImageData = new FormData();
-    uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
-  
-    //Make a call to the Spring Boot Application to save the image
-    this.noviOglasService.post('http://localhost:8080/image/upload', uploadImageData, { observe: 'response' })
-      .subscribe((response) => {
-        if (response.status === 200) {
-          this.message = 'Image uploaded successfully';
-        } else {
-          this.message = 'Image not uploaded successfully';
-        }
-      }
-      );
 
-
-  }
-*/
 
 }

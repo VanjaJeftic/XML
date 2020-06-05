@@ -12,12 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(value = "/menjac")
 public class VrstaMenjacaController {
-
-    @GetMapping("/hello-worlds")
-    public String helloWorld() {
-        return "Hello World ";
-    }
 
     private VrstaMenjacaService vrstaMenjacaService;
     private VrstaMenjacaRepository vrstaMenjacaRepository;
@@ -27,12 +24,10 @@ public class VrstaMenjacaController {
         this.vrstaMenjacaService=vrstaMenjacaService;
     }
 
-    @PostMapping("/createMenjac")
+    @PostMapping("/novaVrstaMenjaca")
     //@PreAuthorize("hasAuthority('create_oglas')")
     public ResponseEntity<?> createMenjac(@RequestBody VrstaMenjacaDTO vrstaMenjacaDTO) {
-
         VrstaMenjaca vrstaMenjaca = this.vrstaMenjacaService.createVrstaMenjaca(vrstaMenjacaDTO);
-
         return new ResponseEntity<>(vrstaMenjaca, HttpStatus.OK);
     }
 

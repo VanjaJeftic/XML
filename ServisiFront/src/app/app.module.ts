@@ -22,7 +22,14 @@ import { MyShopCartItemsComponent } from './components/userComponent/user/my-sho
 import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
 import { MojaVozilaComponent } from './components/userComponent/agent/moja-vozila/moja-vozila.component';
 import { TerminZauzecaDialogComponent } from './components/userComponent/agent/termin-zauzeca-dialog/termin-zauzeca-dialog.component';
+import { MarkaVozilaComponent } from './components/userComponent/marka-vozila/marka-vozila.component';
+import { TipGorivaComponent } from './components/userComponent/tip-goriva/tip-goriva.component';
+import { VrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/vrsta-menjaca.component';
+import { KlasaVozilaComponent } from './components/userComponent/klasa-vozila/klasa-vozila.component';
+import { ModelVozilaComponent } from './components/userComponent/model-vozila/model-vozila.component';
+
 import { Shared } from './models/shared';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +44,11 @@ import { Shared } from './models/shared';
     VoziloDetailsComponent,
     MojaVozilaComponent,
     TerminZauzecaDialogComponent,
+    MarkaVozilaComponent,
+    TipGorivaComponent,
+    VrstaMenjacaComponent,
+    KlasaVozilaComponent,
+    ModelVozilaComponent,
   ],
   imports: [
     BrowserModule,

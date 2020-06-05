@@ -10,6 +10,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { NoviOglasComponent } from './components/userComponent/user/novi-oglas/novi-oglas.component';
 import { PraviOglasComponent } from './components/userComponent/user/pravi-oglas/pravi-oglas.component';
 import { MyShopCartItemsComponent } from './components/userComponent/user/my-shop-cart-items/my-shop-cart-items.component';
+import { MarkaVozilaComponent } from './components/userComponent/marka-vozila/marka-vozila.component';
+import { KlasaVozilaComponent } from './components/userComponent/klasa-vozila/klasa-vozila.component';
+import { TipGorivaComponent } from './components/userComponent/tip-goriva/tip-goriva.component';
+import { VrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/vrsta-menjaca.component';
+import { ModelVozilaComponent } from './components/userComponent/model-vozila/model-vozila.component';
 
 
 const routes: Routes = [
@@ -24,6 +29,11 @@ const routes: Routes = [
   { path: 'vozila', component: MojaVozilaComponent },
   { path: 'oglas/create', component: PraviOglasComponent },
   { path: 'cart', component: MyShopCartItemsComponent },
+  { path: 'markaVozila', component: MarkaVozilaComponent},
+  { path: 'klasaVozila', component: KlasaVozilaComponent},
+  { path: 'gorivoVozila', component:TipGorivaComponent},
+  { path: 'menjacVozila', component:VrstaMenjacaComponent},
+  { path: 'modelVozila', component:ModelVozilaComponent},
 ];
 
 @NgModule({

@@ -12,12 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(value = "/klasa")
 public class KlasaVozilaController {
-
-    @GetMapping("/hello-worlds")
-    public String helloWorld() {
-        return "Hello World ";
-    }
 
     private KlasaVozilaService klasaVozilaService;
     private KlasaVozilaRepository klasaVozilaRepository;
@@ -27,7 +24,7 @@ public class KlasaVozilaController {
         this.klasaVozilaService=klasaVozilaService;
     }
 
-    @PostMapping("/createKlasa")
+    @PostMapping("/novaKlasa")
     //@PreAuthorize("hasAuthority('create_oglas')")
     public ResponseEntity<?> createKlasa(@RequestBody KlasaVozilaDTO klasaVozilaDTO) {
 

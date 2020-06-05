@@ -4,6 +4,15 @@ public class ModelVozilaDTO {
 
     private Long id;
     private String naziv;
+    private String id_marke;
+
+    public String getId_marke() {
+        return id_marke;
+    }
+
+    public void setId_marke(String id_marke) {
+        this.id_marke = id_marke;
+    }
 
     public Long getId() {
         return id;
@@ -24,8 +33,9 @@ public class ModelVozilaDTO {
     public ModelVozilaDTO() {
     }
 
-    public ModelVozilaDTO(Long id, String naziv) {
+    public ModelVozilaDTO(Long id, String naziv,String id_marke) {
         this.id = id;
         this.naziv = naziv;
+        this.id_marke=id_marke;
     }
 }

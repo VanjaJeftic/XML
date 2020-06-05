@@ -29,7 +29,6 @@ public class JwtTokenAuthenticationFilter extends  OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
-
     
         String header = request.getHeader(jwtConfig.getHeader());
 
@@ -39,6 +38,7 @@ public class JwtTokenAuthenticationFilter extends  OncePerRequestFilter {
         	chain.doFilter(request, response);  		// If not valid, go to the next filter.
             
         	return;
+
         }
 
         // If there is no token provided and hence the user won't be authenticated.
@@ -51,7 +51,6 @@ public class JwtTokenAuthenticationFilter extends  OncePerRequestFilter {
 
         try {	// exceptions might be thrown in creating the claims if for example the token is expired
 
- 
             Claims claims = Jwts.parser()
                     .setSigningKey(jwtConfig.getSecret().getBytes())
                     .parseClaimsJws(token)
@@ -62,6 +61,7 @@ public class JwtTokenAuthenticationFilter extends  OncePerRequestFilter {
             if(username != null) {
             
             	@SuppressWarnings("unchecked")
+
                 List<String> authorities = (List<String>) claims.get("authorities");
                 System.out.println("BITNO JAKO: " + authorities);
 

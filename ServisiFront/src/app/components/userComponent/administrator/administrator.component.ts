@@ -1,5 +1,7 @@
 import { AuthenticationService } from './../../../services/authentication.service';
+import { Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-administrator',
@@ -16,4 +18,7 @@ export class AdministratorComponent implements OnInit {
   onOdjaviMe(){
     this.authService.logout();
   }
+
+  
+
 }
