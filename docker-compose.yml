@@ -38,6 +38,44 @@ services:
     depends_on:
       - eureka-serviceregistry
 
+  eureka-authorization-service:
+    build: ./Servisi/AuthorizationService
+    container_name: eurekaAuthorizationService
+    restart: on-failure
+    networks:
+      - xml
+    ports:
+      - "8095:8095"
+    links:
+      - postgresql-mikros
+    environment:
+      REGISTRY_HOST: eureka-serviceregistry
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: root
+      DATABASE_DOMAIN: postgresql-mikros
+      DATABASE_SCHEMA: mikros
+    depends_on:
+      - eureka-serviceregistry
+
+  eureka-zahtev-service:
+    build: ./Servisi/ZahtevService
+    container_name: eurekaZahtevService
+    restart: on-failure
+    networks:
+      - xml
+    ports:
+      - "8093:8093"
+    links:
+      - postgresql-zahtev
+    environment:
+      REGISTRY_HOST: eureka-serviceregistry
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: root
+      DATABASE_DOMAIN: postgresql-zahtev
+      DATABASE_SCHEMA: zahtev
+    depends_on:
+      - eureka-serviceregistry
+
   postgresql-oglas:
     image: postgres
     container_name: postgresql-oglas
@@ -50,6 +88,32 @@ services:
       POSTGRES_DB: oglas
     ports:
       - 5432:5432
+
+  postgresql-zahtev:
+    image: postgres
+    container_name: postgresql-zahtev
+    restart: always
+    networks:
+      - xml
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: zahtev
+    ports:
+      - 5433:5432
+
+  postgresql-mikros:
+    image: postgres
+    container_name: postgresql-mikros
+    restart: always
+    networks:
+      - xml
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: mikros
+    ports:
+      - 5434:5432
 
   gateway-service:
     build: ./Servisi/GatewayService
@@ -64,6 +128,8 @@ services:
     depends_on:
       - eureka-serviceregistry
       - eureka-oglas-service
+      - eureka-zahtev-service
+      - eureka-authorization-service
 
 networks:
   xml:
