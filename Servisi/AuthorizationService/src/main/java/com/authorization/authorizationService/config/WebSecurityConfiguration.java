@@ -33,12 +33,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.addFilter(new UsernameAndPasswordAuthenticationFilter(authenticationManager(), jwtConfig))
 				.authorizeRequests()
 				.antMatchers("/login").permitAll();
-				//.antMatchers("/signin").permitAll()
-				//.antMatchers("/odjava").permitAll()
-				//.antMatchers("/changeKorisnik/**").permitAll()
-				//.antMatchers("/registerKorisnik").permitAll()
-				//.antMatchers("/registerAgent").permitAll()
-				//.anyRequest().authenticated();
 	}
 
 	@Override

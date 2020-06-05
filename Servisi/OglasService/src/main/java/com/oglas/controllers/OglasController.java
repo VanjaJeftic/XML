@@ -24,7 +24,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping(value = "/oglas")
+
 public class OglasController {
 
 	@GetMapping("/hello-worlds")

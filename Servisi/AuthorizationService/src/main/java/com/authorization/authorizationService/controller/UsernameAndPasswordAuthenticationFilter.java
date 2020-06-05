@@ -64,16 +64,13 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 	public UsernameAndPasswordAuthenticationFilter(AuthenticationManager authManager, JwtConfig jwtConfig) {
 		this.authManager = authManager;
 		this.jwtConfig = jwtConfig;
-		// po default-u, UsernamePasswordAuthenticationFilter prima zahtev po "/login" putanji,
-		// pa se, u slucaju drugacije putanje, mora override-ovati
+
 		this.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/signin", "POST"));
 	}
 	
 	@PostMapping("/login")
 	public ResponseEntity<Logovan> prijava(@RequestBody UserDTO dto){
-		//String[] kredencijali = dto.split(" ");
-		//LoggedUser user = signin(kredencijali[0], kredencijali[1]);
-		//return user.getUsername() + " " + user.getToken();
+		
 		return new ResponseEntity<Logovan>(signin(dto.getUsername(), dto.getPassword()), HttpStatus.OK);
 	}
 	
@@ -82,10 +79,10 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 			throws AuthenticationException {
 		try {
 			
-			// Uzimanje kredencijala iz zahteva
+			// Taking credientials from request 
 			UserCredentials creds = new ObjectMapper().readValue(request.getInputStream(), UserCredentials.class);
-			
-			// Kreiranje auth objekta, koji sadrzi kredencijale i koji ce authManager koristiti za validaciju
+
+			//Creating authetntication object that has credidentials and which is used in authenticationManager for validation
 			UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(creds.getUsername(), creds.getPassword(), Collections.emptyList());
 			return authManager.authenticate(authToken);
 			
