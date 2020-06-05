@@ -1,6 +1,15 @@
 version: '3.7'
 services:
 
+  servisi-front:
+    build: ./ServisiFront
+    container_name: serversFront
+    restart: on-failure
+    ports:
+      - "4200:4200"
+    networks:
+      - xml
+
   eureka-serviceregistry:
     build: ./Servisi/EurekaServer
     container_name: eurekaServerRegistry
