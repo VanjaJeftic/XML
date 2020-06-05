@@ -1,9 +1,32 @@
 <mat-toolbar color="primary" class="app-header">
     <div><a href="/" class="navlogo">Rent-A-Car Administrator</a></div>
     <span class="nav-tool-items">
+<span>
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/markaVozila">Dodaj Marku Vozila</a>
+      
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/klasaVozila">Dodaj Klasu Vozila</a>
+      
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/modelVozila">Dodaj Model Vozila</a>
+
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/gorivoVozila">Dodaj Tip Goriva</a>
+
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/menjacVozila">Dodaj Vrstu Menjaca</a>
+
+  
+
+    </span>
+
       <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
+
+     
+
     </span>
   </mat-toolbar>  
+
+
+
+
+
 
 <div style="padding:20px;margin-top:30px;">
     <router-outlet></router-outlet>

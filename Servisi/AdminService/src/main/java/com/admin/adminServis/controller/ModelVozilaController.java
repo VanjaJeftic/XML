@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(value = "/model")
 public class ModelVozilaController {
 
     @GetMapping("/hello-worlds")
@@ -27,7 +29,7 @@ public class ModelVozilaController {
         this.modelVozilaService=modelVozilaService;
     }
 
-    @PostMapping("/createModel")
+    @PostMapping("/sacuvajModel")
     //@PreAuthorize("hasAuthority('create_oglas')")
     public ResponseEntity<?> createModel(@RequestBody ModelVozilaDTO modelVozilaDTO) {
 
