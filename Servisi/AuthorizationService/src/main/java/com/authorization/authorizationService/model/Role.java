@@ -23,8 +23,9 @@ public class Role implements Serializable {
             @JoinColumn(name = "role_id", referencedColumnName = "id")}, inverseJoinColumns = {
             @JoinColumn(name = "permission_id", referencedColumnName = "id")})
     private List<Permission> permissions;
+    
 
-    public Long getId() {
+	public Long getId() {
         return id;
     }
 

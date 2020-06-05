@@ -3,7 +3,7 @@ import { AngularMaterialModule } from './angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
-
+import { FormGroup,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +20,16 @@ import { PraviOglasComponent } from './components/userComponent/user/pravi-oglas
 import { PraviOglasService } from './services/pravi-oglas.service';
 import { MyShopCartItemsComponent } from './components/userComponent/user/my-shop-cart-items/my-shop-cart-items.component';
 import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
+import { MojaVozilaComponent } from './components/userComponent/agent/moja-vozila/moja-vozila.component';
+import { TerminZauzecaDialogComponent } from './components/userComponent/agent/termin-zauzeca-dialog/termin-zauzeca-dialog.component';
+import { MarkaVozilaComponent } from './components/userComponent/marka-vozila/marka-vozila.component';
+import { TipGorivaComponent } from './components/userComponent/tip-goriva/tip-goriva.component';
+import { VrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/vrsta-menjaca.component';
+import { KlasaVozilaComponent } from './components/userComponent/klasa-vozila/klasa-vozila.component';
+import { ModelVozilaComponent } from './components/userComponent/model-vozila/model-vozila.component';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { Shared } from './models/shared';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +42,13 @@ import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-d
     PraviOglasComponent,
     MyShopCartItemsComponent,
     VoziloDetailsComponent,
+    MojaVozilaComponent,
+    TerminZauzecaDialogComponent,
+    MarkaVozilaComponent,
+    TipGorivaComponent,
+    VrstaMenjacaComponent,
+    KlasaVozilaComponent,
+    ModelVozilaComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,15 +57,20 @@ import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-d
     AngularMaterialModule,
     FormsModule,
     HttpClientModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    ReactiveFormsModule,
+    OwlDateTimeModule, 
+    OwlNativeDateTimeModule
   ],
+  entryComponents: [TerminZauzecaDialogComponent],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi: true
   },
     NoviOglasService,
-    PraviOglasService
+    PraviOglasService,
+    Shared
   ],
   bootstrap: [AppComponent]
 })

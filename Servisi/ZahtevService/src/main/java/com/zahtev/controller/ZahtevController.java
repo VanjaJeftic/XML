@@ -1,5 +1,6 @@
 package com.zahtev.controller;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.zahtev.connections.OglasConnection;
 import com.zahtev.dto.ShopCartItemsDTO;
+import com.zahtev.dto.TerminZauzecaZahtevDTO;
 import com.zahtev.dto.ZahtevDTO;
 import com.zahtev.model.Zahtev;
 import com.zahtev.service.ZahtevService;
@@ -89,6 +91,37 @@ public class ZahtevController {
 //			}
 //		}
 //		return validno;
+	}
+	
+	@PostMapping("/zauzece")
+	public boolean zauzece(@RequestBody TerminZauzecaZahtevDTO terminZahtev){
+		List<Zahtev> zahtevi = this.zahtevService.getAllZahtevi();
+		if(zahtevi == null || zahtevi.size() < 1) {
+			System.out.println("Broj zahteva: " + zahtevi.size());
+			return false;
+		}
 		
+		LocalDateTime preuzimanje = LocalDateTime.of(terminZahtev.getPreuzimanje().getYear(), terminZahtev.getPreuzimanje().getMonthValue(), terminZahtev.getPreuzimanje().getDayOfMonth(), terminZahtev.getPreuzimanje().getHour(), terminZahtev.getPreuzimanje().getMinute());
+		LocalDateTime povratak = LocalDateTime.of(terminZahtev.getPovratak().getYear(), terminZahtev.getPovratak().getMonthValue(), terminZahtev.getPovratak().getDayOfMonth(), terminZahtev.getPovratak().getHour(), terminZahtev.getPovratak().getMinute());
+		
+		for(Long id : terminZahtev.getOglasi()) {
+			for(Zahtev z : zahtevi) {
+				if(z.getOglas_id() == id && (z.getStatus().equals("PENDING")) ) {
+					LocalDateTime zahtevPreuzimanje = LocalDateTime.of(z.getPreuzimanje().getYear(), z.getPreuzimanje().getMonthValue(), z.getPreuzimanje().getDayOfMonth(), z.getPreuzimanje().getHour(), z.getPreuzimanje().getMinute());
+					LocalDateTime zahtevPovratak = LocalDateTime.of(z.getPovratak().getYear(), z.getPovratak().getMonthValue(), z.getPovratak().getDayOfMonth(), z.getPovratak().getHour(), z.getPovratak().getMinute());
+					
+					
+					if( (preuzimanje.isAfter(zahtevPreuzimanje) && povratak.isBefore(zahtevPovratak)
+							|| (preuzimanje.isBefore(zahtevPreuzimanje) && povratak.isAfter(zahtevPreuzimanje))) 
+							|| (preuzimanje.isBefore(zahtevPovratak) && povratak.isAfter(zahtevPovratak))
+							|| (preuzimanje.isBefore(zahtevPreuzimanje) && povratak.isAfter(zahtevPovratak)) ) {
+						System.out.println("Usao u izmenu statusa!");
+						z.setStatus("CANCELED");
+						this.zahtevService.save(z);
+					}
+				}
+			}
+		}
+		return true;
 	}
 }

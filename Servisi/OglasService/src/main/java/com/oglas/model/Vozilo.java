@@ -4,6 +4,9 @@ package com.oglas.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.oglas.dto.VoziloDTO;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -63,6 +66,10 @@ public class Vozilo {
 
     @Column(name = "user_id")
     private Long user_id;
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "vehicle", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<TerminZauzeca> zauzeti = new ArrayList<TerminZauzeca>();
 
     public Long getId() {
         return id;
@@ -143,10 +150,19 @@ public class Vozilo {
     public void setUser_id(Long user_id) {
         this.user_id = user_id;
     }
+    
+    
+    public List<TerminZauzeca> getZauzeti() {
+		return zauzeti;
+	}
 
-    public Vozilo() {
+	public void setZauzeti(List<TerminZauzeca> zauzeti) {
+		this.zauzeti = zauzeti;
+	}
+
+	public Vozilo() {
     }
-
+    
 
     public Vozilo(String markaVozila, String modelVozila, String klasaVozila, String tipgoriva, String vrstamenjaca, String predjeniKm, String brSedistaDeca, boolean cdw, Long user_id) {
         this.markaVozila = markaVozila;

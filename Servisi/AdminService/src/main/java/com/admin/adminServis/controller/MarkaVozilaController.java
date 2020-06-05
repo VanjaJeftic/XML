@@ -1,6 +1,4 @@
 package com.admin.adminServis.controller;
-
-
 import com.admin.adminServis.dto.MarkaVozilaDTO;
 import com.admin.adminServis.model.MarkaVozila;
 import com.admin.adminServis.repository.MarkaVozilaRepository;
@@ -10,17 +8,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(value = "/marka")
 public class MarkaVozilaController {
 
-    @GetMapping("/hello-worlds")
-    public String helloWorld() {
-        return "Hello World ";
-    }
-
+    @Autowired
     private MarkaVozilaService markaVozilaService;
+    @Autowired
     private MarkaVozilaRepository markaVozilaRepository;
 
     @Autowired
@@ -28,7 +27,7 @@ public class MarkaVozilaController {
         this.markaVozilaService=markaVozilaService;
     }
 
-    @PostMapping("/createMarka")
+    @PostMapping("/novaMarka")
     //@PreAuthorize("hasAuthority('create_oglas')")
     public ResponseEntity<?> createMarka(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
 
@@ -61,6 +60,30 @@ public class MarkaVozilaController {
         }
     }
 
+    @GetMapping("/markeVozila")
+    List<MarkaVozila> all() {
+        return markaVozilaRepository.findAll();
+    }
+
+/*
+    @GetMapping("/sveMarkeVozila")
+    public ResponseEntity<List<MarkaVozila>> getAllMarke(@RequestParam(required = false) String title) {
+       System.out.println("Dosli do controlera");
+            List<MarkaVozila> marke = new ArrayList<MarkaVozila>();
+
+            if (title == null)
+                markaVozilaRepository.findAll().forEach(marke::add);
+            else
+                markaVozilaRepository.findByNaziv(title).forEach(marke::add);
+
+            if (marke.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+
+            return new ResponseEntity<>(marke, HttpStatus.OK);
+
+    }
+*/
     @GetMapping("/verify/{markavozila_id}")
     public boolean verify(@PathVariable("markavozila_id") Long markavozila_id){
         return markaVozilaService.verify(markavozila_id);

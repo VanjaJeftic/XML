@@ -12,6 +12,7 @@ export class OglasService {
   constructor(private http: HttpClient, private putanja: PutanjaService) { }
 
   getOneOglas(id: number): Observable<OglasView>{
+    console.log(this.putanja.get_oglas_url + '/' + id)
     return this.http.get<OglasView>(this.putanja.get_oglas_url + '/' + id);
   }
 }

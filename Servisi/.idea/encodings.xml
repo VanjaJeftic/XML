@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/AdminService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AgentVehicleService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AuthorizationService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CommentRatingService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/EurekaServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/EurekaServer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GatewayService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GatewayService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MailService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MailService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MessageService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MessageService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OglasService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OglasService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProfilService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SearchService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SearchService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ZahtevService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ZahtevService/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

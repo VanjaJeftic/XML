@@ -104,11 +104,6 @@
 			<artifactId>jquery</artifactId>
 			<version>2.1.1</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
 
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -151,7 +146,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>AgentAppBackend</finalName>
 	</build>
-
-	<packaging>war</packaging>
 </project>

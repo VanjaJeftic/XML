@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AgentVehicleService/AgentVehicleService.iml" filepath="$PROJECT_DIR$/AgentVehicleService/AgentVehicleService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AuthorizationService/AuthorizationService.iml" filepath="$PROJECT_DIR$/AuthorizationService/AuthorizationService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CommentRatingService/CommentRatingService.iml" filepath="$PROJECT_DIR$/CommentRatingService/CommentRatingService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EurekaServer/EurekaServer.iml" filepath="$PROJECT_DIR$/EurekaServer/EurekaServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GatewayService/GatewayService.iml" filepath="$PROJECT_DIR$/GatewayService/GatewayService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MailService/MailService.iml" filepath="$PROJECT_DIR$/MailService/MailService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MessageService/MessageService.iml" filepath="$PROJECT_DIR$/MessageService/MessageService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OglasService/OglasService.iml" filepath="$PROJECT_DIR$/OglasService/OglasService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProfilService/ProfilService.iml" filepath="$PROJECT_DIR$/ProfilService/ProfilService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SearchService/SearchService.iml" filepath="$PROJECT_DIR$/SearchService/SearchService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Servisi.iml" filepath="$PROJECT_DIR$/.idea/Servisi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZahtevService/ZahtevService.iml" filepath="$PROJECT_DIR$/ZahtevService/ZahtevService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AdminService/adminServis.iml" filepath="$PROJECT_DIR$/AdminService/adminServis.iml" />
+    </modules>
+  </component>
+</project>

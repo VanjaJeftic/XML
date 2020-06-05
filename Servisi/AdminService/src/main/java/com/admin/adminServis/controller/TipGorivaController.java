@@ -14,12 +14,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(value = "/gorivo")
 public class TipGorivaController {
-
-    @GetMapping("/hello-worlds")
-    public String helloWorld() {
-        return "Hello World ";
-    }
 
     private TipGorivaRepository tipGorivaRepository;
     private TipGorivaService tipGorivaService;
@@ -29,7 +26,7 @@ public class TipGorivaController {
         this.tipGorivaService=tipGorivaService;
     }
 
-    @PostMapping("/createGorivo")
+    @PostMapping("/noviTipGoriva")
     //@PreAuthorize("hasAuthority('create_oglas')")
     public ResponseEntity<?> createGorivo(@RequestBody TipGorivaDTO tipGorivaDTO) {
 
