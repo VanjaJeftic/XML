@@ -41,6 +41,7 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
         		.antMatchers("/oglas/vozilo/novoVozilo").permitAll()
         		.antMatchers("/oglas/vozilo/**").permitAll()
                 .anyRequest().authenticated();
+
     }
 
     @Bean
