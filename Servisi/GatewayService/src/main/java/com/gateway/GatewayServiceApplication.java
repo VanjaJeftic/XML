@@ -11,9 +11,9 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-@EnableZuulProxy
-@EnableEurekaClient
 @SpringBootApplication
+@EnableEurekaClient
+@EnableZuulProxy
 public class GatewayServiceApplication {
 
 	public static void main(String[] args) {

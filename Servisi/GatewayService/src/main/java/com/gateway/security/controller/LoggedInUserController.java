@@ -1,17 +1,14 @@
-package com.gateway.security.config;
-import java.util.List;
-import java.util.stream.Collectors;
+package com.gateway.security.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gateway.security.config.JwtConfig;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 
@@ -53,6 +50,17 @@ public class LoggedInUserController {
 					.getBody();
 			System.out.println("claims: " + claims);
 			String username = claims.getSubject();
+			/*if(username != null) {
+				@SuppressWarnings("unchecked")
+				List<String> authorities = (List<String>) claims.get("authorities");
+				//System.out.println("BITNO JAKO: " + authorities);
+				
+				// 5. Create auth object
+				// UsernamePasswordAuthenticationToken: A built-in object, used by spring to represent the current authenticated / being authenticated user.
+				// It needs a list of authorities, which has type of GrantedAuthority interface, where SimpleGrantedAuthority is an implementation of that interface
+				 UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
+								 username, null, authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
+			}*/
 			return true;
 		} catch (Exception e) {
 			return false;

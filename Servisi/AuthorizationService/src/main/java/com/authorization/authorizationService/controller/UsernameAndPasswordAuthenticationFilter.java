@@ -19,6 +19,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.stereotype.Controller;
@@ -54,6 +55,8 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 	
 	@Autowired
 	JwtConfig jwtConfig;
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 	
 	
 	
@@ -122,11 +125,15 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 	
 	
 	private Logovan signin(String username, String password) {
-		try {
+	
 			Logovan loggedUser = new Logovan();
-			
+			System.out.println( "Enkodirana"+encoder.encode("123"));
 			UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(username, password, Collections.emptyList());
 			System.out.println("za proveru:" + authToken + "kraj" +authToken.getName()+authToken.getCredentials());
+			User user=userRepo.findByUsername(username);
+			System.out.println(user.getPassword()+password);
+			System.out.println( "Enkodirana"+encoder.encode("123"));
+			System.out.println(user.getPassword().equals(encoder.encode("123")));
 			Authentication authentication = authManager.authenticate(authToken);
 			System.out.println("Dolazak do security context");
 			SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -146,12 +153,9 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 			if(!userService.loadUserByUsername(username).isEnabled())
 				return null;
 			return loggedUser;
-		}catch (Exception e) {
-			System.out.println("neuspesna autentifikacija");
-			return null;
+
 		}
 		
-	}
 	
 	@Override
 	@Autowired

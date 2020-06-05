@@ -61,4 +61,10 @@ public class Permission implements  GrantedAuthority {
 		// TODO Auto-generated method stub
 		return this.name;
 	}
+
+	public Permission() {
+		super();
+	}
+	
+	
 }
