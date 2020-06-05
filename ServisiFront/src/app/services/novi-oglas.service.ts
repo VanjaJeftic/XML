@@ -27,7 +27,7 @@ export class NoviOglasService {
     fd.append('vozilokm', vozilo.predjeniKm);
     fd.append('vozilosedista', vozilo.brsedistadeca);
     console.log("Pre slanja");
-    return this.http.post('http://localhost:8092/vozilo/novoVozilo',fd,{ observe: 'response' }).subscribe((response) => {
+    return this.http.post('http://localhost:8662/oglas/vozilo/novoVozilo',fd,{ observe: 'response' }).subscribe((response) => {
               if (response.status === 200) {
     
                 this.message = 'Image uploaded successfully';

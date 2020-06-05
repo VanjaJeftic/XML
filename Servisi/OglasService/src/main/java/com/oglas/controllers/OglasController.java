@@ -23,8 +23,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping(value = "/oglas")
+@CrossOrigin(origins = "*")
+
 public class OglasController {
 
 	@GetMapping("/hello-worlds")

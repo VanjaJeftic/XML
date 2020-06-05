@@ -3,7 +3,7 @@ import { AngularMaterialModule } from './angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
-
+import { FormGroup,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,6 +27,9 @@ import { TipGorivaComponent } from './components/userComponent/tip-goriva/tip-go
 import { VrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/vrsta-menjaca.component';
 import { KlasaVozilaComponent } from './components/userComponent/klasa-vozila/klasa-vozila.component';
 import { ModelVozilaComponent } from './components/userComponent/model-vozila/model-vozila.component';
+
+import { Shared } from './models/shared';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +57,8 @@ import { ModelVozilaComponent } from './components/userComponent/model-vozila/mo
     AngularMaterialModule,
     FormsModule,
     HttpClientModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    ReactiveFormsModule
   ],
   entryComponents: [TerminZauzecaDialogComponent],
   providers: [{
@@ -63,7 +67,8 @@ import { ModelVozilaComponent } from './components/userComponent/model-vozila/mo
     multi: true
   },
     NoviOglasService,
-    PraviOglasService
+    PraviOglasService,
+    Shared
   ],
   bootstrap: [AppComponent]
 })

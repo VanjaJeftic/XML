@@ -26,19 +26,21 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .exceptionHandling().authenticationEntryPoint((req, rsp, e) -> rsp.sendError(HttpServletResponse.SC_UNAUTHORIZED))
                 .and()
-                // filter za validaciju tokena svakog zahteva
                 .addFilterAfter(new JwtTokenAuthenticationFilter(jwtConfig), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
                 //.antMatchers(HttpMethod.POST, jwtConfig.getUri()).permitAll()
-                .antMatchers("/validate").permitAll()
-                .antMatchers("/auth/prijava").permitAll()
-                .antMatchers("/auth/signin").permitAll()
-                .antMatchers("/auth/changeKorisnik/**").permitAll()
-                .antMatchers("/auth/registerAgent").permitAll()
-                .antMatchers("/auth/registerKorisnik").permitAll()
-                .antMatchers("/odjava").permitAll()
-                .antMatchers("/search/smestaj").permitAll()
-                .anyRequest().authenticated();
+                .antMatchers("/auth/login").permitAll()
+                .antMatchers("/oglas/**").permitAll()
+        		.antMatchers("/oglas/create").permitAll()
+        		.antMatchers("/oglas/update").permitAll()
+        		.antMatchers("/oglas/delete/**").permitAll()
+        		.antMatchers("/oglas/verify/**").permitAll()
+        		.antMatchers("/oglas/termin/createTermin").permitAll()
+        		.antMatchers("/oglas/termin/update").permitAll()
+        		.antMatchers("/oglas/termin/delete/**").permitAll()
+        		.antMatchers("/oglas/vozilo/novoVozilo").permitAll()
+        		.antMatchers("/oglas/vozilo/**").permitAll()
+            .anyRequest().authenticated();
     }
 
     @Bean

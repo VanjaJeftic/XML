@@ -3,16 +3,22 @@ package com.authorization.authorizationService.service;
 import com.authorization.authorizationService.dto.UserDTO;
 import com.authorization.authorizationService.exceptions.NotFoundException;
 import com.authorization.authorizationService.model.AuthUserDetail;
+import com.authorization.authorizationService.model.Permission;
 import com.authorization.authorizationService.model.User;
 import com.authorization.authorizationService.repository.UserDetailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AccountStatusUserDetailsChecker;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.ThreadContext;
 
-import java.util.Optional;
+import java.util.List;
 
 @Service("userDetailsService")
 public class UserDetailServiceImpl implements UserDetailsService {
@@ -20,16 +26,33 @@ public class UserDetailServiceImpl implements UserDetailsService {
     @Autowired
     private UserDetailRepository userDetailRepository;
 
+    private Logger logger = LogManager.getLogger();
+    
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
+    	
+    	User user = userDetailRepository.findByUsername(name);
+    	
+    	if (user != null) {
+    		
+			String authorities = user.getRoles().get(0).getName()+",";
+			if (!user.getRoles().get(0).getPermissions().isEmpty()) {
+				for (Permission p : user.getRoles().get(0).getPermissions()) {
+					authorities += (p.getName() + ",");
+				}
+			}
+			authorities = authorities.substring(0, authorities.length() - 1);
+			List<GrantedAuthority> grantedAuthorities = AuthorityUtils.commaSeparatedStringToAuthorityList(authorities);
+			// "User" klasu sadrzi Spring i tu klasu vraca UserDetailsService, a koristi se
+			// pri verifikaciji od strane authManagera
+			ThreadContext.put("user", name);
+			logger.info( "Korisnik autorizovan");
+			return new  org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities);
+		}else {
+			logger.info( "Nije pronadjen");
 
-        Optional<User> optionalUser = userDetailRepository.findByUsername(name);
-
-        optionalUser.orElseThrow(() -> new UsernameNotFoundException("Username or password wrong"));
-
-        UserDetails userDetails = new AuthUserDetail(optionalUser.get());
-        new AccountStatusUserDetailsChecker().check(userDetails);
-        return userDetails;
+			throw new UsernameNotFoundException("Korisnik ili agent: " + name + " nije pronadjen");
+		}
     }
 
     public User createUser(UserDTO userdto) {
