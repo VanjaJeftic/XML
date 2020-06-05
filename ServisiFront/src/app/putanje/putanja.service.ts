@@ -35,9 +35,9 @@ export class PutanjaService {
         return this._pravi_oglas_url;
     }
 
-  private _get_oglas_service_url = this._oglas_service_url + '/';
+  //private _get_oglas_service_url = this._oglas_service_url + '/';
     get get_oglas_url(): string {
-      return this._get_oglas_service_url;
+      return this._oglas_url;
     }
   
   private _send_zahtev_service_url = this._zahtev_service_url + '/zahtev';
