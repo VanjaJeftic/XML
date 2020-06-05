@@ -11,6 +11,7 @@ export class PutanjaService {
   private _oglas_url='http://localhost:8662/oglas'
   private _oglas_service_url = this._app_url + 'oglas';
   private _zahtev_service_url = this._app_url + 'zahtev';
+  private _search_service_url = this._app_url + 'search';
   private _vozilo_service_url = this._oglas_service_url + '/vozilo';
   private _termin_service_url = this._oglas_service_url + '/termin';
 
@@ -52,5 +53,8 @@ export class PutanjaService {
 
     get get_termin_url(): string{
       return this._termin_service_url;
+    }
+    get get_search_url(): string{
+      return this._search_service_url;
     }
 }

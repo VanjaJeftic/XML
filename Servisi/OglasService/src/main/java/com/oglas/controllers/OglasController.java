@@ -1,6 +1,7 @@
 
 package com.oglas.controllers;
 
+import com.oglas.connections.SearchConnection;
 import com.oglas.dto.OglasDTO;
 import com.oglas.dto.OglasViewDTO;
 import com.oglas.dto.OglasVoziloDTO;
@@ -38,6 +39,8 @@ public class OglasController {
 	private OglasRepository oglasRepository;
 	@Autowired
 	private VoziloRepository voziloRepository;
+	@Autowired
+	private SearchConnection searchConnection;
 
 	@Autowired
 	public OglasController(OglasService oglasService,VoziloService voziloService){
@@ -72,6 +75,7 @@ public class OglasController {
 
 		System.out.println("Usao"+ovDTO.getMesto()+ovDTO.getCena()+ovDTO.getPopust());
 		Oglas oglas = this.oglasService.createOrder(ovDTO);
+		Oglas search = this.searchConnection.createSearch(new Oglas(ovDTO));
 
 		return new ResponseEntity<>(oglas, HttpStatus.OK);
 	}

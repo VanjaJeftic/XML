@@ -1,6 +1,7 @@
 version: '3.7'
 services:
 
+
   servisi-front:
     build: ./ServisiFront
     container_name: serversFront

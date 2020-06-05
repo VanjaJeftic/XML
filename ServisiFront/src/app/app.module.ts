@@ -27,6 +27,7 @@ import { TipGorivaComponent } from './components/userComponent/tip-goriva/tip-go
 import { VrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/vrsta-menjaca.component';
 import { KlasaVozilaComponent } from './components/userComponent/klasa-vozila/klasa-vozila.component';
 import { ModelVozilaComponent } from './components/userComponent/model-vozila/model-vozila.component';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 import { Shared } from './models/shared';
 
@@ -58,7 +59,9 @@ import { Shared } from './models/shared';
     FormsModule,
     HttpClientModule,
     NgxMaterialTimepickerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OwlDateTimeModule, 
+    OwlNativeDateTimeModule
   ],
   entryComponents: [TerminZauzecaDialogComponent],
   providers: [{

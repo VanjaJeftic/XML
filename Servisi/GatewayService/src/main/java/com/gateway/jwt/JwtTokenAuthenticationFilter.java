@@ -29,6 +29,7 @@ public class JwtTokenAuthenticationFilter extends  OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
+
     
         String header = request.getHeader(jwtConfig.getHeader());
 
@@ -50,6 +51,7 @@ public class JwtTokenAuthenticationFilter extends  OncePerRequestFilter {
         String token = header.replace(jwtConfig.getPrefix(), "");
 
         try {	// exceptions might be thrown in creating the claims if for example the token is expired
+
 
             Claims claims = Jwts.parser()
                     .setSigningKey(jwtConfig.getSecret().getBytes())

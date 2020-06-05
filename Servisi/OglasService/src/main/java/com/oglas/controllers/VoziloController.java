@@ -73,6 +73,11 @@ public class VoziloController {
     	}
     	return agentskaVozila;
     }
+    @GetMapping("/{id}")
+    public Vozilo getVoziloById(@PathVariable("id") Long id){
+    	Vozilo v = voziloService.getVozilo(id);
+		return v;
+    }
 
     @PostMapping("/novoVozilo")
     public BodyBuilder uplaodImage(@RequestParam("vozilomarka") String markaVozila,
