@@ -1,21 +1,41 @@
 package com.authorization.authorizationService.model;
 
 import com.authorization.authorizationService.dto.PermissionDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 import javax.persistence.*;
+
+import org.springframework.security.core.GrantedAuthority;
+
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "permission")
-public class Permission implements Serializable {
+public class Permission implements  GrantedAuthority {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "name")
     private String name;
 
-    public Long getId() {
+    @ManyToMany
+    @JsonIgnore
+    protected List<Role> roles;
+    
+    
+    
+    public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
+	public Long getId() {
         return id;
     }
 
@@ -35,4 +55,10 @@ public class Permission implements Serializable {
         this.id = dto.getId();
         this.name = dto.getName();
     }
+
+	@Override
+	public String getAuthority() {
+		// TODO Auto-generated method stub
+		return this.name;
+	}
 }

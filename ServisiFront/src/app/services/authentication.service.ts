@@ -4,6 +4,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map, catchError} from 'rxjs/operators'
 import { Router } from '@angular/router';
+import { Shared } from '../models/shared';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,9 @@ export class AuthenticationService {
 
   loggedInUser: any;
 
-  constructor(private http: HttpClient, private router: Router, private putanjeService: PutanjaService) { }
+  constructor(private http: HttpClient, private router: Router, private putanjeService: PutanjaService,private share: Shared) { }
 
-  login(username, password){
+  loginn(username, password){
     const loginHeaders = new HttpHeaders({
       'Accept' : 'application/json',
       'Content-Type' : 'application/json'
@@ -100,4 +101,13 @@ export class AuthenticationService {
       }
       throw error;
   }
+
+  login(username,password){
+    const body = {
+      'username' : username,
+      'password' : password
+    };
+    return this.http.post('http://localhost:8095/login',body,{responseType:'text'});
+  }
+
 }

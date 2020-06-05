@@ -3,7 +3,7 @@ import { AngularMaterialModule } from './angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
-
+import { FormGroup,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +22,7 @@ import { MyShopCartItemsComponent } from './components/userComponent/user/my-sho
 import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
 import { MojaVozilaComponent } from './components/userComponent/agent/moja-vozila/moja-vozila.component';
 import { TerminZauzecaDialogComponent } from './components/userComponent/agent/termin-zauzeca-dialog/termin-zauzeca-dialog.component';
+import { Shared } from './models/shared';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { TerminZauzecaDialogComponent } from './components/userComponent/agent/t
     AngularMaterialModule,
     FormsModule,
     HttpClientModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    ReactiveFormsModule
   ],
   entryComponents: [TerminZauzecaDialogComponent],
   providers: [{
@@ -53,7 +55,8 @@ import { TerminZauzecaDialogComponent } from './components/userComponent/agent/t
     multi: true
   },
     NoviOglasService,
-    PraviOglasService
+    PraviOglasService,
+    Shared
   ],
   bootstrap: [AppComponent]
 })
