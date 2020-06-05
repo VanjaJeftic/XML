@@ -11,9 +11,36 @@ import { Router } from '@angular/router';
 export class AuthenticationService {
 
   loggedInUser: any;
+  TOKEN_KEY : string;
+  constructor(private http: HttpClient, private router: Router, private putanjeService: PutanjaService) {this.TOKEN_KEY="jwtToken"; }
 
-  constructor(private http: HttpClient, private router: Router, private putanjeService: PutanjaService) { }
 
+  getJwtToken() {
+    return localStorage.getItem(this.TOKEN_KEY);
+  };
+
+   setJwtToken(token) {
+      localStorage.setItem(this.TOKEN_KEY, token);
+  };
+
+  removeJwtToken() {
+      localStorage.removeItem(this.TOKEN_KEY);
+  };
+
+
+  createAuthorizationTokenHeader() {
+    var token = this.getJwtToken();
+    if (token) {
+        return {
+          "Authorization": "Bearer " + token,
+          'Content-Type': 'application/json'
+        };
+    } else {
+        return {
+          'Content-Type': 'application/json'
+        };
+    }
+}
   login(username, password){
     const loginHeaders = new HttpHeaders({
       'Accept' : 'application/json',
@@ -99,5 +126,23 @@ export class AuthenticationService {
 
       }
       throw error;
-  }
+    }
+
+    loginUser(username, password) {
+      console.log('Usao u loginUser');
+      let user={
+           "email": username,
+           "password": password
+               };
+      console.log(username,password);
+      return this.http.post('http://localhost:8095/login', user, {headers: this.createAuthorizationTokenHeader()});
+    }
+      
+  getLogged(token: string) {
+      return this.http.post('http://localhost:8662/auth/userprofile', token, {headers: this.createAuthorizationTokenHeader()});
+    }
+      
+  logOut() {
+      return this.http.get('http://localhost:8662/auth/logout', {headers: this.createAuthorizationTokenHeader()});
+    }
 }

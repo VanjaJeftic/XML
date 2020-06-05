@@ -4,11 +4,14 @@ import com.authorization.authorizationService.dto.PermissionDTO;
 import lombok.Data;
 
 import javax.persistence.*;
+
+import org.springframework.security.core.GrantedAuthority;
+
 import java.io.Serializable;
 
 @Entity
 @Table(name = "permission")
-public class Permission implements Serializable {
+public class Permission implements GrantedAuthority{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,4 +38,16 @@ public class Permission implements Serializable {
         this.id = dto.getId();
         this.name = dto.getName();
     }
+
+	@Override
+	public String getAuthority() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+
+	public Permission() {
+		super();
+	}
+	
+	
 }

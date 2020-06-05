@@ -15,9 +15,9 @@ import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
 import javax.sql.DataSource;
 
-@Configuration
-public class AuthorizationServerConfiguration implements AuthorizationServerConfigurer {
-
+//@Configuration
+public class AuthorizationServerConfiguration /*implements AuthorizationServerConfigurer*/ {
+/*
     @Autowired
     private PasswordEncoder passwordEncoder;
     @Autowired
@@ -47,5 +47,5 @@ public class AuthorizationServerConfiguration implements AuthorizationServerConf
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints.tokenStore(jdbcTokenStore());
         endpoints.authenticationManager(authenticationManager);
-    }
+    }*/
 }

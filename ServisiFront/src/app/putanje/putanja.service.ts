@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class PutanjaService {
 
   private _app_url = 'http://localhost:8662/';
-  private _authentication_url = 'http://localhost:8662/auth';
+  private _authentication_url = 'http://localhost:8095';
   private _oglas_url='http://localhost:8092/'
   private _oglas_service_url = this._app_url + 'oglas';
   private _zahtev_service_url = this._app_url + 'zahtev';

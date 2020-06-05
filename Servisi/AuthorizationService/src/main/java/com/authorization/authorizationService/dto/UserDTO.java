@@ -3,6 +3,7 @@ package com.authorization.authorizationService.dto;
 import com.authorization.authorizationService.model.Role;
 
 import java.util.List;
+import java.util.Set;
 
 public class UserDTO {
 

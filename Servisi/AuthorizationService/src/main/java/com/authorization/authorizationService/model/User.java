@@ -1,14 +1,24 @@
 package com.authorization.authorizationService.model;
 
 import com.authorization.authorizationService.dto.UserDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import javax.persistence.*;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
-public class User implements Serializable {
+public class User implements UserDetails {
     public User() {
     }
 
@@ -20,7 +30,7 @@ public class User implements Serializable {
         this.accountNonExpired = user.isAccountNonExpired();
         this.credentialsNonExpired = user.isCredentialsNonExpired();
         this.accountNonLocked = user.isAccountNonLocked();
-        this.roles = user.getRoles();
+        this.roles = (Set<Role>) user.getRoles();
         this.nalogAktivan=user.isNalogAktivan();
     }
 
@@ -45,16 +55,31 @@ public class User implements Serializable {
     @Column(name = "nalogaktivan")
     private boolean nalogAktivan;
 
+    @JsonIgnore
+	@Column(name = "last_password_reset_date")
+	    private Date lastPasswordResetDate;
+    
+    
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "role_user", joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
             inverseJoinColumns = {
                     @JoinColumn(name = "role_id", referencedColumnName = "id")})
-    private List<Role> roles;
+    private Set<Role> roles;
 
     public User(User user) {
     }
 
-    public boolean isNalogAktivan() {
+    
+    
+    public Date getLastPasswordResetDate() {
+		return lastPasswordResetDate;
+	}
+
+	public void setLastPasswordResetDate(Date lastPasswordResetDate) {
+		this.lastPasswordResetDate = lastPasswordResetDate;
+	}
+
+	public boolean isNalogAktivan() {
         return nalogAktivan;
     }
 
@@ -70,17 +95,13 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
-    }
+
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
+
 
     public void setPassword(String password) {
         this.password = password;
@@ -94,43 +115,90 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public boolean isEnabled() {
-        return enabled;
-    }
+
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
 
-    public boolean isAccountNonExpired() {
-        return accountNonExpired;
-    }
+ 
 
     public void setAccountNonExpired(boolean accountNonExpired) {
         this.accountNonExpired = accountNonExpired;
     }
 
-    public boolean isCredentialsNonExpired() {
-        return credentialsNonExpired;
-    }
+
 
     public void setCredentialsNonExpired(boolean credentialsNonExpired) {
         this.credentialsNonExpired = credentialsNonExpired;
     }
 
-    public boolean isAccountNonLocked() {
-        return accountNonLocked;
-    }
+
 
     public void setAccountNonLocked(boolean accountNonLocked) {
         this.accountNonLocked = accountNonLocked;
     }
 
-    public List<Role> getRoles() {
+    public Set<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<Role> roles) {
+    public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+	
+	@Override
+	@Transient
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		if(!this.roles.isEmpty()) {
+			Role r = roles.iterator().next();
+			List<Permission> privileges = new ArrayList<Permission>();
+			for(Permission p : r.getPermissions()) {
+				privileges.add(p);
+			}
+			
+			return privileges;
+		}
+		
+		return null;
+	}
+
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return password;
+	}
+
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return this.email;
+	}
 }
