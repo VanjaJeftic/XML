@@ -40,8 +40,13 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
         		.antMatchers("/oglas/termin/delete/**").permitAll()
         		.antMatchers("/oglas/vozilo/novoVozilo").permitAll()
         		.antMatchers("/oglas/vozilo/**").permitAll()
+        		.antMatchers("/zahtev/**").permitAll()
+                .antMatchers("/search/**").permitAll()
+                .antMatchers("/search/search/**").permitAll()
+                .antMatchers("/search/search/create").permitAll()
+                .antMatchers("/search/search/getAll/**").permitAll()
+                .antMatchers("/search/search/getSearched/**").permitAll()
                 .anyRequest().authenticated();
-
     }
 
     @Bean

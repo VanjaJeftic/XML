@@ -1,10 +1,11 @@
-package com.search.service;
+package com.search.SearchService.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.search.model.Search;
-import com.search.repository.SearchRepository;
+
+import com.search.SearchService.model.Search;
+import com.search.SearchService.repository.SearchRepository;
 
 @Service
 public class SearchService {

@@ -8,6 +8,6 @@ import com.oglas.model.Oglas;
 
 @FeignClient(name = "eureka-zahtev-service")
 public interface SearchConnection {
-	@PostMapping("/create")
+	@PostMapping("/search/create")
 	Oglas createSearch(@RequestBody Oglas oglas);
 }

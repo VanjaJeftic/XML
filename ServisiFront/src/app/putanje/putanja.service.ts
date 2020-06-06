@@ -55,6 +55,6 @@ export class PutanjaService {
       return this._termin_service_url;
     }
     get get_search_url(): string{
-      return this._search_service_url;
+      return this._search_service_url+'/search';
     }
 }

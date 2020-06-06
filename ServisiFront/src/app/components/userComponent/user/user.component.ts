@@ -10,6 +10,7 @@ import { stringify } from 'querystring';
 import { SearchService } from 'src/app/services/search.service';
 import { Search } from 'src/app/models/search.model';
 import { DateTimeAdapter } from 'ng-pick-datetime';
+import { SearchView } from 'src/app/models/search-view.model';
 
 @Component({
   selector: 'app-user',
@@ -57,14 +58,24 @@ export class UserComponent implements OnInit {
   }
 
   onPretrazi(mesto : string, datum : string, marka : string, model : string, maksimalnaCena : string, minimalnaCena : string){
-    this.searchService.pretrazi(mesto, minimalnaCena, maksimalnaCena, datum, model, marka).subscribe(res=>{
+    let pomocniSearch : SearchView = new SearchView();
+    pomocniSearch.datumi = datum;
+    pomocniSearch.mesto = mesto;
+    pomocniSearch.marka = marka;
+    pomocniSearch.model = model;
+    pomocniSearch.maksimalnaCena = maksimalnaCena;
+    pomocniSearch.minimalnaCena = minimalnaCena;
+
+    this.searchService.pretrazi(pomocniSearch).subscribe(res=>{
       console.log(res);
       this.oglasiSource = res as Search[];
     });
   }
 
-  getDatum(d : Date){
-    let datum: string = (d[2]>=10?d[2]:"0"+d[2]) + "-" + (d[1]>=10?d[1]:"0"+d[1]) + "-" + d[0] + ", " + (d[3]>=10?d[3]:"0"+d[3]) + ":" + (d[4]>=10?d[4]:"0"+d[4]);
+  getDatum(da : Date){
+    let d : Date = new Date(da.toString());
+    console.log(d.getFullYear());
+    let datum: string = (d.getDay()>=10?d.getDay():"0"+d.getDay()) + "-" + (d.getMonth()>=10?d.getMonth():"0"+d.getMonth()) + "-" + d.getFullYear() + ", " + (d.getHours()>=10?d.getHours():"0"+d.getHours()) + ":" + (d.getMinutes()>=10?d.getMinutes():"0"+d.getMinutes());
     return datum;
   }
 }
