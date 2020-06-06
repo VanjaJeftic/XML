@@ -22,10 +22,10 @@
           <mat-card-header style="padding: 0.5rem;">
             <!-- <div mat-card-avatar class="example-header-image"></div> -->
             <mat-card-title>
-              {{oglas.vozilo_markaVozila}} {{oglas.vozilo_modelVozila}} {{oglas.vozilo_klasaVozila}}
+              {{oglas.markaVozila}} {{oglas.modelVozila}} {{oglas.klasaVozila}}
             </mat-card-title>
             <mat-card-subtitle>
-              autor: {{oglas.user_firtname}}
+              autor: {{oglas.userfirstname}}
             </mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
@@ -37,10 +37,10 @@
               {{getDatum(oglas.slobodanDo)}}
             </p>
             <p>
-              <span style="color: rgb(93, 93, 93);">Tip goriva: </span>{{oglas.vozilo_tipGoriva}}
+              <span style="color: rgb(93, 93, 93);">Tip goriva: </span>{{oglas.tipGoriva}}
             </p>
             <p>
-              <span style="color: rgb(93, 93, 93);">Vrsta menjaca: </span>{{oglas.vozilo_vrstaMenjaca}}
+              <span style="color: rgb(93, 93, 93);">Vrsta menjaca: </span>{{oglas.vrstaMenjaca}}
             </p>
           </mat-card-content>
           <mat-card-actions>

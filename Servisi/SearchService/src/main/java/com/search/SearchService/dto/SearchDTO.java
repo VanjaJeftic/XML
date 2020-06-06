@@ -1,4 +1,4 @@
-package com.search.dto;
+package com.search.SearchService.dto;
 
 public class SearchDTO {
 	private String mesto;

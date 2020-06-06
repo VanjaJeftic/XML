@@ -1,16 +1,6 @@
 version: '3.7'
 services:
 
-
-  servisi-front:
-    build: ./ServisiFront
-    container_name: serversFront
-    restart: on-failure
-    ports:
-      - "4200:4200"
-    networks:
-      - xml
-
   eureka-serviceregistry:
     build: ./Servisi/EurekaServer
     container_name: eurekaServerRegistry
@@ -76,6 +66,25 @@ services:
       DATABASE_SCHEMA: zahtev
     depends_on:
       - eureka-serviceregistry
+      
+  eureka-search-service:
+    build: ./Servisi/SearchService
+    container_name: eurekaSearchService
+    restart: on-failure
+    networks:
+      - xml
+    ports:
+      - "8100:8100"
+    links:
+      - postgresql-search
+    environment:
+      REGISTRY_HOST: eureka-serviceregistry
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: root
+      DATABASE_DOMAIN: postgresql-search
+      DATABASE_SCHEMA: search
+    depends_on:
+      - eureka-serviceregistry
 
   postgresql-oglas:
     image: postgres
@@ -87,6 +96,19 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
       POSTGRES_DB: oglas
+    ports:
+      - 5432:5432
+      
+  postgresql-search:
+    image: postgres
+    container_name: postgresql-search
+    restart: always
+    networks:
+      - xml
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: search
     ports:
       - 5432:5432
 
@@ -131,6 +153,7 @@ services:
       - eureka-oglas-service
       - eureka-zahtev-service
       - eureka-authorization-service
+      - eureka-search-service
 
 networks:
   xml:

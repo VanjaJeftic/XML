@@ -1,13 +1,11 @@
 import { Router } from '@angular/router';
 import { OglasService } from './../../../services/oglas.service';
 import { Oglas } from './../../../models/oglas';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from './../../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
-import { stringify } from 'querystring';
 import { SearchService } from 'src/app/services/search.service';
+import { DateTimeAdapter } from 'ng-pick-datetime';
+import { Search } from 'src/app/models/search.model';
 
 @Component({
   selector: 'app-user',
@@ -19,8 +17,11 @@ export class UserComponent implements OnInit {
   displayedColumns: string[] = ['Vlasnik', 'Mesto', 'Klasa', 'Model' ,'zakazi']
   sviOglasi: Oglas[] = [];
   oglasiSource: Oglas[] = [];
+  startAt: Date = new Date();
 
-  constructor(private authService: AuthenticationService, private oglasService: OglasService, private router: Router, private searchService: SearchService) { }
+  constructor(dateTimeAdapter: DateTimeAdapter<any>, private authService: AuthenticationService, private oglasService: OglasService, private router: Router, private searchService: SearchService) {
+    dateTimeAdapter.setLocale('en-GB');
+   }
 
   ngOnInit() {
 
@@ -30,6 +31,7 @@ export class UserComponent implements OnInit {
         this.sviOglasi = data;
       }
     );
+    this.startAt.setHours(this.startAt.getHours() + 48);
 
   }
 
@@ -51,13 +53,23 @@ export class UserComponent implements OnInit {
     this.oglasiSource = this.sviOglasi;
   }
 
-  onPretrazi(mesto : string){
-    let pomocniOglas : Oglas = new Oglas();
-    console.log(mesto);
-    pomocniOglas.mesto = mesto;
-    this.searchService.pretrazi(pomocniOglas).subscribe(res=>{
-      console.log(res);
+  onPretrazi(mesto : string, datum : string, marka : string, model : string, maksimalnaCena : string, minimalnaCena : string){
+    let pomocniSearch : Search = new Search();
+    pomocniSearch.mesto = mesto;
+    pomocniSearch.datumi = datum;
+    pomocniSearch.marka = marka;
+    pomocniSearch.model = model;
+    pomocniSearch.minimalnaCena = minimalnaCena;
+    pomocniSearch.maksimalnaCena = maksimalnaCena;
+    console.log(pomocniSearch);
+    
+    this.searchService.pretrazi(pomocniSearch).subscribe(res=>{
       this.oglasiSource = res as Oglas[];
     });
+  }
+
+  getDatum(d : Date){
+    let datum: string = (d[2]>=10?d[2]:"0"+d[2]) + "-" + (d[1]>=10?d[1]:"0"+d[1]) + "-" + d[0] + ", " + (d[3]>=10?d[3]:"0"+d[3]) + ":" + (d[4]>=10?d[4]:"0"+d[4]);
+    return datum;
   }
 }

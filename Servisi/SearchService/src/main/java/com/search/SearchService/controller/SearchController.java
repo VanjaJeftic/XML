@@ -1,4 +1,4 @@
-package com.search.controller;
+package com.search.SearchService.controller;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -16,14 +16,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.search.connections.UserConnection;
-import com.search.connections.VoziloConnection;
-import com.search.dto.OglasDTO;
-import com.search.dto.UserDTO;
-import com.search.dto.VoziloDTO;
-import com.search.model.Search;
-import com.search.service.SearchService;
 
+import com.search.SearchService.connections.UserConnection;
+import com.search.SearchService.connections.VoziloConnection;
+import com.search.SearchService.dto.OglasDTO;
+import com.search.SearchService.dto.SearchDTO;
+import com.search.SearchService.dto.UserDTO;
+import com.search.SearchService.dto.VoziloDTO;
+import com.search.SearchService.model.Search;
+import com.search.SearchService.service.SearchService;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -38,7 +39,7 @@ public class SearchController {
 	@Autowired
 	private UserConnection userConnection;
 	
-	@GetMapping
+	@GetMapping("/getAll")
 	public ResponseEntity<List<Search>> allOglasi(){
 		List<Search> oglasi = this.searchService.getAllSearch();
 		return new ResponseEntity<List<Search>>(oglasi, HttpStatus.OK);
@@ -55,18 +56,16 @@ public class SearchController {
 		return new ResponseEntity<OglasDTO>(oglas, HttpStatus.BAD_REQUEST);
 	}
 	
-	@PostMapping
-	public ResponseEntity<List<Search>> search(@RequestParam("mesto") String mesto,
-            							 @RequestParam("datumi") String datumi,
-            							 @RequestParam("marka") String marka,
-            							 @RequestParam("model") String model,
-            							 @RequestParam("mincena") String minCena,
-            							 @RequestParam("maxcena") String maxCena) throws IOException {
+	@PostMapping("/getSearched")
+	public ResponseEntity<List<Search>> search(@RequestBody SearchDTO search) {
+		System.out.println('\n'+search.getMarka() + '\n');
+		System.out.println('\n'+search.getMarka() + '\n');
+		System.out.println('\n'+search.getMarka() + '\n');
 		
 		List<Search> pretrazeniOglasi = new ArrayList<>();
 		List<Search> sviOglasi = searchService.getAllSearch();
 		for(Search s : sviOglasi) {
-			if(isMestoValid(s,mesto) && isDatumValid(s,datumi) && isMarkaValid(s,marka) && isModelValid(s,model) && isCenaValid(s,minCena,maxCena)) {
+			if(isMestoValid(s,search.getMesto()) && isDatumValid(s,search.getDatumi()) && isMarkaValid(s,search.getMarka()) && isModelValid(s,search.getModel()) && isCenaValid(s,search.getMinimalnaCena(),search.getMaksimalnaCena())) {
 				pretrazeniOglasi.add(s);
 			}
 			
@@ -85,7 +84,7 @@ public class SearchController {
 	
 	private boolean isModelValid(Search s , String model) {
 		if(!isNullOrEmpty(model)) {
-	        if(s.getVozilo_modelVozila().contains(model))
+	        if(s.getModelVozila().contains(model))
 	            return true;
 	        return false;
 			}
@@ -94,7 +93,7 @@ public class SearchController {
 	
 	private boolean isMarkaValid(Search s, String marka) {
 		if(!isNullOrEmpty(marka)) {
-	        if(s.getVozilo_markaVozila().contains(marka))
+	        if(s.getMarkaVozila().contains(marka))
 	            return true;
 	        return false;
 			}
