@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
+    console.log("test usao u submit");
     this.authService.login(this.username, this.password).subscribe(
       auth => {
         this.authService.getLoggedInUserData().subscribe(

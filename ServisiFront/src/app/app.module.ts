@@ -27,6 +27,7 @@ import { TipGorivaComponent } from './components/userComponent/tip-goriva/tip-go
 import { VrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/vrsta-menjaca.component';
 import { KlasaVozilaComponent } from './components/userComponent/klasa-vozila/klasa-vozila.component';
 import { ModelVozilaComponent } from './components/userComponent/model-vozila/model-vozila.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,7 @@ import { ModelVozilaComponent } from './components/userComponent/model-vozila/mo
     AngularMaterialModule,
     FormsModule,
     HttpClientModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
   ],
   entryComponents: [TerminZauzecaDialogComponent],
   providers: [{
