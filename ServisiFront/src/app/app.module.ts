@@ -29,6 +29,7 @@ import { KlasaVozilaComponent } from './components/userComponent/klasa-vozila/kl
 import { ModelVozilaComponent } from './components/userComponent/model-vozila/model-vozila.component';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { Shared } from './models/shared';
+import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { Shared } from './models/shared';
     VrstaMenjacaComponent,
     KlasaVozilaComponent,
     ModelVozilaComponent,
+    RegistrationPageComponent,
   ],
   imports: [
     BrowserModule,
