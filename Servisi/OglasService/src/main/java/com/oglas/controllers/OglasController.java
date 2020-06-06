@@ -75,7 +75,7 @@ public class OglasController {
 
 		System.out.println("Usao"+ovDTO.getMesto()+ovDTO.getCena()+ovDTO.getPopust());
 		Oglas oglas = this.oglasService.createOrder(ovDTO);
-		Oglas search = this.searchConnection.createSearch(new Oglas(ovDTO));
+		//Oglas search = this.searchConnection.createSearch(new Oglas(ovDTO));
 
 		return new ResponseEntity<>(oglas, HttpStatus.OK);
 	}

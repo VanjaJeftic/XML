@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.oglas.model.Oglas;
 
-@FeignClient(name = "eureka-zahtev-service")
+@FeignClient(name = "eureka-search-service")
 public interface SearchConnection {
 	@PostMapping("/search/create")
 	Oglas createSearch(@RequestBody Oglas oglas);
