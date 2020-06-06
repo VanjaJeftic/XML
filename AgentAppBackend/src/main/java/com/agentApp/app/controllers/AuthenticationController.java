@@ -38,6 +38,10 @@ public class AuthenticationController {
 	
 	@Autowired
 	private AuthenticationManager authenticationManager;
+
+	public AuthenticationController(AuthenticationManager authenticationManager){
+		this.authenticationManager = authenticationManager;
+	}
 	
 	@Autowired
 	private UserService userService;

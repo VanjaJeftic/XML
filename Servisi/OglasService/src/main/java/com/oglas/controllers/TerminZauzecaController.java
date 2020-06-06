@@ -26,7 +26,7 @@ import com.oglas.service.TerminZauzecaService;
 import com.oglas.service.VoziloService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping(value = "/termin")
 public class TerminZauzecaController {
 	

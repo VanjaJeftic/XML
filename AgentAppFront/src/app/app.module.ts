@@ -16,6 +16,7 @@ import { AdministratorComponent } from './components/userComponent/administrator
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
 import { MyShopCartItemsComponent } from './components/userComponent/user/my-shop-cart-items/my-shop-cart-items.component';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { MyShopCartItemsComponent } from './components/userComponent/user/my-sho
     AngularMaterialModule,
     FormsModule,
     HttpClientModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    OwlDateTimeModule, 
+    OwlNativeDateTimeModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

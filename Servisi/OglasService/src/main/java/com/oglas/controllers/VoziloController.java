@@ -45,7 +45,7 @@ import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping(value = "/vozilo")
 public class VoziloController {
 
@@ -72,6 +72,11 @@ public class VoziloController {
     		agentskaVozila.add(agentskoVozilo);
     	}
     	return agentskaVozila;
+    }
+    @GetMapping("/{id}")
+    public Vozilo getVoziloById(@PathVariable("id") Long id){
+    	Vozilo v = voziloService.getVozilo(id);
+		return v;
     }
 
     @PostMapping("/novoVozilo")

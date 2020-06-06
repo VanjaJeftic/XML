@@ -28,12 +28,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-	
-	@Autowired
+
 	private CustomUserDetailsService jwtUserDetailService;
 	
 	@Autowired
 	private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
+
+	@Autowired
+	public void setJwtUserDetailService(CustomUserDetailsService jwtUserDetailService){
+		this.jwtUserDetailService = jwtUserDetailService;
+	}
 	
 	@Bean
 	@Override

@@ -45,11 +45,11 @@ insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id
 insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id, tipgoriva_id, vrstamenjaca_id) values (1, true, 1, 1, 2, 1, 2);
 insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id, tipgoriva_id, vrstamenjaca_id) values (2, true, 2, 2, 2, 2, 2);
 
-insert into oglas (vozilo_id, mesto) values (1, 'Novi Sad');
-insert into oglas (vozilo_id, mesto) values (1, 'Beograd');
-insert into oglas (vozilo_id, mesto) values (2, 'Ugljevik');
-insert into oglas (vozilo_id, mesto) values (2, 'Bijeljina');
-insert into oglas (vozilo_id, mesto) values (3, 'Sarajevo');
+insert into oglas (vozilo_id, mesto, slobodanod, slobodando,cena) values (1, 'Novi Sad','2020-06-01T17:09:42.411', '2020-06-15T17:09:42.411',99);
+insert into oglas (vozilo_id, mesto, slobodanod, slobodando,cena) values (1, 'Beograd','2020-06-01T17:09:42.411', '2020-06-15T17:09:42.411',99);
+insert into oglas (vozilo_id, mesto, slobodanod, slobodando,cena) values (2, 'Ugljevik','2020-06-01T17:09:42.411', '2020-06-15T17:09:42.411',99);
+insert into oglas (vozilo_id, mesto, slobodanod, slobodando,cena) values (2, 'Bijeljina','2020-08-01T17:09:42.411', '2020-08-15T17:09:42.411',9988);
+insert into oglas (vozilo_id, mesto, slobodanod, slobodando,cena) values (3, 'Sarajevo','2020-06-01T17:09:42.411', '2020-06-15T17:09:42.411',9988);
 
 insert into zahtev (oglas_id, podnosilac_id, bundle, bundle_id) values (1, 1, false, 1);
 insert into zahtev (oglas_id, podnosilac_id, bundle, bundle_id) values (1, 2, false, 1);

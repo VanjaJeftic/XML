@@ -1,6 +1,7 @@
 package com.agentApp.app.models;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -47,6 +48,12 @@ public class Oglas implements Serializable {
 
     @Column(name="cenaspopust")
     private Double cenaspopust;
+    
+    @Column(name="slobodanod")
+    private LocalDateTime slobodanOd;
+
+    @Column(name="slobodando")
+    private LocalDateTime slobodando;
 
     @JsonIgnore
     @OneToMany(mappedBy = "oglas", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -106,6 +113,22 @@ public class Oglas implements Serializable {
 
     public void setZahtevi(Set<Zahtev> zahtevi) {
 		this.zahtevi = zahtevi;
+    }
+    
+    public LocalDateTime getSlobodanOd() {
+        return slobodanOd;
+    }
+
+    public void setSlobodanOd(LocalDateTime slobodanOd) {
+        this.slobodanOd = slobodanOd;
+    }
+
+    public LocalDateTime getSlobodanDo() {
+        return slobodando;
+    }
+
+    public void setSlobodanDo(LocalDateTime slobodando) {
+        this.slobodando = slobodando;
     }
 
     public Oglas() {

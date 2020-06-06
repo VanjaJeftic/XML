@@ -7,10 +7,11 @@ export class PutanjaService {
 
   private _app_url = 'http://localhost:8662/';
   private _authentication_url = 'http://localhost:8662/auth';
-  private _oglas_url='http://localhost:8092/'
   private _admin_url='http://localhost:8094/'
+  private _oglas_url='http://localhost:8662/oglas'
   private _oglas_service_url = this._app_url + 'oglas';
   private _zahtev_service_url = this._app_url + 'zahtev';
+  private _search_service_url = this._app_url + 'search';
   private _vozilo_service_url = this._oglas_service_url + '/vozilo';
   private _termin_service_url = this._oglas_service_url + '/termin';
 
@@ -31,14 +32,14 @@ export class PutanjaService {
         return this._novi_oglas_url;
     }
 
-    private _pravi_oglas_url=this._oglas_url+"oglas/create";
+    private _pravi_oglas_url=this._oglas_url+"/create";
     get noviOglas():string{
         return this._pravi_oglas_url;
     }
 
-  private _get_oglas_service_url = this._oglas_service_url + '/oglas';
+  //private _get_oglas_service_url = this._oglas_service_url + '/';
     get get_oglas_url(): string {
-      return this._get_oglas_service_url;
+      return this._oglas_url;
     }
   
   private _send_zahtev_service_url = this._zahtev_service_url + '/zahtev';
@@ -52,5 +53,8 @@ export class PutanjaService {
 
     get get_termin_url(): string{
       return this._termin_service_url;
+    }
+    get get_search_url(): string{
+      return this._search_service_url+'/search';
     }
 }

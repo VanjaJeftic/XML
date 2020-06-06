@@ -1,15 +1,9 @@
 package com.gateway.controller;
 
-
-import java.util.List;
-import java.util.stream.Collectors;
-
 import javax.servlet.http.HttpServletRequest;
 
 import com.gateway.config.JwtConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -19,12 +13,12 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 
 @RestController
-public class LoggedInUserController {
+public class LoginController {
 
     @Autowired
     JwtConfig jwtConfig;
 
-    @PutMapping("/odjava")
+    @PutMapping("/logout")
     public Boolean odjava() {
         try {
             System.out.println("ulogovani: " + SecurityContextHolder.getContext().getAuthentication().getName());
@@ -37,7 +31,6 @@ public class LoggedInUserController {
 
     @PostMapping("/validate")
     public Boolean validate(HttpServletRequest request) {
-        // preuzimanje headera zahteva
         String header = request.getHeader(jwtConfig.getHeader());
 
 
@@ -47,29 +40,23 @@ public class LoggedInUserController {
         // All secured paths that needs a token are already defined and secured in config class.
         // And If user tried to access without access token, then he won't be authenticated and an exception will be thrown.
 
+        
         String token = header.replace(jwtConfig.getPrefix(), "");
+       
         try {
-            System.out.println("USO U TRY");
+            System.out.println("Kod claimsa");
             Claims claims = Jwts.parser()
                     .setSigningKey(jwtConfig.getSecret().getBytes())
                     .parseClaimsJws(token)
                     .getBody();
             System.out.println("claims: " + claims);
             String username = claims.getSubject();
-			/*if(username != null) {
-				@SuppressWarnings("unchecked")
-				List<String> authorities = (List<String>) claims.get("authorities");
-				//System.out.println("BITNO JAKO: " + authorities);
-
-				// 5. Create auth object
-				// UsernamePasswordAuthenticationToken: A built-in object, used by spring to represent the current authenticated / being authenticated user.
-				// It needs a list of authorities, which has type of GrantedAuthority interface, where SimpleGrantedAuthority is an implementation of that interface
-				 UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
-								 username, null, authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
-			}*/
             return true;
+        
         } catch (Exception e) {
-            return false;
+        
+        	return false;
         }
+        
     }
 }

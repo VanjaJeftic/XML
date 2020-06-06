@@ -2,7 +2,7 @@ version: '3.7'
 services:
 
   eureka-serviceregistry:
-    build: ./EurekaServer
+    build: ./Servisi/EurekaServer
     container_name: eurekaServerRegistry
     restart: on-failure
     networks:
@@ -11,7 +11,7 @@ services:
       - "8761:8761"
 
   eureka-oglas-service:
-    build: ./OglasService
+    build: ./Servisi/OglasService
     container_name: eurekaOglasService
     restart: on-failure
     networks:
@@ -30,7 +30,7 @@ services:
       - eureka-serviceregistry
 
   eureka-authorization-service:
-    build: ./AuthorizationService
+    build: ./Servisi/AuthorizationService
     container_name: eurekaAuthorizationService
     restart: on-failure
     networks:
@@ -49,7 +49,7 @@ services:
       - eureka-serviceregistry
 
   eureka-zahtev-service:
-    build: ./ZahtevService
+    build: ./Servisi/ZahtevService
     container_name: eurekaZahtevService
     restart: on-failure
     networks:
@@ -66,114 +66,26 @@ services:
       DATABASE_SCHEMA: zahtev
     depends_on:
       - eureka-serviceregistry
-
-  admin:
-    build: ./AdminService
-    container_name: eurekaAdminServer
-    restart: on-failure
-    networks:
-      - xml
-    ports:
-      - "8094:8094"
-    environment:
-      - REGISTRY_HOST=eureka-serviceregistry
-    depends_on:
-      - eureka-serviceregistry
-
-  agentvehicle:
-    build: ./AgentVehicleService
-    container_name: eurekaAgentVehicleServer
-    restart: on-failure
-    networks:
-      - xml
-    ports:
-      - "8096:8096"
-    environment:
-      - REGISTRY_HOST=eureka-serviceregistry
-    depends_on:
-      - eureka-serviceregistry
-
-  profil:
-    build: ./ProfileService
-    container_name: eurekaProfileService
-    restart: on-failure
-    networks:
-      - xml
-    ports:
-      - "8101:8101"
-    environment:
-      - REGISTRY_HOST=eureka-serviceregistry
-    depends_on:
-      - eureka-serviceregistry
-
-  commentrating:
-    build: ./CommentRatingService
-    container_name: eurekaCommentRatingServer
-    restart: on-failure
-    networks:
-      - xml
-    ports:
-      - "8097:8097"
-    environment:
-      - REGISTRY_HOST=eureka-serviceregistry
-    depends_on:
-      - eureka-serviceregistry
-
-  mail:
-    build: ./MailService
-    container_name: eurekaMailServer
-    restart: on-failure
-    networks:
-      - xml
-    ports:
-      - "8098:8098"
-    environment:
-      - REGISTRY_HOST=eureka-serviceregistry
-    depends_on:
-      - eureka-serviceregistry
-
-  message:
-    build: ./MessageService
-    container_name: eurekaMessageServer
-    restart: on-failure
-    networks:
-      - xml
-    ports:
-      - "8099:8099"
-    environment:
-      - REGISTRY_HOST=eureka-serviceregistry
-    depends_on:
-      - eureka-serviceregistry
-
-  search:
-    build: ./SearchService
-    container_name: eurekaSearchServer
+      
+  eureka-search-service:
+    build: ./Servisi/SearchService
+    container_name: eurekaSearchService
     restart: on-failure
     networks:
       - xml
     ports:
       - "8100:8100"
+    links:
+      - postgresql-search
     environment:
-      - REGISTRY_HOST=eureka-serviceregistry
+      REGISTRY_HOST: eureka-serviceregistry
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: root
+      DATABASE_DOMAIN: postgresql-search
+      DATABASE_SCHEMA: search
     depends_on:
       - eureka-serviceregistry
 
-  gateway-service:
-    build: ./GatewayService
-    container_name: gatewayService
-    restart: on-failure
-    networks:
-      - xml
-    ports:
-      - "8662:8662"
-    environment:
-      - REGISTRY_HOST=eureka-serviceregistry
-    depends_on:
-      - eureka-serviceregistry
-      - eureka-oglas-service
-      - eureka-zahtev-service
-      - eureka-authorization-service
-      
   postgresql-oglas:
     image: postgres
     container_name: postgresql-oglas
@@ -184,6 +96,19 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
       POSTGRES_DB: oglas
+    ports:
+      - 5432:5432
+      
+  postgresql-search:
+    image: postgres
+    container_name: postgresql-search
+    restart: always
+    networks:
+      - xml
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: search
     ports:
       - 5432:5432
 
@@ -213,13 +138,24 @@ services:
     ports:
       - 5434:5432
 
+  gateway-service:
+    build: ./Servisi/GatewayService
+    container_name: gatewayService
+    restart: on-failure
+    networks:
+      - xml
+    ports:
+      - "8662:8662"
+    environment:
+      - REGISTRY_HOST=eureka-serviceregistry
+    depends_on:
+      - eureka-serviceregistry
+      - eureka-oglas-service
+      - eureka-zahtev-service
+      - eureka-authorization-service
+      - eureka-search-service
+
 networks:
   xml:
     name: xml
     driver: bridge
-
-
-
-
-
-

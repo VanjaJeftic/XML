@@ -16,14 +16,26 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-	@Autowired
 	private UserRepository userRepository;
 	
+//	private PasswordEncoder passwordEncoder;
+
+//	private AuthenticationManager authenticationManager;
+
+//	@Autowired
+//	public void setPasswordEncoder(PasswordEncoder passwordEncoder){
+//		this.passwordEncoder = passwordEncoder;
+//	}
+
+//	@Autowired
+//	public void setAuthenticationManager(AuthenticationManager authenticationManager){
+//		this.authenticationManager = authenticationManager;
+//	}
+
 	@Autowired
-	private PasswordEncoder passwordEncoder;
-	
-	@Autowired
-	private AuthenticationManager authenticationManager;
+	public  void setUserRepository(UserRepository userRepository){
+		this.userRepository = userRepository;
+	}
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
@@ -36,20 +48,20 @@ public class CustomUserDetailsService implements UserDetailsService {
 		}
 	}
 	
-	public void changePassword(String oldPassword, String newPassword) {
-		
-		Authentication currentUser = SecurityContextHolder.getContext().getAuthentication();
-		String username = currentUser.getName();
-		
-		if(authenticationManager != null) {
-			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, oldPassword));
-		}else {
-			return;
-		}
-		
-		User user = (User) loadUserByUsername(username);
-		
-		user.setPassword(passwordEncoder.encode(newPassword));
-		userRepository.save(user);
-	}
+//	public void changePassword(String oldPassword, String newPassword) {
+//
+//		Authentication currentUser = SecurityContextHolder.getContext().getAuthentication();
+//		String username = currentUser.getName();
+//
+//		if(authenticationManager != null) {
+//			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, oldPassword));
+//		}else {
+//			return;
+//		}
+//
+//		User user = (User) loadUserByUsername(username);
+//
+//		user.setPassword(passwordEncoder.encode(newPassword));
+//		userRepository.save(user);
+//	}
 }
