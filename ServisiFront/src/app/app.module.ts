@@ -30,7 +30,7 @@ import { ModelVozilaComponent } from './components/userComponent/model-vozila/mo
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { Shared } from './models/shared';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
-
+import { MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +62,8 @@ import { RegistrationPageComponent } from './components/registration-page/regist
     NgxMaterialTimepickerModule,
     ReactiveFormsModule,
     OwlDateTimeModule, 
-    OwlNativeDateTimeModule
+    OwlNativeDateTimeModule,
+    MatMenuModule
   ],
   entryComponents: [TerminZauzecaDialogComponent],
   providers: [{
