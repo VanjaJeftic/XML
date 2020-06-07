@@ -2,13 +2,14 @@ import { AuthenticationService } from './../../../services/authentication.servic
 import { Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
+import { MatMenuModule} from '@angular/material/menu';
 
 @Component({
   selector: 'app-administrator',
   templateUrl: './administrator.component.html',
   styleUrls: ['./administrator.component.css']
 })
-export class AdministratorComponent implements OnInit {
+export class AdministratorComponent  {
 
   constructor(private authService: AuthenticationService) { }
 
