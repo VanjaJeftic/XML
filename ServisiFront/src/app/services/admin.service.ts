@@ -11,6 +11,7 @@ import { ModelVozila } from '../models/model-vozila';
   providedIn: 'root'
 })
 export class AdminService {
+
  
  
   constructor(private http:HttpClient) { }
@@ -45,14 +46,26 @@ export class AdminService {
     );
   }
 
-  getMarkeVozila() {
-    //return this.list('/http://localhost:8094/marka/markeVozila').snapshotChanges();
-    console.log("Pribavljamo marke")
-    //return this.http.get('http://localhost:8094/marka/markeVozila');
+ public getMarkeVozila() {
+    console.log("Pribavljamo marke");
     return this.http.get('http://localhost:8094/marka/markeVozila');
-
-    console.log("Stigle marke")
   }
+
+  public getModelVozila() {
+    console.log("Pribavljamo modele");
+    return this.http.get('http://localhost:8094/model/modeliVozila');
+  }
+
+  public deleteModel(model) {
+    console.log("brisanje modela servis");
+    return this.http.delete('http://localhost:8094/model/brisanjeModela' + "/"+ model.id);
+  }
+
+  public deleteMarka(marka) {
+    console.log("brisanje marke servis");
+    return this.http.delete('http://localhost:8094/marka/brisanjeMarke' + "/"+ marka.id);
+  }
+
 
   public saveModel(modelVozila:ModelVozila){
     console.log("ModelVozila  se salje ")

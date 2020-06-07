@@ -16,6 +16,8 @@ import { TipGorivaComponent } from './components/userComponent/tip-goriva/tip-go
 import { VrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/vrsta-menjaca.component';
 import { ModelVozilaComponent } from './components/userComponent/model-vozila/model-vozila.component';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
+import { PrikazSvihMarkiVozilaComponent } from './components/userComponent/marka-vozila/prikaz-svih-marki-vozila/prikaz-svih-marki-vozila.component';
+import { PrikazModelaVozilaComponent } from './components/userComponent/model-vozila/prikaz-modela-vozila/prikaz-modela-vozila.component';
 
 
 const routes: Routes = [
@@ -36,6 +38,8 @@ const routes: Routes = [
   { path: 'menjacVozila', component:VrstaMenjacaComponent},
   { path: 'modelVozila', component:ModelVozilaComponent},
   { path: 'register', component:RegistrationPageComponent},
+  { path: 'listaMarkiVozila', component:PrikazSvihMarkiVozilaComponent},
+  { path: 'listaModelaVozila', component:PrikazModelaVozilaComponent},
 ];
 
 @NgModule({

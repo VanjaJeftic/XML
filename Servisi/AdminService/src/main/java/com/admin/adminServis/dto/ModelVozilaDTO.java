@@ -4,7 +4,7 @@ public class ModelVozilaDTO {
 
     private Long id;
     private String naziv;
-    private String id_marke;
+    private String id_marke; //ovo je zapravo naziv marke a ne id
 
     public String getId_marke() {
         return id_marke;

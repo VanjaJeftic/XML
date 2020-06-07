@@ -31,6 +31,8 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { Shared } from './models/shared';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import { MatMenuModule} from '@angular/material/menu';
+import { PrikazSvihMarkiVozilaComponent } from './components/userComponent/marka-vozila/prikaz-svih-marki-vozila/prikaz-svih-marki-vozila.component';
+import { PrikazModelaVozilaComponent } from './components/userComponent/model-vozila/prikaz-modela-vozila/prikaz-modela-vozila.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +53,8 @@ import { MatMenuModule} from '@angular/material/menu';
     KlasaVozilaComponent,
     ModelVozilaComponent,
     RegistrationPageComponent,
+    PrikazSvihMarkiVozilaComponent,
+    PrikazModelaVozilaComponent,
   ],
   imports: [
     BrowserModule,
