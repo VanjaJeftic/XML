@@ -36,7 +36,7 @@ public class MarkaVozilaController {
         return new ResponseEntity<>(markaVozila, HttpStatus.OK);
     }
 
-    @PutMapping("/updateMarka")
+    @PutMapping("/izmenaMarke")
     //@PreAuthorize("hasAuthority('update_oglas')")
     public ResponseEntity<?> updateMarka(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
         Optional<MarkaVozila> markaVoziladata = markaVozilaRepository.findById(markaVozilaDTO.getId());
@@ -48,10 +48,12 @@ public class MarkaVozilaController {
         }
     }
 
-    @DeleteMapping("/deleteMarka/{id}")
+
+    @DeleteMapping("/brisanjeMarke/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
     //@PreAuthorize("hasAuthority('delete_oglas')")
-    public ResponseEntity<HttpStatus> deleteMarka(@PathVariable("id") Long id) {
+    public ResponseEntity<HttpStatus> brisanjeMarke(@PathVariable("id") Long id) {
+        System.out.println("brisanje marke controller id marke je   "+ id);
         try {
             markaVozilaService.delete(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -61,29 +63,11 @@ public class MarkaVozilaController {
     }
 
     @GetMapping("/markeVozila")
-    List<MarkaVozila> all() {
+    List<MarkaVozila> sveMarke() {
+        System.out.println("marke");
         return markaVozilaRepository.findAll();
     }
 
-/*
-    @GetMapping("/sveMarkeVozila")
-    public ResponseEntity<List<MarkaVozila>> getAllMarke(@RequestParam(required = false) String title) {
-       System.out.println("Dosli do controlera");
-            List<MarkaVozila> marke = new ArrayList<MarkaVozila>();
-
-            if (title == null)
-                markaVozilaRepository.findAll().forEach(marke::add);
-            else
-                markaVozilaRepository.findByNaziv(title).forEach(marke::add);
-
-            if (marke.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            }
-
-            return new ResponseEntity<>(marke, HttpStatus.OK);
-
-    }
-*/
     @GetMapping("/verify/{markavozila_id}")
     public boolean verify(@PathVariable("markavozila_id") Long markavozila_id){
         return markaVozilaService.verify(markavozila_id);

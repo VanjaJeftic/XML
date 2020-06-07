@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -21,7 +22,9 @@ public class ModelVozilaController {
         return "Hello World ";
     }
 
+    @Autowired
     private ModelVozilaService modelVozilaService;
+    @Autowired
     private ModelVozilaRepository modelVozilaRepository;
 
     @Autowired
@@ -38,7 +41,13 @@ public class ModelVozilaController {
         return new ResponseEntity<>(modelVozila, HttpStatus.OK);
     }
 
-    @PutMapping("/updateModel")
+    @GetMapping("/modeliVozila")
+    List<ModelVozila> sviModeli() {
+        System.out.println("modeli");
+        return modelVozilaRepository.findAll();
+    }
+
+    @PutMapping("/izmenaModela")
     //@PreAuthorize("hasAuthority('update_oglas')")
     public ResponseEntity<?> updateModel(@RequestBody ModelVozilaDTO modelVozilaDTO) {
         Optional<ModelVozila> modelVoziladata = modelVozilaRepository.findById(modelVozilaDTO.getId());
@@ -50,7 +59,7 @@ public class ModelVozilaController {
         }
     }
 
-    @DeleteMapping("/deleteModel/{id}")
+    @DeleteMapping("/brisanjeModela/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
     //@PreAuthorize("hasAuthority('delete_oglas')")
     public ResponseEntity<HttpStatus> delete(@PathVariable("id") Long id) {
