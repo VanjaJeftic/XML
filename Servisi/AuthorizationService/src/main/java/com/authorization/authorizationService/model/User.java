@@ -13,6 +13,7 @@ public class User implements Serializable {
     }
 
     public User(UserDTO user) {
+        this.nalogAktivan=user.isNalogAktivan();
         this.username = user.getUsername();
         this.password = user.getPassword();
         this.email = user.getEmail();
@@ -22,6 +23,12 @@ public class User implements Serializable {
         this.accountNonLocked = user.isAccountNonLocked();
         this.roles = user.getRoles();
         this.nalogAktivan=user.isNalogAktivan();
+        this.ime=user.getIme();
+        this.prezime=user.getPrezime();
+        this.adresa=user.getAdresa();
+        this.mesto=user.getMesto();
+        this.telefon=user.getTelefon();
+        this.potvrdalozinke=user.getPotvrdalozinke();
     }
 
     @Id
@@ -30,12 +37,34 @@ public class User implements Serializable {
 
     @Column(name = "username")
     private String username;
+
     @Column(name = "password")
     private String password;
+
+    @Column(name = "ime")
+    private String ime;
+
+    @Column(name = "prezime")
+    private String prezime;
+
+    @Column(name = "adresa")
+    private String adresa;
+
+    @Column(name = "mesto")
+    private String mesto;
+
+    @Column(name = "telefon")
+    private Integer telefon;
+
+    @Column(name = "potvrdalozinke")
+    private String potvrdalozinke;
+
     @Column(name = "email")
     private String email;
+
     @Column(name = "enabled")
     private boolean enabled;
+
     @Column(name = "account_non_expired")
     private boolean accountNonExpired;
     @Column(name = "credentials_non_expired")
@@ -52,6 +81,54 @@ public class User implements Serializable {
     private List<Role> roles;
 
     public User(User user) {
+    }
+
+    public String getIme() {
+        return ime;
+    }
+
+    public void setIme(String ime) {
+        this.ime = ime;
+    }
+
+    public String getPrezime() {
+        return prezime;
+    }
+
+    public void setPrezime(String prezime) {
+        this.prezime = prezime;
+    }
+
+    public String getAdresa() {
+        return adresa;
+    }
+
+    public void setAdresa(String adresa) {
+        this.adresa = adresa;
+    }
+
+    public String getMesto() {
+        return mesto;
+    }
+
+    public void setMesto(String mesto) {
+        this.mesto = mesto;
+    }
+
+    public Integer getTelefon() {
+        return telefon;
+    }
+
+    public void setTelefon(Integer telefon) {
+        this.telefon = telefon;
+    }
+
+    public String getPotvrdalozinke() {
+        return potvrdalozinke;
+    }
+
+    public void setPotvrdalozinke(String potvrdalozinke) {
+        this.potvrdalozinke = potvrdalozinke;
     }
 
     public boolean isNalogAktivan() {

@@ -1,8 +1,17 @@
+import { PrenormalizedTemplateMetadata } from '@angular/compiler';
+import { EmailValidator } from '@angular/forms';
+
 export class User {
-    firstname: string;
-    password: string;
-    lastname: string;
-    username: string;
-    adress: string;
-    city: string;
+  
+    ime:string;
+    prezime:string;
+    adresa:string;
+    mesto:string;
+    telefon:number;
+    id:number;
+    username:string;
+    password:string;
+    potvrdalozinka:string;
+    email:EmailValidator;
+
 }

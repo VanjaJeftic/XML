@@ -1,0 +1,33 @@
+.example-icon {
+    padding: 0 14px;
+  }    
+  .example-spacer {
+    flex: 1 1 auto;
+  }    
+  .example-card {
+    background-color: rgb(148, 199, 231);
+    max-width: 500px;
+    width: 80%;
+    margin: 40px;
+   
+  }    
+  .example-header-image {
+    background-image: image("./assets/logo.png");
+    background-size: cover;
+  }    
+  .main-div {
+    height: 50vh;
+    flex-shrink: 6;
+    padding-top: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .btn-block{
+    background-color: mediumblue;
+  }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { RegistrationServiceService } from 'src/app/services/registration-service.service';
 
 @Component({
   selector: 'app-registration-page',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationPageComponent implements OnInit {
 
-  constructor() { }
+  public user:User=new User();
+
+  constructor(private  registrationService:RegistrationServiceService) { }
 
   ngOnInit() {
   }
+
+
+
+  public onSubmit(): void{
+    event.preventDefault();
+    console.log("Usao u onsubmit usera "+ this.user.ime );
+    let res=this.registrationService.saveKorisnik(this.user);
+    console.log("poslato");
+    
+  }
+  
 
 }

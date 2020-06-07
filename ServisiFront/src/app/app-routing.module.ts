@@ -15,6 +15,7 @@ import { KlasaVozilaComponent } from './components/userComponent/klasa-vozila/kl
 import { TipGorivaComponent } from './components/userComponent/tip-goriva/tip-goriva.component';
 import { VrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/vrsta-menjaca.component';
 import { ModelVozilaComponent } from './components/userComponent/model-vozila/model-vozila.component';
+import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'gorivoVozila', component:TipGorivaComponent},
   { path: 'menjacVozila', component:VrstaMenjacaComponent},
   { path: 'modelVozila', component:ModelVozilaComponent},
+  { path: 'register', component:RegistrationPageComponent},
 ];
 
 @NgModule({

@@ -17,9 +17,9 @@
      (3,3),
      (4,2), /* delete admin */
      (4,3);            /*pkrish i psuranga su sifre*/
-insert into users (id, username,password, email, enabled, account_non_expired, credentials_non_expired, account_non_locked,nalogAktivan) VALUES ('1', 'krish','$2a$10$e3NBkbtr.Pf7wBP3AiSaWeOnUK3v7yPDHSFm9lMagCdcJ.tZkzbXC', 'k@krishantha.com', '1', '1', '1', '1',true);
-insert into  users (id, username,password, email, enabled, account_non_expired, credentials_non_expired, account_non_locked,nalogAktivan) VALUES ('2', 'suranga', '$2a$10$e3NBkbtr.Pf7wBP3AiSaWeOnUK3v7yPDHSFm9lMagCdcJ.tZkzbXC','kw@krishantha.com', '1', '1', '1', '1',true);
-insert into  users (id, username,password, email, enabled, account_non_expired, credentials_non_expired, account_non_locked,nalogAktivan) VALUES ('3', 'nuwan', '$2a$10$e3NBkbtr.Pf7wBP3AiSaWeOnUK3v7yPDHSFm9lMagCdcJ.tZkzbXC','kq@krishantha.com', '1', '1', '1', '1',true);
+insert into users ( username,password, email, enabled, account_non_expired, credentials_non_expired, account_non_locked,nalogAktivan) VALUES ( 'krish','$2a$10$e3NBkbtr.Pf7wBP3AiSaWeOnUK3v7yPDHSFm9lMagCdcJ.tZkzbXC', 'k@krishantha.com', '1', '1', '1', '1',true);
+insert into  users ( username,password, email, enabled, account_non_expired, credentials_non_expired, account_non_locked,nalogAktivan) VALUES ( 'suranga', '$2a$10$e3NBkbtr.Pf7wBP3AiSaWeOnUK3v7yPDHSFm9lMagCdcJ.tZkzbXC','kw@krishantha.com', '1', '1', '1', '1',true);
+insert into  users (username,password, email, enabled, account_non_expired, credentials_non_expired, account_non_locked,nalogAktivan) VALUES ( 'nuwan', '$2a$10$e3NBkbtr.Pf7wBP3AiSaWeOnUK3v7yPDHSFm9lMagCdcJ.tZkzbXC','kq@krishantha.com', '1', '1', '1', '1',true);
 
  /*
  passowrds:
