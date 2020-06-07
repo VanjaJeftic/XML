@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(value = "/korisnik")
 public class UserController {
 
     private UserDetailRepository userRepo;
@@ -22,14 +24,19 @@ public class UserController {
         this.userService=userService;
     }
 
-    @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody UserDTO userDTO) {
+    @PostMapping("/noviKorisnik")
+    public ResponseEntity<?> noviKorisnik(@RequestBody UserDTO userDTO) {
+        System.out.println("Novi korisnik kreiran "+ userDTO.getAdresa() + userDTO.getUsername());
+        //morala sam presipati u novi DTO jer postoje polja na back-u koja se moraju dodatno popunit u ovom koraku
+        UserDTO dto=new UserDTO();
+
         User user = this.userService.createUser(userDTO);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<?> update(@RequestBody UserDTO userDTO) {
+
+    @PutMapping("/izmenaKorisnika")
+    public ResponseEntity<?> izmenaKorisnika(@RequestBody UserDTO userDTO) {
         Optional<User> userdata = userRepo.findById(userDTO.getId());
         if(userdata.isPresent()){
             this.userService.update(userDTO);
@@ -42,8 +49,8 @@ public class UserController {
 
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<HttpStatus> delete(@PathVariable("id") Long id) {
+    @DeleteMapping("/brisanjeKorisnika/{id}")
+    public ResponseEntity<HttpStatus> brisanjeKorisnika(@PathVariable("id") Long id) {
         try {
             userService.delete(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -52,7 +59,7 @@ public class UserController {
         }
     }
 //=======================mozda treba Get umesto Put ??????
-    @GetMapping("/blokirajUsera/{id}")
+    @GetMapping("/blokirajKorisnika/{id}")
     public ResponseEntity<HttpStatus> blokirajUsera(@PathVariable("id") Long id) {
         try {
             userService.blokirajUsera(id);
@@ -62,7 +69,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/odblokirajUsera/{id}")
+    @GetMapping("/odblokirajKorisnika/{id}")
     public ResponseEntity<HttpStatus> odblokirajUsera(@PathVariable("id") Long id) {
         try {
             userService.odblokirajUsera(id);
