@@ -18,6 +18,7 @@ import { ModelVozilaComponent } from './components/userComponent/model-vozila/mo
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import { PrikazSvihMarkiVozilaComponent } from './components/userComponent/marka-vozila/prikaz-svih-marki-vozila/prikaz-svih-marki-vozila.component';
 import { PrikazModelaVozilaComponent } from './components/userComponent/model-vozila/prikaz-modela-vozila/prikaz-modela-vozila.component';
+import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/sva-vozila.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'register', component:RegistrationPageComponent},
   { path: 'listaMarkiVozila', component:PrikazSvihMarkiVozilaComponent},
   { path: 'listaModelaVozila', component:PrikazModelaVozilaComponent},
+  {path: 'svavozila',component:SvaVozilaComponent}
 ];
 
 @NgModule({

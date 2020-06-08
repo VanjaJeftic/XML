@@ -40,12 +40,27 @@ export class LoginComponent implements OnInit {
     console.log(this.username,this.password)
     this.authService.login(this.username, this.password).subscribe(
       data => {
+        console.log(data);
         this.uAt = JSON.parse(data);
         this.shared.token = this.uAt.token;
         this.shared.username = this.uAt.username;
         localStorage.setItem('token',this.uAt.token);
         localStorage.setItem('username',this.uAt.username);
-        this.router.navigateByUrl("");
+        localStorage.setItem('userId',this.uAt.userId);
+        //this.router.navigateByUrl("");
+
+        if(this.uAt.roles=='ROLE_admin'){
+          console.log("ADMIN");
+          this.router.navigateByUrl('administrator');
+        }else if(this.uAt.roles=='ROLE_agent'){
+          console.log("agent");
+          this.router.navigateByUrl('agent');
+        }else if(this.uAt.roles=='ROLE_user'){
+          console.log("user");
+          this.router.navigateByUrl('user');
+        }else {
+          alert('Nazalost, doslo je do greske, proverite da li kucate dobre kredencijale');
+        }
     });
   }
 }

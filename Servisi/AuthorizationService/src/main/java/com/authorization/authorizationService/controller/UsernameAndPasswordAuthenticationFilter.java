@@ -150,6 +150,8 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 			System.out.println("EVO ME");
 			loggedUser.setToken(token);
 			loggedUser.setUsername(username);
+			loggedUser.setUserId(user.getId());
+			loggedUser.setRoles(user.getRoles().get(0).getName());
 			if(!userService.loadUserByUsername(username).isEnabled())
 				return null;
 			return loggedUser;
