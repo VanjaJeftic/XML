@@ -9,5 +9,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface VoziloRepository extends CrudRepository<Vozilo, Long> {
+
 	
 }

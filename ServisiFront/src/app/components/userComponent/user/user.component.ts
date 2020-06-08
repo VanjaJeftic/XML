@@ -53,6 +53,14 @@ export class UserComponent implements OnInit {
     this.router.navigateByUrl('cart');
   }
 
+  onVozilo(){
+    this.router.navigateByUrl('vozilo/novoVozilo');
+  }
+
+  onMojaVozila(){
+    this.router.navigateByUrl('svavozila');
+  }
+
   resetuj(){
     this.oglasiSource = this.sviOglasi;
   }
