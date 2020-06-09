@@ -74,7 +74,7 @@ import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/s
     IzmenaKlaseVozilaComponent,
     IzmenaTipaGorivaComponent,
     IzmenaVrstaMenjacaComponent,
-    IzmenaModelaVozilaComponent
+    IzmenaModelaVozilaComponent,
     SvaVozilaComponent,
   ],
   imports: [

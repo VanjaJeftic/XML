@@ -128,4 +128,14 @@ public class VoziloDTO {
         this.user_id = user_id;
     }
 
+    public VoziloDTO(String markaVozila, String modelVozila, String klasaVozila, String tipGoriva, String vrstaMenjaca, String predjeniKm, String brsedistadeca) {
+        this.markaVozila = markaVozila;
+        this.modelVozila = modelVozila;
+        this.klasaVozila = klasaVozila;
+        this.tipGoriva = tipGoriva;
+        this.vrstaMenjaca = vrstaMenjaca;
+        this.predjeniKm = predjeniKm;
+        this.brsedistadeca = brsedistadeca;
+    }
+
 }

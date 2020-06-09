@@ -44,12 +44,10 @@ export class NoviOglasComponent implements OnInit {
 
   public onSubmit(): void{
     event.preventDefault();
-    console.log("Usao u onsubmit"+ this.vozilo.modelVozila );
     console.log(this.selectedFiles);
     // const uploadImageData = new FormData();
     // uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
     let res = this.noviOglasService.saveVozilo(this.vozilo, this.selectedFiles);
-    console.log();
   }
 
   onOdjaviMe(){

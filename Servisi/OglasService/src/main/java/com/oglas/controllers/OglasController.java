@@ -33,7 +33,9 @@ public class OglasController {
 		return "Hello World ";
 	}
 
+	@Autowired
 	private OglasService oglasService;
+	@Autowired
 	private VoziloService voziloService;
 	@Autowired
 	private OglasRepository oglasRepository;

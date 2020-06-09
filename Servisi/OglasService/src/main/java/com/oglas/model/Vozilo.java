@@ -189,6 +189,16 @@ public class Vozilo {
         this.user_id = voziloDTO.getUser_id();
     }
 
+    public Vozilo(String markaVozila, String modelVozila, String klasaVozila, String tipgoriva, String vrstamenjaca, String predjeniKm, String brSedistaDeca) {
+        this.markaVozila = markaVozila;
+        this.modelVozila = modelVozila;
+        this.klasaVozila = klasaVozila;
+        this.tipGoriva = tipgoriva;
+        this.vrstaMenjaca = vrstamenjaca;
+        this.predjeniKm = predjeniKm;
+        this.BrSedistaDeca = brSedistaDeca;
 
+
+    }
 
 }

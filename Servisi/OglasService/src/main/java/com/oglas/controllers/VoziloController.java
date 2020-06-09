@@ -45,7 +45,7 @@ import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(value = "/vozilo")
 public class VoziloController {
 
@@ -59,7 +59,7 @@ public class VoziloController {
     private VoziloRepository voziloRepository;
     
     @GetMapping
-    public List<VoziloViewDTO> allVozila(){		//Prepraviti da vraca vozila za ulogovanog korisnika
+    public List<VoziloViewDTO> svaVozila(){		//Prepraviti da vraca vozila za ulogovanog korisnika
     	List<VoziloViewDTO> agentskaVozila = new ArrayList<>();
     	UserViewDTO user = new UserViewDTO();
 		user.setFirstname("Goran");
@@ -80,7 +80,7 @@ public class VoziloController {
     }
 
     @PostMapping("/novoVozilo")
-    public BodyBuilder uplaodImage(@RequestParam("vozilomarka") String markaVozila,
+    public BodyBuilder sacuvajVozilo(@RequestParam("vozilomarka") String markaVozila,
                                    @RequestParam("image") MultipartFile file,
                                    @RequestParam("vozilomodel") String modelVozila,
                                    @RequestParam("voziloklasa") String klasaVozila,
@@ -90,7 +90,7 @@ public class VoziloController {
                                    @RequestParam("vozilosedista") String brsedistadeca,
                                    @RequestParam("username") String username,
                                    @RequestParam("userId") Long userid
-                                   ) throws IOException {
+    ) throws IOException {
         VoziloDTO ovDTO=new VoziloDTO();
         System.out.println("Username"+ username);
         ovDTO.setBrsedistadeca(brsedistadeca);
@@ -112,16 +112,9 @@ public class VoziloController {
         imageModelRepository.save(img);
         return ResponseEntity.status(HttpStatus.OK);
     }
-    // @PreAuthorize("hasAuthority('create_oglas')")
-   // public ResponseEntity<?> create(@RequestBody VoziloDTO ovDTO,@RequestParam("image") MultipartFile file) {
-    //    System.out.println("dosli" + " " + ovDTO.getKlasaVozila());
-    //    //ImageModel img = new ImageModel(file.getOriginalFilename(), file.getContentType(), compressBytes(file.getBytes()));
-    //    //imageModelRepository.save(img);
 
-     //   System.out.println("Usao pravim vozilo "+ ovDTO.getPredjeniKm()+ovDTO.getTipGoriva()+ovDTO.getVrstaMenjaca() + " ");
-     //   Vozilo vozilo=this.voziloService.createVozilo(ovDTO);
-     //   return new ResponseEntity<>(vozilo, HttpStatus.OK);
-   // }
+
+
 
     public static byte[] compressBytes(byte[] data) {
         Deflater deflater = new Deflater();
