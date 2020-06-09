@@ -56,7 +56,7 @@ const routes: Routes = [
   { path: 'izmenaKlaseVozila', component:IzmenaKlaseVozilaComponent},
   { path: 'izmenaTipaGorivaVozila', component:IzmenaTipaGorivaComponent},
   { path: 'izmenaVrsteMenjacaVozila', component:IzmenaVrstaMenjacaComponent},
-  { path: 'izmenaModelaVozila', component:IzmenaModelaVozilaComponent}
+  { path: 'izmenaModelaVozila', component:IzmenaModelaVozilaComponent},
   {path: 'svavozila',component:SvaVozilaComponent}
 ];
 
