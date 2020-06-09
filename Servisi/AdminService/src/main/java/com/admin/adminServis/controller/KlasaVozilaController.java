@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -16,7 +17,9 @@ import java.util.Optional;
 @RequestMapping(value = "/klasa")
 public class KlasaVozilaController {
 
+    @Autowired
     private KlasaVozilaService klasaVozilaService;
+    @Autowired
     private KlasaVozilaRepository klasaVozilaRepository;
 
     @Autowired
@@ -24,18 +27,24 @@ public class KlasaVozilaController {
         this.klasaVozilaService=klasaVozilaService;
     }
 
-    @PostMapping("/novaKlasa")
+    @PostMapping("/sacuvajKlasu")
     //@PreAuthorize("hasAuthority('create_oglas')")
-    public ResponseEntity<?> createKlasa(@RequestBody KlasaVozilaDTO klasaVozilaDTO) {
+    public ResponseEntity<?> kreirajKlasu(@RequestBody KlasaVozilaDTO klasaVozilaDTO) {
 
         KlasaVozila klasaVozila = this.klasaVozilaService.createKlasaVozila(klasaVozilaDTO);
 
         return new ResponseEntity<>(klasaVozila, HttpStatus.OK);
     }
 
-    @PutMapping("/updateKlasa")
+    @GetMapping("/klaseVozila")
+    List<KlasaVozila> sveKlase() {
+        System.out.println("klase vozila");
+        return klasaVozilaRepository.findAll();
+    }
+
+    @PutMapping("/izmenaKlase")
     //@PreAuthorize("hasAuthority('update_oglas')")
-    public ResponseEntity<?> updateKlasa(@RequestBody KlasaVozilaDTO klasaVozilaDTO) {
+    public ResponseEntity<?> izmenaKlase(@RequestBody KlasaVozilaDTO klasaVozilaDTO) {
         Optional<KlasaVozila> klasaVoziladata = klasaVozilaRepository.findById(klasaVozilaDTO.getId());
         if(klasaVoziladata.isPresent()){
             this.klasaVozilaService.updateKlasaVozila(klasaVozilaDTO);
@@ -45,10 +54,10 @@ public class KlasaVozilaController {
         }
     }
 
-    @DeleteMapping("/deleteKlasa/{id}")
+    @DeleteMapping("/brisanjeKlase/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
     //@PreAuthorize("hasAuthority('delete_oglas')")
-    public ResponseEntity<HttpStatus> delete(@PathVariable("id") Long id) {
+    public ResponseEntity<HttpStatus> brisanjeKlase(@PathVariable("id") Long id) {
         try {
             klasaVozilaService.delete(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);

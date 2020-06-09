@@ -4,7 +4,7 @@
 <span>
      
 
-      <button class="dugmeKreiraj"  mat-button [matMenuTriggerFor]="menu">Kreiraj</button>
+      <button class="dugmeKreiraj"  mat-button [matMenuTriggerFor]="menu">Kreiraj entitet</button>
       <mat-menu #menu="matMenu">
         <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/markaVozila">Dodaj Marku Vozila</a>
       
@@ -16,6 +16,23 @@
   
         <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/menjacVozila">Dodaj Vrstu Menjaca</a>
       </mat-menu>
+
+
+      <button class="dugmeLista"  mat-button [matMenuTriggerFor]="menu">Lista entiteta</button>
+      <mat-menu #menu="matMenu">
+        <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/listaMarkiVozila">Lista Marke Vozila</a>
+      
+        <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/listaKlasaVozila">Lista Klase Vozila</a>
+        
+        <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/listaModelaVozila">Lista Modela Vozila</a>
+  
+        <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/listaTipaGorivaVozila">Lista Tipa Goriva</a>
+  
+        <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/listaVrstaMenjacaVozila">Lista Vrste Menjaca</a>
+      </mat-menu>
+
+
+
 
     </span>
 

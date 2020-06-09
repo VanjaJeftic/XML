@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
 import { ModelVozila } from 'src/app/models/model-vozila';
 import { MarkaVozila } from 'src/app/models/marka-vozila';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-model-vozila',
@@ -12,7 +13,7 @@ export class ModelVozilaComponent implements OnInit {
 
   marke$;
 
-  constructor(private modelService:AdminService) { 
+  constructor(private modelService:AdminService,private router: Router) { 
     console.log("marke");
     this.marke$= modelService.getMarkeVozila();
   }
@@ -29,6 +30,7 @@ export class ModelVozilaComponent implements OnInit {
     console.log("Usao u onsubmit modela vozila"+ this.markaVozila.naziv );
     let res=this.modelService.saveModel(this.modelVozila);
     console.log("poslato");
+    this.router.navigateByUrl('/listaModelaVozila');
     
   }
  

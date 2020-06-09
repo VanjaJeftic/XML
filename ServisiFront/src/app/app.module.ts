@@ -33,7 +33,11 @@ import { RegistrationPageComponent } from './components/registration-page/regist
 import { MatMenuModule} from '@angular/material/menu';
 import { PrikazSvihMarkiVozilaComponent } from './components/userComponent/marka-vozila/prikaz-svih-marki-vozila/prikaz-svih-marki-vozila.component';
 import { PrikazModelaVozilaComponent } from './components/userComponent/model-vozila/prikaz-modela-vozila/prikaz-modela-vozila.component';
+import { PrikazSvihTipovaGorivaComponent } from './components/userComponent/tip-goriva/prikaz-svih-tipova-goriva/prikaz-svih-tipova-goriva.component';
+import { PrikazSvihVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/prikaz-svih-vrsta-menjaca/prikaz-svih-vrsta-menjaca.component';
+import { PrikazSvihKlasaVozilaComponent } from './components/userComponent/klasa-vozila/prikaz-svih-klasa-vozila/prikaz-svih-klasa-vozila.component';
 import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/sva-vozila.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +60,9 @@ import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/s
     RegistrationPageComponent,
     PrikazSvihMarkiVozilaComponent,
     PrikazModelaVozilaComponent,
+    PrikazSvihTipovaGorivaComponent,
+    PrikazSvihVrstaMenjacaComponent,
+    PrikazSvihKlasaVozilaComponent,
     SvaVozilaComponent,
   ],
   imports: [

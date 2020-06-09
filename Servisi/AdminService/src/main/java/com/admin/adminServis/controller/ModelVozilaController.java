@@ -49,7 +49,7 @@ public class ModelVozilaController {
 
     @PutMapping("/izmenaModela")
     //@PreAuthorize("hasAuthority('update_oglas')")
-    public ResponseEntity<?> updateModel(@RequestBody ModelVozilaDTO modelVozilaDTO) {
+    public ResponseEntity<?> izmenaModela(@RequestBody ModelVozilaDTO modelVozilaDTO) {
         Optional<ModelVozila> modelVoziladata = modelVozilaRepository.findById(modelVozilaDTO.getId());
         if(modelVoziladata.isPresent()){
             this.modelVozilaService.updateModelVozila(modelVozilaDTO);
@@ -62,7 +62,7 @@ public class ModelVozilaController {
     @DeleteMapping("/brisanjeModela/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
     //@PreAuthorize("hasAuthority('delete_oglas')")
-    public ResponseEntity<HttpStatus> delete(@PathVariable("id") Long id) {
+    public ResponseEntity<HttpStatus> brisanjeModela(@PathVariable("id") Long id) {
         try {
             modelVozilaService.delete(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
