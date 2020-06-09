@@ -8,6 +8,15 @@
     color:black;
     margin:30px;
   }
+
+  
+  .dugmeLista {
+    background-color:#87b8cf;
+    color:black;
+    margin-right:30px;
+  }
+
+
   .example-wrapper { min-height: 280px; align-content: flex-start; }
   .example-wrapper p, .example-col p { margin: 0 0 10px; }
   .example-wrapper p:first-child, .example-col p:first-child { margin-top: 0; }

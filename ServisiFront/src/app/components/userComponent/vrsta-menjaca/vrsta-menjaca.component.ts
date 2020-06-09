@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
 import { VrstaMenjaca } from 'src/app/models/vrsta-menjaca';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-vrsta-menjaca',
   templateUrl: './vrsta-menjaca.component.html',
@@ -9,7 +9,7 @@ import { VrstaMenjaca } from 'src/app/models/vrsta-menjaca';
 })
 export class VrstaMenjacaComponent implements OnInit {
 
-  constructor(private  vrstaMenjacaServis:AdminService) { }
+  constructor(private  vrstaMenjacaServis:AdminService,private router: Router) { }
   public vrstaMenjaca:VrstaMenjaca=new VrstaMenjaca();
 
   ngOnInit() {
@@ -21,6 +21,7 @@ export class VrstaMenjacaComponent implements OnInit {
     console.log("Usao u onsubmit vrste menjaca"+ this.vrstaMenjaca.naziv );
     let res=this.vrstaMenjacaServis.saveMenjac(this.vrstaMenjaca);
     console.log("poslato");
+    this.router.navigateByUrl('/listaVrstaMenjacaVozila');
     
   }
 

@@ -18,6 +18,9 @@ import { ModelVozilaComponent } from './components/userComponent/model-vozila/mo
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import { PrikazSvihMarkiVozilaComponent } from './components/userComponent/marka-vozila/prikaz-svih-marki-vozila/prikaz-svih-marki-vozila.component';
 import { PrikazModelaVozilaComponent } from './components/userComponent/model-vozila/prikaz-modela-vozila/prikaz-modela-vozila.component';
+import { PrikazSvihKlasaVozilaComponent } from './components/userComponent/klasa-vozila/prikaz-svih-klasa-vozila/prikaz-svih-klasa-vozila.component';
+import { PrikazSvihTipovaGorivaComponent } from './components/userComponent/tip-goriva/prikaz-svih-tipova-goriva/prikaz-svih-tipova-goriva.component';
+import { PrikazSvihVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/prikaz-svih-vrsta-menjaca/prikaz-svih-vrsta-menjaca.component';
 
 
 const routes: Routes = [
@@ -40,6 +43,9 @@ const routes: Routes = [
   { path: 'register', component:RegistrationPageComponent},
   { path: 'listaMarkiVozila', component:PrikazSvihMarkiVozilaComponent},
   { path: 'listaModelaVozila', component:PrikazModelaVozilaComponent},
+  { path: 'listaKlasaVozila', component:PrikazSvihKlasaVozilaComponent},
+  { path: 'listaTipaGorivaVozila', component:PrikazSvihTipovaGorivaComponent},
+  { path: 'listaVrstaMenjacaVozila', component:PrikazSvihVrstaMenjacaComponent},
 ];
 
 @NgModule({

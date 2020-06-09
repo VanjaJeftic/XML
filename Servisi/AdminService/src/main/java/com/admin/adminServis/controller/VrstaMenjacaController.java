@@ -1,6 +1,7 @@
 package com.admin.adminServis.controller;
 
 import com.admin.adminServis.dto.VrstaMenjacaDTO;
+import com.admin.adminServis.model.ModelVozila;
 import com.admin.adminServis.model.VrstaMenjaca;
 import com.admin.adminServis.repository.VrstaMenjacaRepository;
 import com.admin.adminServis.service.VrstaMenjacaService;
@@ -9,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -16,7 +18,9 @@ import java.util.Optional;
 @RequestMapping(value = "/menjac")
 public class VrstaMenjacaController {
 
+    @Autowired
     private VrstaMenjacaService vrstaMenjacaService;
+    @Autowired
     private VrstaMenjacaRepository vrstaMenjacaRepository;
 
     @Autowired
@@ -24,16 +28,16 @@ public class VrstaMenjacaController {
         this.vrstaMenjacaService=vrstaMenjacaService;
     }
 
-    @PostMapping("/novaVrstaMenjaca")
+    @PostMapping("/sacuvajVrstuMenjaca")
     //@PreAuthorize("hasAuthority('create_oglas')")
-    public ResponseEntity<?> createMenjac(@RequestBody VrstaMenjacaDTO vrstaMenjacaDTO) {
+    public ResponseEntity<?> sacuvajVrstuMenjaca(@RequestBody VrstaMenjacaDTO vrstaMenjacaDTO) {
         VrstaMenjaca vrstaMenjaca = this.vrstaMenjacaService.createVrstaMenjaca(vrstaMenjacaDTO);
         return new ResponseEntity<>(vrstaMenjaca, HttpStatus.OK);
     }
 
-    @PutMapping("/updateMenjac")
+    @PutMapping("/izmenaVrsteMenjaca")
     //@PreAuthorize("hasAuthority('update_oglas')")
-    public ResponseEntity<?> updateMenjac(@RequestBody VrstaMenjacaDTO vrstaMenjacaDTO) {
+    public ResponseEntity<?> izmenaVrsteMenjaca(@RequestBody VrstaMenjacaDTO vrstaMenjacaDTO) {
         Optional<VrstaMenjaca> vrstaMenjacadata = vrstaMenjacaRepository.findById(vrstaMenjacaDTO.getId());
         if(vrstaMenjacadata.isPresent()){
             this.vrstaMenjacaService.updateVrstaMenjaca(vrstaMenjacaDTO);
@@ -43,10 +47,16 @@ public class VrstaMenjacaController {
         }
     }
 
-    @DeleteMapping("/deleteMenjac/{id}")
+    @GetMapping("/vrsteMenjacaVozila")
+    List<VrstaMenjaca> svevrsteMenjacaVozila() {
+        System.out.println("sve vrste Menjaca Vozila");
+        return vrstaMenjacaRepository.findAll();
+    }
+
+    @DeleteMapping("/brisanjeVrsteMenjaca/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
     //@PreAuthorize("hasAuthority('delete_oglas')")
-    public ResponseEntity<HttpStatus> deleteMenjac(@PathVariable("id") Long id) {
+    public ResponseEntity<HttpStatus> brisanjeVrsteMenjaca(@PathVariable("id") Long id) {
         try {
             vrstaMenjacaService.delete(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);

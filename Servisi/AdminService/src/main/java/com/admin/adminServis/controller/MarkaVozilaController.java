@@ -30,7 +30,7 @@ public class MarkaVozilaController {
     @PostMapping("/novaMarka")
     //@PreAuthorize("hasAuthority('create_oglas')")
     public ResponseEntity<?> createMarka(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
-
+        System.out.println("Nova marka kreiranje");
         MarkaVozila markaVozila = this.markaVozilaService.createMarkaVozila(markaVozilaDTO);
 
         return new ResponseEntity<>(markaVozila, HttpStatus.OK);

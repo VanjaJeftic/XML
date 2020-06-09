@@ -3,6 +3,7 @@ package com.admin.adminServis.controller;
 import com.admin.adminServis.dto.MarkaVozilaDTO;
 import com.admin.adminServis.dto.TipGorivaDTO;
 import com.admin.adminServis.model.MarkaVozila;
+import com.admin.adminServis.model.ModelVozila;
 import com.admin.adminServis.model.TipGoriva;
 import com.admin.adminServis.repository.TipGorivaRepository;
 import com.admin.adminServis.service.TipGorivaService;
@@ -11,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -18,7 +20,9 @@ import java.util.Optional;
 @RequestMapping(value = "/gorivo")
 public class TipGorivaController {
 
+    @Autowired
     private TipGorivaRepository tipGorivaRepository;
+    @Autowired
     private TipGorivaService tipGorivaService;
 
     @Autowired
@@ -26,18 +30,18 @@ public class TipGorivaController {
         this.tipGorivaService=tipGorivaService;
     }
 
-    @PostMapping("/noviTipGoriva")
+    @PostMapping("/sacuvajTipGoriva")
     //@PreAuthorize("hasAuthority('create_oglas')")
-    public ResponseEntity<?> createGorivo(@RequestBody TipGorivaDTO tipGorivaDTO) {
+    public ResponseEntity<?> sacuvajTipGoriva(@RequestBody TipGorivaDTO tipGorivaDTO) {
 
         TipGoriva tipGoriva = this.tipGorivaService.createTipGoriva(tipGorivaDTO);
 
         return new ResponseEntity<>(tipGoriva, HttpStatus.OK);
     }
 
-    @PutMapping("/updateGorivo")
+    @PutMapping("/izmenaGoriva")
     //@PreAuthorize("hasAuthority('update_oglas')")
-    public ResponseEntity<?> updateGorivo(@RequestBody TipGorivaDTO tipGorivaDTO) {
+    public ResponseEntity<?> izmenaGoriva(@RequestBody TipGorivaDTO tipGorivaDTO) {
         Optional<TipGoriva> tipGorivadata = tipGorivaRepository.findById(tipGorivaDTO.getId());
         if(tipGorivadata.isPresent()){
             this.tipGorivaService.updateTipGoriva(tipGorivaDTO);
@@ -47,10 +51,16 @@ public class TipGorivaController {
         }
     }
 
-    @DeleteMapping("/deleteGorivo/{id}")
+    @GetMapping("/tipoviGorivaVozila")
+    List<TipGoriva> svitipoviGorivaVozila() {
+        System.out.println("tipoviGorivaVozila svi");
+        return tipGorivaRepository.findAll();
+    }
+
+    @DeleteMapping("/brisanjeGoriva/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
     //@PreAuthorize("hasAuthority('delete_oglas')")
-    public ResponseEntity<HttpStatus> deleteGorivo(@PathVariable("id") Long id) {
+    public ResponseEntity<HttpStatus> brisanjeGoriva(@PathVariable("id") Long id) {
         try {
             tipGorivaService.delete(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
