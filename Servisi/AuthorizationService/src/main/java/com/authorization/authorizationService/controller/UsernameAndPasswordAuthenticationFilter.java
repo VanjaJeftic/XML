@@ -128,9 +128,12 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 			UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(username, password, Collections.emptyList());
 			System.out.println("za proveru:" + authToken + "kraj" +authToken.getName()+authToken.getCredentials());
 			User user=userRepo.findByUsername(username);
+			System.out.println();
 			System.out.println(user.getPassword()+password);
-			System.out.println( "Enkodirana"+encoder.encode("123"));
-			System.out.println(user.getPassword().equals(encoder.encode("123")));
+			System.out.println();
+			System.out.println( "Enkodirana"+encoder.encode("12345678"));
+			System.out.println();
+			System.out.println(user.getPassword().equals(encoder.encode(password)));
 			Authentication authentication = authManager.authenticate(authToken);
 			System.out.println("Dolazak do security context");
 			SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -147,6 +150,8 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 			System.out.println("EVO ME");
 			loggedUser.setToken(token);
 			loggedUser.setUsername(username);
+			loggedUser.setUserId(user.getId());
+			loggedUser.setRoles(user.getRoles().get(0).getName());
 			if(!userService.loadUserByUsername(username).isEnabled())
 				return null;
 			return loggedUser;

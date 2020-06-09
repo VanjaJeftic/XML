@@ -87,15 +87,20 @@ public class VoziloController {
                                    @RequestParam("vozilomenjac") String vrstaMenjaca,
                                    @RequestParam("vozilogorivo") String tipGoriva,
                                    @RequestParam("vozilokm") String predjeniKm,
-                                   @RequestParam("vozilosedista") String brsedistadeca
+                                   @RequestParam("vozilosedista") String brsedistadeca,
+                                   @RequestParam("username") String username,
+                                   @RequestParam("userId") Long userid
                                    ) throws IOException {
         VoziloDTO ovDTO=new VoziloDTO();
+        System.out.println("Username"+ username);
         ovDTO.setBrsedistadeca(brsedistadeca);
         ovDTO.setKlasaVozila(klasaVozila);
         ovDTO.setMarkaVozila(markaVozila);
         ovDTO.setModelVozila(modelVozila);
         ovDTO.setVrstaMenjaca(vrstaMenjaca);
         ovDTO.setPredjeniKm(predjeniKm);
+        ovDTO.setTipGoriva(tipGoriva);
+        ovDTO.setUser_id(userid);
         Vozilo vozilo=this.voziloService.createVozilo(ovDTO);
         System.out.println("vozilo" + vozilo.getId() );
         System.out.println("Original Image Byte Size - " + file.getBytes().length);
@@ -153,6 +158,14 @@ public class VoziloController {
         } catch (DataFormatException e) {
         }
         return outputStream.toByteArray();
+    }
+    
+    @GetMapping("/vozila/{id}")
+    List<Vozilo> mojaVozila(@PathVariable("id") String id){
+    	Long user=Long.parseLong(id);
+		System.out.println("usao da dobavim "+id+" " +voziloService.getVozila(user).size());
+    	return voziloService.getVozila(user);
+    	
     }
 }
 

@@ -36,6 +36,7 @@ import { PrikazModelaVozilaComponent } from './components/userComponent/model-vo
 import { PrikazSvihTipovaGorivaComponent } from './components/userComponent/tip-goriva/prikaz-svih-tipova-goriva/prikaz-svih-tipova-goriva.component';
 import { PrikazSvihVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/prikaz-svih-vrsta-menjaca/prikaz-svih-vrsta-menjaca.component';
 import { PrikazSvihKlasaVozilaComponent } from './components/userComponent/klasa-vozila/prikaz-svih-klasa-vozila/prikaz-svih-klasa-vozila.component';
+import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/sva-vozila.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { PrikazSvihKlasaVozilaComponent } from './components/userComponent/klasa
     PrikazSvihTipovaGorivaComponent,
     PrikazSvihVrstaMenjacaComponent,
     PrikazSvihKlasaVozilaComponent,
+    SvaVozilaComponent,
   ],
   imports: [
     BrowserModule,

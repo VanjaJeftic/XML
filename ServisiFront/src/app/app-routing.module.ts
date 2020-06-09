@@ -21,6 +21,8 @@ import { PrikazModelaVozilaComponent } from './components/userComponent/model-vo
 import { PrikazSvihKlasaVozilaComponent } from './components/userComponent/klasa-vozila/prikaz-svih-klasa-vozila/prikaz-svih-klasa-vozila.component';
 import { PrikazSvihTipovaGorivaComponent } from './components/userComponent/tip-goriva/prikaz-svih-tipova-goriva/prikaz-svih-tipova-goriva.component';
 import { PrikazSvihVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/prikaz-svih-vrsta-menjaca/prikaz-svih-vrsta-menjaca.component';
+import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/sva-vozila.component';
+
 
 
 const routes: Routes = [
@@ -46,6 +48,8 @@ const routes: Routes = [
   { path: 'listaKlasaVozila', component:PrikazSvihKlasaVozilaComponent},
   { path: 'listaTipaGorivaVozila', component:PrikazSvihTipovaGorivaComponent},
   { path: 'listaVrstaMenjacaVozila', component:PrikazSvihVrstaMenjacaComponent},
+  {path: 'svavozila',component:SvaVozilaComponent}
+
 ];
 
 @NgModule({

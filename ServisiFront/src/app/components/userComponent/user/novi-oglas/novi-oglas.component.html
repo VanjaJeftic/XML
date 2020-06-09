@@ -1,15 +1,17 @@
-
 <mat-toolbar color="primary" class="app-header">
-    <div><a href="/" class="navlogo">Rent-A-Car</a></div>
+    <div><a href="/" class="navlogo">Rent-A-Car Korisnik</a></div>
     <span class="nav-tool-items">
-      <a mat-button mat-raised-button routerLink="/register" routerLinkActive="active">Napravi nalog</a>
-    </span>
-  </mat-toolbar>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onVozilo()">Novo vozilo</a>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onMojaVozila()">Moja vozila</a>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onShoppingCart()">Moja Korpa</a>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
+   </span>
+  </mat-toolbar>  
 
   <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
     <mat-card >
       <mat-card-header>
-        <mat-card-title>Kreiraj Novo vozilo</mat-card-title>
+        <mat-card-title>Unesi informacije o vozilu</mat-card-title>
       </mat-card-header>
   
       <form class="form" (submit)="onSubmit()">
@@ -58,10 +60,9 @@
 
 
         </mat-card-content>
-        <a routerLink="/oglas/create"><button  mat-stroked-button class="buttonKorakUnazad" >Korak unazad</button></a>
         <br>
-        <br>
-        <button mat-stroked-button  class="buttonPotvrdi" type="submit">Potvrdi</button>
+      
+        <button mat-stroked-button color="primary" class="btn-block" type="submit">Potvrdi</button>
   
       </form>
     </mat-card>

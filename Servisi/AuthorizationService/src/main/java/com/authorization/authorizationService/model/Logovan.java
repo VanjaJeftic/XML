@@ -1,9 +1,29 @@
 package com.authorization.authorizationService.model;
 
+import java.util.List;
+
 public class Logovan {
 	
 	private String username;
 	private String token;
+    private String roles;
+    private Long userId;
+    
+    
+    
+    
+	public Long getUserId() {
+		return userId;
+	}
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+	public String getRoles() {
+		return roles;
+	}
+	public void setRoles(String string) {
+		this.roles = string;
+	}
 	public String getUsername() {
 		return username;
 	}
