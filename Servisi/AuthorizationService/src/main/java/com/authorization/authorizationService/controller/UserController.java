@@ -49,9 +49,10 @@ public class UserController {
 
     }
 
-    @DeleteMapping("/brisanjeKorisnika/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<HttpStatus> brisanjeKorisnika(@PathVariable("id") Long id) {
         try {
+        	System.out.println("Auth kontroler dodjoh da brisem");
             userService.delete(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
@@ -59,7 +60,7 @@ public class UserController {
         }
     }
 //=======================mozda treba Get umesto Put ??????
-    @GetMapping("/blokirajKorisnika/{id}")
+    @GetMapping("/blokirajUsera/{id}")
     public ResponseEntity<HttpStatus> blokirajUsera(@PathVariable("id") Long id) {
         try {
             userService.blokirajUsera(id);
@@ -69,7 +70,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/odblokirajKorisnika/{id}")
+    @GetMapping("/odblokirajUsera/{id}")
     public ResponseEntity<HttpStatus> odblokirajUsera(@PathVariable("id") Long id) {
         try {
             userService.odblokirajUsera(id);
