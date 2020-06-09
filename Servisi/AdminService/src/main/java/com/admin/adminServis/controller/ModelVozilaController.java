@@ -34,7 +34,7 @@ public class ModelVozilaController {
 
     @PostMapping("/sacuvajModel")
     //@PreAuthorize("hasAuthority('create_oglas')")
-    public ResponseEntity<?> createModel(@RequestBody ModelVozilaDTO modelVozilaDTO) {
+    public ResponseEntity<?> sacuvajModel(@RequestBody ModelVozilaDTO modelVozilaDTO) {
 
         ModelVozila modelVozila = this.modelVozilaService.createModelVozila(modelVozilaDTO);
 

@@ -32,6 +32,7 @@ public class ModelVozilaService {
 
         modelVozila.setId(modelVozilaDTO.getId());
         modelVozila.setNaziv(modelVozilaDTO.getNaziv());
+        modelVozila.setId_marke(modelVozilaDTO.getId_marke());
 
         return this.modelVozilaRepository.save(modelVozila);
     }

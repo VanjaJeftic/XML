@@ -14,14 +14,16 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Naziv tipa goriva</th>
-            <th scope="col">Obrisi tip goriva</th>
+            <th scope="col">Brisanje tipa goriva</th>
+            <th scope="col">Izmena tipa goriva</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let tipGoriva of tipGorivalist$ | async" >
             <td>{{ tipGoriva.id }}</td>
             <td>{{ tipGoriva.naziv }}</td>
-            <td><button class="btn btn-danger" (click)="deleteTipGoriva(tipGoriva)">Obrisi tip goriva vozila</button></td>
+            <td><button class="btn btn-danger" (click)="deleteTipGoriva(tipGoriva)">Obrisi tip goriva</button></td>
+            <td><button class="btn boja" (click)="izmenaTipaGoriva(tipGoriva)">Izmeni tip goriva</button></td>
           </tr>
         </tbody>
       </table>

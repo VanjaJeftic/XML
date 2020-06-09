@@ -36,7 +36,14 @@ import { PrikazModelaVozilaComponent } from './components/userComponent/model-vo
 import { PrikazSvihTipovaGorivaComponent } from './components/userComponent/tip-goriva/prikaz-svih-tipova-goriva/prikaz-svih-tipova-goriva.component';
 import { PrikazSvihVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/prikaz-svih-vrsta-menjaca/prikaz-svih-vrsta-menjaca.component';
 import { PrikazSvihKlasaVozilaComponent } from './components/userComponent/klasa-vozila/prikaz-svih-klasa-vozila/prikaz-svih-klasa-vozila.component';
+import { IzmenaMarkeVozilaComponent } from './components/userComponent/marka-vozila/izmena-marke-vozila/izmena-marke-vozila.component';
+import { MatDialogModule } from '@angular/material';
+import { IzmenaKlaseVozilaComponent } from './components/userComponent/klasa-vozila/izmena-klase-vozila/izmena-klase-vozila.component';
+import { IzmenaTipaGorivaComponent } from './components/userComponent/tip-goriva/izmena-tipa-goriva/izmena-tipa-goriva.component';
+import { IzmenaVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/izmena-vrsta-menjaca/izmena-vrsta-menjaca.component';
+import { IzmenaModelaVozilaComponent } from './components/userComponent/model-vozila/izmena-modela-vozila/izmena-modela-vozila.component';
 import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/sva-vozila.component';
+
 
 @NgModule({
   declarations: [
@@ -63,6 +70,11 @@ import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/s
     PrikazSvihTipovaGorivaComponent,
     PrikazSvihVrstaMenjacaComponent,
     PrikazSvihKlasaVozilaComponent,
+    IzmenaMarkeVozilaComponent,
+    IzmenaKlaseVozilaComponent,
+    IzmenaTipaGorivaComponent,
+    IzmenaVrstaMenjacaComponent,
+    IzmenaModelaVozilaComponent
     SvaVozilaComponent,
   ],
   imports: [
@@ -76,9 +88,12 @@ import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/s
     ReactiveFormsModule,
     OwlDateTimeModule, 
     OwlNativeDateTimeModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule,
+
   ],
-  entryComponents: [TerminZauzecaDialogComponent],
+  entryComponents: [TerminZauzecaDialogComponent
+  ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,

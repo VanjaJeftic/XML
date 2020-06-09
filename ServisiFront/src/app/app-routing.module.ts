@@ -21,8 +21,12 @@ import { PrikazModelaVozilaComponent } from './components/userComponent/model-vo
 import { PrikazSvihKlasaVozilaComponent } from './components/userComponent/klasa-vozila/prikaz-svih-klasa-vozila/prikaz-svih-klasa-vozila.component';
 import { PrikazSvihTipovaGorivaComponent } from './components/userComponent/tip-goriva/prikaz-svih-tipova-goriva/prikaz-svih-tipova-goriva.component';
 import { PrikazSvihVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/prikaz-svih-vrsta-menjaca/prikaz-svih-vrsta-menjaca.component';
+import { IzmenaMarkeVozilaComponent } from './components/userComponent/marka-vozila/izmena-marke-vozila/izmena-marke-vozila.component';
+import { IzmenaKlaseVozilaComponent } from './components/userComponent/klasa-vozila/izmena-klase-vozila/izmena-klase-vozila.component';
+import { IzmenaTipaGorivaComponent } from './components/userComponent/tip-goriva/izmena-tipa-goriva/izmena-tipa-goriva.component';
+import { IzmenaVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/izmena-vrsta-menjaca/izmena-vrsta-menjaca.component';
+import { IzmenaModelaVozilaComponent } from './components/userComponent/model-vozila/izmena-modela-vozila/izmena-modela-vozila.component';
 import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/sva-vozila.component';
-
 
 
 const routes: Routes = [
@@ -48,8 +52,12 @@ const routes: Routes = [
   { path: 'listaKlasaVozila', component:PrikazSvihKlasaVozilaComponent},
   { path: 'listaTipaGorivaVozila', component:PrikazSvihTipovaGorivaComponent},
   { path: 'listaVrstaMenjacaVozila', component:PrikazSvihVrstaMenjacaComponent},
+  { path: 'izmenaMarkeVozila', component:IzmenaMarkeVozilaComponent},
+  { path: 'izmenaKlaseVozila', component:IzmenaKlaseVozilaComponent},
+  { path: 'izmenaTipaGorivaVozila', component:IzmenaTipaGorivaComponent},
+  { path: 'izmenaVrsteMenjacaVozila', component:IzmenaVrstaMenjacaComponent},
+  { path: 'izmenaModelaVozila', component:IzmenaModelaVozilaComponent}
   {path: 'svavozila',component:SvaVozilaComponent}
-
 ];
 
 @NgModule({

@@ -13,15 +13,17 @@
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Naziv vrste menjaca vozila</th>
-            <th scope="col">Obrisi vrstu menjaca vozila</th>
+            <th scope="col">Naziv vrste menjaca</th>
+            <th scope="col">Brisanje vrstu menjaca</th>
+            <th scope="col">Izmena vrste menjaca</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let vrstaMenjaca of vrstaMenjacalist$ | async" >
             <td>{{ vrstaMenjaca.id }}</td>
             <td>{{ vrstaMenjaca.naziv }}</td>
-            <td><button class="btn btn-danger" (click)="deleteVrsteMenjaca(vrstaMenjaca)">Obrisi vrstu menjaca vozila</button></td>
+            <td><button class="btn btn-danger" (click)="deleteVrsteMenjaca(vrstaMenjaca)">Obrisi vrstu menjaca</button></td>
+            <td><button class="btn boja" (click)="izmenaVrsteMenjaca(vrstaMenjaca)">Izmeni vrstu menjaca</button></td>
           </tr>
         </tbody>
       </table>

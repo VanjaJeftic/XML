@@ -27,6 +27,7 @@ public class MarkaVozilaService {
     }
 
     public MarkaVozila updateMarkaVozila(MarkaVozilaDTO markaVozilaDTO) {
+        System.out.println("Dosli smo do update Marka servis");
         MarkaVozila markaVozila = this.markaVozilaRepository.findById(markaVozilaDTO.getId())
                 .orElseThrow(() -> new NotFoundException("markaVozila with that id does not exist!"));
 

@@ -14,7 +14,8 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Naziv klase vozila</th>
-            <th scope="col">Obrisi klasu vozila</th>
+            <th scope="col">Brisanje klase vozila</th>
+            <th scope="col">Izmena klase vozila</th>
           </tr>
         </thead>
         <tbody>
@@ -22,6 +23,7 @@
             <td>{{ klasaVozila.id }}</td>
             <td>{{ klasaVozila.naziv }}</td>
             <td><button class="btn btn-danger" (click)="deleteKlaseVozila(klasaVozila)">Obrisi klasu vozila</button></td>
+            <td><button class="btn boja" (click)="izmenaKlase(klasaVozila)">Izmeni klasu vozila</button></td>
           </tr>
         </tbody>
       </table>

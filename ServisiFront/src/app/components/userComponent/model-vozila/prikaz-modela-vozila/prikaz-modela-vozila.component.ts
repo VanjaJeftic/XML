@@ -27,4 +27,10 @@ export class PrikazModelaVozilaComponent implements OnInit {
         this.modeli = this.modeli.filter(u => u !== model);
       })
   };
+
+  izmenaModela(modelVozila) {
+    localStorage.setItem("modelVozila", JSON.stringify(modelVozila)); 
+    this.router.navigate(["/izmenaModelaVozila"]);
+ }
+
 }
