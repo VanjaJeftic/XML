@@ -8,5 +8,6 @@ export class Oglas {
     slobodanod:Date;
     slovodando:Date;
     cdw:boolean;
+    user_id:string;
 
 }

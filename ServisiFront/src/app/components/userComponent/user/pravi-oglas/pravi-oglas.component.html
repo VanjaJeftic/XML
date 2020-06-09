@@ -1,15 +1,7 @@
-
-<mat-toolbar color="primary" class="app-header">
-    <div><a href="/" class="navlogo">Rent-A-Car</a></div>
-    <span class="nav-tool-items">
-      <a mat-button mat-raised-button routerLink="/register" routerLinkActive="active">Napravi nalog</a>
-    </span>
-  </mat-toolbar>
-
-  <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+<div class="dialog" fxLayout="row" fxLayoutAlign="center center" >
     <mat-card >
       <mat-card-header>
-        <mat-card-title>Novi oglas</mat-card-title>
+        <mat-card-title>Postavi oglas</mat-card-title>
       </mat-card-header>
   
       <form class="form" (submit)="onSubmit()">
@@ -41,7 +33,7 @@
             <mat-datepicker #picker1></mat-datepicker>
           </mat-form-field>
 
-      
+          
 
           <div form-group>
             <input type="checkbox" [(ngModel)]="cdw"  [ngModelOptions]="{standalone: true}" data-md-icheck (change)="toggleVisibility($event)"/>
@@ -50,12 +42,11 @@
       </mat-card-content>
   
 
-      <a routerLink="/vozilo/novoVozilo"><button width="15px" mat-stroked-button color="gray" class="buttonVozilo " >Dodaj vozilo</button></a>
+     
       <br>
-      <br>
-
-        <button mat-stroked-button color="primary" class="btn-block" type="submit">Potvrdi</button>
-  
+        <button mat-stroked-button color="primary" class="btn-block" type="submit">Potvrdi</button><button mat-stroked-button color="primary" class="btn-block" (click)="cancel()">Odustani</button>
+        
+        
       </form>
     </mat-card>
   </div>
