@@ -46,6 +46,16 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/search/search/create").permitAll()
                 .antMatchers("/search/search/getAll/**").permitAll()
                 .antMatchers("/search/search/getSearched/**").permitAll()
+                .antMatchers("/admin/user/blokirajUsera/**").permitAll()
+                .antMatchers("/admin/user/odblokirajUsera/**").permitAll()
+                .antMatchers("/admin/user/delete/**").permitAll()
+                .antMatchers("/auth/korisnik/verify/**").permitAll()
+                .antMatchers("/auth/korisnik/blokirajUsera/**").permitAll()
+                .antMatchers("/auth/korisnik/odblokirajUsera/**").permitAll()
+                .antMatchers("/auth/korisnik/blokirajUsera/**").permitAll()
+                .antMatchers("/auth/korisnik/delete/**").permitAll()
+                .antMatchers("/admin/**").permitAll()
+                .antMatchers("/auth/**").permitAll()
                 .anyRequest().authenticated();
     }
 

@@ -102,8 +102,9 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
     public boolean blokirajUsera(Long id) {
         User user = userDetailRepository.findById(id).orElse(null);
-        System.out.println("blokiran user je: " + id);
+        System.out.println("blokiran user u auth servicu je: " + id);
         if (user != null) {
+        	 System.out.println("udjoh da blokiram" + id);
             user.setNalogAktivan(false);
             userDetailRepository.save(user);
             return true;

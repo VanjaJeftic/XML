@@ -8,11 +8,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-//@RestController
+@RestController
+@RequestMapping(value = "/user")
 public class UserController {
 
     @Autowired
@@ -25,13 +27,13 @@ public class UserController {
 
     //@PreAuthorize("@authService.hasProtectedAccess()")
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<User> obrisiUsera(@PathVariable Long id){
+    public ResponseEntity<HttpStatus> obrisiUsera(@PathVariable Long id){
 
         if (userService.ukloniUsera(id)) {
-            return new ResponseEntity<User>(HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.OK);
         } else {
 
-            return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
     }
@@ -39,10 +41,12 @@ public class UserController {
     //@PreAuthorize("@authService.hasProtectedAccess()")
     @GetMapping("/blokirajUsera/{id}")
     public ResponseEntity<User> blokirajUsera(@PathVariable Long id){
-
+    	System.out.println("metoda blokiraj usera u auth");
         if (userService.blokirajUsera(id)) {
+        	System.out.println("Odoh u servis da blokiram");
             return new ResponseEntity<User>(userService.findById(id), HttpStatus.OK);
         } else {
+        	System.out.println("Nisam otisao u servis");
             return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
         }
 
