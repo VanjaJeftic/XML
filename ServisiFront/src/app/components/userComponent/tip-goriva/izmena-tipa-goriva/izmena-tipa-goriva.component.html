@@ -1,0 +1,27 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="/" class="navlogo">Rent-A-Car</a></div>
+  
+  </mat-toolbar>
+  
+    <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+      <mat-card >
+        <mat-card-header>
+          <mat-card-title>Izmena Tipa Goriva Vozila</mat-card-title>
+        </mat-card-header>
+    
+        <form class="form" (submit)="onSubmitIzmenaTipaGoriva()">
+    
+          <mat-card-content>
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Naziv tipa goriva" [(ngModel)]="tipGoriva.naziv" [ngModelOptions]="{standalone: true}" required>
+            </mat-form-field>
+  
+          
+          </mat-card-content>
+          
+          <button mat-stroked-button class="buttonPotvrdi" type="submit">Potvrdi</button>
+    
+        </form>
+      </mat-card>
+    </div>
+  

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
 import { KlasaVozila } from 'src/app/models/klasa-vozila';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-prikaz-svih-klasa-vozila',
@@ -10,7 +11,7 @@ import { KlasaVozila } from 'src/app/models/klasa-vozila';
 export class PrikazSvihKlasaVozilaComponent implements OnInit {
   klaseVozila: KlasaVozila[];
   klasaVozilalist$;
-  constructor(private  klasaServis:AdminService) { 
+  constructor(private  klasaServis:AdminService,private router: Router) { 
     this.klasaVozilalist$= klasaServis.getKlaseVozila();
   }
   public klasaVozila:KlasaVozila=new KlasaVozila();
@@ -24,5 +25,13 @@ export class PrikazSvihKlasaVozilaComponent implements OnInit {
         this.klaseVozila = this.klaseVozila.filter(u => u !== klasa);
       })
   };
+
+
+  izmenaKlase(klasaVozila) {
+      localStorage.setItem("klasaVozila", JSON.stringify(klasaVozila)); 
+      this.router.navigate(["/izmenaKlaseVozila"]);
+   }
+
+
 
 }

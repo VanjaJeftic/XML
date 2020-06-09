@@ -29,16 +29,18 @@ public class MarkaVozilaController {
 
     @PostMapping("/novaMarka")
     //@PreAuthorize("hasAuthority('create_oglas')")
-    public ResponseEntity<?> createMarka(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
+    public ResponseEntity<?> sacuvajMarkuVozila(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
         System.out.println("Nova marka kreiranje");
         MarkaVozila markaVozila = this.markaVozilaService.createMarkaVozila(markaVozilaDTO);
 
         return new ResponseEntity<>(markaVozila, HttpStatus.OK);
     }
 
+
     @PutMapping("/izmenaMarke")
     //@PreAuthorize("hasAuthority('update_oglas')")
-    public ResponseEntity<?> updateMarka(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
+    public ResponseEntity<?> izmenaMarka(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
+        System.out.println("Izmena marke controller  "+ markaVozilaDTO.getNaziv());
         Optional<MarkaVozila> markaVoziladata = markaVozilaRepository.findById(markaVozilaDTO.getId());
         if(markaVoziladata.isPresent()){
             this.markaVozilaService.updateMarkaVozila(markaVozilaDTO);

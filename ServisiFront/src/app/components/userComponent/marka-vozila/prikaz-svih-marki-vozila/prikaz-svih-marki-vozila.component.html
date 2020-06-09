@@ -13,15 +13,17 @@
       <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Naziv vozila</th>
-          <th scope="col">Obrisi marku</th>
+          <th scope="col">Naziv marke vozila</th>
+          <th scope="col">Brisanje marke vozila</th>
+          <th scope="col">Izmena marke vozila</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let marka of markelist$ | async" >
-          <td>{{ marka.id }}</td>
-          <td>{{ marka.naziv }}</td>
+          <td >{{ marka.id }}</td>
+          <td >{{ marka.naziv }}</td>
           <td><button class="btn btn-danger" (click)="deleteMarka(marka)">Obrisi marku vozila</button></td>
+          <td><button class="btn boja" (click)="izmena(marka)">Izmeni marke vozila</button></td>
         </tr>
       </tbody>
     </table>

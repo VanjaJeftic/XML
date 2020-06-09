@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VrstaMenjaca } from 'src/app/models/vrsta-menjaca';
 import { AdminService } from 'src/app/services/admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-prikaz-svih-vrsta-menjaca',
@@ -12,7 +13,7 @@ export class PrikazSvihVrstaMenjacaComponent implements OnInit {
   menjaci:VrstaMenjaca[];
   vrstaMenjacalist$;
 
-  constructor(private  vrstaMenjacaServis:AdminService) { 
+  constructor(private  vrstaMenjacaServis:AdminService,private router: Router) { 
     this.vrstaMenjacalist$= vrstaMenjacaServis.getVrsteMenjacaVozila();
   }
 
@@ -28,4 +29,11 @@ export class PrikazSvihVrstaMenjacaComponent implements OnInit {
         this.menjaci = this.menjaci.filter(u => u !== menjac);
       })
   };
+
+
+  izmenaVrsteMenjaca(vrstaMenjaca) {
+    localStorage.setItem("vrstaMenjaca", JSON.stringify(vrstaMenjaca)); 
+    this.router.navigate(["/izmenaVrsteMenjacaVozila"]);
+ }
+
 }

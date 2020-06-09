@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TipGoriva } from 'src/app/models/tip-goriva';
 import { AdminService } from 'src/app/services/admin.service';
 import { TipGorivaComponent } from '../tip-goriva.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-prikaz-svih-tipova-goriva',
@@ -12,7 +13,7 @@ export class PrikazSvihTipovaGorivaComponent implements OnInit {
   goriva: TipGoriva[];
   tipGorivalist$;
 
-  constructor(private  tipGorivaServis:AdminService) { 
+  constructor(private  tipGorivaServis:AdminService,private router: Router) { 
     this.tipGorivalist$= tipGorivaServis.getTipoviGorivaVozila();
   }
 
@@ -22,11 +23,19 @@ export class PrikazSvihTipovaGorivaComponent implements OnInit {
   }
 
   deleteTipGoriva(tipGoriva: TipGoriva): void {
-    console.log("brisanje tipa goriva");
     this.tipGorivaServis.deleteTipGoriva(tipGoriva)
       .subscribe( data => {
         this.goriva = this.goriva.filter(u => u !== tipGoriva);
       })
   };
+
+
+  izmenaTipaGoriva(tipGoriva){
+    localStorage.setItem("tipGoriva", JSON.stringify(tipGoriva)); 
+    this.router.navigate(["/izmenaTipaGorivaVozila"]);
+  }
+
+
+
 }
 

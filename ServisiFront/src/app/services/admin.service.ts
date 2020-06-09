@@ -17,7 +17,6 @@ export class AdminService {
   constructor(private http:HttpClient) { }
 
   public saveMarka(markaVozila:MarkaVozila){
-    console.log("Marka vozila se salje ")
     return this.http.post('http://localhost:8094/marka/novaMarka',markaVozila).subscribe(
       data=>{console.log('Vratio je '+data)}
     );
@@ -25,8 +24,41 @@ export class AdminService {
   }
 
 
+  public izmenaMarke(markaVozila:MarkaVozila){
+    return this.http.put('http://localhost:8094/marka/izmenaMarke',markaVozila,{responseType: 'text'}).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
+    
+  }
+
+  public izmenaKlase(klasaVozila:KlasaVozila){
+    return this.http.put('http://localhost:8094/klasa/izmenaKlase',klasaVozila,{responseType: 'text'}).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
+    
+  }
+
+
+  public izmenaTipaGoriva(tipGoriva:TipGoriva){
+    return this.http.put('http://localhost:8094/gorivo/izmenaGoriva',tipGoriva,{responseType: 'text'}).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
+  }
+
+  public izmenaVrsteMenjaca(vrstaMenjaca:VrstaMenjaca){
+    return this.http.put('http://localhost:8094/menjac/izmenaVrsteMenjaca',vrstaMenjaca,{responseType: 'text'}).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
+  }
+
+  public izmenaModelaVozila(modelVozila:ModelVozila){
+    console.log("id marke je "+modelVozila.id_marke)
+    return this.http.put('http://localhost:8094/model/izmenaModela',modelVozila,{responseType: 'text'}).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
+  }
+
   public saveKlasa(klasaVozila:KlasaVozila){
-    console.log("Klasa vozila se salje ")
     return this.http.post('http://localhost:8094/klasa/sacuvajKlasu',klasaVozila).subscribe(
       data=>{console.log('Vratio je '+data)}
     );
@@ -34,14 +66,12 @@ export class AdminService {
 
 
   public saveGorivo(tipGoriva:TipGoriva){
-    console.log("TipGoriva vozila se salje ")
     return this.http.post('http://localhost:8094/gorivo/sacuvajTipGoriva',tipGoriva).subscribe(
       data=>{console.log('Vratio je '+data)}
     );
   }
 
   public saveMenjac(vrstaMenjaca:VrstaMenjaca){
-    console.log("TipGoriva vozila se salje ")
     return this.http.post('http://localhost:8094/menjac/sacuvajVrstuMenjaca',vrstaMenjaca).subscribe(
       data=>{console.log('Vratio je '+data)}
     );
@@ -85,6 +115,7 @@ export class AdminService {
     return this.http.delete('http://localhost:8094/marka/brisanjeMarke' + "/"+ marka.id);
   }
 
+ 
   public deleteTipGoriva(gorivo) {
     console.log("brisanje goriva servis");
     window.location.reload();
