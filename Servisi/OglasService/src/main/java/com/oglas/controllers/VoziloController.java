@@ -1,5 +1,6 @@
 package com.oglas.controllers;
 
+import com.oglas.connections.UserConnection;
 import com.oglas.dto.OglasDTO;
 import com.oglas.dto.OglasVoziloDTO;
 import com.oglas.dto.UserViewDTO;
@@ -58,12 +59,13 @@ public class VoziloController {
     @Autowired
     private VoziloRepository voziloRepository;
     
+    @Autowired
+    private UserConnection userConnection;
+    
     @GetMapping
     public List<VoziloViewDTO> allVozila(){		//Prepraviti da vraca vozila za ulogovanog korisnika
     	List<VoziloViewDTO> agentskaVozila = new ArrayList<>();
-    	UserViewDTO user = new UserViewDTO();
-		user.setFirstname("Goran");
-		user.setId(2L);						//Prepraviti na ulogovanog agenta
+    	UserViewDTO user = this.userConnection.getUser(3L);
 		
     	List<Vozilo> vozila = voziloService.getVozila(user.getId());
     	for(Vozilo v : vozila) {

@@ -1,0 +1,72 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="/agent" class="navlogo">Rent-A-Car Agent</a></div>
+    <span class="nav-tool-items">
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onMojaVozila()">Moja Vozila</a>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
+    </span>
+</mat-toolbar>  
+
+<mat-card style="margin-top: 80px;margin-left: 30%;">
+    <mat-card-header >
+        <mat-card-title>Moji Zahtevi</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content style="width: 500px;">
+        <mat-card *ngFor="let data of zahtevi" style="width: 100%;height: 100%;margin-top: 10%;">
+            <mat-card-header>
+                <mat-card-title style="border-style: outset;">
+                  <p>Korisnik: {{data.bundleZahtevi[0].oglas.vozilo.user.username}}</p>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content >
+                <div *ngFor="let zahtev of data.bundleZahtevi" style="height: 100%;;border-style: outset; background-color:gainsboro;">
+                    <p> <span style="padding-right: 10px;">Sifra vozila:</span> {{zahtev.oglas.vozilo.id}} </p>
+                    <p> <span style="padding-right: 10px;">Marka vozila:</span> {{zahtev.oglas.vozilo.markaVozila}} </p>
+                    <p> <span style="padding-right: 10px;">Model vozila:</span> {{zahtev.oglas.vozilo.modelVozila}} </p>
+                    <p> <span style="padding-right: 10px;">Preuzimanje:</span> {{zahtev.preuzimanje}} </p>
+                    <p> <span style="padding-left: 20px; padding-right: 10px;">Povratak:</span> {{zahtev.povratak}} </p>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" style="border-radius: 10px;" (click)="onPrihvati(data)">Prihvati</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-card-content>
+</mat-card>
+
+<!--
+
+    <mat-card style="margin-top: 80px;">
+    <mat-card-header >
+        <mat-card-title>Moji Zahtevi</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content style="width: 400px;">
+        <mat-grid-list cols="1" >
+            <mat-grid-tile *ngFor="let data of zahtevi" >
+                <mat-card style="width: 100%;height: 100%;">
+                    <mat-card-header>
+                        <mat-card-title style="border-style: outset;">
+                          <p>Korisnik: {{data.bundleZahtevi[0].oglas.vozilo.user.firstname}}</p>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content >
+                        <div *ngFor="let zahtev of data.bundleZahtevi" style="height: 100%;;border-style: outset; background-color:gainsboro;">
+                            <p> <span style="padding-right: 10px;">Sifra vozila:</span> {{zahtev.oglas.vozilo.id}} </p>
+                     
+                            <p> <span style="padding-right: 10px;">Marka vozila:</span> {{zahtev.oglas.vozilo.markaVozila}} </p>
+                            <p> <span style="padding-right: 10px;">Model vozila:</span> {{zahtev.oglas.vozilo.modelVozila}} </p>
+                            
+                            <p> <span style="padding-right: 10px;">Preuzimanje:</span> {{zahtev.preuzimanje}} </p>
+                            <p> <span style="padding-left: 20px; padding-right: 10px;">Povratak:</span> {{zahtev.povratak}} </p>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-raised-button color="primary" style="border-radius: 10px;" (click)="onPrihvati(data)">Prihvati</button>
+                    </mat-card-actions>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>
+-->

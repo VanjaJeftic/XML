@@ -18,6 +18,10 @@ export class AgentComponent implements OnInit {
     this.router.navigateByUrl('vozila');
   }
 
+  onZahtevi(){
+    this.router.navigateByUrl('zahtev');
+  }
+
   onOdjaviMe(){
     this.authService.logout();
   }

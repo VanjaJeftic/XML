@@ -2,6 +2,8 @@ package com.zahtev.dto;
 
 import java.time.LocalDateTime;
 
+import com.zahtev.model.Zahtev;
+
 public class ZahtevDTO {
 
 	private OglasDTO oglas;
@@ -14,6 +16,16 @@ public class ZahtevDTO {
 	
 	public ZahtevDTO() {
 		// TODO Auto-generated constructor stub
+	}
+	
+	public ZahtevDTO(Zahtev z, OglasDTO oglas) {
+		super();
+		this.oglas = oglas;
+		this.bundle_id = z.getBundle_id();
+		this.bundle = z.isBundle();
+		this.preuzimanje = z.getPreuzimanje();
+		this.povratak = z.getPovratak();
+		this.status = z.getStatus();
 	}
 	
 	
