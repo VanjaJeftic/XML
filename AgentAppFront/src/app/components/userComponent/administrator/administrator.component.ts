@@ -1,6 +1,8 @@
 import { AuthenticationService } from './../../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 
+import { MatMenuModule} from '@angular/material/menu';
+
 @Component({
   selector: 'app-administrator',
   templateUrl: './administrator.component.html',

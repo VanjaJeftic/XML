@@ -1,5 +1,7 @@
 package com.agentApp.app.models;
 
+import com.agentApp.app.dto.TipGorivaDTO;
+
 import javax.persistence.*;
 
 @Entity
@@ -30,5 +32,10 @@ public class TipGoriva {
     }
 
     public TipGoriva() {
+    }
+
+    public TipGoriva(TipGorivaDTO dto) {
+        this.id = dto.getId();
+        this.naziv = dto.getNaziv();
     }
 }

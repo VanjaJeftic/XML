@@ -1,0 +1,33 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="/" class="navlogo">Rent-A-Car</a></div>
+    <span class="nav-tool-items">
+    </span>
+  </mat-toolbar>
+  <br><br>
+  <div class="card my-5">
+    <div class="card-body">
+      <div class="labelNaslov">
+      <label>Lista modela vozila</label>
+    </div>
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Naziv modela vozila</th>
+            <th scope="col">Marka vozila vozila</th>
+            <th scope="col">Brisanje modela vozila</th>
+            <th scope="col">Izmena modela vozila</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let model of modellist$ | async" >
+            <td>{{ model.id }}</td>
+            <td>{{ model.naziv }}</td>
+            <td>{{ model.id_marke }}</td>
+            <td><button class="btn btn-danger" (click)="deleteModel(model)">Obrisi model vozila</button></td>
+            <td><button class="btn boja" (click)="izmenaModela(model)">Izmeni model vozila</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

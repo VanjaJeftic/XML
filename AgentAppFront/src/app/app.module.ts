@@ -19,6 +19,22 @@ import { MyShopCartItemsComponent } from './components/userComponent/user/my-sho
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { RegisterComponent } from './components/register/register.component';
 import { ActivationPageComponent } from './components/activation-page/activation-page.component';
+import { KlasaVozilaComponent } from './components/userComponent/klasa-vozila/klasa-vozila.component';
+import { IzmenaKlaseVozilaComponent } from './components/userComponent/klasa-vozila/izmena-klase-vozila/izmena-klase-vozila.component';
+import { PrikazSvihKlasaVozilaComponent } from './components/userComponent/klasa-vozila/prikaz-svih-klasa-vozila/prikaz-svih-klasa-vozila.component';
+import { MarkaVozilaComponent } from './components/userComponent/marka-vozila/marka-vozila.component';
+import { IzmenaMarkeVozilaComponent } from './components/userComponent/marka-vozila/izmena-marke-vozila/izmena-marke-vozila.component';
+import { PrikazSvihMarkiVozilaComponent } from './components/userComponent/marka-vozila/prikaz-svih-marki-vozila/prikaz-svih-marki-vozila.component';
+import { ModelVozilaComponent } from './components/userComponent/model-vozila/model-vozila.component';
+import { IzmenaModelaVozilaComponent } from './components/userComponent/model-vozila/izmena-modela-vozila/izmena-modela-vozila.component';
+import { PrikazModelaVozilaComponent } from './components/userComponent/model-vozila/prikaz-modela-vozila/prikaz-modela-vozila.component';
+import { TipGorivaComponent } from './components/userComponent/tip-goriva/tip-goriva.component';
+import { IzmenaTipaGorivaComponent } from './components/userComponent/tip-goriva/izmena-tipa-goriva/izmena-tipa-goriva.component';
+import { PrikazSvihTipovaGorivaComponent } from './components/userComponent/tip-goriva/prikaz-svih-tipova-goriva/prikaz-svih-tipova-goriva.component';
+import { VrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/vrsta-menjaca.component';
+import { IzmenaVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/izmena-vrsta-menjaca/izmena-vrsta-menjaca.component';
+import { PrikazSvihVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/prikaz-svih-vrsta-menjaca/prikaz-svih-vrsta-menjaca.component';
+import { MatMenuModule, MatDialogModule } from '@angular/material';
 
 
 @NgModule({
@@ -32,7 +48,22 @@ import { ActivationPageComponent } from './components/activation-page/activation
     VoziloDetailsComponent,
     MyShopCartItemsComponent,
     RegisterComponent,
-    ActivationPageComponent
+    ActivationPageComponent,
+    KlasaVozilaComponent,
+    IzmenaKlaseVozilaComponent,
+    PrikazSvihKlasaVozilaComponent,
+    MarkaVozilaComponent,
+    IzmenaMarkeVozilaComponent,
+    PrikazSvihMarkiVozilaComponent,
+    ModelVozilaComponent,
+    IzmenaModelaVozilaComponent,
+    PrikazModelaVozilaComponent,
+    TipGorivaComponent,
+    IzmenaTipaGorivaComponent,
+    PrikazSvihTipovaGorivaComponent,
+    VrstaMenjacaComponent,
+    IzmenaVrstaMenjacaComponent,
+    PrikazSvihVrstaMenjacaComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +74,9 @@ import { ActivationPageComponent } from './components/activation-page/activation
     HttpClientModule,
     NgxMaterialTimepickerModule,
     OwlDateTimeModule, 
-    OwlNativeDateTimeModule
+    OwlNativeDateTimeModule,
+    MatMenuModule,
+    MatDialogModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

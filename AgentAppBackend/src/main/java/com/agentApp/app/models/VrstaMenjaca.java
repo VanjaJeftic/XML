@@ -1,5 +1,7 @@
 package com.agentApp.app.models;
 
+import com.agentApp.app.dto.VrstaMenjacaDTO;
+
 import javax.persistence.*;
 
 @Entity
@@ -30,5 +32,10 @@ public class VrstaMenjaca {
     }
 
     public VrstaMenjaca() {
+    }
+
+    public VrstaMenjaca(VrstaMenjacaDTO dto) {
+        this.id = dto.getId();
+        this.naziv = dto.getNaziv();
     }
 }
