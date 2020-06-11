@@ -1,0 +1,324 @@
+2020-06-10 11:45:34,453 INFO com.agentApp.app.AgentAppApplication [restartedMain] Starting AgentAppApplication on DESKTOP-H4C7KO5 with PID 13220 (C:\Users\HP820G3\Desktop\gitXML\AgentAppBackend\target\classes started by HP820G3 in C:\Users\HP820G3\Desktop\gitXML\AgentAppBackend)
+2020-06-10 11:45:34,463 INFO com.agentApp.app.AgentAppApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-06-10 11:45:37,992 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-06-10 11:45:37,993 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-06-10 11:45:38,241 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-06-10 11:45:38,565 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-10 11:45:38,686 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.8.Final}
+2020-06-10 11:45:38,908 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-10 11:45:39,102 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-06-10 11:45:39,285 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-06-10 11:45:39,305 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-06-10 11:45:41,423 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,424 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "agent" does not exist, skipping
+2020-06-10 11:45:41,426 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,427 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "izvestaj" does not exist, skipping
+2020-06-10 11:45:41,436 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,438 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "komentar" does not exist, skipping
+2020-06-10 11:45:41,443 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,446 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "komentar" does not exist, skipping
+2020-06-10 11:45:41,450 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,450 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "komentar" does not exist, skipping
+2020-06-10 11:45:41,453 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,454 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "korisnik" does not exist, skipping
+2020-06-10 11:45:41,457 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,458 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "odgovor" does not exist, skipping
+2020-06-10 11:45:41,464 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,464 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "oglas" does not exist, skipping
+2020-06-10 11:45:41,467 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,467 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "poruka" does not exist, skipping
+2020-06-10 11:45:41,471 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,471 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "poruka" does not exist, skipping
+2020-06-10 11:45:41,477 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,478 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "user_authority" does not exist, skipping
+2020-06-10 11:45:41,482 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,482 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "user_authority" does not exist, skipping
+2020-06-10 11:45:41,485 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,485 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:45:41,488 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,488 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:45:41,492 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,492 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:45:41,498 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,498 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:45:41,503 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,504 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:45:41,508 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,510 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:45:41,518 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,518 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "zahtev" does not exist, skipping
+2020-06-10 11:45:41,521 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,521 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "zahtev" does not exist, skipping
+2020-06-10 11:45:41,524 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,525 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "agent" does not exist, skipping
+2020-06-10 11:45:41,528 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,529 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "authority" does not exist, skipping
+2020-06-10 11:45:41,532 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,532 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "izvestaj" does not exist, skipping
+2020-06-10 11:45:41,535 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,535 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "klasavozila" does not exist, skipping
+2020-06-10 11:45:41,539 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,540 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "komentar" does not exist, skipping
+2020-06-10 11:45:41,546 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,546 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "korisnik" does not exist, skipping
+2020-06-10 11:45:41,550 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,551 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "markavozila" does not exist, skipping
+2020-06-10 11:45:41,554 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,554 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "modelvozila" does not exist, skipping
+2020-06-10 11:45:41,557 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,557 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "odgovor" does not exist, skipping
+2020-06-10 11:45:41,562 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,563 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "oglas" does not exist, skipping
+2020-06-10 11:45:41,570 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,571 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "poruka" does not exist, skipping
+2020-06-10 11:45:41,574 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,575 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "search" does not exist, skipping
+2020-06-10 11:45:41,583 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,583 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "tipgoriva" does not exist, skipping
+2020-06-10 11:45:41,587 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,587 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "user_authority" does not exist, skipping
+2020-06-10 11:45:41,590 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,591 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "users" does not exist, skipping
+2020-06-10 11:45:41,594 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,596 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "vozilo" does not exist, skipping
+2020-06-10 11:45:41,606 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,606 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "vrstamenjaca" does not exist, skipping
+2020-06-10 11:45:41,612 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:45:41,612 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "zahtev" does not exist, skipping
+2020-06-10 11:45:42,029 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-10 11:45:45,566 INFO com.agentApp.app.AgentAppApplication [restartedMain] Started AgentAppApplication in 12.331 seconds (JVM running for 15.212)
+2020-06-10 11:50:18,206 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-5] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-06-10 11:50:18,721 INFO com.zaxxer.hikari.HikariDataSource [Thread-5] HikariPool-1 - Shutdown initiated...
+2020-06-10 11:50:18,731 INFO com.zaxxer.hikari.HikariDataSource [Thread-5] HikariPool-1 - Shutdown completed.
+2020-06-10 11:50:19,244 INFO com.agentApp.app.AgentAppApplication [restartedMain] Starting AgentAppApplication on DESKTOP-H4C7KO5 with PID 13220 (C:\Users\HP820G3\Desktop\gitXML\AgentAppBackend\target\classes started by HP820G3 in C:\Users\HP820G3\Desktop\gitXML\AgentAppBackend)
+2020-06-10 11:50:19,245 INFO com.agentApp.app.AgentAppApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-06-10 11:50:20,242 WARN org.apache.tomcat.util.modeler.Registry [restartedMain] The MBean registry cannot be disabled because it has already been initialised
+2020-06-10 11:50:20,285 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-06-10 11:50:20,286 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-06-10 11:50:20,340 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-06-10 11:50:20,434 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-10 11:50:20,442 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2020-06-10 11:50:20,496 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2020-06-10 11:50:20,496 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-06-10 11:50:21,825 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,825 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "agent" does not exist, skipping
+2020-06-10 11:50:21,829 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,829 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "izvestaj" does not exist, skipping
+2020-06-10 11:50:21,832 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,832 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "komentar" does not exist, skipping
+2020-06-10 11:50:21,835 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,835 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "komentar" does not exist, skipping
+2020-06-10 11:50:21,838 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,838 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "komentar" does not exist, skipping
+2020-06-10 11:50:21,841 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,841 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "korisnik" does not exist, skipping
+2020-06-10 11:50:21,845 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,845 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "odgovor" does not exist, skipping
+2020-06-10 11:50:21,848 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,848 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "oglas" does not exist, skipping
+2020-06-10 11:50:21,851 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,852 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "poruka" does not exist, skipping
+2020-06-10 11:50:21,855 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,856 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "poruka" does not exist, skipping
+2020-06-10 11:50:21,859 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,859 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "user_authority" does not exist, skipping
+2020-06-10 11:50:21,862 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,863 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "user_authority" does not exist, skipping
+2020-06-10 11:50:21,865 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,866 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:50:21,869 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,870 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:50:21,873 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,873 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:50:21,875 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,876 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:50:21,879 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,879 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:50:21,882 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,882 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:50:21,885 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,885 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "zahtev" does not exist, skipping
+2020-06-10 11:50:21,888 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,888 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "zahtev" does not exist, skipping
+2020-06-10 11:50:21,891 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,891 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "agent" does not exist, skipping
+2020-06-10 11:50:21,894 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,894 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "authority" does not exist, skipping
+2020-06-10 11:50:21,896 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,897 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "izvestaj" does not exist, skipping
+2020-06-10 11:50:21,900 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,900 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "klasavozila" does not exist, skipping
+2020-06-10 11:50:21,903 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,903 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "komentar" does not exist, skipping
+2020-06-10 11:50:21,906 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,906 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "korisnik" does not exist, skipping
+2020-06-10 11:50:21,910 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,910 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "markavozila" does not exist, skipping
+2020-06-10 11:50:21,913 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,913 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "modelvozila" does not exist, skipping
+2020-06-10 11:50:21,916 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,916 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "odgovor" does not exist, skipping
+2020-06-10 11:50:21,919 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,919 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "oglas" does not exist, skipping
+2020-06-10 11:50:21,922 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,923 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "poruka" does not exist, skipping
+2020-06-10 11:50:21,926 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,926 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "search" does not exist, skipping
+2020-06-10 11:50:21,929 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,930 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "tipgoriva" does not exist, skipping
+2020-06-10 11:50:21,932 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,932 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "user_authority" does not exist, skipping
+2020-06-10 11:50:21,934 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,935 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "users" does not exist, skipping
+2020-06-10 11:50:21,937 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,937 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "vozilo" does not exist, skipping
+2020-06-10 11:50:21,940 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,941 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "vrstamenjaca" does not exist, skipping
+2020-06-10 11:50:21,950 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:21,951 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "zahtev" does not exist, skipping
+2020-06-10 11:50:22,250 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-10 11:50:23,518 INFO com.agentApp.app.AgentAppApplication [restartedMain] Started AgentAppApplication in 4.362 seconds (JVM running for 293.165)
+2020-06-10 11:50:26,001 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-9] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-06-10 11:50:26,650 INFO com.zaxxer.hikari.HikariDataSource [Thread-9] HikariPool-2 - Shutdown initiated...
+2020-06-10 11:50:26,667 INFO com.zaxxer.hikari.HikariDataSource [Thread-9] HikariPool-2 - Shutdown completed.
+2020-06-10 11:50:27,259 INFO com.agentApp.app.AgentAppApplication [restartedMain] Starting AgentAppApplication on DESKTOP-H4C7KO5 with PID 13220 (C:\Users\HP820G3\Desktop\gitXML\AgentAppBackend\target\classes started by HP820G3 in C:\Users\HP820G3\Desktop\gitXML\AgentAppBackend)
+2020-06-10 11:50:27,263 INFO com.agentApp.app.AgentAppApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-06-10 11:50:28,513 WARN org.apache.tomcat.util.modeler.Registry [restartedMain] The MBean registry cannot be disabled because it has already been initialised
+2020-06-10 11:50:28,550 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-06-10 11:50:28,551 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-06-10 11:50:28,618 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-06-10 11:50:28,786 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-10 11:50:28,800 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Starting...
+2020-06-10 11:50:28,881 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Start completed.
+2020-06-10 11:50:28,881 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-06-10 11:50:30,255 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,256 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "agent" does not exist, skipping
+2020-06-10 11:50:30,258 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,258 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "izvestaj" does not exist, skipping
+2020-06-10 11:50:30,261 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,261 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "komentar" does not exist, skipping
+2020-06-10 11:50:30,264 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,264 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "komentar" does not exist, skipping
+2020-06-10 11:50:30,267 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,267 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "komentar" does not exist, skipping
+2020-06-10 11:50:30,270 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,270 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "korisnik" does not exist, skipping
+2020-06-10 11:50:30,273 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,273 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "odgovor" does not exist, skipping
+2020-06-10 11:50:30,277 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,277 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "oglas" does not exist, skipping
+2020-06-10 11:50:30,282 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,282 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "poruka" does not exist, skipping
+2020-06-10 11:50:30,285 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,285 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "poruka" does not exist, skipping
+2020-06-10 11:50:30,288 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,288 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "user_authority" does not exist, skipping
+2020-06-10 11:50:30,293 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,293 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "user_authority" does not exist, skipping
+2020-06-10 11:50:30,298 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,298 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:50:30,301 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,301 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:50:30,304 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,304 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:50:30,308 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,309 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:50:30,312 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,312 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:50:30,315 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,315 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "vozilo" does not exist, skipping
+2020-06-10 11:50:30,319 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,319 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "zahtev" does not exist, skipping
+2020-06-10 11:50:30,321 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,322 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] relation "zahtev" does not exist, skipping
+2020-06-10 11:50:30,326 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,326 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "agent" does not exist, skipping
+2020-06-10 11:50:30,330 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,330 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "authority" does not exist, skipping
+2020-06-10 11:50:30,334 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,334 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "izvestaj" does not exist, skipping
+2020-06-10 11:50:30,336 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,336 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "klasavozila" does not exist, skipping
+2020-06-10 11:50:30,340 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,340 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "komentar" does not exist, skipping
+2020-06-10 11:50:30,352 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,352 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "korisnik" does not exist, skipping
+2020-06-10 11:50:30,356 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,356 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "markavozila" does not exist, skipping
+2020-06-10 11:50:30,367 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,368 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "modelvozila" does not exist, skipping
+2020-06-10 11:50:30,374 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,374 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "odgovor" does not exist, skipping
+2020-06-10 11:50:30,377 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,377 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "oglas" does not exist, skipping
+2020-06-10 11:50:30,381 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,381 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "poruka" does not exist, skipping
+2020-06-10 11:50:30,383 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,384 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "search" does not exist, skipping
+2020-06-10 11:50:30,387 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,388 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "tipgoriva" does not exist, skipping
+2020-06-10 11:50:30,393 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,393 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "user_authority" does not exist, skipping
+2020-06-10 11:50:30,401 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,401 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "users" does not exist, skipping
+2020-06-10 11:50:30,404 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,404 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "vozilo" does not exist, skipping
+2020-06-10 11:50:30,407 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,407 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "vrstamenjaca" does not exist, skipping
+2020-06-10 11:50:30,413 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] SQL Warning Code: 0, SQLState: 00000
+2020-06-10 11:50:30,413 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [restartedMain] table "zahtev" does not exist, skipping
+2020-06-10 11:50:30,772 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-10 11:50:32,648 INFO com.agentApp.app.AgentAppApplication [restartedMain] Started AgentAppApplication in 5.497 seconds (JVM running for 302.294)
+2020-06-10 19:39:48,150 INFO org.apache.coyote.http11.Http11Processor [http-nio-8088-exec-1] Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:415) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:292) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+2020-06-10 19:39:48,150 INFO org.apache.coyote.http11.Http11Processor [http-nio-8088-exec-2] Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:415) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:292) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+2020-06-10 19:39:48,260 INFO org.apache.coyote.http11.Http11Processor [http-nio-8088-exec-3] Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:415) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:292) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+2020-06-10 19:39:48,261 INFO org.apache.coyote.http11.Http11Processor [http-nio-8088-exec-4] Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:415) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:292) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+2020-06-10 19:42:20,779 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8088-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'

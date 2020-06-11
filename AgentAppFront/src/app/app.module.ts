@@ -17,6 +17,9 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
 import { MyShopCartItemsComponent } from './components/userComponent/user/my-shop-cart-items/my-shop-cart-items.component';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { RegisterComponent } from './components/register/register.component';
+import { ActivationPageComponent } from './components/activation-page/activation-page.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     AdministratorComponent,
     HomePageComponent,
     VoziloDetailsComponent,
-    MyShopCartItemsComponent
+    MyShopCartItemsComponent,
+    RegisterComponent,
+    ActivationPageComponent
   ],
   imports: [
     BrowserModule,

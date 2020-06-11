@@ -2,6 +2,7 @@ package com.agentApp.app.services;
 
 import java.util.List;
 
+import com.agentApp.app.dto.UserDTO;
 import com.agentApp.app.models.Authority;
 import com.agentApp.app.models.User;
 import com.agentApp.app.repository.UserRepository;
@@ -28,9 +29,12 @@ public class UserService {
 	}
 	
 	public List<User> findAll(){
+
 		return userRepository.findAll();
 	}
+
 	public User findById(Long id) {
+
 		return userRepository.findById(id).orElseGet(null);
 	}
 	
@@ -57,26 +61,21 @@ public class UserService {
 		return userRepository.save(u);
 	}
 	
-	
-	
-//	public User findByEmailAndPassword(String email, String password){
-//		return userRepository.findByEmailAndPasswordAllIgnoringCase(email, password);
-//	}
-//	public User findUserByEmail(String email) {
-//		return userRepository.findOneByEmail(email);
-//	}
+
 	public List<User> findOnlyUsers(String uloga){
 		return userRepository.findAllByUloga(uloga);
 	}
 	
 	//Za Registraciju
-	public User saveUser(User user) {
+	public User saveUser(UserDTO user) {
 		
 		User u = userRepository.findByUsername(user.getUsername());		//Username => mail
-		if( u == null ) {
+		User u2=userRepository.findByEmail(user.getEmail());
+		if( u == null && u2==null) {
 			//u = userRepository.save(user);
 			User newUser = new User();
 			newUser.setUsername(user.getUsername());
+			newUser.setEmail(user.getEmail());
 			newUser.setPassword(passwordEncoder.encode(user.getPassword()));
 			newUser.setFirstname(user.getFirstname());
 			newUser.setLastname(user.getLastname());

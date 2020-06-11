@@ -1,13 +1,13 @@
 package com.agentApp.app.controllers;
 
 import java.io.IOException;
-
 import javax.servlet.http.HttpServletResponse;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.agentApp.app.auth.JwtAuthenticationRequest;
+import com.agentApp.app.dto.UserDTO;
+import com.agentApp.app.services.EmailService;
 import com.agentApp.app.tokenUtils.TokenUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -30,8 +30,10 @@ import com.agentApp.app.services.UserService;
 @RestController
 @RequestMapping(value = "/auth", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticationController {
-	
-	protected final Log LOGGER = LogFactory.getLog(getClass());
+
+	private Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
+	@Autowired
+	private EmailService emailService;
 
 	@Autowired
 	TokenUtils tokenUtils;
@@ -74,15 +76,21 @@ public class AuthenticationController {
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public ResponseEntity<?> doRegister(@RequestBody User user){
-		User u = userService.saveUser(user);
+	public ResponseEntity<?> doRegister(@RequestBody UserDTO dto){
+		User u = userService.saveUser(dto);
 		
 		if( u == null ) {
 			System.out.println(u);
 			return new ResponseEntity<>(u, HttpStatus.OK);
 		}
-				
-		return new ResponseEntity<>(user, HttpStatus.OK);
+
+		try {
+			emailService.sendNotificaitionZaRegistraciju(u);
+		} catch (Exception e) {
+			logger.info("Greska prilikom slanja emaila: " + e.getMessage());
+		}
+
+		return new ResponseEntity<>(dto, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/aktivirajNalog", method = RequestMethod.POST)
