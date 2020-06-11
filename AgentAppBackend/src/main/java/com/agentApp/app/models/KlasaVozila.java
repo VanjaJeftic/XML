@@ -1,5 +1,7 @@
 package com.agentApp.app.models;
 
+import com.agentApp.app.dto.KlasaVozilaDTO;
+
 import javax.persistence.*;
 
 @Entity
@@ -29,5 +31,10 @@ public class KlasaVozila {
     }
 
     public KlasaVozila() {
+    }
+
+    public KlasaVozila(KlasaVozilaDTO dto) {
+        this.id = dto.getId();
+        this.naziv = dto.getNaziv();
     }
 }

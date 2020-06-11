@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AdminServiceService } from 'src/app/services/admin-service.service';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-activation-page',
@@ -9,7 +9,7 @@ import { AdminServiceService } from 'src/app/services/admin-service.service';
 })
 export class ActivationPageComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private adminService: AdminServiceService) { }
+  constructor(private route: ActivatedRoute, private adminService:AdminService) { }
 
   ngOnInit() {
     let idSelektovanog = parseInt(this.route.snapshot.paramMap.get('id'));

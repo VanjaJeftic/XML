@@ -1,0 +1,31 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="/" class="navlogo">Rent-A-Car</a></div>
+    <span class="nav-tool-items">
+    </span>
+  </mat-toolbar>
+  <br><br>
+  <div class="card my-5">
+    <div class="card-body">
+      <div class="labelNaslov">
+      <label>Lista klasa vozila</label>
+    </div>
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Naziv klase vozila</th>
+            <th scope="col">Brisanje klase vozila</th>
+            <th scope="col">Izmena klase vozila</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let klasaVozila of klasaVozilalist$ | async" >
+            <td>{{ klasaVozila.id }}</td>
+            <td>{{ klasaVozila.naziv }}</td>
+            <td><button class="btn btn-danger" (click)="deleteKlaseVozila(klasaVozila)">Obrisi klasu vozila</button></td>
+            <td><button class="btn boja" (click)="izmenaKlase(klasaVozila)">Izmeni klasu vozila</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
