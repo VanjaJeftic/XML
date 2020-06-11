@@ -27,7 +27,7 @@ public class KlasaVozilaController {
         this.klasaVozilaService=klasaVozilaService;
     }
 
-    @PostMapping("/sacuvajKlasu")
+    @PostMapping
     //@PreAuthorize("hasAuthority('create_oglas')")
     public ResponseEntity<?> kreirajKlasu(@RequestBody KlasaVozilaDTO klasaVozilaDTO) {
 
@@ -36,13 +36,13 @@ public class KlasaVozilaController {
         return new ResponseEntity<>(klasaVozila, HttpStatus.OK);
     }
 
-    @GetMapping("/klaseVozila")
+    @GetMapping
     List<KlasaVozila> sveKlase() {
         System.out.println("klase vozila");
         return klasaVozilaRepository.findAll();
     }
 
-    @PutMapping("/izmenaKlase")
+    @PutMapping
     //@PreAuthorize("hasAuthority('update_oglas')")
     public ResponseEntity<?> izmenaKlase(@RequestBody KlasaVozilaDTO klasaVozilaDTO) {
         Optional<KlasaVozila> klasaVoziladata = klasaVozilaRepository.findById(klasaVozilaDTO.getId());
@@ -54,7 +54,7 @@ public class KlasaVozilaController {
         }
     }
 
-    @DeleteMapping("/brisanjeKlase/{id}")
+    @DeleteMapping("/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
     //@PreAuthorize("hasAuthority('delete_oglas')")
     public ResponseEntity<HttpStatus> brisanjeKlase(@PathVariable("id") Long id) {
@@ -65,7 +65,7 @@ public class KlasaVozilaController {
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
     }
-
+/*
     @GetMapping("/verify/{klasavozila_id}")
     public boolean verify(@PathVariable("klasavozila_id") Long klasavozila_id){
         return klasaVozilaService.verify(klasavozila_id);
@@ -74,6 +74,6 @@ public class KlasaVozilaController {
 //		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
     }
-
+*/
 
 }

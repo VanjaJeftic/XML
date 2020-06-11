@@ -27,7 +27,7 @@ public class MarkaVozilaController {
         this.markaVozilaService=markaVozilaService;
     }
 
-    @PostMapping("/novaMarka")
+    @PostMapping
     //@PreAuthorize("hasAuthority('create_oglas')")
     public ResponseEntity<?> sacuvajMarkuVozila(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
         System.out.println("Nova marka kreiranje");
@@ -37,7 +37,7 @@ public class MarkaVozilaController {
     }
 
 
-    @PutMapping("/izmenaMarke")
+    @PutMapping
     //@PreAuthorize("hasAuthority('update_oglas')")
     public ResponseEntity<?> izmenaMarka(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
         System.out.println("Izmena marke controller  "+ markaVozilaDTO.getNaziv());
@@ -51,7 +51,7 @@ public class MarkaVozilaController {
     }
 
 
-    @DeleteMapping("/brisanjeMarke/{id}")
+    @DeleteMapping("/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
     //@PreAuthorize("hasAuthority('delete_oglas')")
     public ResponseEntity<HttpStatus> brisanjeMarke(@PathVariable("id") Long id) {
@@ -64,12 +64,12 @@ public class MarkaVozilaController {
         }
     }
 
-    @GetMapping("/markeVozila")
+    @GetMapping
     List<MarkaVozila> sveMarke() {
         System.out.println("marke");
         return markaVozilaRepository.findAll();
     }
-
+/*
     @GetMapping("/verify/{markavozila_id}")
     public boolean verify(@PathVariable("markavozila_id") Long markavozila_id){
         return markaVozilaService.verify(markavozila_id);
@@ -79,5 +79,5 @@ public class MarkaVozilaController {
 
     }
 
-
+*/
 }

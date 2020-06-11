@@ -30,7 +30,7 @@ public class TipGorivaController {
         this.tipGorivaService=tipGorivaService;
     }
 
-    @PostMapping("/sacuvajTipGoriva")
+    @PostMapping
     //@PreAuthorize("hasAuthority('create_oglas')")
     public ResponseEntity<?> sacuvajTipGoriva(@RequestBody TipGorivaDTO tipGorivaDTO) {
 
@@ -39,7 +39,7 @@ public class TipGorivaController {
         return new ResponseEntity<>(tipGoriva, HttpStatus.OK);
     }
 
-    @PutMapping("/izmenaGoriva")
+    @PutMapping
     //@PreAuthorize("hasAuthority('update_oglas')")
     public ResponseEntity<?> izmenaGoriva(@RequestBody TipGorivaDTO tipGorivaDTO) {
         Optional<TipGoriva> tipGorivadata = tipGorivaRepository.findById(tipGorivaDTO.getId());
@@ -51,13 +51,13 @@ public class TipGorivaController {
         }
     }
 
-    @GetMapping("/tipoviGorivaVozila")
+    @GetMapping
     List<TipGoriva> svitipoviGorivaVozila() {
         System.out.println("tipoviGorivaVozila svi");
         return tipGorivaRepository.findAll();
     }
 
-    @DeleteMapping("/brisanjeGoriva/{id}")
+    @DeleteMapping("/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
     //@PreAuthorize("hasAuthority('delete_oglas')")
     public ResponseEntity<HttpStatus> brisanjeGoriva(@PathVariable("id") Long id) {
@@ -68,7 +68,7 @@ public class TipGorivaController {
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
     }
-
+/*
     @GetMapping("/verify/{tipgoriva_id}")
     public boolean verify(@PathVariable("tipgoriva_id") Long tipgoriva_id){
         return tipGorivaService.verify(tipgoriva_id);
@@ -77,5 +77,5 @@ public class TipGorivaController {
 //		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
     }
-
+*/
 }
