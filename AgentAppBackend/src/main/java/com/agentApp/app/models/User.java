@@ -1,5 +1,6 @@
 package com.agentApp.app.models;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -27,7 +28,7 @@ public class User implements UserDetails {
 	private Long id;
 	
 	@Column(name = "username", nullable = false, unique = true)
-	private String username;								//E-mail
+	private String username;
 	
 	@Column(name = "password", nullable = false)
 	private String password;
@@ -46,7 +47,10 @@ public class User implements UserDetails {
 	
 	@Column(name = "adress", nullable = false)
 	private String adress;
-	
+
+	@Column(name = "email", nullable = false,unique = true)
+	private String email;
+
 	@Column(name = "city", nullable = false)
 	private String city;
 	
@@ -61,7 +65,19 @@ public class User implements UserDetails {
 	
 	@Column(name = "aktiviran", nullable = false)
 	private boolean nalogAktiviran;
-	
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name = "user_authority", 
 				joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
@@ -72,6 +88,25 @@ public class User implements UserDetails {
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Set<Vozilo> vozila = new HashSet<Vozilo>();
 
+
+	public User(UserDTO dto) {
+		this.id = dto.getId();
+		this.username = dto.getUsername();
+		this.password = dto.getPassword();
+		this.lastPasswordResetDate = dto.getLastPasswordResetDate();
+		this.enabled = dto.isEnabled();
+		this.lastname = dto.getLastname();
+		this.firstname = dto.getFirstname();
+		this.adress = dto.getAdress();
+		this.email = dto.getEmail();
+		this.city = dto.getCity();
+		this.country = dto.getCountry();
+		this.phoneNumber = dto.getPhoneNumber();
+		this.uloga = dto.getUloga();
+		this.nalogAktiviran = dto.isNalogAktiviran();
+		this.authorities = dto.getAuthorities();
+
+	}
 
 	public Set<Vozilo> getVozila() {
 		return vozila;

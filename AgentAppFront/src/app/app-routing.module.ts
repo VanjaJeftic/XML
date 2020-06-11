@@ -7,6 +7,8 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { RegisterComponent } from './components/register/register.component';
+import { ActivationPageComponent } from './components/activation-page/activation-page.component';
 
 
 const routes: Routes = [
@@ -17,7 +19,9 @@ const routes: Routes = [
   { path: 'agent', component: AgentComponent },
   { path: 'user', component: UserComponent},
   { path: 'cart', component: MyShopCartItemsComponent },
-  { path: 'vozilo/:id', component: VoziloDetailsComponent}
+  { path: 'vozilo/:id', component: VoziloDetailsComponent},
+  { path: 'register', component: RegisterComponent},
+  {path: 'activateAccount/:id',component: ActivationPageComponent}
 ];
 
 @NgModule({
