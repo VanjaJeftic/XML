@@ -1,3 +1,4 @@
+import { ZahteviComponent } from './components/userComponent/agent/zahtevi/zahtevi.component';
 import { MojaVozilaComponent } from './components/userComponent/agent/moja-vozila/moja-vozila.component';
 import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
 import { UserComponent } from './components/userComponent/user/user.component';
@@ -57,7 +58,8 @@ const routes: Routes = [
   { path: 'izmenaTipaGorivaVozila', component:IzmenaTipaGorivaComponent},
   { path: 'izmenaVrsteMenjacaVozila', component:IzmenaVrstaMenjacaComponent},
   { path: 'izmenaModelaVozila', component:IzmenaModelaVozilaComponent},
-  {path: 'svavozila',component:SvaVozilaComponent}
+  { path: 'svavozila',component:SvaVozilaComponent},
+  { path: 'zahtev', component: ZahteviComponent }
 ];
 
 @NgModule({
