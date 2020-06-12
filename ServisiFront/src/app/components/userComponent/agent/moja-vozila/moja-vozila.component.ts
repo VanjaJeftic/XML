@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { TerminZauzecaDialogComponent } from './../termin-zauzeca-dialog/termin-zauzeca-dialog.component';
 import { VoziloView } from './../../../../models/vozilo-view';
 import { VoziloService } from './../../../../services/vozilo.service';
@@ -12,11 +13,11 @@ import { MatTableDataSource, MatDialog } from '@angular/material';
 })
 export class MojaVozilaComponent implements OnInit {
 
-  displayedColumns: string[] = ['Vlasnik', 'Klasa', 'Model', 'Zauzece']
+  displayedColumns: string[] = ['Klasa', 'Model', 'Marka', 'KM' ,'Zauzece', 'Detaljnije']
   voziloSource;
 
   constructor(private authService: AuthenticationService, private voziloService: VoziloService,
-              private dialog: MatDialog) { }
+              private dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
     this.voziloService.getVozilaAgenta().subscribe(
@@ -36,6 +37,11 @@ export class MojaVozilaComponent implements OnInit {
       }
     );
   }
+
+  onDetaljnije(element){
+    alert('U izradi!');
+  }
+
   onOdjaviMe(){
     this.authService.logout();
   }

@@ -2,6 +2,7 @@
 package com.oglas.controllers;
 
 import com.oglas.connections.SearchConnection;
+import com.oglas.connections.UserConnection;
 import com.oglas.dto.OglasDTO;
 import com.oglas.dto.OglasViewDTO;
 import com.oglas.dto.OglasVoziloDTO;
@@ -35,6 +36,7 @@ public class OglasController {
 
 	private OglasService oglasService;
 	private VoziloService voziloService;
+	private UserConnection userConnection;
 	@Autowired
 	private OglasRepository oglasRepository;
 	@Autowired
@@ -43,9 +45,10 @@ public class OglasController {
 	private SearchConnection searchConnection;
 
 	@Autowired
-	public OglasController(OglasService oglasService,VoziloService voziloService){
+	public OglasController(OglasService oglasService,VoziloService voziloService, UserConnection userConnection){
 		this.oglasService=oglasService;
 		this.voziloService=voziloService;
+		this.userConnection = userConnection;
 	}
 	
 	@GetMapping
@@ -56,14 +59,12 @@ public class OglasController {
 	
 	@GetMapping("/{id}")
 	public OglasViewDTO getOneOglas(@PathVariable("id") Long id ) {
-		//UserViewDTO user = oglasService.getUser(3L);
-		UserViewDTO user = new UserViewDTO();
-		user.setFirstname("Goran");
 		Oglas o = oglasService.getOneOglas(id);
-		user.setId(o.getUser_id());
+		UserViewDTO userVlasnikOglasa = this.userConnection.getUser(o.getUser_id());
+		
 		Vozilo v = voziloService.getVozilo(o.getVozilo_id());
 		VoziloViewDTO vozilo = new VoziloViewDTO(v);
-		vozilo.setUser(user);
+		vozilo.setUser(userVlasnikOglasa);
 		OglasViewDTO oglas = new OglasViewDTO(o, vozilo);
 		return oglas;
 	}

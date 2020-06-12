@@ -36,6 +36,13 @@ import { IzmenaVrstaMenjacaComponent } from './components/userComponent/vrsta-me
 import { PrikazSvihVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/prikaz-svih-vrsta-menjaca/prikaz-svih-vrsta-menjaca.component';
 import { MatMenuModule, MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { KomentarFormaComponent } from './components/userComponent/komentar-forma/komentar-forma.component';
+import { MatMenuModule, MatDialogModule } from '@angular/material';
+import { NovoVoziloComponent } from './components/novo-vozilo/novo-vozilo.component';
+import { SvaVozilaComponent } from './components/sva-vozila/sva-vozila.component';
+import { NoviOglasComponent } from './components/novi-oglas/novi-oglas.component';
+import { NoviOglasService } from './services/novi-oglas.service';
+import { NovoVoziloService } from './services/novo-vozilo.service';
+import { SvaVozilaService } from './services/sva-vozila.service';
 
 
 @NgModule({
@@ -66,7 +73,9 @@ import { KomentarFormaComponent } from './components/userComponent/komentar-form
     IzmenaVrstaMenjacaComponent,
     PrikazSvihVrstaMenjacaComponent,
     KomentarFormaComponent
-   
+    NovoVoziloComponent,
+    SvaVozilaComponent,
+    NoviOglasComponent
   ],
   imports: [
     BrowserModule,
@@ -82,12 +91,19 @@ import { KomentarFormaComponent } from './components/userComponent/komentar-form
     MatDialogModule
   
   ],
-  entryComponents: [KomentarFormaComponent],
+  entryComponents: [NoviOglasComponent,KomentarFormaComponent
+  ],
+
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi: true
-  }],
+  },
+    
+    NoviOglasService,
+    NovoVoziloService,
+    SvaVozilaService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

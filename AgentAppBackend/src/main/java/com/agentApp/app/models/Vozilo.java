@@ -153,4 +153,11 @@ public class Vozilo implements Serializable {
 
     public Vozilo() {
     }
+
+	public Vozilo(VoziloDTO vozilo) {
+		// TODO Auto-generated constructor stub
+		this.id=vozilo.getId();
+		this.BrSedistaDeca=vozilo.getBrsedistadeca();
+		
+	}
 }

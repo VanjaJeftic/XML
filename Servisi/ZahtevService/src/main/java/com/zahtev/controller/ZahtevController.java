@@ -11,14 +11,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zahtev.connections.OglasConnection;
+import com.zahtev.dto.OglasDTO;
 import com.zahtev.dto.ShopCartItemsDTO;
 import com.zahtev.dto.TerminZauzecaZahtevDTO;
 import com.zahtev.dto.ZahtevDTO;
+import com.zahtev.dto.ZahtevViewDTO;
 import com.zahtev.model.Zahtev;
 import com.zahtev.service.ZahtevService;
 
@@ -34,8 +37,6 @@ public class ZahtevController {
 	
 	@GetMapping("/test")
 	public String zahtevi(){
-//		List<Zahtev> zahtevi = zahtevService.getAllZahtevi();
-//		return zahtevi;
 		return "Hello from ZahteviService";
 	}
 	
@@ -45,7 +46,7 @@ public class ZahtevController {
 		Set<Long> vlasnici = new HashSet<>();
 		Set<ZahtevDTO> forBundle = new HashSet<>();
 		Long groupID = zahtevService.getLastGroupID() + 1;
-		Long podnosilac = 3L;
+		Long podnosilac = listaZahteva.getPodnosilac();
 		
 		
 		for(ZahtevDTO z : listaZahteva.getZahtevi()) {
@@ -62,10 +63,11 @@ public class ZahtevController {
 					forBundle.add(z);
 				}else {
 					System.out.println("Nije bundle zahtev, id: " + z.getOglas().getId());
-					newZahtev.setBundle_id(0L);
+					newZahtev.setBundle_id(groupID);
 					zahtevService.save(newZahtev);
 				}
 			}
+			groupID++;
 		}
 		//BUNDLE Zahtevi
 		for(Long vlasnik : vlasnici) {
@@ -81,16 +83,51 @@ public class ZahtevController {
 			groupID++;
 		}
 		return new ResponseEntity<>(HttpStatus.OK);
-		//STARO
-//		List<Zahtev> validno = new ArrayList<>();
-//		for(ZahtevDTO zahtevDTO : listaZahteva.getZahtevi()) {
-//			boolean postoji = oglasConnection.verify(zahtevDTO.getOglas_id());
-//			if(postoji) {
-//				Zahtev saved = zahtevService.save(new Zahtev(zahtevDTO));
-//				validno.add(saved);
-//			}
-//		}
-//		return validno;
+	}
+	
+	//Grupisanje zahteva na frontu
+	@GetMapping("/{id}") //ID - ulogovani agent
+	public Set<ZahtevViewDTO> sviBundleZahtevi(@PathVariable("id") Long agent){
+		
+		Set<ZahtevViewDTO> bundleZahtevi = new HashSet<>();
+		
+		Set<Long> ids = zahtevService.getAllGroupIDs();
+		
+		//Grupise sve bundle zahteve
+		for(Long id : ids) {
+			List<Zahtev> zahteviGrouped = zahtevService.getAllByGroupID(id);
+			
+			ZahtevViewDTO zvdto = new ZahtevViewDTO();
+			for(Zahtev z : zahteviGrouped) {
+				zvdto.setBundleID(z.getBundle_id());
+				OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
+				
+				if(oglas.getVozilo().getUser().getId().equals(agent)) {
+					zvdto.getBundleZahtevi().add(new ZahtevDTO(z, oglas));
+					bundleZahtevi.add(zvdto);
+				}
+			}
+		}
+		return bundleZahtevi;
+	}
+	
+	@PostMapping("/accept/{id}/{agent}")	//Agent - Ulogovani Agent
+	public ResponseEntity<?> acceptRequest(@PathVariable("id") Long id, @PathVariable("agent") Long agent){
+		List<Zahtev> zahtevi = this.zahtevService.getAllByGroupID(id);
+		
+		for(Zahtev z : zahtevi) {
+			//Pronalazi sve zahteve koji su kreirani za oglas kome je AgentID "agent" i menja status
+			OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
+			if(oglas.getVozilo().getUser().getId().equals(agent)) {
+				z.setStatus("ACCEPTED");
+				this.zahtevService.save(z);
+				//Odbija sve ostale zahteve vezane za taj oglas ovog agenta
+				this.zahtevService.odbijOstaleZahteve(z.getPreuzimanje(), z.getPovratak(), z.getOglas_id());
+			}
+		}
+		
+		
+		return new ResponseEntity<>(null, HttpStatus.ACCEPTED);
 	}
 	
 	@PostMapping("/zauzece")

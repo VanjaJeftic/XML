@@ -49,7 +49,7 @@ export class UserComponent implements OnInit {
     this.authService.logout();
   }
 
-  shopCart(){
+  onShoppingCart(){
     this.router.navigateByUrl('cart');
   }
 

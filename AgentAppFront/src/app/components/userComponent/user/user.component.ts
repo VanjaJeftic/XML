@@ -80,6 +80,14 @@ export class UserComponent implements OnInit {
     this.router.navigateByUrl('cart');
   }
 
+  novo(){
+    this.router.navigateByUrl('novoVozilo');
+  }
+
+  sva(){
+    this.router.navigateByUrl('svaVozila');
+  }
+
   resetuj(){
     this.oglasiSource = this.sviOglasi;
   }
