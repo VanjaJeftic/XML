@@ -1,5 +1,7 @@
 package com.agentApp.app.models;
 
+import com.agentApp.app.dto.KomentarDTO;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -11,6 +13,13 @@ public class Komentar {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="oglas_id")
+    private Long oglas_id;
+
+    @Column(name="korisnik_id")
+    private Long korisnik_id;
+
+    /*
     @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "oglas_id")
     private Oglas oglas;
@@ -18,19 +27,77 @@ public class Komentar {
     @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "korisnik_id")
     private Korisnik korisnik;
-
+*/
     @Column(name="datum")
     private LocalDateTime datum;
 
     @Column(name="ocena")
-    private int Ocena;
+    private int ocena;
 
     @Column(name="sadrzaj")
     private String sadrzaj;
 
-    @OneToOne
-    @JoinColumn(name="odgovor_id")
-    private Odgovor odgovor;
+    @Column(name="odgovor_id")
+    private Long odgovor_id;
+
+    @Column(name="odobren")//od strane admina
+    private boolean odobren;
+
+    @Column(name="objavljen")//od strane admina
+    private boolean objavljen;
+
+
+    public Long getOglas_id() {
+        return oglas_id;
+    }
+
+    public void setOglas_id(Long oglas_id) {
+        this.oglas_id = oglas_id;
+    }
+
+    public Long getKorisnik_id() {
+        return korisnik_id;
+    }
+
+    public void setKorisnik_id(Long korisnik_id) {
+        this.korisnik_id = korisnik_id;
+    }
+
+    public int getOcena() {
+        return ocena;
+    }
+
+    public void setOcena(int ocena) {
+        this.ocena = ocena;
+    }
+
+    public Long getOdgovor_id() {
+        return odgovor_id;
+    }
+
+    public void setOdgovor_id(Long odgovor_id) {
+        this.odgovor_id = odgovor_id;
+    }
+
+    public boolean isOdobren() {
+        return odobren;
+    }
+
+    public void setOdobren(boolean odobren) {
+        this.odobren = odobren;
+    }
+
+    public boolean isObjavljen() {
+        return objavljen;
+    }
+
+    public void setObjavljen(boolean objavljen) {
+        this.objavljen = objavljen;
+    }
+
+//@OneToOne
+    //@JoinColumn(name="odgovor_id")
+   // private Odgovor odgovor;
 
     public Long getId() {
         return id;
@@ -40,21 +107,7 @@ public class Komentar {
         this.id = id;
     }
 
-    public Oglas getOglas() {
-        return oglas;
-    }
 
-    public void setOglas(Oglas oglas) {
-        this.oglas = oglas;
-    }
-
-    public Korisnik getKorisnik() {
-        return korisnik;
-    }
-
-    public void setKorisnik(Korisnik korisnik) {
-        this.korisnik = korisnik;
-    }
 
     public LocalDateTime getDatum() {
         return datum;
@@ -64,13 +117,6 @@ public class Komentar {
         this.datum = datum;
     }
 
-    public int getOcena() {
-        return Ocena;
-    }
-
-    public void setOcena(int ocena) {
-        Ocena = ocena;
-    }
 
     public String getSadrzaj() {
         return sadrzaj;
@@ -80,12 +126,16 @@ public class Komentar {
         this.sadrzaj = sadrzaj;
     }
 
-    public Odgovor getOdgovor() {
-        return odgovor;
-    }
-
-    public void setOdgovor(Odgovor odgovor) {
-        this.odgovor = odgovor;
+    public Komentar(KomentarDTO dto) {
+        this.id = dto.getId();
+        this.oglas_id = dto.getOglas_id();
+        this.korisnik_id = dto.getKorisnik_id();
+        this.datum = dto.getDatum();
+        this.ocena = dto.getOcena();
+        this.sadrzaj = dto.getSadrzaj();
+        this.odgovor_id = dto.getOdgovor_id();
+        this.objavljen=dto.isObjavljen();
+        this.odobren=dto.isOdobren();
     }
 
     public Komentar() {

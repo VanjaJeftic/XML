@@ -34,6 +34,8 @@ import { PrikazSvihTipovaGorivaComponent } from './components/userComponent/tip-
 import { VrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/vrsta-menjaca.component';
 import { IzmenaVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/izmena-vrsta-menjaca/izmena-vrsta-menjaca.component';
 import { PrikazSvihVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/prikaz-svih-vrsta-menjaca/prikaz-svih-vrsta-menjaca.component';
+import { MatMenuModule, MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { KomentarFormaComponent } from './components/userComponent/komentar-forma/komentar-forma.component';
 import { MatMenuModule, MatDialogModule } from '@angular/material';
 import { NovoVoziloComponent } from './components/novo-vozilo/novo-vozilo.component';
 import { SvaVozilaComponent } from './components/sva-vozila/sva-vozila.component';
@@ -70,6 +72,7 @@ import { SvaVozilaService } from './services/sva-vozila.service';
     VrstaMenjacaComponent,
     IzmenaVrstaMenjacaComponent,
     PrikazSvihVrstaMenjacaComponent,
+    KomentarFormaComponent
     NovoVoziloComponent,
     SvaVozilaComponent,
     NoviOglasComponent
@@ -85,10 +88,12 @@ import { SvaVozilaService } from './services/sva-vozila.service';
     OwlDateTimeModule, 
     OwlNativeDateTimeModule,
     MatMenuModule,
-    MatDialogModule,
+    MatDialogModule
+  
   ],
-  entryComponents: [NoviOglasComponent
+  entryComponents: [NoviOglasComponent,KomentarFormaComponent
   ],
+
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,

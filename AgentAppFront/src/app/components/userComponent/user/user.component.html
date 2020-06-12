@@ -55,6 +55,11 @@
                 <button mat-raised-button color="primary" style="border-radius: 10px;"
                   (click)="onRezervisi(element)">Rezervisi</button>
               </mat-grid-tile>
+
+              <mat-grid-tile [colspan]="5" [rowspan]="1">
+                <button mat-raised-button color="primary" style="border-radius: 10px;" (click)="openDialog(oglas)">Dodaj komentar</button>
+              </mat-grid-tile>
+
             </mat-grid-list>
           </mat-card-actions>
         </mat-card>
