@@ -1,0 +1,52 @@
+<div class="dialog" fxLayout="row" fxLayoutAlign="center center" >
+    <mat-card >
+      <mat-card-header>
+        <mat-card-title>Postavi oglas</mat-card-title>
+      </mat-card-header>
+  
+      <form class="form" (submit)="onSubmit()">
+  
+        <mat-card-content>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Mesto" [(ngModel)]="oglas.mesto" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Cena" [(ngModel)]="oglas.cena" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+        
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Popust" [(ngModel)]="oglas.popust" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <mat-label>slobodan od</mat-label>
+            <input matInput [matDatepicker]="picker"  [(ngModel)]="oglas.slobodanOd"  [ngModelOptions]="{standalone: true}">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>slobodan do</mat-label>
+            <input matInput [matDatepicker]="picker1"  [(ngModel)]="oglas.slobodanDo"  [ngModelOptions]="{standalone: true}">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+
+          
+
+          <div form-group>
+            <input type="checkbox" [(ngModel)]="cdw"  [ngModelOptions]="{standalone: true}" data-md-icheck (change)="toggleVisibility($event)"/>
+            CDW
+          </div>  
+      </mat-card-content>
+  
+
+     
+      <br>
+        <button mat-stroked-button color="primary" class="btn-block" type="submit">Potvrdi</button><button mat-stroked-button color="primary" class="btn-block" (click)="cancel()">Odustani</button>
+        
+        
+      </form>
+    </mat-card>
+  </div>

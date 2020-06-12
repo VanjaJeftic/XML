@@ -54,6 +54,10 @@ public class Oglas implements Serializable {
 
     @Column(name="slobodando")
     private LocalDateTime slobodando;
+    
+    
+    @Column(name="cdw")
+    private Boolean cdw;
 
     @JsonIgnore
     @OneToMany(mappedBy = "oglas", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -130,7 +134,30 @@ public class Oglas implements Serializable {
     public void setSlobodanDo(LocalDateTime slobodando) {
         this.slobodando = slobodando;
     }
+    
+    
 
-    public Oglas() {
+    public Boolean getCdw() {
+		return cdw;
+	}
+
+	public void setCdw(Boolean cdw) {
+		this.cdw = cdw;
+	}
+
+	public Oglas() {
     }
+
+	public Oglas(OglasDTO oglasdto) {
+		// TODO Auto-generated constructor stub
+		this.cdw=oglasdto.getCdw();
+		this.cena=oglasdto.getCena();
+		this.popust=oglasdto.getPopust();
+		this.cenaspopust=oglasdto.getCenaspopust();
+		this.mesto=oglasdto.getMesto();
+		this.slobodando=oglasdto.getSlobodanDo();
+		this.slobodanOd=oglasdto.getSlobodanOd();
+		//Vozilo v=new Vozilo(oglasdto.getVozilo());
+		//this.vozilo=v;
+	}
 }
