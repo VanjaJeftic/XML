@@ -1,16 +1,16 @@
 import { MatSnackBar } from '@angular/material';
-import { ZahtevBundleViewDTO } from './../../../../models/zahtev-bundle-view-dto';
 import { ZahtevService } from './../../../../services/zahtev.service';
-import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { Router } from '@angular/router';
+import { ZahtevBundleViewDTO } from './../../../../models/zahtev-bundle-view-dto';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-zahtevi',
-  templateUrl: './zahtevi.component.html',
-  styleUrls: ['./zahtevi.component.css']
+  selector: 'app-izvestaj',
+  templateUrl: './izvestaj.component.html',
+  styleUrls: ['./izvestaj.component.css']
 })
-export class ZahteviComponent implements OnInit {
+export class IzvestajComponent implements OnInit {
 
   zahtevi: ZahtevBundleViewDTO[] = [];
 
@@ -18,7 +18,7 @@ export class ZahteviComponent implements OnInit {
                 private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    this.zahtevService.getZahtevi().subscribe(
+    this.zahtevService.getZahteviIzvestaj().subscribe(
       data => {
         console.log(data);
         this.zahtevi = data;
@@ -35,21 +35,12 @@ export class ZahteviComponent implements OnInit {
     );
   }
 
-  onPrihvati(data){
-    console.log(data);
-    this.zahtevService.prihvatiZahtev(data.bundleID).subscribe(
-      data => {
-        this.snackBar.open('Zahtev prihvacen!', 'U redu', { duration: 10000 });
-      },
-      err => {
-        alert('Ups, vozilo je vec zauzeto!');
-        this.snackBar.open('Ups, vozilo je vec zauzeto za ovaj termin!', 'U redu', { duration: 10000 });
-      }
-    );
+  onUnesiIzvestaj(zahtev){
+    alert('U izradi!');
   }
 
-  onUnesiIzvestaj(){
-    this.router.navigateByUrl('agent/izvestaj');
+  onZahtevi(){
+    this.router.navigateByUrl('agent/zahtev');
   }
 
   onMojaVozila(){

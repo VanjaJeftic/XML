@@ -15,11 +15,15 @@ export class AgentComponent implements OnInit {
   }
 
   onMojaVozila(){
-    this.router.navigateByUrl('vozila');
+    this.router.navigateByUrl('agent/vozila');
   }
 
   onZahtevi(){
-    this.router.navigateByUrl('zahtev');
+    this.router.navigateByUrl('agent/zahtev');
+  }
+
+  onUnesiIzvestaj(){
+    this.router.navigateByUrl('agent/izvestaj');
   }
 
   onOdjaviMe(){

@@ -44,6 +44,7 @@ import { IzmenaVrstaMenjacaComponent } from './components/userComponent/vrsta-me
 import { IzmenaModelaVozilaComponent } from './components/userComponent/model-vozila/izmena-modela-vozila/izmena-modela-vozila.component';
 import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/sva-vozila.component';
 import { ZahteviComponent } from './components/userComponent/agent/zahtevi/zahtevi.component';
+import { IzvestajComponent } from './components/userComponent/agent/izvestaj/izvestaj.component';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { ZahteviComponent } from './components/userComponent/agent/zahtevi/zahte
     IzmenaModelaVozilaComponent,
     SvaVozilaComponent,
     ZahteviComponent,
+    IzvestajComponent,
   ],
   imports: [
     BrowserModule,

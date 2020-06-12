@@ -14,6 +14,8 @@ public class ZahtevDTO {
 	private LocalDateTime povratak;
 	private String status;
 	
+	private IzvestajDTO izvestaj;
+	
 	public ZahtevDTO() {
 		// TODO Auto-generated constructor stub
 	}
@@ -26,6 +28,16 @@ public class ZahtevDTO {
 		this.preuzimanje = z.getPreuzimanje();
 		this.povratak = z.getPovratak();
 		this.status = z.getStatus();
+	}
+	public ZahtevDTO(Zahtev z, OglasDTO oglas, IzvestajDTO i) {
+		super();
+		this.oglas = oglas;
+		this.bundle_id = z.getBundle_id();
+		this.bundle = z.isBundle();
+		this.preuzimanje = z.getPreuzimanje();
+		this.povratak = z.getPovratak();
+		this.status = z.getStatus();
+		this.izvestaj = i;
 	}
 	
 	
@@ -85,6 +97,14 @@ public class ZahtevDTO {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public IzvestajDTO getIzvestaj() {
+		return izvestaj;
+	}
+
+	public void setIzvestaj(IzvestajDTO izvestaj) {
+		this.izvestaj = izvestaj;
 	}
 	
 }

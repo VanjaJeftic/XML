@@ -30,4 +30,8 @@ export class ZahtevService {
     });
     return this.http.post('http://localhost:8662/zahtev/accept/' + bundleID + '/' + parseInt(localStorage.getItem('userId')), {headers: headers});
   }
+
+  getZahteviIzvestaj():Observable<ZahtevBundleViewDTO[]>{
+    return this.http.get<ZahtevBundleViewDTO[]>('http://localhost:8662/zahtev/izvestaj/' + parseInt(localStorage.getItem('userId')));
+  }
 }

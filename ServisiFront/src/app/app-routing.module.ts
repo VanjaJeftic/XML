@@ -1,3 +1,4 @@
+import { IzvestajComponent } from './components/userComponent/agent/izvestaj/izvestaj.component';
 import { ZahteviComponent } from './components/userComponent/agent/zahtevi/zahtevi.component';
 import { MojaVozilaComponent } from './components/userComponent/agent/moja-vozila/moja-vozila.component';
 import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
@@ -37,11 +38,16 @@ const routes: Routes = [
   { path: 'administrator', component:  AdministratorComponent },
   { path: 'agent', component: AgentComponent },
   { path: 'user', component: UserComponent },
+  
   { path: 'vozilo/novoVozilo', component: NoviOglasComponent },
   { path: 'vozilo/:id', component: VoziloDetailsComponent },
-  { path: 'vozila', component: MojaVozilaComponent },
+
+  { path: 'agent/vozila', component: MojaVozilaComponent },
+
   { path: 'oglas/create', component: PraviOglasComponent },
+
   { path: 'cart', component: MyShopCartItemsComponent },
+
   { path: 'markaVozila', component: MarkaVozilaComponent},
   { path: 'klasaVozila', component: KlasaVozilaComponent},
   { path: 'gorivoVozila', component:TipGorivaComponent},
@@ -59,7 +65,9 @@ const routes: Routes = [
   { path: 'izmenaVrsteMenjacaVozila', component:IzmenaVrstaMenjacaComponent},
   { path: 'izmenaModelaVozila', component:IzmenaModelaVozilaComponent},
   { path: 'svavozila',component:SvaVozilaComponent},
-  { path: 'zahtev', component: ZahteviComponent }
+
+  { path: 'agent/zahtev', component: ZahteviComponent },
+  { path: 'agent/izvestaj', component: IzvestajComponent }
 ];
 
 @NgModule({

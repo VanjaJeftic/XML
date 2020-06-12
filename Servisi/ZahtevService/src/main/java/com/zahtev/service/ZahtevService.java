@@ -60,6 +60,23 @@ public class ZahtevService {
 		return zahteviGroup;
 	}
 	
+	//Prihvaceni zahtevi
+	public List<Zahtev> getAllByAcceptedGroupID(Long id){
+		List<Zahtev> zahteviGroup = new ArrayList<Zahtev>();
+		
+		List<Zahtev> zahtevi = zahtevRepository.findAll();
+		
+		if(zahtevi == null)
+			return null;
+		
+		for(Zahtev zahtev : zahtevi) {
+			if(zahtev.getBundle_id().equals(id) && zahtev.getStatus().equals("ACCEPTED")) {
+				zahteviGroup.add(zahtev);
+			}
+		}
+		return zahteviGroup;
+	}
+	
 	public void odbijOstaleZahteve(LocalDateTime preuzimanje, LocalDateTime povratak, Long oglasID) {
 		List<Zahtev> zahtevi = this.zahtevRepository.findAll();
 		

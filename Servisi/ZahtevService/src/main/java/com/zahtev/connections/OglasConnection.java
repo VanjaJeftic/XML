@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.zahtev.dto.IzvestajDTO;
 import com.zahtev.dto.OglasDTO;
 import com.zahtev.dto.TerminZauzecaDTO;
 
@@ -24,4 +25,7 @@ public interface OglasConnection {
 	
 	@PostMapping("/termin")
 	ResponseEntity<?> zauzece(@RequestBody TerminZauzecaDTO terminZauzimanjaDTO);
+	
+	@GetMapping("izvestaj/{id}")
+	IzvestajDTO getIzvestaj(@PathVariable("id") Long id);
 }

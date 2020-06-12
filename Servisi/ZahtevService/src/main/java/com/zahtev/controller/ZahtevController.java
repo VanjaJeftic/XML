@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zahtev.connections.OglasConnection;
+import com.zahtev.dto.IzvestajDTO;
 import com.zahtev.dto.OglasDTO;
 import com.zahtev.dto.ShopCartItemsDTO;
 import com.zahtev.dto.TerminZauzecaDTO;
@@ -181,5 +182,36 @@ public class ZahtevController {
 			}
 		}
 		return true;
+	}
+	
+	@GetMapping("izvestaj/{id}") //ID - ulogovani agent
+	public Set<ZahtevViewDTO> sviBundleZahteviIzvestaj(@PathVariable("id") Long agent){
+		
+		Set<ZahtevViewDTO> bundleZahtevi = new HashSet<>();
+		
+		Set<Long> ids = zahtevService.getAllGroupIDs();
+		
+		//Grupise sve bundle zahteve
+		for(Long id : ids) {
+			List<Zahtev> zahteviGrouped = zahtevService.getAllByAcceptedGroupID(id);
+			
+			ZahtevViewDTO zvdto = new ZahtevViewDTO();
+			for(Zahtev z : zahteviGrouped) {
+				zvdto.setBundleID(z.getBundle_id());
+				OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
+				
+				if(oglas.getVozilo().getUser().getId().equals(agent)) {
+					IzvestajDTO izvestaj = this.oglasConnection.getIzvestaj(oglas.getVozilo().getId());
+					if(izvestaj == null) {
+						zvdto.getBundleZahtevi().add(new ZahtevDTO(z, oglas));
+						bundleZahtevi.add(zvdto);
+					}else {
+						zvdto.getBundleZahtevi().add(new ZahtevDTO(z, oglas, izvestaj));
+						bundleZahtevi.add(zvdto);
+					}
+				}
+			}
+		}
+		return bundleZahtevi;
 	}
 }

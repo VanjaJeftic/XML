@@ -11,3 +11,8 @@ insert into vozilo ( markavozila_id, modelvozila_id, klasavozila_id, tipgoriva_i
 
 insert into oglas ( user_id, vozilo_id, mesto, cena, popust, cenaspopust) values ( 3, 4, 'Bijeljina', 10, 10, 10 );
 insert into oglas ( user_id, vozilo_id, mesto, cena, popust, cenaspopust) values ( 2, 5, 'Beograd', 20, 20, 20 );
+
+insert into vozilo ( markavozila_id, modelvozila_id, klasavozila_id, tipgoriva_id, vrstamenjaca_id, predjenikm, brsedistadeca, cdw, user_id) values ( 'Marka7','Model7','Klasa7','Gorivo7','Menjac7','700km','4',true, 2);
+insert into oglas ( user_id, vozilo_id, mesto, cena, popust, cenaspopust) values ( 2, 7, 'Sarajevo', 20, 20, 20 );
+
+insert into izvestaj (predjeniKm, komentar, vozilo_id) values ('125', 'Vozilo vraceno na vrijeme', 7);
