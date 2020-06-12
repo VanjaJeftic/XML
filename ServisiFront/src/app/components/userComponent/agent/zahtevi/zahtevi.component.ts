@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material';
 import { ZahtevBundleViewDTO } from './../../../../models/zahtev-bundle-view-dto';
 import { ZahtevService } from './../../../../services/zahtev.service';
 import { Router } from '@angular/router';
@@ -13,7 +14,8 @@ export class ZahteviComponent implements OnInit {
 
   zahtevi: ZahtevBundleViewDTO[] = [];
 
-  constructor(private router: Router, private authService: AuthenticationService, private zahtevService: ZahtevService) { }
+  constructor(private router: Router, private authService: AuthenticationService, private zahtevService: ZahtevService,
+                private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.zahtevService.getZahtevi().subscribe(
@@ -36,7 +38,11 @@ export class ZahteviComponent implements OnInit {
     console.log(data);
     this.zahtevService.prihvatiZahtev(data.bundleID).subscribe(
       data => {
-        console.log('Uspesno izmenjeni statusi!');
+        this.snackBar.open('Zahtev prihvacen!', 'U redu', { duration: 10000 });
+      },
+      err => {
+        alert('Ups, vozilo je vec zauzeto!');
+        this.snackBar.open('Ups, vozilo je vec zauzeto za ovaj termin!', 'U redu', { duration: 10000 });
       }
     );
   }

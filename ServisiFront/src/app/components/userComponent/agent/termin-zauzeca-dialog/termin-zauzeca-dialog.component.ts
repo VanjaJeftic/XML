@@ -1,7 +1,7 @@
 import { VoziloService } from './../../../../services/vozilo.service';
 import { TerminZauzeca } from './../../../../models/termin-zauzeca';
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-termin-zauzeca-dialog',
@@ -20,7 +20,7 @@ export class TerminZauzecaDialogComponent implements OnInit {
   zauzece: TerminZauzeca = new TerminZauzeca();
 
   constructor(public dialogRef: MatDialogRef<TerminZauzecaDialogComponent>, @Inject(MAT_DIALOG_DATA) public model : any,
-              private voziloService: VoziloService) {
+              private voziloService: VoziloService, private snackBar: MatSnackBar) {
     this.voziloID = model.id;
    }
 
@@ -70,7 +70,10 @@ export class TerminZauzecaDialogComponent implements OnInit {
 
     this.voziloService.zauzmiTerminZauzecaVozila(this.zauzece).subscribe(
       data => {
-        console.log('Unesen termin zauzeca!');
+        this.snackBar.open('Uspesno ste uneli novi termin zauzeca za izabrano vozilo', 'U redu', { duration: 10000 });
+      },
+      err => {
+        this.snackBar.open('Ne mozete zauzeti termin jer je vozilo vec u upotrebi. Kontaktirajte korisnika!', 'U redu', { duration: 10000 });
       }
     );
     
