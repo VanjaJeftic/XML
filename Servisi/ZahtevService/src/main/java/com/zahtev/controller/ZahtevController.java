@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.zahtev.connections.OglasConnection;
 import com.zahtev.dto.OglasDTO;
 import com.zahtev.dto.ShopCartItemsDTO;
+import com.zahtev.dto.TerminZauzecaDTO;
 import com.zahtev.dto.TerminZauzecaZahtevDTO;
 import com.zahtev.dto.ZahtevDTO;
 import com.zahtev.dto.ZahtevViewDTO;
@@ -116,13 +117,33 @@ public class ZahtevController {
 		List<Zahtev> zahtevi = this.zahtevService.getAllByGroupID(id);
 		
 		for(Zahtev z : zahtevi) {
+			
 			//Pronalazi sve zahteve koji su kreirani za oglas kome je AgentID "agent" i menja status
 			OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
+			
+			TerminZauzecaDTO terminZauzecaDTO = new TerminZauzecaDTO(oglas.getVozilo().getId(), z.getPreuzimanje(), z.getPovratak());
+			
+			int imaPodudaranja = this.oglasConnection.provjeraZauzetostiVozila(terminZauzecaDTO);
+			
 			if(oglas.getVozilo().getUser().getId().equals(agent)) {
-				z.setStatus("ACCEPTED");
-				this.zahtevService.save(z);
-				//Odbija sve ostale zahteve vezane za taj oglas ovog agenta
-				this.zahtevService.odbijOstaleZahteve(z.getPreuzimanje(), z.getPovratak(), z.getOglas_id());
+				if(imaPodudaranja == 0) {
+					z.setStatus("ACCEPTED");
+					
+					//Kreira termin zauzeca iz ovog zahteva i povezuje ga sa vozilom u OglasService
+					ResponseEntity<?> res = this.oglasConnection.zauzece(terminZauzecaDTO);
+					
+					if(res.status(HttpStatus.CREATED) != null) {
+						this.zahtevService.save(z);
+						
+						//Odbija sve ostale zahteve vezane za taj oglas ovog agenta
+						this.zahtevService.odbijOstaleZahteve(z.getPreuzimanje(), z.getPovratak(), z.getOglas_id());
+					}else {
+						return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+					}
+					
+				}else {
+					return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+				}
 			}
 		}
 		

@@ -24,8 +24,8 @@ public class TerminZauzeca implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column(name="vozilo_id")
-    private Long vozilo_id;
+//    @Column(name="vozilo_id")
+//    private Long vozilo_id;
     
     @Column(name="zauzetod")
     private LocalDateTime zauzetod;
@@ -45,13 +45,13 @@ public class TerminZauzeca implements Serializable {
 		this.id = id;
 	}
 
-	public Long getVozilo_id() {
-		return vozilo_id;
-	}
-
-	public void setVozilo_id(Long vozilo_id) {
-		this.vozilo_id = vozilo_id;
-	}
+//	public Long getVozilo_id() {
+//		return vozilo_id;
+//	}
+//
+//	public void setVozilo_id(Long vozilo_id) {
+//		this.vozilo_id = vozilo_id;
+//	}
 
 	public LocalDateTime getZauzetod() {
 		return zauzetod;
@@ -83,9 +83,16 @@ public class TerminZauzeca implements Serializable {
 	}
 	
 	public TerminZauzeca(TerminZauzecaDTO terminDTO) {
-		this.vozilo_id=terminDTO.getVozilo_id();
+		//this.vozilo_id=terminDTO.getVozilo_id();
 		this.zauzetod=terminDTO.getZauzetod();
 		this.zauzetdo=terminDTO.getZauzetdo();
+	}
+	
+	public TerminZauzeca(TerminZauzecaDTO terminDTO, Vozilo vehicle) {
+		//this.vozilo_id=terminDTO.getVozilo_id();
+		this.zauzetod=terminDTO.getZauzetod();
+		this.zauzetdo=terminDTO.getZauzetdo();
+		this.vehicle = vehicle;
 	}
     
     

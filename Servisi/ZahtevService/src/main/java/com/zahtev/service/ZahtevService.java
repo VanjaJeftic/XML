@@ -53,7 +53,7 @@ public class ZahtevService {
 			return null;
 		
 		for(Zahtev zahtev : zahtevi) {
-			if(zahtev.getBundle_id().equals(id)) {
+			if(zahtev.getBundle_id().equals(id) && zahtev.getStatus().equals("PENDING")) {
 				zahteviGroup.add(zahtev);
 			}
 		}
