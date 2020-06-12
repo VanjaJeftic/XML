@@ -48,6 +48,8 @@ export class MyShopCartItemsComponent implements OnInit {
       this.sendShopCart.zahtevi.push(z);
     }
 
+    this.sendShopCart.podnosilac = parseInt(localStorage.getItem('userId'));
+
     console.log(this.sendShopCart);
     this.zahtevService.rezervisi(this.sendShopCart).subscribe(
       data => {

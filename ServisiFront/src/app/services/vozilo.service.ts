@@ -13,7 +13,7 @@ export class VoziloService {
   constructor(private http: HttpClient, private putanja: PutanjaService) { }
 
   getVozilaAgenta():Observable<VoziloView[]>{
-    return this.http.get<VoziloView[]>(this.putanja.get_vozilo_url);
+    return this.http.get<VoziloView[]>(this.putanja.get_vozilo_url + '/agent/' + parseInt(localStorage.getItem('userId')));
   }
 
   zauzmiTerminZauzecaVozila(termin: TerminZauzeca){

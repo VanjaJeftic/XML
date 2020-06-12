@@ -60,11 +60,11 @@ public class ZahtevService {
 		return zahteviGroup;
 	}
 	
-	public void odbijOstaleZahteve(LocalDateTime preuzimanje, LocalDateTime povratak) {
+	public void odbijOstaleZahteve(LocalDateTime preuzimanje, LocalDateTime povratak, Long oglasID) {
 		List<Zahtev> zahtevi = this.zahtevRepository.findAll();
 		
 		for(Zahtev z : zahtevi) {
-			if(z.getStatus().equals("PENDING")) {
+			if(z.getStatus().equals("PENDING") && z.getOglas_id().equals(oglasID) ) {
 				if( (preuzimanje.isAfter(z.getPreuzimanje()) && povratak.isBefore(z.getPovratak()) )
 					|| (preuzimanje.isBefore(z.getPreuzimanje()) && povratak.isAfter(z.getPreuzimanje()) )
 					|| (preuzimanje.isBefore(z.getPovratak()) && povratak.isAfter(z.getPovratak()) ) 

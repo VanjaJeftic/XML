@@ -20,7 +20,7 @@ export class ZahtevService {
   }
 
   getZahtevi():Observable<ZahtevBundleViewDTO[]>{
-    return this.http.get<ZahtevBundleViewDTO[]>('http://localhost:8662/zahtev');
+    return this.http.get<ZahtevBundleViewDTO[]>('http://localhost:8662/zahtev/' + parseInt(localStorage.getItem('userId')));
   }
 
   prihvatiZahtev(bundleID: number){
@@ -28,6 +28,6 @@ export class ZahtevService {
       'Accept' : 'application/json',
       'Content-Type' : 'application/json'
     });
-    return this.http.post('http://localhost:8662/zahtev/accept/' + bundleID, {headers: headers});
+    return this.http.post('http://localhost:8662/zahtev/accept/' + bundleID + '/' + parseInt(localStorage.getItem('userId')), {headers: headers});
   }
 }

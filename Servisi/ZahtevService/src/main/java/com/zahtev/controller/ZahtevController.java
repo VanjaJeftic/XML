@@ -37,8 +37,6 @@ public class ZahtevController {
 	
 	@GetMapping("/test")
 	public String zahtevi(){
-//		List<Zahtev> zahtevi = zahtevService.getAllZahtevi();
-//		return zahtevi;
 		return "Hello from ZahteviService";
 	}
 	
@@ -48,7 +46,7 @@ public class ZahtevController {
 		Set<Long> vlasnici = new HashSet<>();
 		Set<ZahtevDTO> forBundle = new HashSet<>();
 		Long groupID = zahtevService.getLastGroupID() + 1;
-		Long podnosilac = 3L;
+		Long podnosilac = listaZahteva.getPodnosilac();
 		
 		
 		for(ZahtevDTO z : listaZahteva.getZahtevi()) {
@@ -88,8 +86,8 @@ public class ZahtevController {
 	}
 	
 	//Grupisanje zahteva na frontu
-	@GetMapping//("/zahtev")
-	public Set<ZahtevViewDTO> sviBundleZahtevi(){
+	@GetMapping("/{id}") //ID - ulogovani agent
+	public Set<ZahtevViewDTO> sviBundleZahtevi(@PathVariable("id") Long agent){
 		
 		Set<ZahtevViewDTO> bundleZahtevi = new HashSet<>();
 		
@@ -104,22 +102,28 @@ public class ZahtevController {
 				zvdto.setBundleID(z.getBundle_id());
 				OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
 				
-				zvdto.getBundleZahtevi().add(new ZahtevDTO(z, oglas));
-				
-				bundleZahtevi.add(zvdto);
+				if(oglas.getVozilo().getUser().getId().equals(agent)) {
+					zvdto.getBundleZahtevi().add(new ZahtevDTO(z, oglas));
+					bundleZahtevi.add(zvdto);
+				}
 			}
 		}
 		return bundleZahtevi;
 	}
 	
-	@PostMapping("/accept/{id}")
-	public ResponseEntity<?> acceptRequest(@PathVariable("id") Long id){
+	@PostMapping("/accept/{id}/{agent}")	//Agent - Ulogovani Agent
+	public ResponseEntity<?> acceptRequest(@PathVariable("id") Long id, @PathVariable("agent") Long agent){
 		List<Zahtev> zahtevi = this.zahtevService.getAllByGroupID(id);
 		
 		for(Zahtev z : zahtevi) {
-			z.setStatus("ACCEPTED");
-			this.zahtevService.save(z);
-			this.zahtevService.odbijOstaleZahteve(z.getPreuzimanje(), z.getPovratak());
+			//Pronalazi sve zahteve koji su kreirani za oglas kome je AgentID "agent" i menja status
+			OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
+			if(oglas.getVozilo().getUser().getId().equals(agent)) {
+				z.setStatus("ACCEPTED");
+				this.zahtevService.save(z);
+				//Odbija sve ostale zahteve vezane za taj oglas ovog agenta
+				this.zahtevService.odbijOstaleZahteve(z.getPreuzimanje(), z.getPovratak(), z.getOglas_id());
+			}
 		}
 		
 		

@@ -62,10 +62,10 @@ public class VoziloController {
     @Autowired
     private UserConnection userConnection;
     
-    @GetMapping
-    public List<VoziloViewDTO> allVozila(){		//Prepraviti da vraca vozila za ulogovanog korisnika
+    @GetMapping("agent/{id}")	//id - Ulogovani Agent
+    public List<VoziloViewDTO> allVozila(@PathVariable("id") Long agent){	
     	List<VoziloViewDTO> agentskaVozila = new ArrayList<>();
-    	UserViewDTO user = this.userConnection.getUser(3L);
+    	UserViewDTO user = this.userConnection.getUser(agent);
 		
     	List<Vozilo> vozila = voziloService.getVozila(user.getId());
     	for(Vozilo v : vozila) {
