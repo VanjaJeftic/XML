@@ -1,6 +1,7 @@
 package com.agentApp.app.dto;
 
 import com.agentApp.app.models.Authority;
+import com.agentApp.app.models.User;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -43,6 +44,13 @@ public class UserDTO {
 
 	public UserDTO() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public UserDTO(User u) {
+		// TODO Auto-generated constructor stub
+		this.id=u.getId();
+		this.email=u.getEmail();
+		this.username=u.getUsername();
 	}
 
 	public List<Authority> getAuthorities() {

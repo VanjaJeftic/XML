@@ -24,6 +24,8 @@ import { PrikazSvihVrstaMenjacaComponent } from './components/userComponent/vrst
 import { IzmenaVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/izmena-vrsta-menjaca/izmena-vrsta-menjaca.component';
 import { IzmenaTipaGorivaComponent } from './components/userComponent/tip-goriva/izmena-tipa-goriva/izmena-tipa-goriva.component';
 import { IzmenaModelaVozilaComponent } from './components/userComponent/model-vozila/izmena-modela-vozila/izmena-modela-vozila.component';
+import { NovoVoziloComponent } from './components/novo-vozilo/novo-vozilo.component';
+import { SvaVozilaComponent } from './components/sva-vozila/sva-vozila.component';
 
 
 const routes: Routes = [
@@ -53,7 +55,8 @@ const routes: Routes = [
   { path: 'izmenaTipaGorivaVozila', component:IzmenaTipaGorivaComponent},
   { path: 'izmenaVrsteMenjacaVozila', component:IzmenaVrstaMenjacaComponent},
   { path: 'izmenaModelaVozila', component:IzmenaModelaVozilaComponent},
-
+  { path: 'novoVozilo', component:NovoVoziloComponent},
+  { path: 'svaVozila',component:SvaVozilaComponent}
 
 
 ];

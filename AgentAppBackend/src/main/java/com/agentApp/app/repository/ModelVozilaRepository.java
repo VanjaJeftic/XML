@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ModelVozilaRepository extends JpaRepository<ModelVozila, Long> {
+
+	ModelVozila findByNaziv(String modelVozila);
 }

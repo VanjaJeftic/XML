@@ -11,4 +11,7 @@ export class Vozilo {
     modelVozila: ModelVozila;
     tipgoriva: TipGoriva;
     vrstamenjaca: VrstaMenjaca;
+    predjeniKm:String;
+    brsedistadeca:String;
+    id:number;
 }

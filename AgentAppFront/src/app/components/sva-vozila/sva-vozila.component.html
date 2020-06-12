@@ -1,0 +1,38 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="/" class="navlogo">Rent-A-Car Korisnik</a></div>
+    <span class="nav-tool-items">
+        <a mat-button mat-raised-button routerLink="/novoVozilo" routerLinkActive="active" (click)="novo()">Novo vozilo</a>
+        <a mat-button mat-raised-button routerLink="/cart" routerLinkActive="active" (click)="shopCart()">Shopping Cart</a>
+        <a mat-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
+     </span>
+  </mat-toolbar> 
+  <br><br>
+  <div class="card my-5">
+    <div class="card-body">
+      <div class="labelNaslov">
+      <label>Lista vozila</label>
+    </div>
+      <table class="table table-striped table-responsive-md btn-table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Marka vozila</th>
+            <th scope="col">Model vozila</th>
+            <th scope="col">Klasa vozila</th>
+            <th scope="col">Oglas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let vozilo of vozilolist$ | async" >
+            <td>{{ vozilo.id }}</td>
+            <td>{{ vozilo.markaVozila.naziv }}</td>
+            <td>{{ vozilo.modelVozila.naziv }}</td>
+            <td>{{ vozilo.klasaVozila.naziv }}</td>
+            <td><a mat-button (click)="openDialogOglas(vozilo.id)">
+                  postavi oglas
+              </a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
