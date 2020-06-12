@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class OglasService {
+  
 
   constructor(private http: HttpClient, private putanje: PutanjaService) { }
 
@@ -18,4 +19,9 @@ export class OglasService {
   getOneOglas(id: number): Observable<Oglas>{
     return this.http.get<Oglas>(this.putanje.get_oglas_url + '/' + id);
   }
+
+  nadjiCeoOglas(oglas: Oglas): Observable<Oglas>{
+    return this.http.get<Oglas>(this.putanje.get_oglas_url + '/oglas/' + oglas);
+  }
+
 }

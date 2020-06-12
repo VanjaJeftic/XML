@@ -34,7 +34,8 @@ import { PrikazSvihTipovaGorivaComponent } from './components/userComponent/tip-
 import { VrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/vrsta-menjaca.component';
 import { IzmenaVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/izmena-vrsta-menjaca/izmena-vrsta-menjaca.component';
 import { PrikazSvihVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/prikaz-svih-vrsta-menjaca/prikaz-svih-vrsta-menjaca.component';
-import { MatMenuModule, MatDialogModule } from '@angular/material';
+import { MatMenuModule, MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { KomentarFormaComponent } from './components/userComponent/komentar-forma/komentar-forma.component';
 
 
 @NgModule({
@@ -63,7 +64,9 @@ import { MatMenuModule, MatDialogModule } from '@angular/material';
     PrikazSvihTipovaGorivaComponent,
     VrstaMenjacaComponent,
     IzmenaVrstaMenjacaComponent,
-    PrikazSvihVrstaMenjacaComponent
+    PrikazSvihVrstaMenjacaComponent,
+    KomentarFormaComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -76,8 +79,10 @@ import { MatMenuModule, MatDialogModule } from '@angular/material';
     OwlDateTimeModule, 
     OwlNativeDateTimeModule,
     MatMenuModule,
-    MatDialogModule,
+    MatDialogModule
+  
   ],
+  entryComponents: [KomentarFormaComponent],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,

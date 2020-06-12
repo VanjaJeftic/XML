@@ -2,14 +2,11 @@ package com.agentApp.app.controllers;
 
 import java.util.List;
 
+import com.agentApp.app.dto.OglasDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.agentApp.app.models.Oglas;
 import com.agentApp.app.services.OglasService;
@@ -35,6 +32,12 @@ public class OglasController {
 	}
 
 
+	@GetMapping("/oglas/{oglas}")
+	public ResponseEntity<?> getOglas(@ModelAttribute("oglas") Oglas dto){
+		System.out.println("oglas je "+ dto.getId());
+		//Oglas o = oglasService.findOneOglas(id);
+		return new ResponseEntity<Oglas>(dto, HttpStatus.OK);
+	}
 
 
 }

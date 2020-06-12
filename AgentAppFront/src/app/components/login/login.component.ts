@@ -27,6 +27,9 @@ export class LoginComponent implements OnInit {
         this.authService.getLoggedInUserData().subscribe(
           user => {
             console.log(user);
+            localStorage.setItem('usernameStorage', this.username);
+         
+            console.log(localStorage.getItem('usernameStorage'));
             if(user.authorities[0].authority == 'ROLE_ADMIN'){
               this.router.navigateByUrl('administrator');
             }else if(user.authorities[0].authority == 'ROLE_AGENT'){
