@@ -1,0 +1,51 @@
+2020-06-13 14:37:51.506  INFO 14856 --- [main] com.gateway.GatewayServiceApplication    : No active profile set, falling back to default profiles: default
+2020-06-13 14:37:52.801  WARN 14856 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-06-13 14:37:52.824  WARN 14856 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2020-06-13 14:37:53.018  INFO 14856 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3b625b9f-9dd8-3ccf-ac60-c693a69380a7
+2020-06-13 14:37:53.594  INFO 14856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8662 (http)
+2020-06-13 14:37:53.610  INFO 14856 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-13 14:37:53.611  INFO 14856 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-13 14:37:53.849  INFO 14856 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-13 14:37:53.850  INFO 14856 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2318 ms
+2020-06-13 14:37:53.973  WARN 14856 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-13 14:37:53.973  INFO 14856 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-13 14:37:53.981  INFO 14856 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@6a567f7b
+2020-06-13 14:37:54.854  INFO 14856 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 27c060c9-4e4d-4253-b50f-192433138ad5
+
+2020-06-13 14:37:54.995  INFO 14856 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@44fb6ebd, org.springframework.security.web.context.SecurityContextPersistenceFilter@8ac12e6, org.springframework.security.web.header.HeaderWriterFilter@38732372, org.springframework.security.web.authentication.logout.LogoutFilter@7493d937, com.gateway.jwt.JwtTokenAuthenticationFilter@5da57a64, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@734fbae3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@559d19c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5cdf221a, org.springframework.security.web.session.SessionManagementFilter@6c9bf3b5, org.springframework.security.web.access.ExceptionTranslationFilter@36df4c26, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@46ea78f0]
+2020-06-13 14:37:55.028  WARN 14856 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-13 14:37:55.029  INFO 14856 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-13 14:37:55.204  INFO 14856 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-13 14:37:56.131  WARN 14856 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-06-13 14:37:56.374  INFO 14856 --- [main] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
+2020-06-13 14:37:56.388  INFO 14856 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-06-13 14:37:56.469  INFO 14856 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-06-13 14:37:56.498  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-06-13 14:37:56.588  INFO 14856 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-06-13 14:37:56.588  INFO 14856 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-06-13 14:37:56.708  INFO 14856 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-06-13 14:37:56.708  INFO 14856 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-06-13 14:37:56.887  INFO 14856 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-13 14:37:57.195  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-06-13 14:37:57.196  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-06-13 14:37:57.196  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-06-13 14:37:57.196  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-06-13 14:37:57.196  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-06-13 14:37:57.196  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-06-13 14:37:57.197  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-06-13 14:37:57.354  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-06-13 14:37:57.357  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-06-13 14:37:57.361  INFO 14856 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-06-13 14:37:57.365  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1592051877364 with initial instances count: 4
+2020-06-13 14:37:57.368  INFO 14856 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
+2020-06-13 14:37:57.368  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592051877368, current=UP, previous=STARTING]
+2020-06-13 14:37:57.371  INFO 14856 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662: registering service...
+2020-06-13 14:37:57.405  INFO 14856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8662 (http) with context path ''
+2020-06-13 14:37:57.409  INFO 14856 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8662
+2020-06-13 14:37:57.416  INFO 14856 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - registration status: 204
+2020-06-13 14:37:57.867  INFO 14856 --- [main] com.gateway.GatewayServiceApplication    : Started GatewayServiceApplication in 8.674 seconds (JVM running for 10.842)
+2020-06-13 14:37:58.762  INFO 14856 --- [RMI TCP Connection(2)-192.168.56.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-13 14:37:58.763  INFO 14856 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-13 14:37:58.774  INFO 14856 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
