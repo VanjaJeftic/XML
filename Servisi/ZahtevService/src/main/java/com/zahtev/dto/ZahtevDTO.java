@@ -6,6 +6,8 @@ import com.zahtev.model.Zahtev;
 
 public class ZahtevDTO {
 
+	private Long id;
+	
 	private OglasDTO oglas;
 	private Long bundle_id;
 	private boolean bundle;
@@ -23,6 +25,7 @@ public class ZahtevDTO {
 	public ZahtevDTO(Zahtev z, OglasDTO oglas) {
 		super();
 		this.oglas = oglas;
+		this.id = z.getId();
 		this.bundle_id = z.getBundle_id();
 		this.bundle = z.isBundle();
 		this.preuzimanje = z.getPreuzimanje();
@@ -32,6 +35,7 @@ public class ZahtevDTO {
 	public ZahtevDTO(Zahtev z, OglasDTO oglas, IzvestajDTO i) {
 		super();
 		this.oglas = oglas;
+		this.id = z.getId();
 		this.bundle_id = z.getBundle_id();
 		this.bundle = z.isBundle();
 		this.preuzimanje = z.getPreuzimanje();
@@ -105,6 +109,14 @@ public class ZahtevDTO {
 
 	public void setIzvestaj(IzvestajDTO izvestaj) {
 		this.izvestaj = izvestaj;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 }

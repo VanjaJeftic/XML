@@ -45,6 +45,7 @@ import { IzmenaModelaVozilaComponent } from './components/userComponent/model-vo
 import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/sva-vozila.component';
 import { ZahteviComponent } from './components/userComponent/agent/zahtevi/zahtevi.component';
 import { IzvestajComponent } from './components/userComponent/agent/izvestaj/izvestaj.component';
+import { IzvestajDialogComponent } from './components/userComponent/agent/izvestaj/izvestaj-dialog/izvestaj-dialog.component';
 
 
 @NgModule({
@@ -80,6 +81,7 @@ import { IzvestajComponent } from './components/userComponent/agent/izvestaj/izv
     SvaVozilaComponent,
     ZahteviComponent,
     IzvestajComponent,
+    IzvestajDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,7 +98,7 @@ import { IzvestajComponent } from './components/userComponent/agent/izvestaj/izv
     MatDialogModule,
 
   ],
-  entryComponents: [TerminZauzecaDialogComponent
+  entryComponents: [TerminZauzecaDialogComponent, IzvestajDialogComponent
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

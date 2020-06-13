@@ -4,9 +4,12 @@ public class IzvestajDTO {
 
 	private String predjeniKm;
 	private String komentar;
+	
+	private Long vozilo;
+	private Long zahtev;
 
 	public IzvestajDTO() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public String getPredjeniKm() {
@@ -23,6 +26,22 @@ public class IzvestajDTO {
 
 	public void setKomentar(String komentar) {
 		this.komentar = komentar;
+	}
+
+	public Long getVozilo() {
+		return vozilo;
+	}
+
+	public void setVozilo(Long vozilo) {
+		this.vozilo = vozilo;
+	}
+
+	public Long getZahtev() {
+		return zahtev;
+	}
+
+	public void setZahtev(Long zahtev) {
+		this.zahtev = zahtev;
 	}
 	
 }

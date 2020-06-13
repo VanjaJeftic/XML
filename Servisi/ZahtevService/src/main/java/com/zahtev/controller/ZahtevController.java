@@ -201,7 +201,7 @@ public class ZahtevController {
 				OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
 				
 				if(oglas.getVozilo().getUser().getId().equals(agent)) {
-					IzvestajDTO izvestaj = this.oglasConnection.getIzvestaj(oglas.getVozilo().getId());
+					IzvestajDTO izvestaj = this.oglasConnection.getIzvestaj(oglas.getVozilo().getId(), z.getId());
 					if(izvestaj == null) {
 						zvdto.getBundleZahtevi().add(new ZahtevDTO(z, oglas));
 						bundleZahtevi.add(zvdto);

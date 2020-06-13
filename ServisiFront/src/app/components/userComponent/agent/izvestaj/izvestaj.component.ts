@@ -1,9 +1,10 @@
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatDialog } from '@angular/material';
 import { ZahtevService } from './../../../../services/zahtev.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
 import { ZahtevBundleViewDTO } from './../../../../models/zahtev-bundle-view-dto';
 import { Component, OnInit } from '@angular/core';
+import { IzvestajDialogComponent } from './izvestaj-dialog/izvestaj-dialog.component';
 
 @Component({
   selector: 'app-izvestaj',
@@ -15,7 +16,7 @@ export class IzvestajComponent implements OnInit {
   zahtevi: ZahtevBundleViewDTO[] = [];
 
   constructor(private router: Router, private authService: AuthenticationService, private zahtevService: ZahtevService,
-                private snackBar: MatSnackBar) { }
+                private snackBar: MatSnackBar, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.zahtevService.getZahteviIzvestaj().subscribe(
@@ -36,7 +37,12 @@ export class IzvestajComponent implements OnInit {
   }
 
   onUnesiIzvestaj(zahtev){
-    alert('U izradi!');
+    const dialogRef = this.dialog.open(IzvestajDialogComponent, {data: zahtev});
+    dialogRef.afterClosed().subscribe(
+      result => {
+        
+      }
+    );
   }
 
   onZahtevi(){

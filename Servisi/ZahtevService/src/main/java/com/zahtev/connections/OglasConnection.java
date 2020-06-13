@@ -26,6 +26,6 @@ public interface OglasConnection {
 	@PostMapping("/termin")
 	ResponseEntity<?> zauzece(@RequestBody TerminZauzecaDTO terminZauzimanjaDTO);
 	
-	@GetMapping("izvestaj/{id}")
-	IzvestajDTO getIzvestaj(@PathVariable("id") Long id);
+	@GetMapping("izvestaj/{id}/{zahtev}")
+	IzvestajDTO getIzvestaj(@PathVariable("id") Long id, @PathVariable("zahtev") Long zahtev);
 }

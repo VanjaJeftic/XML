@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.oglas.dto.IzvestajDTO;
+
 @Entity
 @Table(name = "izvestaj")
 public class Izvestaj {
@@ -29,8 +31,18 @@ public class Izvestaj {
 	@JoinColumn(name = "vozilo_id")
 	private Vozilo vozilo;
 	
+	@Column(name = "zahtev_id")
+	private Long zahtev;
+	
 	public Izvestaj() {
 		
+	}
+	public Izvestaj(IzvestajDTO izvestajDTO, Vozilo vozilo) {
+		super();
+		this.predjeniKm = izvestajDTO.getPredjeniKm();
+		this.komentar = izvestajDTO.getKomentar();
+		this.vozilo = vozilo;
+		this.zahtev = izvestajDTO.getZahtev();
 	}
 
 	public Long getId() {
@@ -63,6 +75,12 @@ public class Izvestaj {
 
 	public void setVozilo(Vozilo vozilo) {
 		this.vozilo = vozilo;
+	}
+	public Long getZahtev() {
+		return zahtev;
+	}
+	public void setZahtev(Long zahtev) {
+		this.zahtev = zahtev;
 	}
 	
 }

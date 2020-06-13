@@ -29,7 +29,7 @@
                         <p> <span style="padding-left: 20px; padding-right: 10px;">Povratak:</span> {{data.povratak}} </p>
                     </div>
                     
-                    <div *ngIf="data.izvestaj" style="position: absolute;top: 70%;left: 70%;">
+                    <div *ngIf="!data.izvestaj" style="position: absolute;top: 70%;left: 70%;">
                         <button mat-raised-button color="primary" style="border-radius: 10px;" (click)="onUnesiIzvestaj(data)">Unesi Izvestaj</button>
                     </div>
 
