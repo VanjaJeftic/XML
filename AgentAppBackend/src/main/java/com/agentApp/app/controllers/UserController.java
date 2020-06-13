@@ -42,11 +42,6 @@ public class UserController {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 	
-	@PutMapping("/user")
-	@CrossOrigin
-	public ResponseEntity<User> updateAdminKlinike(@RequestBody User user){
-		userService.updateUser(user);
-		return new ResponseEntity<>(HttpStatus.OK);
-	}
+
 	
 }
