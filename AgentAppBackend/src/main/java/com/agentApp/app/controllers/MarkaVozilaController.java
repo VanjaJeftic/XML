@@ -6,6 +6,7 @@ import com.agentApp.app.services.MarkaVozilaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,7 +28,7 @@ public class MarkaVozilaController {
     }
 
     @PostMapping
-    //@PreAuthorize("hasAuthority('create_oglas')")
+    @PreAuthorize("hasAuthority('create_sifrarnik')")
     public ResponseEntity<?> sacuvajMarkuVozila(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
         System.out.println("Nova marka kreiranje");
         MarkaVozila markaVozila = this.markaVozilaService.createMarkaVozila(markaVozilaDTO);
@@ -37,7 +38,7 @@ public class MarkaVozilaController {
 
 
     @PutMapping
-    //@PreAuthorize("hasAuthority('update_oglas')")
+    @PreAuthorize("hasAuthority('update_sifrarnik')")
     public ResponseEntity<?> izmenaMarka(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
         System.out.println("Izmena marke controller  "+ markaVozilaDTO.getNaziv());
         Optional<MarkaVozila> markaVoziladata = markaVozilaRepository.findById(markaVozilaDTO.getId());
@@ -52,7 +53,7 @@ public class MarkaVozilaController {
 
     @DeleteMapping("/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
-    //@PreAuthorize("hasAuthority('delete_oglas')")
+    @PreAuthorize("hasAuthority('delete_sifrarnik')")
     public ResponseEntity<HttpStatus> brisanjeMarke(@PathVariable("id") Long id) {
         System.out.println("brisanje marke controller id marke je   "+ id);
         try {

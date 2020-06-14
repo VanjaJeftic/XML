@@ -107,7 +107,7 @@ export class AuthenticationService {
       'username' : username,
       'password' : password
     };
-    return this.http.post('http://localhost:8662/auth/login',body,{responseType:'text'});
+    return this.http.post('https://localhost:8662/auth/login',body,{responseType:'text'});
   }
 
 }

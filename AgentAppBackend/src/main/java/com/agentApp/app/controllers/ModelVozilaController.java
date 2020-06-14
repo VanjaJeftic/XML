@@ -7,6 +7,7 @@ import com.agentApp.app.services.ModelVozilaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,7 +34,7 @@ public class ModelVozilaController {
     }
 
     @PostMapping
-    //@PreAuthorize("hasAuthority('create_oglas')")
+    @PreAuthorize("hasAuthority('create_sifrarnik')")
     public ResponseEntity<?> sacuvajModel(@RequestBody ModelVozilaDTO modelVozilaDTO) {
 
         ModelVozila modelVozila = this.modelVozilaService.createModelVozila(modelVozilaDTO);
@@ -48,7 +49,7 @@ public class ModelVozilaController {
     }
 
     @PutMapping
-    //@PreAuthorize("hasAuthority('update_oglas')")
+    @PreAuthorize("hasAuthority('update_sifrarnik')")
     public ResponseEntity<?> izmenaModela(@RequestBody ModelVozilaDTO modelVozilaDTO) {
         Optional<ModelVozila> modelVoziladata = modelVozilaRepository.findById(modelVozilaDTO.getId());
         if(modelVoziladata.isPresent()){
@@ -61,7 +62,7 @@ public class ModelVozilaController {
 
     @DeleteMapping("/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
-    //@PreAuthorize("hasAuthority('delete_oglas')")
+    @PreAuthorize("hasAuthority('delete_sifrarnik')")
     public ResponseEntity<HttpStatus> brisanjeModela(@PathVariable("id") Long id) {
         try {
             modelVozilaService.delete(id);

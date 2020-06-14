@@ -1,6 +1,7 @@
 package com.agentApp.app.models;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -82,7 +83,7 @@ public class User implements UserDetails {
 	@JoinTable(name = "user_authority", 
 				joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
 				inverseJoinColumns = @JoinColumn(name = "authority_id", referencedColumnName = "id"))
-	private List<Authority> authorities;
+	private List<Authority> roles;
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -104,7 +105,7 @@ public class User implements UserDetails {
 		this.phoneNumber = dto.getPhoneNumber();
 		this.uloga = dto.getUloga();
 		this.nalogAktiviran = dto.isNalogAktiviran();
-		this.authorities = dto.getAuthorities();
+		this.roles = dto.getAuthorities();
 
 	}
 
@@ -194,12 +195,21 @@ public class User implements UserDetails {
 	}
 	
 	public void setAuthorities(List<Authority> authorities) {
-        this.authorities = authorities;
+        this.roles = authorities;
     }
+	
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities(){
-		return this.authorities;
+		 if(!this.roles.isEmpty()){
+	            Authority r = roles.iterator().next();
+	            List<Permission> privileges = new ArrayList<Permission>();
+	            for(Permission p : r.getPermissions()){
+	                privileges.add(p);
+	            }
+	            return privileges;
+	        }
+	        return null;
 	}
 	
 	public java.sql.Timestamp getLastPasswordResetDate() {
@@ -251,4 +261,14 @@ public class User implements UserDetails {
 	public void setNalogAktiviran(boolean nalogAktiviran) {
 		this.nalogAktiviran = nalogAktiviran;
 	}
+
+	public List<Authority> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Authority> roles) {
+		this.roles = roles;
+	}
+	
+	
 }

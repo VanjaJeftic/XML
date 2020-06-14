@@ -11,7 +11,7 @@ export class RegistrationServiceService {
 
   public saveKorisnik(user:User){
     console.log("User se salje "+ user.adresa)
-    return this.http.post('http://localhost:8095/korisnik/noviKorisnik',user).subscribe(
+    return this.http.post('https://localhost:8662/auth/korisnik/noviKorisnik',user).subscribe(
       data=>{console.log('Vratio je '+data)}
     );
   }
