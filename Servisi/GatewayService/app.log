@@ -1692,3 +1692,1273 @@ Using generated security password: 71043243-6e08-4c62-852f-463b3d2fefdc
 2020-06-14 17:21:03.791  INFO 11348 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-06-14 17:26:03.795  INFO 11348 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-06-14 17:31:03.805  INFO 11348 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 20:40:18.961  INFO 3724 --- [main] com.gateway.GatewayServiceApplication    : No active profile set, falling back to default profiles: default
+2020-06-14 20:40:19.726  WARN 3724 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-06-14 20:40:19.742  WARN 3724 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2020-06-14 20:40:19.867  INFO 3724 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3b625b9f-9dd8-3ccf-ac60-c693a69380a7
+2020-06-14 20:40:20.273  INFO 3724 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8662 (https)
+2020-06-14 20:40:20.284  INFO 3724 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-14 20:40:20.284  INFO 3724 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-14 20:40:20.378  INFO 3724 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-14 20:40:20.378  INFO 3724 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1370 ms
+2020-06-14 20:40:20.456  WARN 3724 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-14 20:40:20.456  INFO 3724 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-14 20:40:20.456  INFO 3724 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3743539f
+2020-06-14 20:40:21.222  INFO 3724 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: cb854260-832b-486f-87db-61de3b117957
+
+2020-06-14 20:40:21.378  INFO 3724 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6807a356, org.springframework.security.web.context.SecurityContextPersistenceFilter@67e25252, org.springframework.security.web.header.HeaderWriterFilter@609e57da, org.springframework.security.web.authentication.logout.LogoutFilter@19b206ee, com.gateway.jwt.JwtTokenAuthenticationFilter@7ddd84b5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@21a9a705, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@77fa9381, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@73aeef7d, org.springframework.security.web.session.SessionManagementFilter@4d0e54e0, org.springframework.security.web.access.ExceptionTranslationFilter@7e83992, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d97e06c]
+2020-06-14 20:40:21.420  WARN 3724 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-14 20:40:21.420  INFO 3724 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-14 20:40:21.514  INFO 3724 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-14 20:40:22.248  WARN 3724 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-06-14 20:40:22.701  INFO 3724 --- [main] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
+2020-06-14 20:40:22.715  INFO 3724 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-06-14 20:40:22.762  INFO 3724 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-06-14 20:40:22.794  INFO 3724 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-06-14 20:40:22.825  INFO 3724 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-06-14 20:40:22.825  INFO 3724 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-06-14 20:40:22.919  INFO 3724 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-06-14 20:40:22.919  INFO 3724 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-06-14 20:40:23.028  INFO 3724 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 20:40:23.293  INFO 3724 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-06-14 20:40:23.293  INFO 3724 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-06-14 20:40:23.293  INFO 3724 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-06-14 20:40:23.293  INFO 3724 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-06-14 20:40:23.293  INFO 3724 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-06-14 20:40:23.293  INFO 3724 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-06-14 20:40:23.293  INFO 3724 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-06-14 20:40:23.418  INFO 3724 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-06-14 20:40:23.418  INFO 3724 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-06-14 20:40:23.418  INFO 3724 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-06-14 20:40:23.418  INFO 3724 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1592160023418 with initial instances count: 3
+2020-06-14 20:40:23.418  INFO 3724 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
+2020-06-14 20:40:23.418  INFO 3724 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592160023418, current=UP, previous=STARTING]
+2020-06-14 20:40:23.434  INFO 3724 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-62TOD5O:gateway-service:8662: registering service...
+2020-06-14 20:40:23.482  INFO 3724 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-62TOD5O:gateway-service:8662 - registration status: 204
+2020-06-14 20:40:24.061  INFO 3724 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8662 (https) with context path ''
+2020-06-14 20:40:24.072  INFO 3724 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8662
+2020-06-14 20:40:24.511  INFO 3724 --- [main] com.gateway.GatewayServiceApplication    : Started GatewayServiceApplication in 6.863 seconds (JVM running for 7.712)
+2020-06-14 20:45:23.308  INFO 3724 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 20:50:23.322  INFO 3724 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 20:53:08.541  INFO 3724 --- [https-jsse-nio-8662-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-14 20:53:08.542  INFO 3724 --- [https-jsse-nio-8662-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-14 20:53:08.590  INFO 3724 --- [https-jsse-nio-8662-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 48 ms
+2020-06-14 20:53:09.668  INFO 3724 --- [https-jsse-nio-8662-exec-6] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-authorization-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-14 20:53:09.722  INFO 3724 --- [https-jsse-nio-8662-exec-6] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-eureka-authorization-service
+2020-06-14 20:53:09.722  INFO 3724 --- [https-jsse-nio-8662-exec-6] c.netflix.loadbalancer.BaseLoadBalancer  : Client: eureka-authorization-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-authorization-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-06-14 20:53:09.738  INFO 3724 --- [https-jsse-nio-8662-exec-6] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2020-06-14 20:53:09.832  INFO 3724 --- [https-jsse-nio-8662-exec-6] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-authorization-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-14 20:53:09.832  INFO 3724 --- [https-jsse-nio-8662-exec-6] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client eureka-authorization-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-authorization-service,current list of Servers=[192.168.40.107:8095],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.40.107:8095;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@491e56fe
+2020-06-14 20:53:09.863  WARN 3724 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:53:10.753  INFO 3724 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-authorization-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-14 20:53:13.418  WARN 3724 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:53:19.748  INFO 3724 --- [https-jsse-nio-8662-exec-3] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-zahtev-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-14 20:53:19.752  INFO 3724 --- [https-jsse-nio-8662-exec-3] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-eureka-zahtev-service
+2020-06-14 20:53:19.753  INFO 3724 --- [https-jsse-nio-8662-exec-3] c.netflix.loadbalancer.BaseLoadBalancer  : Client: eureka-zahtev-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-zahtev-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-06-14 20:53:19.755  INFO 3724 --- [https-jsse-nio-8662-exec-3] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2020-06-14 20:53:19.756  INFO 3724 --- [https-jsse-nio-8662-exec-3] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-zahtev-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-14 20:53:19.757  INFO 3724 --- [https-jsse-nio-8662-exec-3] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client eureka-zahtev-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-zahtev-service,current list of Servers=[192.168.40.107:8093],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.40.107:8093;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@56ad98e9
+2020-06-14 20:53:19.759  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:53:20.759  INFO 3724 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-zahtev-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-14 20:53:48.346  INFO 3724 --- [https-jsse-nio-8662-exec-2] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-oglas-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-14 20:53:48.347  INFO 3724 --- [https-jsse-nio-8662-exec-2] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-eureka-oglas-service
+2020-06-14 20:53:48.347  INFO 3724 --- [https-jsse-nio-8662-exec-2] c.netflix.loadbalancer.BaseLoadBalancer  : Client: eureka-oglas-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-oglas-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-06-14 20:53:48.350  INFO 3724 --- [https-jsse-nio-8662-exec-2] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2020-06-14 20:53:48.350  INFO 3724 --- [https-jsse-nio-8662-exec-2] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-oglas-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-14 20:53:48.350  INFO 3724 --- [https-jsse-nio-8662-exec-2] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client eureka-oglas-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-oglas-service,current list of Servers=[192.168.40.107:8092],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.40.107:8092;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@1be57420
+2020-06-14 20:53:48.378  WARN 3724 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:53:49.352  INFO 3724 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-oglas-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-14 20:53:58.967  WARN 3724 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:54:02.071  WARN 3724 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:54:06.887  WARN 3724 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:54:11.075  WARN 3724 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:54:22.258  WARN 3724 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:54:31.331  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:54:33.814  WARN 3724 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:54:33.850  WARN 3724 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:54:42.378  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:54:45.939  WARN 3724 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:54:45.947  WARN 3724 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:54:52.436  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:54:52.445  WARN 3724 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:55:23.332  INFO 3724 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 20:56:44.298  WARN 3724 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:56:44.311  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:56:44.999  INFO 3724 --- [https-jsse-nio-8662-exec-6] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-search-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-14 20:56:45.011  INFO 3724 --- [https-jsse-nio-8662-exec-6] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-eureka-search-service
+2020-06-14 20:56:45.011  INFO 3724 --- [https-jsse-nio-8662-exec-6] c.netflix.loadbalancer.BaseLoadBalancer  : Client: eureka-search-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-search-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-06-14 20:56:45.012  INFO 3724 --- [https-jsse-nio-8662-exec-6] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2020-06-14 20:56:45.013  INFO 3724 --- [https-jsse-nio-8662-exec-6] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-search-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-14 20:56:45.014  INFO 3724 --- [https-jsse-nio-8662-exec-6] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client eureka-search-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-search-service,current list of Servers=[192.168.40.107:8100],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.40.107:8100;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@5389e070
+2020-06-14 20:56:45.018  WARN 3724 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-search-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:56:46.015  INFO 3724 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-search-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-14 20:56:54.862  WARN 3724 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:57:21.605  WARN 3724 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-search-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:57:24.049  WARN 3724 --- [https-jsse-nio-8662-exec-9] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:57:37.392  WARN 3724 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:57:37.406  WARN 3724 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:57:46.447  WARN 3724 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:57:46.457  WARN 3724 --- [https-jsse-nio-8662-exec-4] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:57:48.329  WARN 3724 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:57:53.661  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:57:53.673  WARN 3724 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:57:55.991  WARN 3724 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:57:56.002  WARN 3724 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:59:35.361  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:59:44.413  WARN 3724 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:59:51.608  WARN 3724 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 20:59:53.901  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:00:23.334  INFO 3724 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 21:01:21.783  WARN 3724 --- [https-jsse-nio-8662-exec-4] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:01:28.717  WARN 3724 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:01:28.999  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:01:34.499  WARN 3724 --- [https-jsse-nio-8662-exec-4] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:05:13.882  WARN 3724 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:05:14.632  WARN 3724 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.filters.post.SendErrorFilter   : Error during filtering
+
+com.netflix.zuul.exception.ZuulException: Forwarding error
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.handleException(RibbonRoutingFilter.java:198) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.forward(RibbonRoutingFilter.java:173) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.run(RibbonRoutingFilter.java:119) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.netflix.zuul.ZuulFilter.runFilter(ZuulFilter.java:117) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.FilterProcessor.processZuulFilter(FilterProcessor.java:193) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.FilterProcessor.runFilters(FilterProcessor.java:157) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.FilterProcessor.route(FilterProcessor.java:118) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.ZuulRunner.route(ZuulRunner.java:96) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.http.ZuulServlet.route(ZuulServlet.java:116) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.http.ZuulServlet.service(ZuulServlet.java:81) ~[zuul-core-1.3.1.jar:1.3.1]
+	at org.springframework.web.servlet.mvc.ServletWrappingController.handleRequestInternal(ServletWrappingController.java:166) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.cloud.netflix.zuul.web.ZuulController.handleRequest(ZuulController.java:45) [spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:52) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at com.gateway.jwt.JwtTokenAuthenticationFilter.doFilterInternal(JwtTokenAuthenticationFilter.java:39) [classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) [spring-boot-actuator-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_192]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_192]
+Caused by: com.netflix.client.ClientException: Load balancer does not have available server for client: eureka-zahtev-service
+	at com.netflix.loadbalancer.LoadBalancerContext.getServerFromLoadBalancer(LoadBalancerContext.java:483) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:184) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:180) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:94) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:42) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber$1.call(OperatorRetryWithPredicate.java:127) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.schedulers.TrampolineScheduler$InnerCurrentThreadScheduler.enqueue(TrampolineScheduler.java:73) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.schedulers.TrampolineScheduler$InnerCurrentThreadScheduler.schedule(TrampolineScheduler.java:52) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber.onNext(OperatorRetryWithPredicate.java:79) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber.onNext(OperatorRetryWithPredicate.java:45) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.util.ScalarSynchronousObservable$WeakSingleProducer.request(ScalarSynchronousObservable.java:276) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Subscriber.setProducer(Subscriber.java:209) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.util.ScalarSynchronousObservable$JustOnSubscribe.call(ScalarSynchronousObservable.java:138) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.util.ScalarSynchronousObservable$JustOnSubscribe.call(ScalarSynchronousObservable.java:129) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10423) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10390) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.observables.BlockingObservable.blockForSingle(BlockingObservable.java:443) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.observables.BlockingObservable.single(BlockingObservable.java:340) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.client.AbstractLoadBalancerAwareClient.executeWithLoadBalancer(AbstractLoadBalancerAwareClient.java:112) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at org.springframework.cloud.netflix.zuul.filters.route.support.AbstractRibbonCommand.run(AbstractRibbonCommand.java:221) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.netflix.zuul.filters.route.support.AbstractRibbonCommand.run(AbstractRibbonCommand.java:55) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:302) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:298) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:46) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeMap.call(OnSubscribeMap.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeMap.call(OnSubscribeMap.java:33) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10423) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10390) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.BlockingOperatorToFuture.toFuture(BlockingOperatorToFuture.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.observables.BlockingObservable.toFuture(BlockingObservable.java:410) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.hystrix.HystrixCommand.queue(HystrixCommand.java:378) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.HystrixCommand.execute(HystrixCommand.java:344) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.forward(RibbonRoutingFilter.java:167) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	... 89 common frames omitted
+
+2020-06-14 21:05:23.375  INFO 3724 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 21:05:27.456  WARN 3724 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:05:27.521  WARN 3724 --- [https-jsse-nio-8662-exec-9] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:05:30.360  WARN 3724 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:10:23.410  INFO 3724 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 21:12:24.231  WARN 3724 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:12:37.823  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:12:37.841  WARN 3724 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:12:47.408  WARN 3724 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:12:49.643  WARN 3724 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:12:51.997  WARN 3724 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:12:58.083  WARN 3724 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:13:02.270  WARN 3724 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:15:23.440  INFO 3724 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 21:17:39.544  WARN 3724 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:17:46.599  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:17:46.661  WARN 3724 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:17:50.148  WARN 3724 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:17:51.132  WARN 3724 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:17:51.858  WARN 3724 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:17:51.861  WARN 3724 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.filters.post.SendErrorFilter   : Error during filtering
+
+com.netflix.zuul.exception.ZuulException: Forwarding error
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.handleException(RibbonRoutingFilter.java:198) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.forward(RibbonRoutingFilter.java:173) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.run(RibbonRoutingFilter.java:119) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.netflix.zuul.ZuulFilter.runFilter(ZuulFilter.java:117) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.FilterProcessor.processZuulFilter(FilterProcessor.java:193) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.FilterProcessor.runFilters(FilterProcessor.java:157) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.FilterProcessor.route(FilterProcessor.java:118) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.ZuulRunner.route(ZuulRunner.java:96) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.http.ZuulServlet.route(ZuulServlet.java:116) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.http.ZuulServlet.service(ZuulServlet.java:81) ~[zuul-core-1.3.1.jar:1.3.1]
+	at org.springframework.web.servlet.mvc.ServletWrappingController.handleRequestInternal(ServletWrappingController.java:166) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.cloud.netflix.zuul.web.ZuulController.handleRequest(ZuulController.java:45) [spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:52) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at com.gateway.jwt.JwtTokenAuthenticationFilter.doFilterInternal(JwtTokenAuthenticationFilter.java:39) [classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) [spring-boot-actuator-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_192]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_192]
+Caused by: com.netflix.client.ClientException: Load balancer does not have available server for client: eureka-oglas-service
+	at com.netflix.loadbalancer.LoadBalancerContext.getServerFromLoadBalancer(LoadBalancerContext.java:483) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:184) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:180) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:94) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:42) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber$1.call(OperatorRetryWithPredicate.java:127) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.schedulers.TrampolineScheduler$InnerCurrentThreadScheduler.enqueue(TrampolineScheduler.java:73) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.schedulers.TrampolineScheduler$InnerCurrentThreadScheduler.schedule(TrampolineScheduler.java:52) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber.onNext(OperatorRetryWithPredicate.java:79) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber.onNext(OperatorRetryWithPredicate.java:45) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.util.ScalarSynchronousObservable$WeakSingleProducer.request(ScalarSynchronousObservable.java:276) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Subscriber.setProducer(Subscriber.java:209) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.util.ScalarSynchronousObservable$JustOnSubscribe.call(ScalarSynchronousObservable.java:138) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.util.ScalarSynchronousObservable$JustOnSubscribe.call(ScalarSynchronousObservable.java:129) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10423) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10390) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.observables.BlockingObservable.blockForSingle(BlockingObservable.java:443) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.observables.BlockingObservable.single(BlockingObservable.java:340) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.client.AbstractLoadBalancerAwareClient.executeWithLoadBalancer(AbstractLoadBalancerAwareClient.java:112) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at org.springframework.cloud.netflix.zuul.filters.route.support.AbstractRibbonCommand.run(AbstractRibbonCommand.java:221) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.netflix.zuul.filters.route.support.AbstractRibbonCommand.run(AbstractRibbonCommand.java:55) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:302) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:298) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:46) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeMap.call(OnSubscribeMap.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeMap.call(OnSubscribeMap.java:33) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10423) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10390) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.BlockingOperatorToFuture.toFuture(BlockingOperatorToFuture.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.observables.BlockingObservable.toFuture(BlockingObservable.java:410) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.hystrix.HystrixCommand.queue(HystrixCommand.java:378) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.HystrixCommand.execute(HystrixCommand.java:344) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.forward(RibbonRoutingFilter.java:167) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	... 89 common frames omitted
+
+2020-06-14 21:17:57.716  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:17:57.733  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.filters.post.SendErrorFilter   : Error during filtering
+
+com.netflix.zuul.exception.ZuulException: Forwarding error
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.handleException(RibbonRoutingFilter.java:198) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.forward(RibbonRoutingFilter.java:173) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.run(RibbonRoutingFilter.java:119) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.netflix.zuul.ZuulFilter.runFilter(ZuulFilter.java:117) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.FilterProcessor.processZuulFilter(FilterProcessor.java:193) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.FilterProcessor.runFilters(FilterProcessor.java:157) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.FilterProcessor.route(FilterProcessor.java:118) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.ZuulRunner.route(ZuulRunner.java:96) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.http.ZuulServlet.route(ZuulServlet.java:116) ~[zuul-core-1.3.1.jar:1.3.1]
+	at com.netflix.zuul.http.ZuulServlet.service(ZuulServlet.java:81) ~[zuul-core-1.3.1.jar:1.3.1]
+	at org.springframework.web.servlet.mvc.ServletWrappingController.handleRequestInternal(ServletWrappingController.java:166) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.cloud.netflix.zuul.web.ZuulController.handleRequest(ZuulController.java:45) [spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:52) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at com.gateway.jwt.JwtTokenAuthenticationFilter.doFilterInternal(JwtTokenAuthenticationFilter.java:39) [classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) [spring-boot-actuator-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_192]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_192]
+Caused by: com.netflix.client.ClientException: Load balancer does not have available server for client: eureka-oglas-service
+	at com.netflix.loadbalancer.LoadBalancerContext.getServerFromLoadBalancer(LoadBalancerContext.java:483) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:184) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:180) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:94) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:42) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber$1.call(OperatorRetryWithPredicate.java:127) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.schedulers.TrampolineScheduler$InnerCurrentThreadScheduler.enqueue(TrampolineScheduler.java:73) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.schedulers.TrampolineScheduler$InnerCurrentThreadScheduler.schedule(TrampolineScheduler.java:52) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber.onNext(OperatorRetryWithPredicate.java:79) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber.onNext(OperatorRetryWithPredicate.java:45) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.util.ScalarSynchronousObservable$WeakSingleProducer.request(ScalarSynchronousObservable.java:276) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Subscriber.setProducer(Subscriber.java:209) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.util.ScalarSynchronousObservable$JustOnSubscribe.call(ScalarSynchronousObservable.java:138) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.util.ScalarSynchronousObservable$JustOnSubscribe.call(ScalarSynchronousObservable.java:129) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10423) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10390) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.observables.BlockingObservable.blockForSingle(BlockingObservable.java:443) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.observables.BlockingObservable.single(BlockingObservable.java:340) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.client.AbstractLoadBalancerAwareClient.executeWithLoadBalancer(AbstractLoadBalancerAwareClient.java:112) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at org.springframework.cloud.netflix.zuul.filters.route.support.AbstractRibbonCommand.run(AbstractRibbonCommand.java:221) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.netflix.zuul.filters.route.support.AbstractRibbonCommand.run(AbstractRibbonCommand.java:55) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:302) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:298) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:46) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeMap.call(OnSubscribeMap.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeMap.call(OnSubscribeMap.java:33) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10423) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10390) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.BlockingOperatorToFuture.toFuture(BlockingOperatorToFuture.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.observables.BlockingObservable.toFuture(BlockingObservable.java:410) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.hystrix.HystrixCommand.queue(HystrixCommand.java:378) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.HystrixCommand.execute(HystrixCommand.java:344) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.forward(RibbonRoutingFilter.java:167) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	... 89 common frames omitted
+
+2020-06-14 21:19:06.697  WARN 3724 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:19:15.843  WARN 3724 --- [https-jsse-nio-8662-exec-4] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:19:19.272  WARN 3724 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:19:33.206  WARN 3724 --- [https-jsse-nio-8662-exec-9] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:19:42.941  WARN 3724 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:19:56.559  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:19:56.639  WARN 3724 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:20:03.350  WARN 3724 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:20:13.000  WARN 3724 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:20:21.986  WARN 3724 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:20:23.448  INFO 3724 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 21:20:32.200  WARN 3724 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:20:40.563  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:20:50.884  WARN 3724 --- [https-jsse-nio-8662-exec-4] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:20:57.389  WARN 3724 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:21:10.099  WARN 3724 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:21:15.889  WARN 3724 --- [https-jsse-nio-8662-exec-4] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:21:20.599  WARN 3724 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:21:26.181  WARN 3724 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-zahtev-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:21:29.188  WARN 3724 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:21:37.927  WARN 3724 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:21:46.764  WARN 3724 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-oglas-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-14 21:22:56.575  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-06-14 21:22:56.759  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application GATEWAY-SERVICE with eureka with status DOWN
+2020-06-14 21:22:56.795  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592162576795, current=DOWN, previous=UP]
+2020-06-14 21:22:56.795  INFO 3724 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-62TOD5O:gateway-service:8662: registering service...
+2020-06-14 21:22:56.968  INFO 3724 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-62TOD5O:gateway-service:8662 - registration status: 204
+2020-06-14 21:22:57.592  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-14 21:22:57.618  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2020-06-14 21:22:57.696  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+ java.util.concurrent.LinkedBlockingQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.696  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [RxIoScheduler-1 (Evictor)] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.712  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [expiringMap-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.712  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [RibbonApacheHttpClientConfiguration.connectionManagerTimer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source)
+2020-06-14 21:22:57.712  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [NFLoadBalancer-PingTimer-eureka-authorization-service] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source)
+2020-06-14 21:22:57.712  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [PollingServerListUpdater-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.712  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [DataPublisher] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.712  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [RxComputationScheduler-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.712  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HystrixTimer-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.743  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [PollingServerListUpdater-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.743  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HystrixTimer-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.743  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [RibbonApacheHttpClientConfiguration.connectionManagerTimer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source)
+2020-06-14 21:22:57.743  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [NFLoadBalancer-PingTimer-eureka-zahtev-service] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source)
+2020-06-14 21:22:57.743  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [RxComputationScheduler-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.743  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HystrixTimer-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.743  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [RibbonApacheHttpClientConfiguration.connectionManagerTimer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source)
+2020-06-14 21:22:57.743  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [NFLoadBalancer-PingTimer-eureka-oglas-service] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source)
+2020-06-14 21:22:57.743  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [RxComputationScheduler-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.759  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HystrixTimer-4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.759  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HystrixTimer-5] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.759  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HystrixTimer-6] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.759  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HystrixTimer-7] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.759  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HystrixTimer-8] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.759  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [RibbonApacheHttpClientConfiguration.connectionManagerTimer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source)
+2020-06-14 21:22:57.759  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [NFLoadBalancer-PingTimer-eureka-search-service] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source)
+2020-06-14 21:22:57.759  WARN 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [RxComputationScheduler-4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 21:22:57.915  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.s.c.n.zuul.ZuulFilterInitializer       : Stopping filter initializer
+2020-06-14 21:22:57.931  INFO 3724 --- [Thread-427] c.n.l.PollingServerListUpdater           : Shutting down the Executor Pool for PollingServerListUpdater
+2020-06-14 21:22:58.056  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook removed for: NFLoadBalancer-PingTimer-eureka-oglas-service
+2020-06-14 21:22:58.056  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] c.n.u.concurrent.ShutdownEnabledTimer    : Exception caught (might be ok if at shutdown)
+
+java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.remove(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.Runtime.removeShutdownHook(Unknown Source) ~[na:1.8.0_192]
+	at com.netflix.util.concurrent.ShutdownEnabledTimer.cancel(ShutdownEnabledTimer.java:70) ~[netflix-commons-util-0.3.0.jar:0.3.0]
+	at com.netflix.loadbalancer.BaseLoadBalancer.cancelPingTask(BaseLoadBalancer.java:632) [ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.BaseLoadBalancer.shutdown(BaseLoadBalancer.java:883) [ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.DynamicServerListLoadBalancer.shutdown(DynamicServerListLoadBalancer.java:285) [ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:339) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:273) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:579) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:551) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1091) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:512) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1084) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:92) [spring-cloud-context-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:258) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:579) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:551) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1091) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:512) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1084) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:168) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source) [na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.PerInterface.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MBeanSupport.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(Unknown Source) [na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.Transport$1.run(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.Transport$1.run(Unknown Source) [na:1.8.0_192]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_192]
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source) [na:1.8.0_192]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.8.0_192]
+
+2020-06-14 21:22:58.087  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook removed for: NFLoadBalancer-PingTimer-eureka-authorization-service
+2020-06-14 21:22:58.087  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] c.n.u.concurrent.ShutdownEnabledTimer    : Exception caught (might be ok if at shutdown)
+
+java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.remove(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.Runtime.removeShutdownHook(Unknown Source) ~[na:1.8.0_192]
+	at com.netflix.util.concurrent.ShutdownEnabledTimer.cancel(ShutdownEnabledTimer.java:70) ~[netflix-commons-util-0.3.0.jar:0.3.0]
+	at com.netflix.loadbalancer.BaseLoadBalancer.cancelPingTask(BaseLoadBalancer.java:632) [ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.BaseLoadBalancer.shutdown(BaseLoadBalancer.java:883) [ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.DynamicServerListLoadBalancer.shutdown(DynamicServerListLoadBalancer.java:285) [ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:339) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:273) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:579) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:551) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1091) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:512) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1084) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:92) [spring-cloud-context-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:258) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:579) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:551) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1091) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:512) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1084) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:168) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source) [na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.PerInterface.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MBeanSupport.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(Unknown Source) [na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.Transport$1.run(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.Transport$1.run(Unknown Source) [na:1.8.0_192]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_192]
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source) [na:1.8.0_192]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.8.0_192]
+
+2020-06-14 21:22:58.102  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook removed for: NFLoadBalancer-PingTimer-eureka-zahtev-service
+2020-06-14 21:22:58.102  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] c.n.u.concurrent.ShutdownEnabledTimer    : Exception caught (might be ok if at shutdown)
+
+java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.remove(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.Runtime.removeShutdownHook(Unknown Source) ~[na:1.8.0_192]
+	at com.netflix.util.concurrent.ShutdownEnabledTimer.cancel(ShutdownEnabledTimer.java:70) ~[netflix-commons-util-0.3.0.jar:0.3.0]
+	at com.netflix.loadbalancer.BaseLoadBalancer.cancelPingTask(BaseLoadBalancer.java:632) [ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.BaseLoadBalancer.shutdown(BaseLoadBalancer.java:883) [ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.DynamicServerListLoadBalancer.shutdown(DynamicServerListLoadBalancer.java:285) [ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:339) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:273) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:579) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:551) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1091) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:512) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1084) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:92) [spring-cloud-context-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:258) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:579) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:551) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1091) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:512) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1084) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:168) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source) [na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.PerInterface.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MBeanSupport.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(Unknown Source) [na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.Transport$1.run(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.Transport$1.run(Unknown Source) [na:1.8.0_192]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_192]
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source) [na:1.8.0_192]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.8.0_192]
+
+2020-06-14 21:22:58.102  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook removed for: NFLoadBalancer-PingTimer-eureka-search-service
+2020-06-14 21:22:58.102  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] c.n.u.concurrent.ShutdownEnabledTimer    : Exception caught (might be ok if at shutdown)
+
+java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.remove(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.Runtime.removeShutdownHook(Unknown Source) ~[na:1.8.0_192]
+	at com.netflix.util.concurrent.ShutdownEnabledTimer.cancel(ShutdownEnabledTimer.java:70) ~[netflix-commons-util-0.3.0.jar:0.3.0]
+	at com.netflix.loadbalancer.BaseLoadBalancer.cancelPingTask(BaseLoadBalancer.java:632) [ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.BaseLoadBalancer.shutdown(BaseLoadBalancer.java:883) [ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.DynamicServerListLoadBalancer.shutdown(DynamicServerListLoadBalancer.java:285) [ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:339) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:273) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:579) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:551) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1091) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:512) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1084) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:92) [spring-cloud-context-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:258) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:579) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:551) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1091) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:512) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1084) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:168) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source) [na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.PerInterface.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.MBeanSupport.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(Unknown Source) [na:1.8.0_192]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(Unknown Source) [na:1.8.0_192]
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(Unknown Source) [na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_192]
+	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.Transport$1.run(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.Transport$1.run(Unknown Source) [na:1.8.0_192]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_192]
+	at sun.rmi.transport.Transport.serviceCall(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source) [na:1.8.0_192]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_192]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:1.8.0_192]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.8.0_192]
+
+2020-06-14 21:22:58.149  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-14 21:22:58.337  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-06-14 21:23:01.352  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-06-14 21:23:01.484  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-62TOD5O:gateway-service:8662 - deregister  status: 200
+2020-06-14 21:23:01.609  INFO 3724 --- [RMI TCP Connection(53)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

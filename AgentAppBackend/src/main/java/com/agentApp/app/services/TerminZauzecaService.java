@@ -7,9 +7,11 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.agentApp.app.models.Izvestaj;
 import com.agentApp.app.models.Oglas;
 import com.agentApp.app.models.TerminZauzeca;
 import com.agentApp.app.models.Vozilo;
+import com.agentApp.app.models.Zahtev;
 import com.agentApp.app.repository.TerminZauzecaRepository;
 
 @Service
@@ -62,6 +64,10 @@ public class TerminZauzecaService {
 		Set<Integer> counter = new HashSet<>();
 		int imaPodudaranja = 0;
 		
+		for(TerminZauzeca t : v.getZauzeti()){
+			System.out.println("Od: " + t.getZauzetod() + ", do: " + t.getZauzetdo());
+		}
+		
 		if(v.getZauzeti().size() < 1) {
 			return 0;
 		}
@@ -89,7 +95,8 @@ public class TerminZauzecaService {
 		 if( (zauzeto.getZauzetod().isAfter(zahtevPreuzimanje.getZauzetod()) && zauzeto.getZauzetdo().isBefore(zahtevPreuzimanje.getZauzetdo())
 					|| (zauzeto.getZauzetod().isBefore(zahtevPreuzimanje.getZauzetod()) && zauzeto.getZauzetdo().isAfter(zahtevPreuzimanje.getZauzetod()))) 
 					|| (zauzeto.getZauzetod().isBefore(zahtevPreuzimanje.getZauzetdo()) && zauzeto.getZauzetdo().isAfter(zahtevPreuzimanje.getZauzetdo()))
-					|| (zauzeto.getZauzetod().isBefore(zahtevPreuzimanje.getZauzetod()) && zauzeto.getZauzetdo().isAfter(zahtevPreuzimanje.getZauzetdo())) ) {
+					|| (zauzeto.getZauzetod().isBefore(zahtevPreuzimanje.getZauzetod()) && zauzeto.getZauzetdo().isAfter(zahtevPreuzimanje.getZauzetdo()))
+					|| (zauzeto.getZauzetod().isEqual(zahtevPreuzimanje.getZauzetod()) && zauzeto.getZauzetdo().isEqual(zahtevPreuzimanje.getZauzetdo())) ) {
 			 System.out.println("********************************************************");
 			 System.out.println("Pronasao je termin podudaranja!!");
 			 System.out.println("********************************************************");
@@ -98,4 +105,18 @@ public class TerminZauzecaService {
 		 System.out.println("Nema podudaranja u provjeriPodudaranje!");
 		 return 0;
 	 }
+	
+	public void obrisiTermin(Vozilo v, Zahtev z) {
+		Set<TerminZauzeca> termini = v.getZauzeti();
+		for(TerminZauzeca termin : termini) {
+			System.out.println("Termin od: " + termin.getZauzetod() +", zahtev od: " + termin.getZauzetdo());
+			System.out.println("Poredi sa: " + z.getPreuzimanje() + ", do: " + z.getPovratak());
+			if(termin.getZauzetod().isEqual(z.getPreuzimanje()) && termin.getZauzetdo().isEqual(z.getPovratak()) ) {
+				termin.setVozilo(null);
+				this.terminZauzecaRepository.save(termin);
+				System.out.println("Izmenjen termin, vozilo termini je: " + v.getZauzeti().toString());
+				return;
+			}
+		}
+	}
 }

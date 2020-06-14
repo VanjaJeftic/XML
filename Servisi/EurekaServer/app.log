@@ -724,3 +724,202 @@ java.lang.IllegalArgumentException: Invalid character found in method name [0x16
 2020-06-14 17:31:34.593  INFO 3384 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
 2020-06-14 17:32:34.594  INFO 3384 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
 2020-06-14 17:33:34.594  INFO 3384 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 20:38:09.771  INFO 6132 --- [main] c.eureka.server.EurekaServerApplication  : No active profile set, falling back to default profiles: default
+2020-06-14 20:38:10.427  WARN 6132 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-06-14 20:38:10.521  INFO 6132 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=61ec1418-7695-3f06-b947-4789e502fe41
+2020-06-14 20:38:10.787  INFO 6132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
+2020-06-14 20:38:10.790  INFO 6132 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-14 20:38:10.790  INFO 6132 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-14 20:38:10.915  INFO 6132 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-14 20:38:10.915  INFO 6132 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1144 ms
+2020-06-14 20:38:10.977  WARN 6132 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-14 20:38:10.977  INFO 6132 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-14 20:38:10.977  INFO 6132 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@5c448433
+2020-06-14 20:38:11.258  INFO 6132 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
+2020-06-14 20:38:11.321  INFO 6132 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-06-14 20:38:11.321  INFO 6132 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-06-14 20:38:11.493  INFO 6132 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-06-14 20:38:11.493  INFO 6132 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-06-14 20:38:11.774  WARN 6132 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-14 20:38:11.774  INFO 6132 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-14 20:38:11.883  INFO 6132 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-14 20:38:13.030  WARN 6132 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-06-14 20:38:13.049  INFO 6132 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-06-14 20:38:13.065  INFO 6132 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-06-14 20:38:13.065  INFO 6132 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2020-06-14 20:38:13.080  INFO 6132 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1592159893080 with initial instances count: 0
+2020-06-14 20:38:13.096  INFO 6132 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2020-06-14 20:38:13.096  INFO 6132 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
+2020-06-14 20:38:13.502  INFO 6132 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-06-14 20:38:13.502  INFO 6132 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-06-14 20:38:13.502  INFO 6132 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-06-14 20:38:13.502  INFO 6132 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-06-14 20:38:13.564  INFO 6132 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
+2020-06-14 20:38:13.580  INFO 6132 --- [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2020-06-14 20:38:13.580  INFO 6132 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2020-06-14 20:38:13.580  INFO 6132 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-06-14 20:38:13.643  INFO 6132 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVER with eureka with status UP
+2020-06-14 20:38:13.643  INFO 6132 --- [Thread-400] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
+2020-06-14 20:38:13.643  INFO 6132 --- [Thread-400] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
+2020-06-14 20:38:13.643  INFO 6132 --- [Thread-400] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
+2020-06-14 20:38:13.658  INFO 6132 --- [Thread-400] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2020-06-14 20:38:13.658  INFO 6132 --- [Thread-400] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2020-06-14 20:38:13.658  INFO 6132 --- [Thread-400] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2020-06-14 20:38:13.658  INFO 6132 --- [Thread-400] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2020-06-14 20:38:13.658  INFO 6132 --- [Thread-400] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2020-06-14 20:38:13.658  INFO 6132 --- [Thread-400] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2020-06-14 20:38:13.658  INFO 6132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8761 (http) with context path ''
+2020-06-14 20:38:13.658  INFO 6132 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+2020-06-14 20:38:14.080  INFO 6132 --- [main] c.eureka.server.EurekaServerApplication  : Started EurekaServerApplication in 5.859 seconds (JVM running for 6.727)
+2020-06-14 20:39:01.596  INFO 6132 --- [http-nio-8761-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-14 20:39:01.604  INFO 6132 --- [http-nio-8761-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-14 20:39:01.605  INFO 6132 --- [http-nio-8761-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2020-06-14 20:39:01.776  INFO 6132 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-AUTHORIZATION-SERVICE/DESKTOP-62TOD5O:eureka-authorization-service:8095 with status UP (replication=false)
+2020-06-14 20:39:02.375  INFO 6132 --- [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-AUTHORIZATION-SERVICE/DESKTOP-62TOD5O:eureka-authorization-service:8095 with status UP (replication=true)
+2020-06-14 20:39:13.673  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 20:39:21.261  INFO 6132 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status UP (replication=false)
+2020-06-14 20:39:21.803  INFO 6132 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status UP (replication=true)
+2020-06-14 20:39:36.136  INFO 6132 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-SEARCH-SERVICE/DESKTOP-62TOD5O:eureka-search-service:8100 with status UP (replication=false)
+2020-06-14 20:39:36.660  INFO 6132 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-SEARCH-SERVICE/DESKTOP-62TOD5O:eureka-search-service:8100 with status UP (replication=true)
+2020-06-14 20:40:06.733  INFO 6132 --- [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 with status UP (replication=false)
+2020-06-14 20:40:07.275  INFO 6132 --- [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 with status UP (replication=true)
+2020-06-14 20:40:13.673  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 20:40:23.465  INFO 6132 --- [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/DESKTOP-62TOD5O:gateway-service:8662 with status UP (replication=false)
+2020-06-14 20:40:23.998  INFO 6132 --- [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/DESKTOP-62TOD5O:gateway-service:8662 with status UP (replication=true)
+2020-06-14 20:41:13.686  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
+2020-06-14 20:42:13.694  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
+2020-06-14 20:43:13.701  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
+2020-06-14 20:44:13.702  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-06-14 20:45:13.710  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
+2020-06-14 20:46:13.711  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 20:47:13.716  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-06-14 20:48:13.729  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
+2020-06-14 20:49:13.740  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
+2020-06-14 20:50:13.753  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
+2020-06-14 20:51:13.754  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 20:52:13.758  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-06-14 20:53:13.774  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
+2020-06-14 20:53:13.912  INFO 6132 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 10
+2020-06-14 20:54:13.774  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 20:55:13.781  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
+2020-06-14 20:56:13.782  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 20:57:13.792  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
+2020-06-14 20:58:13.807  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
+2020-06-14 20:59:13.822  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
+2020-06-14 21:00:13.832  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
+2020-06-14 21:01:13.832  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 21:02:13.837  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-06-14 21:03:13.839  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-06-14 21:03:35.150  INFO 6132 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 with status DOWN (replication=false)
+2020-06-14 21:03:35.718  INFO 6132 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 with status DOWN (replication=true)
+2020-06-14 21:03:40.937  INFO 6132 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 (replication=false)
+2020-06-14 21:03:41.535  WARN 6132 --- [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093
+2020-06-14 21:03:41.566  INFO 6132 --- [http-nio-8761-exec-4] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): EUREKA-ZAHTEV-SERVICE - DESKTOP-62TOD5O:eureka-zahtev-service:8093
+2020-06-14 21:03:41.566  WARN 6132 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.cluster.ReplicationTask       : The replication of task EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093:Cancel@localhost failed with response code 404
+2020-06-14 21:03:41.581  WARN 6132 --- [TaskBatchingWorker-target_localhost-8] c.netflix.eureka.cluster.PeerEurekaNode  : EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093:Cancel@localhost: missing entry.
+2020-06-14 21:03:45.097  INFO 6132 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status DOWN (replication=false)
+2020-06-14 21:03:45.627  INFO 6132 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status DOWN (replication=true)
+2020-06-14 21:03:50.783  INFO 6132 --- [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 (replication=false)
+2020-06-14 21:03:51.303  WARN 6132 --- [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092
+2020-06-14 21:03:51.303  INFO 6132 --- [http-nio-8761-exec-10] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): EUREKA-OGLAS-SERVICE - DESKTOP-62TOD5O:eureka-oglas-service:8092
+2020-06-14 21:03:51.303  WARN 6132 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.cluster.ReplicationTask       : The replication of task EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092:Cancel@localhost failed with response code 404
+2020-06-14 21:03:51.303  WARN 6132 --- [TaskBatchingWorker-target_localhost-15] c.netflix.eureka.cluster.PeerEurekaNode  : EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092:Cancel@localhost: missing entry.
+2020-06-14 21:04:13.840  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-06-14 21:04:27.986  INFO 6132 --- [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 with status UP (replication=false)
+2020-06-14 21:04:28.019  INFO 6132 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status UP (replication=false)
+2020-06-14 21:04:28.532  INFO 6132 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 with status UP (replication=true)
+2020-06-14 21:04:28.532  INFO 6132 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status UP (replication=true)
+2020-06-14 21:05:13.841  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 21:06:13.841  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 21:07:13.842  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 21:08:13.678  INFO 6132 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 10
+2020-06-14 21:08:13.852  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
+2020-06-14 21:08:49.535  INFO 6132 --- [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 with status DOWN (replication=false)
+2020-06-14 21:08:50.071  INFO 6132 --- [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 with status DOWN (replication=true)
+2020-06-14 21:08:52.894  INFO 6132 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 (replication=false)
+2020-06-14 21:08:53.431  WARN 6132 --- [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093
+2020-06-14 21:08:53.431  INFO 6132 --- [http-nio-8761-exec-4] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): EUREKA-ZAHTEV-SERVICE - DESKTOP-62TOD5O:eureka-zahtev-service:8093
+2020-06-14 21:08:53.431  WARN 6132 --- [TaskBatchingWorker-target_localhost-4] c.n.eureka.cluster.ReplicationTask       : The replication of task EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093:Cancel@localhost failed with response code 404
+2020-06-14 21:08:53.431  WARN 6132 --- [TaskBatchingWorker-target_localhost-4] c.netflix.eureka.cluster.PeerEurekaNode  : EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093:Cancel@localhost: missing entry.
+2020-06-14 21:09:13.864  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
+2020-06-14 21:09:43.300  INFO 6132 --- [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status DOWN (replication=false)
+2020-06-14 21:09:43.847  INFO 6132 --- [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status DOWN (replication=true)
+2020-06-14 21:09:46.688  INFO 6132 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 (replication=false)
+2020-06-14 21:09:47.209  WARN 6132 --- [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092
+2020-06-14 21:09:47.209  INFO 6132 --- [http-nio-8761-exec-4] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): EUREKA-OGLAS-SERVICE - DESKTOP-62TOD5O:eureka-oglas-service:8092
+2020-06-14 21:09:47.209  WARN 6132 --- [TaskBatchingWorker-target_localhost-6] c.n.eureka.cluster.ReplicationTask       : The replication of task EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092:Cancel@localhost failed with response code 404
+2020-06-14 21:09:47.209  WARN 6132 --- [TaskBatchingWorker-target_localhost-6] c.netflix.eureka.cluster.PeerEurekaNode  : EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092:Cancel@localhost: missing entry.
+2020-06-14 21:10:13.866  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-06-14 21:10:27.098  INFO 6132 --- [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 with status UP (replication=false)
+2020-06-14 21:10:27.628  INFO 6132 --- [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 with status UP (replication=true)
+2020-06-14 21:11:13.867  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-06-14 21:11:58.168  INFO 6132 --- [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status UP (replication=false)
+2020-06-14 21:11:58.693  INFO 6132 --- [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status UP (replication=true)
+2020-06-14 21:12:13.882  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
+2020-06-14 21:13:13.889  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
+2020-06-14 21:14:13.901  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
+2020-06-14 21:15:13.906  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-06-14 21:15:42.123  INFO 6132 --- [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status DOWN (replication=false)
+2020-06-14 21:15:42.663  INFO 6132 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status DOWN (replication=true)
+2020-06-14 21:15:45.572  INFO 6132 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 (replication=false)
+2020-06-14 21:15:46.147  WARN 6132 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092
+2020-06-14 21:15:46.147  INFO 6132 --- [http-nio-8761-exec-5] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): EUREKA-OGLAS-SERVICE - DESKTOP-62TOD5O:eureka-oglas-service:8092
+2020-06-14 21:15:46.147  WARN 6132 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.cluster.ReplicationTask       : The replication of task EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092:Cancel@localhost failed with response code 404
+2020-06-14 21:15:46.147  WARN 6132 --- [TaskBatchingWorker-target_localhost-16] c.netflix.eureka.cluster.PeerEurekaNode  : EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092:Cancel@localhost: missing entry.
+2020-06-14 21:16:13.911  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-06-14 21:17:11.896  INFO 6132 --- [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status UP (replication=false)
+2020-06-14 21:17:12.539  INFO 6132 --- [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status UP (replication=true)
+2020-06-14 21:17:13.914  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-06-14 21:18:13.914  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 21:19:13.915  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 21:20:13.930  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
+2020-06-14 21:21:13.930  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 21:22:12.874  INFO 6132 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 with status DOWN (replication=false)
+2020-06-14 21:22:13.385  INFO 6132 --- [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 with status DOWN (replication=true)
+2020-06-14 21:22:13.930  INFO 6132 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-06-14 21:22:16.984  INFO 6132 --- [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093 (replication=false)
+2020-06-14 21:22:17.502  WARN 6132 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093
+2020-06-14 21:22:17.502  INFO 6132 --- [http-nio-8761-exec-2] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): EUREKA-ZAHTEV-SERVICE - DESKTOP-62TOD5O:eureka-zahtev-service:8093
+2020-06-14 21:22:17.565  WARN 6132 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.cluster.ReplicationTask       : The replication of task EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093:Cancel@localhost failed with response code 404
+2020-06-14 21:22:17.565  WARN 6132 --- [TaskBatchingWorker-target_localhost-16] c.netflix.eureka.cluster.PeerEurekaNode  : EUREKA-ZAHTEV-SERVICE/DESKTOP-62TOD5O:eureka-zahtev-service:8093:Cancel@localhost: missing entry.
+2020-06-14 21:22:23.329  INFO 6132 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-SEARCH-SERVICE/DESKTOP-62TOD5O:eureka-search-service:8100 with status DOWN (replication=false)
+2020-06-14 21:22:23.915  INFO 6132 --- [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-SEARCH-SERVICE/DESKTOP-62TOD5O:eureka-search-service:8100 with status DOWN (replication=true)
+2020-06-14 21:22:32.747  INFO 6132 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance EUREKA-SEARCH-SERVICE/DESKTOP-62TOD5O:eureka-search-service:8100 (replication=false)
+2020-06-14 21:22:33.263  WARN 6132 --- [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: EUREKA-SEARCH-SERVICE/DESKTOP-62TOD5O:eureka-search-service:8100
+2020-06-14 21:22:33.263  INFO 6132 --- [http-nio-8761-exec-9] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): EUREKA-SEARCH-SERVICE - DESKTOP-62TOD5O:eureka-search-service:8100
+2020-06-14 21:22:33.295  WARN 6132 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.cluster.ReplicationTask       : The replication of task EUREKA-SEARCH-SERVICE/DESKTOP-62TOD5O:eureka-search-service:8100:Cancel@localhost failed with response code 404
+2020-06-14 21:22:33.295  WARN 6132 --- [TaskBatchingWorker-target_localhost-3] c.netflix.eureka.cluster.PeerEurekaNode  : EUREKA-SEARCH-SERVICE/DESKTOP-62TOD5O:eureka-search-service:8100:Cancel@localhost: missing entry.
+2020-06-14 21:22:38.528  INFO 6132 --- [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-AUTHORIZATION-SERVICE/DESKTOP-62TOD5O:eureka-authorization-service:8095 with status DOWN (replication=false)
+2020-06-14 21:22:39.053  INFO 6132 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-AUTHORIZATION-SERVICE/DESKTOP-62TOD5O:eureka-authorization-service:8095 with status DOWN (replication=true)
+2020-06-14 21:22:45.802  INFO 6132 --- [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance EUREKA-AUTHORIZATION-SERVICE/DESKTOP-62TOD5O:eureka-authorization-service:8095 (replication=false)
+2020-06-14 21:22:46.322  WARN 6132 --- [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: EUREKA-AUTHORIZATION-SERVICE/DESKTOP-62TOD5O:eureka-authorization-service:8095
+2020-06-14 21:22:46.322  INFO 6132 --- [http-nio-8761-exec-10] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): EUREKA-AUTHORIZATION-SERVICE - DESKTOP-62TOD5O:eureka-authorization-service:8095
+2020-06-14 21:22:46.322  WARN 6132 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.cluster.ReplicationTask       : The replication of task EUREKA-AUTHORIZATION-SERVICE/DESKTOP-62TOD5O:eureka-authorization-service:8095:Cancel@localhost failed with response code 404
+2020-06-14 21:22:46.322  WARN 6132 --- [TaskBatchingWorker-target_localhost-10] c.netflix.eureka.cluster.PeerEurekaNode  : EUREKA-AUTHORIZATION-SERVICE/DESKTOP-62TOD5O:eureka-authorization-service:8095:Cancel@localhost: missing entry.
+2020-06-14 21:22:49.442  INFO 6132 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status DOWN (replication=false)
+2020-06-14 21:22:49.982  INFO 6132 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 with status DOWN (replication=true)
+2020-06-14 21:22:53.070  INFO 6132 --- [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092 (replication=false)
+2020-06-14 21:22:53.577  WARN 6132 --- [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092
+2020-06-14 21:22:53.578  INFO 6132 --- [http-nio-8761-exec-7] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): EUREKA-OGLAS-SERVICE - DESKTOP-62TOD5O:eureka-oglas-service:8092
+2020-06-14 21:22:53.580  WARN 6132 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.cluster.ReplicationTask       : The replication of task EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092:Cancel@localhost failed with response code 404
+2020-06-14 21:22:53.580  WARN 6132 --- [TaskBatchingWorker-target_localhost-12] c.netflix.eureka.cluster.PeerEurekaNode  : EUREKA-OGLAS-SERVICE/DESKTOP-62TOD5O:eureka-oglas-service:8092:Cancel@localhost: missing entry.
+2020-06-14 21:22:56.967  INFO 6132 --- [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/DESKTOP-62TOD5O:gateway-service:8662 with status DOWN (replication=false)
+2020-06-14 21:22:57.493  INFO 6132 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/DESKTOP-62TOD5O:gateway-service:8662 with status DOWN (replication=true)
+2020-06-14 21:23:01.453  INFO 6132 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/DESKTOP-62TOD5O:gateway-service:8662 (replication=false)
+2020-06-14 21:23:02.001  WARN 6132 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: GATEWAY-SERVICE/DESKTOP-62TOD5O:gateway-service:8662
+2020-06-14 21:23:02.001  INFO 6132 --- [http-nio-8761-exec-5] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): GATEWAY-SERVICE - DESKTOP-62TOD5O:gateway-service:8662
+2020-06-14 21:23:02.001  WARN 6132 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.cluster.ReplicationTask       : The replication of task GATEWAY-SERVICE/DESKTOP-62TOD5O:gateway-service:8662:Cancel@localhost failed with response code 404
+2020-06-14 21:23:02.001  WARN 6132 --- [TaskBatchingWorker-target_localhost-16] c.netflix.eureka.cluster.PeerEurekaNode  : GATEWAY-SERVICE/DESKTOP-62TOD5O:gateway-service:8662:Cancel@localhost: missing entry.
+2020-06-14 21:23:05.820  INFO 6132 --- [RMI TCP Connection(55)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-06-14 21:23:06.152  INFO 6132 --- [RMI TCP Connection(55)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVER with eureka with status DOWN
+2020-06-14 21:23:07.730  INFO 6132 --- [RMI TCP Connection(55)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-14 21:23:07.915  INFO 6132 --- [RMI TCP Connection(55)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2020-06-14 21:23:08.383  INFO 6132 --- [RMI TCP Connection(55)-127.0.0.1] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2020-06-14 21:23:08.539  INFO 6132 --- [RMI TCP Connection(55)-127.0.0.1] com.netflix.servo.monitor.StatsMonitor   : Attempting to get the value for an expired monitor: eurekaServer.replication.batchSize.Will start computing stats again.
+2020-06-14 21:23:08.539  INFO 6132 --- [RMI TCP Connection(55)-127.0.0.1] com.netflix.servo.monitor.StatsMonitor   : Attempting to get the value for an expired monitor: eurekaServer.replication.executionTime.Will start computing stats again.
+2020-06-14 21:23:08.539  INFO 6132 --- [RMI TCP Connection(55)-127.0.0.1] com.netflix.servo.monitor.StatsMonitor   : Attempting to get the value for an expired monitor: eurekaServer.replication.executionTime.Will start computing stats again.
+2020-06-14 21:23:08.539  INFO 6132 --- [RMI TCP Connection(55)-127.0.0.1] com.netflix.servo.monitor.StatsMonitor   : Attempting to get the value for an expired monitor: eurekaServer.replication.batchSize.Will start computing stats again.
+2020-06-14 21:23:08.696  INFO 6132 --- [RMI TCP Connection(55)-127.0.0.1] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2020-06-14 21:23:08.821  INFO 6132 --- [RMI TCP Connection(55)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-14 21:23:08.916  INFO 6132 --- [RMI TCP Connection(55)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-06-14 21:23:08.931  INFO 6132 --- [RMI TCP Connection(55)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

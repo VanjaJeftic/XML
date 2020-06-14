@@ -21,6 +21,14 @@ public class ZahtevDTO {
 	public ZahtevDTO() {
 		// TODO Auto-generated constructor stub
 	}
+	public ZahtevDTO(Zahtev z) {
+		super();
+		this.id = z.getId();
+		this.bundle_id = z.getBundle_id();
+		this.preuzimanje = z.getPreuzimanje();
+		this.povratak = z.getPovratak();
+		this.status = z.getStatus();
+	}
 	
 	public ZahtevDTO(Zahtev z, OglasDTO oglas) {
 		super();

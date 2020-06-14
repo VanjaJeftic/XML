@@ -22,12 +22,8 @@ public class ZahtevService {
 		return this.zahtevRepository.save(z);
 	}
 	public Long getLastGroupID() {
-		List<Zahtev> zahtevi = zahtevRepository.findAll();
-		if(zahtevi == null || zahtevi.size() == 0) {
-			return 0L;
-		}
-		int size = zahtevi.size() - 1;
-		return (zahtevi.get(size)).getBundle_id();
+		List<Zahtev> zahtevi = zahtevRepository.findSortedId();
+		return (zahtevi.get(0)).getBundle_id();
 	}
 	public List<Zahtev> getAllZahtevi(){
 		List<Zahtev> zahtevi = zahtevRepository.findAll();
@@ -85,7 +81,8 @@ public class ZahtevService {
 				if( (preuzimanje.isAfter(z.getPreuzimanje()) && povratak.isBefore(z.getPovratak()) )
 					|| (preuzimanje.isBefore(z.getPreuzimanje()) && povratak.isAfter(z.getPreuzimanje()) )
 					|| (preuzimanje.isBefore(z.getPovratak()) && povratak.isAfter(z.getPovratak()) ) 
-					|| (preuzimanje.isBefore(z.getPreuzimanje()) && povratak.isAfter(z.getPovratak()) ) ) {
+					|| (preuzimanje.isBefore(z.getPreuzimanje()) && povratak.isAfter(z.getPovratak()))
+					|| (preuzimanje.isEqual(z.getPreuzimanje()) && povratak.isEqual(z.getPovratak())) ) {
 					System.out.println("Usao u izmenu statusa na PENDING!");
 					z.setStatus("CANCELED");
 					this.zahtevRepository.save(z);

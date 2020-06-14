@@ -204,7 +204,8 @@ public class ZahtevController {
 					if( (preuzimanje.isAfter(zahtevPreuzimanje) && povratak.isBefore(zahtevPovratak)
 							|| (preuzimanje.isBefore(zahtevPreuzimanje) && povratak.isAfter(zahtevPreuzimanje))) 
 							|| (preuzimanje.isBefore(zahtevPovratak) && povratak.isAfter(zahtevPovratak))
-							|| (preuzimanje.isBefore(zahtevPreuzimanje) && povratak.isAfter(zahtevPovratak)) ) {
+							|| (preuzimanje.isBefore(zahtevPreuzimanje) && povratak.isAfter(zahtevPovratak))
+							|| (preuzimanje.isEqual(zahtevPreuzimanje) && povratak.isEqual(zahtevPovratak)) ) {
 						System.out.println("Usao u izmenu statusa!");
 						z.setStatus("CANCELED");
 						this.zahtevService.save(z);
@@ -249,5 +250,16 @@ public class ZahtevController {
 			}
 		}
 		return bundleZahtevi;
+	}
+	
+	@GetMapping("/zahtev/{id}")
+	public ResponseEntity<?> getOneZahtev(@PathVariable("id") Long id){
+		List<Zahtev> zahtevi = this.zahtevService.getAllZahtevi();
+		for(Zahtev z : zahtevi) {
+			if(z.getId().equals(id)) {
+				return new ResponseEntity<ZahtevDTO>(new ZahtevDTO(z), HttpStatus.OK);
+			}
+		}
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 }

@@ -20,6 +20,8 @@ public class IzvestajService {
 	private VoziloService voziloService;
 	@Autowired
 	private ZahtevService zahtevService;
+	@Autowired
+	private TerminZauzecaService terminService;
 	
 	public Izvestaj getOneIzvestaj(Long zahtevID, Long voziloID) {
 		List<Izvestaj> izvestaji = this.izvestajRepository.findAll();
@@ -37,6 +39,22 @@ public class IzvestajService {
 			}
 		}
 		return null;
+	}
+	
+	public Zahtev getOneIzvestaj(Long id) {
+		List<Izvestaj> izvestaji = this.izvestajRepository.findAll();
+		for(Izvestaj i : izvestaji) {
+			if(i.getZahtev().getId().equals(id)) {
+				return i.getZahtev();
+			}
+		}
+		return null;
+	}
+	
+	public void ukloniTerminZauzeca(Izvestaj i) {
+		Vozilo v = i.getVozilo();
+		Zahtev z = i.getZahtev();
+		this.terminService.obrisiTermin(v, z);
 	}
 	
 	public Izvestaj save(Izvestaj i) {
