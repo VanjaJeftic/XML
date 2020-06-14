@@ -76,9 +76,10 @@ public class IzvestajController {
 	public ResponseEntity<?> save(@RequestBody IzvestajDTO izvestajDTO){
 		Izvestaj i = this.izvestajService.sacuvajIzvestaj(izvestajDTO);
 		
-		if(i != null)
+		if(i != null) {
+			this.izvestajService.ukloniTerminZauzeca(i);
 			return new ResponseEntity<>(HttpStatus.CREATED);
-		
+		}
 		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 }

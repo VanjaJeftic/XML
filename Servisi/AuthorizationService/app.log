@@ -593,6 +593,7 @@ security.oauth2.client.client-secret = 7fdbb9ce-d500-4afd-b9fa-877a77e5b329
 2020-06-14 17:19:00.082  INFO 17328 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-06-14 17:24:00.091  INFO 17328 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-06-14 17:29:00.102  INFO 17328 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+
 2020-06-14 19:39:03.703  INFO 13716 --- [main] c.a.a.AuthorizationServiceApplication    : No active profile set, falling back to default profiles: default
 2020-06-14 19:39:21.273  INFO 13716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
 2020-06-14 19:39:22.188  INFO 13716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 647ms. Found 2 JPA repository interfaces.
@@ -690,6 +691,7 @@ security.oauth2.client.client-secret = 5d0aae50-b77d-4633-854f-d6d04bf21cc9
 2020-06-14 19:46:29.359  INFO 13716 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095 - registration status: 204
 2020-06-14 19:46:30.584  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
 2020-06-14 19:46:30.811  WARN 13716 --- [RMI TCP Connection(18)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+
  sun.misc.Unsafe.park(Native Method)
  java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
  java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
@@ -699,6 +701,17 @@ security.oauth2.client.client-secret = 5d0aae50-b77d-4633-854f-d6d04bf21cc9
  java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
  java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
  java.lang.Thread.run(Unknown Source)
+
+2020-06-14 21:22:41.452  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-14 21:22:41.615  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-06-14 21:22:42.294  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-14 21:22:42.326  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-06-14 21:22:42.466  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-06-14 21:22:42.583  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-06-14 21:22:45.645  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-06-14 21:22:45.804  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/DESKTOP-62TOD5O:eureka-authorization-service:8095 - deregister  status: 200
+2020-06-14 21:22:46.337  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+
 2020-06-14 19:46:31.225  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-06-14 19:46:31.226  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2020-06-14 19:46:32.798  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
@@ -954,3 +967,4 @@ security.oauth2.client.client-secret = 8351ecd4-d4bb-44ec-91fe-305ef37c0b9a
 2020-06-14 20:22:16.840  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
 2020-06-14 20:22:16.874  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095 - deregister  status: 200
 2020-06-14 20:22:17.074  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+

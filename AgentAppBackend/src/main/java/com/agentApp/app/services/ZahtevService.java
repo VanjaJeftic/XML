@@ -37,9 +37,8 @@ public class ZahtevService {
 	}
 	
 	public Long getLastGroupID() {
-		List<Zahtev> zahtevi = zahtevRepository.findAll();
-		int size = zahtevi.size() - 1;
-		return (zahtevi.get(size)).getBundle_id();
+		List<Zahtev> zahtevi = zahtevRepository.findSortedId();
+		return (zahtevi.get(0)).getBundle_id();
 	}
 	
 	public Set<Long> getAllGroupIDs(){
@@ -99,7 +98,8 @@ public class ZahtevService {
 				if( (termin.getZauzetod().isAfter(z.getPreuzimanje()) && termin.getZauzetod().isBefore(z.getPovratak())
 						|| (termin.getZauzetod().isBefore(z.getPreuzimanje()) && termin.getZauzetod().isAfter(z.getPreuzimanje()))) 
 						|| (termin.getZauzetod().isBefore(z.getPovratak()) && termin.getZauzetod().isAfter(z.getPovratak()))
-						|| (termin.getZauzetod().isBefore(z.getPreuzimanje()) && termin.getZauzetod().isAfter(z.getPovratak())) ) {
+						|| (termin.getZauzetod().isBefore(z.getPreuzimanje()) && termin.getZauzetod().isAfter(z.getPovratak()))
+						|| (termin.getZauzetod().isEqual(z.getPreuzimanje()) && termin.getZauzetod().isEqual(z.getPovratak())) ) {
 					System.out.println("Usao u izmenu statusa!");
 					z.setStatus("CANCELED");
 					this.saveZahtev(z);
@@ -123,7 +123,8 @@ public class ZahtevService {
 				if( (termin.getZauzetod().isAfter(z.getPreuzimanje()) && termin.getZauzetod().isBefore(z.getPovratak())
 						|| (termin.getZauzetod().isBefore(z.getPreuzimanje()) && termin.getZauzetod().isAfter(z.getPreuzimanje()))) 
 						|| (termin.getZauzetod().isBefore(z.getPovratak()) && termin.getZauzetod().isAfter(z.getPovratak()))
-						|| (termin.getZauzetod().isBefore(z.getPreuzimanje()) && termin.getZauzetod().isAfter(z.getPovratak())) ) {
+						|| (termin.getZauzetod().isBefore(z.getPreuzimanje()) && termin.getZauzetod().isAfter(z.getPovratak()))
+						|| (termin.getZauzetod().isEqual(z.getPreuzimanje()) && termin.getZauzetod().isEqual(z.getPovratak())) ) {
 					System.out.println("Usao u izmenu statusa!");
 					z.setStatus("CANCELED");
 					this.saveZahtev(z);

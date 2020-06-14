@@ -724,6 +724,7 @@ java.lang.IllegalArgumentException: Invalid character found in method name [0x16
 2020-06-14 17:31:34.593  INFO 3384 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
 2020-06-14 17:32:34.594  INFO 3384 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
 2020-06-14 17:33:34.594  INFO 3384 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+
 2020-06-14 19:36:29.700  INFO 14084 --- [main] c.eureka.server.EurekaServerApplication  : No active profile set, falling back to default profiles: default
 2020-06-14 19:36:38.852  WARN 14084 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
 2020-06-14 19:36:39.945  INFO 14084 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=61ec1418-7695-3f06-b947-4789e502fe41
@@ -1203,3 +1204,4 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 2020-06-14 20:22:36.321  INFO 10972 --- [RMI TCP Connection(18)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2020-06-14 20:22:36.321  INFO 10972 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
 2020-06-14 20:22:36.321  INFO 10972 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+
