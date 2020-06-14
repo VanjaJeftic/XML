@@ -36,13 +36,18 @@ import { IzmenaVrstaMenjacaComponent } from './components/userComponent/vrsta-me
 import { PrikazSvihVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/prikaz-svih-vrsta-menjaca/prikaz-svih-vrsta-menjaca.component';
 import { MatMenuModule, MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { KomentarFormaComponent } from './components/userComponent/komentar-forma/komentar-forma.component';
-import { MatMenuModule, MatDialogModule } from '@angular/material';
+//import { MatMenuModule, MatDialogModule } from '@angular/material';
 import { NovoVoziloComponent } from './components/novo-vozilo/novo-vozilo.component';
 import { SvaVozilaComponent } from './components/sva-vozila/sva-vozila.component';
 import { NoviOglasComponent } from './components/novi-oglas/novi-oglas.component';
 import { NoviOglasService } from './services/novi-oglas.service';
 import { NovoVoziloService } from './services/novo-vozilo.service';
 import { SvaVozilaService } from './services/sva-vozila.service';
+import { ZahteviComponent } from './components/userComponent/agent/zahtevi/zahtevi.component';
+import { MojaVozilaComponent } from './components/userComponent/agent/moja-vozila/moja-vozila.component';
+import { IzvestajComponent } from './components/userComponent/agent/izvestaj/izvestaj.component';
+import { TerminZauzecaDialogComponent } from './components/userComponent/agent/moja-vozila/termin-zauzeca-dialog/termin-zauzeca-dialog.component';
+import { IzvestajDialogComponent } from './components/userComponent/agent/izvestaj/izvestaj-dialog/izvestaj-dialog.component';
 
 
 @NgModule({
@@ -72,10 +77,15 @@ import { SvaVozilaService } from './services/sva-vozila.service';
     VrstaMenjacaComponent,
     IzmenaVrstaMenjacaComponent,
     PrikazSvihVrstaMenjacaComponent,
-    KomentarFormaComponent
+    KomentarFormaComponent,
     NovoVoziloComponent,
     SvaVozilaComponent,
-    NoviOglasComponent
+    NoviOglasComponent,
+    ZahteviComponent,
+    MojaVozilaComponent,
+    IzvestajComponent,
+    TerminZauzecaDialogComponent,
+    IzvestajDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +101,7 @@ import { SvaVozilaService } from './services/sva-vozila.service';
     MatDialogModule
   
   ],
-  entryComponents: [NoviOglasComponent,KomentarFormaComponent
+  entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent
   ],
 
   providers: [{
