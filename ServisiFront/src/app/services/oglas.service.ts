@@ -21,6 +21,6 @@ export class OglasService {
       'Accept' : 'application/json',
       'Content-Type' : 'application/json'
     });
-    return this.http.put('http://localhost:8662/oglas/izvestaj', izvestaj, {headers: headers});
+    return this.http.put('https://localhost:8662/oglas/izvestaj', izvestaj, {headers: headers});
    }
 }
