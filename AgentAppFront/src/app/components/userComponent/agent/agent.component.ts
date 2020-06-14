@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthenticationService } from './../../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgentComponent implements OnInit {
 
-  constructor(private authService: AuthenticationService) { }
+  constructor(private authService: AuthenticationService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onMojaVozila(){
+    this.router.navigateByUrl('agent/vozilo');
+  }
+
+  onZahtevi(){
+    this.router.navigateByUrl('agent/zahtev');
+  }
+
+  onUnesiIzvestaj(){
+    this.router.navigateByUrl('agent/izvestaj');
   }
 
   onOdjaviMe(){

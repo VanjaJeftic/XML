@@ -45,13 +45,9 @@ public class Zahtev implements Serializable {
     private Korisnik podnosilac;
 
     @Column(name="preuzimanje")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm", iso = ISO.DATE_TIME)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm", shape = JsonFormat.Shape.STRING)
     private LocalDateTime preuzimanje;
 
     @Column(name="povratak")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm", iso = ISO.DATE_TIME)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm", shape = JsonFormat.Shape.STRING)
     private LocalDateTime povratak;
 
     @Column(name="status")

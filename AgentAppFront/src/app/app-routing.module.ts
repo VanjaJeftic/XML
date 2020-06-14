@@ -1,3 +1,6 @@
+import { IzvestajComponent } from './components/userComponent/agent/izvestaj/izvestaj.component';
+import { MojaVozilaComponent } from './components/userComponent/agent/moja-vozila/moja-vozila.component';
+import { ZahteviComponent } from './components/userComponent/agent/zahtevi/zahtevi.component';
 import { MyShopCartItemsComponent } from './components/userComponent/user/my-shop-cart-items/my-shop-cart-items.component';
 import { VoziloDetailsComponent } from './components/userComponent/user/vozilo-details/vozilo-details.component';
 import { UserComponent } from './components/userComponent/user/user.component';
@@ -56,7 +59,11 @@ const routes: Routes = [
   { path: 'izmenaVrsteMenjacaVozila', component:IzmenaVrstaMenjacaComponent},
   { path: 'izmenaModelaVozila', component:IzmenaModelaVozilaComponent},
   { path: 'novoVozilo', component:NovoVoziloComponent},
-  { path: 'svaVozila',component:SvaVozilaComponent}
+  { path: 'svaVozila',component:SvaVozilaComponent},
+
+  { path: 'agent/zahtev', component: ZahteviComponent },
+  { path: 'agent/vozilo', component: MojaVozilaComponent},
+  { path: 'agent/izvestaj', component: IzvestajComponent }
 
 
 ];

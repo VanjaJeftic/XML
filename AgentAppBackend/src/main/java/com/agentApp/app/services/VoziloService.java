@@ -69,5 +69,20 @@ public class VoziloService {
 		}
 		return agenta;
 	}
+	
+	public Vozilo getVozilo(Long id) {
+    	return this.voziloRepository.findById(id).get();
+    }
+	
+	public List<Vozilo> getVozilaForAgent(Long id){
+    	List<Vozilo> agenta = new ArrayList<>();
+    	List<Vozilo> vozila = (List<Vozilo>) this.voziloRepository.findAll();
+    	for(Vozilo v : vozila) {
+    		if(v.getId() == id) {
+    			agenta.add(v);
+    		}
+    	}
+    	return agenta;
+    }
 
 }

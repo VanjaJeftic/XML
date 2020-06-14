@@ -1,5 +1,6 @@
 package com.agentApp.app.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,18 +31,33 @@ public class OglasService {
 		return oglasRepository.findAll();
 	}
 
-	  public Oglas createOrder(OglasDTO oglasdto) {
+	public Oglas createOrder(OglasDTO oglasdto) {
+		Vozilo v=new Vozilo();
+		v=voziloRepository.findById(oglasdto.getVozilo_id()).get();
+		Oglas o=new Oglas(oglasdto);
+		o.setVozilo(v);
+	    Oglas oglas = this.oglasRepository.save(o);
 
-		  Vozilo v=new Vozilo();
-		  v=voziloRepository.findById(oglasdto.getVozilo_id()).get();
-		  Oglas o=new Oglas(oglasdto);
-		  o.setVozilo(v);
-	      Oglas oglas = this.oglasRepository.save(o);
-
-	        return oglas;
-	    }
-
+	    return oglas;
+	}
 
 
+	public OglasDTO getOneOglasDTO(Long id) {
+		Oglas o = this.findOneOglas(id);
+		Vozilo v = o.getVozilo();
+		  
+		return new OglasDTO(o, v);
+	}
+	
+	public List<Oglas> findOglasiByVoziloID(Long id){
+    	List<Oglas> found = new ArrayList<Oglas>();
+    	List<Oglas> oglasi = (List<Oglas>) oglasRepository.findAll();
+    	for(Oglas o : oglasi) {
+    		if(o.getVozilo().getId() == id) {
+    			found.add(o);
+    		}
+    	}
+    	return found;
+    }
 
 }

@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.oglas.connections.ZahtevConnection;
 import com.oglas.dto.IzvestajDTO;
+import com.oglas.dto.ZahtevDTO;
 import com.oglas.model.Izvestaj;
 import com.oglas.model.Vozilo;
 import com.oglas.repository.IzvestajRepository;
@@ -17,6 +19,10 @@ public class IzvestajService {
 	private IzvestajRepository izvestajRepository;
 	@Autowired
 	private VoziloService voziloservice;
+	@Autowired
+	private ZahtevConnection zahtevConnection;
+	@Autowired
+	private TerminZauzecaService terminService;
 	
 	public Izvestaj getOneIzvestaj(Long vozilo_id, Long zahtev) {
 		List<Izvestaj> izvestaji = this.izvestajRepository.findAll();
@@ -43,5 +49,10 @@ public class IzvestajService {
 		Izvestaj newIzvestaj = new Izvestaj(izvestajDTO, vozilo);
 		
 		return this.save(newIzvestaj);
+	}
+	
+	public void ukloniTerminZauzeca(Izvestaj i) {
+		ZahtevDTO z = this.zahtevConnection.getOneZahtev(i.getZahtev());
+		this.terminService.obrisiTermin(i.getVozilo(), z);
 	}
 }

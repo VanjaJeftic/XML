@@ -2,6 +2,9 @@ package com.agentApp.app.dto;
 
 import java.time.LocalDateTime;
 
+import com.agentApp.app.models.Oglas;
+import com.agentApp.app.models.Vozilo;
+
 public class OglasDTO {
 
 	private Long id;
@@ -27,6 +30,17 @@ public class OglasDTO {
 	public OglasDTO() {
 		// TODO Auto-generated constructor stub
 	}
+	public OglasDTO(Oglas o, Vozilo v) {
+		this.id = o.getId();
+		this.mesto = o.getMesto();
+		this.cena = o.getCena();
+		this.popust = o.getPopust();
+		this.cenaspopust = o.getCenaspopust();
+		this.slobodanOd = o.getSlobodanOd();
+		this.slobodanDo = o.getSlobodanDo();
+		this.cdw = o.getCdw();
+		this.vozilo = new VoziloDTO(v);
+	}	
 
 	public Long getId() {
 		return id;
