@@ -593,131 +593,105 @@ security.oauth2.client.client-secret = 7fdbb9ce-d500-4afd-b9fa-877a77e5b329
 2020-06-14 17:19:00.082  INFO 17328 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-06-14 17:24:00.091  INFO 17328 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-06-14 17:29:00.102  INFO 17328 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 20:38:54.952  INFO 12388 --- [main] c.a.a.AuthorizationServiceApplication    : No active profile set, falling back to default profiles: default
-2020-06-14 20:38:55.783  INFO 12388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-06-14 20:38:55.845  INFO 12388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59ms. Found 2 JPA repository interfaces.
-2020-06-14 20:38:55.952  WARN 12388 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2020-06-14 20:38:56.084  INFO 12388 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1ccb36ed-8111-31fe-9066-c5a047387e29
-2020-06-14 20:38:56.417  INFO 12388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
-2020-06-14 20:38:56.425  INFO 12388 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-06-14 20:38:56.425  INFO 12388 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-14 20:38:56.548  INFO 12388 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-06-14 20:38:56.548  INFO 12388 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1581 ms
-2020-06-14 20:38:56.614  WARN 12388 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2020-06-14 20:38:56.614  INFO 12388 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2020-06-14 20:38:56.626  INFO 12388 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@1697f2b3
-2020-06-14 20:38:56.764  WARN 12388 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-06-14 20:38:56.852  INFO 12388 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-14 20:38:56.976  INFO 12388 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-06-14 20:38:57.016  INFO 12388 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
-2020-06-14 20:38:57.140  INFO 12388 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-06-14 20:38:57.234  INFO 12388 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-06-14 20:38:57.296  WARN 12388 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2020-06-14 20:38:57.296  INFO 12388 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2020-06-14 20:38:57.327  INFO 12388 --- [main] a.OAuth2AuthorizationServerConfiguration : Initialized OAuth2 Client
 
-security.oauth2.client.client-id = 2dde976c-9bbe-41ac-8215-2c18e8c533bd
-security.oauth2.client.client-secret = c5b59f9d-cac4-404c-9010-6f564d5593fe
+2020-06-14 19:39:03.703  INFO 13716 --- [main] c.a.a.AuthorizationServiceApplication    : No active profile set, falling back to default profiles: default
+2020-06-14 19:39:21.273  INFO 13716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-14 19:39:22.188  INFO 13716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 647ms. Found 2 JPA repository interfaces.
+2020-06-14 19:39:22.552  WARN 13716 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-06-14 19:39:24.135  INFO 13716 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1ccb36ed-8111-31fe-9066-c5a047387e29
+2020-06-14 19:39:28.338  INFO 13716 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
+2020-06-14 19:39:28.491  INFO 13716 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-14 19:39:28.492  INFO 13716 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-14 19:39:29.194  INFO 13716 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-14 19:39:29.195  INFO 13716 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 24868 ms
+2020-06-14 19:39:29.506  WARN 13716 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-14 19:39:29.506  INFO 13716 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-14 19:39:29.664  INFO 13716 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@793d163b
+2020-06-14 19:39:29.899  WARN 13716 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-14 19:39:30.538  INFO 13716 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-14 19:39:31.302  INFO 13716 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-14 19:39:32.944  INFO 13716 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
+2020-06-14 19:39:49.281  INFO 13716 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-14 19:39:51.662  WARN 13716 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-14 19:39:51.662  INFO 13716 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-14 19:39:51.699  INFO 13716 --- [main] a.OAuth2AuthorizationServerConfiguration : Initialized OAuth2 Client
+
+security.oauth2.client.client-id = a6e98621-15cf-4ed9-97ec-75555094b296
+security.oauth2.client.client-secret = 5d0aae50-b77d-4633-854f-d6d04bf21cc9
 
 
-2020-06-14 20:38:57.406  INFO 12388 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-06-14 20:38:57.421  INFO 12388 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_role" does not exist, skipping
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_role" does not exist, skipping
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_roles" does not exist, skipping
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_roles" does not exist, skipping
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "role_user" does not exist, skipping
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "role_user" does not exist, skipping
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission" does not exist, skipping
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission_role" does not exist, skipping
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission_roles" does not exist, skipping
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "role" does not exist, skipping
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "role_user" does not exist, skipping
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2020-06-14 20:38:58.367  WARN 12388 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
-2020-06-14 20:38:58.697  INFO 12388 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-06-14 20:38:58.697  INFO 12388 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-06-14 20:38:59.791  INFO 12388 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19ae36f4, org.springframework.security.web.context.SecurityContextPersistenceFilter@221ca495, org.springframework.security.web.header.HeaderWriterFilter@537b3b2e, org.springframework.security.web.authentication.logout.LogoutFilter@4cae66a8, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@f017dd0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@773eca84, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@448cdb47, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6735f210, org.springframework.security.web.session.SessionManagementFilter@3ccb12d, org.springframework.security.web.access.ExceptionTranslationFilter@2cc75b25, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5f3b84bd]
-2020-06-14 20:38:59.802  INFO 12388 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@722787b5, org.springframework.security.web.context.SecurityContextPersistenceFilter@53cddaf8, org.springframework.security.web.header.HeaderWriterFilter@9281d19, org.springframework.security.web.authentication.logout.LogoutFilter@7de35070, com.authorization.authorizationService.controller.UsernameAndPasswordAuthenticationFilter@edb83f8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@55c50f52, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ccc1026, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8b41ad, org.springframework.security.web.session.SessionManagementFilter@36ad5f2a, org.springframework.security.web.access.ExceptionTranslationFilter@1002d192, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@79f5a6ed]
-2020-06-14 20:39:00.239  WARN 12388 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2020-06-14 20:39:00.271  INFO 12388 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2020-06-14 20:39:00.333  INFO 12388 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2020-06-14 20:39:00.364  INFO 12388 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2020-06-14 20:39:00.989  INFO 12388 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2020-06-14 20:39:00.989  INFO 12388 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2020-06-14 20:39:01.081  INFO 12388 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2020-06-14 20:39:01.081  INFO 12388 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2020-06-14 20:39:01.221  INFO 12388 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 20:39:01.487  INFO 12388 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2020-06-14 20:39:01.487  INFO 12388 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2020-06-14 20:39:01.487  INFO 12388 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2020-06-14 20:39:01.487  INFO 12388 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2020-06-14 20:39:01.487  INFO 12388 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2020-06-14 20:39:01.487  INFO 12388 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2020-06-14 20:39:01.487  INFO 12388 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2020-06-14 20:39:01.667  INFO 12388 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2020-06-14 20:39:01.667  INFO 12388 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2020-06-14 20:39:01.667  INFO 12388 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2020-06-14 20:39:01.667  INFO 12388 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1592159941667 with initial instances count: 0
-2020-06-14 20:39:01.667  INFO 12388 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-AUTHORIZATION-SERVICE with eureka with status UP
-2020-06-14 20:39:01.667  INFO 12388 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592159941667, current=UP, previous=STARTING]
-2020-06-14 20:39:01.667  INFO 12388 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/DESKTOP-62TOD5O:eureka-authorization-service:8095: registering service...
-2020-06-14 20:39:01.683  INFO 12388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8095 (http) with context path ''
-2020-06-14 20:39:01.698  INFO 12388 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8095
-2020-06-14 20:39:01.776  INFO 12388 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/DESKTOP-62TOD5O:eureka-authorization-service:8095 - registration status: 204
-2020-06-14 20:39:02.105  INFO 12388 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-06-14 20:39:02.203  INFO 12388 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-06-14 20:39:02.219  INFO 12388 --- [main] c.a.a.AuthorizationServiceApplication    : Started AuthorizationServiceApplication in 8.597 seconds (JVM running for 9.626)
-2020-06-14 20:39:31.675  INFO 12388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2020-06-14 20:39:31.675  INFO 12388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2020-06-14 20:39:31.675  INFO 12388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2020-06-14 20:39:31.675  INFO 12388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2020-06-14 20:39:31.675  INFO 12388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2020-06-14 20:39:31.675  INFO 12388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2020-06-14 20:39:31.675  INFO 12388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2020-06-14 20:39:31.708  INFO 12388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2020-06-14 20:44:01.607  INFO 12388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 20:49:01.651  INFO 12388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 20:53:12.340  INFO 12388 --- [http-nio-8095-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-14 20:53:12.347  INFO 12388 --- [http-nio-8095-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-06-14 20:53:12.833  INFO 12388 --- [http-nio-8095-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 486 ms
-2020-06-14 20:53:16.356  INFO 12388 --- [http-nio-8095-exec-2] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
-2020-06-14 20:53:17.495  INFO 12388 --- [http-nio-8095-exec-2] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
-2020-06-14 20:54:01.662  INFO 12388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 20:56:44.587  INFO 12388 --- [http-nio-8095-exec-8] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
-2020-06-14 20:56:44.675  INFO 12388 --- [http-nio-8095-exec-8] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
-2020-06-14 20:57:46.752  INFO 12388 --- [http-nio-8095-exec-3] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
-2020-06-14 20:57:46.840  INFO 12388 --- [http-nio-8095-exec-3] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
-2020-06-14 20:59:01.663  INFO 12388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 21:04:01.678  INFO 12388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 21:05:27.787  INFO 12388 --- [http-nio-8095-exec-1] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
-2020-06-14 21:05:27.881  INFO 12388 --- [http-nio-8095-exec-1] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
-2020-06-14 21:09:01.688  INFO 12388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 21:12:45.694  INFO 12388 --- [http-nio-8095-exec-10] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
-2020-06-14 21:12:45.773  INFO 12388 --- [http-nio-8095-exec-10] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
-2020-06-14 21:14:01.694  INFO 12388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 21:17:47.246  INFO 12388 --- [http-nio-8095-exec-10] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
-2020-06-14 21:17:47.460  INFO 12388 --- [http-nio-8095-exec-10] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
-2020-06-14 21:19:01.709  INFO 12388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 21:22:37.543  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2020-06-14 21:22:38.341  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-AUTHORIZATION-SERVICE with eureka with status DOWN
-2020-06-14 21:22:38.356  WARN 12388 --- [RMI TCP Connection(53)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592162558356, current=DOWN, previous=UP]
-2020-06-14 21:22:38.403  INFO 12388 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/DESKTOP-62TOD5O:eureka-authorization-service:8095: registering service...
-2020-06-14 21:22:38.535  INFO 12388 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/DESKTOP-62TOD5O:eureka-authorization-service:8095 - registration status: 204
-2020-06-14 21:22:39.724  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-06-14 21:22:39.906  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
-2020-06-14 21:22:40.171  WARN 12388 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+2020-06-14 19:39:52.846  INFO 13716 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-14 19:39:56.755  INFO 13716 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-14 19:39:57.945  INFO 13716 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-06-14 19:40:15.265  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:40:15.265  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_role" does not exist, skipping
+2020-06-14 19:40:15.267  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:40:15.267  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_role" does not exist, skipping
+2020-06-14 19:40:15.268  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:40:15.269  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_roles" does not exist, skipping
+2020-06-14 19:40:15.269  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:40:15.269  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_roles" does not exist, skipping
+2020-06-14 19:40:15.271  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:40:15.271  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "role_user" does not exist, skipping
+2020-06-14 19:40:15.271  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:40:15.272  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "role_user" does not exist, skipping
+2020-06-14 19:40:15.326  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:40:15.327  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission" does not exist, skipping
+2020-06-14 19:40:15.328  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:40:15.328  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission_role" does not exist, skipping
+2020-06-14 19:40:15.329  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:40:15.330  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission_roles" does not exist, skipping
+2020-06-14 19:40:15.330  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:40:15.331  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "role" does not exist, skipping
+2020-06-14 19:40:15.332  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:40:15.332  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "role_user" does not exist, skipping
+2020-06-14 19:40:15.333  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:40:15.333  WARN 13716 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2020-06-14 19:40:20.458  INFO 13716 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-14 19:40:20.526  INFO 13716 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-14 19:40:24.416  INFO 13716 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2020-06-14 19:40:25.817  INFO 13716 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@45eab322, org.springframework.security.web.context.SecurityContextPersistenceFilter@2bcda694, org.springframework.security.web.header.HeaderWriterFilter@d84b3a2, org.springframework.security.web.authentication.logout.LogoutFilter@5203c80f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@166b11e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@30036a18, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a38e4dc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f017dd0, org.springframework.security.web.session.SessionManagementFilter@69feb4d9, org.springframework.security.web.access.ExceptionTranslationFilter@10fb4575, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1ae924f1]
+2020-06-14 19:40:25.821  INFO 13716 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ccc1026, org.springframework.security.web.context.SecurityContextPersistenceFilter@372954e1, org.springframework.security.web.header.HeaderWriterFilter@6735f210, org.springframework.security.web.authentication.logout.LogoutFilter@1002d192, com.authorization.authorizationService.controller.UsernameAndPasswordAuthenticationFilter@4044589a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5fd8dd66, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@173511ff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7de35070, org.springframework.security.web.session.SessionManagementFilter@4567fb2b, org.springframework.security.web.access.ExceptionTranslationFilter@19ae36f4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@55c50f52]
+2020-06-14 19:40:28.067  INFO 13716 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2020-06-14 19:40:28.157  WARN 13716 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-06-14 19:40:28.245  INFO 13716 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-06-14 19:40:28.411  INFO 13716 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-06-14 19:40:28.768  INFO 13716 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-06-14 19:40:31.240  INFO 13716 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-06-14 19:40:31.241  INFO 13716 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-06-14 19:40:32.062  INFO 13716 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-06-14 19:40:32.063  INFO 13716 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-06-14 19:40:32.591  INFO 13716 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 19:40:33.724  INFO 13716 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-06-14 19:40:33.724  INFO 13716 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-06-14 19:40:33.725  INFO 13716 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-06-14 19:40:33.726  INFO 13716 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-06-14 19:40:33.726  INFO 13716 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-06-14 19:40:33.726  INFO 13716 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-06-14 19:40:33.727  INFO 13716 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-06-14 19:40:34.158  INFO 13716 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-06-14 19:40:34.161  INFO 13716 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-06-14 19:40:34.165  INFO 13716 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-06-14 19:40:34.256  INFO 13716 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1592156434169 with initial instances count: 1
+2020-06-14 19:40:34.260  INFO 13716 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-AUTHORIZATION-SERVICE with eureka with status UP
+2020-06-14 19:40:34.261  INFO 13716 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592156434261, current=UP, previous=STARTING]
+2020-06-14 19:40:34.265  INFO 13716 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095: registering service...
+2020-06-14 19:40:34.440  INFO 13716 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095 - registration status: 204
+2020-06-14 19:40:34.639  INFO 13716 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8095 (http) with context path ''
+2020-06-14 19:40:34.640  INFO 13716 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8095
+2020-06-14 19:40:36.785  INFO 13716 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2020-06-14 19:40:36.791  INFO 13716 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-06-14 19:40:37.843  INFO 13716 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-06-14 19:40:37.881  INFO 13716 --- [main] c.a.a.AuthorizationServiceApplication    : Started AuthorizationServiceApplication in 113.429 seconds (JVM running for 138.223)
+2020-06-14 19:45:33.731  INFO 13716 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 19:46:29.351  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-06-14 19:46:29.352  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-AUTHORIZATION-SERVICE with eureka with status DOWN
+2020-06-14 19:46:29.352  WARN 13716 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592156789352, current=DOWN, previous=UP]
+2020-06-14 19:46:29.353  INFO 13716 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095: registering service...
+2020-06-14 19:46:29.359  INFO 13716 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095 - registration status: 204
+2020-06-14 19:46:30.584  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-14 19:46:30.811  WARN 13716 --- [RMI TCP Connection(18)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+
  sun.misc.Unsafe.park(Native Method)
  java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
  java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
@@ -727,6 +701,7 @@ security.oauth2.client.client-secret = c5b59f9d-cac4-404c-9010-6f564d5593fe
  java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
  java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
  java.lang.Thread.run(Unknown Source)
+
 2020-06-14 21:22:41.452  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-06-14 21:22:41.615  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2020-06-14 21:22:42.294  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
@@ -736,3 +711,260 @@ security.oauth2.client.client-secret = c5b59f9d-cac4-404c-9010-6f564d5593fe
 2020-06-14 21:22:45.645  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
 2020-06-14 21:22:45.804  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/DESKTOP-62TOD5O:eureka-authorization-service:8095 - deregister  status: 200
 2020-06-14 21:22:46.337  INFO 12388 --- [RMI TCP Connection(53)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+
+2020-06-14 19:46:31.225  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-14 19:46:31.226  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-06-14 19:46:32.798  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-14 19:46:32.799  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-06-14 19:46:32.815  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-06-14 19:46:32.818  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-06-14 19:46:35.822  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-06-14 19:46:35.949  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095 - deregister  status: 200
+2020-06-14 19:46:36.096  WARN 13716 --- [DiscoveryClient-0] c.netflix.discovery.TimedSupervisorTask  : task supervisor shutting down, can't accept the task
+2020-06-14 19:46:36.688  INFO 13716 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-06-14 19:48:05.150  INFO 12084 --- [main] c.a.a.AuthorizationServiceApplication    : No active profile set, falling back to default profiles: default
+2020-06-14 19:48:08.305  INFO 12084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-14 19:48:08.569  INFO 12084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 254ms. Found 2 JPA repository interfaces.
+2020-06-14 19:48:08.750  WARN 12084 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-06-14 19:48:09.159  INFO 12084 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1ccb36ed-8111-31fe-9066-c5a047387e29
+2020-06-14 19:48:11.483  INFO 12084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
+2020-06-14 19:48:11.615  INFO 12084 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-14 19:48:11.617  INFO 12084 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-14 19:48:12.085  INFO 12084 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-14 19:48:12.085  INFO 12084 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6890 ms
+2020-06-14 19:48:12.368  WARN 12084 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-14 19:48:12.369  INFO 12084 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-14 19:48:12.382  INFO 12084 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@5ebffb44
+2020-06-14 19:48:12.605  WARN 12084 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-14 19:48:13.017  INFO 12084 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-14 19:48:13.515  INFO 12084 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-14 19:48:14.435  INFO 12084 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
+2020-06-14 19:48:17.776  INFO 12084 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-14 19:48:18.356  WARN 12084 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-14 19:48:18.356  INFO 12084 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-14 19:48:18.384  INFO 12084 --- [main] a.OAuth2AuthorizationServerConfiguration : Initialized OAuth2 Client
+
+security.oauth2.client.client-id = c3a5d3ff-a8b2-494e-85b3-7b113fbe8146
+security.oauth2.client.client-secret = d0d25417-b39b-4467-afba-7dea7ff81f58
+
+
+2020-06-14 19:48:18.941  INFO 12084 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-14 19:48:20.430  INFO 12084 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-14 19:48:20.591  INFO 12084 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-06-14 19:48:40.688  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:48:40.688  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_role" does not exist, skipping
+2020-06-14 19:48:40.689  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:48:40.689  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_role" does not exist, skipping
+2020-06-14 19:48:40.691  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:48:40.691  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_roles" does not exist, skipping
+2020-06-14 19:48:40.692  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:48:40.692  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_roles" does not exist, skipping
+2020-06-14 19:48:40.693  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:48:40.694  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "role_user" does not exist, skipping
+2020-06-14 19:48:40.695  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:48:40.695  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "role_user" does not exist, skipping
+2020-06-14 19:48:40.740  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:48:40.740  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission" does not exist, skipping
+2020-06-14 19:48:40.741  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:48:40.741  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission_role" does not exist, skipping
+2020-06-14 19:48:40.742  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:48:40.743  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission_roles" does not exist, skipping
+2020-06-14 19:48:40.744  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:48:40.744  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "role" does not exist, skipping
+2020-06-14 19:48:40.745  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:48:40.745  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "role_user" does not exist, skipping
+2020-06-14 19:48:40.746  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:48:40.747  WARN 12084 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2020-06-14 19:48:41.981  INFO 12084 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-14 19:48:42.019  INFO 12084 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-14 19:48:45.238  INFO 12084 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2020-06-14 19:48:46.195  INFO 12084 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77fc19cf, org.springframework.security.web.context.SecurityContextPersistenceFilter@7b8aebd0, org.springframework.security.web.header.HeaderWriterFilter@60b616c8, org.springframework.security.web.authentication.logout.LogoutFilter@6d31f106, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@120350eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3181d4de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c04216f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@643ecfef, org.springframework.security.web.session.SessionManagementFilter@147e0734, org.springframework.security.web.access.ExceptionTranslationFilter@539fc5d1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7de35070]
+2020-06-14 19:48:46.199  INFO 12084 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5873f3f0, org.springframework.security.web.context.SecurityContextPersistenceFilter@6c995c5d, org.springframework.security.web.header.HeaderWriterFilter@5b44318, org.springframework.security.web.authentication.logout.LogoutFilter@677cb96e, com.authorization.authorizationService.controller.UsernameAndPasswordAuthenticationFilter@684372d0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@203b953c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@730bea0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63dda940, org.springframework.security.web.session.SessionManagementFilter@6e807e2, org.springframework.security.web.access.ExceptionTranslationFilter@bb8ead8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@51fe7f15]
+2020-06-14 19:48:48.643  INFO 12084 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2020-06-14 19:48:48.750  WARN 12084 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-06-14 19:48:48.851  INFO 12084 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-06-14 19:48:49.115  INFO 12084 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-06-14 19:48:49.184  INFO 12084 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-06-14 19:48:51.863  INFO 12084 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-06-14 19:48:51.864  INFO 12084 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-06-14 19:48:52.587  INFO 12084 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-06-14 19:48:52.587  INFO 12084 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-06-14 19:48:53.042  INFO 12084 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 19:48:53.648  INFO 12084 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-06-14 19:48:53.649  INFO 12084 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-06-14 19:48:53.649  INFO 12084 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-06-14 19:48:53.649  INFO 12084 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-06-14 19:48:53.650  INFO 12084 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-06-14 19:48:53.650  INFO 12084 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-06-14 19:48:53.650  INFO 12084 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-06-14 19:48:54.137  INFO 12084 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-06-14 19:48:54.141  INFO 12084 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-06-14 19:48:54.145  INFO 12084 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-06-14 19:48:54.175  INFO 12084 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1592156934149 with initial instances count: 1
+2020-06-14 19:48:54.178  INFO 12084 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-AUTHORIZATION-SERVICE with eureka with status UP
+2020-06-14 19:48:54.180  INFO 12084 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592156934180, current=UP, previous=STARTING]
+2020-06-14 19:48:54.184  INFO 12084 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095: registering service...
+2020-06-14 19:48:54.352  INFO 12084 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095 - registration status: 204
+2020-06-14 19:48:55.406  INFO 12084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8095 (http) with context path ''
+2020-06-14 19:48:55.408  INFO 12084 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8095
+2020-06-14 19:48:57.512  INFO 12084 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2020-06-14 19:48:57.515  INFO 12084 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-06-14 19:48:57.967  INFO 12084 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-06-14 19:48:57.990  INFO 12084 --- [main] c.a.a.AuthorizationServiceApplication    : Started AuthorizationServiceApplication in 63.056 seconds (JVM running for 82.814)
+2020-06-14 19:53:53.654  INFO 12084 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 19:58:53.656  INFO 12084 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 20:03:54.094  INFO 12084 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 20:05:38.992  INFO 12084 --- [RMI TCP Connection(30)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-06-14 20:05:40.510  INFO 12084 --- [RMI TCP Connection(30)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-AUTHORIZATION-SERVICE with eureka with status DOWN
+2020-06-14 20:05:40.540  WARN 12084 --- [RMI TCP Connection(30)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592157940528, current=DOWN, previous=UP]
+2020-06-14 20:05:40.750  INFO 12084 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095: registering service...
+2020-06-14 20:05:42.116  INFO 12084 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095 - registration status: 204
+2020-06-14 20:05:50.045  INFO 12084 --- [RMI TCP Connection(30)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-14 20:05:53.460  WARN 12084 --- [RMI TCP Connection(30)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 20:05:59.891  INFO 12084 --- [RMI TCP Connection(30)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-14 20:06:01.354  INFO 12084 --- [RMI TCP Connection(30)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-06-14 20:06:05.344  INFO 12084 --- [RMI TCP Connection(30)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-14 20:06:05.387  INFO 12084 --- [RMI TCP Connection(30)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-06-14 20:06:07.167  INFO 12084 --- [RMI TCP Connection(30)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-06-14 20:06:08.427  INFO 12084 --- [RMI TCP Connection(30)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-06-14 20:06:11.814  INFO 12084 --- [RMI TCP Connection(30)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-06-14 20:06:12.991  INFO 12084 --- [RMI TCP Connection(30)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095 - deregister  status: 200
+2020-06-14 20:06:14.803  INFO 12084 --- [RMI TCP Connection(30)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-06-14 20:17:35.945  INFO 9132 --- [main] c.a.a.AuthorizationServiceApplication    : No active profile set, falling back to default profiles: default
+2020-06-14 20:17:39.500  INFO 9132 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-14 20:17:39.773  INFO 9132 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 245ms. Found 2 JPA repository interfaces.
+2020-06-14 20:17:40.015  WARN 9132 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-06-14 20:17:40.331  INFO 9132 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1ccb36ed-8111-31fe-9066-c5a047387e29
+2020-06-14 20:17:41.629  INFO 9132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
+2020-06-14 20:17:41.697  INFO 9132 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-14 20:17:41.712  INFO 9132 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-14 20:17:42.106  INFO 9132 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-14 20:17:42.106  INFO 9132 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6085 ms
+2020-06-14 20:17:42.277  WARN 9132 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-14 20:17:42.277  INFO 9132 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-14 20:17:42.307  INFO 9132 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@4bcaa195
+2020-06-14 20:17:42.560  WARN 9132 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-14 20:17:42.903  INFO 9132 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-14 20:17:43.584  INFO 9132 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-14 20:17:49.570  INFO 9132 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
+2020-06-14 20:17:51.754  INFO 9132 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-14 20:17:51.906  WARN 9132 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-14 20:17:51.906  INFO 9132 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-14 20:17:51.950  INFO 9132 --- [main] a.OAuth2AuthorizationServerConfiguration : Initialized OAuth2 Client
+
+security.oauth2.client.client-id = a389e71c-2c1e-4dac-bbe1-798c38d15e53
+security.oauth2.client.client-secret = 8351ecd4-d4bb-44ec-91fe-305ef37c0b9a
+
+
+2020-06-14 20:17:52.230  INFO 9132 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-14 20:17:52.812  INFO 9132 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-14 20:17:52.897  INFO 9132 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-06-14 20:17:56.146  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 20:17:56.146  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_role" does not exist, skipping
+2020-06-14 20:17:56.162  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 20:17:56.162  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_role" does not exist, skipping
+2020-06-14 20:17:56.162  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 20:17:56.162  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_roles" does not exist, skipping
+2020-06-14 20:17:56.162  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 20:17:56.162  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_roles" does not exist, skipping
+2020-06-14 20:17:56.162  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 20:17:56.162  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "role_user" does not exist, skipping
+2020-06-14 20:17:56.162  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 20:17:56.173  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "role_user" does not exist, skipping
+2020-06-14 20:17:56.176  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 20:17:56.176  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission" does not exist, skipping
+2020-06-14 20:17:56.190  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 20:17:56.190  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission_role" does not exist, skipping
+2020-06-14 20:17:56.190  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 20:17:56.190  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission_roles" does not exist, skipping
+2020-06-14 20:17:56.190  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 20:17:56.190  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "role" does not exist, skipping
+2020-06-14 20:17:56.190  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 20:17:56.190  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "role_user" does not exist, skipping
+2020-06-14 20:17:56.190  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 20:17:56.190  WARN 9132 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2020-06-14 20:17:57.752  INFO 9132 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-14 20:17:57.925  INFO 9132 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-14 20:18:01.360  INFO 9132 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2020-06-14 20:18:02.198  INFO 9132 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@203b953c, org.springframework.security.web.context.SecurityContextPersistenceFilter@4c04216f, org.springframework.security.web.header.HeaderWriterFilter@71567f33, org.springframework.security.web.authentication.logout.LogoutFilter@733534f9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2e45a357, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f949ab9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34aa8b61, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@730bea0, org.springframework.security.web.session.SessionManagementFilter@3cf55e0c, org.springframework.security.web.access.ExceptionTranslationFilter@270d5060, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@120350eb]
+2020-06-14 20:18:02.213  INFO 9132 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1af677f8, org.springframework.security.web.context.SecurityContextPersistenceFilter@63dda940, org.springframework.security.web.header.HeaderWriterFilter@5873f3f0, org.springframework.security.web.authentication.logout.LogoutFilter@7bede4ea, com.authorization.authorizationService.controller.UsernameAndPasswordAuthenticationFilter@7a55fb81, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@41f964f9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@652e345, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a3cf878, org.springframework.security.web.session.SessionManagementFilter@684372d0, org.springframework.security.web.access.ExceptionTranslationFilter@51fe7f15, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@27bc1d44]
+2020-06-14 20:18:04.360  INFO 9132 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2020-06-14 20:18:04.389  WARN 9132 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-06-14 20:18:04.472  INFO 9132 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-06-14 20:18:04.759  INFO 9132 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-06-14 20:18:04.864  INFO 9132 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-06-14 20:18:06.514  INFO 9132 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-06-14 20:18:06.528  INFO 9132 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-06-14 20:18:06.838  INFO 9132 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-06-14 20:18:06.838  INFO 9132 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-06-14 20:18:07.103  INFO 9132 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-14 20:18:07.749  INFO 9132 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-06-14 20:18:07.763  INFO 9132 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-06-14 20:18:07.764  INFO 9132 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-06-14 20:18:07.764  INFO 9132 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-06-14 20:18:07.764  INFO 9132 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-06-14 20:18:07.764  INFO 9132 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-06-14 20:18:07.764  INFO 9132 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-06-14 20:18:08.006  INFO 9132 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-06-14 20:18:08.006  INFO 9132 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-06-14 20:18:08.006  INFO 9132 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-06-14 20:18:08.035  INFO 9132 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1592158688022 with initial instances count: 1
+2020-06-14 20:18:08.035  INFO 9132 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-AUTHORIZATION-SERVICE with eureka with status UP
+2020-06-14 20:18:08.035  INFO 9132 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592158688035, current=UP, previous=STARTING]
+2020-06-14 20:18:08.035  INFO 9132 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095: registering service...
+2020-06-14 20:18:08.129  INFO 9132 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095 - registration status: 204
+2020-06-14 20:18:08.149  INFO 9132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8095 (http) with context path ''
+2020-06-14 20:18:08.151  INFO 9132 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8095
+2020-06-14 20:18:10.328  INFO 9132 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2020-06-14 20:18:10.332  INFO 9132 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-06-14 20:18:10.789  INFO 9132 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-06-14 20:18:10.806  INFO 9132 --- [main] c.a.a.AuthorizationServiceApplication    : Started AuthorizationServiceApplication in 41.008 seconds (JVM running for 45.037)
+2020-06-14 20:19:27.185  INFO 9132 --- [http-nio-8095-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-14 20:19:27.194  INFO 9132 --- [http-nio-8095-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-14 20:19:27.199  INFO 9132 --- [http-nio-8095-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-06-14 20:19:28.713  INFO 9132 --- [http-nio-8095-exec-2] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
+2020-06-14 20:19:29.999  INFO 9132 --- [http-nio-8095-exec-2] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
+2020-06-14 20:19:46.011  INFO 9132 --- [http-nio-8095-exec-4] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
+2020-06-14 20:19:46.120  INFO 9132 --- [http-nio-8095-exec-4] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
+2020-06-14 20:20:12.406  INFO 9132 --- [http-nio-8095-exec-6] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
+2020-06-14 20:20:12.533  INFO 9132 --- [http-nio-8095-exec-6] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
+2020-06-14 20:20:27.693  INFO 9132 --- [http-nio-8095-exec-8] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
+2020-06-14 20:20:27.816  INFO 9132 --- [http-nio-8095-exec-8] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
+2020-06-14 20:20:38.028  INFO 9132 --- [http-nio-8095-exec-10] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
+2020-06-14 20:20:38.151  INFO 9132 --- [http-nio-8095-exec-10] c.a.a.service.UserDetailServiceImpl      : Korisnik autorizovan
+2020-06-14 20:22:07.668  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-06-14 20:22:07.675  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-AUTHORIZATION-SERVICE with eureka with status DOWN
+2020-06-14 20:22:07.853  WARN 9132 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592158927853, current=DOWN, previous=UP]
+2020-06-14 20:22:08.045  INFO 9132 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095: registering service...
+2020-06-14 20:22:08.074  INFO 9132 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095 - registration status: 204
+2020-06-14 20:22:11.129  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-14 20:22:11.382  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2020-06-14 20:22:11.841  WARN 9132 --- [RMI TCP Connection(18)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2020-06-14 20:22:12.788  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-14 20:22:12.802  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-06-14 20:22:13.788  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-14 20:22:13.788  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-06-14 20:22:13.804  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-06-14 20:22:13.814  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-06-14 20:22:16.840  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-06-14 20:22:16.874  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_EUREKA-AUTHORIZATION-SERVICE/localhost:eureka-authorization-service:8095 - deregister  status: 200
+2020-06-14 20:22:17.074  INFO 9132 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+
