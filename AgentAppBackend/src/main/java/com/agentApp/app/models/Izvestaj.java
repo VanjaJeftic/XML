@@ -2,6 +2,8 @@ package com.agentApp.app.models;
 
 import javax.persistence.*;
 
+import com.agentApp.app.dto.IzvestajDTO;
+
 @Entity
 @Table(name="izvestaj")
 public class Izvestaj {
@@ -10,16 +12,20 @@ public class Izvestaj {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "oglas_id")
-    private Oglas oglas;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "vozilo_id")
+	private Vozilo vozilo;
 
-    @Column(name="brprkm")
-    private String brprkm;
+    @Column(name="predjenikm")
+    private String predjeniKm;
 
-    @Column(name="dodatno")
-    private String dodatno;
-
+    @Column(name="komentar")
+    private String komentar;
+    
+    @OneToOne
+    @JoinColumn(name="zahtev_id")
+    private Zahtev zahtev;
+    
     public Long getId() {
         return id;
     }
@@ -27,31 +33,48 @@ public class Izvestaj {
     public void setId(Long id) {
         this.id = id;
     }
+    
 
-    public Oglas getOglas() {
-        return oglas;
-    }
+    public Vozilo getVozilo() {
+		return vozilo;
+	}
 
-    public void setOglas(Oglas oglas) {
-        this.oglas = oglas;
-    }
+	public void setVozilo(Vozilo vozilo) {
+		this.vozilo = vozilo;
+	}
 
-    public String getBrprkm() {
-        return brprkm;
-    }
+	public String getPredjeniKm() {
+		return predjeniKm;
+	}
 
-    public void setBrprkm(String brprkm) {
-        this.brprkm = brprkm;
-    }
+	public void setPredjeniKm(String predjeniKm) {
+		this.predjeniKm = predjeniKm;
+	}
 
-    public String getDodatno() {
-        return dodatno;
-    }
+	public String getKomentar() {
+		return komentar;
+	}
 
-    public void setDodatno(String dodatno) {
-        this.dodatno = dodatno;
-    }
+	public void setKomentar(String komentar) {
+		this.komentar = komentar;
+	}
 
-    public Izvestaj() {
+	public Zahtev getZahtev() {
+		return zahtev;
+	}
+
+	public void setZahtev(Zahtev zahtev) {
+		this.zahtev = zahtev;
+	}
+
+	public Izvestaj() {
     }
+	
+	public Izvestaj(IzvestajDTO izvestaj, Vozilo v, Zahtev z) {
+		super();
+		this.predjeniKm = izvestaj.getPredjeniKm();
+		this.komentar = izvestaj.getKomentar();
+		this.zahtev = z;
+		this.vozilo = v;
+	}
 }

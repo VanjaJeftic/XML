@@ -1,6 +1,7 @@
 package com.oglas.service;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import com.oglas.repository.TerminZauzecaRepository;
 import com.oglas.connections.ZahtevConnection;
 import com.oglas.dto.TerminZauzecaDTO;
 import com.oglas.dto.TerminZauzecaZahtevDTO;
+import com.oglas.dto.ZahtevDTO;
 import com.oglas.exceptions.NotFoundException;
 import com.oglas.model.TerminZauzeca;
 import com.oglas.model.Vozilo;
@@ -101,5 +103,20 @@ public class TerminZauzecaService {
 			}
 		 System.out.println("Nema podudaranja!");
 		 return 0;
+	 }
+	 
+	 public void obrisiTermin(Vozilo v, ZahtevDTO z) {
+		 List<TerminZauzeca> termini = v.getZauzeti();
+		 
+		 for(TerminZauzeca termin : termini) {
+				System.out.println("Termin od: " + termin.getZauzetod() +", zahtev od: " + termin.getZauzetdo());
+				System.out.println("Poredi sa: " + z.getPreuzimanje() + ", do: " + z.getPovratak());
+				if(termin.getZauzetod().isEqual(z.getPreuzimanje()) && termin.getZauzetdo().isEqual(z.getPovratak()) ) {
+					termin.setVehicle(null);
+					this.terminRepository.save(termin);
+					System.out.println("Izmenjen termin, vozilo termini je: " + v.getZauzeti().toString());
+					return;
+				}
+			}
 	 }
 }
