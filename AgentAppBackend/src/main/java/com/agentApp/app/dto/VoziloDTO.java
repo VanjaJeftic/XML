@@ -1,6 +1,7 @@
 package com.agentApp.app.dto;
 
 import com.agentApp.app.models.User;
+import com.agentApp.app.models.Vozilo;
 
 public class VoziloDTO {
 
@@ -89,10 +90,6 @@ public class VoziloDTO {
 		this.cdw = cdw;
 	}
 
-	public VoziloDTO() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public UserDTO getUser() {
 		return user;
 	}
@@ -103,14 +100,29 @@ public class VoziloDTO {
 
 	public Long getId() {
 		// TODO Auto-generated method stub
-		return null;
+		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-
+	public VoziloDTO() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public VoziloDTO(Vozilo v) {
+		this.id = v.getId();
+		this.user = new UserDTO(v);
+		this.markaVozila = v.getMarkaVozila().getNaziv();
+		this.modelVozila = v.getModelVozila().getNaziv();
+		this.klasaVozila = v.getKlasaVozila().getNaziv();
+		this.tipGoriva = v.getTipgoriva().getNaziv();
+		this.vrstaMenjaca = v.getVrstamenjaca().getNaziv();
+		this.predjeniKm = v.getPredjeniKm();
+		this.brsedistadeca = v.getBrSedistaDeca();
+		//this.cdw = v.get
+	}
 	
 	
 }

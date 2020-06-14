@@ -93,4 +93,21 @@ public class ZahtevService {
 			}
 		}
 	}
+	
+	public void odbijOstaleZahteveZaBundle(LocalDateTime preuzimanje, LocalDateTime povratak, Long oglasID, Long bundleID) {
+		List<Zahtev> zahtevi = this.zahtevRepository.findAll();
+		System.out.println("Usao da odbije ostale bundle zahteve");
+		for(Zahtev z : zahtevi) {
+			if(z.getStatus().equals("PENDING") && z.getOglas_id().equals(oglasID) && (z.getBundle_id() == bundleID) ) {
+//				if( (preuzimanje.isAfter(z.getPreuzimanje()) && povratak.isBefore(z.getPovratak()) )
+//					|| (preuzimanje.isBefore(z.getPreuzimanje()) && povratak.isAfter(z.getPreuzimanje()) )
+//					|| (preuzimanje.isBefore(z.getPovratak()) && povratak.isAfter(z.getPovratak()) ) 
+//					|| (preuzimanje.isBefore(z.getPreuzimanje()) && povratak.isAfter(z.getPovratak()) ) ) {
+					System.out.println("Usao u izmenu statusa na PENDING!");
+					z.setStatus("CANCELED");
+					this.zahtevRepository.save(z);
+				//}
+			}
+		}
+	}
 }

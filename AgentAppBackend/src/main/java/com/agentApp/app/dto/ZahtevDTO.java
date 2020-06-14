@@ -2,15 +2,45 @@ package com.agentApp.app.dto;
 
 import java.time.LocalDateTime;
 
+import com.agentApp.app.models.Zahtev;
+
 public class ZahtevDTO {
+	
+	private Long id;
 
 	private LocalDateTime preuzimanje;
 	private LocalDateTime povratak;
 	private boolean bundle;
+	private Long bundle_id;
+	private String status;
+	
 	private OglasDTO oglas;
+	
+	private IzvestajDTO izvestaj;
 	
 	public ZahtevDTO() {
 		// TODO Auto-generated constructor stub
+	}
+	public ZahtevDTO(Zahtev z, OglasDTO oglas) {
+		super();
+		this.oglas = oglas;
+		this.id = z.getId();
+		this.bundle_id = z.getBundle_id();
+		this.bundle = z.isBundle();
+		this.preuzimanje = z.getPreuzimanje();
+		this.povratak = z.getPovratak();
+		this.status = z.getStatus();
+	}
+	public ZahtevDTO(Zahtev z, OglasDTO oglas, IzvestajDTO i) {
+		super();
+		this.oglas = oglas;
+		this.id = z.getId();
+		this.bundle_id = z.getBundle_id();
+		this.bundle = z.isBundle();
+		this.preuzimanje = z.getPreuzimanje();
+		this.povratak = z.getPovratak();
+		this.status = z.getStatus();
+		this.izvestaj = i;
 	}
 
 	public LocalDateTime getPreuzimanje() {
@@ -43,6 +73,30 @@ public class ZahtevDTO {
 
 	public void setOglas(OglasDTO oglas) {
 		this.oglas = oglas;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public Long getBundle_id() {
+		return bundle_id;
+	}
+	public void setBundle_id(Long bundle_id) {
+		this.bundle_id = bundle_id;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public IzvestajDTO getIzvestaj() {
+		return izvestaj;
+	}
+	public void setIzvestaj(IzvestajDTO izvestaj) {
+		this.izvestaj = izvestaj;
 	}
 
 	

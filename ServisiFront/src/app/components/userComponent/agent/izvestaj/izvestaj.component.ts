@@ -37,6 +37,7 @@ export class IzvestajComponent implements OnInit {
   }
 
   onUnesiIzvestaj(zahtev){
+    console.log(zahtev);
     const dialogRef = this.dialog.open(IzvestajDialogComponent, {data: zahtev});
     dialogRef.afterClosed().subscribe(
       result => {
