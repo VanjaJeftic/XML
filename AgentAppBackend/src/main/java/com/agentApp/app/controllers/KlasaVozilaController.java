@@ -7,6 +7,7 @@ import com.agentApp.app.services.KlasaVozilaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public class KlasaVozilaController {
     }
 
     @PostMapping
-    //@PreAuthorize("hasAuthority('create_oglas')")
+    @PreAuthorize("hasAuthority('create_sifrarnik')")
     public ResponseEntity<?> kreirajKlasu(@RequestBody KlasaVozilaDTO klasaVozilaDTO) {
 
         KlasaVozila klasaVozila = this.klasaVozilaService.createKlasaVozila(klasaVozilaDTO);
@@ -43,7 +44,7 @@ public class KlasaVozilaController {
     }
 
     @PutMapping
-    //@PreAuthorize("hasAuthority('update_oglas')")
+    @PreAuthorize("hasAuthority('update_sifrarnik')")
     public ResponseEntity<?> izmenaKlase(@RequestBody KlasaVozilaDTO klasaVozilaDTO) {
         Optional<KlasaVozila> klasaVoziladata = klasaVozilaRepository.findById(klasaVozilaDTO.getId());
         if(klasaVoziladata.isPresent()){
@@ -56,7 +57,7 @@ public class KlasaVozilaController {
 
     @DeleteMapping("/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
-    //@PreAuthorize("hasAuthority('delete_oglas')")
+    @PreAuthorize("hasAuthority('delete_sifrarnik')")
     public ResponseEntity<HttpStatus> brisanjeKlase(@PathVariable("id") Long id) {
         try {
             klasaVozilaService.delete(id);

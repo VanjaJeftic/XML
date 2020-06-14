@@ -7,6 +7,7 @@ import com.agentApp.app.services.TipGorivaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public class TipGorivaController {
     }
 
     @PostMapping
-    //@PreAuthorize("hasAuthority('create_oglas')")
+    @PreAuthorize("hasAuthority('create_sifrarnik')")
     public ResponseEntity<?> sacuvajTipGoriva(@RequestBody TipGorivaDTO tipGorivaDTO) {
 
         TipGoriva tipGoriva = this.tipGorivaService.createTipGoriva(tipGorivaDTO);
@@ -37,7 +38,7 @@ public class TipGorivaController {
     }
 
     @PutMapping
-    //@PreAuthorize("hasAuthority('update_oglas')")
+    @PreAuthorize("hasAuthority('update_sifrarnik')")
     public ResponseEntity<?> izmenaGoriva(@RequestBody TipGorivaDTO tipGorivaDTO) {
         Optional<TipGoriva> tipGorivadata = tipGorivaRepository.findById(tipGorivaDTO.getId());
         if(tipGorivadata.isPresent()){
@@ -56,7 +57,7 @@ public class TipGorivaController {
 
     @DeleteMapping("/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
-    //@PreAuthorize("hasAuthority('delete_oglas')")
+    @PreAuthorize("hasAuthority('delete_sifrarnik')")
     public ResponseEntity<HttpStatus> brisanjeGoriva(@PathVariable("id") Long id) {
         try {
             tipGorivaService.delete(id);

@@ -30,15 +30,16 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('usernameStorage', this.username);
          
             console.log(localStorage.getItem('usernameStorage'));
-            if(user.authorities[0].authority == 'ROLE_ADMIN'){
+            for(let i of user.authorities)
+            if(i.authority == 'log_ADMIN'){
               this.router.navigateByUrl('administrator');
-            }else if(user.authorities[0].authority == 'ROLE_AGENT'){
+            }else if(i.authority == 'log_AGENT'){
               this.router.navigateByUrl('agent');
-            }else if(user.authorities[0].authority == 'ROLE_USER'){
+            }else if(i.authority == 'log_USER'){
               this.router.navigateByUrl('user');
-            }else {
+            }/*else {
               alert('Nazalost, nemate dozvolu na posetite ovu stranicu.');
-            }
+            }*/
           }
         );
       },
