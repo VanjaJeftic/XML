@@ -2809,3 +2809,435 @@ Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at or near "8"
 2020-06-14 11:45:36.618  INFO 10768 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3458919e, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a1970aa, org.springframework.security.web.header.HeaderWriterFilter@2859e7f0, org.springframework.web.filter.CorsFilter@2843fd3e, org.springframework.security.web.authentication.logout.LogoutFilter@3580f0ba, com.agentApp.app.auth.TokenAuthenticationFilter@76ce9854, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e9629e8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3afb1797, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@475a7806, org.springframework.security.web.session.SessionManagementFilter@5053b3e0, org.springframework.security.web.access.ExceptionTranslationFilter@26ef1664, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7b0bbad6]
 2020-06-14 11:45:37.636  INFO 10768 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (https) with context path ''
 2020-06-14 11:45:37.643  INFO 10768 --- [restartedMain] com.agentApp.app.AgentAppApplication     : Started AgentAppApplication in 12.961 seconds (JVM running for 16.166)
+2020-06-14 19:10:33.651  INFO 852 --- [restartedMain] com.agentApp.app.AgentAppApplication     : Starting AgentAppApplication on DESKTOP-GHR9E50 with PID 852 (C:\Users\Ivan\Desktop\XML_BSEP\XML\AgentAppBackend\target\classes started by Ivan in C:\Users\Ivan\Desktop\XML_BSEP\XML\AgentAppBackend)
+2020-06-14 19:10:33.673  INFO 852 --- [restartedMain] com.agentApp.app.AgentAppApplication     : No active profile set, falling back to default profiles: default
+2020-06-14 19:10:33.931  INFO 852 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Ivan\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/Ivan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/Ivan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/Ivan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/Ivan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/Ivan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/Ivan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-06-14 19:10:33.931  INFO 852 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-14 19:10:33.933  INFO 852 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-14 19:10:48.022  INFO 852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-06-14 19:10:48.954  INFO 852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 731ms. Found 15 repository interfaces.
+2020-06-14 19:10:54.419  INFO 852 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:10:54.607  INFO 852 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:10:54.666  INFO 852 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:10:54.671  INFO 852 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5da3bf25' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:10:54.674  INFO 852 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:10:54.679  INFO 852 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:10:56.471  INFO 852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (https)
+2020-06-14 19:10:56.544  INFO 852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-14 19:10:56.546  INFO 852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-06-14 19:10:57.025  INFO 852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-14 19:10:57.025  INFO 852 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 23091 ms
+2020-06-14 19:11:07.036  INFO 852 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-14 19:11:08.800  INFO 852 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2020-06-14 19:11:12.659  INFO 852 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-14 19:11:14.081  INFO 852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-14 19:11:15.530  INFO 852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-14 19:11:15.714  INFO 852 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-06-14 19:11:27.194  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:11:27.195  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "fk6plfvcgkp0ed2l4u121uu4ylw" of relation "izvestaj" does not exist, skipping
+2020-06-14 19:11:27.198  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:11:27.198  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "fklmq4r21dwunc0lop3up795isr" of relation "izvestaj" does not exist, skipping
+2020-06-14 19:11:27.204  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:11:27.205  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_authority" does not exist, skipping
+2020-06-14 19:11:27.205  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:11:27.206  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_authority" does not exist, skipping
+2020-06-14 19:11:27.207  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:11:27.208  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_roles" does not exist, skipping
+2020-06-14 19:11:27.209  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:11:27.209  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_roles" does not exist, skipping
+2020-06-14 19:11:27.213  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:11:27.213  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "terminzauzeca" does not exist, skipping
+2020-06-14 19:11:27.679  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:11:27.680  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission" does not exist, skipping
+2020-06-14 19:11:27.681  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:11:27.681  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission_authority" does not exist, skipping
+2020-06-14 19:11:27.682  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:11:27.683  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission_roles" does not exist, skipping
+2020-06-14 19:11:27.860  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:11:27.860  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "terminzauzeca" does not exist, skipping
+2020-06-14 19:11:35.041  INFO 852 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-14 19:11:35.108  INFO 852 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-14 19:11:35.708  INFO 852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-14 19:11:38.103  WARN 852 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-14 19:12:45.374  INFO 852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/auth/login', POST], []
+2020-06-14 19:12:45.375  INFO 852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/', GET], []
+2020-06-14 19:12:45.375  INFO 852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/webjars/**', GET], []
+2020-06-14 19:12:45.375  INFO 852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/*.html', GET], []
+2020-06-14 19:12:45.376  INFO 852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/favicon.ico', GET], []
+2020-06-14 19:12:45.376  INFO 852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/*.html', GET], []
+2020-06-14 19:12:45.377  INFO 852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/*.css', GET], []
+2020-06-14 19:12:45.378  INFO 852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/*.js', GET], []
+2020-06-14 19:12:45.612  INFO 852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d745ed5, org.springframework.security.web.context.SecurityContextPersistenceFilter@777f780c, org.springframework.security.web.header.HeaderWriterFilter@239c5dc6, org.springframework.web.filter.CorsFilter@5fc312b9, org.springframework.security.web.authentication.logout.LogoutFilter@1feff959, com.agentApp.app.auth.TokenAuthenticationFilter@5cde8c72, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e1a42ac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6afe5617, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f869fdf, org.springframework.security.web.session.SessionManagementFilter@1b4a8e6c, org.springframework.security.web.access.ExceptionTranslationFilter@1d33c2ab, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@47c2eecc]
+2020-06-14 19:13:01.468  INFO 852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (https) with context path ''
+2020-06-14 19:13:01.511  INFO 852 --- [restartedMain] com.agentApp.app.AgentAppApplication     : Started AgentAppApplication in 149.713 seconds (JVM running for 157.678)
+2020-06-14 19:15:16.740  INFO 852 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-14 19:15:16.741  INFO 852 --- [Thread-8] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-06-14 19:15:19.101  INFO 852 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-06-14 19:15:19.109  INFO 852 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-06-14 19:15:23.259  INFO 852 --- [restartedMain] com.agentApp.app.AgentAppApplication     : Starting AgentAppApplication on DESKTOP-GHR9E50 with PID 852 (C:\Users\Ivan\Desktop\XML_BSEP\XML\AgentAppBackend\target\classes started by Ivan in C:\Users\Ivan\Desktop\XML_BSEP\XML\AgentAppBackend)
+2020-06-14 19:15:23.260  INFO 852 --- [restartedMain] com.agentApp.app.AgentAppApplication     : No active profile set, falling back to default profiles: default
+2020-06-14 19:15:29.889  INFO 852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-06-14 19:15:30.007  INFO 852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 117ms. Found 15 repository interfaces.
+2020-06-14 19:15:30.163  INFO 852 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:15:30.171  INFO 852 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:15:30.173  INFO 852 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:15:30.174  INFO 852 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@f82f85e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:15:30.175  INFO 852 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:15:30.176  INFO 852 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:15:30.265  WARN 852 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-06-14 19:15:30.628  INFO 852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (https)
+2020-06-14 19:15:30.629  INFO 852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-14 19:15:30.629  INFO 852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-06-14 19:15:30.758  INFO 852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-14 19:15:30.759  INFO 852 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7493 ms
+2020-06-14 19:15:30.905  INFO 852 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-14 19:15:30.917  INFO 852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-06-14 19:15:31.480  INFO 852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-06-14 19:15:31.481  INFO 852 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-06-14 19:15:32.156  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.156  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "agent" does not exist, skipping
+2020-06-14 19:15:32.157  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.157  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "izvestaj" does not exist, skipping
+2020-06-14 19:15:32.160  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.162  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "izvestaj" does not exist, skipping
+2020-06-14 19:15:32.164  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.164  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "korisnik" does not exist, skipping
+2020-06-14 19:15:32.165  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.166  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "odgovor" does not exist, skipping
+2020-06-14 19:15:32.167  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.168  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "oglas" does not exist, skipping
+2020-06-14 19:15:32.170  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.170  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_authority" does not exist, skipping
+2020-06-14 19:15:32.171  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.172  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_authority" does not exist, skipping
+2020-06-14 19:15:32.173  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.173  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_roles" does not exist, skipping
+2020-06-14 19:15:32.174  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.175  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_roles" does not exist, skipping
+2020-06-14 19:15:32.176  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.176  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "poruka" does not exist, skipping
+2020-06-14 19:15:32.177  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.177  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "poruka" does not exist, skipping
+2020-06-14 19:15:32.178  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.179  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "terminzauzeca" does not exist, skipping
+2020-06-14 19:15:32.180  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.180  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_authority" does not exist, skipping
+2020-06-14 19:15:32.182  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.182  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_authority" does not exist, skipping
+2020-06-14 19:15:32.184  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.185  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "vozilo" does not exist, skipping
+2020-06-14 19:15:32.187  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.188  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "vozilo" does not exist, skipping
+2020-06-14 19:15:32.194  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.194  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "vozilo" does not exist, skipping
+2020-06-14 19:15:32.197  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.199  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "vozilo" does not exist, skipping
+2020-06-14 19:15:32.200  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.201  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "vozilo" does not exist, skipping
+2020-06-14 19:15:32.202  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.202  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "vozilo" does not exist, skipping
+2020-06-14 19:15:32.203  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.204  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "zahtev" does not exist, skipping
+2020-06-14 19:15:32.205  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.206  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "zahtev" does not exist, skipping
+2020-06-14 19:15:32.207  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.207  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "agent" does not exist, skipping
+2020-06-14 19:15:32.208  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.208  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "authority" does not exist, skipping
+2020-06-14 19:15:32.209  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.209  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "image_table" does not exist, skipping
+2020-06-14 19:15:32.210  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.210  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "izvestaj" does not exist, skipping
+2020-06-14 19:15:32.211  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.211  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "klasavozila" does not exist, skipping
+2020-06-14 19:15:32.211  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.211  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "komentar" does not exist, skipping
+2020-06-14 19:15:32.212  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.212  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "korisnik" does not exist, skipping
+2020-06-14 19:15:32.213  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.213  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "markavozila" does not exist, skipping
+2020-06-14 19:15:32.214  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.214  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "modelvozila" does not exist, skipping
+2020-06-14 19:15:32.215  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.215  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "odgovor" does not exist, skipping
+2020-06-14 19:15:32.216  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.217  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "oglas" does not exist, skipping
+2020-06-14 19:15:32.217  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.217  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission" does not exist, skipping
+2020-06-14 19:15:32.218  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.218  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission_authority" does not exist, skipping
+2020-06-14 19:15:32.219  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.219  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission_roles" does not exist, skipping
+2020-06-14 19:15:32.220  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.220  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "poruka" does not exist, skipping
+2020-06-14 19:15:32.221  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.221  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "search" does not exist, skipping
+2020-06-14 19:15:32.221  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.222  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "terminzauzeca" does not exist, skipping
+2020-06-14 19:15:32.223  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.223  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "tipgoriva" does not exist, skipping
+2020-06-14 19:15:32.224  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.224  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_authority" does not exist, skipping
+2020-06-14 19:15:32.225  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.225  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2020-06-14 19:15:32.227  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.227  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "vozilo" does not exist, skipping
+2020-06-14 19:15:32.228  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.228  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "vrstamenjaca" does not exist, skipping
+2020-06-14 19:15:32.229  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:15:32.229  WARN 852 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "zahtev" does not exist, skipping
+2020-06-14 19:15:36.338  INFO 852 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-14 19:15:36.338  INFO 852 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-14 19:15:36.381  INFO 852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-14 19:15:36.962  WARN 852 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #34 of URL [file:/C:/Users/Ivan/Desktop/XML_BSEP/XML/AgentAppBackend/target/classes/data-postgres.sql]: insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id, tipgoriva_id, vrstamenjaca_id) values (8, false, 1, 1, 1, 1, 1); nested exception is org.postgresql.util.PSQLException: ERROR: insert or update on table "vozilo" violates foreign key constraint "fkejd9t2vgsqa78vq5pktylar7r"
+  Detail: Key (user_id)=(8) is not present in table "users".
+2020-06-14 19:15:36.963  INFO 852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-06-14 19:15:36.972  INFO 852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-06-14 19:15:36.974  INFO 852 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-14 19:15:37.022  INFO 852 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-06-14 19:15:37.206 ERROR 852 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #34 of URL [file:/C:/Users/Ivan/Desktop/XML_BSEP/XML/AgentAppBackend/target/classes/data-postgres.sql]: insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id, tipgoriva_id, vrstamenjaca_id) values (8, false, 1, 1, 1, 1, 1); nested exception is org.postgresql.util.PSQLException: ERROR: insert or update on table "vozilo" violates foreign key constraint "fkejd9t2vgsqa78vq5pktylar7r"
+  Detail: Key (user_id)=(8) is not present in table "users".
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at com.agentApp.app.AgentAppApplication.main(AgentAppApplication.java:10) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_152]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_152]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_152]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_152]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #34 of URL [file:/C:/Users/Ivan/Desktop/XML_BSEP/XML/AgentAppBackend/target/classes/data-postgres.sql]: insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id, tipgoriva_id, vrstamenjaca_id) values (8, false, 1, 1, 1, 1, 1); nested exception is org.postgresql.util.PSQLException: ERROR: insert or update on table "vozilo" violates foreign key constraint "fkejd9t2vgsqa78vq5pktylar7r"
+  Detail: Key (user_id)=(8) is not present in table "users".
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:626) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:49) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.runScripts(DataSourceInitializer.java:202) ~[spring-boot-autoconfigure-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.initSchema(DataSourceInitializer.java:119) ~[spring-boot-autoconfigure-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:91) ~[spring-boot-autoconfigure-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:38) ~[spring-boot-autoconfigure-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.publishEventIfRequired(DataSourceInitializedPublisher.java:99) ~[spring-boot-autoconfigure-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.postProcessAfterInitialization(DataSourceInitializedPublisher.java:90) ~[spring-boot-autoconfigure-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:431) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1807) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	... 20 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: insert or update on table "vozilo" violates foreign key constraint "fkejd9t2vgsqa78vq5pktylar7r"
+  Detail: Key (user_id)=(8) is not present in table "users".
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2497) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2233) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:446) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:370) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:311) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:297) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:274) ~[postgresql-42.2.8.jar:42.2.8]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:269) ~[postgresql-42.2.8.jar:42.2.8]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:605) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	... 36 common frames omitted
+
+2020-06-14 19:18:24.387  INFO 8504 --- [restartedMain] com.agentApp.app.AgentAppApplication     : Starting AgentAppApplication on DESKTOP-GHR9E50 with PID 8504 (C:\Users\Ivan\Desktop\XML_BSEP\XML\AgentAppBackend\target\classes started by Ivan in C:\Users\Ivan\Desktop\XML_BSEP\XML\AgentAppBackend)
+2020-06-14 19:18:24.426  INFO 8504 --- [restartedMain] com.agentApp.app.AgentAppApplication     : No active profile set, falling back to default profiles: default
+2020-06-14 19:18:24.681  INFO 8504 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Ivan\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/Ivan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/Ivan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/Ivan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/Ivan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/Ivan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/Ivan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-06-14 19:18:24.682  INFO 8504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-14 19:18:24.684  INFO 8504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-14 19:18:29.491  INFO 8504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-06-14 19:18:29.835  INFO 8504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 321ms. Found 15 repository interfaces.
+2020-06-14 19:18:31.021  INFO 8504 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:18:31.111  INFO 8504 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:18:31.119  INFO 8504 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:18:31.124  INFO 8504 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@17bf9336' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:18:31.136  INFO 8504 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:18:31.144  INFO 8504 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:18:33.962  INFO 8504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (https)
+2020-06-14 19:18:34.009  INFO 8504 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-14 19:18:34.010  INFO 8504 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-06-14 19:18:34.494  INFO 8504 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-14 19:18:34.497  INFO 8504 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 9811 ms
+2020-06-14 19:18:39.551  INFO 8504 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-14 19:18:42.277  INFO 8504 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2020-06-14 19:18:43.880  INFO 8504 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-14 19:18:44.836  INFO 8504 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-14 19:18:45.667  INFO 8504 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-14 19:18:45.821  INFO 8504 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-06-14 19:18:57.048  INFO 8504 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-14 19:18:57.124  INFO 8504 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-14 19:18:57.445  INFO 8504 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-14 19:18:57.965  WARN 8504 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-14 19:19:30.288  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/auth/login', POST], []
+2020-06-14 19:19:30.289  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/', GET], []
+2020-06-14 19:19:30.290  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/webjars/**', GET], []
+2020-06-14 19:19:30.290  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/*.html', GET], []
+2020-06-14 19:19:30.291  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/favicon.ico', GET], []
+2020-06-14 19:19:30.291  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/*.html', GET], []
+2020-06-14 19:19:30.292  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/*.css', GET], []
+2020-06-14 19:19:30.292  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/*.js', GET], []
+2020-06-14 19:19:30.444  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f8f5f94, org.springframework.security.web.context.SecurityContextPersistenceFilter@4ec97291, org.springframework.security.web.header.HeaderWriterFilter@414a9b1d, org.springframework.web.filter.CorsFilter@7a2fd004, org.springframework.security.web.authentication.logout.LogoutFilter@2f8d2423, com.agentApp.app.auth.TokenAuthenticationFilter@25a1a543, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d054867, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39181022, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e507a7c, org.springframework.security.web.session.SessionManagementFilter@6bacc8c9, org.springframework.security.web.access.ExceptionTranslationFilter@125b99de, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@f0b53a5]
+2020-06-14 19:19:41.072  INFO 8504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (https) with context path ''
+2020-06-14 19:19:41.112  INFO 8504 --- [restartedMain] com.agentApp.app.AgentAppApplication     : Started AgentAppApplication in 83.107 seconds (JVM running for 94.132)
+2020-06-14 19:26:48.316  INFO 8504 --- [https-jsse-nio-8088-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-14 19:26:48.318  INFO 8504 --- [https-jsse-nio-8088-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-14 19:26:48.491  INFO 8504 --- [https-jsse-nio-8088-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 173 ms
+2020-06-14 19:29:41.849  INFO 8504 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-14 19:29:41.850  INFO 8504 --- [Thread-8] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-06-14 19:29:42.333  INFO 8504 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-06-14 19:29:42.345  INFO 8504 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-06-14 19:29:43.795  INFO 8504 --- [restartedMain] com.agentApp.app.AgentAppApplication     : Starting AgentAppApplication on DESKTOP-GHR9E50 with PID 8504 (C:\Users\Ivan\Desktop\XML_BSEP\XML\AgentAppBackend\target\classes started by Ivan in C:\Users\Ivan\Desktop\XML_BSEP\XML\AgentAppBackend)
+2020-06-14 19:29:43.796  INFO 8504 --- [restartedMain] com.agentApp.app.AgentAppApplication     : No active profile set, falling back to default profiles: default
+2020-06-14 19:29:44.746  INFO 8504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-06-14 19:29:44.889  INFO 8504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 141ms. Found 15 repository interfaces.
+2020-06-14 19:29:45.063  INFO 8504 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:29:45.075  INFO 8504 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:29:45.078  INFO 8504 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:29:45.079  INFO 8504 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@714ffda7' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:29:45.080  INFO 8504 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:29:45.081  INFO 8504 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-14 19:29:45.201  WARN 8504 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-06-14 19:29:45.565  INFO 8504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (https)
+2020-06-14 19:29:45.567  INFO 8504 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-14 19:29:45.567  INFO 8504 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-06-14 19:29:45.637  INFO 8504 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-14 19:29:45.637  INFO 8504 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1836 ms
+2020-06-14 19:29:45.808  INFO 8504 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-14 19:29:45.821  INFO 8504 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-06-14 19:29:45.973  INFO 8504 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-06-14 19:29:45.974  INFO 8504 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-06-14 19:29:46.756  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.756  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "agent" does not exist, skipping
+2020-06-14 19:29:46.757  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.757  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "izvestaj" does not exist, skipping
+2020-06-14 19:29:46.758  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.758  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "izvestaj" does not exist, skipping
+2020-06-14 19:29:46.759  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.759  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "korisnik" does not exist, skipping
+2020-06-14 19:29:46.760  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.761  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "odgovor" does not exist, skipping
+2020-06-14 19:29:46.761  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.762  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "oglas" does not exist, skipping
+2020-06-14 19:29:46.763  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.763  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_authority" does not exist, skipping
+2020-06-14 19:29:46.764  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.765  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_authority" does not exist, skipping
+2020-06-14 19:29:46.765  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.766  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_roles" does not exist, skipping
+2020-06-14 19:29:46.767  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.767  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "permission_roles" does not exist, skipping
+2020-06-14 19:29:46.768  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.768  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "poruka" does not exist, skipping
+2020-06-14 19:29:46.769  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.769  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "poruka" does not exist, skipping
+2020-06-14 19:29:46.770  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.770  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "terminzauzeca" does not exist, skipping
+2020-06-14 19:29:46.771  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.771  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_authority" does not exist, skipping
+2020-06-14 19:29:46.772  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.772  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_authority" does not exist, skipping
+2020-06-14 19:29:46.773  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.773  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "vozilo" does not exist, skipping
+2020-06-14 19:29:46.776  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.776  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "vozilo" does not exist, skipping
+2020-06-14 19:29:46.778  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.778  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "vozilo" does not exist, skipping
+2020-06-14 19:29:46.779  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.779  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "vozilo" does not exist, skipping
+2020-06-14 19:29:46.780  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.780  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "vozilo" does not exist, skipping
+2020-06-14 19:29:46.781  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.781  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "vozilo" does not exist, skipping
+2020-06-14 19:29:46.782  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.782  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "zahtev" does not exist, skipping
+2020-06-14 19:29:46.783  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.783  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "zahtev" does not exist, skipping
+2020-06-14 19:29:46.842  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.842  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "agent" does not exist, skipping
+2020-06-14 19:29:46.843  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.843  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "authority" does not exist, skipping
+2020-06-14 19:29:46.844  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.844  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "image_table" does not exist, skipping
+2020-06-14 19:29:46.845  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.845  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "izvestaj" does not exist, skipping
+2020-06-14 19:29:46.846  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.846  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "klasavozila" does not exist, skipping
+2020-06-14 19:29:46.847  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.847  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "komentar" does not exist, skipping
+2020-06-14 19:29:46.848  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.848  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "korisnik" does not exist, skipping
+2020-06-14 19:29:46.849  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.849  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "markavozila" does not exist, skipping
+2020-06-14 19:29:46.850  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.850  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "modelvozila" does not exist, skipping
+2020-06-14 19:29:46.851  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.851  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "odgovor" does not exist, skipping
+2020-06-14 19:29:46.852  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.852  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "oglas" does not exist, skipping
+2020-06-14 19:29:46.853  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.853  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission" does not exist, skipping
+2020-06-14 19:29:46.853  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.854  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission_authority" does not exist, skipping
+2020-06-14 19:29:46.854  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.854  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "permission_roles" does not exist, skipping
+2020-06-14 19:29:46.855  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.855  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "poruka" does not exist, skipping
+2020-06-14 19:29:46.856  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.856  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "search" does not exist, skipping
+2020-06-14 19:29:46.857  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.857  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "terminzauzeca" does not exist, skipping
+2020-06-14 19:29:46.858  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.858  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "tipgoriva" does not exist, skipping
+2020-06-14 19:29:46.859  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.859  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_authority" does not exist, skipping
+2020-06-14 19:29:46.860  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.860  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2020-06-14 19:29:46.860  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.860  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "vozilo" does not exist, skipping
+2020-06-14 19:29:46.861  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.861  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "vrstamenjaca" does not exist, skipping
+2020-06-14 19:29:46.862  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2020-06-14 19:29:46.862  WARN 8504 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "zahtev" does not exist, skipping
+2020-06-14 19:29:49.060  INFO 8504 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-14 19:29:49.061  INFO 8504 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-14 19:29:49.115  INFO 8504 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-14 19:29:49.239  WARN 8504 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-14 19:29:50.311  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/auth/login', POST], []
+2020-06-14 19:29:50.312  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/', GET], []
+2020-06-14 19:29:50.312  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/webjars/**', GET], []
+2020-06-14 19:29:50.312  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/*.html', GET], []
+2020-06-14 19:29:50.313  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/favicon.ico', GET], []
+2020-06-14 19:29:50.313  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/*.html', GET], []
+2020-06-14 19:29:50.313  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/*.css', GET], []
+2020-06-14 19:29:50.313  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/*.js', GET], []
+2020-06-14 19:29:50.337  INFO 8504 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@441d7617, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e4dec06, org.springframework.security.web.header.HeaderWriterFilter@1194b0dc, org.springframework.web.filter.CorsFilter@198fee58, org.springframework.security.web.authentication.logout.LogoutFilter@e21e09c, com.agentApp.app.auth.TokenAuthenticationFilter@285752c1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9341f3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3435136d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@23a7980, org.springframework.security.web.session.SessionManagementFilter@11b546da, org.springframework.security.web.access.ExceptionTranslationFilter@41b5f0ac, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64dab66e]
+2020-06-14 19:29:50.973  INFO 8504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (https) with context path ''
+2020-06-14 19:29:50.980  INFO 8504 --- [restartedMain] com.agentApp.app.AgentAppApplication     : Started AgentAppApplication in 7.249 seconds (JVM running for 704.0)
+2020-06-14 19:29:50.989  INFO 8504 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-06-14 19:30:10.761  INFO 8504 --- [https-jsse-nio-8088-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-14 19:30:10.764  INFO 8504 --- [https-jsse-nio-8088-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-14 19:30:10.771  INFO 8504 --- [https-jsse-nio-8088-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-06-14 19:31:34.539  WARN 8504 --- [https-jsse-nio-8088-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of type: class org.springframework.http.ResponseEntity$DefaultBuilder]
+2020-06-14 19:34:55.918  INFO 8504 --- [RMI TCP Connection(33)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-06-14 19:34:55.929  INFO 8504 --- [RMI TCP Connection(33)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-14 19:34:55.930  INFO 8504 --- [RMI TCP Connection(33)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-06-14 19:34:56.265  INFO 8504 --- [RMI TCP Connection(33)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-06-14 19:34:56.281  INFO 8504 --- [RMI TCP Connection(33)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
