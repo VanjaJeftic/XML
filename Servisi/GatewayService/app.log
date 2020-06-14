@@ -1693,6 +1693,7 @@ Using generated security password: 71043243-6e08-4c62-852f-463b3d2fefdc
 2020-06-14 17:26:03.795  INFO 11348 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-06-14 17:31:03.805  INFO 11348 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 
+
 2020-06-14 19:37:35.603  INFO 8052 --- [main] com.gateway.GatewayServiceApplication    : No active profile set, falling back to default profiles: default
 2020-06-14 19:37:38.534  WARN 8052 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
 2020-06-14 19:37:38.560  WARN 8052 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
@@ -2462,3 +2463,4 @@ Caused by: com.netflix.client.ClientException: Load balancer does not have avail
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:168) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
 	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+
