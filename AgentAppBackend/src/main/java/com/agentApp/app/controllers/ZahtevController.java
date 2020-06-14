@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -37,6 +38,7 @@ public class ZahtevController {
 	private UserService userService;
 	
 	@PostMapping
+    @PreAuthorize("hasAuthority('create_zahtev')")
 	public void create(@RequestBody ShopCartItemsDTO shopCartItemsDTO, Principal p){
 		//List<User> vlasnici = userService.findAll();
 				List<Long> vlasnici = new ArrayList<>();

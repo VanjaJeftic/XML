@@ -7,6 +7,7 @@ import com.agentApp.app.services.VrstaMenjacaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,14 +29,14 @@ public class VrstaMenjacaController {
     }
 
     @PostMapping
-    //@PreAuthorize("hasAuthority('create_oglas')")
+    @PreAuthorize("hasAuthority('create_sifrarnik')")
     public ResponseEntity<?> sacuvajVrstuMenjaca(@RequestBody VrstaMenjacaDTO vrstaMenjacaDTO) {
         VrstaMenjaca vrstaMenjaca = this.vrstaMenjacaService.createVrstaMenjaca(vrstaMenjacaDTO);
         return new ResponseEntity<>(vrstaMenjaca, HttpStatus.OK);
     }
 
     @PutMapping
-    //@PreAuthorize("hasAuthority('update_oglas')")
+    @PreAuthorize("hasAuthority('update_sifrarnik')")
     public ResponseEntity<?> izmenaVrsteMenjaca(@RequestBody VrstaMenjacaDTO vrstaMenjacaDTO) {
         Optional<VrstaMenjaca> vrstaMenjacadata = vrstaMenjacaRepository.findById(vrstaMenjacaDTO.getId());
         if(vrstaMenjacadata.isPresent()){
@@ -54,7 +55,7 @@ public class VrstaMenjacaController {
 
     @DeleteMapping("/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
-    //@PreAuthorize("hasAuthority('delete_oglas')")
+    @PreAuthorize("hasAuthority('delete_sifrarnik')")
     public ResponseEntity<HttpStatus> brisanjeVrsteMenjaca(@PathVariable("id") Long id) {
         try {
             vrstaMenjacaService.delete(id);

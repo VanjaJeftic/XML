@@ -37,12 +37,112 @@ INSERT INTO AUTHORITY (name) VALUES ('ROLE_ADMIN');
 INSERT INTO AUTHORITY (name) VALUES ('ROLE_AGENT');
 INSERT INTO AUTHORITY (name) VALUES ('ROLE_USER');
 
+ INSERT INTO PERMISSION (NAME) VALUES
+  ('log_USER'),
+ ('log_AGENT'),
+ ('log_ADMIN'),
+ ('create_oglas'),
+ ('read_oglas'),
+ ('update_oglas'),
+ ('delete_oglas'),
+  ('create_vozilo'),
+ ('read_vozilo'),
+ ('update_vozilo'),
+ ('delete_vozilo'),
+  ('create_sifrarnik'),
+ ('read_sifrarnik'),
+ ('update_sifrarnik'),
+ ('delete_sifrarnik'),
+  ('create_zahtev'),
+ ('read_zahtev'),
+ ('update_zahtev'),
+ ('delete_zahtev'),
+  ('create_komentar'),
+ ('read_komentar'),
+ ('update_komentar'),
+ ('delete_komentar'),
+ ('create_poruka'),
+ ('read_poruka'),
+ ('update_poruka'),
+ ('delete_poruka'),
+ ('create_izvestaj'),
+ ('read_izvestaj'),
+ ('update_izvestaj'),
+ ('delete_izvestaj');
+ INSERT INTO PERMISSION_AUTHORITY (PERMISSION_ID, AUTHORITY_ID) VALUES
+     (3,1),
+     (2,2),
+     (1,3),
+ 	 (4,2), /*create-> agent je 2 */
+     (4,3),
+     (5,1), /* read admin */
+     (5,2),
+     (5,3),
+     (6,2), /* update admin */
+     (6,3),
+     (7,2), /* delete admin */
+     (7,3),  
+     (8,2),
+     (8,3),
+     (9,2),
+     (9,3),
+     (10,2),
+     (10,3),
+     (11,2),
+     (11,3),
+     (9,1),
+    (12,1),
+    (13,1),
+    (14,1),
+    (15,1),
+    (13,2),
+    (13,3),
+    (16,3),
+    (17,3),
+    (18,3),
+    (19,3),
+    (17,2),
+    (17,1),
+    (20,1),
+    (20,2),
+    (20,3),
+    (21,1),
+    (21,2),
+    (21,3),
+    (22,1),
+    (22,2),
+    (22,3),
+    (23,1),
+    (23,2),
+    (23,3),
+    (24,2),
+    (24,3),
+    (25,2),
+    (25,3),
+    (26,2),
+    (26,3),
+    (27,2),
+    (27,3),
+    (25,1),
+    (28,2),
+    (28,3),
+    (29,2),
+    (29,3),
+    (30,2),
+    (30,3),
+    (31,2),
+    (31,3),
+    (29,1);
+    
+    
+
 INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (3, 1);
 INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (1, 3);
 INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (8, 2);
 INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (5, 1);
 INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (10, 1);
 INSERT INTO USER_AUTHORITY  (user_id, authority_id) VALUES (11, 1);
+
 
 insert into korisnik (user_id, aktivan, blokiran, uklonjen, odbijenizahtevi) values (1, true, false, false, 0);
 insert into korisnik (user_id, aktivan, blokiran, uklonjen, odbijenizahtevi) values (4, true, false, false, 0);
