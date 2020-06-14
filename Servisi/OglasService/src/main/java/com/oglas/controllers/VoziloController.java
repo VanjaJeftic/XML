@@ -82,7 +82,7 @@ public class VoziloController {
     }
 
     @PostMapping("/novoVozilo")
-    public BodyBuilder uplaodImage(@RequestParam("vozilomarka") String markaVozila,
+    public BodyBuilder sacuvajVozilo(@RequestParam("vozilomarka") String markaVozila,
                                    @RequestParam("image") MultipartFile file,
                                    @RequestParam("vozilomodel") String modelVozila,
                                    @RequestParam("voziloklasa") String klasaVozila,

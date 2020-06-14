@@ -11,6 +11,6 @@ export class SvaVozilaService {
 
   public getVozila() {
     console.log("Pribavljamo vozila"+localStorage.getItem('userId'));
-    return this.http.get('http://localhost:8092/vozilo/vozila/'+localStorage.getItem('userId'));
+    return this.http.get('https://localhost:8662/oglas/vozilo/vozila/'+localStorage.getItem('userId'));
   }
 }
