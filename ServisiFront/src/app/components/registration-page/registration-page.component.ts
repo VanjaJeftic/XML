@@ -19,6 +19,7 @@ export class RegistrationPageComponent implements OnInit {
 
 
   public onSubmit(): void{
+    window.alert("Uspesno ste se registrovali");
     event.preventDefault();
     console.log("Usao u onsubmit usera "+ this.user.ime );
     let res=this.registrationService.saveKorisnik(this.user);

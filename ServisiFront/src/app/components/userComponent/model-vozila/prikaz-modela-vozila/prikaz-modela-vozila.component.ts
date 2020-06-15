@@ -20,12 +20,18 @@ export class PrikazModelaVozilaComponent implements OnInit {
   }
 
   deleteModel(model: ModelVozila, filter:any): void {
+   
     console.log("brisanje modela");
     this.modelServis.deleteModel(model)
       .subscribe( data => {
+        window.alert("Uspesno ste izbrisali model vozila!");
         if(!filter) return this.modeli;
         this.modeli = this.modeli.filter(u => u !== model);
-      })
+      },err =>{
+        window.alert("greska");
+        console.log(err)
+        window.alert("greska");
+     });
   };
 
   izmenaModela(modelVozila) {

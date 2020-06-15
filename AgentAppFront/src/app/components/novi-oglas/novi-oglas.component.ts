@@ -28,6 +28,7 @@ export class NoviOglasComponent implements OnInit {
   }
 
   public onSubmit(): void{
+    window.alert("Uspesno ste doodali novi oglas");
   //  this.oglas.user_id=localStorage.getItem('userId');
     console.log("Vozilo id"+this.data.id);
     this.oglas.vozilo_id=this.data.id;

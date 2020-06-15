@@ -22,8 +22,10 @@ export class PrikazSvihTipovaGorivaComponent implements OnInit {
   }
 
   deleteTipGoriva(tipGoriva: TipGoriva): void {
+   
     this.tipGorivaServis.deleteTipGoriva(tipGoriva)
       .subscribe( data => {
+        window.alert("Uspesno ste izbrisali tip goriva!");
         this.goriva = this.goriva.filter(u => u !== tipGoriva);
       })
   };

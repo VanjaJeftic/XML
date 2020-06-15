@@ -21,6 +21,7 @@ export class IzmenaMarkeVozilaComponent implements OnInit {
   }
   
   public onSubmitIzmena(): void{
+    window.alert("Uspesno ste izmenili marku vozila");
     event.preventDefault();
     console.log("Usao u onsubmit izmena marke vozila"+ this.markaVozila.naziv );
     let res=this.markaServis.izmenaMarke(this.markaVozila);

@@ -23,6 +23,7 @@ export class IzmenaTipaGorivaComponent implements OnInit {
 
 
   public onSubmitIzmenaTipaGoriva(): void{
+    window.alert("Uspesno ste izmenili tip goriva");
     event.preventDefault();
     let res=this.tipGorivaServis.izmenaTipaGoriva(this.tipGoriva);
     this.router.navigateByUrl('/listaTipaGorivaVozila');

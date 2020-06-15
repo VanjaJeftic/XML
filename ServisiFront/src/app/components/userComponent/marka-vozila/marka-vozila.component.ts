@@ -18,6 +18,7 @@ export class MarkaVozilaComponent implements OnInit {
 
 
   public onSubmit(): void{
+    window.alert("Uspesno ste dodali marku vozila");
     event.preventDefault();
     console.log("Usao u onsubmit marke vozila"+ this.markaVozila.naziv );
     let res=this.markaServis.saveMarka(this.markaVozila);

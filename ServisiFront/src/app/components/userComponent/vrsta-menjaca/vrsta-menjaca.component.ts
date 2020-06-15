@@ -9,6 +9,12 @@ import {Router} from '@angular/router';
 })
 export class VrstaMenjacaComponent implements OnInit {
 
+  options = {
+    autoClose: false,
+    keepAfterRouteChange: false
+};
+
+
   constructor(private  vrstaMenjacaServis:AdminService,private router: Router) { }
   public vrstaMenjaca:VrstaMenjaca=new VrstaMenjaca();
 
@@ -17,6 +23,7 @@ export class VrstaMenjacaComponent implements OnInit {
 
 
   public onSubmit(): void{
+    window.alert("Uspesno ste dodali vrstu menjaca");
     event.preventDefault();
     console.log("Usao u onsubmit vrste menjaca"+ this.vrstaMenjaca.naziv );
     let res=this.vrstaMenjacaServis.saveMenjac(this.vrstaMenjaca);

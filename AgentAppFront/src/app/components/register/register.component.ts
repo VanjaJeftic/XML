@@ -32,6 +32,7 @@ export class RegisterComponent implements OnInit {
       if(this.repeatPassword === this.user.password){
         //this.user.uloga = this.Roles[1];
      console.log("Username je "+ this.user.username + " " + this.user.email);
+     window.alert("Uspesno ste se registrovali");
         let res = this.registerService.saveUser(this.user);
         res.subscribe((res)=>{
           if(res == null ){

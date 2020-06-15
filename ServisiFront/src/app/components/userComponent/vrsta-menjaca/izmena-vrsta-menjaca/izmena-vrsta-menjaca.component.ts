@@ -21,6 +21,7 @@ export class IzmenaVrstaMenjacaComponent implements OnInit {
 }
 
 public onSubmitIzmenaMenjaca(): void{
+  window.alert("Uspesno ste izmenili vrstu menjaca");
   event.preventDefault();
   let res=this.vrstaMenjacaServis.izmenaVrsteMenjaca(this.vrstaMenjaca);
   this.router.navigateByUrl('/listaVrstaMenjacaVozila');

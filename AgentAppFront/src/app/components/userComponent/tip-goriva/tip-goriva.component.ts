@@ -18,6 +18,7 @@ export class TipGorivaComponent implements OnInit {
   }
 
   public onSubmit(): void{
+    window.alert("Uspesno ste dodali tip goriva");
     event.preventDefault();
     console.log("Usao u onsubmit tip goriva vozila"+ this.tipGoriva.naziv );
     let res=this.gorivoServis.saveGorivo(this.tipGoriva);

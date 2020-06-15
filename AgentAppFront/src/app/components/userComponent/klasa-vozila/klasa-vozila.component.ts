@@ -16,6 +16,7 @@ export class KlasaVozilaComponent implements OnInit {
   }
 
   public onSubmit(): void{
+    window.alert("Uspesno ste dodli novu klasu vozila");
     event.preventDefault();
     console.log("Usao u onsubmit klase vozila"+ this.klasaVozila.naziv );
     let res=this.klasaServis.saveKlasa(this.klasaVozila);

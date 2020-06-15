@@ -46,6 +46,7 @@ import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/s
 import { ZahteviComponent } from './components/userComponent/agent/zahtevi/zahtevi.component';
 import { IzvestajComponent } from './components/userComponent/agent/izvestaj/izvestaj.component';
 import { IzvestajDialogComponent } from './components/userComponent/agent/izvestaj/izvestaj-dialog/izvestaj-dialog.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -96,6 +97,7 @@ import { IzvestajDialogComponent } from './components/userComponent/agent/izvest
     OwlNativeDateTimeModule,
     MatMenuModule,
     MatDialogModule,
+    CommonModule
 
   ],
   entryComponents: [TerminZauzecaDialogComponent, IzvestajDialogComponent

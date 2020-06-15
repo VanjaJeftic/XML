@@ -27,6 +27,7 @@ export class NoviOglasComponent implements OnInit {
   }
 
   onSelect(e){
+    window.alert("Uspesno ste kreirali vozilo");
     if(e.target.files){
       for(let i=0; i<e.target.files.length; i++){
         let file = e.target.files[i];

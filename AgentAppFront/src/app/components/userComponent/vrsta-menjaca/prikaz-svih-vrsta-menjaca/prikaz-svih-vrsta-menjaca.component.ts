@@ -23,9 +23,13 @@ export class PrikazSvihVrstaMenjacaComponent implements OnInit {
   }
 
   deleteVrsteMenjaca(menjac: VrstaMenjaca): void {
-    console.log("brisanje vrste menjaca");
+   
+    
     this.vrstaMenjacaServis.deleteVrsteMenjaca(menjac)
-      .subscribe( data => {
+      .subscribe( 
+        
+        data => {
+        window.alert("Uspesno ste izbrisali vrstu menjaca!");
         this.menjaci = this.menjaci.filter(u => u !== menjac);
       })
   };

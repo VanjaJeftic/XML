@@ -34,6 +34,7 @@ public oglas:Oglas=new Oglas();
 
   
   public onSubmit(): void{
+    window.alert("Uspesno ste dodali komentar");
     event.preventDefault();
     console.log("Usao u onsubmit komentara"+ this.komentar.sadrzaj );
     let res=this.komentarServis.saveKomentar(this.komentar);
