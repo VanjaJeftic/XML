@@ -117,19 +117,48 @@ public class ZahtevController {
 	public ResponseEntity<?> acceptRequest(@PathVariable("id") Long id, @PathVariable("agent") Long agent){
 		List<Zahtev> zahtevi = this.zahtevService.getAllByGroupID(id);
 		
-		for(Zahtev z : zahtevi) {
-			
+		if(zahtevi.get(0).isBundle()) {
+			for(Zahtev z : zahtevi) {
+				
+				//Pronalazi sve zahteve koji su kreirani za oglas kome je AgentID "agent" i menja status
+				OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
+				
+				TerminZauzecaDTO terminZauzecaDTO = new TerminZauzecaDTO(oglas.getVozilo().getId(), z.getPreuzimanje(), z.getPovratak());
+				
+				int imaPodudaranja = this.oglasConnection.provjeraZauzetostiVozila(terminZauzecaDTO);
+				
+				if(oglas.getVozilo().getUser().getId().equals(agent)) {
+					if(imaPodudaranja == 0) {
+						z.setStatus("ACCEPTED");
+						
+						//Kreira termin zauzeca iz ovog zahteva i povezuje ga sa vozilom u OglasService
+						ResponseEntity<?> res = this.oglasConnection.zauzece(terminZauzecaDTO);
+						
+						if(res.status(HttpStatus.CREATED) != null) {
+							this.zahtevService.save(z);
+							
+							//Odbija sve ostale zahteve vezane za taj oglas ovog agenta
+							this.zahtevService.odbijOstaleZahteve(z.getPreuzimanje(), z.getPovratak(), z.getOglas_id());
+						}else {
+							return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+						}
+						
+					}else {
+						return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+					}
+				}
+			}
+		}else {
+			Zahtev z = zahtevi.get(0);
 			//Pronalazi sve zahteve koji su kreirani za oglas kome je AgentID "agent" i menja status
 			OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
 			
 			TerminZauzecaDTO terminZauzecaDTO = new TerminZauzecaDTO(oglas.getVozilo().getId(), z.getPreuzimanje(), z.getPovratak());
-			
 			int imaPodudaranja = this.oglasConnection.provjeraZauzetostiVozila(terminZauzecaDTO);
 			
 			if(oglas.getVozilo().getUser().getId().equals(agent)) {
 				if(imaPodudaranja == 0) {
 					z.setStatus("ACCEPTED");
-					
 					//Kreira termin zauzeca iz ovog zahteva i povezuje ga sa vozilom u OglasService
 					ResponseEntity<?> res = this.oglasConnection.zauzece(terminZauzecaDTO);
 					
@@ -147,6 +176,8 @@ public class ZahtevController {
 				}
 			}
 		}
+		
+		
 		
 		
 		return new ResponseEntity<>(null, HttpStatus.ACCEPTED);
@@ -173,10 +204,16 @@ public class ZahtevController {
 					if( (preuzimanje.isAfter(zahtevPreuzimanje) && povratak.isBefore(zahtevPovratak)
 							|| (preuzimanje.isBefore(zahtevPreuzimanje) && povratak.isAfter(zahtevPreuzimanje))) 
 							|| (preuzimanje.isBefore(zahtevPovratak) && povratak.isAfter(zahtevPovratak))
-							|| (preuzimanje.isBefore(zahtevPreuzimanje) && povratak.isAfter(zahtevPovratak)) ) {
+							|| (preuzimanje.isBefore(zahtevPreuzimanje) && povratak.isAfter(zahtevPovratak))
+							|| (preuzimanje.isEqual(zahtevPreuzimanje) && povratak.isEqual(zahtevPovratak)) ) {
 						System.out.println("Usao u izmenu statusa!");
 						z.setStatus("CANCELED");
 						this.zahtevService.save(z);
+						
+						if(z.isBundle()) {
+							System.out.println("Jeste bundle");
+							this.zahtevService.odbijOstaleZahteveZaBundle(preuzimanje, povratak, id, z.getBundle_id());
+						}
 					}
 				}
 			}
@@ -213,5 +250,16 @@ public class ZahtevController {
 			}
 		}
 		return bundleZahtevi;
+	}
+	
+	@GetMapping("/zahtev/{id}")
+	public ResponseEntity<?> getOneZahtev(@PathVariable("id") Long id){
+		List<Zahtev> zahtevi = this.zahtevService.getAllZahtevi();
+		for(Zahtev z : zahtevi) {
+			if(z.getId().equals(id)) {
+				return new ResponseEntity<ZahtevDTO>(new ZahtevDTO(z), HttpStatus.OK);
+			}
+		}
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 }

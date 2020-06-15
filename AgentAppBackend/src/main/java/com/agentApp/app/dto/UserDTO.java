@@ -2,6 +2,7 @@ package com.agentApp.app.dto;
 
 import com.agentApp.app.models.Authority;
 import com.agentApp.app.models.User;
+import com.agentApp.app.models.Vozilo;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -40,6 +41,24 @@ public class UserDTO {
 		this.uloga = uloga;
 		this.nalogAktiviran = nalogAktiviran;
 		this.authorities=authorities;
+	}
+	
+	public UserDTO(Vozilo v) {
+		this.id = v.getUser().getId();
+		this.username = v.getUser().getUsername();
+		this.password = v.getUser().getPassword();
+		this.lastPasswordResetDate = v.getUser().getLastPasswordResetDate();
+		this.enabled = v.getUser().isEnabled();
+		this.lastname = v.getUser().getLastname();
+		this.firstname = v.getUser().getFirstname();
+		this.adress = v.getUser().getAdress();
+		this.email = v.getUser().getEmail();
+		this.city = v.getUser().getCity();
+		this.country = v.getUser().getCountry();
+		this.phoneNumber = v.getUser().getPhoneNumber();
+		this.uloga = v.getUser().getUloga();
+		this.nalogAktiviran = v.getUser().isNalogAktiviran();
+		this.authorities= (List<Authority>) v.getUser().getAuthorities();
 	}
 
 	public UserDTO() {
