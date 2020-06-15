@@ -1,525 +1,61 @@
-2020-06-13 14:37:51.506  INFO 14856 --- [main] com.gateway.GatewayServiceApplication    : No active profile set, falling back to default profiles: default
-2020-06-13 14:37:52.801  WARN 14856 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2020-06-13 14:37:52.824  WARN 14856 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
-2020-06-13 14:37:53.018  INFO 14856 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3b625b9f-9dd8-3ccf-ac60-c693a69380a7
-2020-06-13 14:37:53.594  INFO 14856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8662 (http)
-2020-06-13 14:37:53.610  INFO 14856 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-06-13 14:37:53.611  INFO 14856 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-13 14:37:53.849  INFO 14856 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-06-13 14:37:53.850  INFO 14856 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2318 ms
-2020-06-13 14:37:53.973  WARN 14856 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2020-06-13 14:37:53.973  INFO 14856 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2020-06-13 14:37:53.981  INFO 14856 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@6a567f7b
-2020-06-13 14:37:54.854  INFO 14856 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+2020-06-15 14:16:40.214  INFO 9648 --- [main] com.gateway.GatewayServiceApplication    : No active profile set, falling back to default profiles: default
+2020-06-15 14:16:47.144  WARN 9648 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-06-15 14:16:47.193  WARN 9648 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2020-06-15 14:16:47.628  INFO 9648 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3b625b9f-9dd8-3ccf-ac60-c693a69380a7
+2020-06-15 14:16:49.529  INFO 9648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8662 (https)
+2020-06-15 14:16:49.578  INFO 9648 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-15 14:16:49.580  INFO 9648 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-15 14:16:50.904  INFO 9648 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-15 14:16:50.908  INFO 9648 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 10611 ms
+2020-06-15 14:16:51.235  WARN 9648 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-15 14:16:51.235  INFO 9648 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-15 14:16:51.257  INFO 9648 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2dc39b53
+2020-06-15 14:16:58.169  INFO 9648 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 27c060c9-4e4d-4253-b50f-192433138ad5
+Using generated security password: ab5c5127-ce91-4425-a99f-b9d95ab85d22
 
-2020-06-13 14:37:54.995  INFO 14856 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@44fb6ebd, org.springframework.security.web.context.SecurityContextPersistenceFilter@8ac12e6, org.springframework.security.web.header.HeaderWriterFilter@38732372, org.springframework.security.web.authentication.logout.LogoutFilter@7493d937, com.gateway.jwt.JwtTokenAuthenticationFilter@5da57a64, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@734fbae3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@559d19c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5cdf221a, org.springframework.security.web.session.SessionManagementFilter@6c9bf3b5, org.springframework.security.web.access.ExceptionTranslationFilter@36df4c26, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@46ea78f0]
-2020-06-13 14:37:55.028  WARN 14856 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2020-06-13 14:37:55.029  INFO 14856 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2020-06-13 14:37:55.204  INFO 14856 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-13 14:37:56.131  WARN 14856 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2020-06-13 14:37:56.374  INFO 14856 --- [main] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
-2020-06-13 14:37:56.388  INFO 14856 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2020-06-13 14:37:56.469  INFO 14856 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2020-06-13 14:37:56.498  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2020-06-13 14:37:56.588  INFO 14856 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2020-06-13 14:37:56.588  INFO 14856 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2020-06-13 14:37:56.708  INFO 14856 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2020-06-13 14:37:56.708  INFO 14856 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2020-06-13 14:37:56.887  INFO 14856 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-13 14:37:57.195  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2020-06-13 14:37:57.196  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2020-06-13 14:37:57.196  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2020-06-13 14:37:57.196  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2020-06-13 14:37:57.196  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2020-06-13 14:37:57.196  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2020-06-13 14:37:57.197  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2020-06-13 14:37:57.354  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2020-06-13 14:37:57.357  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2020-06-13 14:37:57.361  INFO 14856 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2020-06-13 14:37:57.365  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1592051877364 with initial instances count: 4
-2020-06-13 14:37:57.368  INFO 14856 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
-2020-06-13 14:37:57.368  INFO 14856 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592051877368, current=UP, previous=STARTING]
-2020-06-13 14:37:57.371  INFO 14856 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662: registering service...
-2020-06-13 14:37:57.405  INFO 14856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8662 (http) with context path ''
-2020-06-13 14:37:57.409  INFO 14856 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8662
-2020-06-13 14:37:57.416  INFO 14856 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - registration status: 204
-2020-06-13 14:37:57.867  INFO 14856 --- [main] com.gateway.GatewayServiceApplication    : Started GatewayServiceApplication in 8.674 seconds (JVM running for 10.842)
-2020-06-13 14:37:58.762  INFO 14856 --- [RMI TCP Connection(2)-192.168.56.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-13 14:37:58.763  INFO 14856 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-06-13 14:37:58.774  INFO 14856 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
-2020-06-14 14:50:01.287  INFO 13160 --- [main] com.gateway.GatewayServiceApplication    : No active profile set, falling back to default profiles: default
-2020-06-14 14:50:03.536  WARN 13160 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2020-06-14 14:50:03.564  WARN 13160 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
-2020-06-14 14:50:03.792  INFO 13160 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3b625b9f-9dd8-3ccf-ac60-c693a69380a7
-2020-06-14 14:50:04.473  INFO 13160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8662 (http)
-2020-06-14 14:50:04.486  INFO 13160 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-06-14 14:50:04.486  INFO 13160 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-14 14:50:04.753  INFO 13160 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-06-14 14:50:04.753  INFO 13160 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3436 ms
-2020-06-14 14:50:04.865  WARN 13160 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2020-06-14 14:50:04.865  INFO 13160 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2020-06-14 14:50:04.873  INFO 13160 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@7ec08115
-2020-06-14 14:50:05.857  INFO 13160 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: fcc30792-708c-4e3a-8203-a1a08a654521
-
-2020-06-14 14:50:06.025  INFO 13160 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2fee69a1, org.springframework.security.web.context.SecurityContextPersistenceFilter@28bf82d9, org.springframework.security.web.header.HeaderWriterFilter@5be51aa, org.springframework.security.web.authentication.logout.LogoutFilter@43588265, com.gateway.jwt.JwtTokenAuthenticationFilter@4d25f816, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@61a704d3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ffd0114, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c6c2a73, org.springframework.security.web.session.SessionManagementFilter@31228d83, org.springframework.security.web.access.ExceptionTranslationFilter@74b1838, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25d911a]
-2020-06-14 14:50:06.062  WARN 13160 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2020-06-14 14:50:06.063  INFO 13160 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2020-06-14 14:50:06.247  INFO 13160 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-14 14:50:07.358  WARN 13160 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2020-06-14 14:50:07.706  INFO 13160 --- [main] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
-2020-06-14 14:50:07.719  INFO 13160 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2020-06-14 14:50:07.816  INFO 13160 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2020-06-14 14:50:07.848  INFO 13160 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2020-06-14 14:50:07.898  INFO 13160 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2020-06-14 14:50:07.898  INFO 13160 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2020-06-14 14:50:08.078  INFO 13160 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2020-06-14 14:50:08.079  INFO 13160 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2020-06-14 14:50:08.321  INFO 13160 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 14:50:08.633  INFO 13160 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2020-06-14 14:50:08.633  INFO 13160 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2020-06-14 14:50:08.634  INFO 13160 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2020-06-14 14:50:08.634  INFO 13160 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2020-06-14 14:50:08.634  INFO 13160 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2020-06-14 14:50:08.634  INFO 13160 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2020-06-14 14:50:08.634  INFO 13160 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2020-06-14 14:50:08.728  WARN 13160 --- [main] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failure with status code 400; retrying on another server if available
-2020-06-14 14:50:08.734 ERROR 13160 --- [main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - was unable to refresh its cache! status = Cannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1074) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:988) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:433) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:279) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:275) [eureka-client-1.9.17.jar:1.9.17]
-	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:67) [spring-cloud-netflix-eureka-client-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:324) [spring-cloud-netflix-eureka-client-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:359) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:389) ~[spring-cloud-context-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:186) ~[spring-cloud-context-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:356) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) [spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:129) ~[spring-cloud-netflix-eureka-client-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:117) ~[spring-cloud-netflix-eureka-client-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282) ~[spring-core-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:499) ~[spring-cloud-context-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$a500cfda.getEurekaClient(<generated>) ~[spring-cloud-netflix-eureka-client-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:57) ~[spring-cloud-netflix-eureka-client-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:38) ~[spring-cloud-netflix-eureka-client-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:83) ~[spring-cloud-netflix-eureka-client-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:182) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:894) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
-	at com.gateway.GatewayServiceApplication.main(GatewayServiceApplication.java:14) ~[classes/:na]
-
-2020-06-14 14:50:08.735  WARN 13160 --- [main] com.netflix.discovery.DiscoveryClient    : Using default backup registry implementation which does not do anything.
-2020-06-14 14:50:08.738  INFO 13160 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2020-06-14 14:50:08.741  INFO 13160 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2020-06-14 14:50:08.746  INFO 13160 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1592139008745 with initial instances count: 0
-2020-06-14 14:50:08.748  INFO 13160 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
-2020-06-14 14:50:08.749  INFO 13160 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592139008749, current=UP, previous=STARTING]
-2020-06-14 14:50:08.751  INFO 13160 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662: registering service...
-2020-06-14 14:50:08.780  INFO 13160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8662 (http) with context path ''
-2020-06-14 14:50:08.782  INFO 13160 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8662
-2020-06-14 14:50:08.846  WARN 13160 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failure with status code 400; retrying on another server if available
-2020-06-14 14:50:08.848  WARN 13160 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - registration failed Cannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:850) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) [eureka-client-1.9.17.jar:1.9.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514) [na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
-	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-
-2020-06-14 14:50:08.850  WARN 13160 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:850) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) [eureka-client-1.9.17.jar:1.9.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514) [na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
-	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-
-2020-06-14 14:50:09.389  INFO 13160 --- [main] com.gateway.GatewayServiceApplication    : Started GatewayServiceApplication in 10.93 seconds (JVM running for 13.054)
-2020-06-14 14:50:10.147  INFO 13160 --- [RMI TCP Connection(4)-192.168.56.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-14 14:50:10.148  INFO 13160 --- [RMI TCP Connection(4)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-06-14 14:50:10.161  INFO 13160 --- [RMI TCP Connection(4)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
-2020-06-14 14:50:38.740  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2020-06-14 14:50:38.741  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2020-06-14 14:50:38.742  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2020-06-14 14:50:38.742  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2020-06-14 14:50:38.743  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2020-06-14 14:50:38.743  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2020-06-14 14:50:38.743  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2020-06-14 14:50:38.748  WARN 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failure with status code 400; retrying on another server if available
-2020-06-14 14:50:38.749 ERROR 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - was unable to refresh its cache! status = Cannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1074) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:988) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1510) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1477) [eureka-client-1.9.17.jar:1.9.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514) [na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
-	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-
-2020-06-14 14:50:38.754 ERROR 13160 --- [DiscoveryClient-HeartbeatExecutor-0] c.sun.jersey.api.client.ClientResponse   : A message body reader for Java class com.netflix.appinfo.InstanceInfo, and Java type class com.netflix.appinfo.InstanceInfo, and MIME media type text/plain; charset=UTF-8 was not found
-2020-06-14 14:50:38.755 ERROR 13160 --- [DiscoveryClient-HeartbeatExecutor-0] c.sun.jersey.api.client.ClientResponse   : The registered message body readers compatible with the MIME media type are:
-*/* ->
-  com.sun.jersey.core.impl.provider.entity.FormProvider
-  com.sun.jersey.core.impl.provider.entity.StringProvider
-  com.sun.jersey.core.impl.provider.entity.ByteArrayProvider
-  com.sun.jersey.core.impl.provider.entity.FileProvider
-  com.sun.jersey.core.impl.provider.entity.InputStreamProvider
-  com.sun.jersey.core.impl.provider.entity.ReaderProvider
-  com.sun.jersey.core.impl.provider.entity.DocumentProvider
-  com.sun.jersey.core.impl.provider.entity.SourceProvider$StreamSourceReader
-  com.sun.jersey.core.impl.provider.entity.SourceProvider$SAXSourceReader
-  com.sun.jersey.core.impl.provider.entity.SourceProvider$DOMSourceReader
-  com.sun.jersey.core.impl.provider.entity.EntityHolderReader
-text/plain; charset=UTF-8 ->
-  com.sun.jersey.core.impl.provider.entity.StringProvider
-  com.sun.jersey.core.impl.provider.entity.ReaderProvider
-
-2020-06-14 14:50:38.756 ERROR 13160 --- [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
-
-com.sun.jersey.api.client.ClientHandlerException: A message body reader for Java class com.netflix.appinfo.InstanceInfo, and Java type class com.netflix.appinfo.InstanceInfo, and MIME media type text/plain; charset=UTF-8 was not found
-	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:630) ~[jersey-client-1.19.1.jar:1.19.1]
-	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:586) ~[jersey-client-1.19.1.jar:1.19.1]
-	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:107) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:867) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1436) [eureka-client-1.9.17.jar:1.9.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514) [na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
-	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-
-2020-06-14 14:50:38.757  WARN 13160 --- [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: A message body reader for Java class com.netflix.appinfo.InstanceInfo, and Java type class com.netflix.appinfo.InstanceInfo, and MIME media type text/plain; charset=UTF-8 was not found
-2020-06-14 14:50:38.758 ERROR 13160 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - was unable to send heartbeat!
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:867) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1436) [eureka-client-1.9.17.jar:1.9.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514) [na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
-	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-
-2020-06-14 14:50:38.853  INFO 13160 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662: registering service...
-2020-06-14 14:50:38.864  WARN 13160 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failure with status code 400; retrying on another server if available
-2020-06-14 14:50:38.865  WARN 13160 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - registration failed Cannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:850) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) [eureka-client-1.9.17.jar:1.9.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514) [na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
-	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-
-2020-06-14 14:50:38.867  WARN 13160 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:850) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.9.17.jar:1.9.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514) [na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
-	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-
-2020-06-14 14:51:08.751  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2020-06-14 14:51:08.751  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2020-06-14 14:51:08.752  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2020-06-14 14:51:08.752  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2020-06-14 14:51:08.752  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2020-06-14 14:51:08.752  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2020-06-14 14:51:08.752  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2020-06-14 14:51:08.755  WARN 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failure with status code 400; retrying on another server if available
-2020-06-14 14:51:08.756 ERROR 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - was unable to refresh its cache! status = Cannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1074) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:988) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1510) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1477) [eureka-client-1.9.17.jar:1.9.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514) [na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
-	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-
-2020-06-14 14:51:08.764 ERROR 13160 --- [DiscoveryClient-HeartbeatExecutor-0] c.sun.jersey.api.client.ClientResponse   : A message body reader for Java class com.netflix.appinfo.InstanceInfo, and Java type class com.netflix.appinfo.InstanceInfo, and MIME media type text/plain; charset=UTF-8 was not found
-2020-06-14 14:51:08.765 ERROR 13160 --- [DiscoveryClient-HeartbeatExecutor-0] c.sun.jersey.api.client.ClientResponse   : The registered message body readers compatible with the MIME media type are:
-*/* ->
-  com.sun.jersey.core.impl.provider.entity.FormProvider
-  com.sun.jersey.core.impl.provider.entity.StringProvider
-  com.sun.jersey.core.impl.provider.entity.ByteArrayProvider
-  com.sun.jersey.core.impl.provider.entity.FileProvider
-  com.sun.jersey.core.impl.provider.entity.InputStreamProvider
-  com.sun.jersey.core.impl.provider.entity.ReaderProvider
-  com.sun.jersey.core.impl.provider.entity.DocumentProvider
-  com.sun.jersey.core.impl.provider.entity.SourceProvider$StreamSourceReader
-  com.sun.jersey.core.impl.provider.entity.SourceProvider$SAXSourceReader
-  com.sun.jersey.core.impl.provider.entity.SourceProvider$DOMSourceReader
-  com.sun.jersey.core.impl.provider.entity.EntityHolderReader
-text/plain; charset=UTF-8 ->
-  com.sun.jersey.core.impl.provider.entity.StringProvider
-  com.sun.jersey.core.impl.provider.entity.ReaderProvider
-
-2020-06-14 14:51:08.765 ERROR 13160 --- [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
-
-com.sun.jersey.api.client.ClientHandlerException: A message body reader for Java class com.netflix.appinfo.InstanceInfo, and Java type class com.netflix.appinfo.InstanceInfo, and MIME media type text/plain; charset=UTF-8 was not found
-	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:630) ~[jersey-client-1.19.1.jar:1.19.1]
-	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:586) ~[jersey-client-1.19.1.jar:1.19.1]
-	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:107) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:867) [eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1436) [eureka-client-1.9.17.jar:1.9.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514) [na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
-	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-
-2020-06-14 14:51:08.766  WARN 13160 --- [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: A message body reader for Java class com.netflix.appinfo.InstanceInfo, and Java type class com.netflix.appinfo.InstanceInfo, and MIME media type text/plain; charset=UTF-8 was not found
-2020-06-14 14:51:08.766 ERROR 13160 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - was unable to send heartbeat!
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:867) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1436) [eureka-client-1.9.17.jar:1.9.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514) [na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
-	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-
-2020-06-14 14:51:08.868  INFO 13160 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662: registering service...
-2020-06-14 14:51:08.871  WARN 13160 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failure with status code 400; retrying on another server if available
-2020-06-14 14:51:08.872  WARN 13160 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - registration failed Cannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:850) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) [eureka-client-1.9.17.jar:1.9.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514) [na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
-	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-
-2020-06-14 14:51:08.872  WARN 13160 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:850) ~[eureka-client-1.9.17.jar:1.9.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.9.17.jar:1.9.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514) [na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
-	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-
-2020-06-14 14:51:38.757  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2020-06-14 14:51:38.757  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2020-06-14 14:51:38.757  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2020-06-14 14:51:38.757  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2020-06-14 14:51:38.757  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2020-06-14 14:51:38.757  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2020-06-14 14:51:38.757  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2020-06-14 14:51:38.790  INFO 13160 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - Re-registering apps/GATEWAY-SERVICE
-2020-06-14 14:51:38.791  INFO 13160 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662: registering service...
-2020-06-14 14:51:38.816  INFO 13160 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - registration status: 204
-2020-06-14 14:51:38.856  INFO 13160 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2020-06-14 14:52:21.480  INFO 14908 --- [main] com.gateway.GatewayServiceApplication    : No active profile set, falling back to default profiles: default
-2020-06-14 14:52:22.984  WARN 14908 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2020-06-14 14:52:23.003  WARN 14908 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
-2020-06-14 14:52:23.213  INFO 14908 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3b625b9f-9dd8-3ccf-ac60-c693a69380a7
-2020-06-14 14:52:23.875  INFO 14908 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8662 (https)
-2020-06-14 14:52:23.886  INFO 14908 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-06-14 14:52:23.887  INFO 14908 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-14 14:52:24.218  INFO 14908 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-06-14 14:52:24.219  INFO 14908 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2690 ms
-2020-06-14 14:52:24.341  WARN 14908 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2020-06-14 14:52:24.342  INFO 14908 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2020-06-14 14:52:24.360  INFO 14908 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@51ac12ac
-2020-06-14 14:52:25.390  INFO 14908 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 7d994984-e75f-4bc2-9c1a-7352622d88a4
-
-2020-06-14 14:52:25.504  INFO 14908 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f883d90, org.springframework.security.web.context.SecurityContextPersistenceFilter@14ed7ddf, org.springframework.security.web.header.HeaderWriterFilter@ba4f370, org.springframework.security.web.authentication.logout.LogoutFilter@3b770d07, com.gateway.jwt.JwtTokenAuthenticationFilter@7e58f697, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@446c8c72, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ea48c37, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44384b4a, org.springframework.security.web.session.SessionManagementFilter@67b560fe, org.springframework.security.web.access.ExceptionTranslationFilter@d0b814d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@85ab964]
-2020-06-14 14:52:25.545  WARN 14908 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2020-06-14 14:52:25.546  INFO 14908 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2020-06-14 14:52:25.779  INFO 14908 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-14 14:52:26.811  WARN 14908 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2020-06-14 14:52:27.099  INFO 14908 --- [main] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
-2020-06-14 14:52:27.112  INFO 14908 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2020-06-14 14:52:27.205  INFO 14908 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2020-06-14 14:52:27.235  INFO 14908 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2020-06-14 14:52:27.294  INFO 14908 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2020-06-14 14:52:27.294  INFO 14908 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2020-06-14 14:52:27.456  INFO 14908 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2020-06-14 14:52:27.456  INFO 14908 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2020-06-14 14:52:27.662  INFO 14908 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 14:52:27.996  INFO 14908 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2020-06-14 14:52:27.996  INFO 14908 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2020-06-14 14:52:27.996  INFO 14908 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2020-06-14 14:52:27.996  INFO 14908 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2020-06-14 14:52:27.996  INFO 14908 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2020-06-14 14:52:27.997  INFO 14908 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2020-06-14 14:52:27.997  INFO 14908 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2020-06-14 14:52:28.170  INFO 14908 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2020-06-14 14:52:28.173  INFO 14908 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2020-06-14 14:52:28.176  INFO 14908 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2020-06-14 14:52:28.181  INFO 14908 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1592139148179 with initial instances count: 2
-2020-06-14 14:52:28.184  INFO 14908 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
-2020-06-14 14:52:28.184  INFO 14908 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592139148184, current=UP, previous=STARTING]
-2020-06-14 14:52:28.186  INFO 14908 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662: registering service...
-2020-06-14 14:52:28.244  INFO 14908 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - registration status: 204
-2020-06-14 14:52:28.622  INFO 14908 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8662 (https) with context path ''
-2020-06-14 14:52:28.624  INFO 14908 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8662
-2020-06-14 14:52:29.107  INFO 14908 --- [main] com.gateway.GatewayServiceApplication    : Started GatewayServiceApplication in 11.761 seconds (JVM running for 14.257)
-2020-06-14 14:52:29.661  INFO 14908 --- [RMI TCP Connection(1)-192.168.56.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-14 14:52:29.661  INFO 14908 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-06-14 14:52:29.674  INFO 14908 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
-2020-06-14 14:57:28.044  INFO 14908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 15:02:28.049  INFO 14908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 15:07:28.052  INFO 14908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 15:11:56.435  INFO 14908 --- [https-jsse-nio-8662-exec-6] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-authorization-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
-2020-06-14 15:11:56.475  INFO 14908 --- [https-jsse-nio-8662-exec-6] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-eureka-authorization-service
-2020-06-14 15:11:56.476  INFO 14908 --- [https-jsse-nio-8662-exec-6] c.netflix.loadbalancer.BaseLoadBalancer  : Client: eureka-authorization-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-authorization-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
-2020-06-14 15:11:56.485  INFO 14908 --- [https-jsse-nio-8662-exec-6] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
-2020-06-14 15:11:56.491  INFO 14908 --- [https-jsse-nio-8662-exec-6] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client eureka-authorization-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-authorization-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@4c2d1282
-2020-06-14 15:11:56.521  WARN 14908 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
-2020-06-14 15:11:56.823  WARN 14908 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.filters.post.SendErrorFilter   : Error during filtering
+2020-06-15 14:16:58.427  INFO 9648 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75839695, org.springframework.security.web.context.SecurityContextPersistenceFilter@5ed25612, org.springframework.security.web.header.HeaderWriterFilter@1f172892, org.springframework.security.web.authentication.logout.LogoutFilter@38bc5ac0, com.gateway.jwt.JwtTokenAuthenticationFilter@21a6a494, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@56e5c8fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@72b40f87, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@794c5f5e, org.springframework.security.web.session.SessionManagementFilter@656ec00d, org.springframework.security.web.access.ExceptionTranslationFilter@719c1faf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@46b6701e]
+2020-06-15 14:16:59.268  WARN 9648 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-15 14:16:59.269  INFO 9648 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-15 14:16:59.664  INFO 9648 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-15 14:17:01.946  WARN 9648 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-06-15 14:17:02.784  INFO 9648 --- [main] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
+2020-06-15 14:17:02.813  INFO 9648 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-06-15 14:17:03.027  INFO 9648 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-06-15 14:17:03.123  INFO 9648 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-06-15 14:17:03.228  INFO 9648 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-06-15 14:17:03.234  INFO 9648 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-06-15 14:17:03.575  INFO 9648 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-06-15 14:17:03.576  INFO 9648 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-06-15 14:17:03.981  INFO 9648 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 14:17:05.112  INFO 9648 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-06-15 14:17:05.113  INFO 9648 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-06-15 14:17:05.114  INFO 9648 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-06-15 14:17:05.114  INFO 9648 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-06-15 14:17:05.116  INFO 9648 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-06-15 14:17:05.117  INFO 9648 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-06-15 14:17:05.117  INFO 9648 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-06-15 14:17:05.311  INFO 9648 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-06-15 14:17:05.324  INFO 9648 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-06-15 14:17:05.330  INFO 9648 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-06-15 14:17:05.338  INFO 9648 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1592223425336 with initial instances count: 0
+2020-06-15 14:17:05.342  INFO 9648 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
+2020-06-15 14:17:05.343  INFO 9648 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592223425343, current=UP, previous=STARTING]
+2020-06-15 14:17:05.378  INFO 9648 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662: registering service...
+2020-06-15 14:17:05.579  INFO 9648 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - registration status: 204
+2020-06-15 14:17:06.758  INFO 9648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8662 (https) with context path ''
+2020-06-15 14:17:06.762  INFO 9648 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8662
+2020-06-15 14:17:07.495  INFO 9648 --- [https-jsse-nio-8662-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-15 14:17:07.496  INFO 9648 --- [https-jsse-nio-8662-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-15 14:17:07.532  INFO 9648 --- [https-jsse-nio-8662-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 35 ms
+2020-06-15 14:17:07.895  INFO 9648 --- [main] com.gateway.GatewayServiceApplication    : Started GatewayServiceApplication in 31.385 seconds (JVM running for 34.653)
+2020-06-15 14:17:07.960  INFO 9648 --- [https-jsse-nio-8662-exec-6] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-authorization-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-15 14:17:08.008  INFO 9648 --- [https-jsse-nio-8662-exec-6] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-eureka-authorization-service
+2020-06-15 14:17:08.009  INFO 9648 --- [https-jsse-nio-8662-exec-6] c.netflix.loadbalancer.BaseLoadBalancer  : Client: eureka-authorization-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-authorization-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-06-15 14:17:08.021  INFO 9648 --- [https-jsse-nio-8662-exec-6] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2020-06-15 14:17:08.031  INFO 9648 --- [https-jsse-nio-8662-exec-6] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client eureka-authorization-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-authorization-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@25545390
+2020-06-15 14:17:08.075  WARN 9648 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:17:08.632  WARN 9648 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.filters.post.SendErrorFilter   : Error during filtering
 
 com.netflix.zuul.exception.ZuulException: Forwarding error
 	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.handleException(RibbonRoutingFilter.java:198) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
@@ -705,196 +241,198 @@ Caused by: com.netflix.client.ClientException: Load balancer does not have avail
 	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.forward(RibbonRoutingFilter.java:167) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
 	... 89 common frames omitted
 
-2020-06-14 15:12:28.055  INFO 14908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-06-14 15:13:10.816  WARN 14908 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
-2020-06-14 15:13:10.821  WARN 14908 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.filters.post.SendErrorFilter   : Error during filtering
+2020-06-15 14:17:35.328  INFO 9648 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-06-15 14:17:35.330  INFO 9648 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-06-15 14:17:35.332  INFO 9648 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-06-15 14:17:35.332  INFO 9648 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-06-15 14:17:35.332  INFO 9648 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-06-15 14:17:35.332  INFO 9648 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2020-06-15 14:17:35.333  INFO 9648 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-06-15 14:17:35.452  INFO 9648 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-06-15 14:17:39.068  INFO 9648 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-authorization-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-15 14:18:49.293  INFO 4204 --- [main] com.gateway.GatewayServiceApplication    : No active profile set, falling back to default profiles: default
+2020-06-15 14:18:50.654  WARN 4204 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-06-15 14:18:50.670  WARN 4204 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2020-06-15 14:18:50.844  INFO 4204 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3b625b9f-9dd8-3ccf-ac60-c693a69380a7
+2020-06-15 14:18:51.473  INFO 4204 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8662 (https)
+2020-06-15 14:18:51.488  INFO 4204 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-15 14:18:51.489  INFO 4204 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-15 14:18:51.759  INFO 4204 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-15 14:18:51.759  INFO 4204 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2428 ms
+2020-06-15 14:18:51.900  WARN 4204 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-15 14:18:51.901  INFO 4204 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-15 14:18:51.910  INFO 4204 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@11f23038
+2020-06-15 14:18:52.789  INFO 4204 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-com.netflix.zuul.exception.ZuulException: Forwarding error
-	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.handleException(RibbonRoutingFilter.java:198) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.forward(RibbonRoutingFilter.java:173) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.run(RibbonRoutingFilter.java:119) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at com.netflix.zuul.ZuulFilter.runFilter(ZuulFilter.java:117) ~[zuul-core-1.3.1.jar:1.3.1]
-	at com.netflix.zuul.FilterProcessor.processZuulFilter(FilterProcessor.java:193) ~[zuul-core-1.3.1.jar:1.3.1]
-	at com.netflix.zuul.FilterProcessor.runFilters(FilterProcessor.java:157) ~[zuul-core-1.3.1.jar:1.3.1]
-	at com.netflix.zuul.FilterProcessor.route(FilterProcessor.java:118) ~[zuul-core-1.3.1.jar:1.3.1]
-	at com.netflix.zuul.ZuulRunner.route(ZuulRunner.java:96) ~[zuul-core-1.3.1.jar:1.3.1]
-	at com.netflix.zuul.http.ZuulServlet.route(ZuulServlet.java:116) ~[zuul-core-1.3.1.jar:1.3.1]
-	at com.netflix.zuul.http.ZuulServlet.service(ZuulServlet.java:81) ~[zuul-core-1.3.1.jar:1.3.1]
-	at org.springframework.web.servlet.mvc.ServletWrappingController.handleRequestInternal(ServletWrappingController.java:166) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.cloud.netflix.zuul.web.ZuulController.handleRequest(ZuulController.java:45) [spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:52) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doOptions(FrameworkServlet.java:945) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:669) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.35.jar:9.0.35]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at com.gateway.jwt.JwtTokenAuthenticationFilter.doFilterInternal(JwtTokenAuthenticationFilter.java:39) [classes/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) [spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) [spring-boot-actuator-2.3.0.RELEASE.jar:2.3.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.35.jar:9.0.35]
-	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-Caused by: com.netflix.client.ClientException: Load balancer does not have available server for client: eureka-authorization-service
-	at com.netflix.loadbalancer.LoadBalancerContext.getServerFromLoadBalancer(LoadBalancerContext.java:483) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
-	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:184) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
-	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:180) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
-	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:94) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:42) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber$1.call(OperatorRetryWithPredicate.java:127) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.schedulers.TrampolineScheduler$InnerCurrentThreadScheduler.enqueue(TrampolineScheduler.java:73) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.schedulers.TrampolineScheduler$InnerCurrentThreadScheduler.schedule(TrampolineScheduler.java:52) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber.onNext(OperatorRetryWithPredicate.java:79) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OperatorRetryWithPredicate$SourceSubscriber.onNext(OperatorRetryWithPredicate.java:45) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.util.ScalarSynchronousObservable$WeakSingleProducer.request(ScalarSynchronousObservable.java:276) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Subscriber.setProducer(Subscriber.java:209) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.util.ScalarSynchronousObservable$JustOnSubscribe.call(ScalarSynchronousObservable.java:138) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.util.ScalarSynchronousObservable$JustOnSubscribe.call(ScalarSynchronousObservable.java:129) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.subscribe(Observable.java:10423) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.subscribe(Observable.java:10390) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.observables.BlockingObservable.blockForSingle(BlockingObservable.java:443) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.observables.BlockingObservable.single(BlockingObservable.java:340) ~[rxjava-1.3.8.jar:1.3.8]
-	at com.netflix.client.AbstractLoadBalancerAwareClient.executeWithLoadBalancer(AbstractLoadBalancerAwareClient.java:112) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
-	at org.springframework.cloud.netflix.zuul.filters.route.support.AbstractRibbonCommand.run(AbstractRibbonCommand.java:221) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at org.springframework.cloud.netflix.zuul.filters.route.support.AbstractRibbonCommand.run(AbstractRibbonCommand.java:55) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:302) ~[hystrix-core-1.5.18.jar:1.5.18]
-	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:298) ~[hystrix-core-1.5.18.jar:1.5.18]
-	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:46) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeMap.call(OnSubscribeMap.java:48) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeMap.call(OnSubscribeMap.java:33) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.subscribe(Observable.java:10423) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.Observable.subscribe(Observable.java:10390) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.internal.operators.BlockingOperatorToFuture.toFuture(BlockingOperatorToFuture.java:51) ~[rxjava-1.3.8.jar:1.3.8]
-	at rx.observables.BlockingObservable.toFuture(BlockingObservable.java:410) ~[rxjava-1.3.8.jar:1.3.8]
-	at com.netflix.hystrix.HystrixCommand.queue(HystrixCommand.java:378) ~[hystrix-core-1.5.18.jar:1.5.18]
-	at com.netflix.hystrix.HystrixCommand.execute(HystrixCommand.java:344) ~[hystrix-core-1.5.18.jar:1.5.18]
-	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.forward(RibbonRoutingFilter.java:167) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
-	... 89 common frames omitted
+Using generated security password: 33a54652-2a89-44ac-b359-7db9d12057dc
 
-2020-06-14 15:13:33.852  WARN 14908 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
-2020-06-14 15:13:33.859  WARN 14908 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.filters.post.SendErrorFilter   : Error during filtering
+2020-06-15 14:18:52.923  INFO 4204 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35dcd032, org.springframework.security.web.context.SecurityContextPersistenceFilter@3b770d07, org.springframework.security.web.header.HeaderWriterFilter@388f1258, org.springframework.security.web.authentication.logout.LogoutFilter@451816fd, com.gateway.jwt.JwtTokenAuthenticationFilter@4522d793, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1fcaea93, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a861417, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64dfb31d, org.springframework.security.web.session.SessionManagementFilter@64f32e9e, org.springframework.security.web.access.ExceptionTranslationFilter@3d0352, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f8c3646]
+2020-06-15 14:18:52.951  WARN 4204 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-06-15 14:18:52.953  INFO 4204 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-15 14:18:53.133  INFO 4204 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-15 14:18:54.167  WARN 4204 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-06-15 14:18:54.507  INFO 4204 --- [main] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
+2020-06-15 14:18:54.524  INFO 4204 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-06-15 14:18:54.624  INFO 4204 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-06-15 14:18:54.661  INFO 4204 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-06-15 14:18:54.784  INFO 4204 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-06-15 14:18:54.785  INFO 4204 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-06-15 14:18:54.925  INFO 4204 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-06-15 14:18:54.925  INFO 4204 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-06-15 14:18:55.120  INFO 4204 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 14:18:55.428  INFO 4204 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-06-15 14:18:55.429  INFO 4204 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-06-15 14:18:55.429  INFO 4204 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-06-15 14:18:55.430  INFO 4204 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-06-15 14:18:55.430  INFO 4204 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-06-15 14:18:55.430  INFO 4204 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-06-15 14:18:55.430  INFO 4204 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-06-15 14:18:55.600  INFO 4204 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-06-15 14:18:55.603  INFO 4204 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-06-15 14:18:55.606  INFO 4204 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-06-15 14:18:55.610  INFO 4204 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1592223535609 with initial instances count: 3
+2020-06-15 14:18:55.613  INFO 4204 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
+2020-06-15 14:18:55.613  INFO 4204 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1592223535613, current=UP, previous=STARTING]
+2020-06-15 14:18:55.616  INFO 4204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662: registering service...
+2020-06-15 14:18:55.692  INFO 4204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/DESKTOP-H4C7KO5:gateway-service:8662 - registration status: 204
+2020-06-15 14:18:56.281  INFO 4204 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8662 (https) with context path ''
+2020-06-15 14:18:56.283  INFO 4204 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8662
+2020-06-15 14:18:56.738  INFO 4204 --- [main] com.gateway.GatewayServiceApplication    : Started GatewayServiceApplication in 10.162 seconds (JVM running for 13.074)
+2020-06-15 14:18:57.603  INFO 4204 --- [RMI TCP Connection(6)-192.168.56.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-15 14:18:57.604  INFO 4204 --- [RMI TCP Connection(6)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-15 14:18:57.616  INFO 4204 --- [RMI TCP Connection(6)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-06-15 14:19:24.850  INFO 4204 --- [https-jsse-nio-8662-exec-6] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-authorization-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-15 14:19:24.892  INFO 4204 --- [https-jsse-nio-8662-exec-6] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-eureka-authorization-service
+2020-06-15 14:19:24.893  INFO 4204 --- [https-jsse-nio-8662-exec-6] c.netflix.loadbalancer.BaseLoadBalancer  : Client: eureka-authorization-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-authorization-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-06-15 14:19:24.905  INFO 4204 --- [https-jsse-nio-8662-exec-6] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2020-06-15 14:19:24.954  INFO 4204 --- [https-jsse-nio-8662-exec-6] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-authorization-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-15 14:19:24.960  INFO 4204 --- [https-jsse-nio-8662-exec-6] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client eureka-authorization-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-authorization-service,current list of Servers=[192.168.0.13:8095],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.0.13:8095;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@1e5b5a31
+2020-06-15 14:19:24.992  WARN 4204 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:19:25.444  WARN 4204 --- [https-jsse-nio-8662-exec-4] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:19:25.913  INFO 4204 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-authorization-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-15 14:20:05.931  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:20:05.951  WARN 4204 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:20:27.919  INFO 4204 --- [https-jsse-nio-8662-exec-2] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-admin-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-15 14:20:27.922  INFO 4204 --- [https-jsse-nio-8662-exec-2] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-eureka-admin-service
+2020-06-15 14:20:27.922  INFO 4204 --- [https-jsse-nio-8662-exec-2] c.netflix.loadbalancer.BaseLoadBalancer  : Client: eureka-admin-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-admin-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-06-15 14:20:27.924  INFO 4204 --- [https-jsse-nio-8662-exec-2] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2020-06-15 14:20:27.927  INFO 4204 --- [https-jsse-nio-8662-exec-2] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-admin-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-15 14:20:27.928  INFO 4204 --- [https-jsse-nio-8662-exec-2] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client eureka-admin-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=eureka-admin-service,current list of Servers=[192.168.0.13:8094],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.0.13:8094;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@4cba42eb
+2020-06-15 14:20:27.952  WARN 4204 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:20:27.953  WARN 4204 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:20:28.150  WARN 4204 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:20:28.926  INFO 4204 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: eureka-admin-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-06-15 14:22:49.702  WARN 4204 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:22:49.804  WARN 4204 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:23:12.648  WARN 4204 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:23:12.748  WARN 4204 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:23:55.434  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 14:25:54.753  WARN 4204 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:26:05.113  WARN 4204 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:26:05.134  WARN 4204 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:26:17.117  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:26:17.177  WARN 4204 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:26:49.751  WARN 4204 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:26:49.812  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:27:54.188  WARN 4204 --- [https-jsse-nio-8662-exec-4] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:27:54.214  WARN 4204 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:28:01.052  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:28:55.437  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 14:30:18.278  WARN 4204 --- [https-jsse-nio-8662-exec-9] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:30:18.344  WARN 4204 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:31:13.567  WARN 4204 --- [https-jsse-nio-8662-exec-4] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:31:36.451  WARN 4204 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:31:53.231  WARN 4204 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:32:27.306  WARN 4204 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:33:21.349  WARN 4204 --- [https-jsse-nio-8662-exec-9] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:33:55.441  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 14:34:15.177  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:34:31.077  WARN 4204 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:35:02.219  WARN 4204 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:35:25.509  WARN 4204 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:36:30.712  WARN 4204 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:36:47.539  WARN 4204 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:37:30.667  WARN 4204 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:38:20.880  WARN 4204 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:38:55.443  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 14:39:36.456  WARN 4204 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:39:47.398  WARN 4204 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:39:47.414  WARN 4204 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:39:53.901  WARN 4204 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:40:03.972  WARN 4204 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:40:04.006  WARN 4204 --- [https-jsse-nio-8662-exec-9] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:40:04.072  WARN 4204 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:40:07.398  WARN 4204 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:43:55.447  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 14:47:26.331  WARN 4204 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:47:35.404  WARN 4204 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:47:35.515  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:47:37.749  WARN 4204 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:48:55.448  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 14:53:10.001  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:53:35.257  WARN 4204 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:53:35.274  WARN 4204 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:53:40.850  WARN 4204 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:53:47.466  WARN 4204 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:53:47.545  WARN 4204 --- [https-jsse-nio-8662-exec-9] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:53:50.071  WARN 4204 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:53:55.449  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 14:53:56.094  WARN 4204 --- [https-jsse-nio-8662-exec-4] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:53:56.203  WARN 4204 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 14:58:55.451  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 15:03:55.454  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 15:06:30.575  WARN 4204 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:06:50.078  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:07:08.765  WARN 4204 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:07:33.223  WARN 4204 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:07:58.564  WARN 4204 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:08:55.456  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 15:13:55.461  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 15:18:55.472  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 15:23:55.474  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 15:28:55.476  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 15:33:55.478  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 15:38:55.487  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 15:43:55.489  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 15:47:54.012  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:47:54.134  WARN 4204 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:48:11.719  WARN 4204 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:48:11.739  WARN 4204 --- [https-jsse-nio-8662-exec-9] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:48:19.328  WARN 4204 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:48:22.501  WARN 4204 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:48:22.547  WARN 4204 --- [https-jsse-nio-8662-exec-4] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:48:28.466  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:48:29.917  WARN 4204 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:48:34.117  WARN 4204 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:48:55.491  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 15:51:52.947  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:51:55.907  WARN 4204 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:52:00.913  WARN 4204 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:52:04.482  WARN 4204 --- [https-jsse-nio-8662-exec-4] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:52:10.045  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:52:27.042  WARN 4204 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:52:32.564  WARN 4204 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:53:55.492  INFO 4204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-15 15:55:04.034  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:55:14.283  WARN 4204 --- [https-jsse-nio-8662-exec-7] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:55:14.317  WARN 4204 --- [https-jsse-nio-8662-exec-2] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-authorization-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:55:20.640  WARN 4204 --- [https-jsse-nio-8662-exec-8] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:55:27.979  WARN 4204 --- [https-jsse-nio-8662-exec-5] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:55:28.001  WARN 4204 --- [https-jsse-nio-8662-exec-3] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:55:33.086  WARN 4204 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:55:34.293  WARN 4204 --- [https-jsse-nio-8662-exec-9] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:55:38.007  WARN 4204 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:55:41.648  WARN 4204 --- [https-jsse-nio-8662-exec-4] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:55:45.374  WARN 4204 --- [https-jsse-nio-8662-exec-6] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:55:55.038  WARN 4204 --- [https-jsse-nio-8662-exec-9] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:55:55.081  WARN 4204 --- [https-jsse-nio-8662-exec-1] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:56:00.515  WARN 4204 --- [https-jsse-nio-8662-exec-4] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:56:27.088  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.f.r.s.AbstractRibbonCommand    : The Hystrix timeout of 160000000ms for the command eureka-admin-service is set lower than the combination of the Ribbon read and connect timeout, 320002000ms.
+2020-06-15 15:56:28.335  WARN 4204 --- [https-jsse-nio-8662-exec-10] o.s.c.n.z.filters.post.SendErrorFilter   : Error during filtering
 
 com.netflix.zuul.exception.ZuulException: Forwarding error
 	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.handleException(RibbonRoutingFilter.java:198) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
@@ -988,9 +526,98 @@ com.netflix.zuul.exception.ZuulException: Forwarding error
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.35.jar:9.0.35]
 	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-Caused by: com.netflix.client.ClientException: Load balancer does not have available server for client: eureka-authorization-service
-	at com.netflix.loadbalancer.LoadBalancerContext.getServerFromLoadBalancer(LoadBalancerContext.java:483) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
-	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:184) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+Caused by: com.netflix.client.ClientException: null
+	at com.netflix.client.AbstractLoadBalancerAwareClient.executeWithLoadBalancer(AbstractLoadBalancerAwareClient.java:118) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at org.springframework.cloud.netflix.zuul.filters.route.support.AbstractRibbonCommand.run(AbstractRibbonCommand.java:221) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.netflix.zuul.filters.route.support.AbstractRibbonCommand.run(AbstractRibbonCommand.java:55) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:302) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:298) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:46) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeMap.call(OnSubscribeMap.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeMap.call(OnSubscribeMap.java:33) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10423) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10390) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.BlockingOperatorToFuture.toFuture(BlockingOperatorToFuture.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.observables.BlockingObservable.toFuture(BlockingObservable.java:410) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.hystrix.HystrixCommand.queue(HystrixCommand.java:378) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.HystrixCommand.execute(HystrixCommand.java:344) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.forward(RibbonRoutingFilter.java:167) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	... 89 common frames omitted
+Caused by: java.lang.RuntimeException: org.apache.http.conn.ConnectTimeoutException: Connect to 192.168.0.13:8094 [/192.168.0.13] failed: connect timed out
+	at rx.exceptions.Exceptions.propagate(Exceptions.java:57) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.observables.BlockingObservable.blockForSingle(BlockingObservable.java:463) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.observables.BlockingObservable.single(BlockingObservable.java:340) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.client.AbstractLoadBalancerAwareClient.executeWithLoadBalancer(AbstractLoadBalancerAwareClient.java:112) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	... 151 common frames omitted
+Caused by: org.apache.http.conn.ConnectTimeoutException: Connect to 192.168.0.13:8094 [/192.168.0.13] failed: connect timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151) ~[httpclient-4.5.12.jar:4.5.12]
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.12.jar:4.5.12]
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.12.jar:4.5.12]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.12.jar:4.5.12]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.12.jar:4.5.12]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.12.jar:4.5.12]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.12.jar:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.12.jar:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108) ~[httpclient-4.5.12.jar:4.5.12]
+	at org.springframework.cloud.netflix.ribbon.apache.RibbonLoadBalancingHttpClient.execute(RibbonLoadBalancingHttpClient.java:83) ~[spring-cloud-netflix-ribbon-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.apache.RibbonLoadBalancingHttpClient.execute(RibbonLoadBalancingHttpClient.java:45) ~[spring-cloud-netflix-ribbon-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.netflix.client.AbstractLoadBalancerAwareClient$1.call(AbstractLoadBalancerAwareClient.java:104) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$3$1.call(LoadBalancerCommand.java:303) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$3$1.call(LoadBalancerCommand.java:287) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at rx.internal.util.ScalarSynchronousObservable$3.call(ScalarSynchronousObservable.java:231) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.util.ScalarSynchronousObservable$3.call(ScalarSynchronousObservable.java:228) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeConcatMap$ConcatMapSubscriber.drain(OnSubscribeConcatMap.java:286) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeConcatMap$ConcatMapSubscriber.onNext(OnSubscribeConcatMap.java:144) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:185) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
 	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:180) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
 	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
 	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:94) ~[rxjava-1.3.8.jar:1.3.8]
@@ -1014,6 +641,7 @@ Caused by: com.netflix.client.ClientException: Load balancer does not have avail
 	at rx.Observable.subscribe(Observable.java:10423) ~[rxjava-1.3.8.jar:1.3.8]
 	at rx.Observable.subscribe(Observable.java:10390) ~[rxjava-1.3.8.jar:1.3.8]
 	at rx.observables.BlockingObservable.blockForSingle(BlockingObservable.java:443) ~[rxjava-1.3.8.jar:1.3.8]
+
 	at rx.observables.BlockingObservable.single(BlockingObservable.java:340) ~[rxjava-1.3.8.jar:1.3.8]
 	at com.netflix.client.AbstractLoadBalancerAwareClient.executeWithLoadBalancer(AbstractLoadBalancerAwareClient.java:112) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
 	at org.springframework.cloud.netflix.zuul.filters.route.support.AbstractRibbonCommand.run(AbstractRibbonCommand.java:221) ~[spring-cloud-netflix-zuul-2.2.2.RELEASE.jar:2.2.2.RELEASE]
@@ -2463,5 +2091,4 @@ Caused by: com.netflix.client.ClientException: Load balancer does not have avail
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:168) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978) [spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
 	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
-
 

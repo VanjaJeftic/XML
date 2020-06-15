@@ -19,9 +19,11 @@ export class PrikazSvihKlasaVozilaComponent implements OnInit {
   }
 
   deleteKlaseVozila(klasa: KlasaVozila): void {
+   
     console.log("brisanje klase");
     this.klasaServis.deleteKlaseVozila(klasa)
       .subscribe( data => {
+        window.alert("Uspesno ste izbrisali klasu vozila!");
         this.klaseVozila = this.klaseVozila.filter(u => u !== klasa);
       })
   };

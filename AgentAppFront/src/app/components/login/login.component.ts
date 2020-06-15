@@ -32,10 +32,13 @@ export class LoginComponent implements OnInit {
             console.log(localStorage.getItem('usernameStorage'));
             for(let i of user.authorities)
             if(i.authority == 'log_ADMIN'){
+              window.alert("Uspesno ste se ulogovali");
               this.router.navigateByUrl('administrator');
             }else if(i.authority == 'log_AGENT'){
+              window.alert("Uspesno ste se ulogovali");
               this.router.navigateByUrl('agent');
             }else if(i.authority == 'log_USER'){
+              window.alert("Uspesno ste se ulogovali");
               this.router.navigateByUrl('user');
             }/*else {
               alert('Nazalost, nemate dozvolu na posetite ovu stranicu.');

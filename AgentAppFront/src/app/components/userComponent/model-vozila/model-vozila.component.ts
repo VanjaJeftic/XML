@@ -27,6 +27,7 @@ export class ModelVozilaComponent implements OnInit {
 
 
   public onSubmit(): void{
+    window.alert("Uspesno ste dodali model vozila");
     event.preventDefault();
     console.log("Usao u onsubmit modela vozila"+ this.markaVozila.naziv );
     let res=this.modelService.saveModel(this.modelVozila);

@@ -24,6 +24,7 @@ marke$;
 
 
 public onSubmitIzmenaModela(): void{
+  window.alert("Uspesno ste izmenili model vozila");
   event.preventDefault();
   let res=this.modelServis.izmenaModelaVozila(this.modelVozila);
   this.router.navigateByUrl('/listaModelaVozila');

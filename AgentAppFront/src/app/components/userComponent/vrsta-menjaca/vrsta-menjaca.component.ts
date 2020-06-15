@@ -19,6 +19,7 @@ export class VrstaMenjacaComponent implements OnInit {
 
 
   public onSubmit(): void{
+    window.alert("Uspesno ste dodali vrstu menjaca!");
     event.preventDefault();
     console.log("Usao u onsubmit vrste menjaca"+ this.vrstaMenjaca.naziv );
     let res=this.vrstaMenjacaServis.saveMenjac(this.vrstaMenjaca);

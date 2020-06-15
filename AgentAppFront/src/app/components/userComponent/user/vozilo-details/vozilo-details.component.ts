@@ -97,6 +97,7 @@ export class VoziloDetailsComponent implements OnInit {
   }
 
   onOdjaviMe(){
+    window.alert("Uspesno ste se odjavili!");
     window.localStorage.clear();
     this.authService.logout();
   }

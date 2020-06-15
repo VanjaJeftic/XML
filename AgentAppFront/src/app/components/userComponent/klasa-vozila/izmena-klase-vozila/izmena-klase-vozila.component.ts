@@ -25,6 +25,7 @@ export class IzmenaKlaseVozilaComponent implements OnInit {
   }
 
 public onSubmitIzmenaKlase(): void{
+  window.alert("Uspesno ste izmenili klasu vozila");
   event.preventDefault();
   let res=this.klasaVozilaServis.izmenaKlase(this.klasaVozila);
   this.router.navigateByUrl('/listaKlasaVozila');

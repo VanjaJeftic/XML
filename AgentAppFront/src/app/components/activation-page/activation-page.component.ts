@@ -14,7 +14,7 @@ export class ActivationPageComponent implements OnInit {
   ngOnInit() {
     let idSelektovanog = parseInt(this.route.snapshot.paramMap.get('id'));
     console.log(idSelektovanog);
-
+    window.alert("Uspesno ste aktivirali nalog");
     this.adminService.aktivirajNalog(idSelektovanog).subscribe(
       data => {
         console.log(data);

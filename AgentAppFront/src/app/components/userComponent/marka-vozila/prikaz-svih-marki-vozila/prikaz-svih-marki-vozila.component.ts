@@ -38,9 +38,11 @@ export class PrikazSvihMarkiVozilaComponent implements OnInit {
 
 
   deleteMarka(marka: MarkaVozila): void {
+  
     console.log("brisanje marke");
     this.markaServis.deleteMarka(marka)
       .subscribe( data => {
+        window.alert("Uspesno ste izbrisali marku vozila!");
         this.marke = this.marke.filter(u => u !== marka);
       })
   };

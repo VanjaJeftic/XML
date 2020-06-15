@@ -47,6 +47,7 @@ export class NovoVoziloComponent implements OnInit {
   }
 
   onSelect(e){
+    window.alert("Uspesno ste dodali novo vozilo");
     if(e.target.files){
       for(let i=0; i<e.target.files.length; i++){
         let file = e.target.files[i];
