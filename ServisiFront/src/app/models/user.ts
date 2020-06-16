@@ -11,7 +11,7 @@ export class User {
     id:number;
     username:string;
     password:string;
-    potvrdalozinka:string;
+    potvrdalozinke:string;
     email:EmailValidator;
 
 }
