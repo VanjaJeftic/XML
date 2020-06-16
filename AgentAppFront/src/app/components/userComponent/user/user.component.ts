@@ -9,6 +9,8 @@ import { Search } from 'src/app/models/search.model';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { KomentarFormaComponent } from '../komentar-forma/komentar-forma.component';
 import { Komentar } from 'src/app/models/komentar';
+import { MatMenuModule} from '@angular/material/menu';
+import { ResetLozinkeComponent } from '../../reset-lozinke/reset-lozinke.component';
 
 @Component({
   selector: 'app-user',
@@ -23,7 +25,7 @@ export class UserComponent implements OnInit {
   startAt: Date = new Date();
   oglasIdzaPrenos:number;
 
-  constructor(public dialog: MatDialog,dateTimeAdapter: DateTimeAdapter<any>, private authService: AuthenticationService, private oglasService: OglasService, private router: Router, private searchService: SearchService) {
+  constructor( public dialog2: MatDialog,public dialog: MatDialog,dateTimeAdapter: DateTimeAdapter<any>, private authService: AuthenticationService, private oglasService: OglasService, private router: Router, private searchService: SearchService) {
     dateTimeAdapter.setLocale('en-GB');
    }
    public komentar:Komentar=new Komentar();
@@ -40,7 +42,8 @@ export class UserComponent implements OnInit {
     localStorage.setItem('idOglasStorage', ""+this.oglasIdzaPrenos);
     console.log("id oglasa je iz local storage " +localStorage.getItem('idOglasStorage')); //ovo mi treba
 
-    
+
+
     const dialogRef = this.dialog.open(KomentarFormaComponent, {
       width: '250px',
      // data: {user: this}
@@ -70,6 +73,17 @@ export class UserComponent implements OnInit {
    
     this.router.navigateByUrl('vozilo/' + selectedOglas.id);
   }
+
+  public openDialogLozinka(){
+    const dialogRef = this.dialog2.open(ResetLozinkeComponent, {
+      data: { }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+
+    });
+  }
+
+
 
   onOdjaviMe(){
     window.localStorage.clear();

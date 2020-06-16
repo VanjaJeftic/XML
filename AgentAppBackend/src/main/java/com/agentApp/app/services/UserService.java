@@ -55,9 +55,9 @@ public class UserService {
 		User changed = userRepository.save(u);
 		return changed;
 	}
-	public User promeniSifru(User user) {
+	public User promeniSifru(User user, String password) {
 		User u = userRepository.findByUsername(user.getUsername());
-		u.setPassword(passwordEncoder.encode(user.getPassword()));
+		u.setPassword(passwordEncoder.encode(password));
 		return userRepository.save(u);
 	}
 	
@@ -68,7 +68,7 @@ public class UserService {
 	
 	//Za Registraciju
 	public User saveUser(UserDTO user) {
-		
+		System.out.println("Servis user");
 		User u = userRepository.findByUsername(user.getUsername());		//Username => mail
 		User u2=userRepository.findByEmail(user.getEmail());
 		if( u == null && u2==null) {
