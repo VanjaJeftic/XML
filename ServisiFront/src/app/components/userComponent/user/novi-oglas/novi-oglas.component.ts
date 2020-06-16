@@ -27,7 +27,7 @@ export class NoviOglasComponent implements OnInit {
   }
 
   onSelect(e){
-    window.alert("Uspesno ste kreirali vozilo");
+    
     if(e.target.files){
       for(let i=0; i<e.target.files.length; i++){
         let file = e.target.files[i];
@@ -47,6 +47,7 @@ export class NoviOglasComponent implements OnInit {
     event.preventDefault();
     console.log("Usao u onsubmit"+ this.vozilo.modelVozila );
     console.log(this.selectedFiles);
+    window.alert("Uspesno ste kreirali vozilo");
     // const uploadImageData = new FormData();
     // uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
     let res = this.noviOglasService.saveVozilo(this.vozilo, this.selectedFiles);

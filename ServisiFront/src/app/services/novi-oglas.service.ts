@@ -30,8 +30,10 @@ export class NoviOglasService {
     fd.append("userId",localStorage.getItem("userId"));
     console.log("Pre slanja");
     return this.http.post('https://localhost:8662/oglas/vozilo/novoVozilo',fd,{ observe: 'response' }).subscribe((response) => {
+              
+              
               if (response.status === 200) {
-    
+               
                 this.message = 'Image uploaded successfully';
                 
               } else {
