@@ -1,7 +1,7 @@
 <mat-toolbar color="primary" class="app-header">
     <div><a href="/" class="navlogo">Rent-A-Car</a></div>
     <span class="nav-tool-items">
-      <a mat-button mat-raised-button routerLink="/register" routerLinkActive="active">Napravi nalog</a>
+      <a mat-button mat-raised-button routerLink="/login" routerLinkActive="active">Uloguj se</a>
     </span>
   </mat-toolbar>
 
@@ -17,56 +17,58 @@
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-                <input  matInput placeholder="Ime" [(ngModel)]="user.ime" type="text" [ngModelOptions]="{standalone: true}" required>
+                <input  matInput placeholder="Ime"  maxlength="30" [(ngModel)]="user.ime" type="text" [ngModelOptions]="{standalone: true}" required>
               </mat-form-field>
             </td>
           </tr>
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-                <input  matInput placeholder="Prezime" [(ngModel)]="user.prezime" type="text" [ngModelOptions]="{standalone: true}" required>
+                <input  matInput placeholder="Prezime"  maxlength="30" [(ngModel)]="user.prezime" type="text" [ngModelOptions]="{standalone: true}" required>
               </mat-form-field>
             </td>
           </tr>
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-                <input  matInput placeholder="Adresa" [(ngModel)]="user.adresa" type="text" [ngModelOptions]="{standalone: true}" required>
+                <input  matInput placeholder="Adresa"  maxlength="60" [(ngModel)]="user.adresa" type="text" [ngModelOptions]="{standalone: true}" required>
               </mat-form-field>
             </td>
           </tr>
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-                <input  matInput placeholder="Mesto" [(ngModel)]="user.mesto" type="text" [ngModelOptions]="{standalone: true}" required>
+                <input  matInput placeholder="Mesto"  maxlength="50" [(ngModel)]="user.mesto" type="text" [ngModelOptions]="{standalone: true}" required>
               </mat-form-field>
             </td>
           </tr>
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-                <input  matInput placeholder="Telefon" [(ngModel)]="user.telefon" type="number" [ngModelOptions]="{standalone: true}" required>
+                <input  matInput placeholder="Telefon"  maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" [(ngModel)]="user.telefon" type="number" [ngModelOptions]="{standalone: true}" required>
               </mat-form-field>
             </td>
           </tr>
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-                <input  matInput placeholder="Username" [(ngModel)]="user.username" type="text" [ngModelOptions]="{standalone: true}" required>
+                <input  matInput placeholder="Username"  maxlength="30" [(ngModel)]="user.username" type="text" [ngModelOptions]="{standalone: true}" required>
               </mat-form-field>
             </td>
           </tr>
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-                <input  matInput placeholder="Email" [(ngModel)]="user.email" type="email" [ngModelOptions]="{standalone: true}" required>
+                <input  matInput placeholder="Email"  maxlength="50" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9]+\.com" [(ngModel)]="user.email" type="email" [ngModelOptions]="{standalone: true}" required>
+              
               </mat-form-field>
+             
             </td>
           </tr>
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Lozinka" type="password" [(ngModel)]="user.password"
+                <input matInput placeholder="Lozinka"  maxlength="50" type="password" [(ngModel)]="user.password"
               [ngModelOptions]="{standalone: true}" required>
               </mat-form-field>
             </td>
@@ -74,7 +76,7 @@
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Potvrda lozinke" type="password" [(ngModel)]="user.potvrdalozinke"
+                <input matInput placeholder="Potvrda lozinke"  maxlength="50" type="password" [(ngModel)]="user.potvrdalozinke"
               [ngModelOptions]="{standalone: true}" required>
               </mat-form-field>
             </td>
