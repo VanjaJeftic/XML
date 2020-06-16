@@ -1,7 +1,11 @@
 package com.agentApp.app.controllers;
 
 import java.io.IOException;
+import java.util.Map;
 import javax.servlet.http.HttpServletResponse;
+
+import com.agentApp.app.dto.ModelVozilaDTO;
+import com.agentApp.app.models.ModelVozila;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.agentApp.app.auth.JwtAuthenticationRequest;
@@ -12,16 +16,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.agentApp.app.models.User;
 import com.agentApp.app.models.UserTokenState;
@@ -50,7 +52,7 @@ public class AuthenticationController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@PostMapping(value = "/login")
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest,
 			HttpServletResponse response) throws AuthenticationException, IOException {
 		
@@ -80,7 +82,7 @@ public class AuthenticationController {
 		return ResponseEntity.ok(new UserTokenState(jwt, expiresIn));
 	}
 	
-	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	@PostMapping(value = "/register")
 	public ResponseEntity<?> doRegister(@RequestBody UserDTO dto){
 		User u = userService.saveUser(dto);
 
@@ -98,7 +100,31 @@ public class AuthenticationController {
 
 		return new ResponseEntity<>(dto, HttpStatus.OK);
 	}
-	
+
+
+
+	//Menjanje sifre
+	@PostMapping(value = "/izmenaLozinke")
+	public ResponseEntity<?> updateSifruuser(@RequestParam("username") String username,
+											 @RequestParam("password") String password){
+
+		System.out.println("User username Je : "+username + "Sifra je "+ password);
+
+		User user = userService.findByUsername(username);
+
+		if(user == null) {
+			logger.info("Nije pronadjen user");
+			return new ResponseEntity<>("Error", HttpStatus.NOT_FOUND);
+		}
+		logger.info("Menja se sifra");
+		user=userService.promeniSifru(user,password);
+
+		return new ResponseEntity<>(user, HttpStatus.OK);
+
+	}
+
+
+
 	@RequestMapping(value = "/aktivirajNalog", method = RequestMethod.POST)
 	public ResponseEntity<?> aktivirajNalog(@RequestBody Long id){
 		

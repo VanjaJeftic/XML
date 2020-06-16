@@ -29,6 +29,7 @@ import { IzmenaTipaGorivaComponent } from './components/userComponent/tip-goriva
 import { IzmenaModelaVozilaComponent } from './components/userComponent/model-vozila/izmena-modela-vozila/izmena-modela-vozila.component';
 import { NovoVoziloComponent } from './components/novo-vozilo/novo-vozilo.component';
 import { SvaVozilaComponent } from './components/sva-vozila/sva-vozila.component';
+import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.component';
 
 
 const routes: Routes = [
@@ -60,10 +61,11 @@ const routes: Routes = [
   { path: 'izmenaModelaVozila', component:IzmenaModelaVozilaComponent},
   { path: 'novoVozilo', component:NovoVoziloComponent},
   { path: 'svaVozila',component:SvaVozilaComponent},
-
+  { path: 'promenaLozinke', component: ResetLozinkeComponent },
   { path: 'agent/zahtev', component: ZahteviComponent },
   { path: 'agent/vozilo', component: MojaVozilaComponent},
-  { path: 'agent/izvestaj', component: IzvestajComponent }
+  { path: 'agent/izvestaj', component: IzvestajComponent },
+
 
 
 ];

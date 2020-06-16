@@ -48,6 +48,7 @@ import { MojaVozilaComponent } from './components/userComponent/agent/moja-vozil
 import { IzvestajComponent } from './components/userComponent/agent/izvestaj/izvestaj.component';
 import { TerminZauzecaDialogComponent } from './components/userComponent/agent/moja-vozila/termin-zauzeca-dialog/termin-zauzeca-dialog.component';
 import { IzvestajDialogComponent } from './components/userComponent/agent/izvestaj/izvestaj-dialog/izvestaj-dialog.component';
+import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.component';
 
 
 
@@ -86,7 +87,8 @@ import { IzvestajDialogComponent } from './components/userComponent/agent/izvest
     MojaVozilaComponent,
     IzvestajComponent,
     TerminZauzecaDialogComponent,
-    IzvestajDialogComponent
+    IzvestajDialogComponent,
+    ResetLozinkeComponent
   ],
   imports: [
     BrowserModule,
