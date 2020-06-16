@@ -13,7 +13,7 @@
   
         <mat-card-content>
             <mat-form-field class="full-width">
-              <input matInput placeholder="Naziv modela vozila" [(ngModel)]="modelVozila.naziv" [ngModelOptions]="{standalone: true}" required>
+              <input matInput placeholder="Naziv modela vozila" maxlength="40" [(ngModel)]="modelVozila.naziv" [ngModelOptions]="{standalone: true}" required>
             </mat-form-field>
   
           

@@ -3,6 +3,8 @@ package com.agentApp.app.controllers;
 import java.util.List;
 
 import com.agentApp.app.dto.OglasDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,18 +26,22 @@ import com.agentApp.app.services.OglasService;
 @RequestMapping(value = "/oglas")
 public class OglasController {
 
+	protected final static Logger logger = LoggerFactory.getLogger(OglasController.class);
+
 	@Autowired
 	private OglasService oglasService;
 	
 	@GetMapping
 	public ResponseEntity<?> getAllOglasi(){
 		List<Oglas> oglasi = oglasService.getAllOglasi();
+		logger.info("Lista svih oglasa");
 		return new ResponseEntity<List<Oglas>>(oglasi, HttpStatus.OK);
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<?> getOglas(@PathVariable("id") Long id){
 		Oglas o = oglasService.findOneOglas(id);
+		logger.info("Pronadjen je oglas");
 		return new ResponseEntity<Oglas>(o, HttpStatus.OK);
 	}
 
@@ -43,17 +49,16 @@ public class OglasController {
 	@PreAuthorize("hasAuthority('create_oglas')")
 	public ResponseEntity<?> create(@RequestBody OglasDTO ovDTO) {
 
-		System.out.println("Mesto "+ovDTO.getMesto()+" cena "+ovDTO.getCena()+" popust "+ovDTO.getPopust()+" id vozila " +ovDTO.getVozilo_id() + " datumi "+" od "+ ovDTO.getSlobodanOd() + " do "+ ovDTO.getSlobodanDo());
 		Oglas oglas = this.oglasService.createOrder(ovDTO);
 		//Oglas search = this.searchConnection.createSearch(new Oglas(ovDTO));
-
+		logger.info("Kreirana je narudzbina preko oglasa");
 		return new ResponseEntity<>(oglas, HttpStatus.OK);
 	}
 
 	@GetMapping("/oglas/{oglas}")
 	public ResponseEntity<?> getOglas(@ModelAttribute("oglas") Oglas dto){
-		System.out.println("oglas je "+ dto.getId());
 		//Oglas o = oglasService.findOneOglas(id);
+		logger.info("Pronadjen je oblas");
 		return new ResponseEntity<Oglas>(dto, HttpStatus.OK);
 	}
 

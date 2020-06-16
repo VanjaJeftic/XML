@@ -4,6 +4,8 @@ import com.agentApp.app.dto.ModelVozilaDTO;
 import com.agentApp.app.models.ModelVozila;
 import com.agentApp.app.repository.ModelVozilaRepository;
 import com.agentApp.app.services.ModelVozilaService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,8 @@ public class ModelVozilaController {
         return "Hello World ";
     }
 
+    protected final static Logger logger = LoggerFactory.getLogger(ModelVozilaController.class);
+
     @Autowired
     private ModelVozilaService modelVozilaService;
     @Autowired
@@ -38,13 +42,13 @@ public class ModelVozilaController {
     public ResponseEntity<?> sacuvajModel(@RequestBody ModelVozilaDTO modelVozilaDTO) {
 
         ModelVozila modelVozila = this.modelVozilaService.createModelVozila(modelVozilaDTO);
-
+        logger.info("Model vozila je sacuvan");
         return new ResponseEntity<>(modelVozila, HttpStatus.OK);
     }
 
     @GetMapping
     List<ModelVozila> sviModeli() {
-        System.out.println("modeli");
+        logger.info("Lista svih modela vozila");
         return modelVozilaRepository.findAll();
     }
 
@@ -54,8 +58,10 @@ public class ModelVozilaController {
         Optional<ModelVozila> modelVoziladata = modelVozilaRepository.findById(modelVozilaDTO.getId());
         if(modelVoziladata.isPresent()){
             this.modelVozilaService.updateModelVozila(modelVozilaDTO);
+            logger.info("Model vozila je uspesno izmenjen");
             return new ResponseEntity<>("Successful updated model vozila", HttpStatus.OK);
         }else{
+            logger.info("Model vozila nije pronadjen");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
@@ -66,8 +72,10 @@ public class ModelVozilaController {
     public ResponseEntity<HttpStatus> brisanjeModela(@PathVariable("id") Long id) {
         try {
             modelVozilaService.delete(id);
+            logger.info("Model vozila je uspeno obrisan");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
+            logger.info("Model vozila ili nije pronadjen ili ne moze da se obrise");
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
     }

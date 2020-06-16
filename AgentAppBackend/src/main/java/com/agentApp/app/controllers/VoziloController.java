@@ -8,6 +8,8 @@ import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,6 +43,8 @@ public class VoziloController {
 
 	 @Autowired
 	    private VoziloService voziloService;
+
+	protected final static Logger logger = LoggerFactory.getLogger(VoziloController.class);
 
 	    @Autowired
 	    private ImageModelRepository imageModelRepository;
@@ -76,7 +80,7 @@ public class VoziloController {
 	        UserDTO udto=new UserDTO(u);
 	        ovDTO.setUser(udto);
 	        Vozilo vozilo=this.voziloService.createVozilo(ovDTO);
-	        System.out.println("vozilo" + vozilo.getId() );
+	        logger.info("uspesno je kreirano vozilo");
 	        System.out.println("Original Image Byte Size - " + file.getBytes().length);
 
 	        //System.out.println("vozilo - " + ovDTO.getKlasaVozila());
@@ -84,6 +88,7 @@ public class VoziloController {
 	                compressBytes(file.getBytes()),vozilo.getId()); //kreirana slika
 
 	        imageModelRepository.save(img);
+	        logger.info("Uspesno je sacuvana slika");
 	        return ResponseEntity.status(HttpStatus.OK);
 	    }
 	  
@@ -128,7 +133,7 @@ public class VoziloController {
 	    @GetMapping("/vozila")
 	    List<Vozilo> mojaVozila(Principal p){
 	    	User user=userService.findByUsername(p.getName());
-			System.out.println("usao da dobavim "+p.getName()+" " +voziloService.getVozila(user).size());
+			logger.info("Uspesno je pronadjen korisnik koji je kreirao vozilo");
 	    	return voziloService.getVozila(user);
 	    	
 	    }

@@ -13,7 +13,7 @@
     
           <mat-card-content>
             <mat-form-field class="full-width">
-              <input matInput placeholder="Naziv tipa goriva" [(ngModel)]="tipGoriva.naziv" [ngModelOptions]="{standalone: true}" required>
+              <input matInput placeholder="Naziv tipa goriva" maxlength="40" [(ngModel)]="tipGoriva.naziv" [ngModelOptions]="{standalone: true}" required>
             </mat-form-field>
   
           

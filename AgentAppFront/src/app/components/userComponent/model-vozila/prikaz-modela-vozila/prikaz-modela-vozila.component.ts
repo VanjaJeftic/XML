@@ -29,7 +29,17 @@ export class PrikazModelaVozilaComponent implements OnInit {
         if(!filter) return this.modeli;
         
         this.modeli = this.modeli.filter(u => u !== model);
-      })
+      },err =>{
+        
+        console.log(err);
+       window.alert("Greska!");
+ 
+     },
+     () => {
+       //window.alert("Uspesno ste obrisali klasu vozila!");
+      console.log(`We're done here!`);
+    });
+     
   };
 
   izmenaModela(modelVozila) {

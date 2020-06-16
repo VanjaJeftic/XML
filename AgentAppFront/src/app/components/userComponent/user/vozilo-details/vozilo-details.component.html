@@ -15,37 +15,37 @@
 
                 <mat-form-field class="full-width">
                     <mat-label>Vlasnik</mat-label>
-                    <input [(ngModel)]="oglas.vozilo.user.username" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                    <input [(ngModel)]="oglas.vozilo.user.username" maxlength="40" matInput [ngModelOptions]="{standalone: true}" required disabled>
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
                     <mat-label>Mesto Preuzimanja</mat-label>
-                    <input [(ngModel)]="oglas.mesto" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                    <input [(ngModel)]="oglas.mesto" maxlength="40" matInput [ngModelOptions]="{standalone: true}" required disabled>
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
                     <mat-label>Marka Vozila</mat-label>
-                    <input [(ngModel)]="oglas.vozilo.markaVozila.naziv" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                    <input [(ngModel)]="oglas.vozilo.markaVozila.naziv" maxlength="30" matInput [ngModelOptions]="{standalone: true}" required disabled>
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
                     <mat-label>Klasa Vozila</mat-label>
-                    <input [(ngModel)]="oglas.vozilo.klasaVozila.naziv" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                    <input [(ngModel)]="oglas.vozilo.klasaVozila.naziv" maxlength="30" matInput [ngModelOptions]="{standalone: true}" required disabled>
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
                     <mat-label>Model Vozila</mat-label>
-                    <input [(ngModel)]="oglas.vozilo.modelVozila.naziv" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                    <input [(ngModel)]="oglas.vozilo.modelVozila.naziv" maxlength="30" matInput [ngModelOptions]="{standalone: true}" required disabled>
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
                     <mat-label>Tip Goriva</mat-label>
-                    <input [(ngModel)]="oglas.vozilo.tipgoriva.naziv" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                    <input [(ngModel)]="oglas.vozilo.tipgoriva.naziv" maxlength="30" matInput [ngModelOptions]="{standalone: true}" required disabled>
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
                     <mat-label>Vrsta Menjaca</mat-label>
-                    <input [(ngModel)]="oglas.vozilo.vrstamenjaca.naziv" matInput [ngModelOptions]="{standalone: true}" required disabled>
+                    <input [(ngModel)]="oglas.vozilo.vrstamenjaca.naziv" maxlength="30" matInput [ngModelOptions]="{standalone: true}" required disabled>
                 </mat-form-field>
 
                 <!-- ******************************************************************************************************* -->

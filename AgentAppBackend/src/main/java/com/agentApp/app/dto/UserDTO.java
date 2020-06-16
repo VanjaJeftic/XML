@@ -58,7 +58,7 @@ public class UserDTO {
 		this.phoneNumber = v.getUser().getPhoneNumber();
 		this.uloga = v.getUser().getUloga();
 		this.nalogAktiviran = v.getUser().isNalogAktiviran();
-		this.authorities= (List<Authority>) v.getUser().getAuthorities();
+		this.authorities= (List<Authority>) v.getUser().getRoles();
 	}
 
 	public UserDTO() {

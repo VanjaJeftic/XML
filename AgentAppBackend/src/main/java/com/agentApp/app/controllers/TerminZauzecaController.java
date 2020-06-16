@@ -1,5 +1,7 @@
 package com.agentApp.app.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,8 @@ import com.agentApp.app.services.VoziloService;
 @RequestMapping(value = "/termin")
 public class TerminZauzecaController {
 
+	protected final static Logger logger = LoggerFactory.getLogger(TerminZauzecaController.class);
+
 	@Autowired
 	private VoziloService voziloService;
 	@Autowired
@@ -28,13 +32,15 @@ public class TerminZauzecaController {
 	@PutMapping
 	public ResponseEntity<?> create(@RequestBody TerminZauzecaDTO terminDTO) {
 		Vozilo v = this.voziloService.getVozilo(terminDTO.getVozilo_id());
-		
+		logger.info("Pronadjeno je vozilo");
 		TerminZauzeca newTermin = new TerminZauzeca(terminDTO, v);
 		
 		boolean ok = this.terminService.zauzmiTermin(newTermin);
 		if(ok) {
+			logger.info("Termin je zauzet");
 			return new ResponseEntity<>(HttpStatus.CREATED);
 		}
+		logger.info("Nije zauzet termin");
 		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		
 	}
