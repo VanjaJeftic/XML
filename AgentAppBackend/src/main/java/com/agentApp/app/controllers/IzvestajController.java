@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +33,8 @@ import com.agentApp.app.services.ZahtevService;
 @RequestMapping(value = "/izvestaj")
 public class IzvestajController {
 
+	protected final static Logger logger = LoggerFactory.getLogger(IzvestajController.class);
+
 	@Autowired
 	private ZahtevService zahtevService;
 	@Autowired
@@ -55,16 +59,18 @@ public class IzvestajController {
 				
 				if(z.getOglas().getVozilo().getUser().getId().equals(u.getId())) {
 					Izvestaj i = this.izvestajService.getOneIzvestaj(z.getId(), z.getOglas().getVozilo().getId());
-					System.out.println("Nasao izvestaj: " + i);
+					logger.info("Izvestaj je pronadjen");
 					if(i == null) {
 						OglasDTO oglasDTO = new OglasDTO(z.getOglas(), z.getOglas().getVozilo());
 						zbdto.getBundleZahtevi().add(new ZahtevDTO(z, oglasDTO));
 						bundleZahtevi.add(zbdto);
+						logger.info("Dodati bundle zahtevi");
 					}else {
 						IzvestajDTO idto = new IzvestajDTO(i);
 						OglasDTO oglasDTO = new OglasDTO(z.getOglas(), z.getOglas().getVozilo());
 						zbdto.getBundleZahtevi().add(new ZahtevDTO(z, oglasDTO, idto));
 						bundleZahtevi.add(zbdto);
+						logger.info("Dodati bundle zahtevi zajedno sa id-jem izvestaja");
 					}
 				}
 			}
@@ -78,8 +84,10 @@ public class IzvestajController {
 		
 		if(i != null) {
 			this.izvestajService.ukloniTerminZauzeca(i);
+			logger.info("Uklonjen termin zauzeca");
 			return new ResponseEntity<>(HttpStatus.CREATED);
 		}
+		logger.info("Izvestaj nije stigao do back-a");
 		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 }

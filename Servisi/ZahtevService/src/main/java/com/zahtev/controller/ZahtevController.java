@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +33,8 @@ import com.zahtev.service.ZahtevService;
 @CrossOrigin(origins = "*")
 //@RequestMapping(value = "/zahtev")
 public class ZahtevController {
-	
+
+	protected final static Logger logger = LoggerFactory.getLogger(ZahtevController.class);
 	@Autowired
 	private OglasConnection oglasConnection;
 	@Autowired

@@ -1,5 +1,7 @@
 package com.oglas.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,9 +34,12 @@ import com.oglas.service.VoziloService;
 @CrossOrigin(origins = "*")
 @RequestMapping(value = "/termin")
 public class TerminZauzecaController {
-	
-	
+
+	protected final static Logger logger = LoggerFactory.getLogger(TerminZauzecaController.class);
+
+	@Autowired
 	private TerminZauzecaRepository terminRepository;
+	@Autowired
 	private TerminZauzecaService terminServis;
 	
 	@Autowired
@@ -52,7 +57,7 @@ public class TerminZauzecaController {
 	@PostMapping
 	public ResponseEntity<?> zauzece(@RequestBody TerminZauzecaDTO termin){
 		
-		System.out.println("Termin je: " + termin.getZauzetod());
+
 		
 		TerminZauzecaZahtevDTO tzz = new TerminZauzecaZahtevDTO();
 		tzz.setPreuzimanje(termin.getZauzetod());
@@ -100,6 +105,7 @@ public class TerminZauzecaController {
 		Optional<TerminZauzeca> termindata=terminRepository.findById(terminDTO.getId());
 		if(termindata.isPresent()){
 			this.terminServis.update(terminDTO);
+			logger.info("Izmenjen je termin");
 			return new ResponseEntity<>("Successful updated oglas", HttpStatus.OK);
 		}else{
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -112,6 +118,7 @@ public class TerminZauzecaController {
 	public ResponseEntity<HttpStatus> delete(@PathVariable("id") Long id) {
 		try {
 			terminServis.delete(id);
+			logger.info("Termin je obrisan");
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);

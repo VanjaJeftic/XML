@@ -18,32 +18,32 @@
   
         <mat-card-content>
           <mat-form-field class="full-width">
-            <input matInput placeholder="Marka vozila" [(ngModel)]="vozilo.markaVozila" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Marka vozila" maxlength="30" [(ngModel)]="vozilo.markaVozila" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input matInput placeholder="Model vozila" [(ngModel)]="vozilo.modelVozila" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Model vozila" maxlength="30" [(ngModel)]="vozilo.modelVozila" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
         
           <mat-form-field class="full-width">
-            <input matInput placeholder="Klasa vozila" [(ngModel)]="vozilo.klasaVozila" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Klasa vozila" maxlength="30" [(ngModel)]="vozilo.klasaVozila" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input matInput placeholder="Vrsta menjaca" [(ngModel)]="vozilo.vrstaMenjaca" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Vrsta menjaca" maxlength="30" [(ngModel)]="vozilo.vrstaMenjaca" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input matInput placeholder="Tip goriva" [(ngModel)]="vozilo.tipGoriva" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Tip goriva" maxlength="30" [(ngModel)]="vozilo.tipGoriva" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input matInput placeholder="Predjni kilometri" [(ngModel)]="vozilo.predjeniKm" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Predjni kilometri" maxlength="30" [(ngModel)]="vozilo.predjeniKm" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input matInput placeholder="Broj sedista za decu" [(ngModel)]="vozilo.brsedistadeca" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Broj sedista za decu" maxlength="10" [(ngModel)]="vozilo.brsedistadeca" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
   
           <!--upload slike odavde-->

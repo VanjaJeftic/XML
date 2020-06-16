@@ -27,11 +27,20 @@ export class PrikazSvihVrstaMenjacaComponent implements OnInit {
     
     this.vrstaMenjacaServis.deleteVrsteMenjaca(menjac)
       .subscribe( 
-        
         data => {
         window.alert("Uspesno ste izbrisali vrstu menjaca!");
         this.menjaci = this.menjaci.filter(u => u !== menjac);
-      })
+      },err =>{
+        
+       // window.alert("greska");
+        console.log(err)
+        window.alert("Brisanje menjaca nije moguce!");
+     },
+     () => {
+      console.log(`We're done here!`);
+    });
+     
+   
   };
 
 

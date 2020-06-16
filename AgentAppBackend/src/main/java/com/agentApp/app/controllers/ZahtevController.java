@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -48,7 +50,9 @@ public class ZahtevController {
 	private UserService userService;
 	@Autowired
 	private TerminZauzecaService terminService;
-	
+
+	protected final static Logger logger = LoggerFactory.getLogger(ZahtevController.class);
+
 	@PutMapping
 	public void create(@RequestBody ShopCartItemsDTO shopCartItemsDTO, Principal p){
 		List<Long> vlasnici = new ArrayList<>();
@@ -132,7 +136,7 @@ public class ZahtevController {
 				newTermin.setZauzetod(z.getPreuzimanje());
 				newTermin.setZauzetdo(z.getPovratak());
 				
-				System.out.println("Pocinje provjeru");
+				logger.info("Pocetak provere ");
 				int imaPodudaranja = this.terminService.provjeraZauzetostiVozila(newTermin);
 				if(imaPodudaranja == 1) {
 					counter.add(1);
@@ -150,7 +154,7 @@ public class ZahtevController {
 						z.setStatus("ACCEPTED");
 						boolean ok = this.terminService.zauzmiBundleTermin(newTermin, z.getBundle_id());
 						if(ok) {
-							System.out.println("Sacuvao u bazu");
+							logger.info("Cuvanje zahteva");
 							this.zahtevService.saveZahtev(z);
 						}else {
 							return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -170,15 +174,15 @@ public class ZahtevController {
 			newTermin.setZauzetod(z.getPreuzimanje());
 			newTermin.setZauzetdo(z.getPovratak());
 			
-			System.out.println("Pocinje provjeru");
+			logger.info("Otpocinjanje provere");
 			int imaPodudaranja = this.terminService.provjeraZauzetostiVozila(newTermin);
 			if(imaPodudaranja == 0) {
 				if(o.getVozilo().getUser().getId().equals(u.getId())) {
 					z.setStatus("ACCEPTED");
-					System.out.println("Izmenio status na PRIHVACENO");
+					logger.info("Promenjen zahtev na prihvaceno");
 					boolean ok = this.terminService.zauzmiTermin(newTermin);
 					if(ok) {
-						System.out.println("Sacuvao u bazu");
+						logger.info("Cuvanje zahteva u bazi");
 						this.zahtevService.saveZahtev(z);
 					}else {
 						return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

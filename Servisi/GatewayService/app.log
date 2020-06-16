@@ -1,3 +1,4 @@
+
 2020-06-16 08:37:34.267  INFO 13864 --- [main] com.gateway.GatewayServiceApplication    : No active profile set, falling back to default profiles: default
 2020-06-16 08:37:36.442  WARN 13864 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
 2020-06-16 08:37:36.470  WARN 13864 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
@@ -1517,3 +1518,4 @@ Caused by: com.netflix.client.ClientException: Load balancer does not have avail
 2020-06-16 09:38:44.535  INFO 13864 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-06-16 09:43:44.587  INFO 13864 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-06-16 09:48:44.623  INFO 13864 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+

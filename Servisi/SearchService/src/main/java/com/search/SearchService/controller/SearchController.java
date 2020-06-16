@@ -6,6 +6,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +32,8 @@ import com.search.SearchService.service.SearchService;
 @CrossOrigin(origins = "*")
 @RequestMapping(value = "/search")
 public class SearchController {
+	protected final static Logger logger = LoggerFactory.getLogger(SearchController.class);
+
 	@Autowired
 	private SearchService searchService;
 	
@@ -42,6 +46,7 @@ public class SearchController {
 	@GetMapping("/getAll")
 	public ResponseEntity<List<Search>> allOglasi(){
 		List<Search> oglasi = this.searchService.getAllSearch();
+		logger.info("Lista oglasa");
 		return new ResponseEntity<List<Search>>(oglasi, HttpStatus.OK);
 	}
 	
@@ -58,10 +63,7 @@ public class SearchController {
 	
 	@PostMapping("/getSearched")
 	public ResponseEntity<List<Search>> search(@RequestBody SearchDTO search) {
-		System.out.println('\n'+search.getMarka() + '\n');
-		System.out.println('\n'+search.getMarka() + '\n');
-		System.out.println('\n'+search.getMarka() + '\n');
-		
+	
 		List<Search> pretrazeniOglasi = new ArrayList<>();
 		List<Search> sviOglasi = searchService.getAllSearch();
 		for(Search s : sviOglasi) {

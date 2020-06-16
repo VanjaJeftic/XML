@@ -8,15 +8,15 @@
   
         <mat-card-content>
           <mat-form-field class="full-width">
-            <input matInput placeholder="Mesto" [(ngModel)]="oglas.mesto" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Mesto" maxlength="30" [(ngModel)]="oglas.mesto" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input matInput placeholder="Cena" [(ngModel)]="oglas.cena" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Cena" [(ngModel)]="oglas.cena" maxlength="25" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
         
           <mat-form-field class="full-width">
-            <input matInput placeholder="Popust" [(ngModel)]="oglas.popust" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Popust" [(ngModel)]="oglas.popust" maxlength="5" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
   
           <mat-form-field>

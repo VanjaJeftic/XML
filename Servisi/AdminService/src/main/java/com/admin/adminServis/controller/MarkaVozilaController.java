@@ -3,6 +3,8 @@ import com.admin.adminServis.dto.MarkaVozilaDTO;
 import com.admin.adminServis.model.MarkaVozila;
 import com.admin.adminServis.repository.MarkaVozilaRepository;
 import com.admin.adminServis.service.MarkaVozilaService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,8 @@ import java.util.Optional;
 @RequestMapping(value = "/marka")
 public class MarkaVozilaController {
 
+    protected final static Logger logger = LoggerFactory.getLogger(MarkaVozilaController.class);
+
     @Autowired
     private MarkaVozilaService markaVozilaService;
     @Autowired
@@ -30,7 +34,7 @@ public class MarkaVozilaController {
     @PostMapping
     //@PreAuthorize("hasAuthority('create_oglas')")
     public ResponseEntity<?> sacuvajMarkuVozila(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
-        System.out.println("Nova marka kreiranje");
+        logger.info("Nova marka vozila");
         MarkaVozila markaVozila = this.markaVozilaService.createMarkaVozila(markaVozilaDTO);
 
         return new ResponseEntity<>(markaVozila, HttpStatus.OK);
@@ -40,12 +44,14 @@ public class MarkaVozilaController {
     @PutMapping
     //@PreAuthorize("hasAuthority('update_oglas')")
     public ResponseEntity<?> izmenaMarka(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
-        System.out.println("Izmena marke controller  "+ markaVozilaDTO.getNaziv());
+
         Optional<MarkaVozila> markaVoziladata = markaVozilaRepository.findById(markaVozilaDTO.getId());
         if(markaVoziladata.isPresent()){
             this.markaVozilaService.updateMarkaVozila(markaVozilaDTO);
+            logger.info("Izmenjena je marka vozila");
             return new ResponseEntity<>("Successful updated marka vozila", HttpStatus.OK);
         }else{
+            logger.info("Marka vozila nije pronadjena");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
@@ -55,18 +61,20 @@ public class MarkaVozilaController {
     //@PreAuthorize("hasRole('ROLE_operator')")
     //@PreAuthorize("hasAuthority('delete_oglas')")
     public ResponseEntity<HttpStatus> brisanjeMarke(@PathVariable("id") Long id) {
-        System.out.println("brisanje marke controller id marke je   "+ id);
+
         try {
             markaVozilaService.delete(id);
+            logger.info("Marka vozila je obrisana");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
+            logger.info("Marka vozila ili nije pronadjena ili ne moze da se obrise");
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
     }
 
     @GetMapping
     List<MarkaVozila> sveMarke() {
-        System.out.println("marke");
+        logger.info("Lista marki vozila");
         return markaVozilaRepository.findAll();
     }
 /*
