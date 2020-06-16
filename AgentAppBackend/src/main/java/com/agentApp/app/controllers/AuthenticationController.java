@@ -31,9 +31,11 @@ import com.agentApp.app.services.UserService;
 @RequestMapping(value = "/auth", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticationController {
 
-	private Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
+
 	@Autowired
 	private EmailService emailService;
+
+	protected final static Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
 
 	@Autowired
 	TokenUtils tokenUtils;
@@ -56,12 +58,15 @@ public class AuthenticationController {
 		try {
 			authentication = authenticationManager
 					.authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(), authenticationRequest.getPassword()));
+			logger.info("Token created");
 		} catch (BadCredentialsException e) {
 			// TODO: handle exception
+			logger.info("Nalog ne postoji");
 			return new ResponseEntity<>("Nalog ne postoji", HttpStatus.BAD_REQUEST);
 		}
 		
 		if( !((User)authentication.getPrincipal()).isNalogAktiviran() ) {
+			logger.info("Nalog nije aktivan");
 			return new ResponseEntity<>("Nalog nije aktiviran", HttpStatus.LOCKED);
 		}
 		
@@ -78,13 +83,14 @@ public class AuthenticationController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<?> doRegister(@RequestBody UserDTO dto){
 		User u = userService.saveUser(dto);
-		
+
 		if( u == null ) {
-			System.out.println(u);
+			logger.info("User sa tim kredencijalima ne postoji u bazi, stoga se korisnik moze registrovati");
 			return new ResponseEntity<>(u, HttpStatus.OK);
 		}
 
 		try {
+			logger.info("Mail za potvrdu registracije poslat");
 			emailService.sendNotificaitionZaRegistraciju(u);
 		} catch (Exception e) {
 			logger.info("Greska prilikom slanja emaila: " + e.getMessage());
@@ -102,7 +108,7 @@ public class AuthenticationController {
 		u.setNalogAktiviran(true);
 		
 		User updated = userService.updateUser(u);
-		
+		logger.info("User je uspesno azuriran");
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 }

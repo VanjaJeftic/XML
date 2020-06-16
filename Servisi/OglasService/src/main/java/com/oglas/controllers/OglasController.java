@@ -15,6 +15,8 @@ import com.oglas.repository.OglasRepository;
 import com.oglas.repository.VoziloRepository;
 import com.oglas.service.OglasService;
 import com.oglas.service.VoziloService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,8 +36,13 @@ public class OglasController {
 		return "Hello World ";
 	}
 
+	protected final static Logger logger = LoggerFactory.getLogger(IzvestajController.class);
+
+	@Autowired
 	private OglasService oglasService;
+	@Autowired
 	private VoziloService voziloService;
+	@Autowired
 	private UserConnection userConnection;
 	@Autowired
 	private OglasRepository oglasRepository;
@@ -74,8 +81,8 @@ public class OglasController {
 	//@PreAuthorize("hasAuthority('create_oglas')")
 	public ResponseEntity<?> create(@RequestBody OglasDTO ovDTO) {
 
-		System.out.println("Usao"+ovDTO.getMesto()+ovDTO.getCena()+ovDTO.getPopust());
 		Oglas oglas = this.oglasService.createOrder(ovDTO);
+		logger.info("Kreiran order");
 		//Oglas search = this.searchConnection.createSearch(new Oglas(ovDTO));
 
 		return new ResponseEntity<>(oglas, HttpStatus.OK);
@@ -87,8 +94,10 @@ public class OglasController {
 		Optional<Oglas> oglasdata = oglasRepository.findById(oglasDTO.getId());
 		if(oglasdata.isPresent()){
 			this.oglasService.update(oglasDTO);
+			logger.info("Uspesno je azuriran oglas");
 			return new ResponseEntity<>("Successful updated oglas", HttpStatus.OK);
 		}else{
+			logger.info("Oglas nije pronadjen");
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 
@@ -101,6 +110,7 @@ public class OglasController {
 	public ResponseEntity<HttpStatus> delete(@PathVariable("id") Long id) {
 		try {
 			oglasService.delete(id);
+			logger.info("Oglas je obrisan");
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);

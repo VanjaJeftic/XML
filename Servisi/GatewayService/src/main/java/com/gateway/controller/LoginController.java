@@ -3,6 +3,8 @@ package com.gateway.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import com.gateway.config.JwtConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,13 +17,15 @@ import io.jsonwebtoken.Jwts;
 @RestController
 public class LoginController {
 
+    protected final static Logger logger = LoggerFactory.getLogger(LoginController.class);
+
     @Autowired
     JwtConfig jwtConfig;
 
     @PutMapping("/logout")
     public Boolean odjava() {
         try {
-            System.out.println("ulogovani: " + SecurityContextHolder.getContext().getAuthentication().getName());
+            logger.info("Odjava");
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -44,12 +48,12 @@ public class LoginController {
         String token = header.replace(jwtConfig.getPrefix(), "");
        
         try {
-            System.out.println("Kod claimsa");
+
             Claims claims = Jwts.parser()
                     .setSigningKey(jwtConfig.getSecret().getBytes())
                     .parseClaimsJws(token)
                     .getBody();
-            System.out.println("claims: " + claims);
+
             String username = claims.getSubject();
             return true;
         

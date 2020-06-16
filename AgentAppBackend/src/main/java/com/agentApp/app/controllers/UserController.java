@@ -2,6 +2,8 @@ package com.agentApp.app.controllers;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +23,8 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-	
+
+	protected final static Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	//@GetMapping(value = "/allUsers", produces = MediaType.APPLICATION_JSON_VALUE)
 	@GetMapping("/getAllUsers")

@@ -5,6 +5,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +28,8 @@ import com.agentApp.app.services.SearchService;
 @RequestMapping(value = "/search")
 public class SearchController {
 
+	protected final static Logger logger = LoggerFactory.getLogger(SearchController.class);
+
 	@Autowired
 	private SearchService searchService;
 	
@@ -42,15 +46,20 @@ public class SearchController {
 			}
 			
 		}
+		logger.info("Pretrazeni oglasi i dodat je novi");
 		return new ResponseEntity<>(pretrazeniOglasi, HttpStatus.OK);
 	}
 	
 	private boolean isMestoValid(Oglas o , SearchDTO search) {
 		if(!isNullOrEmpty(search.getMesto())) {
-        if(o.getMesto().toLowerCase().contains(search.getMesto().toLowerCase()))
-            return true;
+        if(o.getMesto().toLowerCase().contains(search.getMesto().toLowerCase())) {
+			logger.info("Oglas sadrzi mesto");
+        	return true;
+		}
+        logger.info("Oglas ne sadrzi mesto");
         return false;
 		}
+		logger.info("mesto je validno");
 		return true;
     }
 	
@@ -60,6 +69,7 @@ public class SearchController {
 	            return true;
 	        return false;
 			}
+		logger.info("Model je validan");
 			return true;
     }
 	
@@ -69,6 +79,7 @@ public class SearchController {
 	            return true;
 	        return false;
 			}
+		logger.info("Marka je validna");
 			return true;
     }
 	
@@ -89,6 +100,7 @@ public class SearchController {
 				return false;
 			}
 		}
+		logger.info("Cena je validna");
 		return true;
     }
 	
@@ -102,6 +114,7 @@ public class SearchController {
 	            return true;
 	        return false;
 			}
+		logger.info("datum je validan");
 			return true;
     }
 	

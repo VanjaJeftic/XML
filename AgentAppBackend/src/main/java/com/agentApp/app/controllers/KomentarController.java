@@ -9,6 +9,8 @@ import com.agentApp.app.repository.KomentarRepository;
 import com.agentApp.app.repository.ModelVozilaRepository;
 import com.agentApp.app.services.KomentarService;
 import com.agentApp.app.services.ModelVozilaService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +23,8 @@ import java.util.Optional;
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(value = "/komentar")
 public class KomentarController {
+
+    protected final static Logger logger = LoggerFactory.getLogger(KomentarController.class);
 
     @Autowired
     private KomentarService komentarService;
@@ -37,13 +41,13 @@ public class KomentarController {
     public ResponseEntity<?> sacuvajKomentar(@RequestBody KomentarDTO dto) {
 
         Komentar komentar = this.komentarService.kreirajKomentar(dto);
-
+        logger.info("Komentar je uspesno kreiran");
         return new ResponseEntity<>(komentar, HttpStatus.OK);
     }
 
     @GetMapping
     List<Komentar> sviKomentari() {
-        System.out.println("komentari");
+        logger.info("Lista komentara");
         return komentarRepository.findAll();
     }
 
@@ -53,8 +57,10 @@ public class KomentarController {
         Optional<Komentar> komentardata = komentarRepository.findById(komentarDTO.getId());
         if(komentardata.isPresent()){
             this.komentarService.izmenaKomentara(komentarDTO);
+            logger.info("Izmena komentara");
             return new ResponseEntity<>("Successful updated komentar", HttpStatus.OK);
         }else{
+            logger.info("Komentar nije pronadjen");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
@@ -65,8 +71,10 @@ public class KomentarController {
     public ResponseEntity<HttpStatus> brisanjeKomentara(@PathVariable("id") Long id) {
         try {
             komentarService.delete(id);
+            logger.info("Komentar je obrisan");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
+            logger.info("Komentar nije pronadjen");
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
     }

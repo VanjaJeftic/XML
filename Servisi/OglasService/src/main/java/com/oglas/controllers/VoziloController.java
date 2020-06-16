@@ -12,6 +12,8 @@ import com.oglas.model.Vozilo;
 import com.oglas.repository.ImageModelRepository;
 import com.oglas.repository.VoziloRepository;
 import com.oglas.service.VoziloService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,6 +51,8 @@ import java.util.zip.Inflater;
 @CrossOrigin(origins = "*")
 @RequestMapping(value = "/vozilo")
 public class VoziloController {
+
+    protected final static Logger logger = LoggerFactory.getLogger(VoziloController.class);
 
     @Autowired
     private VoziloService voziloService;
@@ -104,7 +108,7 @@ public class VoziloController {
         ovDTO.setTipGoriva(tipGoriva);
         ovDTO.setUser_id(userid);
         Vozilo vozilo=this.voziloService.createVozilo(ovDTO);
-        System.out.println("vozilo" + vozilo.getId() );
+     logger.info("Vozilo je sacuvano");
         System.out.println("Original Image Byte Size - " + file.getBytes().length);
 
         //System.out.println("vozilo - " + ovDTO.getKlasaVozila());
@@ -112,6 +116,7 @@ public class VoziloController {
                 compressBytes(file.getBytes()),vozilo.getId()); //kreirana slika
 
         imageModelRepository.save(img);
+        logger.info("Slika je sauvana");
         return ResponseEntity.status(HttpStatus.OK);
     }
     // @PreAuthorize("hasAuthority('create_oglas')")
@@ -165,7 +170,7 @@ public class VoziloController {
     @GetMapping("/vozila/{id}")
     List<Vozilo> mojaVozila(@PathVariable("id") String id){
     	Long user=Long.parseLong(id);
-		System.out.println("usao da dobavim "+id+" " +voziloService.getVozila(user).size());
+		logger.info("Lista vozila");
     	return voziloService.getVozila(user);
     	
     }

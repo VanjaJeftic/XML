@@ -27,7 +27,17 @@ export class PrikazSvihTipovaGorivaComponent implements OnInit {
       .subscribe( data => {
         window.alert("Uspesno ste izbrisali tip goriva!");
         this.goriva = this.goriva.filter(u => u !== tipGoriva);
-      })
+      },err =>{
+        
+        console.log(err);
+       window.alert("Greska!");
+ 
+     },
+     () => {
+       //window.alert("Uspesno ste obrisali klasu vozila!");
+      console.log(`We're done here!`);
+    });
+     
   };
 
 

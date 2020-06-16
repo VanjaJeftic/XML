@@ -5,6 +5,8 @@ import com.admin.adminServis.model.ModelVozila;
 import com.admin.adminServis.model.VrstaMenjaca;
 import com.admin.adminServis.repository.VrstaMenjacaRepository;
 import com.admin.adminServis.service.VrstaMenjacaService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,8 @@ import java.util.Optional;
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(value = "/menjac")
 public class VrstaMenjacaController {
+
+    protected final static Logger logger = LoggerFactory.getLogger(VrstaMenjacaController.class);
 
     @Autowired
     private VrstaMenjacaService vrstaMenjacaService;
@@ -32,6 +36,7 @@ public class VrstaMenjacaController {
     //@PreAuthorize("hasAuthority('create_oglas')")
     public ResponseEntity<?> sacuvajVrstuMenjaca(@RequestBody VrstaMenjacaDTO vrstaMenjacaDTO) {
         VrstaMenjaca vrstaMenjaca = this.vrstaMenjacaService.createVrstaMenjaca(vrstaMenjacaDTO);
+        logger.info("Kreirana je vrsta menjaca");
         return new ResponseEntity<>(vrstaMenjaca, HttpStatus.OK);
     }
 
@@ -41,15 +46,17 @@ public class VrstaMenjacaController {
         Optional<VrstaMenjaca> vrstaMenjacadata = vrstaMenjacaRepository.findById(vrstaMenjacaDTO.getId());
         if(vrstaMenjacadata.isPresent()){
             this.vrstaMenjacaService.updateVrstaMenjaca(vrstaMenjacaDTO);
+            logger.info("Izmenjena je vrsta menjaca");
             return new ResponseEntity<>("Successful updated vrsta menjaca vozila", HttpStatus.OK);
         }else{
+            logger.info("Vrsta menjaca nije pronadjena");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
     @GetMapping
     List<VrstaMenjaca> svevrsteMenjacaVozila() {
-        System.out.println("sve vrste Menjaca Vozila");
+        logger.info("Lista vrsta menjaca");
         return vrstaMenjacaRepository.findAll();
     }
 
@@ -59,8 +66,10 @@ public class VrstaMenjacaController {
     public ResponseEntity<HttpStatus> brisanjeVrsteMenjaca(@PathVariable("id") Long id) {
         try {
             vrstaMenjacaService.delete(id);
+            logger.info("Obrisana je vrsta menjaca");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
+            logger.info("Vrsta menjaca ne moze da se obrise ili nije pronadjena");
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
     }

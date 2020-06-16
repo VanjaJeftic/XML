@@ -1,5 +1,7 @@
 package com.oglas.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,8 @@ import com.oglas.service.IzvestajService;
 @CrossOrigin(origins = "*")
 @RequestMapping("/izvestaj")
 public class IzvestajController {
+
+	protected final static Logger logger = LoggerFactory.getLogger(IzvestajController.class);
 
 	@Autowired
 	private IzvestajService izvestajService;

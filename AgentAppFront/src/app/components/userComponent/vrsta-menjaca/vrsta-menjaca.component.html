@@ -15,7 +15,7 @@
   
         <mat-card-content>
           <mat-form-field class="full-width">
-            <input matInput placeholder="Naziv vrste menjaca" [(ngModel)]="vrstaMenjaca.naziv" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Naziv vrste menjaca" maxlength="30" [(ngModel)]="vrstaMenjaca.naziv" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
         
