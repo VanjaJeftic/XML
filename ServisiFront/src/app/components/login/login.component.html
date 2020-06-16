@@ -17,14 +17,14 @@
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-                <input  matInput placeholder="Username" type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" required>
+                <input  matInput placeholder="Username" maxlength="30" type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" required>
               </mat-form-field>
             </td>
           </tr>
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Lozinka" type="password" [(ngModel)]="password"
+                <input matInput placeholder="Lozinka" maxlength="50" type="password" [(ngModel)]="password"
               [ngModelOptions]="{standalone: true}" required>
               </mat-form-field>
             </td>

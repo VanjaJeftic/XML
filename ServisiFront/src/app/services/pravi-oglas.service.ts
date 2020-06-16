@@ -12,7 +12,9 @@ export class PraviOglasService {
   public saveOglas(oglas:Oglas){
     console.log("Saljel "+oglas.mesto+oglas.cena+oglas.slobodanod)
     return this.http.post('https://localhost:8662/oglas/create',oglas).subscribe(
-      data=>{console.log('Vratio je '+data)}
+      data=>{console.log('Vratio je '+data);
+
+    }
     );
   }
 }

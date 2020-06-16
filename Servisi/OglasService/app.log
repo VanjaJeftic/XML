@@ -206,3 +206,10 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 2020-06-16 09:39:30.041  INFO 8364 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-06-16 09:44:30.072  INFO 8364 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-06-16 09:49:30.124  INFO 8364 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-16 09:54:30.129  INFO 8364 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-16 09:59:30.207  INFO 8364 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-16 10:04:30.311  INFO 8364 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-16 10:06:16.596  WARN 8364 --- [http-nio-8092-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of type: class org.springframework.http.ResponseEntity$DefaultBuilder]
+2020-06-16 10:07:35.279  WARN 8364 --- [http-nio-8092-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of type: class org.springframework.http.ResponseEntity$DefaultBuilder]
+2020-06-16 10:09:30.351  INFO 8364 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-06-16 10:09:36.332  WARN 8364 --- [http-nio-8092-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of type: class org.springframework.http.ResponseEntity$DefaultBuilder]

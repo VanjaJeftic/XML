@@ -26,7 +26,7 @@ export class PraviOglasComponent implements OnInit {
   }
 
   public onSubmit(): void{
-    window.alert("Uspesno ste kreirali oglas");
+   
     this.oglas.user_id=localStorage.getItem('userId');
     console.log(this.data.id);
     this.oglas.vozilo_id=this.data.id;

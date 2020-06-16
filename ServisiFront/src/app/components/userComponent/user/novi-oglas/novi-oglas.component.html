@@ -39,11 +39,11 @@
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input matInput placeholder="Predjni kilometri" [(ngModel)]="vozilo.predjeniKm" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Predjni kilometri" maxlength="30" [(ngModel)]="vozilo.predjeniKm" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input matInput placeholder="Broj sedista za decu" [(ngModel)]="vozilo.brsedistadeca" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Broj sedista za decu" maxlength="20" [(ngModel)]="vozilo.brsedistadeca" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
   
           <!--upload slike odavde-->
