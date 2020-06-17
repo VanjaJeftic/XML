@@ -152,6 +152,7 @@ public class ZahtevController {
 				}
 			}
 		}else {
+			System.out.println("Nije bundle! ZahtevController");
 			Zahtev z = zahtevi.get(0);
 			//Pronalazi sve zahteve koji su kreirani za oglas kome je AgentID "agent" i menja status
 			OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
@@ -161,6 +162,7 @@ public class ZahtevController {
 			
 			if(oglas.getVozilo().getUser().getId().equals(agent)) {
 				if(imaPodudaranja == 0) {
+					System.out.println("Nema podudaranja! ZahtevController");
 					z.setStatus("ACCEPTED");
 					//Kreira termin zauzeca iz ovog zahteva i povezuje ga sa vozilom u OglasService
 					ResponseEntity<?> res = this.oglasConnection.zauzece(terminZauzecaDTO);
@@ -175,6 +177,7 @@ public class ZahtevController {
 					}
 					
 				}else {
+					System.out.println("Ima podudaranja! ZahtevController");
 					return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 				}
 			}
@@ -216,7 +219,7 @@ public class ZahtevController {
 						
 						if(z.isBundle()) {
 							
-							this.zahtevService.odbijOstaleZahteveZaBundle(preuzimanje, povratak, id, z.getBundle_id());
+							this.zahtevService.odbijOstaleZahteveZaBundle(id, z.getBundle_id());
 						}
 					}
 				}

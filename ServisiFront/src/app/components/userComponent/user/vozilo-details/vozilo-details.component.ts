@@ -104,6 +104,6 @@ export class VoziloDetailsComponent implements OnInit {
   }
 
   onShoppingCart(){
-    this.router.navigateByUrl('cart');
+    this.router.navigateByUrl('user/cart');
   }
 }

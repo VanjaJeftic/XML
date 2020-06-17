@@ -49,8 +49,16 @@ export class UserComponent implements OnInit {
     this.authService.logout();
   }
 
+  onUnesiIzvestaj(){
+    this.router.navigateByUrl('user/izvestaj');
+  }
+
+  onZahtevi(){
+    this.router.navigateByUrl('user/zahtev');
+  }
+
   onShoppingCart(){
-    this.router.navigateByUrl('cart');
+    this.router.navigateByUrl('user/cart');
   }
 
   onVozilo(){

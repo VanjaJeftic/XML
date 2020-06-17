@@ -61,6 +61,10 @@ export class MyShopCartItemsComponent implements OnInit {
     
   }
 
+  onZahtevi(){
+    this.router.navigateByUrl('user/zahtev');
+  }
+
   onDetaljnije(zahtev){
     this.router.navigateByUrl('vozilo/' + zahtev.oglas.vozilo.id);
   }

@@ -42,6 +42,10 @@ export class SvaVozilaComponent implements OnInit {
     this.authService.logout();
   }
 
+  onZahtevi(){
+    this.router.navigateByUrl('user/zahtev');
+  }
+
   shopCart(){
     this.router.navigateByUrl('cart');
   }

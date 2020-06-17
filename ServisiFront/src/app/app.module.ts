@@ -47,6 +47,9 @@ import { ZahteviComponent } from './components/userComponent/agent/zahtevi/zahte
 import { IzvestajComponent } from './components/userComponent/agent/izvestaj/izvestaj.component';
 import { IzvestajDialogComponent } from './components/userComponent/agent/izvestaj/izvestaj-dialog/izvestaj-dialog.component';
 import { CommonModule } from '@angular/common';
+import { MojiZahteviComponent } from './components/userComponent/user/moji-zahtevi/moji-zahtevi.component';
+import { MojiIzvestajiComponent } from './components/userComponent/user/moji-izvestaji/moji-izvestaji.component';
+import { MojIzvestajDialogComponent } from './components/userComponent/user/moji-izvestaji/moj-izvestaj-dialog/moj-izvestaj-dialog.component';
 
 
 @NgModule({
@@ -83,6 +86,9 @@ import { CommonModule } from '@angular/common';
     ZahteviComponent,
     IzvestajComponent,
     IzvestajDialogComponent,
+    MojiZahteviComponent,
+    MojiIzvestajiComponent,
+    MojIzvestajDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,7 +106,7 @@ import { CommonModule } from '@angular/common';
     CommonModule
 
   ],
-  entryComponents: [TerminZauzecaDialogComponent, IzvestajDialogComponent
+  entryComponents: [TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

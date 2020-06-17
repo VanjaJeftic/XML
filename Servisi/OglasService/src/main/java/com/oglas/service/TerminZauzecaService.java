@@ -71,6 +71,7 @@ public class TerminZauzecaService {
 		 int imaPodudaranja = 0;	//Na pocetku nema podudaranja
 		 
 		 if(vozilo.getZauzeti().size() < 1) {
+			 System.out.println("Nema termina uopste! ProvjeraZauzetostiVozila");
 			 return 0;
 		 }
 			
