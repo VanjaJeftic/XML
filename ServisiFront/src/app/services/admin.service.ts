@@ -11,52 +11,132 @@ import { ModelVozila } from '../models/model-vozila';
   providedIn: 'root'
 })
 export class AdminService {
+
  
  
   constructor(private http:HttpClient) { }
 
   public saveMarka(markaVozila:MarkaVozila){
-    console.log("Marka vozila se salje ")
-    return this.http.post('http://localhost:8094/marka/novaMarka',markaVozila).subscribe(
+    return this.http.post('https://localhost:8662/admin/marka',markaVozila).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
+    
+  }
+
+
+  public izmenaMarke(markaVozila:MarkaVozila){
+    return this.http.put('https://localhost:8662/admin/marka',markaVozila,{responseType: 'text'}).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
+    
+  }
+
+  public izmenaKlase(klasaVozila:KlasaVozila){
+    return this.http.put('https://localhost:8662/admin/klasa',klasaVozila,{responseType: 'text'}).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
+    
+  }
+
+
+  public izmenaTipaGoriva(tipGoriva:TipGoriva){
+    return this.http.put('https://localhost:8662/admin/gorivo',tipGoriva,{responseType: 'text'}).subscribe(
       data=>{console.log('Vratio je '+data)}
     );
   }
 
+  public izmenaVrsteMenjaca(vrstaMenjaca:VrstaMenjaca){
+    return this.http.put('https://localhost:8662/admin/menjac',vrstaMenjaca,{responseType: 'text'}).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
+  }
+
+  public izmenaModelaVozila(modelVozila:ModelVozila){
+    console.log("id marke je "+modelVozila.id_marke)
+    return this.http.put('https://localhost:8662/admin/model',modelVozila,{responseType: 'text'}).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
+  }
 
   public saveKlasa(klasaVozila:KlasaVozila){
-    console.log("Klasa vozila se salje ")
-    return this.http.post('http://localhost:8094/klasa/novaKlasa',klasaVozila).subscribe(
+    return this.http.post('https://localhost:8662/admin/klasa',klasaVozila).subscribe(
       data=>{console.log('Vratio je '+data)}
     );
   }
 
 
   public saveGorivo(tipGoriva:TipGoriva){
-    console.log("TipGoriva vozila se salje ")
-    return this.http.post('http://localhost:8094/gorivo/noviTipGoriva',tipGoriva).subscribe(
+    return this.http.post('https://localhost:8662/admin/gorivo',tipGoriva).subscribe(
       data=>{console.log('Vratio je '+data)}
     );
   }
 
   public saveMenjac(vrstaMenjaca:VrstaMenjaca){
-    console.log("TipGoriva vozila se salje ")
-    return this.http.post('http://localhost:8094/menjac/novaVrstaMenjaca',vrstaMenjaca).subscribe(
+    return this.http.post('https://localhost:8662/admin/menjac',vrstaMenjaca).subscribe(
       data=>{console.log('Vratio je '+data)}
     );
   }
 
-  getMarkeVozila() {
-    //return this.list('/http://localhost:8094/marka/markeVozila').snapshotChanges();
-    console.log("Pribavljamo marke")
-    //return this.http.get('http://localhost:8094/marka/markeVozila');
-    return this.http.get('http://localhost:8094/marka/markeVozila');
+ public getMarkeVozila() {
+    console.log("Pribavljamo marke");
+    return this.http.get('https://localhost:8662/admin/marka');
+  }
 
-    console.log("Stigle marke")
+
+  public getKlaseVozila() {
+    console.log("Pribavljamo klase vozila");
+    return this.http.get('https://localhost:8662/admin/klasa');
+  }
+
+  public getVrsteMenjacaVozila() {
+    console.log("Pribavljamo menjace vozila");
+    return this.http.get('https://localhost:8662/admin/menjac');
+  }
+
+  public getTipoviGorivaVozila() {
+    console.log("Pribavljamo tipove goriva vozila");
+    return this.http.get('https://localhost:8662/admin/gorivo');
+  }
+
+  public getModelVozila() {
+    console.log("Pribavljamo modele");
+    return this.http.get('https://localhost:8662/admin/model');
+  }
+
+  public deleteModel(model) {
+    console.log("brisanje modela servis");
+    window.location.reload();
+    return this.http.delete('https://localhost:8662/admin/model' + "/"+ model.id);
+  }
+
+  public deleteMarka(marka) {
+    console.log("brisanje marke servis");
+    window.location.reload();
+    return this.http.delete('https://localhost:8662/admin/marka' + "/"+ marka.id);
+  }
+
+ 
+  public deleteTipGoriva(gorivo) {
+    console.log("brisanje goriva servis");
+    window.location.reload();
+    return this.http.delete('https://localhost:8662/admin/gorivo' + "/"+ gorivo.id);
+  }
+
+  public deleteVrsteMenjaca(menjac) {
+    console.log("brisanje menjaca servis");
+    window.location.reload();
+    return this.http.delete('https://localhost:8662/admin/menjac' + "/"+ menjac.id);
+  }
+
+  public deleteKlaseVozila(klasa) {
+    console.log("brisanje klase vozila servis");
+    window.location.reload();
+    return this.http.delete('https://localhost:8662/admin/klasa' + "/"+ klasa.id);
   }
 
   public saveModel(modelVozila:ModelVozila){
     console.log("ModelVozila  se salje ")
-    return this.http.post('http://localhost:8094/model/sacuvajModel',modelVozila).subscribe(
+    return this.http.post('https://localhost:8662/admin/model',modelVozila).subscribe(
       data=>{console.log('Vratio je '+data)}
     );
   }

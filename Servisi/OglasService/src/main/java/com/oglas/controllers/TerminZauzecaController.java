@@ -1,9 +1,12 @@
 package com.oglas.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -11,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import com.oglas.dto.TerminZauzecaDTO;
@@ -29,9 +34,12 @@ import com.oglas.service.VoziloService;
 @CrossOrigin(origins = "*")
 @RequestMapping(value = "/termin")
 public class TerminZauzecaController {
-	
-	
+
+	protected final static Logger logger = LoggerFactory.getLogger(TerminZauzecaController.class);
+
+	@Autowired
 	private TerminZauzecaRepository terminRepository;
+	@Autowired
 	private TerminZauzecaService terminServis;
 	
 	@Autowired
@@ -47,24 +55,40 @@ public class TerminZauzecaController {
 	}
 
 	@PostMapping
-	public List<Oglas> zauzece(@RequestBody TerminZauzecaDTO termin){
+	public ResponseEntity<?> zauzece(@RequestBody TerminZauzecaDTO termin){
 		
-		System.out.println("Termin je: " + termin.getZauzetod());
+
 		
 		TerminZauzecaZahtevDTO tzz = new TerminZauzecaZahtevDTO();
 		tzz.setPreuzimanje(termin.getZauzetod());
 		tzz.setPovratak(termin.getZauzetdo());
 		Vozilo vozilo = voziloServis.getVozilo(termin.getVozilo_id());
 		
-		terminServis.createTermin(termin);
-		
-		List<Oglas> oglasiZaVozilo = oglasServis.findOglasiByVoziloID(vozilo.getId());
-		for(Oglas o : oglasiZaVozilo) {
-			tzz.getOglasi().add(o.getId());
+		int imaPodudaranja = this.terminServis.provjeraZauzetostiVozila(termin);
+		if(imaPodudaranja == 0) {													//NEMA PODUDARANJA
+			
+			List<Oglas> oglasiZaVozilo = oglasServis.findOglasiByVoziloID(vozilo.getId());
+			for(Oglas o : oglasiZaVozilo) {
+				tzz.getOglasi().add(o.getId());
+			}
+			
+			//Provjerava sa prihvacenim zahtevima da li moze uopste zauzeti tada vozilo, moguce je da je vec izdato nekom korisniku
+			boolean ok = this.terminServis.zauzece(tzz);
+			if(ok) {
+				terminServis.createTermin(termin, vozilo);
+				return new ResponseEntity<>(HttpStatus.CREATED);
+			}else {
+				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			}
 		}
-		boolean ok = this.terminServis.zauzece(tzz);
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+	}
+	
+	//Provjera da li se neki zahtev moze prihvatiti, zbog zauzetosti vozila za taj termin
+	@PostMapping("/zauzece")	
+	public int provjeraZauzetostiVozila(@RequestBody TerminZauzecaDTO terminZauzimanjaDTO) {
 		
-		return oglasiZaVozilo;
+		return this.terminServis.provjeraZauzetostiVozila(terminZauzimanjaDTO);
 	}
 
 
@@ -81,6 +105,7 @@ public class TerminZauzecaController {
 		Optional<TerminZauzeca> termindata=terminRepository.findById(terminDTO.getId());
 		if(termindata.isPresent()){
 			this.terminServis.update(terminDTO);
+			logger.info("Izmenjen je termin");
 			return new ResponseEntity<>("Successful updated oglas", HttpStatus.OK);
 		}else{
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -93,6 +118,7 @@ public class TerminZauzecaController {
 	public ResponseEntity<HttpStatus> delete(@PathVariable("id") Long id) {
 		try {
 			terminServis.delete(id);
+			logger.info("Termin je obrisan");
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);

@@ -14,6 +14,7 @@ export class HomePageComponent implements OnInit {
   }
 
   onLogin(){
+    
     this.router.navigateByUrl('/login');
   }
 }

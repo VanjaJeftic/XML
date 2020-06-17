@@ -5,10 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class PutanjaService {
 
-  private _app_url = 'http://localhost:8662/';
-  private _authentication_url = 'http://localhost:8662/auth';
-  private _admin_url='http://localhost:8094/'
-  private _oglas_url='http://localhost:8662/oglas'
+  private _app_url = 'https://localhost:8662/';
+  private _authentication_url = 'https://localhost:8662/auth';
+  //private _admin_url='https://localhost:8662/auth/'
+  private _oglas_url='https://localhost:8662/oglas'
   private _oglas_service_url = this._app_url + 'oglas';
   private _zahtev_service_url = this._app_url + 'zahtev';
   private _search_service_url = this._app_url + 'search';

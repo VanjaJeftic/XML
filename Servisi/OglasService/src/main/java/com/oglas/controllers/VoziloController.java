@@ -1,5 +1,6 @@
 package com.oglas.controllers;
 
+import com.oglas.connections.UserConnection;
 import com.oglas.dto.OglasDTO;
 import com.oglas.dto.OglasVoziloDTO;
 import com.oglas.dto.UserViewDTO;
@@ -11,6 +12,8 @@ import com.oglas.model.Vozilo;
 import com.oglas.repository.ImageModelRepository;
 import com.oglas.repository.VoziloRepository;
 import com.oglas.service.VoziloService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,6 +52,8 @@ import java.util.zip.Inflater;
 @RequestMapping(value = "/vozilo")
 public class VoziloController {
 
+    protected final static Logger logger = LoggerFactory.getLogger(VoziloController.class);
+
     @Autowired
     private VoziloService voziloService;
 
@@ -58,12 +63,13 @@ public class VoziloController {
     @Autowired
     private VoziloRepository voziloRepository;
     
-    @GetMapping
-    public List<VoziloViewDTO> allVozila(){		//Prepraviti da vraca vozila za ulogovanog korisnika
+    @Autowired
+    private UserConnection userConnection;
+    
+    @GetMapping("agent/{id}")	//id - Ulogovani Agent
+    public List<VoziloViewDTO> allVozila(@PathVariable("id") Long agent){	
     	List<VoziloViewDTO> agentskaVozila = new ArrayList<>();
-    	UserViewDTO user = new UserViewDTO();
-		user.setFirstname("Goran");
-		user.setId(2L);						//Prepraviti na ulogovanog agenta
+    	UserViewDTO user = this.userConnection.getUser(agent);
 		
     	List<Vozilo> vozila = voziloService.getVozila(user.getId());
     	for(Vozilo v : vozila) {
@@ -80,24 +86,29 @@ public class VoziloController {
     }
 
     @PostMapping("/novoVozilo")
-    public BodyBuilder uplaodImage(@RequestParam("vozilomarka") String markaVozila,
+    public BodyBuilder sacuvajVozilo(@RequestParam("vozilomarka") String markaVozila,
                                    @RequestParam("image") MultipartFile file,
                                    @RequestParam("vozilomodel") String modelVozila,
                                    @RequestParam("voziloklasa") String klasaVozila,
                                    @RequestParam("vozilomenjac") String vrstaMenjaca,
                                    @RequestParam("vozilogorivo") String tipGoriva,
                                    @RequestParam("vozilokm") String predjeniKm,
-                                   @RequestParam("vozilosedista") String brsedistadeca
+                                   @RequestParam("vozilosedista") String brsedistadeca,
+                                   @RequestParam("username") String username,
+                                   @RequestParam("userId") Long userid
                                    ) throws IOException {
         VoziloDTO ovDTO=new VoziloDTO();
+        System.out.println("Username"+ username);
         ovDTO.setBrsedistadeca(brsedistadeca);
         ovDTO.setKlasaVozila(klasaVozila);
         ovDTO.setMarkaVozila(markaVozila);
         ovDTO.setModelVozila(modelVozila);
         ovDTO.setVrstaMenjaca(vrstaMenjaca);
         ovDTO.setPredjeniKm(predjeniKm);
+        ovDTO.setTipGoriva(tipGoriva);
+        ovDTO.setUser_id(userid);
         Vozilo vozilo=this.voziloService.createVozilo(ovDTO);
-        System.out.println("vozilo" + vozilo.getId() );
+     logger.info("Vozilo je sacuvano");
         System.out.println("Original Image Byte Size - " + file.getBytes().length);
 
         //System.out.println("vozilo - " + ovDTO.getKlasaVozila());
@@ -105,6 +116,7 @@ public class VoziloController {
                 compressBytes(file.getBytes()),vozilo.getId()); //kreirana slika
 
         imageModelRepository.save(img);
+        logger.info("Slika je sauvana");
         return ResponseEntity.status(HttpStatus.OK);
     }
     // @PreAuthorize("hasAuthority('create_oglas')")
@@ -153,6 +165,14 @@ public class VoziloController {
         } catch (DataFormatException e) {
         }
         return outputStream.toByteArray();
+    }
+    
+    @GetMapping("/vozila/{id}")
+    List<Vozilo> mojaVozila(@PathVariable("id") String id){
+    	Long user=Long.parseLong(id);
+		logger.info("Lista vozila");
+    	return voziloService.getVozila(user);
+    	
     }
 }
 

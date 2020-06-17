@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
 import { SearchService } from 'src/app/services/search.service';
 import { DateTimeAdapter } from 'ng-pick-datetime';
 import { Search } from 'src/app/models/search.model';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { KomentarFormaComponent } from '../komentar-forma/komentar-forma.component';
+import { Komentar } from 'src/app/models/komentar';
+import { MatMenuModule} from '@angular/material/menu';
+import { ResetLozinkeComponent } from '../../reset-lozinke/reset-lozinke.component';
 
 @Component({
   selector: 'app-user',
@@ -18,10 +23,38 @@ export class UserComponent implements OnInit {
   sviOglasi: Oglas[] = [];
   oglasiSource: Oglas[] = [];
   startAt: Date = new Date();
+  oglasIdzaPrenos:number;
 
-  constructor(dateTimeAdapter: DateTimeAdapter<any>, private authService: AuthenticationService, private oglasService: OglasService, private router: Router, private searchService: SearchService) {
+  constructor( public dialog2: MatDialog,public dialog: MatDialog,dateTimeAdapter: DateTimeAdapter<any>, private authService: AuthenticationService, private oglasService: OglasService, private router: Router, private searchService: SearchService) {
     dateTimeAdapter.setLocale('en-GB');
    }
+   public komentar:Komentar=new Komentar();
+   public ogl:Oglas=new Oglas();
+   openDialog(oglas): void {
+     console.log(" da li se stampa oglas: " + oglas);
+    //this.oglasService.nadjiCeoOglas(oglas);
+    localStorage.setItem('oglasStorage', JSON.stringify(oglas));
+   this.ogl=JSON.parse(localStorage.getItem('oglasStorage'));
+    console.log("ovo je oglas iz storage " + this.ogl.id);
+    localStorage.setItem('ceoSelektovaniOglas',""+this.ogl);
+    //console.log("ovo je ceo oglas koji je selektovan "+this.ogl);
+    this.oglasIdzaPrenos= this.ogl.id;
+    localStorage.setItem('idOglasStorage', ""+this.oglasIdzaPrenos);
+    console.log("id oglasa je iz local storage " +localStorage.getItem('idOglasStorage')); //ovo mi treba
+
+
+
+    const dialogRef = this.dialog.open(KomentarFormaComponent, {
+      width: '250px',
+     // data: {user: this}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      //this.animal = result;
+    });
+  }
+
 
   ngOnInit() {
 
@@ -37,8 +70,20 @@ export class UserComponent implements OnInit {
 
   onRezervisi(selectedOglas){
     console.log(selectedOglas);
+   
     this.router.navigateByUrl('vozilo/' + selectedOglas.id);
   }
+
+  public openDialogLozinka(){
+    const dialogRef = this.dialog2.open(ResetLozinkeComponent, {
+      data: { }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+
+    });
+  }
+
+
 
   onOdjaviMe(){
     window.localStorage.clear();
@@ -47,6 +92,14 @@ export class UserComponent implements OnInit {
 
   shopCart(){
     this.router.navigateByUrl('cart');
+  }
+
+  novo(){
+    this.router.navigateByUrl('novoVozilo');
+  }
+
+  sva(){
+    this.router.navigateByUrl('svaVozila');
   }
 
   resetuj(){

@@ -29,6 +29,28 @@ import { KlasaVozilaComponent } from './components/userComponent/klasa-vozila/kl
 import { ModelVozilaComponent } from './components/userComponent/model-vozila/model-vozila.component';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { Shared } from './models/shared';
+import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
+import { MatMenuModule} from '@angular/material/menu';
+import { PrikazSvihMarkiVozilaComponent } from './components/userComponent/marka-vozila/prikaz-svih-marki-vozila/prikaz-svih-marki-vozila.component';
+import { PrikazModelaVozilaComponent } from './components/userComponent/model-vozila/prikaz-modela-vozila/prikaz-modela-vozila.component';
+import { PrikazSvihTipovaGorivaComponent } from './components/userComponent/tip-goriva/prikaz-svih-tipova-goriva/prikaz-svih-tipova-goriva.component';
+import { PrikazSvihVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/prikaz-svih-vrsta-menjaca/prikaz-svih-vrsta-menjaca.component';
+import { PrikazSvihKlasaVozilaComponent } from './components/userComponent/klasa-vozila/prikaz-svih-klasa-vozila/prikaz-svih-klasa-vozila.component';
+import { IzmenaMarkeVozilaComponent } from './components/userComponent/marka-vozila/izmena-marke-vozila/izmena-marke-vozila.component';
+import { MatDialogModule } from '@angular/material';
+import { IzmenaKlaseVozilaComponent } from './components/userComponent/klasa-vozila/izmena-klase-vozila/izmena-klase-vozila.component';
+import { IzmenaTipaGorivaComponent } from './components/userComponent/tip-goriva/izmena-tipa-goriva/izmena-tipa-goriva.component';
+import { IzmenaVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/izmena-vrsta-menjaca/izmena-vrsta-menjaca.component';
+import { IzmenaModelaVozilaComponent } from './components/userComponent/model-vozila/izmena-modela-vozila/izmena-modela-vozila.component';
+import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/sva-vozila.component';
+import { ZahteviComponent } from './components/userComponent/agent/zahtevi/zahtevi.component';
+import { IzvestajComponent } from './components/userComponent/agent/izvestaj/izvestaj.component';
+import { IzvestajDialogComponent } from './components/userComponent/agent/izvestaj/izvestaj-dialog/izvestaj-dialog.component';
+import { CommonModule } from '@angular/common';
+import { MojiZahteviComponent } from './components/userComponent/user/moji-zahtevi/moji-zahtevi.component';
+import { MojiIzvestajiComponent } from './components/userComponent/user/moji-izvestaji/moji-izvestaji.component';
+import { MojIzvestajDialogComponent } from './components/userComponent/user/moji-izvestaji/moj-izvestaj-dialog/moj-izvestaj-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -49,6 +71,24 @@ import { Shared } from './models/shared';
     VrstaMenjacaComponent,
     KlasaVozilaComponent,
     ModelVozilaComponent,
+    RegistrationPageComponent,
+    PrikazSvihMarkiVozilaComponent,
+    PrikazModelaVozilaComponent,
+    PrikazSvihTipovaGorivaComponent,
+    PrikazSvihVrstaMenjacaComponent,
+    PrikazSvihKlasaVozilaComponent,
+    IzmenaMarkeVozilaComponent,
+    IzmenaKlaseVozilaComponent,
+    IzmenaTipaGorivaComponent,
+    IzmenaVrstaMenjacaComponent,
+    IzmenaModelaVozilaComponent,
+    SvaVozilaComponent,
+    ZahteviComponent,
+    IzvestajComponent,
+    IzvestajDialogComponent,
+    MojiZahteviComponent,
+    MojiIzvestajiComponent,
+    MojIzvestajDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,9 +100,14 @@ import { Shared } from './models/shared';
     NgxMaterialTimepickerModule,
     ReactiveFormsModule,
     OwlDateTimeModule, 
-    OwlNativeDateTimeModule
+    OwlNativeDateTimeModule,
+    MatMenuModule,
+    MatDialogModule,
+    CommonModule
+
   ],
-  entryComponents: [TerminZauzecaDialogComponent],
+  entryComponents: [TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent
+  ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,

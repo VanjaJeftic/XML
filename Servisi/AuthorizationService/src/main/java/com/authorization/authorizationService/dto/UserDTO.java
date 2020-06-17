@@ -10,6 +10,13 @@ public class UserDTO {
     private String username;
     private String password;
     private String email;
+    private String ime;
+    private String prezime;
+    private String adresa;
+    private String mesto;
+    private Integer telefon;
+    private String potvrdalozinke;
+
     private boolean enabled;
     private boolean accountNonExpired;
     private boolean credentialsNonExpired;
@@ -19,6 +26,54 @@ public class UserDTO {
 
     public UserDTO() {
 
+    }
+
+    public String getIme() {
+        return ime;
+    }
+
+    public void setIme(String ime) {
+        this.ime = ime;
+    }
+
+    public String getPrezime() {
+        return prezime;
+    }
+
+    public void setPrezime(String prezime) {
+        this.prezime = prezime;
+    }
+
+    public String getAdresa() {
+        return adresa;
+    }
+
+    public void setAdresa(String adresa) {
+        this.adresa = adresa;
+    }
+
+    public String getMesto() {
+        return mesto;
+    }
+
+    public void setMesto(String mesto) {
+        this.mesto = mesto;
+    }
+
+    public Integer getTelefon() {
+        return telefon;
+    }
+
+    public void setTelefon(Integer telefon) {
+        this.telefon = telefon;
+    }
+
+    public String getPotvrdalozinke() {
+        return potvrdalozinke;
+    }
+
+    public void setPotvrdalozinke(String potvrdalozinke) {
+        this.potvrdalozinke = potvrdalozinke;
     }
 
     public boolean isNalogAktivan() {
@@ -101,7 +156,7 @@ public class UserDTO {
         this.accountNonLocked = accountNonLocked;
     }
 
-    public UserDTO(List<Role>roles,Long id, String username, String password, String email, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked,boolean nalogAktivan) {
+    public UserDTO(List<Role>roles,Long id, String username, String password, String email, boolean enabled, boolean accountNonExpired,boolean nalogAktivan, boolean credentialsNonExpired, boolean accountNonLocked, String ime, String prezime, String adresa, String mesto, Integer telefon, String potvrdalozinke) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -112,5 +167,11 @@ public class UserDTO {
         this.accountNonLocked = accountNonLocked;
         this.roles=roles;
         this.nalogAktivan=nalogAktivan;
+        this.ime=ime;
+        this.prezime=prezime;
+        this.adresa=adresa;
+        this.mesto=mesto;
+        this.telefon=telefon;
+        this.potvrdalozinke=potvrdalozinke;
     }
 }

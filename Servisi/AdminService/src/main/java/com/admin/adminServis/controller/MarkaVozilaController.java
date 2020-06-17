@@ -3,6 +3,8 @@ import com.admin.adminServis.dto.MarkaVozilaDTO;
 import com.admin.adminServis.model.MarkaVozila;
 import com.admin.adminServis.repository.MarkaVozilaRepository;
 import com.admin.adminServis.service.MarkaVozilaService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,8 @@ import java.util.Optional;
 @RequestMapping(value = "/marka")
 public class MarkaVozilaController {
 
+    protected final static Logger logger = LoggerFactory.getLogger(MarkaVozilaController.class);
+
     @Autowired
     private MarkaVozilaService markaVozilaService;
     @Autowired
@@ -27,63 +31,53 @@ public class MarkaVozilaController {
         this.markaVozilaService=markaVozilaService;
     }
 
-    @PostMapping("/novaMarka")
+    @PostMapping
     //@PreAuthorize("hasAuthority('create_oglas')")
-    public ResponseEntity<?> createMarka(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
-
+    public ResponseEntity<?> sacuvajMarkuVozila(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
+        logger.info("Nova marka vozila");
         MarkaVozila markaVozila = this.markaVozilaService.createMarkaVozila(markaVozilaDTO);
 
         return new ResponseEntity<>(markaVozila, HttpStatus.OK);
     }
 
-    @PutMapping("/updateMarka")
+
+    @PutMapping
     //@PreAuthorize("hasAuthority('update_oglas')")
-    public ResponseEntity<?> updateMarka(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
+    public ResponseEntity<?> izmenaMarka(@RequestBody MarkaVozilaDTO markaVozilaDTO) {
+
         Optional<MarkaVozila> markaVoziladata = markaVozilaRepository.findById(markaVozilaDTO.getId());
         if(markaVoziladata.isPresent()){
             this.markaVozilaService.updateMarkaVozila(markaVozilaDTO);
+            logger.info("Izmenjena je marka vozila");
             return new ResponseEntity<>("Successful updated marka vozila", HttpStatus.OK);
         }else{
+            logger.info("Marka vozila nije pronadjena");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
-    @DeleteMapping("/deleteMarka/{id}")
+
+    @DeleteMapping("/{id}")
     //@PreAuthorize("hasRole('ROLE_operator')")
     //@PreAuthorize("hasAuthority('delete_oglas')")
-    public ResponseEntity<HttpStatus> deleteMarka(@PathVariable("id") Long id) {
+    public ResponseEntity<HttpStatus> brisanjeMarke(@PathVariable("id") Long id) {
+
         try {
             markaVozilaService.delete(id);
+            logger.info("Marka vozila je obrisana");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
+            logger.info("Marka vozila ili nije pronadjena ili ne moze da se obrise");
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
     }
 
-    @GetMapping("/markeVozila")
-    List<MarkaVozila> all() {
+    @GetMapping
+    List<MarkaVozila> sveMarke() {
+        logger.info("Lista marki vozila");
         return markaVozilaRepository.findAll();
     }
-
 /*
-    @GetMapping("/sveMarkeVozila")
-    public ResponseEntity<List<MarkaVozila>> getAllMarke(@RequestParam(required = false) String title) {
-       System.out.println("Dosli do controlera");
-            List<MarkaVozila> marke = new ArrayList<MarkaVozila>();
-
-            if (title == null)
-                markaVozilaRepository.findAll().forEach(marke::add);
-            else
-                markaVozilaRepository.findByNaziv(title).forEach(marke::add);
-
-            if (marke.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            }
-
-            return new ResponseEntity<>(marke, HttpStatus.OK);
-
-    }
-*/
     @GetMapping("/verify/{markavozila_id}")
     public boolean verify(@PathVariable("markavozila_id") Long markavozila_id){
         return markaVozilaService.verify(markavozila_id);
@@ -93,5 +87,5 @@ public class MarkaVozilaController {
 
     }
 
-
+*/
 }

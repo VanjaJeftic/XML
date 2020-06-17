@@ -1,5 +1,8 @@
 package com.agentApp.app.models;
 
+
+import com.agentApp.app.dto.ModelVozilaDTO;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +15,17 @@ public class ModelVozila {
 
     @Column(name="naziv")
     private String naziv;
+
+    @Column(name="id_marke")
+    private String id_marke;
+
+    public String getId_marke() {
+        return id_marke;
+    }
+
+    public void setId_marke(String id_marke) {
+        this.id_marke = id_marke;
+    }
 
     public Long getId() {
         return id;
@@ -30,5 +44,11 @@ public class ModelVozila {
     }
 
     public ModelVozila() {
+    }
+
+    public ModelVozila(ModelVozilaDTO dto) {
+        this.id = dto.getId();
+        this.naziv = dto.getNaziv();
+        this.id_marke=dto.getId_marke();
     }
 }

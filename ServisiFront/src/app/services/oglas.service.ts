@@ -1,7 +1,7 @@
 import { OglasView } from './../models/oglas-view';
 import { Observable } from 'rxjs';
 import { PutanjaService } from './../putanje/putanja.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -15,4 +15,12 @@ export class OglasService {
     console.log(this.putanja.get_oglas_url + '/' + id)
     return this.http.get<OglasView>(this.putanja.get_oglas_url + '/' + id);
   }
+
+  dodajIzvestaj(izvestaj){
+    let headers = new HttpHeaders({
+      'Accept' : 'application/json',
+      'Content-Type' : 'application/json'
+    });
+    return this.http.put('https://localhost:8662/oglas/izvestaj', izvestaj, {headers: headers});
+   }
 }

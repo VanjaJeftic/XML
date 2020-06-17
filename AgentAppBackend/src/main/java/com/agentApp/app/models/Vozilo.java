@@ -1,14 +1,21 @@
 package com.agentApp.app.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -62,6 +69,14 @@ public class Vozilo implements Serializable {
     @JsonIgnore
     @OneToOne(mappedBy = "vozilo")
     private Oglas oglas;
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "vozilo", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<TerminZauzeca> zauzeti = new HashSet<>();
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "vozilo", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Izvestaj> izvestaji = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -151,6 +166,30 @@ public class Vozilo implements Serializable {
 	this.oglas = oglas;
     }
 
-    public Vozilo() {
+	public Set<TerminZauzeca> getZauzeti() {
+		return zauzeti;
+	}
+
+	public void setZauzeti(Set<TerminZauzeca> zauzeti) {
+		this.zauzeti = zauzeti;
+	}
+	
+
+	public Set<Izvestaj> getIzvestaji() {
+		return izvestaji;
+	}
+
+	public void setIzvestaji(Set<Izvestaj> izvestaji) {
+		this.izvestaji = izvestaji;
+	}
+
+	public Vozilo() {
     }
+
+	public Vozilo(VoziloDTO vozilo) {
+		// TODO Auto-generated constructor stub
+		this.id=vozilo.getId();
+		this.BrSedistaDeca=vozilo.getBrsedistadeca();
+		
+	}
 }

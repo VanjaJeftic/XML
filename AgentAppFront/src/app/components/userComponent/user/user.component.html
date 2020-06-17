@@ -1,6 +1,21 @@
 <mat-toolbar color="primary" class="app-header">
-  <div><a href="/" class="navlogo">Rent-A-Car Korisnik</a></div>
+  <div><a href="/" class="navlogo">Rent-A-Car Korisnik</a>
+    &nbsp;&nbsp;
+  
+    <button  class="dugmeLista" mat-button [matMenuTriggerFor]="menu3" >
+      <mat-icon>face</mat-icon>
+      Korisnik
+    </button>
+  <mat-menu #menu3="matMenu">
+    <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" (click)="openDialogLozinka()"><mat-icon>vpn_key</mat-icon>Promeni lozinku</a>
+  </mat-menu>
+  </div>
+
+  
+
   <span class="nav-tool-items">
+    <a mat-button mat-raised-button routerLink="/novoVozilo" routerLinkActive="active" (click)="novo()">Novo vozilo</a>
+    <a mat-button mat-raised-button routerLink="/svaVozila" routerLinkActive="active" (click)="sva()">Sva vozila</a>
     <a mat-button mat-raised-button routerLink="/cart" routerLinkActive="active" (click)="shopCart()">Shopping Cart</a>
     <a mat-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
   </span>
@@ -51,8 +66,13 @@
               </mat-grid-tile>
               <mat-grid-tile [colspan]="5" [rowspan]="1">
                 <button mat-raised-button color="primary" style="border-radius: 10px;"
-                  (click)="onRezervisi(element)">Rezervisi</button>
+                  (click)="onRezervisi(oglas)">Rezervisi</button>
               </mat-grid-tile>
+
+              <mat-grid-tile [colspan]="5" [rowspan]="1">
+                <button mat-raised-button color="primary" style="border-radius: 10px;" (click)="openDialog(oglas)">Dodaj komentar</button>
+              </mat-grid-tile>
+
             </mat-grid-list>
           </mat-card-actions>
         </mat-card>

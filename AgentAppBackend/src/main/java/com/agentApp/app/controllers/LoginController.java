@@ -2,15 +2,12 @@ package com.agentApp.app.controllers;
 
 import java.security.Principal;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.agentApp.app.models.User;
 import com.agentApp.app.services.UserService;
@@ -19,6 +16,7 @@ import com.agentApp.app.services.UserService;
 @CrossOrigin(origins = "*")
 @RequestMapping(value = "/user")
 public class LoginController {
+	protected final static Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 	@Autowired
 	private UserService userService;
@@ -26,20 +24,12 @@ public class LoginController {
 	@GetMapping(value = "/getUserInfo")
 	//@PreAuthorize("hasRole('ROLE_USER')")
 	public User loggenInUser(Principal principal) {
+
 		User u = userService.findByUsername(principal.getName());
+		logger.info("Pronadjen korisnik po username-u");
 		return u;
 	}
-	
-	//Ne koristi ne nigdje
-	@PostMapping(value = "/register")
-	public ResponseEntity<User> register(@RequestBody User user){
-		User u = userService.saveUser(user);
-		
-		if( u == null ) {
-			System.out.println(u);
-			return new ResponseEntity<>(u, HttpStatus.OK);
-		}
-		
-		return new ResponseEntity<>(user, HttpStatus.OK);
-	}
+
+
+
 }

@@ -1,5 +1,7 @@
 package com.agentApp.app.models;
 
+import com.agentApp.app.dto.MarkaVozilaDTO;
+
 import javax.persistence.*;
 
 @Entity
@@ -32,4 +34,8 @@ public class MarkaVozila {
     public MarkaVozila() {
     }
 
+    public MarkaVozila(MarkaVozilaDTO dto) {
+        this.id = dto.getId();
+        this.naziv = dto.getNaziv();
+    }
 }

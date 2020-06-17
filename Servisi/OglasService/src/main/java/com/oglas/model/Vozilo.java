@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.oglas.dto.VoziloDTO;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -70,6 +72,10 @@ public class Vozilo {
     @JsonIgnore
     @OneToMany(mappedBy = "vehicle", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<TerminZauzeca> zauzeti = new ArrayList<TerminZauzeca>();
+    
+    //@JsonIgnore
+    @OneToMany(mappedBy = "vozilo", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Izvestaj> izvestaji = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -158,6 +164,14 @@ public class Vozilo {
 
 	public void setZauzeti(List<TerminZauzeca> zauzeti) {
 		this.zauzeti = zauzeti;
+	}
+
+	public Set<Izvestaj> getIzvestaji() {
+		return izvestaji;
+	}
+
+	public void setIzvestaji(Set<Izvestaj> izvestaji) {
+		this.izvestaji = izvestaji;
 	}
 
 	public Vozilo() {

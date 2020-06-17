@@ -1,0 +1,31 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="/" class="navlogo">Rent-A-Car</a></div>
+    <span class="nav-tool-items">
+    </span>
+  </mat-toolbar>
+  <br><br>
+  <div class="card my-5">
+    <div class="card-body">
+      <div class="labelNaslov">
+      <label>Lista tipova goriva vozila</label>
+    </div>
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Naziv tipa goriva</th>
+            <th scope="col">Brisanje tipa goriva</th>
+            <th scope="col">Izmena tipa goriva</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tipGoriva of tipGorivalist$ | async" >
+            <td>{{ tipGoriva.id }}</td>
+            <td>{{ tipGoriva.naziv }}</td>
+            <td><button class="btn btn-danger" (click)="deleteTipGoriva(tipGoriva)">Obrisi tip goriva</button></td>
+            <td><button class="btn boja" (click)="izmenaTipaGoriva(tipGoriva)">Izmeni tip goriva</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

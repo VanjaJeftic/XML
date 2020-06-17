@@ -1,0 +1,25 @@
+<div class="dialog" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Izvestaj</mat-card-title>
+        </mat-card-header>
+        <form class="form" #formControl="ngForm">
+            <mat-card-content>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Predjeni Kilometri</mat-label>
+                    <input [(ngModel)]="izvestaj.predjeniKm" matInput [ngModelOptions]="{standalone: true}" required>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Dodatni komentar</mat-label>
+                    <textarea [(ngModel)]="izvestaj.komentar" matInput [ngModelOptions]="{standalone: true}" required
+                            style="height: 130px;"></textarea>
+                </mat-form-field>
+                
+
+            </mat-card-content>
+            <button mat-raised-button color="primary" (click)="onUnesiIzvestaj()">Unesi Izvestaj</button>
+        </form>
+    </mat-card>
+</div>

@@ -9,10 +9,10 @@ import com.oglas.dto.UserViewDTO;
 @FeignClient(name = "eureka-authorization-service") //samo proveriti da li se ovo vozilo odnosi na naziv u bazi za Vozilo service
 public interface UserConnection {
 
-    @GetMapping("/verify/{user_id}")
+    @GetMapping("korisnik/verify/{user_id}")
     boolean verify(@PathVariable("user_id") Long user_id);
     
-    @GetMapping("/{id}")
+    @GetMapping("korisnik/{id}")
     UserViewDTO getUser(@PathVariable("id") Long id);
 
 }

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
 import { PraviOglasService } from 'src/app/services/pravi-oglas.service';
 import { Oglas } from 'src/app/models/oglas';
-
+import { MAT_DIALOG_DATA, MatDialogRef, MatSnackBar } from '@angular/material';
+import { Component, OnInit, Inject } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'pravi-oglas',
   templateUrl: './pravi-oglas.component.html',
@@ -13,7 +14,9 @@ export class PraviOglasComponent implements OnInit {
   cdw=false;
   public oglas:Oglas=new Oglas();
 
-  constructor(private  praviOglasService:PraviOglasService) { }
+  constructor(private  praviOglasService:PraviOglasService,public snackBar: MatSnackBar,
+    public dialogRef: MatDialogRef<PraviOglasComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any, private rout: Router) { }
 
   ngOnInit() {
   }
@@ -23,8 +26,19 @@ export class PraviOglasComponent implements OnInit {
   }
 
   public onSubmit(): void{
-
+   
+    this.oglas.user_id=localStorage.getItem('userId');
+    console.log(this.data.id);
+    this.oglas.vozilo_id=this.data.id;
+    console.log(this.oglas.user_id+localStorage.getItem('userId'));
     let res=this.praviOglasService.saveOglas(this.oglas);
+
+    window.location.href = this.rout.url;
+  }
+
+  public cancel(): void {
+    this.dialogRef.close();
+    this.snackBar.open('Odustali ste!', 'U redu', { duration: 1000 });
   }
 
 

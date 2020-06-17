@@ -1,3 +1,5 @@
+import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 import { ZahtevService } from './../../../../services/zahtev.service';
 import { ShopCartItems } from './../../../../models/shop-cart-items';
 import { Zahtev } from './../../../../models/zahtev';
@@ -17,10 +19,16 @@ export class MyShopCartItemsComponent implements OnInit {
 
   sendShopCart: ShopCartItems = new ShopCartItems();
 
-  constructor(private zahtevService: ZahtevService) { }
+  isButtonDisabled = false;
+  cartEmpty = true;
+
+  constructor(private zahtevService: ZahtevService, private router: Router, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.shopCartItems = JSON.parse(window.localStorage.getItem('ShopCartItem'));
+    if(this.shopCartItems != null || this.shopCartItems != undefined){
+      this.cartEmpty = false;
+    }
   }
 
   onNgModelChange(event){
@@ -40,13 +48,24 @@ export class MyShopCartItemsComponent implements OnInit {
       this.sendShopCart.zahtevi.push(z);
     }
 
+    this.sendShopCart.podnosilac = parseInt(localStorage.getItem('userId'));
+
     console.log(this.sendShopCart);
     this.zahtevService.rezervisi(this.sendShopCart).subscribe(
       data => {
-        console.log('Sacuvano!');
-        window.localStorage.clear();
+        this.snackBar.open('Zahtevi su kreirani! Sacekajte odgovor vlasnika', 'U redu', { duration: 10000 });
+        window.localStorage.removeItem('ShopCartItem');
+        this.isButtonDisabled = true;
       }
     );
     
+  }
+
+  onZahtevi(){
+    this.router.navigateByUrl('user/zahtev');
+  }
+
+  onDetaljnije(zahtev){
+    this.router.navigateByUrl('vozilo/' + zahtev.oglas.vozilo.id);
   }
 }

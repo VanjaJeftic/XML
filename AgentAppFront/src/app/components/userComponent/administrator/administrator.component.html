@@ -1,10 +1,53 @@
 <mat-toolbar color="primary" class="app-header">
-    <div><a href="/" class="navlogo">Rent-A-Car Administrator</a></div>
-    <span class="nav-tool-items">
-      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
-    </span>
-  </mat-toolbar>  
+  <div><a href="/" class="navlogo">Rent-A-Car Administrator</a></div>
+  <span class="nav-tool-items">
+<span>
+   
+
+    <button class="dugmeKreiraj"  mat-button [matMenuTriggerFor]="menu1">Kreiraj entitet</button>
+    <mat-menu #menu1="matMenu">
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/markaVozila">Kreiraj Marku Vozila</a>
+    
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/klasaVozila">Kreiraj Klasu Vozila</a>
+      
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/modelVozila">Kreiraj Model Vozila</a>
+
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/gorivoVozila">Kreiraj Tip Goriva</a>
+
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/menjacVozila">Kreiraj Vrstu Menjaca</a>
+    </mat-menu>
+
+
+    <button class="dugmeLista"  mat-button [matMenuTriggerFor]="menu2">Lista entiteta</button>
+    <mat-menu #menu2="matMenu">
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/listaMarkiVozila">Lista Marke Vozila</a>
+    
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/listaKlasaVozila">Lista Klase Vozila</a>
+      
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/listaModelaVozila">Lista Modela Vozila</a>
+
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/listaTipaGorivaVozila">Lista Tipa Goriva</a>
+
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/listaVrstaMenjacaVozila">Lista Vrste Menjaca</a>
+    </mat-menu>
+
+
+
+
+  </span>
+
+    <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
+
+   
+
+  </span>
+</mat-toolbar>  
+
+
+
+
+
 
 <div style="padding:20px;margin-top:30px;">
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>

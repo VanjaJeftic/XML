@@ -2,8 +2,12 @@ package com.zahtev.dto;
 
 import java.time.LocalDateTime;
 
+import com.zahtev.model.Zahtev;
+
 public class ZahtevDTO {
 
+	private Long id;
+	
 	private OglasDTO oglas;
 	private Long bundle_id;
 	private boolean bundle;
@@ -12,8 +16,40 @@ public class ZahtevDTO {
 	private LocalDateTime povratak;
 	private String status;
 	
+	private IzvestajDTO izvestaj;
+	
 	public ZahtevDTO() {
 		// TODO Auto-generated constructor stub
+	}
+	public ZahtevDTO(Zahtev z) {
+		super();
+		this.id = z.getId();
+		this.bundle_id = z.getBundle_id();
+		this.preuzimanje = z.getPreuzimanje();
+		this.povratak = z.getPovratak();
+		this.status = z.getStatus();
+	}
+	
+	public ZahtevDTO(Zahtev z, OglasDTO oglas) {
+		super();
+		this.oglas = oglas;
+		this.id = z.getId();
+		this.bundle_id = z.getBundle_id();
+		this.bundle = z.isBundle();
+		this.preuzimanje = z.getPreuzimanje();
+		this.povratak = z.getPovratak();
+		this.status = z.getStatus();
+	}
+	public ZahtevDTO(Zahtev z, OglasDTO oglas, IzvestajDTO i) {
+		super();
+		this.oglas = oglas;
+		this.id = z.getId();
+		this.bundle_id = z.getBundle_id();
+		this.bundle = z.isBundle();
+		this.preuzimanje = z.getPreuzimanje();
+		this.povratak = z.getPovratak();
+		this.status = z.getStatus();
+		this.izvestaj = i;
 	}
 	
 	
@@ -73,6 +109,22 @@ public class ZahtevDTO {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public IzvestajDTO getIzvestaj() {
+		return izvestaj;
+	}
+
+	public void setIzvestaj(IzvestajDTO izvestaj) {
+		this.izvestaj = izvestaj;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 }

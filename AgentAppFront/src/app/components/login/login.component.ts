@@ -27,15 +27,22 @@ export class LoginComponent implements OnInit {
         this.authService.getLoggedInUserData().subscribe(
           user => {
             console.log(user);
-            if(user.authorities[0].authority == 'ROLE_ADMIN'){
+            localStorage.setItem('usernameStorage', this.username);
+         
+            console.log(localStorage.getItem('usernameStorage'));
+            for(let i of user.authorities)
+            if(i.authority == 'log_ADMIN'){
+              window.alert("Uspesno ste se ulogovali");
               this.router.navigateByUrl('administrator');
-            }else if(user.authorities[0].authority == 'ROLE_AGENT'){
+            }else if(i.authority == 'log_AGENT'){
+              window.alert("Uspesno ste se ulogovali");
               this.router.navigateByUrl('agent');
-            }else if(user.authorities[0].authority == 'ROLE_USER'){
+            }else if(i.authority == 'log_USER'){
+              window.alert("Uspesno ste se ulogovali");
               this.router.navigateByUrl('user');
-            }else {
+            }/*else {
               alert('Nazalost, nemate dozvolu na posetite ovu stranicu.');
-            }
+            }*/
           }
         );
       },

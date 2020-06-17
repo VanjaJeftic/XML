@@ -1,3 +1,5 @@
+import { ZahtevBundleViewDTO } from './../models/zahtev-bundle-view-dto';
+import { Observable } from 'rxjs';
 import { PutanjaService } from './../putanje/putanja.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -15,5 +17,21 @@ export class ZahtevService {
       'Content-Type' : 'application/json'
     });
     return this.http.post(this.putanje.get_zahtev_url, shoppingCart, {headers: headers});
+  }
+
+  getZahtevi():Observable<ZahtevBundleViewDTO[]>{
+    return this.http.get<ZahtevBundleViewDTO[]>('https://localhost:8662/zahtev/' + parseInt(localStorage.getItem('userId')));
+  }
+
+  prihvatiZahtev(bundleID: number){
+    let headers = new HttpHeaders({
+      'Accept' : 'application/json',
+      'Content-Type' : 'application/json'
+    });
+    return this.http.post('https://localhost:8662/zahtev/accept/' + bundleID + '/' + parseInt(localStorage.getItem('userId')), {headers: headers});
+  }
+
+  getZahteviIzvestaj():Observable<ZahtevBundleViewDTO[]>{
+    return this.http.get<ZahtevBundleViewDTO[]>('https://localhost:8662/zahtev/izvestaj/' + parseInt(localStorage.getItem('userId')));
   }
 }

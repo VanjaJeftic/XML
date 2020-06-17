@@ -1,47 +1,51 @@
-
 <mat-toolbar color="primary" class="app-header">
-    <div><a href="/" class="navlogo">Rent-A-Car</a></div>
+    <div><a href="/" class="navlogo">Rent-A-Car Korisnik</a></div>
     <span class="nav-tool-items">
-      <a mat-button mat-raised-button routerLink="/register" routerLinkActive="active">Napravi nalog</a>
-    </span>
-  </mat-toolbar>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onVozilo()">Novo vozilo</a>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onMojaVozila()">Moja vozila</a>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onShoppingCart()">Moja Korpa</a>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
+   </span>
+  </mat-toolbar>  
 
   <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
     <mat-card >
       <mat-card-header>
-        <mat-card-title>Novo vozilo</mat-card-title>
+        <mat-card-title>Unesi informacije o vozilu</mat-card-title>
       </mat-card-header>
   
       <form class="form" (submit)="onSubmit()">
   
         <mat-card-content>
           <mat-form-field class="full-width">
-            <input matInput placeholder="Marka vozila" [(ngModel)]="vozilo.markaVozila" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Marka vozila" maxlength="30" [(ngModel)]="vozilo.markaVozila" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input matInput placeholder="Model vozila" [(ngModel)]="vozilo.modelVozila" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Model vozila" maxlength="30" [(ngModel)]="vozilo.modelVozila" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
         
           <mat-form-field class="full-width">
-            <input matInput placeholder="Klasa vozila" [(ngModel)]="vozilo.klasaVozila" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Klasa vozila" maxlength="30" [(ngModel)]="vozilo.klasaVozila" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input matInput placeholder="Vrsta menjaca" [(ngModel)]="vozilo.vrstaMenjaca" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Vrsta menjaca" maxlength="30" [(ngModel)]="vozilo.vrstaMenjaca" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input matInput placeholder="Tip goriva" [(ngModel)]="vozilo.tipGoriva" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Tip goriva" maxlength="30" [(ngModel)]="vozilo.tipGoriva" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input matInput placeholder="Predjni kilometri" [(ngModel)]="vozilo.predjeniKm" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="Predjni kilometri" maxlength="30" [(ngModel)]="vozilo.predjeniKm" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input matInput placeholder="Broj sedista za decu" [(ngModel)]="vozilo.brsedistadeca" [ngModelOptions]="{standalone: true}" required>
+
+            <input matInput placeholder="Broj sedista za decu" maxlength="10" [(ngModel)]="vozilo.brsedistadeca" [ngModelOptions]="{standalone: true}" required>
+
           </mat-form-field>
   
           <!--upload slike odavde-->
@@ -58,10 +62,9 @@
 
 
         </mat-card-content>
-        <a routerLink="/oglas/create"><button  mat-stroked-button class="buttonKorakUnazad" >Korak unazad</button></a>
         <br>
-        <br>
-        <button mat-stroked-button  class="buttonPotvrdi" type="submit">Potvrdi</button>
+      
+        <button mat-stroked-button color="primary" class="btn-block" type="submit">Potvrdi</button>
   
       </form>
     </mat-card>

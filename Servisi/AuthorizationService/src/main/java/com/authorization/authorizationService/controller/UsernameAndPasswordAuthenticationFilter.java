@@ -10,6 +10,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -57,8 +59,8 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 	JwtConfig jwtConfig;
 	@Autowired
 	private BCryptPasswordEncoder encoder;
-	
-	
+
+	protected final static Logger logger = LoggerFactory.getLogger(UsernameAndPasswordAuthenticationFilter.class);
 	
 	
 	public UsernameAndPasswordAuthenticationFilter(AuthenticationManager authManager, JwtConfig jwtConfig) {
@@ -70,7 +72,7 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 	
 	@PostMapping("/login")
 	public ResponseEntity<Logovan> prijava(@RequestBody UserDTO dto){
-		
+		logger.info("Login");
 		return new ResponseEntity<Logovan>(signin(dto.getUsername(), dto.getPassword()), HttpStatus.OK);
 	}
 	
@@ -116,6 +118,7 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 	
 	@PostMapping("/registerKorisnik")
 	public ResponseEntity<User> saveKorisnik(@RequestBody UserDTO korisnik){
+		logger.info("Registrovanje novog korisnika");
 		return new ResponseEntity<User>(userRepo.save(korisnik), HttpStatus.OK);
 	}
 	
@@ -124,15 +127,17 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 	private Logovan signin(String username, String password) {
 	
 			Logovan loggedUser = new Logovan();
-			System.out.println( "Enkodirana"+encoder.encode("123"));
 			UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(username, password, Collections.emptyList());
-			System.out.println("za proveru:" + authToken + "kraj" +authToken.getName()+authToken.getCredentials());
+
 			User user=userRepo.findByUsername(username);
+			System.out.println();
 			System.out.println(user.getPassword()+password);
-			System.out.println( "Enkodirana"+encoder.encode("123"));
-			System.out.println(user.getPassword().equals(encoder.encode("123")));
+			System.out.println();
+			System.out.println( "Enkodirana"+encoder.encode("12345678"));
+			System.out.println();
+			System.out.println(user.getPassword().equals(encoder.encode(password)));
 			Authentication authentication = authManager.authenticate(authToken);
-			System.out.println("Dolazak do security context");
+
 			SecurityContextHolder.getContext().setAuthentication(authentication);
 			
 			Long now = System.currentTimeMillis();
@@ -144,9 +149,11 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 				.setExpiration(new Date(now + jwtConfig.getExpiration() * 1000))  // in milliseconds
 				.signWith(SignatureAlgorithm.HS512, jwtConfig.getSecret().getBytes())
 				.compact();
-			System.out.println("EVO ME");
+			logger.info("setovanje tokena");
 			loggedUser.setToken(token);
 			loggedUser.setUsername(username);
+			loggedUser.setUserId(user.getId());
+			loggedUser.setRoles(user.getRoles().get(0).getName());
 			if(!userService.loadUserByUsername(username).isEnabled())
 				return null;
 			return loggedUser;

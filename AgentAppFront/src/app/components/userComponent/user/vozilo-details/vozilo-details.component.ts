@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material';
 import { Zahtev } from './../../../../models/zahtev';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { OglasService } from './../../../../services/oglas.service';
@@ -22,8 +23,10 @@ export class VoziloDetailsComponent implements OnInit {
   timeFrom: Date;
   timeTo: Date;
 
+  isButtonDisabled = false;
+
   constructor(private authService: AuthenticationService, private route: ActivatedRoute,
-              private oglasService: OglasService, private http: HttpClient ) { }
+              private oglasService: OglasService, public snackBar: MatSnackBar ) { }
 
   ngOnInit() {
     let idOglasa = parseInt(this.route.snapshot.paramMap.get('id'));
@@ -89,9 +92,12 @@ export class VoziloDetailsComponent implements OnInit {
       this.shopCartItem.push(this.zahtev);
       window.localStorage.setItem('ShopCartItem', JSON.stringify(this.shopCartItem));
     }
+    this.snackBar.open('Zahtev dodat u korpu!', 'U redu', { duration: 10000 });
+    this.isButtonDisabled = true;
   }
 
   onOdjaviMe(){
+    window.alert("Uspesno ste se odjavili!");
     window.localStorage.clear();
     this.authService.logout();
   }
