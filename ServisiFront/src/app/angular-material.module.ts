@@ -23,8 +23,10 @@ import {
    MatTabsModule,
    MatExpansionModule,
    MatPaginatorModule,
+   MatProgressSpinnerModule,
    MatCardModule,
   MatSortModule,
+  
   MatOptionModule,
   MatCheckboxModule,
 } from '@angular/material';
@@ -52,6 +54,7 @@ import {
       MatChipsModule,
       MatTooltipModule,
       MatTableModule,
+      MatProgressSpinnerModule,
       MatTabsModule,
       MatPaginatorModule,
       MatCardModule
@@ -76,6 +79,7 @@ import {
       MatChipsModule,
       MatTooltipModule,
       MatTableModule,
+      MatProgressSpinnerModule,
       MatTabsModule,
       MatPaginatorModule,
       MatCardModule

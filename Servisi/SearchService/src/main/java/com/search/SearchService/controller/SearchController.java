@@ -63,16 +63,20 @@ public class SearchController {
 	
 	@PostMapping("/getSearched")
 	public ResponseEntity<List<Search>> search(@RequestBody SearchDTO search) {
-	
 		List<Search> pretrazeniOglasi = new ArrayList<>();
-		List<Search> sviOglasi = searchService.getAllSearch();
-		for(Search s : sviOglasi) {
-			if(isMestoValid(s,search.getMesto()) && isDatumValid(s,search.getDatumi()) && isMarkaValid(s,search.getMarka()) && isModelValid(s,search.getModel()) && isCenaValid(s,search.getMinimalnaCena(),search.getMaksimalnaCena())) {
-				pretrazeniOglasi.add(s);
+		if(!isNullOrEmpty(search.getMesto()) && !isNullOrEmpty(search.getDatumi()) ) {
+			List<Search> sviOglasi = searchService.getAllSearch();
+			for(Search s : sviOglasi) {
+				if(isMestoValid(s,search.getMesto()) && isDatumValid(s,search.getDatumi()) && isMarkaValid(s,search.getMarka()) && isModelValid(s,search.getModel()) && isCenaValid(s,search.getMinimalnaCena(),search.getMaksimalnaCena())) {
+					pretrazeniOglasi.add(s);
+				}
+				
 			}
-			
+			return new ResponseEntity<>(pretrazeniOglasi, HttpStatus.OK);
 		}
-		return new ResponseEntity<>(pretrazeniOglasi, HttpStatus.OK);
+		
+		return new ResponseEntity<>(pretrazeniOglasi, HttpStatus.BAD_REQUEST);
+		
 	}
 	
 	private boolean isMestoValid(Search s, String mesto) {

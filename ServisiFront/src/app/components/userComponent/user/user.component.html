@@ -1,3 +1,6 @@
+<div *ngIf="spinner==true" class="spinner-container-modal">
+  <mat-spinner></mat-spinner>
+</div>
 <mat-toolbar color="primary" class="app-header">
     <div><a href="/" class="navlogo">Rent-A-Car Korisnik</a></div>
     <span class="nav-tool-items">
@@ -81,7 +84,7 @@
           <mat-grid-tile [colspan]="1">
             <div>
               <button mat-mini-fab color="primary"
-                (click)="onPretrazi(mesto.value,datum.value,marka.value,model.value,maksimalnaCena.value,minimalnaCena.value)"
+                (click)="onPretrazi()"
                 aria-label="Pretraga">
                 <mat-icon>search</mat-icon>
               </button>
@@ -91,13 +94,13 @@
         <hr>
         <mat-form-field appearance="outline">
           <mat-label>Mesto:</mat-label>
-          <input #mesto matInput placeholder="Unesite mesto">
+          <input matInput [(ngModel)]="pomocniSearchModel.mesto" placeholder="Unesite mesto">
           <mat-icon matSuffix>location_city</mat-icon>
         </mat-form-field>
         <hr>
         <mat-form-field appearance="outline">
           <mat-label>Datum iznajmljivanja i povratka:</mat-label>
-          <input matInput [min]="startAt" #datum placeholder="Odaberite datum" [owlDateTime]="dt1"
+          <input matInput [min]="startAt" [(ngModel)]="datumValue" placeholder="Odaberite datum" [owlDateTime]="dt1"
             [selectMode]="'range'" [owlDateTimeTrigger]="dt1" placeholder="Date Time">
           <mat-icon matSuffix>date_range</mat-icon>
           <owl-date-time #dt1></owl-date-time>
@@ -105,29 +108,29 @@
         <hr>
         <mat-form-field appearance="outline">
           <mat-label>Marka:</mat-label>
-          <input #marka matInput placeholder="Unesite marku">
+          <input [(ngModel)]="pomocniSearchModel.marka" matInput placeholder="Unesite marku">
           <mat-icon matSuffix>directions_car</mat-icon>
         </mat-form-field>
         <hr>
         <mat-form-field appearance="outline">
           <mat-label>Model:</mat-label>
-          <input #model matInput placeholder="Unesite model">
+          <input [(ngModel)]="pomocniSearchModel.model" matInput placeholder="Unesite model">
           <mat-icon matSuffix>directions_car</mat-icon>
         </mat-form-field>
         <hr>
         <mat-form-field appearance="outline">
           <mat-label>Minimalna cena:</mat-label>
-          <input #minimalnaCena matInput placeholder="Unesite cenu">
+          <input [(ngModel)]="pomocniSearchModel.minimalnaCena" type="number" matInput placeholder="Unesite cenu">
           <mat-icon matSuffix>attach_money</mat-icon>
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Maksimalna cena:</mat-label>
-          <input #maksimalnaCena matInput placeholder="Unesite cenu">
+          <input [(ngModel)]="pomocniSearchModel.maksimalnaCena" type="number" matInput placeholder="Unesite cenu">
           <mat-icon matSuffix>attach_money</mat-icon>
         </mat-form-field>
         <hr>
         <button mat-raised-button color="primary"
-          (click)="onPretrazi(mesto.value,datum.value,marka.value,model.value,maksimalnaCena.value,minimalnaCena.value)"
+          (click)="onPretrazi()"
           color="primary" style="width: 100%;">Pretrazi
           <mat-icon>search</mat-icon></button>
       </div>
