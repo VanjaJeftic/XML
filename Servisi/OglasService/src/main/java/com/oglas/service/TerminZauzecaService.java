@@ -90,18 +90,16 @@ public class TerminZauzecaService {
 	 															//zahtevPreuzimanje - Provjera termina kada se zeli preuzeti
 	 public int provjeriPodudaranje(TerminZauzeca zauzeto, TerminZauzecaDTO zahtevPreuzimanje) {
 		 
-		 System.out.println("Ulazi u if petlju da provjeri podudaranje termina");
 		 
 		 if( (zauzeto.getZauzetod().isAfter(zahtevPreuzimanje.getZauzetod()) && zauzeto.getZauzetdo().isBefore(zahtevPreuzimanje.getZauzetdo())
 					|| (zauzeto.getZauzetod().isBefore(zahtevPreuzimanje.getZauzetod()) && zauzeto.getZauzetdo().isAfter(zahtevPreuzimanje.getZauzetod()))) 
 					|| (zauzeto.getZauzetod().isBefore(zahtevPreuzimanje.getZauzetdo()) && zauzeto.getZauzetdo().isAfter(zahtevPreuzimanje.getZauzetdo()))
-					|| (zauzeto.getZauzetod().isBefore(zahtevPreuzimanje.getZauzetod()) && zauzeto.getZauzetdo().isAfter(zahtevPreuzimanje.getZauzetdo())) ) {
-			 System.out.println("********************************************************");
-			 System.out.println("Pronasao je termin podudaranja!!");
-			 System.out.println("********************************************************");
+					|| (zauzeto.getZauzetod().isBefore(zahtevPreuzimanje.getZauzetod()) && zauzeto.getZauzetdo().isAfter(zahtevPreuzimanje.getZauzetdo()))
+					|| (zauzeto.getZauzetod().isEqual(zahtevPreuzimanje.getZauzetod()) && zauzeto.getZauzetdo().isEqual(zahtevPreuzimanje.getZauzetdo()) ) ) {
+			 
 			 return 1;		//Nasao podudaranje
 			}
-		 System.out.println("Nema podudaranja!");
+		 
 		 return 0;
 	 }
 	 
@@ -113,7 +111,8 @@ public class TerminZauzecaService {
 				System.out.println("Poredi sa: " + z.getPreuzimanje() + ", do: " + z.getPovratak());
 				if(termin.getZauzetod().isEqual(z.getPreuzimanje()) && termin.getZauzetdo().isEqual(z.getPovratak()) ) {
 					termin.setVehicle(null);
-					this.terminRepository.save(termin);
+					//this.terminRepository.save(termin);
+					this.terminRepository.delete(termin);
 					System.out.println("Izmenjen termin, vozilo termini je: " + v.getZauzeti().toString());
 					return;
 				}

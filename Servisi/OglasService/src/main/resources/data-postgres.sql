@@ -16,3 +16,8 @@ insert into vozilo ( markavozila_id, modelvozila_id, klasavozila_id, tipgoriva_i
 insert into oglas ( user_id, vozilo_id, mesto, cena, popust, cenaspopust) values ( 2, 7, 'Sarajevo', 20, 20, 20 );
 
 insert into izvestaj (predjeniKm, komentar, vozilo_id, zahtev_id) values ('125', 'Vozilo vraceno na vrijeme', 7, 10);
+
+insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-06-24T19:00', '2020-06-26T20:00', 5);
+insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-06-26T19:00', '2020-06-29T20:00', 7);
+insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-06-22T19:00', '2020-06-24T20:00', 7);
+insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-06-23T19:00', '2020-06-27T20:00', 7);

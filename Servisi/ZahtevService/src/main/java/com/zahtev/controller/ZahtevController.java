@@ -186,6 +186,7 @@ public class ZahtevController {
 		return new ResponseEntity<>(null, HttpStatus.ACCEPTED);
 	}
 	
+	//Provjera da li se neki PENDING zahtev poklapa sa novim zahtevom i menja status u CANCELED
 	@PostMapping("/zauzece")
 	public boolean zauzece(@RequestBody TerminZauzecaZahtevDTO terminZahtev){
 		List<Zahtev> zahtevi = this.zahtevService.getAllZahtevi();
@@ -209,12 +210,12 @@ public class ZahtevController {
 							|| (preuzimanje.isBefore(zahtevPovratak) && povratak.isAfter(zahtevPovratak))
 							|| (preuzimanje.isBefore(zahtevPreuzimanje) && povratak.isAfter(zahtevPovratak))
 							|| (preuzimanje.isEqual(zahtevPreuzimanje) && povratak.isEqual(zahtevPovratak)) ) {
-						System.out.println("Usao u izmenu statusa!");
+					
 						z.setStatus("CANCELED");
 						this.zahtevService.save(z);
 						
 						if(z.isBundle()) {
-							System.out.println("Jeste bundle");
+							
 							this.zahtevService.odbijOstaleZahteveZaBundle(preuzimanje, povratak, id, z.getBundle_id());
 						}
 					}
