@@ -116,6 +116,12 @@ export class AdminService {
     return this.http.get('https://localhost:8088/komentar');
   }
   
+
+  
+  public getOdobreniKomZaovajOglas(oglasid:number) {
+    console.log("Pribavljamo komentare za oglas");
+    return this.http.get('https://localhost:8088/komentar/odobreniKomentariZaOglas/'+oglasid);
+  }
   
   public getKomentariOdbijeni() {
     console.log("Pribavljamo odbijene komentare");

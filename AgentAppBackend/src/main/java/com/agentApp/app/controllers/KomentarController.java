@@ -60,6 +60,22 @@ public class KomentarController {
     }
 
 
+    @GetMapping("/odobreniKomentariZaOglas/{idoglas}")
+    List<Komentar> odobreniKomentariZaOglas(@PathVariable("idoglas") Long idoglas) {
+        logger.info("Lista odobreniKomentariZaOglas");
+        System.out.println("Oglas id za komentar je "+ idoglas);
+        List<Komentar> komentarx = new ArrayList<Komentar>();
+        for (Komentar komentar : komentarRepository.findByOdobren(true)) {
+            if(komentar.isOdbijen()==false && komentar.getOglas_id()==idoglas){
+                komentarx.add(komentar);
+            }
+            System.out.println("Komentari svi " + komentarx.size());
+        }
+        return komentarx;
+    }
+
+
+
 
     @GetMapping("/sviOdbijeni")
     List<Komentar> sviOdbijeniKomentari() {

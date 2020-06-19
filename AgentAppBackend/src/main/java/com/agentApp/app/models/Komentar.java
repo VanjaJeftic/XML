@@ -16,6 +16,9 @@ public class Komentar {
     @Column(name="oglas_id")
     private Long oglas_id;
 
+    @Column(name="usernameusera")
+    private String usernameusera;
+
     @Column(name="korisnik_id")
     private Long korisnik_id;
 
@@ -39,6 +42,8 @@ public class Komentar {
 
     public Komentar(Komentar komentar) {
     }
+
+
 
 /*
     @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -110,7 +115,13 @@ public class Komentar {
         this.id = id;
     }
 
+    public String getUsernameusera() {
+        return usernameusera;
+    }
 
+    public void setUsernameusera(String usernameusera) {
+        this.usernameusera = usernameusera;
+    }
 
     public LocalDateTime getDatum() {
         return datum;
@@ -139,6 +150,7 @@ public class Komentar {
         this.odgovor_id = dto.getOdgovor_id();
         this.odbijen=dto.isOdbijen();
         this.odobren=dto.isOdobren();
+        this.usernameusera=dto.getUsernameusera();
     }
 
     public Komentar() {

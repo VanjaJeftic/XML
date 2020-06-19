@@ -53,6 +53,7 @@ import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/pr
 import { DijalogInfoKorisnikaComponent } from './components/userComponent/dijalog-info-korisnika/dijalog-info-korisnika.component';
 import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
 import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
+import { SviKomentariOglasaDijalogComponent } from './components/userComponent/svi-komentari-oglasa-dijalog/svi-komentari-oglasa-dijalog.component';
 
 
 
@@ -96,7 +97,8 @@ import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponen
     PrikazKomentaraKorisnikaComponent,
     DijalogInfoKorisnikaComponent,
     ListOdobrenihKomentaraAdminComponent,
-    ListaOdbijenihKomentaraAdminComponent
+    ListaOdbijenihKomentaraAdminComponent,
+    SviKomentariOglasaDijalogComponent
   ],
   imports: [
     BrowserModule,
@@ -112,7 +114,7 @@ import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponen
     MatDialogModule
   
   ],
-  entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent,DijalogInfoKorisnikaComponent
+  entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent
   ],
 
   providers: [{
