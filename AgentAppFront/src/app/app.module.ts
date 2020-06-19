@@ -51,6 +51,8 @@ import { IzvestajDialogComponent } from './components/userComponent/agent/izvest
 import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.component';
 import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
 import { DijalogInfoKorisnikaComponent } from './components/userComponent/dijalog-info-korisnika/dijalog-info-korisnika.component';
+import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
+import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
 
 
 
@@ -92,7 +94,9 @@ import { DijalogInfoKorisnikaComponent } from './components/userComponent/dijalo
     IzvestajDialogComponent,
     ResetLozinkeComponent,
     PrikazKomentaraKorisnikaComponent,
-    DijalogInfoKorisnikaComponent
+    DijalogInfoKorisnikaComponent,
+    ListOdobrenihKomentaraAdminComponent,
+    ListaOdbijenihKomentaraAdminComponent
   ],
   imports: [
     BrowserModule,

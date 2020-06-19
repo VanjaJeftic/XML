@@ -31,6 +31,9 @@ import { NovoVoziloComponent } from './components/novo-vozilo/novo-vozilo.compon
 import { SvaVozilaComponent } from './components/sva-vozila/sva-vozila.component';
 import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.component';
 import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
+import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
+import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
+
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -65,7 +68,9 @@ const routes: Routes = [
   { path: 'agent/zahtev', component: ZahteviComponent },
   { path: 'agent/vozilo', component: MojaVozilaComponent},
   { path: 'agent/izvestaj', component: IzvestajComponent },
-  {path: 'listaKomentaraAdmina', component:PrikazKomentaraKorisnikaComponent}
+  {path: 'listaKomentaraAdmina', component:PrikazKomentaraKorisnikaComponent},
+  {path: 'listaOdbobrenihKomentaraAdmina',component:ListOdobrenihKomentaraAdminComponent},
+  {path: 'listaOdbijenihKomentaraAdmina',component:ListaOdbijenihKomentaraAdminComponent}
 
 
 

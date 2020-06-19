@@ -116,7 +116,16 @@ export class AdminService {
     return this.http.get('https://localhost:8088/komentar');
   }
   
+  
+  public getKomentariOdbijeni() {
+    console.log("Pribavljamo odbijene komentare");
+    return this.http.get('https://localhost:8088/komentar/sviOdbijeni');
+  }
 
+  public getKomentariOdobreni() {
+    console.log("Pribavljamo odobrene komentare");
+    return this.http.get('https://localhost:8088/komentar/sviOdobreni');
+  }
 
   public getKlaseVozila() {
     console.log("Pribavljamo klase vozila");
