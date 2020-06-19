@@ -162,3 +162,6 @@ insert into zahtev (oglas_id, podnosilac_id, bundle, bundle_id, status, preuzima
 insert into zahtev (oglas_id, podnosilac_id, bundle, bundle_id, status, preuzimanje, povratak) values (2, 2, true, 6, 'PENDING', '2020-06-01T19:00', '2020-06-03T20:00');
 
 insert into izvestaj (predjeniKm, komentar, vozilo_id, zahtev_id) values ('125', 'Vozilo vraceno na vrijeme', 1, 4);
+
+insert into komentar (oglas_id, korisnik_id, datum, ocena,sadrzaj,odgovor_id,odobren,objavljen) values (1,4,'2020-06-22T19:00',7,'Komentar test', 1, false, false);
+insert into komentar (oglas_id, korisnik_id, datum, ocena, sadrzaj,odgovor_id,odobren,objavljen) values (2,4,'2020-06-22T19:00',9,'Komentar test 2', 1, false, false);

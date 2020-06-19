@@ -49,6 +49,8 @@ import { IzvestajComponent } from './components/userComponent/agent/izvestaj/izv
 import { TerminZauzecaDialogComponent } from './components/userComponent/agent/moja-vozila/termin-zauzeca-dialog/termin-zauzeca-dialog.component';
 import { IzvestajDialogComponent } from './components/userComponent/agent/izvestaj/izvestaj-dialog/izvestaj-dialog.component';
 import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.component';
+import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
+import { DijalogInfoKorisnikaComponent } from './components/userComponent/dijalog-info-korisnika/dijalog-info-korisnika.component';
 
 
 
@@ -88,7 +90,9 @@ import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.
     IzvestajComponent,
     TerminZauzecaDialogComponent,
     IzvestajDialogComponent,
-    ResetLozinkeComponent
+    ResetLozinkeComponent,
+    PrikazKomentaraKorisnikaComponent,
+    DijalogInfoKorisnikaComponent
   ],
   imports: [
     BrowserModule,
@@ -104,7 +108,7 @@ import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.
     MatDialogModule
   
   ],
-  entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent
+  entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent,DijalogInfoKorisnikaComponent
   ],
 
   providers: [{

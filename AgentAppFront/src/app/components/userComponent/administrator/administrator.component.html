@@ -1,10 +1,15 @@
 <mat-toolbar color="primary" class="app-header">
-  <div><a href="/" class="navlogo">Rent-A-Car Administrator</a></div>
+  <div><a href="/" class="navlogo">Rent-A-Car Administrator</a>  
+  </div>
   <span class="nav-tool-items">
 <span>
    
 
-    <button class="dugmeKreiraj"  mat-button [matMenuTriggerFor]="menu1">Kreiraj entitet</button>
+
+    <button class="dugmeKreiraj"  mat-button [matMenuTriggerFor]="menu1">
+      <mat-icon>settings_applications</mat-icon>
+      Kreiranje
+    </button>
     <mat-menu #menu1="matMenu">
       <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/markaVozila">Kreiraj Marku Vozila</a>
     
@@ -18,7 +23,10 @@
     </mat-menu>
 
 
-    <button class="dugmeLista"  mat-button [matMenuTriggerFor]="menu2">Lista entiteta</button>
+    <button class="dugmeLista"  mat-button [matMenuTriggerFor]="menu2">
+      <mat-icon>expand_more</mat-icon>
+      Liste
+    </button>
     <mat-menu #menu2="matMenu">
       <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/listaMarkiVozila">Lista Marke Vozila</a>
     
@@ -29,6 +37,8 @@
       <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/listaTipaGorivaVozila">Lista Tipa Goriva</a>
 
       <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/listaVrstaMenjacaVozila">Lista Vrste Menjaca</a>
+
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugme" routerLink="/listaKomentaraAdmina">Lista Komentara Korisnika</a>
     </mat-menu>
 
 
