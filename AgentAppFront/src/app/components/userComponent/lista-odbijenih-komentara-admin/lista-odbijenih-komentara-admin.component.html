@@ -1,14 +1,14 @@
 <mat-toolbar color="primary" class="app-header">
     <div><a href="/" class="navlogo">Rent-A-Car</a></div>
     <span class="nav-tool-items">
-      <a mat-button mat-raised-button routerLink="/administrator" routerLinkActive="active">Vrati se korak nazad</a>
-    </span>
+        <a mat-button mat-raised-button routerLink="/administrator" routerLinkActive="active">Vrati se korak nazad</a>
+      </span>
   </mat-toolbar>
   <br><br>
   <div class="card my-5">
     <div class="card-body">
       <div class="labelNaslov">
-      <label>Lista pristiglih komentara korisnika</label>
+      <label>Lista odbijenih komentara korisnika korisnika</label>
     </div>
       <table class="table table-bordered table-striped">
         <thead class="thead-dark">
@@ -17,8 +17,7 @@
             <th scope="col">Id korisnika  </th>
             <th scope="col">Id oglasa</th>
             <th scope="col">Sadrzaj komentara</th>
-            <th scope="col">Odobravanje komentara</th>
-            <th scope="col">Odbijanje komentara</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -27,8 +26,6 @@
             <td>{{ komentar.korisnik_id }}  <button class="btn btn-danger"  (click)="korisnikInfoDijalog(); pribaviKorisnika(komentar.korisnik_id)">Korisnik info</button></td>
             <td>{{ komentar.oglas_id }}</td>
             <td>{{ komentar.sadrzaj }}</td>
-            <td><button class="btn bojaZelena" (click)="odobravanjeKomentara(komentar.id)">Odobravanje</button></td>
-            <td><button class="btn btn-danger" (click)="odbijanje(komentar.id)">Odbijanje</button></td>
           </tr>
         </tbody>
       </table>

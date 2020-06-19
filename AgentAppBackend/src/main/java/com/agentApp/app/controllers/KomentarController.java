@@ -58,6 +58,37 @@ public class KomentarController {
         }
         return komentarx;
     }
+
+
+
+    @GetMapping("/sviOdbijeni")
+    List<Komentar> sviOdbijeniKomentari() {
+        logger.info("Lista komentara odbijenih");
+        List<Komentar> komentarx = new ArrayList<Komentar>();
+        for (Komentar komentar : komentarRepository.findByOdbijen(true)) {
+            if(komentar.isOdobren()==false){
+                komentarx.add(komentar);
+            }
+            System.out.println("Komentari svi odbijeni" + komentarx.size());
+        }
+        return komentarx;
+    }
+
+
+    @GetMapping("/sviOdobreni")
+    List<Komentar> sviOdobreniKomentari() {
+        logger.info("Lista komentara odobrenih");
+        List<Komentar> komentarx = new ArrayList<Komentar>();
+        for (Komentar komentar : komentarRepository.findByOdobren(true)) {
+            if(komentar.isOdbijen()==false){
+                komentarx.add(komentar);
+            }
+            System.out.println("Komentari svi odobreni" + komentarx.size());
+        }
+        return komentarx;
+    }
+
+
 /*
     @GetMapping
     List<Komentar> sviKomentari() {
