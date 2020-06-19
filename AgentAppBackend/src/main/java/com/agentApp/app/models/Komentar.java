@@ -34,8 +34,11 @@ public class Komentar {
     @Column(name="odobren")//od strane admina
     private boolean odobren;
 
-    @Column(name="objavljen")//od strane admina
-    private boolean objavljen;
+    @Column(name="odbijen")//od strane admina
+    private boolean odbijen;
+
+    public Komentar(Komentar komentar) {
+    }
 
 /*
     @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -87,12 +90,12 @@ public class Komentar {
         this.odobren = odobren;
     }
 
-    public boolean isObjavljen() {
-        return objavljen;
+    public boolean isOdbijen() {
+        return odbijen;
     }
 
-    public void setObjavljen(boolean objavljen) {
-        this.objavljen = objavljen;
+    public void setOdbijen(boolean odbijen) {
+        this.odbijen = odbijen;
     }
 
 //@OneToOne
@@ -134,7 +137,7 @@ public class Komentar {
         this.ocena = dto.getOcena();
         this.sadrzaj = dto.getSadrzaj();
         this.odgovor_id = dto.getOdgovor_id();
-        this.objavljen=dto.isObjavljen();
+        this.odbijen=dto.isOdbijen();
         this.odobren=dto.isOdobren();
     }
 

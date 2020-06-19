@@ -1,5 +1,6 @@
 package com.agentApp.app.dto;
 
+import com.agentApp.app.models.Komentar;
 import com.agentApp.app.models.Oglas;
 
 import java.time.LocalDateTime;
@@ -14,9 +15,9 @@ public class KomentarDTO {
     private String sadrzaj;
     private Long odgovor_id;
     private boolean odobren;
-    private boolean objavljen;
+    private boolean odbijen;
 
-    public KomentarDTO(Long id, Long oglas_id, Long korisnik_id, LocalDateTime datum, int ocena, String sadrzaj, Long odgovor_id, boolean odobren, boolean objavljen) {
+    public KomentarDTO(Long id, Long oglas_id, Long korisnik_id, LocalDateTime datum, int ocena, String sadrzaj, Long odgovor_id, boolean odobren, boolean odbijen) {
         this.id = id;
         this.oglas_id = oglas_id;
         this.korisnik_id = korisnik_id;
@@ -25,7 +26,10 @@ public class KomentarDTO {
         this.sadrzaj = sadrzaj;
         this.odgovor_id = odgovor_id;
         this.odobren = odobren;
-        this.objavljen = objavljen;
+        this.odbijen = odbijen;
+    }
+
+    public KomentarDTO(Komentar komentar) {
     }
 
     public boolean isOdobren() {
@@ -36,12 +40,12 @@ public class KomentarDTO {
         this.odobren = odobren;
     }
 
-    public boolean isObjavljen() {
-        return objavljen;
+    public boolean isOdbijen() {
+        return odbijen;
     }
 
-    public void setObjavljen(boolean objavljen) {
-        this.objavljen = objavljen;
+    public void setOdbijen(boolean odbijen) {
+        this.odbijen = odbijen;
     }
 
     public KomentarDTO() {
