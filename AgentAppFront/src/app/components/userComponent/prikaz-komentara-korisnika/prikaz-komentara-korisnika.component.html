@@ -7,7 +7,7 @@
   <div class="card my-5">
     <div class="card-body">
       <div class="labelNaslov">
-      <label>Lista komentara korisnika</label>
+      <label>Lista pristiglih komentara korisnika</label>
     </div>
       <table class="table table-bordered table-striped">
         <thead class="thead-dark">
@@ -25,7 +25,7 @@
             <td>{{ komentar.id }}</td>
             <td>{{ komentar.korisnik_id }}  <button class="btn btn-danger"  (click)="korisnikInfoDijalog(); pribaviKorisnika(komentar.korisnik_id)">Korisnik info</button></td>
             <td>{{ komentar.oglas_id }}</td>
-            <td><button class="btn " (click)="prikazSadrzajaKomentara(komentar.sadrzaj)">Sadrzaj komentara</button></td>
+            <td>{{ komentar.sadrzaj }}</td>
             <td><button class="btn bojaZelena" (click)="odobravanjeKomentara(komentar.id)">Odobravanje</button></td>
             <td><button class="btn btn-danger" (click)="odbijanje(komentar.id)">Odbijanje</button></td>
           </tr>

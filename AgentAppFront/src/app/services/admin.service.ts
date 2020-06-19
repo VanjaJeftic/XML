@@ -25,6 +25,23 @@ export class AdminService {
     return this.http.get<User>('https://localhost:8088/auth/korisnik/'+id);
   }
   
+  public izmenaPoljaOdobrenKomentar(id:number){
+    window.location.reload();
+    return this.http.put('https://localhost:8088/komentar/odobren/'+id,{responseType: 'text'}).subscribe(
+   
+      data=>{console.log('Vratio je '+data)});
+  }
+
+
+  public izmenaPoljaOdbijenKomentar(id:number){
+    window.location.reload();
+    return this.http.put('https://localhost:8088/komentar/odbijen/'+id,{responseType: 'text'}).subscribe(
+   
+      data=>{console.log('Vratio je '+data)});
+  }
+  
+
+
 
 
   public saveMarka(markaVozila:MarkaVozila){

@@ -28,7 +28,6 @@ export class PrikazKomentaraKorisnikaComponent implements OnInit {
     }
 
   public pribaviKorisnika(korisnik_id){
-      console.log("Caoooooooooo");
       let res = this.komentarService.getUserPoId(korisnik_id).subscribe(
        data => {
            this.userEntity = data;
@@ -36,15 +35,21 @@ export class PrikazKomentaraKorisnikaComponent implements OnInit {
            console.log("ovo je user: "+ JSON.parse(localStorage.getItem('user')));
       }
   );
+  }
 
+  public odobravanjeKomentara(id){
+    window.alert("Komentar je odobren");
+      this.komentarService.izmenaPoljaOdobrenKomentar(id);
+  }
 
-    
+  public odbijanje(id){
+    window.alert("Komentar je odbijen");
+      this.komentarService.izmenaPoljaOdbijenKomentar(id);
   }
 
 
+
 public korisnikInfoDijalog(){
-    
-  console.log("ova funkcija");
     const dialogRef = this.dialog2.open(DijalogInfoKorisnikaComponent, {
       data: {
         

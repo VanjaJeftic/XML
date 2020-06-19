@@ -16,6 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,8 +49,53 @@ public class KomentarController {
     @GetMapping
     List<Komentar> sviKomentari() {
         logger.info("Lista komentara");
-        return komentarRepository.findAll();
+        List<Komentar> komentarx = new ArrayList<Komentar>();
+        for (Komentar komentar : komentarRepository.findByOdobren(false)) {
+                 if(komentar.isOdbijen()==false){
+                komentarx.add(komentar);
+            }
+            System.out.println("Komentari svi " + komentarx.size());
+        }
+        return komentarx;
     }
+/*
+    @GetMapping
+    List<Komentar> sviKomentari() {
+        logger.info("Lista komentara");
+        return komentarRepository.findAll();
+    }*/
+
+    @PutMapping("/odobren/{id}")
+    //@PreAuthorize("hasAuthority('update_oglas')")
+    public ResponseEntity<?> izmenaPoljaOdobren(@PathVariable("id") Long id) {
+        Komentar k=komentarService.findOne(id);
+        Optional<Komentar> komentardata = komentarRepository.findById(id);
+        if(komentardata.isPresent()){
+            this.komentarService.izmenaPoljaOdobren(k);
+            logger.info("Izmena komentara");
+            return new ResponseEntity<>("Successful updated komentar", HttpStatus.OK);
+        }else{
+            logger.info("Komentar nije pronadjen");
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PutMapping("/odbijen/{id}")
+    //@PreAuthorize("hasAuthority('update_oglas')")
+    public ResponseEntity<?> izmenaPoljaOdbijen(@PathVariable("id") Long id) {
+        Komentar k=komentarService.findOne(id);
+        Optional<Komentar> komentardata = komentarRepository.findById(id);
+        if(komentardata.isPresent()){
+            this.komentarService.izmenaPoljaOdbijen(k);
+            logger.info("Izmena komentara");
+            return new ResponseEntity<>("Successful updated komentar", HttpStatus.OK);
+        }else{
+            logger.info("Komentar nije pronadjen");
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
 
     @PutMapping
     //@PreAuthorize("hasAuthority('update_oglas')")

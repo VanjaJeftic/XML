@@ -10,6 +10,8 @@ import com.agentApp.app.repository.KomentarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class KomentarService {
 
@@ -24,23 +26,99 @@ public class KomentarService {
     }
 
     public Komentar kreirajKomentar(KomentarDTO komentarDTO) {
-/*Komentar komentar=new Komentar();
-        komentar.setId(komentarDTO.getId());
-        komentar.setDatum(komentarDTO.getDatum());
-        komentar.setSadrzaj(komentarDTO.getSadrzaj());
-        komentar.setOcena(komentarDTO.getOcena());
-        komentar.setObjavljen(komentarDTO.isObjavljen());
-        komentar.setOglas_id(komentarDTO.getOglas_id());
-        komentar.setKorisnik_id(komentarDTO.getKorisnik_id());
-        komentar.setOdgovor_id(komentarDTO.getOdgovor_id());
-        komentar.setOdgovor_id(komentarDTO.getOdgovor_id());
+        KomentarDTO komentar2=new KomentarDTO();
+        komentar2.setId(komentarDTO.getId());
+        komentar2.setDatum(komentarDTO.getDatum());
+        komentar2.setSadrzaj(komentarDTO.getSadrzaj());
+        komentar2.setOcena(komentarDTO.getOcena());
+        komentar2.setOdbijen(false);
+        komentar2.setOglas_id(komentarDTO.getOglas_id());
+        komentar2.setKorisnik_id(komentarDTO.getKorisnik_id());
+        komentar2.setOdgovor_id(komentarDTO.getOdgovor_id());
+        komentar2.setOdobren(false);
 
 
-        */
-        Komentar komentar = this.komentarRepository.save(new Komentar(komentarDTO));
+        Komentar komentar = this.komentarRepository.save(new Komentar(komentar2));
         return komentar;
     }
 
+    public Komentar findOne(Long id) {
+        return komentarRepository.findById(id).orElseGet(null);
+    }
+
+
+    public Komentar izmenaPoljaOdbijen(Komentar kom) {
+        Komentar komentar = this.komentarRepository.findById(kom.getId())
+                .orElseThrow(() -> new NotFoundException("Komentar sa ovim id-jem ne postoji!"));
+        if(kom.isOdobren()==true) {
+            komentar.setId(kom.getId());
+            komentar.setDatum(kom.getDatum());
+            komentar.setSadrzaj(kom.getSadrzaj());
+            komentar.setOcena(kom.getOcena());
+            komentar.setOdbijen(kom.isOdbijen());
+            komentar.setOdobren(true);
+            komentar.setOdbijen(false);
+            komentar.setOglas_id(kom.getOglas_id());
+            komentar.setKorisnik_id(kom.getKorisnik_id());
+            komentar.setOdgovor_id(kom.getOdgovor_id());
+            komentar.setOdgovor_id(kom.getOdgovor_id());
+        }else{
+            komentar.setId(kom.getId());
+            komentar.setDatum(kom.getDatum());
+            komentar.setSadrzaj(kom.getSadrzaj());
+            komentar.setOcena(kom.getOcena());
+            komentar.setOdbijen(kom.isOdbijen());
+            komentar.setOdobren(false);
+            komentar.setOdbijen(true);
+            komentar.setOglas_id(kom.getOglas_id());
+            komentar.setKorisnik_id(kom.getKorisnik_id());
+            komentar.setOdgovor_id(kom.getOdgovor_id());
+            komentar.setOdgovor_id(kom.getOdgovor_id());
+        }
+
+        return this.komentarRepository.save(komentar);
+    }
+
+
+
+
+    public Komentar izmenaPoljaOdobren(Komentar kom) {
+        Komentar komentar = this.komentarRepository.findById(kom.getId())
+                .orElseThrow(() -> new NotFoundException("Komentar sa ovim id-jem ne postoji!"));
+
+        if(kom.isOdbijen()==false) {
+
+            komentar.setId(kom.getId());
+            komentar.setDatum(kom.getDatum());
+            komentar.setSadrzaj(kom.getSadrzaj());
+            komentar.setOcena(kom.getOcena());
+            komentar.setOdbijen(kom.isOdbijen());
+            komentar.setOdobren(true);
+            komentar.setOdbijen(false);
+            komentar.setOglas_id(kom.getOglas_id());
+            komentar.setKorisnik_id(kom.getKorisnik_id());
+            komentar.setOdgovor_id(kom.getOdgovor_id());
+            komentar.setOdgovor_id(kom.getOdgovor_id());
+        }else{
+            komentar.setId(kom.getId());
+            komentar.setDatum(kom.getDatum());
+            komentar.setSadrzaj(kom.getSadrzaj());
+            komentar.setOcena(kom.getOcena());
+            komentar.setOdbijen(kom.isOdbijen());
+            komentar.setOdobren(false);
+            komentar.setOdbijen(true);
+            komentar.setOglas_id(kom.getOglas_id());
+            komentar.setKorisnik_id(kom.getKorisnik_id());
+            komentar.setOdgovor_id(kom.getOdgovor_id());
+            komentar.setOdgovor_id(kom.getOdgovor_id());
+        }
+
+        return this.komentarRepository.save(komentar);
+    }
+
+
+
+//ovo se za sada ne koristi!!!!
     public Komentar izmenaKomentara(KomentarDTO komentarDTO) {
         Komentar komentar = this.komentarRepository.findById(komentarDTO.getId())
                 .orElseThrow(() -> new NotFoundException("Komentar sa ovim id-jem ne postoji!"));
@@ -49,7 +127,9 @@ public class KomentarService {
         komentar.setDatum(komentarDTO.getDatum());
         komentar.setSadrzaj(komentarDTO.getSadrzaj());
         komentar.setOcena(komentarDTO.getOcena());
-        komentar.setObjavljen(komentarDTO.isObjavljen());
+        komentar.setOdbijen(komentarDTO.isOdbijen());
+        komentar.setOdobren(false);
+        komentar.setOdbijen(false);
         komentar.setOglas_id(komentarDTO.getOglas_id());
         komentar.setKorisnik_id(komentarDTO.getKorisnik_id());
         komentar.setOdgovor_id(komentarDTO.getOdgovor_id());
@@ -63,7 +143,6 @@ public class KomentarService {
         komentarRepository.deleteById(id);
         return;
     }
-
 
 
 
