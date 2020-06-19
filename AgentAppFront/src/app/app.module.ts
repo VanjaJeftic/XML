@@ -49,6 +49,11 @@ import { IzvestajComponent } from './components/userComponent/agent/izvestaj/izv
 import { TerminZauzecaDialogComponent } from './components/userComponent/agent/moja-vozila/termin-zauzeca-dialog/termin-zauzeca-dialog.component';
 import { IzvestajDialogComponent } from './components/userComponent/agent/izvestaj/izvestaj-dialog/izvestaj-dialog.component';
 import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.component';
+import { PorukaZahtevComponent } from './components/userComponent/user/poruka-zahtev/poruka-zahtev.component';
+import { PorukaComponent } from './components/userComponent/user/poruka-zahtev/poruka/poruka.component';
+import { PorukaService } from './services/poruka.service';
+import { PrikazPorukaComponent } from './components/userComponent/user/prikaz-poruka/prikaz-poruka.component';
+import { PorukeRazmenjeneComponent } from './components/userComponent/user/poruke-razmenjene/poruke-razmenjene.component';
 
 
 
@@ -88,7 +93,11 @@ import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.
     IzvestajComponent,
     TerminZauzecaDialogComponent,
     IzvestajDialogComponent,
-    ResetLozinkeComponent
+    ResetLozinkeComponent,
+    PorukaZahtevComponent,
+    PorukaComponent,
+    PrikazPorukaComponent,
+    PorukeRazmenjeneComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,7 +113,7 @@ import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.
     MatDialogModule
   
   ],
-  entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent
+  entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent,PorukaComponent
   ],
 
   providers: [{
@@ -115,7 +124,8 @@ import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.
     
     NoviOglasService,
     NovoVoziloService,
-    SvaVozilaService
+    SvaVozilaService,
+    PorukaService,
 ],
   bootstrap: [AppComponent]
 })

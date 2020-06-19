@@ -102,6 +102,15 @@ export class UserComponent implements OnInit {
     this.router.navigateByUrl('svaVozila');
   }
 
+  prihvaceni(){
+    this.router.navigateByUrl('posalji');
+  }
+
+  zahteviMess(){
+    this.router.navigateByUrl('zahteviMess');
+  }
+
+
   resetuj(){
     this.oglasiSource = this.sviOglasi;
   }

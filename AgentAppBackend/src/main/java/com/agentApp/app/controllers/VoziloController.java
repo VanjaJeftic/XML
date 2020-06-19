@@ -134,7 +134,7 @@ public class VoziloController {
 	    List<Vozilo> mojaVozila(Principal p){
 	    	User user=userService.findByUsername(p.getName());
 			logger.info("Uspesno je pronadjen korisnik koji je kreirao vozilo");
-	    	return voziloService.getVozila(user);
+	    	return voziloService.getVozilaBezOglasa(user);
 	    	
 	    }
 //	    @GetMapping

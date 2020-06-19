@@ -2,6 +2,7 @@ package com.agentApp.app.models;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -52,6 +54,9 @@ public class Zahtev implements Serializable {
 
     @Column(name="status")
     private String status;
+    
+    @OneToMany(mappedBy = "zahtev")
+    protected List<Poruka> poruka;
 
     public Long getId() {
         return id;
@@ -127,6 +132,16 @@ public class Zahtev implements Serializable {
     	this.povratak = zahtevDTO.getPovratak();
     	this.bundle = zahtevDTO.isBundle();
     }
+
+	public List<Poruka> getPoruka() {
+		return poruka;
+	}
+
+	public void setPoruka(List<Poruka> poruka) {
+		this.poruka = poruka;
+	}
+    
+    
     
 }
 
