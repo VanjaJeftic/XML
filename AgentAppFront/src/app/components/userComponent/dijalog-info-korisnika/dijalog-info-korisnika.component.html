@@ -1,0 +1,49 @@
+<div class="dialog" fxLayout="row" fxLayoutAlign="center center" >
+    <mat-card class="box ex3">
+        <mat-card-header>
+          <mat-card-title>Informacije o korisniku</mat-card-title>
+        </mat-card-header>
+            <form class="form ex3" #formControl="ngForm">
+                <mat-card-content>
+                    <label class="label success"><b>Korisnicko ime:</b> </label>
+                        <mat-form-field class="full-width boja">
+                        <input matInput  type="text" [(ngModel)]="user.username" name="username"  readonly>
+                        </mat-form-field>
+                        <label class="label success"><b>Ime: </b></label>
+                        <mat-form-field class="full-width boja">
+                            <input matInput  type="text" [(ngModel)]="user.firstname" name="firstname" readonly>
+                        </mat-form-field>
+                        <label class="label success"><b> Prezime:</b> </label>
+                        <mat-form-field class="full-width boja">
+                            <input matInput  type="text" [(ngModel)]="user.lastname" name="lastname"  readonly>
+                        </mat-form-field>
+                        <label class="label success"><b>Adresa: </b></label>
+                        <mat-form-field class="full-width boja">
+                            <input matInput  type="text" [(ngModel)]="user.adress" name="adress" readonly>
+                        </mat-form-field>
+                        <label class="label success"><b>Grad:</b> </label>
+                        <mat-form-field class="full-width boja">
+                            <input matInput  type="text" [(ngModel)]="user.city" name="city" readonly>
+                        </mat-form-field>
+                        <label class="label success"><b>Drzava: </b></label>
+                        <mat-form-field class="full-width boja">
+                            <input matInput  type="text" [(ngModel)]="user.country" name="country" readonly>
+                        </mat-form-field>
+                        <label class="label success"><b>Email:</b> </label>
+                        <mat-form-field class="full-width boja">
+                            <input matInput  type="text" [(ngModel)]="user.email" name="email" readonly>
+                        </mat-form-field>
+                        <label class="label success"><b>Telefon:</b> </label>
+                        <mat-form-field class="full-width boja">
+                            <input matInput  type="text" [(ngModel)]="user.phoneNumber" name="phoneNumber" readonly>
+                        </mat-form-field>
+                        <br>
+                        <br>
+
+                        <button mat-button class="bojaButton" (click)="cancel()">Zatvori</button>
+
+                </mat-card-content>
+               
+            </form>
+    </mat-card>
+    </div>

@@ -4,29 +4,28 @@
       <a mat-button mat-raised-button routerLink="/administrator" routerLinkActive="active">Vrati se korak nazad</a>
     </span>
   </mat-toolbar>
-
   <br><br>
-  
   <div class="card my-5">
     <div class="card-body">
       <div class="labelNaslov">
-      <label>Lista marki vozila</label>
+      <label>Lista odobrenih komentara korisnika korisnika</label>
     </div>
       <table class="table table-bordered table-striped">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Naziv marke vozila</th>
-            <th scope="col">Brisanje marke vozila</th>
-            <th scope="col">Izmena marke vozila</th>
+            <th scope="col">Id korisnika  </th>
+            <th scope="col">Id oglasa</th>
+            <th scope="col">Sadrzaj komentara</th>
+            
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let marka of markelist$ | async" >
-            <td >{{ marka.id }}</td>
-            <td >{{ marka.naziv }}</td>
-            <td><button class="btn btn-danger" (click)="deleteMarka(marka)">Obrisi marku vozila</button></td>
-            <td><button class="btn boja" (click)="izmena(marka)">Izmeni marke vozila</button></td>
+          <tr *ngFor="let komentar of komentarlist$ | async" >
+            <td>{{ komentar.id }}</td>
+            <td>{{ komentar.korisnik_id }}  <button class="btn btn-danger"  (click)="korisnikInfoDijalog(); pribaviKorisnika(komentar.korisnik_id)">Korisnik info</button></td>
+            <td>{{ komentar.oglas_id }}</td>
+            <td>{{ komentar.sadrzaj }}</td>
           </tr>
         </tbody>
       </table>

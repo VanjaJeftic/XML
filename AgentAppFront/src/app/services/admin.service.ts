@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ModelVozila } from '../models/model-vozila';
 import { KlasaVozila } from '../models/klasa-vozila';
 import { TipGoriva } from '../models/tip-goriva';
 import { VrstaMenjaca } from '../models/vrsta-menjaca';
 import { MarkaVozila } from '../models/marka-vozila';
+import { Observable } from 'rxjs';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +19,28 @@ export class AdminService {
   public aktivirajNalog(id: number){
     return this.http.post('https://localhost:8088/auth/aktivirajNalog', id);
   }
+
+  public getUserPoId(id:number):Observable<User>{
+    console.log("Pribavljamo korisnika");
+    return this.http.get<User>('https://localhost:8088/auth/korisnik/'+id);
+  }
+  
+  public izmenaPoljaOdobrenKomentar(id:number){
+    window.location.reload();
+    return this.http.put('https://localhost:8088/komentar/odobren/'+id,{responseType: 'text'}).subscribe(
+   
+      data=>{console.log('Vratio je '+data)});
+  }
+
+
+  public izmenaPoljaOdbijenKomentar(id:number){
+    window.location.reload();
+    return this.http.put('https://localhost:8088/komentar/odbijen/'+id,{responseType: 'text'}).subscribe(
+   
+      data=>{console.log('Vratio je '+data)});
+  }
+  
+
 
 
 
@@ -86,6 +110,28 @@ export class AdminService {
     return this.http.get('https://localhost:8088/marka');
   }
 
+
+  public getKomentari() {
+    console.log("Pribavljamo komentare");
+    return this.http.get('https://localhost:8088/komentar');
+  }
+  
+
+  
+  public getOdobreniKomZaovajOglas(oglasid:number) {
+    console.log("Pribavljamo komentare za oglas");
+    return this.http.get('https://localhost:8088/komentar/odobreniKomentariZaOglas/'+oglasid);
+  }
+  
+  public getKomentariOdbijeni() {
+    console.log("Pribavljamo odbijene komentare");
+    return this.http.get('https://localhost:8088/komentar/sviOdbijeni');
+  }
+
+  public getKomentariOdobreni() {
+    console.log("Pribavljamo odobrene komentare");
+    return this.http.get('https://localhost:8088/komentar/sviOdobreni');
+  }
 
   public getKlaseVozila() {
     console.log("Pribavljamo klase vozila");

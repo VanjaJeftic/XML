@@ -1,0 +1,39 @@
+<div class="dialog"  fxLayoutAlign="center center" >
+    <mat-card class="box ex3">
+        <mat-card-header>
+          <mat-card-title>Komentari za oglas</mat-card-title>
+        </mat-card-header>
+            <form class="form" #formControl="ngForm">
+                <mat-card-content>
+                    <div class="">
+                        <div class="">
+                          <div class="labelNaslov">
+                          <label>Lista komentara</label>
+                        </div>
+                          <table class="table table-bordered table-striped">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th  scope="col">#</th>
+                                <th scope="col">Username korisnika</th>
+                                <th scope="col">Komentar</th>
+                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let komentar of komentarlist$ | async" >
+                                <td>{{ komentar.id }}</td>
+                                <td>{{ komentar.usernameusera }} </td>
+                                <td>{{ komentar.sadrzaj }}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <button mat-button class="bojaButton" (click)="cancel()">Zatvori</button>
+
+                </mat-card-content>
+               
+            </form>
+    </mat-card>
+    </div>

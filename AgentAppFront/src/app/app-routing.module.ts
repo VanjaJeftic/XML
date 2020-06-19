@@ -33,6 +33,9 @@ import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.
 import { PorukaZahtevComponent } from './components/userComponent/user/poruka-zahtev/poruka-zahtev.component';
 import { PorukeRazmenjeneComponent } from './components/userComponent/user/poruke-razmenjene/poruke-razmenjene.component';
 import { PrikazPorukaComponent } from './components/userComponent/user/prikaz-poruka/prikaz-poruka.component';
+import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
+import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
+import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
 
 
 const routes: Routes = [
@@ -71,6 +74,9 @@ const routes: Routes = [
   { path: 'posalji', component:PorukaZahtevComponent},
   { path: 'zahteviMess', component:PorukeRazmenjeneComponent},
   { path: 'prikazPoruke',component:PrikazPorukaComponent},
+  {path: 'listaKomentaraAdmina', component:PrikazKomentaraKorisnikaComponent},
+  {path: 'listaOdbobrenihKomentaraAdmina',component:ListOdobrenihKomentaraAdminComponent},
+  {path: 'listaOdbijenihKomentaraAdmina',component:ListaOdbijenihKomentaraAdminComponent},
 
 
 

@@ -11,6 +11,8 @@ import { KomentarFormaComponent } from '../komentar-forma/komentar-forma.compone
 import { Komentar } from 'src/app/models/komentar';
 import { MatMenuModule} from '@angular/material/menu';
 import { ResetLozinkeComponent } from '../../reset-lozinke/reset-lozinke.component';
+import { DijalogInfoKorisnikaComponent } from '../dijalog-info-korisnika/dijalog-info-korisnika.component';
+import { SviKomentariOglasaDijalogComponent } from '../svi-komentari-oglasa-dijalog/svi-komentari-oglasa-dijalog.component';
 
 @Component({
   selector: 'app-user',
@@ -25,7 +27,7 @@ export class UserComponent implements OnInit {
   startAt: Date = new Date();
   oglasIdzaPrenos:number;
 
-  constructor( public dialog2: MatDialog,public dialog: MatDialog,dateTimeAdapter: DateTimeAdapter<any>, private authService: AuthenticationService, private oglasService: OglasService, private router: Router, private searchService: SearchService) {
+  constructor(public dialog4: MatDialog, public dialog3: MatDialog,public dialog2: MatDialog,public dialog: MatDialog,dateTimeAdapter: DateTimeAdapter<any>, private authService: AuthenticationService, private oglasService: OglasService, private router: Router, private searchService: SearchService) {
     dateTimeAdapter.setLocale('en-GB');
    }
    public komentar:Komentar=new Komentar();
@@ -41,6 +43,7 @@ export class UserComponent implements OnInit {
     this.oglasIdzaPrenos= this.ogl.id;
     localStorage.setItem('idOglasStorage', ""+this.oglasIdzaPrenos);
     console.log("id oglasa je iz local storage " +localStorage.getItem('idOglasStorage')); //ovo mi treba
+
 
 
 
@@ -73,6 +76,32 @@ export class UserComponent implements OnInit {
    
     this.router.navigateByUrl('vozilo/' + selectedOglas.id);
   }
+
+
+  public openDialogInfo(){
+    //za korisnika
+      const dijalogInfo=this.dialog3.open(DijalogInfoKorisnikaComponent,{
+        data: { }
+    });
+    dijalogInfo.afterClosed().subscribe(result => {
+
+    });
+  }
+
+//za prikaz svih komentara oglasa
+ public openDialogPrikazKomentara(){
+  const dialogRef = this.dialog4.open(SviKomentariOglasaDijalogComponent, {
+    data: {
+      
+     }
+  });
+  dialogRef.afterClosed().subscribe(result => {
+
+  });
+}
+
+
+
 
   public openDialogLozinka(){
     const dialogRef = this.dialog2.open(ResetLozinkeComponent, {

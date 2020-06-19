@@ -54,6 +54,12 @@ import { PorukaComponent } from './components/userComponent/user/poruka-zahtev/p
 import { PorukaService } from './services/poruka.service';
 import { PrikazPorukaComponent } from './components/userComponent/user/prikaz-poruka/prikaz-poruka.component';
 import { PorukeRazmenjeneComponent } from './components/userComponent/user/poruke-razmenjene/poruke-razmenjene.component';
+import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
+import { DijalogInfoKorisnikaComponent } from './components/userComponent/dijalog-info-korisnika/dijalog-info-korisnika.component';
+import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
+import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
+import { SviKomentariOglasaDijalogComponent } from './components/userComponent/svi-komentari-oglasa-dijalog/svi-komentari-oglasa-dijalog.component';
+
 
 
 
@@ -98,6 +104,11 @@ import { PorukeRazmenjeneComponent } from './components/userComponent/user/poruk
     PorukaComponent,
     PrikazPorukaComponent,
     PorukeRazmenjeneComponent,
+    PrikazKomentaraKorisnikaComponent,
+    DijalogInfoKorisnikaComponent,
+    ListOdobrenihKomentaraAdminComponent,
+    ListaOdbijenihKomentaraAdminComponent,
+    SviKomentariOglasaDijalogComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +124,9 @@ import { PorukeRazmenjeneComponent } from './components/userComponent/user/poruk
     MatDialogModule
   
   ],
-  entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent,PorukaComponent
+
+  entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,PorukaComponent
+
   ],
 
   providers: [{

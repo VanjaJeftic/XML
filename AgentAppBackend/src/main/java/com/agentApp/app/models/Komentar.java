@@ -16,18 +16,12 @@ public class Komentar {
     @Column(name="oglas_id")
     private Long oglas_id;
 
+    @Column(name="usernameusera")
+    private String usernameusera;
+
     @Column(name="korisnik_id")
     private Long korisnik_id;
 
-    /*
-    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "oglas_id")
-    private Oglas oglas;
-
-    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "korisnik_id")
-    private Korisnik korisnik;
-*/
     @Column(name="datum")
     private LocalDateTime datum;
 
@@ -43,9 +37,23 @@ public class Komentar {
     @Column(name="odobren")//od strane admina
     private boolean odobren;
 
-    @Column(name="objavljen")//od strane admina
-    private boolean objavljen;
+    @Column(name="odbijen")//od strane admina
+    private boolean odbijen;
 
+    public Komentar(Komentar komentar) {
+    }
+
+
+
+/*
+    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "oglas_id")
+    private Oglas oglas;
+
+    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "korisnik_id")
+    private Korisnik korisnik;
+*/
 
     public Long getOglas_id() {
         return oglas_id;
@@ -87,12 +95,12 @@ public class Komentar {
         this.odobren = odobren;
     }
 
-    public boolean isObjavljen() {
-        return objavljen;
+    public boolean isOdbijen() {
+        return odbijen;
     }
 
-    public void setObjavljen(boolean objavljen) {
-        this.objavljen = objavljen;
+    public void setOdbijen(boolean odbijen) {
+        this.odbijen = odbijen;
     }
 
 //@OneToOne
@@ -107,7 +115,13 @@ public class Komentar {
         this.id = id;
     }
 
+    public String getUsernameusera() {
+        return usernameusera;
+    }
 
+    public void setUsernameusera(String usernameusera) {
+        this.usernameusera = usernameusera;
+    }
 
     public LocalDateTime getDatum() {
         return datum;
@@ -134,8 +148,9 @@ public class Komentar {
         this.ocena = dto.getOcena();
         this.sadrzaj = dto.getSadrzaj();
         this.odgovor_id = dto.getOdgovor_id();
-        this.objavljen=dto.isObjavljen();
+        this.odbijen=dto.isOdbijen();
         this.odobren=dto.isOdobren();
+        this.usernameusera=dto.getUsernameusera();
     }
 
     public Komentar() {
