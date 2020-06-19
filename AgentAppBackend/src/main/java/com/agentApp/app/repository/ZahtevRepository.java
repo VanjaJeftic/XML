@@ -11,4 +11,6 @@ public interface ZahtevRepository extends JpaRepository<Zahtev, Long>{
 
 	@Query("select z from Zahtev z order by z.id desc")
 	List<Zahtev> findSortedId();
+
+
 }

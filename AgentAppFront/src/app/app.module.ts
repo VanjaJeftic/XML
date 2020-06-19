@@ -49,11 +49,17 @@ import { IzvestajComponent } from './components/userComponent/agent/izvestaj/izv
 import { TerminZauzecaDialogComponent } from './components/userComponent/agent/moja-vozila/termin-zauzeca-dialog/termin-zauzeca-dialog.component';
 import { IzvestajDialogComponent } from './components/userComponent/agent/izvestaj/izvestaj-dialog/izvestaj-dialog.component';
 import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.component';
+import { PorukaZahtevComponent } from './components/userComponent/user/poruka-zahtev/poruka-zahtev.component';
+import { PorukaComponent } from './components/userComponent/user/poruka-zahtev/poruka/poruka.component';
+import { PorukaService } from './services/poruka.service';
+import { PrikazPorukaComponent } from './components/userComponent/user/prikaz-poruka/prikaz-poruka.component';
+import { PorukeRazmenjeneComponent } from './components/userComponent/user/poruke-razmenjene/poruke-razmenjene.component';
 import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
 import { DijalogInfoKorisnikaComponent } from './components/userComponent/dijalog-info-korisnika/dijalog-info-korisnika.component';
 import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
 import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
 import { SviKomentariOglasaDijalogComponent } from './components/userComponent/svi-komentari-oglasa-dijalog/svi-komentari-oglasa-dijalog.component';
+
 
 
 
@@ -94,6 +100,10 @@ import { SviKomentariOglasaDijalogComponent } from './components/userComponent/s
     TerminZauzecaDialogComponent,
     IzvestajDialogComponent,
     ResetLozinkeComponent,
+    PorukaZahtevComponent,
+    PorukaComponent,
+    PrikazPorukaComponent,
+    PorukeRazmenjeneComponent,
     PrikazKomentaraKorisnikaComponent,
     DijalogInfoKorisnikaComponent,
     ListOdobrenihKomentaraAdminComponent,
@@ -114,7 +124,9 @@ import { SviKomentariOglasaDijalogComponent } from './components/userComponent/s
     MatDialogModule
   
   ],
-  entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent
+
+  entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,PorukaComponent
+
   ],
 
   providers: [{
@@ -125,7 +137,8 @@ import { SviKomentariOglasaDijalogComponent } from './components/userComponent/s
     
     NoviOglasService,
     NovoVoziloService,
-    SvaVozilaService
+    SvaVozilaService,
+    PorukaService,
 ],
   bootstrap: [AppComponent]
 })

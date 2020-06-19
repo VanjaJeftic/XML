@@ -2,6 +2,7 @@ package com.agentApp.app.models;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name="poruka")
@@ -11,20 +12,24 @@ public class Poruka {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "korisnik_id")
-    private User korisnik;
-
-    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "agent_id")
-    private Agent agent;
-
     @Column(name="sadrzaj")
     private String sadrzaj;
 
     @Column(name = "datum")
     private LocalDateTime datum;
+    
+    @Column(name="zahtev_id")
+    private Long zahtev;
 
+    @Column(name="koIznm")
+    private boolean iznm;
+    
+    @Column(name="kreator")
+    private String kreator;
+    
+    @Column(name="dat")
+    private String dat;
+    
     public Long getId() {
         return id;
     }
@@ -33,22 +38,7 @@ public class Poruka {
         this.id = id;
     }
 
-    public User getKorisnik() {
-        return korisnik;
-    }
-
-    public void setKorisnik(User korisnik) {
-        this.korisnik = korisnik;
-    }
-
-    public Agent getAgent() {
-        return agent;
-    }
-
-    public void setAgent(Agent agent) {
-        this.agent = agent;
-    }
-
+ 
     public String getSadrzaj() {
         return sadrzaj;
     }
@@ -65,6 +55,41 @@ public class Poruka {
         this.datum = datum;
     }
 
-    public Poruka() {
+
+	public Long getZahtev() {
+		return zahtev;
+	}
+
+	public void setZahtev(Long zahtev) {
+		this.zahtev = zahtev;
+	}
+
+	
+	public boolean isIznm() {
+		return iznm;
+	}
+
+	public void setIznm(boolean iznm) {
+		this.iznm = iznm;
+	}
+
+
+	public String getKreator() {
+		return kreator;
+	}
+
+	public void setKreator(String kreator) {
+		this.kreator = kreator;
+	}
+
+	public String getDat() {
+		return dat;
+	}
+
+	public void setDat(String dat) {
+		this.dat = dat;
+	}
+
+	public Poruka() {
     }
 }

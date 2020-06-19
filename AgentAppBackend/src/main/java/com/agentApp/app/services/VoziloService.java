@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.agentApp.app.dto.VoziloDTO;
+import com.agentApp.app.models.Oglas;
 import com.agentApp.app.models.User;
 import com.agentApp.app.models.Vozilo;
 import com.agentApp.app.repository.KlasaVozilaRepository;
@@ -15,7 +16,7 @@ import com.agentApp.app.repository.ModelVozilaRepository;
 import com.agentApp.app.repository.VoziloRepository;
 import com.agentApp.app.repository.TipGorivaRepository;
 import com.agentApp.app.repository.VrstaMenjacaRepository;
-
+import com.agentApp.app.repository.OglasRepository;
 
 @Service
 public class VoziloService {
@@ -37,6 +38,9 @@ public class VoziloService {
 	
 	@Autowired
 	private VrstaMenjacaRepository menjacRepo;
+	
+	@Autowired
+	private OglasRepository oglasRepo;
 	
 	@Autowired
 	private UserService userService;
@@ -85,4 +89,33 @@ public class VoziloService {
     	return agenta;
     }
 
+	public List<Vozilo> getVozilaBezOglasa(User user) {
+		// TODO Auto-generated method stub
+		List<Vozilo> agenta=new ArrayList<>();
+		List<Vozilo> vozila=voziloRepository.findAll();
+		List<Oglas> oglasi=oglasRepo.findAll();
+		//Boolean uOglasu=false;
+		
+		for(Vozilo v:vozila) {
+			if(v.getUser().getUsername().equals(user.getUsername())) {
+				Boolean uOglasu=false;
+				for(Oglas oo:oglasi) {
+					if(oo.getVozilo().getId()==v.getId()) {
+						uOglasu=true;
+						System.out.println("UOGLASU "+uOglasu);
+					}else {
+						System.out.println("Nije u oglasu");
+					}
+				}
+				if(uOglasu==false) {
+					System.out.println("Ubacujem vozilo, ispunjava uslov");
+					agenta.add(v);
+				}
+				
+			}
+		}
+		
+		return agenta;
+	}
+	
 }

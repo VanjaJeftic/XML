@@ -29,4 +29,21 @@ export class AgentComponent implements OnInit {
   onOdjaviMe(){
     this.authService.logout();
   }
+
+  novo(){
+    this.router.navigateByUrl('novoVozilo');
+  }
+
+  sva(){
+    this.router.navigateByUrl('svaVozila');
+  }
+
+  zahteviMess(){
+    this.router.navigateByUrl('zahteviMess');
+  }
+
+  prihvaceni(){
+    this.router.navigateByUrl('posalji');
+  }
+
 }

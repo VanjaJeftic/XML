@@ -30,6 +30,9 @@ import { IzmenaModelaVozilaComponent } from './components/userComponent/model-vo
 import { NovoVoziloComponent } from './components/novo-vozilo/novo-vozilo.component';
 import { SvaVozilaComponent } from './components/sva-vozila/sva-vozila.component';
 import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.component';
+import { PorukaZahtevComponent } from './components/userComponent/user/poruka-zahtev/poruka-zahtev.component';
+import { PorukeRazmenjeneComponent } from './components/userComponent/user/poruke-razmenjene/poruke-razmenjene.component';
+import { PrikazPorukaComponent } from './components/userComponent/user/prikaz-poruka/prikaz-poruka.component';
 import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
 import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
 import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
@@ -68,9 +71,12 @@ const routes: Routes = [
   { path: 'agent/zahtev', component: ZahteviComponent },
   { path: 'agent/vozilo', component: MojaVozilaComponent},
   { path: 'agent/izvestaj', component: IzvestajComponent },
+  { path: 'posalji', component:PorukaZahtevComponent},
+  { path: 'zahteviMess', component:PorukeRazmenjeneComponent},
+  { path: 'prikazPoruke',component:PrikazPorukaComponent},
   {path: 'listaKomentaraAdmina', component:PrikazKomentaraKorisnikaComponent},
   {path: 'listaOdbobrenihKomentaraAdmina',component:ListOdobrenihKomentaraAdminComponent},
-  {path: 'listaOdbijenihKomentaraAdmina',component:ListaOdbijenihKomentaraAdminComponent}
+  {path: 'listaOdbijenihKomentaraAdmina',component:ListaOdbijenihKomentaraAdminComponent},
 
 
 
