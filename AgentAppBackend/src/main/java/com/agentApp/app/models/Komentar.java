@@ -19,15 +19,6 @@ public class Komentar {
     @Column(name="korisnik_id")
     private Long korisnik_id;
 
-    /*
-    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "oglas_id")
-    private Oglas oglas;
-
-    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "korisnik_id")
-    private Korisnik korisnik;
-*/
     @Column(name="datum")
     private LocalDateTime datum;
 
@@ -46,6 +37,15 @@ public class Komentar {
     @Column(name="objavljen")//od strane admina
     private boolean objavljen;
 
+/*
+    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "oglas_id")
+    private Oglas oglas;
+
+    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "korisnik_id")
+    private Korisnik korisnik;
+*/
 
     public Long getOglas_id() {
         return oglas_id;

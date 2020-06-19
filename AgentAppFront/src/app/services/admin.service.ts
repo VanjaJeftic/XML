@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ModelVozila } from '../models/model-vozila';
 import { KlasaVozila } from '../models/klasa-vozila';
 import { TipGoriva } from '../models/tip-goriva';
 import { VrstaMenjaca } from '../models/vrsta-menjaca';
 import { MarkaVozila } from '../models/marka-vozila';
+import { Observable } from 'rxjs';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +20,11 @@ export class AdminService {
     return this.http.post('https://localhost:8088/auth/aktivirajNalog', id);
   }
 
+  public getUserPoId(id:number):Observable<User>{
+    console.log("Pribavljamo korisnika");
+    return this.http.get<User>('https://localhost:8088/auth/korisnik/'+id);
+  }
+  
 
 
   public saveMarka(markaVozila:MarkaVozila){
@@ -85,6 +92,13 @@ export class AdminService {
     console.log("Pribavljamo marke");
     return this.http.get('https://localhost:8088/marka');
   }
+
+
+  public getKomentari() {
+    console.log("Pribavljamo komentare");
+    return this.http.get('https://localhost:8088/komentar');
+  }
+  
 
 
   public getKlaseVozila() {

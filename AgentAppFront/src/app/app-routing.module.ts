@@ -30,7 +30,7 @@ import { IzmenaModelaVozilaComponent } from './components/userComponent/model-vo
 import { NovoVoziloComponent } from './components/novo-vozilo/novo-vozilo.component';
 import { SvaVozilaComponent } from './components/sva-vozila/sva-vozila.component';
 import { ResetLozinkeComponent } from './components/reset-lozinke/reset-lozinke.component';
-
+import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -65,6 +65,7 @@ const routes: Routes = [
   { path: 'agent/zahtev', component: ZahteviComponent },
   { path: 'agent/vozilo', component: MojaVozilaComponent},
   { path: 'agent/izvestaj', component: IzvestajComponent },
+  {path: 'listaKomentaraAdmina', component:PrikazKomentaraKorisnikaComponent}
 
 
 
