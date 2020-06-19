@@ -7,6 +7,7 @@ datum:Date;
 ocena:number;
 sadrzaj:string;
 odgovor_id:number;
+usernameusera:string;
 
 
 }

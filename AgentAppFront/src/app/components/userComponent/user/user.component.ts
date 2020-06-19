@@ -12,6 +12,7 @@ import { Komentar } from 'src/app/models/komentar';
 import { MatMenuModule} from '@angular/material/menu';
 import { ResetLozinkeComponent } from '../../reset-lozinke/reset-lozinke.component';
 import { DijalogInfoKorisnikaComponent } from '../dijalog-info-korisnika/dijalog-info-korisnika.component';
+import { SviKomentariOglasaDijalogComponent } from '../svi-komentari-oglasa-dijalog/svi-komentari-oglasa-dijalog.component';
 
 @Component({
   selector: 'app-user',
@@ -26,7 +27,7 @@ export class UserComponent implements OnInit {
   startAt: Date = new Date();
   oglasIdzaPrenos:number;
 
-  constructor( public dialog3: MatDialog,public dialog2: MatDialog,public dialog: MatDialog,dateTimeAdapter: DateTimeAdapter<any>, private authService: AuthenticationService, private oglasService: OglasService, private router: Router, private searchService: SearchService) {
+  constructor(public dialog4: MatDialog, public dialog3: MatDialog,public dialog2: MatDialog,public dialog: MatDialog,dateTimeAdapter: DateTimeAdapter<any>, private authService: AuthenticationService, private oglasService: OglasService, private router: Router, private searchService: SearchService) {
     dateTimeAdapter.setLocale('en-GB');
    }
    public komentar:Komentar=new Komentar();
@@ -86,6 +87,19 @@ export class UserComponent implements OnInit {
 
     });
   }
+
+//za prikaz svih komentara oglasa
+ public openDialogPrikazKomentara(){
+  const dialogRef = this.dialog4.open(SviKomentariOglasaDijalogComponent, {
+    data: {
+      
+     }
+  });
+  dialogRef.afterClosed().subscribe(result => {
+
+  });
+}
+
 
 
 

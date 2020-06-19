@@ -16,8 +16,9 @@ public class KomentarDTO {
     private Long odgovor_id;
     private boolean odobren;
     private boolean odbijen;
+    private String usernameusera;
 
-    public KomentarDTO(Long id, Long oglas_id, Long korisnik_id, LocalDateTime datum, int ocena, String sadrzaj, Long odgovor_id, boolean odobren, boolean odbijen) {
+    public KomentarDTO(Long id, Long oglas_id, Long korisnik_id, LocalDateTime datum, int ocena, String sadrzaj, Long odgovor_id, boolean odobren, boolean odbijen,String usernameusera) {
         this.id = id;
         this.oglas_id = oglas_id;
         this.korisnik_id = korisnik_id;
@@ -27,9 +28,18 @@ public class KomentarDTO {
         this.odgovor_id = odgovor_id;
         this.odobren = odobren;
         this.odbijen = odbijen;
+        this.usernameusera=usernameusera;
     }
 
     public KomentarDTO(Komentar komentar) {
+    }
+
+    public String getUsernameusera() {
+        return usernameusera;
+    }
+
+    public void setUsernameusera(String usernameusera) {
+        this.usernameusera = usernameusera;
     }
 
     public boolean isOdobren() {

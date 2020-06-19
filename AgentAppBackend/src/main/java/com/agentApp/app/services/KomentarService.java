@@ -32,6 +32,7 @@ public class KomentarService {
         komentar2.setSadrzaj(komentarDTO.getSadrzaj());
         komentar2.setOcena(komentarDTO.getOcena());
         komentar2.setOdbijen(false);
+        komentar2.setUsernameusera(komentarDTO.getUsernameusera());
         komentar2.setOglas_id(komentarDTO.getOglas_id());
         komentar2.setKorisnik_id(komentarDTO.getKorisnik_id());
         komentar2.setOdgovor_id(komentarDTO.getOdgovor_id());
@@ -58,6 +59,7 @@ public class KomentarService {
             komentar.setOdbijen(kom.isOdbijen());
             komentar.setOdobren(true);
             komentar.setOdbijen(false);
+            komentar.setUsernameusera(kom.getUsernameusera());
             komentar.setOglas_id(kom.getOglas_id());
             komentar.setKorisnik_id(kom.getKorisnik_id());
             komentar.setOdgovor_id(kom.getOdgovor_id());
@@ -68,6 +70,7 @@ public class KomentarService {
             komentar.setSadrzaj(kom.getSadrzaj());
             komentar.setOcena(kom.getOcena());
             komentar.setOdbijen(kom.isOdbijen());
+            komentar.setUsernameusera(kom.getUsernameusera());
             komentar.setOdobren(false);
             komentar.setOdbijen(true);
             komentar.setOglas_id(kom.getOglas_id());
@@ -93,6 +96,7 @@ public class KomentarService {
             komentar.setSadrzaj(kom.getSadrzaj());
             komentar.setOcena(kom.getOcena());
             komentar.setOdbijen(kom.isOdbijen());
+            komentar.setUsernameusera(kom.getUsernameusera());
             komentar.setOdobren(true);
             komentar.setOdbijen(false);
             komentar.setOglas_id(kom.getOglas_id());
@@ -105,6 +109,7 @@ public class KomentarService {
             komentar.setSadrzaj(kom.getSadrzaj());
             komentar.setOcena(kom.getOcena());
             komentar.setOdbijen(kom.isOdbijen());
+            komentar.setUsernameusera(kom.getUsernameusera());
             komentar.setOdobren(false);
             komentar.setOdbijen(true);
             komentar.setOglas_id(kom.getOglas_id());
@@ -128,6 +133,7 @@ public class KomentarService {
         komentar.setSadrzaj(komentarDTO.getSadrzaj());
         komentar.setOcena(komentarDTO.getOcena());
         komentar.setOdbijen(komentarDTO.isOdbijen());
+        komentar.setUsernameusera(komentarDTO.getUsernameusera());
         komentar.setOdobren(false);
         komentar.setOdbijen(false);
         komentar.setOglas_id(komentarDTO.getOglas_id());
