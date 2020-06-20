@@ -50,7 +50,9 @@ import { CommonModule } from '@angular/common';
 import { MojiZahteviComponent } from './components/userComponent/user/moji-zahtevi/moji-zahtevi.component';
 import { MojiIzvestajiComponent } from './components/userComponent/user/moji-izvestaji/moji-izvestaji.component';
 import { MojIzvestajDialogComponent } from './components/userComponent/user/moji-izvestaji/moj-izvestaj-dialog/moj-izvestaj-dialog.component';
-
+import { IznajmljenaVozilaComponent } from './components/userComponent/user/iznajmljena-vozila/iznajmljena-vozila.component';
+import { KomentarDialogComponent } from './components/userComponent/user/iznajmljena-vozila/komentar-dialog/komentar-dialog.component';
+import { StarRatingModule } from 'angular-star-rating';
 
 @NgModule({
   declarations: [
@@ -89,6 +91,8 @@ import { MojIzvestajDialogComponent } from './components/userComponent/user/moji
     MojiZahteviComponent,
     MojiIzvestajiComponent,
     MojIzvestajDialogComponent,
+    IznajmljenaVozilaComponent,
+    KomentarDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,10 +107,11 @@ import { MojIzvestajDialogComponent } from './components/userComponent/user/moji
     OwlNativeDateTimeModule,
     MatMenuModule,
     MatDialogModule,
+    StarRatingModule.forRoot(),
     CommonModule
 
   ],
-  entryComponents: [TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent
+  entryComponents: [KomentarDialogComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

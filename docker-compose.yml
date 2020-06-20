@@ -85,6 +85,25 @@ services:
       DATABASE_SCHEMA: search
     depends_on:
       - eureka-serviceregistry
+      
+  eureka-commentrating-service:
+    build: ./Servisi/CommentRatingService
+    container_name: eurekaCommentRatingService
+    restart: on-failure
+    networks:
+      - xml
+    ports:
+      - "8097:8097"
+    links:
+      - postgresql-komentar
+    environment:
+      REGISTRY_HOST: eureka-serviceregistry
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: root
+      DATABASE_DOMAIN: postgresql-komentar
+      DATABASE_SCHEMA: komentar
+    depends_on:
+      - eureka-serviceregistry
 
   postgresql-oglas:
     image: postgres
@@ -138,6 +157,19 @@ services:
     ports:
       - 5434:5432
 
+  postgresql-komentar:
+    image: postgres
+    container_name: postgresql-komentar
+    restart: always
+    networks:
+      - xml
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: komentar
+    ports:
+      - 5435:5432
+
   gateway-service:
     build: ./Servisi/GatewayService
     container_name: gatewayService
@@ -154,6 +186,7 @@ services:
       - eureka-zahtev-service
       - eureka-authorization-service
       - eureka-search-service
+      - eureka-commentrating-service
 
 networks:
   xml:

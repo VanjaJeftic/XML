@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,12 +54,20 @@ public class SearchController {
 	@PostMapping("/create")
 	public ResponseEntity<OglasDTO> create(@RequestBody OglasDTO oglas) {
 		VoziloDTO vozilo = voziloConnection.getVoziloById(oglas.getVozilo_id());
-		UserDTO user = this.userConnection.getUser(oglas.getUser_id());
-		Search search = this.searchService.createSearch(new Search(oglas,vozilo,user));
+		//UserDTO user = this.userConnection.getUser(oglas.getUser_id());
+		Search search = this.searchService.createSearch(new Search(oglas,vozilo));
 		if(search!=null) {
 			return new ResponseEntity<OglasDTO>(oglas, HttpStatus.OK);
 		}
 		return new ResponseEntity<OglasDTO>(oglas, HttpStatus.BAD_REQUEST);
+	}
+	
+	@PostMapping("/userById")
+	//public ResponseEntity<UserDTO> getUserById(@PathVariable("id") Long id){
+	public ResponseEntity<UserDTO> getUserById(@RequestBody Long id){
+		UserDTO user =new UserDTO();
+		user =this.userConnection.getUser(id);
+		return new ResponseEntity<UserDTO>(user, HttpStatus.OK);
 	}
 	
 	@PostMapping("/getSearched")

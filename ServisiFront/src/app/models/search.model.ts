@@ -11,5 +11,5 @@ export class Search {
     vrstaMenjaca : string;
     predjeniKm : string;
     brSedistaDeca : string;
-    userFirstname : string;
+    author : string;
 }

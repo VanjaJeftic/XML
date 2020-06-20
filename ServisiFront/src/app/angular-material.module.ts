@@ -26,7 +26,6 @@ import {
    MatProgressSpinnerModule,
    MatCardModule,
   MatSortModule,
-  
   MatOptionModule,
   MatCheckboxModule,
 } from '@angular/material';
