@@ -59,7 +59,7 @@ public class ZahtevController {
 	@GetMapping("/{id}") //ID - ulogovani agent
 	public Set<ZahtevViewDTO> sviBundleZahtevi(@PathVariable("id") Long agent){
 		
-		return this.sviBundleZahtevi(agent);
+		return this.zahtevService.sviBundleZahtevi(agent);
 	}
 	
 	@PostMapping("/accept/{id}/{agent}")	//Agent - Ulogovani Agent
