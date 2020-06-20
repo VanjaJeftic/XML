@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
 import { Zahtev } from 'src/app/models/zahtev';
-import { Komentar } from 'src/app/models/komentar.model';
+import { Komentar } from 'src/app/models/komentar';
 import { KomentarService } from 'src/app/services/komentar.service';
 
 @Component({

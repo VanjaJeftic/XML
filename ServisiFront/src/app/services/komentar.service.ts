@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Komentar } from '../models/komentar.model';
+import { Komentar } from '../models/komentar';
 import { PutanjaService } from '../putanje/putanja.service';
 import { Observable } from 'rxjs';
 

@@ -35,6 +35,11 @@ public class KomentarController {
     @Autowired
     private KomentarRepository komentarRepository;
 
+    @Autowired
+    public KomentarController(KomentarService komentarService){
+        this.komentarService=komentarService;
+    }
+
     @PostMapping
     //@PreAuthorize("hasAuthority('create_oglas')")
     public ResponseEntity<?> sacuvajKomentar(@RequestBody KomentarDTO dto) {
@@ -44,18 +49,62 @@ public class KomentarController {
         return new ResponseEntity<>(komentar, HttpStatus.OK);
     }
 
-    @GetMapping
-    List<Komentar> sviKomentari() {
-        logger.info("Lista komentara");
+    @GetMapping("/odobreniKomentariZaOglas/{idoglas}")
+    List<Komentar> odobreniKomentariZaOglas(@PathVariable("idoglas") Long idoglas) {
+        logger.info("Lista odobreniKomentariZaOglas");
+        System.out.println("Oglas id za komentar je "+ idoglas);
         List<Komentar> komentarx = new ArrayList<Komentar>();
-        for (Komentar komentar : komentarRepository.findByOdobren(false)) {
-                 if(komentar.isOdbijen()==false){
+        for (Komentar komentar : komentarRepository.findByOdobren(true)) {
+            if(komentar.isOdbijen()==false && komentar.getOglas_id()==idoglas){
                 komentarx.add(komentar);
             }
             System.out.println("Komentari svi " + komentarx.size());
         }
         return komentarx;
     }
+
+    @GetMapping
+    List<Komentar> sviKomentari() {
+        logger.info("Lista komentara");
+        List<Komentar> komentarx = new ArrayList<Komentar>();
+        for (Komentar komentar : komentarRepository.findByOdobren(false)) {
+            if(komentar.isOdbijen()==false){
+                komentarx.add(komentar);
+            }
+            System.out.println("Komentari svi " + komentarx.size());
+        }
+        return komentarx;
+    }
+
+
+    @GetMapping("/sviOdbijeni")
+    List<Komentar> sviOdbijeniKomentari() {
+        logger.info("Lista komentara odbijenih");
+        List<Komentar> komentarx = new ArrayList<Komentar>();
+        for (Komentar komentar : komentarRepository.findByOdbijen(true)) {
+            if(komentar.isOdobren()==false){
+                komentarx.add(komentar);
+            }
+            System.out.println("Komentari svi odbijeni" + komentarx.size());
+        }
+        return komentarx;
+    }
+
+
+    @GetMapping("/sviOdobreni")
+    List<Komentar> sviOdobreniKomentari() {
+        logger.info("Lista komentara odobrenih");
+        List<Komentar> komentarx = new ArrayList<Komentar>();
+        for (Komentar komentar : komentarRepository.findByOdobren(true)) {
+            if(komentar.isOdbijen()==false){
+                komentarx.add(komentar);
+            }
+            System.out.println("Komentari svi odobreni" + komentarx.size());
+        }
+        return komentarx;
+    }
+
+
 /*
     @GetMapping
     List<Komentar> sviKomentari() {
@@ -122,4 +171,7 @@ public class KomentarController {
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
     }
+
+
+
 }
