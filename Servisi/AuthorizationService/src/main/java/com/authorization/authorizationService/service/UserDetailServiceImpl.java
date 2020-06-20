@@ -70,6 +70,11 @@ public class UserDetailServiceImpl implements UserDetailsService {
         return user;
     }
 
+    public User findById(Long id) {
+
+        return userDetailRepository.findById(id).orElseGet(null);
+    }
+
     public User update(UserDTO userdto) {
         User user = this.userDetailRepository.findById(userdto.getId())
                 .orElseThrow(() -> new NotFoundException("Oglas with that id does not exist!"));

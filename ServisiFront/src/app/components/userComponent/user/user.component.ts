@@ -5,13 +5,17 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from './../../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource, MatSnackBar } from '@angular/material';
+import { MatTableDataSource, MatSnackBar, MatDialog } from '@angular/material';
 import { stringify } from 'querystring';
 import { SearchService } from 'src/app/services/search.service';
 import { Search } from 'src/app/models/search.model';
 import { DateTimeAdapter } from 'ng-pick-datetime';
 import { SearchView } from 'src/app/models/search-view.model';
 import { UserView } from 'src/app/models/user-view.model';
+import { KomentarFormaComponent } from '../komentar-forma/komentar-forma.component';
+import { DijalogInfoKorisnikaComponent } from '../dijalog-info-korisnika/dijalog-info-korisnika.component';
+import { SviKomentariOglasaDijalogComponent } from '../svi-komentari-oglasa-dijalog/svi-komentari-oglasa-dijalog.component';
+import { Komentar } from 'src/app/models/komentar';
 
 @Component({
   selector: 'app-user',
@@ -26,10 +30,42 @@ export class UserComponent implements OnInit {
   pomocniSearchModel : SearchView = new SearchView();
   spinner:boolean= true;
   datumValue : string = "";
+  oglasIdzaPrenos:number;
 
-  constructor(public snackBar: MatSnackBar, dateTimeAdapter: DateTimeAdapter<any>,private authService: AuthenticationService, private oglasService: OglasService, private router: Router, private searchService: SearchService) {
+  constructor(public dialog4: MatDialog, public dialog3: MatDialog,public dialog2: MatDialog,public dialog: MatDialog,public snackBar: MatSnackBar, dateTimeAdapter: DateTimeAdapter<any>,private authService: AuthenticationService, private oglasService: OglasService, private router: Router, private searchService: SearchService) {
     dateTimeAdapter.setLocale('en-GB');
   }
+
+
+  public komentar:Komentar=new Komentar();
+  public ogl:Oglas=new Oglas();
+  openDialog(oglas): void { //ova metoda je bila za kreiranje komentara
+    console.log(" da li se stampa oglas: " + oglas);
+   //this.oglasService.nadjiCeoOglas(oglas);
+   localStorage.setItem('oglasStorage', JSON.stringify(oglas));
+  this.ogl=JSON.parse(localStorage.getItem('oglasStorage'));
+   console.log("ovo je oglas iz storage " + this.ogl.id);
+   localStorage.setItem('ceoSelektovaniOglas',""+this.ogl);
+   //console.log("ovo je ceo oglas koji je selektovan "+this.ogl);
+   this.oglasIdzaPrenos= this.ogl.id;
+   localStorage.setItem('idOglasStorage', ""+this.oglasIdzaPrenos);
+   console.log("id oglasa je iz local storage " +localStorage.getItem('idOglasStorage')); //ovo mi treba
+
+
+
+
+   const dialogRef = this.dialog.open(KomentarFormaComponent, {
+     width: '250px',
+    // data: {user: this}
+   });
+
+   dialogRef.afterClosed().subscribe(result => {
+     console.log('The dialog was closed');
+     //this.animal = result;
+   });
+ }
+
+
 
   ngOnInit() {
 
@@ -49,6 +85,37 @@ export class UserComponent implements OnInit {
     console.log(selectedOglas);
     this.router.navigateByUrl('vozilo/' + selectedOglas.author);
   }
+
+
+  public openDialogInfo(){
+    //za korisnika
+      const dijalogInfo=this.dialog3.open(DijalogInfoKorisnikaComponent,{
+        data: { }
+    });
+    dijalogInfo.afterClosed().subscribe(result => {
+
+    });
+  }
+
+//za prikaz svih komentara oglasa
+ public openDialogPrikazKomentara(oglas){
+
+  console.log(" da li se stampa oglas: " + oglas);
+  //this.oglasService.nadjiCeoOglas(oglas);
+  localStorage.setItem('oglasStorage', JSON.stringify(oglas));
+ this.ogl=JSON.parse(localStorage.getItem('oglasStorage'));
+
+  const dialogRef = this.dialog4.open(SviKomentariOglasaDijalogComponent, {
+    data: {
+      
+     }
+  });
+  dialogRef.afterClosed().subscribe(result => {
+
+  });
+}
+
+
 
   onOdjaviMe(){
     window.localStorage.clear();

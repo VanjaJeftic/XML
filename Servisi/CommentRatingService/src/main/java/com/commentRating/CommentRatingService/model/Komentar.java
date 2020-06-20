@@ -13,8 +13,11 @@ public class Komentar {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="oglasid")
-    private Long oglasid;
+    @Column(name="oglas_id")
+    private Long oglas_id;
+
+    @Column(name="usernameusera")
+    private String usernameusera;
 
     @Column(name="korisnik_id")
     private Long korisnik_id;
@@ -40,12 +43,24 @@ public class Komentar {
     public Komentar(Komentar komentar) {
     }
 
-    public Long getOglasid() {
-        return oglasid;
+
+
+/*
+    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "oglas_id")
+    private Oglas oglas;
+
+    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "korisnik_id")
+    private Korisnik korisnik;
+*/
+
+    public Long getOglas_id() {
+        return oglas_id;
     }
 
-    public void setOglasid(Long oglasid) {
-        this.oglasid = oglasid;
+    public void setOglas_id(Long oglas_id) {
+        this.oglas_id = oglas_id;
     }
 
     public Long getKorisnik_id() {
@@ -86,8 +101,12 @@ public class Komentar {
 
     public void setOdbijen(boolean odbijen) {
         this.odbijen = odbijen;
-    } 
-    
+    }
+
+//@OneToOne
+    //@JoinColumn(name="odgovor_id")
+    // private Odgovor odgovor;
+
     public Long getId() {
         return id;
     }
@@ -96,7 +115,13 @@ public class Komentar {
         this.id = id;
     }
 
+    public String getUsernameusera() {
+        return usernameusera;
+    }
 
+    public void setUsernameusera(String usernameusera) {
+        this.usernameusera = usernameusera;
+    }
 
     public LocalDateTime getDatum() {
         return datum;
@@ -115,12 +140,9 @@ public class Komentar {
         this.sadrzaj = sadrzaj;
     }
 
-    public Komentar() {
-    }
-
     public Komentar(KomentarDTO dto) {
         this.id = dto.getId();
-        this.oglasid = dto.getOglasid();
+        this.oglas_id = dto.getOglas_id();
         this.korisnik_id = dto.getKorisnik_id();
         this.datum = dto.getDatum();
         this.ocena = dto.getOcena();
@@ -128,5 +150,9 @@ public class Komentar {
         this.odgovor_id = dto.getOdgovor_id();
         this.odbijen=dto.isOdbijen();
         this.odobren=dto.isOdobren();
+        this.usernameusera=dto.getUsernameusera();
+    }
+
+    public Komentar() {
     }
 }

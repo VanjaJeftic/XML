@@ -38,6 +38,14 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/korisnik/{idkorisnik}")
+    public ResponseEntity<?> pronadjiKorisnika(@PathVariable("idkorisnik") Long id){
+
+        System.out.println("Id korisnika je : "+id);
+        User u = userService.findById(id);
+        System.out.println("Ime i prezime je "+ u.getIme() +u.getPrezime());
+        return new ResponseEntity<>(u,HttpStatus.OK);
+    }
 
     @PutMapping("/izmenaKorisnika")
     public ResponseEntity<?> izmenaKorisnika(@RequestBody UserDTO userDTO) {
