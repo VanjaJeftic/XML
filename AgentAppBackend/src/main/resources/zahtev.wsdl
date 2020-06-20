@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://zahtev.com/soap" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://zahtev.com/soap" targetNamespace="http://zahtev.com/soap">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://zahtev.com/soap">
+
+	<!-- Za dobavljanje bundleID zahteva -->
+    <xs:element name="getBundleIdRequest">
+    	<xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getBundleIDResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="bundleID" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Za dobavljanje svih zahteva iz servisa -->
+    
+    <xs:element name="getZahteviRequest">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element name="id" type="xs:long"/>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getZahteviResponse">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element maxOccurs="unbounded" name="bundleZahtevi" type="tns:bundleRequests"/>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="bundleRequests">
+    	<xs:sequence>
+    		<xs:element name="bundleID" type="xs:long"/>
+    		<xs:element maxOccurs="unbounded" name="zahtev" type="tns:zahtev"/>
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="zahtev">
+    	<xs:sequence>
+    		<xs:element name="id" type="xs:long"/>
+    		<xs:element name="bundleID" type="xs:long"/>
+    		<xs:element name="preuzimanje" type="xs:string"/>
+    		<xs:element name="povratak" type="xs:string"/>
+    		<xs:element name="status" type="xs:string"/>
+    		
+    		<xs:element name="oglas" type="tns:oglas"/>
+    		<xs:element name="izvestaj" type="tns:izvestaj"/>
+    		
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="izvestaj">
+    	<xs:sequence>
+    		<xs:element name="predjeniKm" type="xs:string"/>
+    		<xs:element name="komentar" type="xs:string"/>
+    		<xs:element name="vozilo" type="xs:long"/>
+    		<xs:element name="zahtev" type="xs:long"/>
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="oglas">
+    	<xs:sequence>
+    		<xs:element name="id" type="xs:long"/>
+    		<xs:element name="mesto" type="xs:string"/>
+    		<xs:element name="vozilo" type="tns:vozilo"/>
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="vozilo">
+    	<xs:sequence>
+    		<xs:element name="id" type="xs:long"/>
+    		<xs:element name="markaVozila" type="xs:string"/>
+    		<xs:element name="modelVozila" type="xs:string"/>
+    		<xs:element name="klasaVozila" type="xs:string"/>
+    		<xs:element name="vrstaMenjaca" type="xs:string"/>
+    		<xs:element name="tipGoriva" type="xs:string"/>
+    		<xs:element name="predjeniKM" type="xs:string"/>
+    		<xs:element name="brsedistadeca" type="xs:string"/>
+    		
+    		<xs:element name="user" type="tns:user"/>
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="user">
+    	<xs:sequence>
+    		<xs:element name="id" type="xs:long"/>
+    		<xs:element name="username" type="xs:string"/>
+    		<xs:element name="firstname" type="xs:string"/>
+    		<xs:element name="email" type="xs:string"/>
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <!-- Prihvatanje Zahteva -->
+    
+    <xs:element name="getAcceptRequest">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element name="id" type="xs:long"/>
+    			<xs:element name="user" type="xs:long"/>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getAcceptResponse">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element name="response" type="xs:string"/>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getAcceptResponse">
+    <wsdl:part element="tns:getAcceptResponse" name="getAcceptResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getZahteviRequest">
+    <wsdl:part element="tns:getZahteviRequest" name="getZahteviRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAcceptRequest">
+    <wsdl:part element="tns:getAcceptRequest" name="getAcceptRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBundleIdRequest">
+    <wsdl:part element="tns:getBundleIdRequest" name="getBundleIdRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBundleIDResponse">
+    <wsdl:part element="tns:getBundleIDResponse" name="getBundleIDResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getZahteviResponse">
+    <wsdl:part element="tns:getZahteviResponse" name="getZahteviResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ZahtevServicePort">
+    <wsdl:operation name="getAccept">
+      <wsdl:input message="tns:getAcceptRequest" name="getAcceptRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getAcceptResponse" name="getAcceptResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZahtevi">
+      <wsdl:input message="tns:getZahteviRequest" name="getZahteviRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getZahteviResponse" name="getZahteviResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBundleId">
+      <wsdl:input message="tns:getBundleIdRequest" name="getBundleIdRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getBundleID">
+      <wsdl:output message="tns:getBundleIDResponse" name="getBundleIDResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZahtevServicePortSoap11" type="tns:ZahtevServicePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAccept">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getAcceptRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAcceptResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZahtevi">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getZahteviRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getZahteviResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBundleId">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getBundleIdRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getBundleID">
+      <soap:operation soapAction=""/>
+      <wsdl:output name="getBundleIDResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZahtevServicePortService">
+    <wsdl:port binding="tns:ZahtevServicePortSoap11" name="ZahtevServicePortSoap11">
+      <soap:address location="http://localhost:8093/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

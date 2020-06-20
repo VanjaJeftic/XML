@@ -8,8 +8,8 @@ export class PutanjaService {
     throw new Error("Method not implemented.");
   }
 
-  private _app_url = 'https://localhost:8088/';
-  private _authentication_url = 'https://localhost:8088/auth';
+  private _app_url = 'http://localhost:8088/';
+  private _authentication_url = 'http://localhost:8088/auth';
   private _zahtev_url = this._app_url + 'zahtev';
   private _izvestaj_url = this._app_url + 'izvestaj';
   private _vozilo_url = this._app_url + 'vozilo';
