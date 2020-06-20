@@ -16,7 +16,8 @@
         <mat-card *ngFor="let data of zahtevi" style="width: 100%;height: 100%;margin-top: 10%;background-color: lavender;">
             <mat-card-header>
                 <mat-card-title style="border-style: outset;background-color: rgb(189, 226, 247);">
-                  <p>Korisnik: {{data.bundleZahtevi[0].oglas.vozilo.user.username}}</p>
+                    <p> <span style="padding-right: 5px;">Korisnik:</span> <i>{{data.user.username}}</i> <span style="padding-left: 10px;">Email:</span> <i>{{data.user.email}}</i> </p>
+                    <p> <span style="padding-right: 5px;">Ime:</span> <i>{{data.user.ime}}</i> <span style="padding-left: 10px;">Prezime:</span> <i>{{data.user.prezime}}</i> </p>
                 </mat-card-title>
             </mat-card-header>
             <mat-card-content >

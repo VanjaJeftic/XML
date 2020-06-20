@@ -142,7 +142,7 @@ public class ZahtevEndpoint {
 		User userSOAP = factory.createUser();
 		userSOAP.setId(u.getId());
 		userSOAP.setUsername(u.getUsername());
-		userSOAP.setFirstname(u.getFirstname());
+		userSOAP.setFirstname(u.getIme());
 		userSOAP.setEmail(u.getEmail());
 		
 		return userSOAP;

@@ -12,11 +12,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.zahtev.connections.OglasConnection;
+import com.zahtev.connections.UserConnection;
 import com.zahtev.dto.IzvestajDTO;
 import com.zahtev.dto.OglasDTO;
 import com.zahtev.dto.ShopCartItemsDTO;
 import com.zahtev.dto.TerminZauzecaDTO;
 import com.zahtev.dto.TerminZauzecaZahtevDTO;
+import com.zahtev.dto.UserDTO;
 import com.zahtev.dto.ZahtevDTO;
 import com.zahtev.dto.ZahtevViewDTO;
 import com.zahtev.model.Zahtev;
@@ -29,6 +31,8 @@ public class ZahtevService {
 	private ZahtevRepository zahtevRepository;
 	@Autowired
 	private OglasConnection oglasConnection;
+	@Autowired
+	private UserConnection userConnetcion;
 	
 	public Zahtev save(Zahtev z) {
 		return this.zahtevRepository.save(z);
@@ -145,6 +149,13 @@ public class ZahtevService {
 			List<Zahtev> zahteviGrouped = this.getAllByGroupID(id);
 			
 			ZahtevViewDTO zvdto = new ZahtevViewDTO();
+			if(zahteviGrouped != null) {
+				if(zahteviGrouped.size() > 0) {
+					UserDTO userDTO = this.userConnetcion.getUser(zahteviGrouped.get(0).getPodnosilac_id());
+					zvdto.setUser(userDTO);
+				}
+			}
+			
 			for(Zahtev z : zahteviGrouped) {
 				zvdto.setBundleID(z.getBundle_id());
 				OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
@@ -206,6 +217,14 @@ public class ZahtevService {
 			List<Zahtev> zahteviGrouped = this.getAllByAcceptedGroupID(id);
 			
 			ZahtevViewDTO zvdto = new ZahtevViewDTO();
+			
+			if(zahteviGrouped != null) {
+				if(zahteviGrouped.size() > 0) {
+					UserDTO userDTO = this.userConnetcion.getUser(zahteviGrouped.get(0).getPodnosilac_id());
+					zvdto.setUser(userDTO);
+				}
+			}
+			
 			for(Zahtev z : zahteviGrouped) {
 				zvdto.setBundleID(z.getBundle_id());
 				OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
