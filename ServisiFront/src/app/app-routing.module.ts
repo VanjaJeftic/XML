@@ -31,6 +31,7 @@ import { IzmenaTipaGorivaComponent } from './components/userComponent/tip-goriva
 import { IzmenaVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/izmena-vrsta-menjaca/izmena-vrsta-menjaca.component';
 import { IzmenaModelaVozilaComponent } from './components/userComponent/model-vozila/izmena-modela-vozila/izmena-modela-vozila.component';
 import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/sva-vozila.component';
+import { IznajmljenaVozilaComponent } from './components/userComponent/user/iznajmljena-vozila/iznajmljena-vozila.component';
 
 
 const routes: Routes = [
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'user/cart', component: MyShopCartItemsComponent },
   { path: 'user/zahtev', component: MojiZahteviComponent },
   { path: 'user/izvestaj', component: MojiIzvestajiComponent },
+  { path: 'user/iznajmljena-vozila', component: IznajmljenaVozilaComponent },
   
   { path: 'vozilo/novoVozilo', component: NoviOglasComponent },
   { path: 'vozilo/:id', component: VoziloDetailsComponent },

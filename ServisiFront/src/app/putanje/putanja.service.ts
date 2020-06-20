@@ -12,6 +12,7 @@ export class PutanjaService {
   private _oglas_service_url = this._app_url + 'oglas';
   private _zahtev_service_url = this._app_url + 'zahtev';
   private _search_service_url = this._app_url + 'search';
+  private _komentar_service_url = this._app_url + 'komentar';
   private _vozilo_service_url = this._oglas_service_url + '/vozilo';
   private _termin_service_url = this._oglas_service_url + '/termin';
 
@@ -56,5 +57,8 @@ export class PutanjaService {
     }
     get get_search_url(): string{
       return this._search_service_url+'/search';
+    }
+    get get_komentar_url(): string{
+      return this._komentar_service_url+'/komentar';
     }
 }

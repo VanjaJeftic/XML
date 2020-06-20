@@ -53,8 +53,8 @@ public class Search implements Serializable {
     @Column(name="brsedistadeca")
     private String brSedistaDeca;
     
-    @Column(name = "userfirstname")
-    private String userFirstname;
+    @Column(name = "author")
+    private String author;
 
 	public Long getId() {
 		return id;
@@ -161,18 +161,18 @@ public class Search implements Serializable {
 		this.brSedistaDeca = brSedistaDeca;
 	}
 
-	public String getUserFirstname() {
-		return userFirstname;
+	public String getAuthor() {
+		return author;
 	}
 
-	public void setUserFirstname(String userFirstname) {
-		this.userFirstname = userFirstname;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 	public Search() {
     }
 	
-	public Search(OglasDTO oglas, VoziloDTO vozilo, UserDTO user) {
+	public Search(OglasDTO oglas, VoziloDTO vozilo) {
 		this.mesto = oglas.getMesto();
 		this.slobodanOd = oglas.getSlobodanOd();
 		this.slobodanDo = oglas.getSlobodando();
@@ -185,6 +185,6 @@ public class Search implements Serializable {
 		this.vrstaMenjaca = vozilo.getVrstaMenjaca();
 		this.predjeniKm = vozilo.getPredjeniKm();
 		this.brSedistaDeca = vozilo.getBrSedistaDeca();
-		this.userFirstname = user.getFirstname();
+		this.author = oglas.getUser_id().toString();
     }
 }

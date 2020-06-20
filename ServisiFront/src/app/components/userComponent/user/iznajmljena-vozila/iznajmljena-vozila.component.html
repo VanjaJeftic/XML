@@ -1,0 +1,88 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="/" class="navlogo">Rent-A-Car Korisnik</a></div>
+    <span class="nav-tool-items">
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onUnesiIzvestaj()">Unesi Izvestaj</a>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onZahtevi()">Zahtevi</a>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onVozilo()">Novo vozilo</a>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onMojaVozila()">Moja vozila</a>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onShoppingCart()">Moja Korpa</a>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onIznajmljenaVozila()">Moji zahtevi</a>
+      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
+    </span>
+  </mat-toolbar> 
+  <mat-card class="card-container">
+    <mat-card-header class="header-container" style="width: 100%;">
+      <mat-card-title>
+        <h1>Moji zahtevi za vozilo</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <!-- LEVA STRANA -->
+    <mat-card-content class="content-container" style="display: inline-flex; width: 100%;">
+      <mat-grid-list class="content-left" cols="2" rowHeight="5:4">
+        <mat-grid-tile *ngFor="let zahtev of zahteviSource" style="margin: 15px;">
+          <!-- OGLAS TEMPLATE -->
+          <mat-card class="oglas-card">
+            <mat-card-header style="padding: 0.5rem;">
+              <!-- <div mat-card-avatar class="example-header-image"></div> -->
+              <mat-card-title>
+                {{zahtev.oglas.vozilo.markaVozila}} {{zahtev.oglas.vozilo.modelVozila}} {{zahtev.oglas.vozilo.klasaVozila}}
+              </mat-card-title>
+              <mat-card-subtitle>
+                Autor: {{zahtev.oglas.vozilo.user.username}}
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                <span style="color: rgb(93, 93, 93);">Mesto: </span>{{zahtev.oglas.mesto}}
+              </p>
+              <p>
+                <span style="color: rgb(93, 93, 93);">Trajanje: </span>{{zahtev.preuzimanje}} -
+                {{zahtev.povratak}}
+              </p>
+              
+                
+            <mat-grid-list style="padding-top: 0.8rem;" cols="13" rowHeight="2:2">
+              <!-- Aktivan -->
+              <mat-grid-tile *ngIf="getAccepted(zahtev)" [colspan]="9" [rowspan]="3">
+                <p>
+                  <span style="color: rgb(93, 93, 93);">Tip goriva: </span>{{zahtev.oglas.vozilo.tipGoriva}}
+                </p>
+                <p>
+                  <span style="color: rgb(93, 93, 93);">Vrsta menjaca: </span>{{zahtev.oglas.vozilo.vrstaMenjaca}}
+                </p></mat-grid-tile>
+              <mat-grid-tile *ngIf="getAccepted(zahtev)" style="border:2px solid rgb(11, 148, 68); border-radius: 5px;" [colspan]="4" [rowspan]="2">
+                <h3 style="color:rgb(11, 148, 68)">Aktivan</h3>
+              </mat-grid-tile>
+              <!-- NA CEKANJU -->
+              <mat-grid-tile *ngIf="getPending(zahtev)" [colspan]="8" [rowspan]="3">
+                <p>
+                  <span style="color: rgb(93, 93, 93);">Tip goriva: </span>{{zahtev.oglas.vozilo.tipGoriva}}
+                </p>
+                <p>
+                  <span style="color: rgb(93, 93, 93);">Vrsta menjaca: </span>{{zahtev.oglas.vozilo.vrstaMenjaca}}
+                </p></mat-grid-tile>
+              <mat-grid-tile *ngIf="getPending(zahtev)" style="border:2px solid rgb(10, 157, 194); border-radius: 5px;" [colspan]="5" [rowspan]="2">
+                <h4 style="color:rgb(10, 157, 194)">Na Cekanju</h4>
+              </mat-grid-tile>
+              <!-- ISTEKAO -->
+              <mat-grid-tile *ngIf="getInactive(zahtev)" [colspan]="9" [rowspan]="3">
+                <p>
+                  <span style="color: rgb(93, 93, 93);">Tip goriva: </span>{{zahtev.oglas.vozilo.tipGoriva}}
+                </p>
+                <p>
+                  <span style="color: rgb(93, 93, 93);">Vrsta menjaca: </span>{{zahtev.oglas.vozilo.vrstaMenjaca}}
+                </p></mat-grid-tile>
+              <mat-grid-tile *ngIf="getInactive(zahtev)" style="border:2px solid rgb(224, 189, 31); border-radius: 5px;" [colspan]="4" [rowspan]="2">
+                <h3 style="color:rgb(224, 189, 31)">Istekao</h3>
+              </mat-grid-tile>
+            </mat-grid-list>
+            </mat-card-content>
+            <mat-card-actions>
+              <button *ngIf="getInactive(zahtev)" mat-raised-button color="primary" style="border-radius: 10px;"
+                    (click)="onOceni(zahtev)">Oceni</button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+  </mat-card>

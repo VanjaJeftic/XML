@@ -11,6 +11,7 @@ import { SearchService } from 'src/app/services/search.service';
 import { Search } from 'src/app/models/search.model';
 import { DateTimeAdapter } from 'ng-pick-datetime';
 import { SearchView } from 'src/app/models/search-view.model';
+import { UserView } from 'src/app/models/user-view.model';
 
 @Component({
   selector: 'app-user',
@@ -35,6 +36,7 @@ export class UserComponent implements OnInit {
     this.searchService.getAll().subscribe(
       data => {
         this.oglasiSource = data;
+        console.log(this.oglasiSource);
         this.sviOglasi = data;
         this.spinner = false;
       }
@@ -45,7 +47,7 @@ export class UserComponent implements OnInit {
 
   onRezervisi(selectedOglas){
     console.log(selectedOglas);
-    this.router.navigateByUrl('vozilo/' + selectedOglas.id);
+    this.router.navigateByUrl('vozilo/' + selectedOglas.author);
   }
 
   onOdjaviMe(){
@@ -71,6 +73,10 @@ export class UserComponent implements OnInit {
 
   onMojaVozila(){
     this.router.navigateByUrl('svavozila');
+  }
+
+  onIznajmljenaVozila() {
+    this.router.navigateByUrl('user/iznajmljena-vozila');
   }
 
   resetuj(){
@@ -110,5 +116,13 @@ export class UserComponent implements OnInit {
     let d: Date = new Date(da.toString());
     let datum: string = (d.getDay() >= 10 ? d.getDay() : "0" + d.getDay()) + "-" + (d.getMonth() >= 10 ? d.getMonth() : "0" + d.getMonth()) + "-" + d.getFullYear() + ", " + (d.getHours() >= 10 ? d.getHours() : "0" + d.getHours()) + ":" + (d.getMinutes() >= 10 ? d.getMinutes() : "0" + d.getMinutes());
     return datum;
+  }
+
+  getUsername(id:string){
+    let author_name : string = "";
+    this.searchService.getUserById(+id).subscribe(user => {
+      author_name = user.username;
+    });
+    return author_name;
   }
 }
