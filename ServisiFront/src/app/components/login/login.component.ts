@@ -45,6 +45,9 @@ export class LoginComponent implements OnInit {
         this.uAt = JSON.parse(data);
         this.shared.token = this.uAt.token;
         this.shared.username = this.uAt.username;
+        localStorage.setItem('usernameStorage', this.username);
+         
+        console.log("Username storage" + localStorage.getItem('usernameStorage'));
         localStorage.setItem('token',this.uAt.token);
         localStorage.setItem('username',this.uAt.username);
         localStorage.setItem('userId',this.uAt.userId);

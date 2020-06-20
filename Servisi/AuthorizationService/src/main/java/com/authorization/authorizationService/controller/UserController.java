@@ -63,6 +63,28 @@ public class UserController {
 
     }
 
+    //Menjanje sifre
+    @PostMapping(value = "/izmenaLozinke")
+    public ResponseEntity<?> updateSifruuser(@RequestParam("username") String username,
+                                             @RequestParam("password") String password){
+
+        System.out.println("User username Je : "+username + "Sifra je "+ password);
+
+        User user = userService.findByUsername(username);
+
+        if(user == null) {
+            logger.info("Nije pronadjen user");
+            return new ResponseEntity<>("Error", HttpStatus.NOT_FOUND);
+        }
+        logger.info("Menja se sifra");
+        user=userService.promeniSifru(user,password);
+
+        return new ResponseEntity<>(user, HttpStatus.OK);
+
+    }
+
+
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<HttpStatus> brisanjeKorisnika(@PathVariable("id") Long id) {
         try {
