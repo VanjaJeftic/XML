@@ -48,225 +48,53 @@ public class ZahtevController {
 	@PostMapping("/zahtev")
 	public ResponseEntity<?> create(@RequestBody ShopCartItemsDTO listaZahteva) {
 
-		Set<Long> vlasnici = new HashSet<>();
-		Set<ZahtevDTO> forBundle = new HashSet<>();
-		Long groupID = zahtevService.getLastGroupID() + 1;
-		Long podnosilac = listaZahteva.getPodnosilac();
-		
-		
-		for(ZahtevDTO z : listaZahteva.getZahtevi()) {
-			vlasnici.add(z.getOglas().getVozilo().getUser().getId());
+		boolean ok = this.zahtevService.create(listaZahteva);
+		if(ok) {
+			return new ResponseEntity<>(HttpStatus.OK);
 		}
-
-		for(ZahtevDTO z : listaZahteva.getZahtevi()) {
-			boolean postoji = oglasConnection.verify(z.getOglas().getId());
-			if(postoji) {
-				Zahtev newZahtev = new Zahtev(z);
-				newZahtev.setPodnosilac_id(podnosilac);
-				newZahtev.setStatus("PENDING");
-				if(z.isBundle()) {
-					forBundle.add(z);
-				}else {
-					System.out.println("Nije bundle zahtev, id: " + z.getOglas().getId());
-					newZahtev.setBundle_id(groupID);
-					zahtevService.save(newZahtev);
-				}
-			}
-			groupID++;
-		}
-		//BUNDLE Zahtevi
-		for(Long vlasnik : vlasnici) {
-			for(ZahtevDTO zahtev : forBundle) {
-				if(zahtev.getOglas().getVozilo().getUser().getId().equals(vlasnik)) {
-					Zahtev newZahtev = new Zahtev(zahtev);
-					newZahtev.setBundle_id(groupID);
-					newZahtev.setStatus("PENDING");
-					newZahtev.setPodnosilac_id(podnosilac);
-					zahtevService.save(newZahtev);
-				}
-			}
-			groupID++;
-		}
-		return new ResponseEntity<>(HttpStatus.OK);
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 	
 	//Grupisanje zahteva na frontu
 	@GetMapping("/{id}") //ID - ulogovani agent
 	public Set<ZahtevViewDTO> sviBundleZahtevi(@PathVariable("id") Long agent){
 		
-		Set<ZahtevViewDTO> bundleZahtevi = new HashSet<>();
-		
-		Set<Long> ids = zahtevService.getAllGroupIDs();
-		
-		//Grupise sve bundle zahteve
-		for(Long id : ids) {
-			List<Zahtev> zahteviGrouped = zahtevService.getAllByGroupID(id);
-			
-			ZahtevViewDTO zvdto = new ZahtevViewDTO();
-			for(Zahtev z : zahteviGrouped) {
-				zvdto.setBundleID(z.getBundle_id());
-				OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
-				
-				if(oglas.getVozilo().getUser().getId().equals(agent)) {
-					zvdto.getBundleZahtevi().add(new ZahtevDTO(z, oglas));
-					bundleZahtevi.add(zvdto);
-				}
-			}
-		}
-		return bundleZahtevi;
+		return this.sviBundleZahtevi(agent);
 	}
 	
 	@PostMapping("/accept/{id}/{agent}")	//Agent - Ulogovani Agent
 	public ResponseEntity<?> acceptRequest(@PathVariable("id") Long id, @PathVariable("agent") Long agent){
-		List<Zahtev> zahtevi = this.zahtevService.getAllByGroupID(id);
 		
-		if(zahtevi.get(0).isBundle()) {
-			for(Zahtev z : zahtevi) {
-				
-				//Pronalazi sve zahteve koji su kreirani za oglas kome je AgentID "agent" i menja status
-				OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
-				
-				TerminZauzecaDTO terminZauzecaDTO = new TerminZauzecaDTO(oglas.getVozilo().getId(), z.getPreuzimanje(), z.getPovratak());
-				
-				int imaPodudaranja = this.oglasConnection.provjeraZauzetostiVozila(terminZauzecaDTO);
-				
-				if(oglas.getVozilo().getUser().getId().equals(agent)) {
-					if(imaPodudaranja == 0) {
-						z.setStatus("ACCEPTED");
-						
-						//Kreira termin zauzeca iz ovog zahteva i povezuje ga sa vozilom u OglasService
-						ResponseEntity<?> res = this.oglasConnection.zauzece(terminZauzecaDTO);
-						
-						if(res.status(HttpStatus.CREATED) != null) {
-							this.zahtevService.save(z);
-							
-							//Odbija sve ostale zahteve vezane za taj oglas ovog agenta
-							this.zahtevService.odbijOstaleZahteve(z.getPreuzimanje(), z.getPovratak(), z.getOglas_id());
-						}else {
-							return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-						}
-						
-					}else {
-						return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-					}
-				}
-			}
-		}else {
-			System.out.println("Nije bundle! ZahtevController");
-			Zahtev z = zahtevi.get(0);
-			//Pronalazi sve zahteve koji su kreirani za oglas kome je AgentID "agent" i menja status
-			OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
-			
-			TerminZauzecaDTO terminZauzecaDTO = new TerminZauzecaDTO(oglas.getVozilo().getId(), z.getPreuzimanje(), z.getPovratak());
-			int imaPodudaranja = this.oglasConnection.provjeraZauzetostiVozila(terminZauzecaDTO);
-			
-			if(oglas.getVozilo().getUser().getId().equals(agent)) {
-				if(imaPodudaranja == 0) {
-					System.out.println("Nema podudaranja! ZahtevController");
-					z.setStatus("ACCEPTED");
-					//Kreira termin zauzeca iz ovog zahteva i povezuje ga sa vozilom u OglasService
-					ResponseEntity<?> res = this.oglasConnection.zauzece(terminZauzecaDTO);
-					
-					if(res.status(HttpStatus.CREATED) != null) {
-						this.zahtevService.save(z);
-						
-						//Odbija sve ostale zahteve vezane za taj oglas ovog agenta
-						this.zahtevService.odbijOstaleZahteve(z.getPreuzimanje(), z.getPovratak(), z.getOglas_id());
-					}else {
-						return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-					}
-					
-				}else {
-					System.out.println("Ima podudaranja! ZahtevController");
-					return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-				}
-			}
+		boolean ok = this.zahtevService.acceptRequest(id, agent);
+		if(ok) {
+			return new ResponseEntity<>(null, HttpStatus.ACCEPTED);
 		}
-		
-		
-		
-		
-		return new ResponseEntity<>(null, HttpStatus.ACCEPTED);
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 	
 	//Provjera da li se neki PENDING zahtev poklapa sa novim zahtevom i menja status u CANCELED
 	@PostMapping("/zauzece")
 	public boolean zauzece(@RequestBody TerminZauzecaZahtevDTO terminZahtev){
-		List<Zahtev> zahtevi = this.zahtevService.getAllZahtevi();
-		if(zahtevi == null || zahtevi.size() < 1) {
-			System.out.println("Broj zahteva: " + zahtevi.size());
-			return false;
-		}
 		
-		LocalDateTime preuzimanje = LocalDateTime.of(terminZahtev.getPreuzimanje().getYear(), terminZahtev.getPreuzimanje().getMonthValue(), terminZahtev.getPreuzimanje().getDayOfMonth(), terminZahtev.getPreuzimanje().getHour(), terminZahtev.getPreuzimanje().getMinute());
-		LocalDateTime povratak = LocalDateTime.of(terminZahtev.getPovratak().getYear(), terminZahtev.getPovratak().getMonthValue(), terminZahtev.getPovratak().getDayOfMonth(), terminZahtev.getPovratak().getHour(), terminZahtev.getPovratak().getMinute());
+		return this.zahtevService.zauzece(terminZahtev);
 		
-		for(Long id : terminZahtev.getOglasi()) {
-			for(Zahtev z : zahtevi) {
-				if(z.getOglas_id() == id && (z.getStatus().equals("PENDING")) ) {
-					LocalDateTime zahtevPreuzimanje = LocalDateTime.of(z.getPreuzimanje().getYear(), z.getPreuzimanje().getMonthValue(), z.getPreuzimanje().getDayOfMonth(), z.getPreuzimanje().getHour(), z.getPreuzimanje().getMinute());
-					LocalDateTime zahtevPovratak = LocalDateTime.of(z.getPovratak().getYear(), z.getPovratak().getMonthValue(), z.getPovratak().getDayOfMonth(), z.getPovratak().getHour(), z.getPovratak().getMinute());
-					
-					
-					if( (preuzimanje.isAfter(zahtevPreuzimanje) && povratak.isBefore(zahtevPovratak)
-							|| (preuzimanje.isBefore(zahtevPreuzimanje) && povratak.isAfter(zahtevPreuzimanje))) 
-							|| (preuzimanje.isBefore(zahtevPovratak) && povratak.isAfter(zahtevPovratak))
-							|| (preuzimanje.isBefore(zahtevPreuzimanje) && povratak.isAfter(zahtevPovratak))
-							|| (preuzimanje.isEqual(zahtevPreuzimanje) && povratak.isEqual(zahtevPovratak)) ) {
-					
-						z.setStatus("CANCELED");
-						this.zahtevService.save(z);
-						
-						if(z.isBundle()) {
-							
-							this.zahtevService.odbijOstaleZahteveZaBundle(id, z.getBundle_id());
-						}
-					}
-				}
-			}
-		}
-		return true;
 	}
 	
 	@GetMapping("izvestaj/{id}") //ID - ulogovani agent
 	public Set<ZahtevViewDTO> sviBundleZahteviIzvestaj(@PathVariable("id") Long agent){
 		
-		Set<ZahtevViewDTO> bundleZahtevi = new HashSet<>();
+		return this.zahtevService.sviBundleZahteviIzvestaj(agent);
 		
-		Set<Long> ids = zahtevService.getAllGroupIDs();
-		
-		//Grupise sve bundle zahteve
-		for(Long id : ids) {
-			List<Zahtev> zahteviGrouped = zahtevService.getAllByAcceptedGroupID(id);
-			
-			ZahtevViewDTO zvdto = new ZahtevViewDTO();
-			for(Zahtev z : zahteviGrouped) {
-				zvdto.setBundleID(z.getBundle_id());
-				OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
-				
-				if(oglas.getVozilo().getUser().getId().equals(agent)) {
-					IzvestajDTO izvestaj = this.oglasConnection.getIzvestaj(oglas.getVozilo().getId(), z.getId());
-					if(izvestaj == null) {
-						zvdto.getBundleZahtevi().add(new ZahtevDTO(z, oglas));
-						bundleZahtevi.add(zvdto);
-					}else {
-						zvdto.getBundleZahtevi().add(new ZahtevDTO(z, oglas, izvestaj));
-						bundleZahtevi.add(zvdto);
-					}
-				}
-			}
-		}
-		return bundleZahtevi;
 	}
 	
 	@GetMapping("/zahtev/{id}")
 	public ResponseEntity<?> getOneZahtev(@PathVariable("id") Long id){
-		List<Zahtev> zahtevi = this.zahtevService.getAllZahtevi();
-		for(Zahtev z : zahtevi) {
-			if(z.getId().equals(id)) {
-				return new ResponseEntity<ZahtevDTO>(new ZahtevDTO(z), HttpStatus.OK);
-			}
+		
+		ZahtevDTO z = this.zahtevService.getOneZahtev(id);
+		if(z == null) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
-		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		
+		return new ResponseEntity<ZahtevDTO>(z, HttpStatus.OK);
 	}
 }
