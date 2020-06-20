@@ -25,11 +25,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.authorization.authorizationService.config.JwtConfig;
 import com.authorization.authorizationService.dto.UserDTO;
@@ -75,7 +71,9 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 		logger.info("Login");
 		return new ResponseEntity<Logovan>(signin(dto.getUsername(), dto.getPassword()), HttpStatus.OK);
 	}
-	
+
+
+
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
 			throws AuthenticationException {
@@ -92,8 +90,8 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 			throw new RuntimeException(e);
 		}
 	}
-	
-	
+
+
 	/**
 	 * Metoda, koja u slucaju uspesne autentifikacije, generise token
 	 */

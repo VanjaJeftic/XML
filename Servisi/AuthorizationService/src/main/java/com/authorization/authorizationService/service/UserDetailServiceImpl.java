@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,6 +27,9 @@ import java.util.List;
 
 @Service("userDetailsService")
 public class UserDetailServiceImpl implements UserDetailsService {
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     private UserDetailRepository userDetailRepository;
@@ -65,6 +69,12 @@ public class UserDetailServiceImpl implements UserDetailsService {
 		}
     }
 
+    public User findByUsername(String username) {
+        User u = userDetailRepository.findByUsername(username);
+        return u;
+    }
+
+
     public User createUser(UserDTO userdto) {
         User user = this.userDetailRepository.save(novi(userdto));
         return user;
@@ -91,6 +101,13 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
         return this.userDetailRepository.save(user);
     }
+
+    public User promeniSifru(User user, String password) {
+        User u = userDetailRepository.findByUsername(user.getUsername());
+        u.setPassword(passwordEncoder.encode(password));
+        return userDetailRepository.save(u);
+    }
+
 
     public void delete(Long id) {
         userDetailRepository.deleteById(id);

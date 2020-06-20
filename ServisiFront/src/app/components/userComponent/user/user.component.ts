@@ -16,6 +16,7 @@ import { KomentarFormaComponent } from '../komentar-forma/komentar-forma.compone
 import { DijalogInfoKorisnikaComponent } from '../dijalog-info-korisnika/dijalog-info-korisnika.component';
 import { SviKomentariOglasaDijalogComponent } from '../svi-komentari-oglasa-dijalog/svi-komentari-oglasa-dijalog.component';
 import { Komentar } from 'src/app/models/komentar';
+import { ResetLozinkeComponent } from '../reset-lozinke/reset-lozinke.component';
 
 @Component({
   selector: 'app-user',
@@ -86,6 +87,14 @@ export class UserComponent implements OnInit {
     this.router.navigateByUrl('vozilo/' + selectedOglas.author);
   }
 
+  public openDialogLozinka(){
+    const dialogRef = this.dialog2.open(ResetLozinkeComponent, {
+      data: { }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+
+    });
+  }
 
   public openDialogInfo(){
     //za korisnika
