@@ -29,9 +29,10 @@ export class KomentarDialogComponent implements OnInit {
     } else {
       this.komentarDTO.sadrzaj = this.komentar;
       this.komentarDTO.korisnik_id = localStorage.getItem('userId');
-      this.komentarDTO.oglasid = this.zahtev.oglas.id;
+      this.komentarDTO.oglas_id = this.zahtev.oglas.id;
       this.komentarDTO.datum = new Date();
       this.komentarDTO.ocena = this.starRating;
+      this.komentarDTO.usernameusera = localStorage.getItem('username');
       this.komentarService.saveKomentar(this.komentarDTO).subscribe(data=>{
         console.log(this.komentar);
         this.snackBar.open('Uspesno ste ocenili vozilo!', null, { duration: 4000 });

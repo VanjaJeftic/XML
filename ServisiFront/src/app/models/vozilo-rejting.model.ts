@@ -1,5 +1,7 @@
 import { User } from './user';
-export class VoziloView {
+import { Komentar } from './komentar';
+
+export class VoziloRejting {
     id:number;
     user: User;
     markaVozila:string;
@@ -9,4 +11,6 @@ export class VoziloView {
     tipGoriva:string;
     predjeniKm:string;
     brsedistadeca:string;
+    ocena : number;
+    komentari:Komentar[];
 }

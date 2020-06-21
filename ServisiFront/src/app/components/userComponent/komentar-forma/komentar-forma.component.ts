@@ -23,9 +23,9 @@ public oglas:Oglas=new Oglas();
     this.dialogRef.close();
   }
   ngOnInit() {
-    this.komentar.korisnik_username = localStorage.getItem('usernameStorage');
+    this.komentar.korisnik_id = localStorage.getItem('userId');
 
-    this.komentar.oglasid=Number(localStorage.getItem('idOglasStorage'));
+    this.komentar.oglas_id=Number(localStorage.getItem('idOglasStorage'));
    
     console.log("id je: "+localStorage.getItem('idOglasStorage'));
     this.oglas=JSON.parse(localStorage.getItem('ceoSelektovaniOglas'));

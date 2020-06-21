@@ -36,6 +36,7 @@ import { IznajmljenaVozilaComponent } from './components/userComponent/user/izna
 import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
 import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
 import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
+import { StatistikaComponent } from './components/userComponent/agent/statistika/statistika.component';
 
 
 
@@ -57,6 +58,7 @@ const routes: Routes = [
   { path: 'agent/vozila', component: MojaVozilaComponent },
   { path: 'agent/zahtev', component: ZahteviComponent },
   { path: 'agent/izvestaj', component: IzvestajComponent },
+  { path: 'agent/statistika', component: StatistikaComponent },
 
   { path: 'oglas/create', component: PraviOglasComponent },
 

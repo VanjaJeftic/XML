@@ -14,4 +14,7 @@ export class KomentarService {
   public saveKomentar(komentar:Komentar): Observable<Komentar>{
     return this.http.post<Komentar>(this.url.get_komentar_url,komentar);
   }
+  public getKomentariByOglasId(id:Number): Observable<Komentar[]>{
+    return this.http.get<Komentar[]>(this.url.get_komentar_url+"/oglas/"+id);
+  }
 }

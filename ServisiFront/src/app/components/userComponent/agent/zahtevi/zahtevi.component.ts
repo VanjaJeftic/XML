@@ -51,15 +51,7 @@ export class ZahteviComponent implements OnInit {
         this.snackBar.open('Ups, vozilo je vec zauzeto za ovaj termin!', 'U redu', { duration: 10000 });
       }
     );
-  }
-
-  onUnesiIzvestaj(){
-    this.router.navigateByUrl('agent/izvestaj');
-  }
-
-  onMojaVozila(){
-    this.router.navigateByUrl('agent/vozila');
-  }
+  } 
 
   onOdjaviMe(){
     this.authService.logout();
