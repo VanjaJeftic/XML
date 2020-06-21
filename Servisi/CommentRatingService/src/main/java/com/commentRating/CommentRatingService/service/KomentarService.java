@@ -25,17 +25,21 @@ public class KomentarService {
     }
 
     public Komentar kreirajKomentar(KomentarDTO komentarDTO) {
-        KomentarDTO komentar2=new KomentarDTO();
+    	KomentarDTO komentar2=new KomentarDTO();
         komentar2.setId(komentarDTO.getId());
         komentar2.setDatum(komentarDTO.getDatum());
         komentar2.setSadrzaj(komentarDTO.getSadrzaj());
         komentar2.setOcena(komentarDTO.getOcena());
-        komentar2.setOdbijen(false);
         komentar2.setUsernameusera(komentarDTO.getUsernameusera());
         komentar2.setOglas_id(komentarDTO.getOglas_id());
         komentar2.setKorisnik_id(komentarDTO.getKorisnik_id());
         komentar2.setOdgovor_id(komentarDTO.getOdgovor_id());
-        komentar2.setOdobren(false);
+        komentar2.setOdbijen(false);
+        if(komentarDTO.getOcena()==10) {
+            komentar2.setOdobren(true);
+        } else {
+            komentar2.setOdobren(false);
+        }
 
 
         Komentar komentar = this.komentarRepository.save(new Komentar(komentar2));
@@ -45,7 +49,17 @@ public class KomentarService {
     public Komentar findOne(Long id) {
         return komentarRepository.findById(id).orElseGet(null);
     }
-
+    
+    public List<Komentar> getOdobrenByOglasId(Long id){
+    	List<Komentar> komentari = komentarRepository.findAll();
+    	List<Komentar> odobreniKomentari = new ArrayList<>();
+    	for(Komentar k : komentari) {
+    		if(k.isOdobren()==true && k.getOglas_id()==id)
+    			odobreniKomentari.add(k);
+    	}
+    	return odobreniKomentari;
+    	
+    }
 
     public Komentar izmenaPoljaOdbijen(Komentar kom) {
         Komentar komentar = this.komentarRepository.findById(kom.getId())

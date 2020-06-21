@@ -14,26 +14,6 @@ export class AgentComponent implements OnInit {
   ngOnInit() {
   }
 
-  onMojaVozila(){
-    this.router.navigateByUrl('agent/vozila');
-  }
-
-  onZahtevi(){
-    this.router.navigateByUrl('agent/zahtev');
-  }
-
-  onUnesiIzvestaj(){
-    this.router.navigateByUrl('agent/izvestaj');
-  }
-
-  onVozilo(){
-    this.router.navigateByUrl('vozilo/novoVozilo');
-  }
-
-  onOglas(){
-    this.router.navigateByUrl('agent/oglas');
-  }
-
   onOdjaviMe(){
     this.authService.logout();
   }

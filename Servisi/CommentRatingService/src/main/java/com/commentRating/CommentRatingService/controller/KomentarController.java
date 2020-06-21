@@ -48,6 +48,12 @@ public class KomentarController {
         logger.info("Komentar je uspesno kreiran");
         return new ResponseEntity<>(komentar, HttpStatus.OK);
     }
+    
+    @GetMapping("/{id}")
+    public Komentar findOne(@PathVariable("id") Long id) {
+        Komentar k=komentarService.findOne(id);
+        return k;
+    }
 
     @GetMapping("/odobreniKomentariZaOglas/{idoglas}")
     List<Komentar> odobreniKomentariZaOglas(@PathVariable("idoglas") Long idoglas) {
@@ -62,7 +68,13 @@ public class KomentarController {
         }
         return komentarx;
     }
-
+    
+    @GetMapping("/oglas/{id}")
+    public ResponseEntity<List<Komentar>> findKomentariById (@PathVariable("id") Long id){
+    	List<Komentar> komentari = komentarService.getOdobrenByOglasId(id);
+    	return new ResponseEntity<List<Komentar>>(komentari,HttpStatus.OK);
+    }
+    
     @GetMapping
     List<Komentar> sviKomentari() {
         logger.info("Lista komentara");

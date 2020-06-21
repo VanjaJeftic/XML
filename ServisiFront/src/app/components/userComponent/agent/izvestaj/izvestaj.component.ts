@@ -46,14 +46,6 @@ export class IzvestajComponent implements OnInit {
     );
   }
 
-  onZahtevi(){
-    this.router.navigateByUrl('agent/zahtev');
-  }
-
-  onMojaVozila(){
-    this.router.navigateByUrl('agent/vozila');
-  }
-
   onOdjaviMe(){
     this.authService.logout();
   }
