@@ -53,6 +53,14 @@ import { MojIzvestajDialogComponent } from './components/userComponent/user/moji
 import { IznajmljenaVozilaComponent } from './components/userComponent/user/iznajmljena-vozila/iznajmljena-vozila.component';
 import { KomentarDialogComponent } from './components/userComponent/user/iznajmljena-vozila/komentar-dialog/komentar-dialog.component';
 import { StarRatingModule } from 'angular-star-rating';
+import { DijalogInfoKorisnikaComponent } from './components/userComponent/dijalog-info-korisnika/dijalog-info-korisnika.component';
+import { SviKomentariOglasaDijalogComponent } from './components/userComponent/svi-komentari-oglasa-dijalog/svi-komentari-oglasa-dijalog.component';
+import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
+import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
+import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
+import { ResetLozinkeComponent } from './components/userComponent/reset-lozinke/reset-lozinke.component';
+import { PregledKomentaraVozilaDialogComponent } from './components/userComponent/agent/moja-vozila/pregled-komentara-vozila-dialog/pregled-komentara-vozila-dialog.component';
+import { StatistikaComponent } from './components/userComponent/agent/statistika/statistika.component';
 
 @NgModule({
   declarations: [
@@ -93,6 +101,14 @@ import { StarRatingModule } from 'angular-star-rating';
     MojIzvestajDialogComponent,
     IznajmljenaVozilaComponent,
     KomentarDialogComponent,
+    DijalogInfoKorisnikaComponent,
+    SviKomentariOglasaDijalogComponent,
+    PrikazKomentaraKorisnikaComponent ,
+    ListOdobrenihKomentaraAdminComponent ,
+    ListaOdbijenihKomentaraAdminComponent,
+    ResetLozinkeComponent,
+    PregledKomentaraVozilaDialogComponent,
+    StatistikaComponent
   ],
   imports: [
     BrowserModule,
@@ -109,9 +125,10 @@ import { StarRatingModule } from 'angular-star-rating';
     MatDialogModule,
     StarRatingModule.forRoot(),
     CommonModule
+    
 
   ],
-  entryComponents: [KomentarDialogComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent
+  entryComponents: [PregledKomentaraVozilaDialogComponent,KomentarDialogComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,ResetLozinkeComponent
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

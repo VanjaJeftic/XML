@@ -48,14 +48,6 @@ export class ZahteviComponent implements OnInit {
     );
   }
 
-  onUnesiIzvestaj(){
-    this.router.navigateByUrl('agent/izvestaj');
-  }
-
-  onMojaVozila(){
-    this.router.navigateByUrl('agent/vozila');
-  }
-
   onOdjaviMe(){
     this.authService.logout();
   }

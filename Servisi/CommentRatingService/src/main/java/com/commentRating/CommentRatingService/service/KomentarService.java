@@ -15,18 +15,31 @@ import com.commentRating.CommentRatingService.repository.KomentarRepository;
 public class KomentarService {
 	@Autowired
     private KomentarRepository komentarRepository;
-	
-	public Komentar kreirajKomentar(KomentarDTO komentarDTO) {
+
+
+    @Autowired
+    public KomentarService(
+            KomentarRepository komentarRepository
+    ) {
+        this.komentarRepository = komentarRepository;
+    }
+
+    public Komentar kreirajKomentar(KomentarDTO komentarDTO) {
         KomentarDTO komentar2=new KomentarDTO();
         komentar2.setId(komentarDTO.getId());
         komentar2.setDatum(komentarDTO.getDatum());
         komentar2.setSadrzaj(komentarDTO.getSadrzaj());
         komentar2.setOcena(komentarDTO.getOcena());
-        komentar2.setOdbijen(false);
-        komentar2.setOglas_id(komentarDTO.getOglasid());
+        komentar2.setUsernameusera(komentarDTO.getUsernameusera());
+        komentar2.setOglas_id(komentarDTO.getOglas_id());
         komentar2.setKorisnik_id(komentarDTO.getKorisnik_id());
         komentar2.setOdgovor_id(komentarDTO.getOdgovor_id());
-        komentar2.setOdobren(false);
+        komentar2.setOdbijen(false);
+        if(komentarDTO.getOcena()==10) {
+            komentar2.setOdobren(true);
+        } else {
+            komentar2.setOdobren(false);
+        }
 
 
         Komentar komentar = this.komentarRepository.save(new Komentar(komentar2));
@@ -36,21 +49,16 @@ public class KomentarService {
     public Komentar findOne(Long id) {
         return komentarRepository.findById(id).orElseGet(null);
     }
-
-    public List<Komentar> getAll() {
-        return komentarRepository.findAll();
-    }
-
-    public List<Komentar> findByOglasIdAndUserId(Long id,Long uid) {
-    	List<Komentar> komentariOglasa = new ArrayList<>();
-    	List<Komentar> komentariOglasaKorisnika = new ArrayList<>();
-    	komentariOglasa = komentarRepository.findByOglasid(id);
-    	for(Komentar k : komentariOglasa){
-    		if(k.getKorisnik_id()==uid) {
-    			komentariOglasaKorisnika.add(k);
-    		}
+    
+    public List<Komentar> getOdobrenByOglasId(Long id){
+    	List<Komentar> komentari = komentarRepository.findAll();
+    	List<Komentar> odobreniKomentari = new ArrayList<>();
+    	for(Komentar k : komentari) {
+    		if(k.isOdobren()==true && k.getOglas_id()==id)
+    			odobreniKomentari.add(k);
     	}
-        return komentariOglasaKorisnika;
+    	return odobreniKomentari;
+    	
     }
 
     public Komentar izmenaPoljaOdbijen(Komentar kom) {
@@ -64,7 +72,8 @@ public class KomentarService {
             komentar.setOdbijen(kom.isOdbijen());
             komentar.setOdobren(true);
             komentar.setOdbijen(false);
-            komentar.setOglasid(kom.getOglasid());
+            komentar.setUsernameusera(kom.getUsernameusera());
+            komentar.setOglas_id(kom.getOglas_id());
             komentar.setKorisnik_id(kom.getKorisnik_id());
             komentar.setOdgovor_id(kom.getOdgovor_id());
             komentar.setOdgovor_id(kom.getOdgovor_id());
@@ -74,9 +83,10 @@ public class KomentarService {
             komentar.setSadrzaj(kom.getSadrzaj());
             komentar.setOcena(kom.getOcena());
             komentar.setOdbijen(kom.isOdbijen());
+            komentar.setUsernameusera(kom.getUsernameusera());
             komentar.setOdobren(false);
             komentar.setOdbijen(true);
-            komentar.setOglasid(kom.getOglasid());
+            komentar.setOglas_id(kom.getOglas_id());
             komentar.setKorisnik_id(kom.getKorisnik_id());
             komentar.setOdgovor_id(kom.getOdgovor_id());
             komentar.setOdgovor_id(kom.getOdgovor_id());
@@ -99,9 +109,10 @@ public class KomentarService {
             komentar.setSadrzaj(kom.getSadrzaj());
             komentar.setOcena(kom.getOcena());
             komentar.setOdbijen(kom.isOdbijen());
+            komentar.setUsernameusera(kom.getUsernameusera());
             komentar.setOdobren(true);
             komentar.setOdbijen(false);
-            komentar.setOglasid(kom.getOglasid());
+            komentar.setOglas_id(kom.getOglas_id());
             komentar.setKorisnik_id(kom.getKorisnik_id());
             komentar.setOdgovor_id(kom.getOdgovor_id());
             komentar.setOdgovor_id(kom.getOdgovor_id());
@@ -111,9 +122,10 @@ public class KomentarService {
             komentar.setSadrzaj(kom.getSadrzaj());
             komentar.setOcena(kom.getOcena());
             komentar.setOdbijen(kom.isOdbijen());
+            komentar.setUsernameusera(kom.getUsernameusera());
             komentar.setOdobren(false);
             komentar.setOdbijen(true);
-            komentar.setOglasid(kom.getOglasid());
+            komentar.setOglas_id(kom.getOglas_id());
             komentar.setKorisnik_id(kom.getKorisnik_id());
             komentar.setOdgovor_id(kom.getOdgovor_id());
             komentar.setOdgovor_id(kom.getOdgovor_id());
@@ -121,8 +133,10 @@ public class KomentarService {
 
         return this.komentarRepository.save(komentar);
     }
-    
-  //ovo se za sada ne koristi!!!!
+
+
+
+    //ovo se za sada ne koristi!!!!
     public Komentar izmenaKomentara(KomentarDTO komentarDTO) {
         Komentar komentar = this.komentarRepository.findById(komentarDTO.getId())
                 .orElseThrow(() -> new NotFoundException("Komentar sa ovim id-jem ne postoji!"));
@@ -132,9 +146,10 @@ public class KomentarService {
         komentar.setSadrzaj(komentarDTO.getSadrzaj());
         komentar.setOcena(komentarDTO.getOcena());
         komentar.setOdbijen(komentarDTO.isOdbijen());
+        komentar.setUsernameusera(komentarDTO.getUsernameusera());
         komentar.setOdobren(false);
         komentar.setOdbijen(false);
-        komentar.setOglasid(komentarDTO.getOglasid());
+        komentar.setOglas_id(komentarDTO.getOglas_id());
         komentar.setKorisnik_id(komentarDTO.getKorisnik_id());
         komentar.setOdgovor_id(komentarDTO.getOdgovor_id());
         komentar.setOdgovor_id(komentarDTO.getOdgovor_id());
@@ -147,5 +162,6 @@ public class KomentarService {
         komentarRepository.deleteById(id);
         return;
     }
-	
+
+
 }

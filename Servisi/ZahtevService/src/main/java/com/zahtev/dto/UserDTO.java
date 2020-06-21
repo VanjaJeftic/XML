@@ -4,8 +4,8 @@ public class UserDTO {
 
 	private Long id;
     private String username;
-    private String firstname;
-    private String password;
+    private String ime;
+    private String prezime;
     private String email;
 	
 	public UserDTO() {
@@ -28,12 +28,20 @@ public class UserDTO {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getIme() {
+		return ime;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setIme(String ime) {
+		this.ime = ime;
+	}
+
+	public String getPrezime() {
+		return prezime;
+	}
+
+	public void setPrezime(String prezime) {
+		this.prezime = prezime;
 	}
 
 	public String getEmail() {
@@ -44,11 +52,4 @@ public class UserDTO {
 		this.email = email;
 	}
 
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
 }

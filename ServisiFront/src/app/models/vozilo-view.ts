@@ -1,9 +1,7 @@
 import { User } from './user';
 export class VoziloView {
     id:number;
-
-    user: User
-
+    user: User;
     markaVozila:string;
     modelVozila:string;
     klasaVozila:string;

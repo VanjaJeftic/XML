@@ -38,3 +38,6 @@ body{background-position:center;background-size:cover;background-repeat:no-repea
     .mat-card.scrollable-content.mat-card-content {
       overflow-y: auto;
     }
+mat-toolbar span a {
+  padding-right: 15px;
+}

@@ -1,0 +1,35 @@
+<div style="height:500px; min-width: 300px;">
+    <mat-card-header>
+        <mat-card-title>
+            <p>{{nazivVozila}}</p>
+        </mat-card-title>
+        <mat-card-subtitle>
+            <p>Komentari:</p>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <hr>
+        <div *ngFor="let komentar of komentariSource">
+                <div class="komentar-container">
+                    <p> {{komentar.sadrzaj}} </p>
+                    <p> <span
+                            style="padding-right: 10px;bottom: 10; right: 10; float: right; font-size: 11px; color: rgb(121, 121, 121);">{{komentar.datum}}, autor: {{komentar.usernameusera}}
+                        </span> </p>
+                </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions *ngIf="komentariSource.length!=0">
+        <hr>
+        <form >
+            <mat-form-field style="width: 80%;">
+              <mat-label>Odgovor</mat-label>
+              <input matInput #message maxlength="50" placeholder="Odgovori...">
+              <mat-hint align="start"><strong>Broj karaktera</strong> </mat-hint>
+              <mat-hint align="end">{{message.value.length}} / 50</mat-hint>
+            </mat-form-field>
+            <div style="width: 20%;position: inline; float: right;">
+                <button mat-raised-button (click)="dodajKomentar(message.value)" color="primary">Dodaj</button>
+            </div>
+          </form>
+    </mat-card-actions>
+</div>

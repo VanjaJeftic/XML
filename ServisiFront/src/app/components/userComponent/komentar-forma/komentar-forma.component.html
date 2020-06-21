@@ -1,0 +1,23 @@
+<div class="glavniProzor">
+
+<h2 >Pozdrav {{komentar.korisnik_username}}</h2>
+
+<form (submit)="onSubmit()">
+
+    <textarea ng-Model="komentar.sadrzaj" rows="4" cols="50" maxlength="300" placeholder="Vas komentar je: " required>
+      
+      </textarea>
+
+ <!--     <textarea ng-model="myTextarea"></textarea>-->
+
+
+  <!-- <mat-label>Polje za unos</mat-label>
+    <input  matInput [(ngModel)]="komentar.sadrzaj">-->
+  
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-stroked-button class="buttonPotvrdi" type="submit">Potvrdi</button>
+</div>
+</form>
+</div>

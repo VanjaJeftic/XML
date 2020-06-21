@@ -57,9 +57,12 @@ public class ZahtevController {
 	public void create(@RequestBody ShopCartItemsDTO shopCartItemsDTO, Principal p){
 		List<Long> vlasnici = new ArrayList<>();
 		List<Zahtev> forBundle = new ArrayList<Zahtev>();
-		Long groupID = zahtevService.getLastGroupID() + 1;
 		User u = userService.findByUsername(p.getName());
 		Korisnik podnosilac = korisnikService.findOneByUserId(u.getId());
+		Long groupID = zahtevService.getLastGroupID(u.getId());
+		System.out.println("********************************************************");
+		System.out.println("Poslednji bundleID je: " + groupID);
+		System.out.println("********************************************************");
 		
 		for(ZahtevDTO z : shopCartItemsDTO.getZahtevi()) {
 			vlasnici.add(z.getOglas().getVozilo().getUser().getId());
@@ -100,6 +103,7 @@ public class ZahtevController {
 		User u = this.userService.findByUsername(agent.getName());
 		
 		Set<ZahtevBundleDTO> bundleZahtevi = new HashSet<>();
+		Set<ZahtevBundleDTO> bundleZahteviServisi = this.zahtevService.getZahteviFromServisi(u.getId());
 		
 		Set<Long> ids = this.zahtevService.getAllGroupIDs();
 		
@@ -118,6 +122,9 @@ public class ZahtevController {
 				}
 			}
 		}
+		for(ZahtevBundleDTO zb : bundleZahteviServisi) {
+			bundleZahtevi.add(zb);
+		}
 		return bundleZahtevi;
 	}
 	
@@ -125,75 +132,13 @@ public class ZahtevController {
 	public ResponseEntity<?> acceptRequest(@PathVariable("id") Long id, Principal user) {
 		
 		User u = this.userService.findByUsername(user.getName());
-		Set<Integer> counter = new HashSet<>();
-		List<Zahtev> zahtevi = this.zahtevService.getAllByGroupID(id);
 		
-		if(zahtevi.get(0).isBundle()) {
-			for(Zahtev z : zahtevi) {
-				Oglas o = this.oglasService.findOneOglas(z.getOglas().getId());
-				TerminZauzeca newTermin = new TerminZauzeca();
-				newTermin.setVozilo(o.getVozilo());
-				newTermin.setZauzetod(z.getPreuzimanje());
-				newTermin.setZauzetdo(z.getPovratak());
-				
-				logger.info("Pocetak provere ");
-				int imaPodudaranja = this.terminService.provjeraZauzetostiVozila(newTermin);
-				if(imaPodudaranja == 1) {
-					counter.add(1);
-				}
-			}
-			if(!counter.contains(1)) {
-				for(Zahtev z : zahtevi) {
-					Oglas o = this.oglasService.findOneOglas(z.getOglas().getId());
-					TerminZauzeca newTermin = new TerminZauzeca();
-					newTermin.setVozilo(o.getVozilo());
-					newTermin.setZauzetod(z.getPreuzimanje());
-					newTermin.setZauzetdo(z.getPovratak());
-					
-					if(o.getVozilo().getUser().getId().equals(u.getId())) {
-						z.setStatus("ACCEPTED");
-						boolean ok = this.terminService.zauzmiBundleTermin(newTermin, z.getBundle_id());
-						if(ok) {
-							logger.info("Cuvanje zahteva");
-							this.zahtevService.saveZahtev(z);
-						}else {
-							return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-						}
-					}else {
-						return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-					}
-				}
-			}else {
-				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-			}
-		}else {
-			Zahtev z = zahtevi.get(0);
-			Oglas o = this.oglasService.findOneOglas(z.getOglas().getId());
-			TerminZauzeca newTermin = new TerminZauzeca();
-			newTermin.setVozilo(o.getVozilo());
-			newTermin.setZauzetod(z.getPreuzimanje());
-			newTermin.setZauzetdo(z.getPovratak());
-			
-			logger.info("Otpocinjanje provere");
-			int imaPodudaranja = this.terminService.provjeraZauzetostiVozila(newTermin);
-			if(imaPodudaranja == 0) {
-				if(o.getVozilo().getUser().getId().equals(u.getId())) {
-					z.setStatus("ACCEPTED");
-					logger.info("Promenjen zahtev na prihvaceno");
-					boolean ok = this.terminService.zauzmiTermin(newTermin);
-					if(ok) {
-						logger.info("Cuvanje zahteva u bazi");
-						this.zahtevService.saveZahtev(z);
-					}else {
-						return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-					}
-				}
-			}else {
-				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-			}
+		boolean ok = this.zahtevService.acceptRequest(id, u);
+		if(ok) {
+			return new ResponseEntity<>(HttpStatus.ACCEPTED);
 		}
-	
-		return new ResponseEntity<>(HttpStatus.ACCEPTED);
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		
 	}
 	
 	

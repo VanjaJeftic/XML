@@ -15,8 +15,8 @@ insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, pov
 insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, povratak, status) values (5, 7, false, 3, '2020-06-20T19:00', '2020-06-24T20:00', 'ACCEPTED');
 insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, povratak, status) values (5, 8, false, 3, '2020-06-26T19:00', '2020-06-29T20:00', 'ACCEPTED');
 
-insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, povratak, status) values (5, 9, true, 3, '2020-06-22T19:00', '2020-06-24T20:00', 'ACCEPTED');
-insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, povratak, status) values (5, 9, true, 3, '2020-06-23T19:00', '2020-06-27T20:00', 'ACCEPTED');
+insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, povratak, status) values (5, 9, true, 3, '2020-05-22T19:00', '2020-05-24T20:00', 'ACCEPTED');
+insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, povratak, status) values (5, 9, true, 3, '2020-05-23T19:00', '2020-05-27T20:00', 'ACCEPTED');
 
-insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, povratak, status) values (5, 10, true, 3, '2020-06-24T22:00', '2020-06-26T22:00', 'PENDING');
-insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, povratak, status) values (5, 10, true, 3, '2020-07-12T11:00', '2020-07-24T21:00', 'PENDING');
+insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, povratak, status) values (5, 10, true, 3, '2020-05-24T22:00', '2020-05-26T22:00', 'PENDING');
+insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, povratak, status) values (5, 10, true, 3, '2020-05-12T11:00', '2020-05-24T21:00', 'PENDING');

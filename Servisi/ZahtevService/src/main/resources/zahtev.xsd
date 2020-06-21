@@ -1,0 +1,122 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://zahtev.com/soap"
+           targetNamespace="http://zahtev.com/soap"
+           elementFormDefault="qualified">
+
+	<!-- Za dobavljanje bundleID zahteva -->
+    <xs:element name="getBundleIdRequest">
+    	<xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getBundleIDResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="bundleID" type="xs:long" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Za dobavljanje svih zahteva iz servisa -->
+    
+    <xs:element name="getZahteviRequest">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element name="id" type="xs:long" />
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getZahteviResponse">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element name="bundleZahtevi" maxOccurs="unbounded" type="tns:bundleRequests" />
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="bundleRequests">
+    	<xs:sequence>
+    		<xs:element name="bundleID" type="xs:long" />
+    		<xs:element name="zahtev" maxOccurs="unbounded" type="tns:zahtev" />
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="zahtev">
+    	<xs:sequence>
+    		<xs:element name="id" type="xs:long" />
+    		<xs:element name="bundleID" type="xs:long" />
+    		<xs:element name="preuzimanje" type="xs:string" />
+    		<xs:element name="povratak" type="xs:string" />
+    		<xs:element name="status" type="xs:string" />
+    		
+    		<xs:element name="oglas" type="tns:oglas" />
+    		<xs:element name="izvestaj" type="tns:izvestaj" />
+    		
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="izvestaj">
+    	<xs:sequence>
+    		<xs:element name="predjeniKm" type="xs:string" />
+    		<xs:element name="komentar" type="xs:string" />
+    		<xs:element name="vozilo" type="xs:long" />
+    		<xs:element name="zahtev" type="xs:long" />
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="oglas">
+    	<xs:sequence>
+    		<xs:element name="id" type="xs:long" />
+    		<xs:element name="mesto" type="xs:string" />
+    		<xs:element name="vozilo" type="tns:vozilo" />
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="vozilo">
+    	<xs:sequence>
+    		<xs:element name="id" type="xs:long" />
+    		<xs:element name="markaVozila" type="xs:string" />
+    		<xs:element name="modelVozila" type="xs:string" />
+    		<xs:element name="klasaVozila" type="xs:string" />
+    		<xs:element name="vrstaMenjaca" type="xs:string" />
+    		<xs:element name="tipGoriva" type="xs:string" />
+    		<xs:element name="predjeniKM" type="xs:string" />
+    		<xs:element name="brsedistadeca" type="xs:string" />
+    		
+    		<xs:element name="user" type="tns:user" />
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="user">
+    	<xs:sequence>
+    		<xs:element name="id" type="xs:long" />
+    		<xs:element name="username" type="xs:string" />
+    		<xs:element name="firstname" type="xs:string" />
+    		<xs:element name="email" type="xs:string" />
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <!-- Prihvatanje Zahteva -->
+    
+    <xs:element name="getAcceptRequest">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element name="id" type="xs:long" />
+    			<xs:element name="user" type="xs:long" />
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getAcceptResponse">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element name="response" type="xs:string" />
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+</xs:schema>

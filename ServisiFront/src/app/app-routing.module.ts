@@ -32,6 +32,10 @@ import { IzmenaVrstaMenjacaComponent } from './components/userComponent/vrsta-me
 import { IzmenaModelaVozilaComponent } from './components/userComponent/model-vozila/izmena-modela-vozila/izmena-modela-vozila.component';
 import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/sva-vozila.component';
 import { IznajmljenaVozilaComponent } from './components/userComponent/user/iznajmljena-vozila/iznajmljena-vozila.component';
+import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
+import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
+import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
+import { StatistikaComponent } from './components/userComponent/agent/statistika/statistika.component';
 
 
 const routes: Routes = [
@@ -52,6 +56,7 @@ const routes: Routes = [
   { path: 'agent/vozila', component: MojaVozilaComponent },
   { path: 'agent/zahtev', component: ZahteviComponent },
   { path: 'agent/izvestaj', component: IzvestajComponent },
+  { path: 'agent/statistika', component: StatistikaComponent },
 
   { path: 'oglas/create', component: PraviOglasComponent },
 
@@ -71,7 +76,10 @@ const routes: Routes = [
   { path: 'izmenaTipaGorivaVozila', component:IzmenaTipaGorivaComponent},
   { path: 'izmenaVrsteMenjacaVozila', component:IzmenaVrstaMenjacaComponent},
   { path: 'izmenaModelaVozila', component:IzmenaModelaVozilaComponent},
-  { path: 'svavozila',component:SvaVozilaComponent}
+  { path: 'svavozila',component:SvaVozilaComponent},
+  {path: 'listaKomentaraAdmina', component:PrikazKomentaraKorisnikaComponent},
+  {path: 'listaOdbobrenihKomentaraAdmina',component:ListOdobrenihKomentaraAdminComponent},
+  {path: 'listaOdbijenihKomentaraAdmina',component:ListaOdbijenihKomentaraAdminComponent},
 ];
 
 @NgModule({

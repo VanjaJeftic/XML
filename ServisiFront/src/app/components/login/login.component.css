@@ -5,7 +5,8 @@
   flex: 1 1 auto;
 }    
 .example-card {
-  background-color: rgb(148, 199, 231);
+  border: 1px solid #b8b8b8;
+  border-radius: 6px;
   max-width: 500px;
   width: 80%;
   margin: 40px;

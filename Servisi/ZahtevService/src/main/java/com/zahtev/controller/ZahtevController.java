@@ -269,4 +269,20 @@ public class ZahtevController {
 		}
 		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
+
+	
+	@GetMapping("/zahtevi-podnosioca/{id}")
+	public ResponseEntity<?> getZahteviPodnosioca(@PathVariable("id") Long id){
+		List<Zahtev> zahtevi = this.zahtevService.getAllZahtevi();
+		List<ZahtevDTO> zahteviPodnosioca = new ArrayList<>();
+		for(Zahtev z : zahtevi) {
+			if(z.getPodnosilac_id().equals(id)) {
+				OglasDTO o = oglasConnection.getOneOglas(z.getOglas_id());
+				ZahtevDTO zDTO = new ZahtevDTO(z);
+				zDTO.setOglas(o);
+				zahteviPodnosioca.add(zDTO);
+			}
+		}
+		return new ResponseEntity<List<ZahtevDTO>>(zahteviPodnosioca, HttpStatus.OK);
+	}
 }
