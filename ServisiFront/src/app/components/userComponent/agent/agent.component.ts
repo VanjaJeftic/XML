@@ -26,6 +26,14 @@ export class AgentComponent implements OnInit {
     this.router.navigateByUrl('agent/izvestaj');
   }
 
+  onVozilo(){
+    this.router.navigateByUrl('vozilo/novoVozilo');
+  }
+
+  onOglas(){
+    this.router.navigateByUrl('agent/oglas');
+  }
+
   onOdjaviMe(){
     this.authService.logout();
   }

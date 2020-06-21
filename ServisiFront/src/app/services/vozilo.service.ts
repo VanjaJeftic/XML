@@ -9,6 +9,9 @@ import { TerminZauzeca } from '../models/termin-zauzeca';
   providedIn: 'root'
 })
 export class VoziloService {
+  getVozilaAgentaOglas() :Observable<VoziloView[]>{
+    return this.http.get<VoziloView[]>(this.putanja.get_vozilo_url + '/agent/oglas/' + parseInt(localStorage.getItem('userId')));
+  }
 
   constructor(private http: HttpClient, private putanja: PutanjaService) { }
 
