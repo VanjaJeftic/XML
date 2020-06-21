@@ -70,6 +70,8 @@ public class UserDTO {
 		this.id=u.getId();
 		this.email=u.getEmail();
 		this.username=u.getUsername();
+		this.firstname = u.getFirstname();
+		this.lastname = u.getLastname();
 	}
 
 	public List<Authority> getAuthorities() {

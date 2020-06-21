@@ -22,11 +22,17 @@
             </mat-card-header>
             <mat-card-content >
                 <div *ngFor="let zahtev of data.bundleZahtevi" style="height: 100%;;border-style: outset; background-color:rgb(198, 192, 233);">
-                    <p> <span style="padding-right: 10px;">Sifra vozila:</span> {{zahtev.oglas.vozilo.id}} </p>
-                    <p> <span style="padding-right: 10px;">Marka vozila:</span> {{zahtev.oglas.vozilo.markaVozila}} </p>
-                    <p> <span style="padding-right: 10px;">Model vozila:</span> {{zahtev.oglas.vozilo.modelVozila}} </p>
-                    <p> <span style="padding-right: 10px;">Preuzimanje:</span> {{zahtev.preuzimanje}} </p>
-                    <p> <span style="padding-left: 20px; padding-right: 10px;">Povratak:</span> {{zahtev.povratak}} </p>
+                    <div style="border-style: solid;">
+                        <p> <span style="padding-right: 10px;">Oglas Vazi od:</span> {{zahtev.oglas.slobodanOd}} </p>
+                        <p> <span style="padding-right: 10px;">Oglas Vazi do:</span> {{zahtev.oglas.slobodanDo}} </p>
+                    </div>
+                    <div>
+                        <p> <span style="padding-right: 10px;">Sifra vozila:</span> {{zahtev.oglas.vozilo.id}} </p>
+                        <p> <span style="padding-right: 10px;">Marka vozila:</span> {{zahtev.oglas.vozilo.markaVozila}} </p>
+                        <p> <span style="padding-right: 10px;">Model vozila:</span> {{zahtev.oglas.vozilo.modelVozila}} </p>
+                        <p> <span style="padding-right: 10px;">Preuzimanje:</span> {{zahtev.preuzimanje}} </p>
+                        <p> <span style="padding-left: 20px; padding-right: 10px;">Povratak:</span> {{zahtev.povratak}} </p>
+                    </div>
                 </div>
             </mat-card-content>
             <mat-card-actions>

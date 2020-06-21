@@ -7,6 +7,7 @@ public class ZahtevBundleDTO {
 
 	private Long bundleID;
 	private Set<ZahtevDTO> bundleZahtevi;
+	private UserDTO user;
 	
 	public ZahtevBundleDTO() {
 		// TODO Auto-generated constructor stub
@@ -28,4 +29,13 @@ public class ZahtevBundleDTO {
 	public void setBundleZahtevi(Set<ZahtevDTO> bundleZahtevi) {
 		this.bundleZahtevi = bundleZahtevi;
 	}
+
+	public UserDTO getUser() {
+		return user;
+	}
+
+	public void setUser(UserDTO user) {
+		this.user = user;
+	}
+	
 }

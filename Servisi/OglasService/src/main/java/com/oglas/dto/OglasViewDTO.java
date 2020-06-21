@@ -1,5 +1,7 @@
 package com.oglas.dto;
 
+import java.time.LocalDateTime;
+
 import com.oglas.model.Oglas;
 
 public class OglasViewDTO {
@@ -8,12 +10,17 @@ public class OglasViewDTO {
 	private String mesto;
 	private VoziloViewDTO vozilo;
 	
+	private LocalDateTime slobodanOd;
+	private LocalDateTime slobodanDo;
+	
 	public OglasViewDTO() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	public OglasViewDTO(Oglas o, VoziloViewDTO v) {
 		this.id = o.getId();
+		this.slobodanOd = o.getSlobodanOd();
+		this.slobodanDo = o.getSlobodando();
 		this.mesto = o.getMesto();
 		this.vozilo = v;
 	}
@@ -41,6 +48,22 @@ public class OglasViewDTO {
 
 	public void setVozilo(VoziloViewDTO vozilo) {
 		this.vozilo = vozilo;
+	}
+
+	public LocalDateTime getSlobodanOd() {
+		return slobodanOd;
+	}
+
+	public void setSlobodanOd(LocalDateTime slobodanOd) {
+		this.slobodanOd = slobodanOd;
+	}
+
+	public LocalDateTime getSlobodanDo() {
+		return slobodanDo;
+	}
+
+	public void setSlobodanDo(LocalDateTime slobodanDo) {
+		this.slobodanDo = slobodanDo;
 	}
 	
 	

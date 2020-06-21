@@ -38,6 +38,76 @@ export class ZahteviComponent implements OnInit {
 
             zahtev.povratak = godinaPovratak + '-' + mesecPovratak + '-' + danPovratak + ' ' + satPovratak + ':' + minutPovratak;
             zahtev.preuzimanje = godinapreuzimanje + '-' + mesecpreuzimanje + '-' + danpreuzimanje + ' ' + satpreuzimanje + ':' + minutpreuzimanje;
+          
+            let godinaSlobodanDo
+            if(zahtev.oglas.slobodanDo){
+              godinaSlobodanDo = zahtev.oglas.slobodanDo[0];
+            }else{
+              godinaSlobodanDo = '2020';
+            }
+            let mesecSlobodanDo
+            if(zahtev.oglas.slobodanDo){
+              mesecSlobodanDo = zahtev.oglas.slobodanDo[1];
+            }else{
+              mesecSlobodanDo = '06';
+            }
+            let danSlobodanDo
+            if(zahtev.oglas.slobodanDo){
+              danSlobodanDo = zahtev.oglas.slobodanDo[2];
+            }else{
+              danSlobodanDo = '22';
+            }
+            let satSlobodanDo
+            if(zahtev.oglas.slobodanDo){
+              satSlobodanDo = zahtev.oglas.slobodanDo[3];
+            }else{
+              satSlobodanDo = '22';
+            }
+            let minutSlobodanDo
+            if(zahtev.oglas.slobodanDo){
+              minutSlobodanDo = zahtev.oglas.slobodanDo[4];
+            }else{
+              minutSlobodanDo = '21';
+            }
+
+            //SlobodanDo
+            let godinaSlobodanOd
+            if(zahtev.oglas.slobodanOd[0]){
+              godinaSlobodanOd = zahtev.oglas.slobodanOd[0];
+            }else{
+              godinaSlobodanOd = '2020';
+            }
+            let mesecSlobodanOd
+            if(zahtev.oglas.slobodanOd[0]){
+              mesecSlobodanOd = zahtev.oglas.slobodanOd[1];
+            }else{
+              mesecSlobodanOd = '06';
+            }
+            let danSlobodanOd
+            if(zahtev.oglas.slobodanOd[0]){
+              danSlobodanOd = zahtev.oglas.slobodanOd[2];
+            }else{
+              danSlobodanOd = '22';
+            }
+            let satSlobodanOd
+            if(zahtev.oglas.slobodanOd[0]){
+              satSlobodanOd = zahtev.oglas.slobodanOd[3];
+            }else{
+              satSlobodanOd = '22';
+            }
+            let minutSlobodanOd
+            if(zahtev.oglas.slobodanOd[0]){
+              minutSlobodanOd = zahtev.oglas.slobodanOd[4];
+            }else{
+              minutSlobodanOd = '21';
+            }
+
+
+            let slobodanDo = godinaSlobodanDo + '-' + mesecSlobodanDo + '-' + danSlobodanDo + ' ' + satSlobodanDo + ':' + minutSlobodanDo;
+            let SlobodanOd = godinaSlobodanOd + '-' + mesecSlobodanOd + '-' + danSlobodanOd + ' ' + satSlobodanOd + ':' + minutSlobodanOd;
+            
+            zahtev.oglas.slobodanDoDate = slobodanDo
+            zahtev.oglas.slobodanOdDate = SlobodanOd
           }
         }
       }

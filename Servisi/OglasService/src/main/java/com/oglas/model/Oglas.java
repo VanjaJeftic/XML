@@ -35,7 +35,7 @@ public class Oglas implements Serializable {
     @Column(name="slobodanod")
     private LocalDateTime slobodanOd;
 
-    @Column(name="slovbodando")
+    @Column(name="slobodando")
     private LocalDateTime slobodando;
     
     @Column(name="cdw")

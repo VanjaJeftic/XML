@@ -67,6 +67,15 @@ public class ZahtevService {
 	
 	public Long getLastGroupID(Long id) {
 		GetBundleIDResponse res = this.zahtevClient.getBundleIDResponse(id);
+		Long bundleID = res.getBundleID();
+		List<Zahtev> zahtevi = this.zahtevRepository.findSortedId();
+		Long lastBundleID = zahtevi.get(0).getBundle_id();
+		
+		if(lastBundleID >= bundleID) {
+			System.out.println("Last bundle id : " + lastBundleID + ", a iz servisa je : " + bundleID);
+			lastBundleID++;
+			return lastBundleID;
+		}
 		
 		return res.getBundleID();
 	}
@@ -108,6 +117,8 @@ public class ZahtevService {
 		for(BundleRequests br : res.getBundleZahtevi()) {
 			ZahtevBundleDTO zahtevBundleDTO = new ZahtevBundleDTO();
 			zahtevBundleDTO.setBundleID(br.getBundleID());
+			UserDTO podnosilac = this.createUserDTOfromSOAP(br.getPodnosilac());
+			zahtevBundleDTO.setUser(podnosilac);
 			
 			for(com.agentApp.app.soap.Zahtev z : br.getZahtev()) {
 				ZahtevDTO newZahtev = this.createZahtevDTOfromSOAP(z);
@@ -136,6 +147,8 @@ public class ZahtevService {
 	private OglasDTO createOglasDTOfromSOAP(Oglas o) {
 		OglasDTO newOglas = new OglasDTO();
 		newOglas.setId(o.getId());
+		newOglas.setSlobodanod(this.getDateTime(o.getSlobodanOd()));
+		newOglas.setSlobodando(this.getDateTime(o.getSlobodanDo()));
 		newOglas.setMesto(o.getMesto());
 		VoziloDTO newVozilo = this.createVoziloDTOfromSOAP(o.getVozilo());
 		newOglas.setVozilo(newVozilo);

@@ -10,4 +10,7 @@ export class Oglas {
     slobodanOd: Date;
     cdw:boolean;
     vozilo_id:number;
+
+    slobodanDoDate: string;     //Dodato zbog nekih gresaka u predstavljanju Date polja
+    slobodanOdDate: string;
 }
