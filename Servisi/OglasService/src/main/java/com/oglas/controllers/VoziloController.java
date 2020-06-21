@@ -1,5 +1,6 @@
 package com.oglas.controllers;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.oglas.connections.UserConnection;
 import com.oglas.dto.OglasDTO;
 import com.oglas.dto.OglasVoziloDTO;
@@ -10,6 +11,7 @@ import com.oglas.model.ImageModel;
 import com.oglas.model.Oglas;
 import com.oglas.model.Vozilo;
 import com.oglas.repository.ImageModelRepository;
+import com.oglas.repository.OglasRepository;
 import com.oglas.repository.VoziloRepository;
 import com.oglas.service.VoziloService;
 import org.slf4j.Logger;
@@ -62,6 +64,9 @@ public class VoziloController {
 
     @Autowired
     private VoziloRepository voziloRepository;
+    
+    @Autowired 
+    private OglasRepository oglasRepo;
     
     @Autowired
     private UserConnection userConnection;
@@ -167,12 +172,41 @@ public class VoziloController {
         return outputStream.toByteArray();
     }
     
+    @JsonIgnore
     @GetMapping("/vozila/{id}")
     List<Vozilo> mojaVozila(@PathVariable("id") String id){
     	Long user=Long.parseLong(id);
 		logger.info("Lista vozila");
     	return voziloService.getVozila(user);
     	
+    }
+    
+    @GetMapping("agent/oglas/{id}")	//id - Ulogovani Agent
+    public List<VoziloViewDTO> allVozilaOglas(@PathVariable("id") Long agent){	
+    	List<VoziloViewDTO> agentskaVozila = new ArrayList<>();
+    	List<Oglas> oglasi=(List<Oglas>) oglasRepo.findAll();
+    	UserViewDTO user = this.userConnection.getUser(agent);
+		
+    	List<Vozilo> vozila = voziloService.getVozila(user.getId());
+    	for(Vozilo v : vozila) {
+    		Boolean uOglasu=false;
+    		for(Oglas oo:oglasi) {
+    			if(oo.getVozilo_id()==v.getId()) {
+    				uOglasu=true;
+    				System.out.println("U oglaasu je ");
+    			}else {
+    				System.out.println("Ni");
+    			}
+    		}
+    		
+    		if(uOglasu==false) {
+    			VoziloViewDTO agentskoVozilo = new VoziloViewDTO(v);
+        		agentskoVozilo.setUser(user);
+        		agentskaVozila.add(agentskoVozilo);
+    		}
+    	
+    	}
+    	return agentskaVozila;
     }
 }
 

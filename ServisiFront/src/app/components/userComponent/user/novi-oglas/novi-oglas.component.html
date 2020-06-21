@@ -3,7 +3,7 @@
     <span class="nav-tool-items">
       <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onVozilo()">Novo vozilo</a>
       <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onMojaVozila()">Moja vozila</a>
-      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onShoppingCart()">Moja Korpa</a>
+     <!-- <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onShoppingCart()">Moja Korpa</a>-->
       <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
    </span>
   </mat-toolbar>  
@@ -17,26 +17,60 @@
       <form class="form" (submit)="onSubmit()">
   
         <mat-card-content>
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Marka vozila" maxlength="30" [(ngModel)]="vozilo.markaVozila" [ngModelOptions]="{standalone: true}" required>
-          </mat-form-field>
+           <!-- <mat-form-field class="full-width">
+            <input matInput placeholder="Marka vozila" [(ngModel)]="vozilo.markaVozila" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>--> 
+          <mat-label>Marka vozila</mat-label>
+          <select id="markaVozila" [(ngModel)]="vozilo.markaVozila"  [ngModelOptions]="{standalone: true}" class="form-control">
+            <option value=""></option>
+            <option *ngFor="let m of marke$ | async" >
+                {{ m.naziv }}
+            </option>
+        </select>   
 
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Model vozila" maxlength="30" [(ngModel)]="vozilo.modelVozila" [ngModelOptions]="{standalone: true}" required>
-          </mat-form-field>
-
+           <!-- <mat-form-field class="full-width">
+            <input matInput placeholder="Model vozila" [(ngModel)]="vozilo.modelVozila" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>--> 
+          <mat-label>Model vozila</mat-label>
+          <select id="modelVozila" [(ngModel)]="vozilo.modelVozila" [ngModelOptions]="{standalone: true}" class="form-control">
+            <option value=""></option>
+            <option *ngFor="let m of model$ | async" >
+                {{ m.naziv }}
+            </option>
+        </select>   
         
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Klasa vozila" maxlength="30" [(ngModel)]="vozilo.klasaVozila" [ngModelOptions]="{standalone: true}" required>
-          </mat-form-field>
+          <!--  <mat-form-field class="full-width">
+            <input matInput placeholder="Klasa vozila" [(ngModel)]="vozilo.klasaVozila" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>--> 
 
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Vrsta menjaca" maxlength="30" [(ngModel)]="vozilo.vrstaMenjaca" [ngModelOptions]="{standalone: true}" required>
-          </mat-form-field>
+          <mat-label>Klasa vozila</mat-label>
+        <select id="klasaVozila" [(ngModel)]="vozilo.klasaVozila" [ngModelOptions]="{standalone: true}" class="form-control">
+            <option value=""></option>
+            <option *ngFor="let m of klasa$ | async" >
+                {{ m.naziv }}
+            </option>
+        </select>   
+          <!--  <mat-form-field class="full-width">
+            <input matInput placeholder="Vrsta menjaca" [(ngModel)]="vozilo.vrstaMenjaca" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>--> 
+          <mat-label>Vrsta menjaca</mat-label>
+          <select id="vrstaMenjaca" [(ngModel)]="vozilo.vrstaMenjaca" [ngModelOptions]="{standalone: true}" class="form-control">
+            <option value=""></option>
+            <option *ngFor="let m of menjac$ | async" >
+                {{ m.naziv }}
+            </option>
+        </select>   
 
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Tip goriva" maxlength="30" [(ngModel)]="vozilo.tipGoriva" [ngModelOptions]="{standalone: true}" required>
-          </mat-form-field>
+           <!-- <mat-form-field class="full-width">
+            <input matInput placeholder="Tip goriva" [(ngModel)]="vozilo.tipGoriva" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>--> 
+          <mat-label>Tip goriva</mat-label>
+          <select id="tipGoriva" [(ngModel)]="vozilo.tipGoriva" [ngModelOptions]="{standalone: true}" class="form-control">
+            <option value=""></option>
+            <option *ngFor="let m of gorivo$ | async" >
+                {{ m.naziv }}
+            </option>
+        </select>   
 
           <mat-form-field class="full-width">
             <input matInput placeholder="Predjni kilometri" maxlength="30" [(ngModel)]="vozilo.predjeniKm" [ngModelOptions]="{standalone: true}" required>

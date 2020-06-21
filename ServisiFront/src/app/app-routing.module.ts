@@ -31,6 +31,7 @@ import { IzmenaTipaGorivaComponent } from './components/userComponent/tip-goriva
 import { IzmenaVrstaMenjacaComponent } from './components/userComponent/vrsta-menjaca/izmena-vrsta-menjaca/izmena-vrsta-menjaca.component';
 import { IzmenaModelaVozilaComponent } from './components/userComponent/model-vozila/izmena-modela-vozila/izmena-modela-vozila.component';
 import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/sva-vozila.component';
+import { PostaviOglasComponent } from './components/userComponent/agent/postavi-oglas/postavi-oglas.component';
 
 
 const routes: Routes = [
@@ -69,7 +70,8 @@ const routes: Routes = [
   { path: 'izmenaTipaGorivaVozila', component:IzmenaTipaGorivaComponent},
   { path: 'izmenaVrsteMenjacaVozila', component:IzmenaVrstaMenjacaComponent},
   { path: 'izmenaModelaVozila', component:IzmenaModelaVozilaComponent},
-  { path: 'svavozila',component:SvaVozilaComponent}
+  { path: 'svavozila',component:SvaVozilaComponent},
+  { path: 'agent/oglas',component:PostaviOglasComponent},
 ];
 
 @NgModule({

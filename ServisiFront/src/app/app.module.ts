@@ -50,6 +50,7 @@ import { CommonModule } from '@angular/common';
 import { MojiZahteviComponent } from './components/userComponent/user/moji-zahtevi/moji-zahtevi.component';
 import { MojiIzvestajiComponent } from './components/userComponent/user/moji-izvestaji/moji-izvestaji.component';
 import { MojIzvestajDialogComponent } from './components/userComponent/user/moji-izvestaji/moj-izvestaj-dialog/moj-izvestaj-dialog.component';
+import { PostaviOglasComponent } from './components/userComponent/agent/postavi-oglas/postavi-oglas.component';
 
 
 @NgModule({
@@ -89,6 +90,7 @@ import { MojIzvestajDialogComponent } from './components/userComponent/user/moji
     MojiZahteviComponent,
     MojiIzvestajiComponent,
     MojIzvestajDialogComponent,
+    PostaviOglasComponent,
   ],
   imports: [
     BrowserModule,
