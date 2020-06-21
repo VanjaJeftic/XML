@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.agentApp.app.dto.UserDTO;
 import com.agentApp.app.models.Authority;
+import com.agentApp.app.models.Korisnik;
 import com.agentApp.app.models.User;
 import com.agentApp.app.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,5 +99,15 @@ public class UserService {
 	
 	public void remove(User user) {
 		userRepository.delete(user);
+	}
+	
+	public User findUserByKorisnik(Korisnik k) {
+		List<User> users = this.userRepository.findAll();
+		for(User u : users) {
+			if(k.getUser().equals(u)) {
+				return u;
+			}
+		}
+		return null;
 	}
 }

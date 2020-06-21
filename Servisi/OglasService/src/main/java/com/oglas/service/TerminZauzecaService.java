@@ -74,7 +74,7 @@ public class TerminZauzecaService {
 			 System.out.println("Nema termina uopste! ProvjeraZauzetostiVozila");
 			 return 0;
 		 }
-			
+		System.out.println("Provjera Termina");
 		 for(TerminZauzeca termin : vozilo.getZauzeti()) {
 			 imaPodudaranja = this.provjeriPodudaranje(termin, terminZauzimanjaDTO);
 			 if(imaPodudaranja == 1) {
@@ -97,7 +97,7 @@ public class TerminZauzecaService {
 					|| (zauzeto.getZauzetod().isBefore(zahtevPreuzimanje.getZauzetdo()) && zauzeto.getZauzetdo().isAfter(zahtevPreuzimanje.getZauzetdo()))
 					|| (zauzeto.getZauzetod().isBefore(zahtevPreuzimanje.getZauzetod()) && zauzeto.getZauzetdo().isAfter(zahtevPreuzimanje.getZauzetdo()))
 					|| (zauzeto.getZauzetod().isEqual(zahtevPreuzimanje.getZauzetod()) && zauzeto.getZauzetdo().isEqual(zahtevPreuzimanje.getZauzetdo()) ) ) {
-			 
+			 System.out.println("Nasao podudaranje");
 			 return 1;		//Nasao podudaranje
 			}
 		 

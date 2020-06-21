@@ -62,6 +62,7 @@ public class ZahtevEndpoint {
 		for(ZahtevViewDTO zahtevi : bundleZahtevi) {
 			
 			BundleRequests bundleRequests = factory.createBundleRequests();
+			bundleRequests.setBundleID(zahtevi.getBundleID());
 			
 			for(ZahtevDTO z : zahtevi.getBundleZahtevi()) {
 				
@@ -74,6 +75,8 @@ public class ZahtevEndpoint {
 				}
 				Zahtev zahtevSOAP = this.createZahtevSOAP(z, oglasSOAP, izvestajSOAP, factory);
 				bundleRequests.getZahtev().add(zahtevSOAP);
+				User podnosilac = this.createUserSOAP(zahtevi.getUser(), factory);
+				bundleRequests.setPodnosilac(podnosilac);
 				
 			}
 			response.getBundleZahtevi().add(bundleRequests);
@@ -86,6 +89,8 @@ public class ZahtevEndpoint {
 	public GetAcceptResponse getAcceptResponse(@RequestPayload GetAcceptRequest req) {
 		GetAcceptResponse res = new GetAcceptResponse();
 		boolean ok = this.zahtevService.acceptRequest(req.getId(), req.getUser());
+		System.out.println("***********************************************");
+		System.out.println("Ulazi u if petlju iz servisa da promjeni stanje");
 		if(ok) {
 			res.setResponse("ACCEPTED");
 			return res;
@@ -114,6 +119,8 @@ public class ZahtevEndpoint {
 		Vozilo voziloSOAP = this.createVoziloSOAP(o.getVozilo(), factory);
 		
 		oglasSOAP.setId(o.getId());
+		oglasSOAP.setSlobodanOd(o.getSlobodanOd().toString());
+		oglasSOAP.setSlobodanDo(o.getSlobodanDo().toString());
 		oglasSOAP.setMesto(o.getMesto());
 		oglasSOAP.setVozilo(voziloSOAP);
 		

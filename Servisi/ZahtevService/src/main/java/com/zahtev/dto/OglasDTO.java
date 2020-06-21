@@ -1,10 +1,15 @@
 package com.zahtev.dto;
 
+import java.time.LocalDateTime;
+
 public class OglasDTO {
 
 	private Long id;
 	private String mesto;
 	private VoziloDTO vozilo;
+	
+	private LocalDateTime slobodanOd;
+	private LocalDateTime slobodanDo;
 	
 	public OglasDTO() {
 		// TODO Auto-generated constructor stub
@@ -32,6 +37,22 @@ public class OglasDTO {
 
 	public void setVozilo(VoziloDTO vozilo) {
 		this.vozilo = vozilo;
+	}
+
+	public LocalDateTime getSlobodanOd() {
+		return slobodanOd;
+	}
+
+	public void setSlobodanOd(LocalDateTime slobodanOd) {
+		this.slobodanOd = slobodanOd;
+	}
+
+	public LocalDateTime getSlobodanDo() {
+		return slobodanDo;
+	}
+
+	public void setSlobodanDo(LocalDateTime slobodanDo) {
+		this.slobodanDo = slobodanDo;
 	}
 	
 	

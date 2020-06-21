@@ -30,6 +30,8 @@ public class ZahtevClient extends WebServiceGatewaySupport {
 		req.setId(id);
 		req.setUser(user);
 		GetAcceptResponse res = (GetAcceptResponse) getWebServiceTemplate().marshalSendAndReceive(req);
+		System.out.println("******************************************************");
+		System.out.println("Dobio je odgovor: " + res.getResponse());
 		return res;
 	}
 }

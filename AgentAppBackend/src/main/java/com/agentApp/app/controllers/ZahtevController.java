@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.agentApp.app.dto.OglasDTO;
 import com.agentApp.app.dto.ShopCartItemsDTO;
+import com.agentApp.app.dto.UserDTO;
 import com.agentApp.app.dto.ZahtevBundleDTO;
 import com.agentApp.app.dto.ZahtevDTO;
 import com.agentApp.app.models.Korisnik;
@@ -112,6 +113,12 @@ public class ZahtevController {
 			List<Zahtev> zahteviGrouped = this.zahtevService.getAllByGroupID(id);
 		
 			ZahtevBundleDTO zbdto = new ZahtevBundleDTO();
+			if(zahteviGrouped != null) {
+				if(zahteviGrouped.size() > 0) {
+					User podnosilac = this.userService.findUserByKorisnik(zahteviGrouped.get(0).getPodnosilac());
+					zbdto.setUser(new UserDTO(podnosilac));
+				}
+			}
 			for(Zahtev z : zahteviGrouped) {
 				zbdto.setBundleID(z.getBundle_id());
 				OglasDTO oglasDTO = this.oglasService.getOneOglasDTO(z.getOglas().getId());
@@ -130,7 +137,9 @@ public class ZahtevController {
 	
 	@PostMapping("/{id}")
 	public ResponseEntity<?> acceptRequest(@PathVariable("id") Long id, Principal user) {
-		
+		System.out.println("***********************************************************");
+		System.out.println("ID je: " + id);
+		System.out.println("***********************************************************");
 		User u = this.userService.findByUsername(user.getName());
 		
 		boolean ok = this.zahtevService.acceptRequest(id, u);

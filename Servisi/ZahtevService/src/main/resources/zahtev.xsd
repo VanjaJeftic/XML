@@ -41,6 +41,7 @@
     <xs:complexType name="bundleRequests">
     	<xs:sequence>
     		<xs:element name="bundleID" type="xs:long" />
+    		<xs:element name="podnosilac" type="tns:user" />
     		<xs:element name="zahtev" maxOccurs="unbounded" type="tns:zahtev" />
     	</xs:sequence>
     </xs:complexType>
@@ -72,6 +73,8 @@
     	<xs:sequence>
     		<xs:element name="id" type="xs:long" />
     		<xs:element name="mesto" type="xs:string" />
+    		<xs:element name="slobodanOd" type="xs:string" />
+    		<xs:element name="slobodanDo" type="xs:string" />
     		<xs:element name="vozilo" type="tns:vozilo" />
     	</xs:sequence>
     </xs:complexType>
