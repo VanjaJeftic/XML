@@ -6,6 +6,7 @@ export class Zahtev {
     povratak: string;
     oglas: OglasView;
     bundle: boolean;
-
+    podnosilac_id:number;
+    status:string;
     izvestaj: Izvestaj;
 }

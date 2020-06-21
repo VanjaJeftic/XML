@@ -1,0 +1,47 @@
+.example-icon {
+    padding: 0 14px;
+  }    
+  .example-spacer {
+    flex: 1 1 auto;
+  }    
+  .example-card {
+    background-color: lightyellow;
+    max-width: 500px;
+    width: 80%;
+    margin: 40px;
+   
+  }    
+  .example-header-image {
+    background-image: image("./assets/logo.png");
+    background-size: cover;
+  }    
+  .main-div {
+    height: 50vh;
+    padding-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .btn-block{
+    background-color:lightgreen;
+  }
+
+ .ex3 {
+    
+    width: 1100px;
+    height: 800px;
+    overflow: auto;
+  }
+
+  .boja{
+    background-color: rgb(243, 243, 161);
+  }
+
+  .bojaButton{
+    background-color: rgb(182, 182, 14);
+  }

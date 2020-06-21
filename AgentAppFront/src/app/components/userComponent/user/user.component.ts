@@ -44,9 +44,6 @@ export class UserComponent implements OnInit {
     localStorage.setItem('idOglasStorage', ""+this.oglasIdzaPrenos);
     console.log("id oglasa je iz local storage " +localStorage.getItem('idOglasStorage')); //ovo mi treba
 
-
-
-
     const dialogRef = this.dialog.open(KomentarFormaComponent, {
       width: '250px',
      // data: {user: this}
@@ -89,7 +86,12 @@ export class UserComponent implements OnInit {
   }
 
 //za prikaz svih komentara oglasa
- public openDialogPrikazKomentara(){
+ public openDialogPrikazKomentara(oglas){
+
+  console.log(" da li se stampa oglas: " + oglas);
+  //this.oglasService.nadjiCeoOglas(oglas);
+  localStorage.setItem('oglasStorage', JSON.stringify(oglas));
+ this.ogl=JSON.parse(localStorage.getItem('oglasStorage'));
   const dialogRef = this.dialog4.open(SviKomentariOglasaDijalogComponent, {
     data: {
       

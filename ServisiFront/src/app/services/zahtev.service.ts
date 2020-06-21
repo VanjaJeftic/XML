@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { PutanjaService } from './../putanje/putanja.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Zahtev } from '../models/zahtev';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +34,9 @@ export class ZahtevService {
 
   getZahteviIzvestaj():Observable<ZahtevBundleViewDTO[]>{
     return this.http.get<ZahtevBundleViewDTO[]>('https://localhost:8662/zahtev/izvestaj/' + parseInt(localStorage.getItem('userId')));
+  }
+
+  getZahteviPodnosioca():Observable<Zahtev[]>{
+    return this.http.get<Zahtev[]>('https://localhost:8662/zahtev/zahtevi-podnosioca/' + parseInt(localStorage.getItem('userId')));
   }
 }

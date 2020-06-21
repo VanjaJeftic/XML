@@ -50,8 +50,17 @@ import { CommonModule } from '@angular/common';
 import { MojiZahteviComponent } from './components/userComponent/user/moji-zahtevi/moji-zahtevi.component';
 import { MojiIzvestajiComponent } from './components/userComponent/user/moji-izvestaji/moji-izvestaji.component';
 import { MojIzvestajDialogComponent } from './components/userComponent/user/moji-izvestaji/moj-izvestaj-dialog/moj-izvestaj-dialog.component';
-import { PostaviOglasComponent } from './components/userComponent/agent/postavi-oglas/postavi-oglas.component';
 
+import { PostaviOglasComponent } from './components/userComponent/agent/postavi-oglas/postavi-oglas.component';
+import { IznajmljenaVozilaComponent } from './components/userComponent/user/iznajmljena-vozila/iznajmljena-vozila.component';
+import { KomentarDialogComponent } from './components/userComponent/user/iznajmljena-vozila/komentar-dialog/komentar-dialog.component';
+import { StarRatingModule } from 'angular-star-rating';
+import { DijalogInfoKorisnikaComponent } from './components/userComponent/dijalog-info-korisnika/dijalog-info-korisnika.component';
+import { SviKomentariOglasaDijalogComponent } from './components/userComponent/svi-komentari-oglasa-dijalog/svi-komentari-oglasa-dijalog.component';
+import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
+import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
+import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
+import { ResetLozinkeComponent } from './components/userComponent/reset-lozinke/reset-lozinke.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +100,15 @@ import { PostaviOglasComponent } from './components/userComponent/agent/postavi-
     MojiIzvestajiComponent,
     MojIzvestajDialogComponent,
     PostaviOglasComponent,
+    IznajmljenaVozilaComponent,
+    KomentarDialogComponent,
+    DijalogInfoKorisnikaComponent,
+    SviKomentariOglasaDijalogComponent,
+    PrikazKomentaraKorisnikaComponent ,
+    ListOdobrenihKomentaraAdminComponent ,
+    ListaOdbijenihKomentaraAdminComponent,
+    ResetLozinkeComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -105,10 +123,12 @@ import { PostaviOglasComponent } from './components/userComponent/agent/postavi-
     OwlNativeDateTimeModule,
     MatMenuModule,
     MatDialogModule,
+    StarRatingModule.forRoot(),
     CommonModule
+    
 
   ],
-  entryComponents: [TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent
+  entryComponents: [KomentarDialogComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,ResetLozinkeComponent
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

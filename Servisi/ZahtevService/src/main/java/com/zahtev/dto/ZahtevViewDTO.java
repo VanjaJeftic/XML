@@ -8,6 +8,8 @@ public class ZahtevViewDTO {
 	private Long bundleID;
 	private Set<ZahtevDTO> bundleZahtevi;
 	
+	private UserDTO user;
+	
 	public ZahtevViewDTO() {
 		// TODO Auto-generated constructor stub
 		this.bundleZahtevi = new HashSet<>();
@@ -28,4 +30,13 @@ public class ZahtevViewDTO {
 	public void setBundleZahtevi(Set<ZahtevDTO> bundleZahtevi) {
 		this.bundleZahtevi = bundleZahtevi;
 	}
+
+	public UserDTO getUser() {
+		return user;
+	}
+
+	public void setUser(UserDTO user) {
+		this.user = user;
+	}
+	
 }

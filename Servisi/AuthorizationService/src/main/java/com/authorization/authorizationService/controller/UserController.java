@@ -38,6 +38,14 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/korisnik/{idkorisnik}")
+    public ResponseEntity<?> pronadjiKorisnika(@PathVariable("idkorisnik") Long id){
+
+        System.out.println("Id korisnika je : "+id);
+        User u = userService.findById(id);
+        System.out.println("Ime i prezime je "+ u.getIme() +u.getPrezime());
+        return new ResponseEntity<>(u,HttpStatus.OK);
+    }
 
     @PutMapping("/izmenaKorisnika")
     public ResponseEntity<?> izmenaKorisnika(@RequestBody UserDTO userDTO) {
@@ -54,6 +62,28 @@ public class UserController {
 
 
     }
+
+    //Menjanje sifre
+    @PostMapping(value = "/izmenaLozinke")
+    public ResponseEntity<?> updateSifruuser(@RequestParam("username") String username,
+                                             @RequestParam("password") String password){
+
+        System.out.println("User username Je : "+username + "Sifra je "+ password);
+
+        User user = userService.findByUsername(username);
+
+        if(user == null) {
+            logger.info("Nije pronadjen user");
+            return new ResponseEntity<>("Error", HttpStatus.NOT_FOUND);
+        }
+        logger.info("Menja se sifra");
+        user=userService.promeniSifru(user,password);
+
+        return new ResponseEntity<>(user, HttpStatus.OK);
+
+    }
+
+
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<HttpStatus> brisanjeKorisnika(@PathVariable("id") Long id) {

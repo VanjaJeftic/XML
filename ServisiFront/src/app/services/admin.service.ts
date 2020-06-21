@@ -6,6 +6,8 @@ import { KlasaVozila } from '../models/klasa-vozila';
 import { TipGoriva } from '../models/tip-goriva';
 import { VrstaMenjaca } from '../models/vrsta-menjaca';
 import { ModelVozila } from '../models/model-vozila';
+import { Observable } from 'rxjs';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -140,6 +142,51 @@ export class AdminService {
       data=>{console.log('Vratio je '+data)}
     );
   }
+
+//odavde su za komentar
+  public getUserPoId(idkorisnik:number):Observable<User>{
+    console.log("Pribavljamo korisnika id je : " + idkorisnik);
+    return this.http.get<User>('https://localhost:8662/auth/korisnik/korisnik/'+idkorisnik);
+  }
+  
+  public izmenaPoljaOdobrenKomentar(id:number){
+    window.location.reload();
+    return this.http.put('https://localhost:8662/komentar/komentar/odobren/'+id,{responseType: 'text'}).subscribe(
+   
+      data=>{console.log('Vratio je '+data)});
+  }
+
+
+  public izmenaPoljaOdbijenKomentar(id:number){
+    window.location.reload();
+    return this.http.put('https://localhost:8662/komentar/komentar/odbijen/'+id,{responseType: 'text'}).subscribe(
+   
+      data=>{console.log('Vratio je '+data)});
+  }
+
+  public getKomentari() {
+    console.log("Pribavljamo komentare");
+    return this.http.get('https://localhost:8662/komentar/komentar');
+  }
+  
+
+  
+  public getOdobreniKomZaovajOglas(oglasid:number) {
+    console.log("Pribavljamo komentare za oglas");
+    return this.http.get('https://localhost:8662/komentar/komentar/odobreniKomentariZaOglas/'+oglasid);
+  }
+  
+  public getKomentariOdbijeni() {
+    console.log("Pribavljamo odbijene komentare");
+    return this.http.get('https://localhost:8662/komentar/komentar/sviOdbijeni');
+  }
+
+  public getKomentariOdobreni() {
+    console.log("Pribavljamo odobrene komentare");
+    return this.http.get('https://localhost:8662/komentar/komentar/sviOdobreni');
+  }
+
+
 
 
 }

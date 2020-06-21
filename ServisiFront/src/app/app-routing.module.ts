@@ -32,6 +32,11 @@ import { IzmenaVrstaMenjacaComponent } from './components/userComponent/vrsta-me
 import { IzmenaModelaVozilaComponent } from './components/userComponent/model-vozila/izmena-modela-vozila/izmena-modela-vozila.component';
 import { SvaVozilaComponent } from './components/userComponent/user/sva-vozila/sva-vozila.component';
 import { PostaviOglasComponent } from './components/userComponent/agent/postavi-oglas/postavi-oglas.component';
+import { IznajmljenaVozilaComponent } from './components/userComponent/user/iznajmljena-vozila/iznajmljena-vozila.component';
+import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
+import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
+import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
+
 
 
 const routes: Routes = [
@@ -44,6 +49,7 @@ const routes: Routes = [
   { path: 'user/cart', component: MyShopCartItemsComponent },
   { path: 'user/zahtev', component: MojiZahteviComponent },
   { path: 'user/izvestaj', component: MojiIzvestajiComponent },
+  { path: 'user/iznajmljena-vozila', component: IznajmljenaVozilaComponent },
   
   { path: 'vozilo/novoVozilo', component: NoviOglasComponent },
   { path: 'vozilo/:id', component: VoziloDetailsComponent },
@@ -72,6 +78,10 @@ const routes: Routes = [
   { path: 'izmenaModelaVozila', component:IzmenaModelaVozilaComponent},
   { path: 'svavozila',component:SvaVozilaComponent},
   { path: 'agent/oglas',component:PostaviOglasComponent},
+  {path: 'listaKomentaraAdmina', component:PrikazKomentaraKorisnikaComponent},
+  {path: 'listaOdbobrenihKomentaraAdmina',component:ListOdobrenihKomentaraAdminComponent},
+  {path: 'listaOdbijenihKomentaraAdmina',component:ListaOdbijenihKomentaraAdminComponent},
+
 ];
 
 @NgModule({

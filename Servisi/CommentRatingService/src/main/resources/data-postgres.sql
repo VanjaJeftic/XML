@@ -1,0 +1,3 @@
+insert into komentar (oglas_id, korisnik_id, datum, ocena,sadrzaj,odgovor_id,odobren,odbijen,usernameusera) values (1,4,'2020-06-22T19:00',7,'Komentar za oglas 1 test', 1, false, false,'dijana');
+insert into komentar (oglas_id, korisnik_id, datum, ocena, sadrzaj,odgovor_id,odobren,odbijen,usernameusera) values (2,4,'2020-06-22T19:00',9,'Komentar test 2', 1, false, false,'dijana');
+insert into komentar (oglas_id, korisnik_id, datum, ocena, sadrzaj,odgovor_id,odobren,odbijen,usernameusera) values (1,4,'2020-06-22T19:00',9,'Komentar za oglas 1', 1, true, false, 'dijana');
