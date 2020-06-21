@@ -116,6 +116,7 @@ public class OglasController {
 			return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
 		}
 	}
+
 	@GetMapping("/oglas/vozilo/{id}")
 	public ResponseEntity<List<Oglas>> getOglasByVoziloId(@PathVariable("id") Long id){
 		List<Oglas> oglasi = oglasService.findOglasiByVoziloID(id);

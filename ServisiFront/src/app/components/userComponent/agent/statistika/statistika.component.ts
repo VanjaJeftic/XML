@@ -21,7 +21,7 @@ export class StatistikaComponent implements OnInit {
   ocena: number = 0;
 
   constructor(private komentarService: KomentarService, private voziloService: VoziloService) {
-
+    
     this.voziloService.getVozilaAgenta().subscribe(
       data => {
         this.listaVozila = data as VoziloView[];

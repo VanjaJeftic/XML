@@ -64,6 +64,7 @@ public class VoziloService {
     	return this.voziloRepository.findById(id).get();
     }
     
+ 
     public List<Vozilo> getVozila(Long id){
     	List<Vozilo> agenta = new ArrayList<>();
     	List<Vozilo> vozila = (List<Vozilo>) this.voziloRepository.findAll();

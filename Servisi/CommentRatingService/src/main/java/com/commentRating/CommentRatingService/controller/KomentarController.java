@@ -54,6 +54,7 @@ public class KomentarController {
         Komentar k=komentarService.findOne(id);
         return k;
     }
+
     @GetMapping("/odobreniKomentariZaOglas/{idoglas}")
     List<Komentar> odobreniKomentariZaOglas(@PathVariable("idoglas") Long idoglas) {
         logger.info("Lista odobreniKomentariZaOglas");
@@ -67,7 +68,13 @@ public class KomentarController {
         }
         return komentarx;
     }
-
+    
+    @GetMapping("/oglas/{id}")
+    public ResponseEntity<List<Komentar>> findKomentariById (@PathVariable("id") Long id){
+    	List<Komentar> komentari = komentarService.getOdobrenByOglasId(id);
+    	return new ResponseEntity<List<Komentar>>(komentari,HttpStatus.OK);
+    }
+    
     @GetMapping
     List<Komentar> sviKomentari() {
         logger.info("Lista komentara");
@@ -80,12 +87,7 @@ public class KomentarController {
         }
         return komentarx;
     }
-    
-    @GetMapping("/oglas/{id}")
-    public ResponseEntity<List<Komentar>> findKomentariById (@PathVariable("id") Long id){
-    	List<Komentar> komentari = komentarService.getOdobrenByOglasId(id);
-    	return new ResponseEntity<List<Komentar>>(komentari,HttpStatus.OK);
-    }
+
 
     @GetMapping("/sviOdbijeni")
     List<Komentar> sviOdbijeniKomentari() {

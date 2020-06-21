@@ -26,9 +26,14 @@ export class MojiZahteviComponent implements OnInit {
           for(let zahtev of bundle.bundleZahtevi){
             let arrayPreuzimanje = zahtev.preuzimanje.split('T');
             let arrayPovratak = zahtev.povratak.split('T');
+            let oglasSlobodanOd = zahtev.oglas.slobodanOd.split('T');
+            let oglasSlobodanDo = zahtev.oglas.slobodanDo.split('T');
             
             zahtev.preuzimanje = arrayPreuzimanje[0].concat(' ', arrayPreuzimanje[1]);
             zahtev.povratak = arrayPovratak[0].concat(' ', arrayPovratak[1]);
+
+            zahtev.oglas.slobodanOd = oglasSlobodanOd[0].concat(' ', oglasSlobodanOd[1]);
+            zahtev.oglas.slobodanDo = oglasSlobodanDo[0].concat(' ', oglasSlobodanDo[1]);
           }
         }
       }

@@ -288,6 +288,7 @@ public class ZahtevService {
 	}
 	
 	public boolean acceptRequest(Long id, Long agent) {
+		System.out.println("Usao u acceptRequest servisa da izmeni stanje zahteva");
 		List<Zahtev> zahtevi = this.getAllByGroupID(id);
 		
 		if(zahtevi.get(0).isBundle()) {
@@ -302,6 +303,7 @@ public class ZahtevService {
 				
 				if(oglas.getVozilo().getUser().getId().equals(agent)) {
 					if(imaPodudaranja == 0) {
+						System.out.println("Izmenio stanje zahteva na accepted");
 						z.setStatus("ACCEPTED");
 						
 						//Kreira termin zauzeca iz ovog zahteva i povezuje ga sa vozilom u OglasService
@@ -324,7 +326,11 @@ public class ZahtevService {
 		}else {
 			System.out.println("Nije bundle! ZahtevController");
 			Zahtev z = zahtevi.get(0);
+			System.out.println("Zahtev: " + z.getBundle_id() + ", od:" + z.getPreuzimanje() + ", do:" +z.getPovratak() + ", podn" + z.getPodnosilac_id());
 			//Pronalazi sve zahteve koji su kreirani za oglas kome je AgentID "agent" i menja status
+			if(zahtevi.size() > 0) {
+				System.out.println("Size: " + zahtevi.size());
+			}
 			OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
 			
 			TerminZauzecaDTO terminZauzecaDTO = new TerminZauzecaDTO(oglas.getVozilo().getId(), z.getPreuzimanje(), z.getPovratak());
@@ -339,10 +345,11 @@ public class ZahtevService {
 					
 					if(res.status(HttpStatus.CREATED) != null) {
 						this.save(z);
-						
+						System.out.println("Izmenio status na ACCEPTED u ZahtevService");
 						//Odbija sve ostale zahteve vezane za taj oglas ovog agenta
 						this.odbijOstaleZahteve(z.getPreuzimanje(), z.getPovratak(), z.getOglas_id());
 					}else {
+						System.out.println("Nije sacuvao zahtev kao ACCEPTED");
 						return false;
 					}
 					

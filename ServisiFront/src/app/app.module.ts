@@ -50,6 +50,8 @@ import { CommonModule } from '@angular/common';
 import { MojiZahteviComponent } from './components/userComponent/user/moji-zahtevi/moji-zahtevi.component';
 import { MojiIzvestajiComponent } from './components/userComponent/user/moji-izvestaji/moji-izvestaji.component';
 import { MojIzvestajDialogComponent } from './components/userComponent/user/moji-izvestaji/moj-izvestaj-dialog/moj-izvestaj-dialog.component';
+
+import { PostaviOglasComponent } from './components/userComponent/agent/postavi-oglas/postavi-oglas.component';
 import { IznajmljenaVozilaComponent } from './components/userComponent/user/iznajmljena-vozila/iznajmljena-vozila.component';
 import { KomentarDialogComponent } from './components/userComponent/user/iznajmljena-vozila/komentar-dialog/komentar-dialog.component';
 import { StarRatingModule } from 'angular-star-rating';
@@ -59,8 +61,8 @@ import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/pr
 import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
 import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
 import { ResetLozinkeComponent } from './components/userComponent/reset-lozinke/reset-lozinke.component';
-import { PregledKomentaraVozilaDialogComponent } from './components/userComponent/agent/moja-vozila/pregled-komentara-vozila-dialog/pregled-komentara-vozila-dialog.component';
 import { StatistikaComponent } from './components/userComponent/agent/statistika/statistika.component';
+import { PregledKomentaraVozilaDialogComponent } from './components/userComponent/agent/moja-vozila/pregled-komentara-vozila-dialog/pregled-komentara-vozila-dialog.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +101,7 @@ import { StatistikaComponent } from './components/userComponent/agent/statistika
     MojiZahteviComponent,
     MojiIzvestajiComponent,
     MojIzvestajDialogComponent,
+    PostaviOglasComponent,
     IznajmljenaVozilaComponent,
     KomentarDialogComponent,
     DijalogInfoKorisnikaComponent,
@@ -107,8 +110,9 @@ import { StatistikaComponent } from './components/userComponent/agent/statistika
     ListOdobrenihKomentaraAdminComponent ,
     ListaOdbijenihKomentaraAdminComponent,
     ResetLozinkeComponent,
-    PregledKomentaraVozilaDialogComponent,
-    StatistikaComponent
+    StatistikaComponent,
+    PregledKomentaraVozilaDialogComponent
+    
   ],
   imports: [
     BrowserModule,

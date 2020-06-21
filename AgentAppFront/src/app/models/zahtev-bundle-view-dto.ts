@@ -1,7 +1,7 @@
-import { UserPodnosilac } from './user-podnosilac';
+import { User } from './user';
 import { Zahtev } from './zahtev';
 export class ZahtevBundleViewDTO {
     bundleID: number;
-    user: UserPodnosilac;
+    user: User;
     bundleZahtevi: Zahtev[] = [];
 }

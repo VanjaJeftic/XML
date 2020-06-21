@@ -1,114 +1,84 @@
 <mat-toolbar color="primary" class="app-header">
-    <div><a href="/agent" class="navlogo">Rent-A-Car Agent</a></div>
-    <span class="nav-tool-items">
-      <a mat-button mat-raised-button routerLink="/agent/izvestaj" routerLinkActive="active" >Unesi Izvestaj</a>
-      <a mat-button mat-raised-button routerLink="/agent/zahtev" routerLinkActive="active" >Zahtevi</a>
-      <a mat-button mat-raised-button routerLink="/agent/vozila" routerLinkActive="active">Moja Vozila</a>
-      <a mat-button mat-raised-button routerLink="/agent/statistika" routerLinkActive="active">statistika</a>
-      <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
-    </span>
-  </mat-toolbar>
-  
-  <mat-card>
-    <mat-card-header>
-      <h1>Moja Vozila</h1>
-    </mat-card-header>
-  <mat-card-content>
-    <div class="mat-elevation-z8">
-      <table mat-table [dataSource]="voziloSource">
-  
-        <!-- Klasa Vozila -->
-        <ng-container matColumnDef="Klasa">
-          <th mat-header-cell *matHeaderCellDef> Klasa </th>
-          <td mat-cell *matCellDef="let element">{{element.klasaVozila}} </td>
-        </ng-container>
-        
-        <!-- Model Vozila -->
-        <ng-container matColumnDef="Model">
-          <th mat-header-cell *matHeaderCellDef> Model </th>
-          <td mat-cell *matCellDef="let element">{{element.modelVozila}} </td>
-        </ng-container>
+  <div><a href="/agent" class="navlogo">Rent-A-Car Agent</a></div>
+  <span class="nav-tool-items">
+    <a mat-button mat-raised-button routerLink="/agent/izvestaj" routerLinkActive="active">Unesi Izvestaj</a>
+    <a mat-button mat-raised-button routerLink="/agent/zahtev" routerLinkActive="active">Zahtevi</a>
+    <a mat-button mat-raised-button routerLink="/vozilo/novoVozilo" routerLinkActive="active" >Novo vozilo</a>
+    <a mat-button mat-raised-button routerLink="/agent/oglas" routerLinkActive="active" >Novi oglas</a>
+    <a mat-button mat-raised-button routerLink="/agent/vozila" routerLinkActive="active">Moja Vozila</a>
+    <a mat-button mat-raised-button routerLink="/agent/statistika" routerLinkActive="active">statistika</a>
+    <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
+  </span>
+</mat-toolbar>
 
-        <!-- Marka Vozila -->
-        <ng-container matColumnDef="Marka">
-          <th mat-header-cell *matHeaderCellDef> Marka </th>
-          <td mat-cell *matCellDef="let element">{{element.markaVozila}} </td>
-        </ng-container>
+<mat-card>
+  <mat-card-header>
+    <h1>Moja Vozila</h1>
+  </mat-card-header>
+<mat-card-content>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="voziloSource">
 
-        <!-- Predjeni kilometri -->
-        <ng-container matColumnDef="KM">
-          <th mat-header-cell *matHeaderCellDef> Kilometri </th>
-          <td mat-cell *matCellDef="let element">{{element.predjeniKm}} km</td>
-        </ng-container>
-
-        <!-- Prosecna ocena Vozila -->
-        <ng-container matColumnDef="Ocena">
-          <th mat-header-cell *matHeaderCellDef> Ocena </th>
-          <td mat-cell *matCellDef="let element">{{element.ocena}}/5 <star-rating staticColor="ok" [showHalfStars]="true"
-            [rating]="element.ocena">
-        </star-rating></td>
-        </ng-container>
-
-        <!-- Prosecna ocena kilometri -->
-        <ng-container matColumnDef="Komentari">
-          <th mat-header-cell *matHeaderCellDef> Komentari </th>
-          <td mat-cell *matCellDef="let element">
-            <button mat-raised-button (click)="openKomentarDialog(element)" color="primary"
-                matBadge="{{getBrojKomentara(element)}}" matBadgePosition="after" matBadgeColor="accent">
-                Komentari
-            </button>
-          </td>
-        </ng-container>
-  
-        <!-- Zauzmi Termin -->
-        <ng-container matColumnDef="Zauzece">
-            <th mat-header-cell *matHeaderCellDef> Rezervisi </th>
-            <td mat-cell *matCellDef="let element"> <button mat-button (click)="onUnesiZauzece(element)">Unesi Zauzece</button> </td>
-        </ng-container>
-
-        <!-- Zauzmi Termin -->
-        <ng-container matColumnDef="Detaljnije">
-          <th mat-header-cell *matHeaderCellDef> Detaljnije </th>
-          <td mat-cell *matCellDef="let element"> <button mat-button (click)="onDetaljnije(element)">Pogledaj jos</button> </td>
+      <!-- Klasa Vozila -->
+      <ng-container matColumnDef="Klasa">
+        <th mat-header-cell *matHeaderCellDef> Klasa </th>
+        <td mat-cell *matCellDef="let element">{{element.klasaVozila}} </td>
       </ng-container>
-  
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-  
-      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-    </div>
-  </mat-card-content>
-  </mat-card>
+      
+      <!-- Model Vozila -->
+      <ng-container matColumnDef="Model">
+        <th mat-header-cell *matHeaderCellDef> Model </th>
+        <td mat-cell *matCellDef="let element">{{element.modelVozila}} </td>
+      </ng-container>
 
-  <!-- <div style="padding:20px;margin-top:30px;">
-    
-    <p style="font-size: 18px;">Vozila:</p>
-      <table mat-table [dataSource]="voziloSource" matSort class="mat-elevation-z8">
-  
-        <ng-container matColumnDef="Vlasnik">
-          <th mat-header-cell *matHeaderCellDef> Vlasnik</th>
-          <td mat-cell *matCellDef="let element">{{element.user.firstname}} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="Klasa">
-          <th mat-header-cell *matHeaderCellDef> Klasa </th>
-          <td mat-cell *matCellDef="let element">{{element.klasaVozila}} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="Model">
-          <th mat-header-cell *matHeaderCellDef> Model </th>
-          <td mat-cell *matCellDef="let element">{{element.modelVozila}} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="Zauzece">
-            <th mat-header-cell *matHeaderCellDef> Rezervisi </th>
-            <td mat-cell *matCellDef="let element"> <button mat-button (click)="onUnesiZauzece(element)">Unesi Zauzece</button> </td>
-          </ng-container>
+      <!-- Marka Vozila -->
+      <ng-container matColumnDef="Marka">
+        <th mat-header-cell *matHeaderCellDef> Marka </th>
+        <td mat-cell *matCellDef="let element">{{element.markaVozila}} </td>
+      </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-  
-      <router-outlet></router-outlet>
-  </div> -->
+      <!-- Predjeni kilometri -->
+      <ng-container matColumnDef="KM">
+        <th mat-header-cell *matHeaderCellDef> Kilometri </th>
+        <td mat-cell *matCellDef="let element">{{element.predjeniKm}} km</td>
+      </ng-container>
+
+      <!-- Prosecna ocena Vozila -->
+      <ng-container matColumnDef="Ocena">
+        <th mat-header-cell *matHeaderCellDef> Ocena </th>
+        <td mat-cell *matCellDef="let element">{{element.ocena}}/5 <star-rating staticColor="ok" [showHalfStars]="true"
+          [rating]="element.ocena">
+      </star-rating></td>
+      </ng-container>
+
+      <!-- Prosecna ocena kilometri -->
+      <ng-container matColumnDef="Komentari">
+        <th mat-header-cell *matHeaderCellDef> Komentari </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button (click)="openKomentarDialog(element)" color="primary"
+              matBadge="{{getBrojKomentara(element)}}" matBadgePosition="after" matBadgeColor="accent">
+              Komentari
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Zauzmi Termin -->
+      <ng-container matColumnDef="Zauzece">
+          <th mat-header-cell *matHeaderCellDef> Rezervisi </th>
+          <td mat-cell *matCellDef="let element"> <button mat-button (click)="onUnesiZauzece(element)">Unesi Zauzece</button> </td>
+      </ng-container>
+
+      <!-- Zauzmi Termin -->
+      <ng-container matColumnDef="Detaljnije">
+        <th mat-header-cell *matHeaderCellDef> Detaljnije </th>
+        <td mat-cell *matCellDef="let element"> <button mat-button (click)="onDetaljnije(element)">Pogledaj jos</button> </td>
+    </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</mat-card-content>
+</mat-card>

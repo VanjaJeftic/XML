@@ -16,16 +16,23 @@
         <mat-card *ngFor="let data of zahtevi" style="width: 100%;height: 100%;margin-top: 10%;background-color: lavender;">
             <mat-card-header>
                 <mat-card-title style="border-style: outset;background-color: rgb(189, 226, 247);">
-                  <p>Korisnik: {{data.bundleZahtevi[0].oglas.vozilo.user.username}}</p>
+                  <p> <span style="padding-right: 5px;">Korisnik:</span> <i>{{data.user.username}}</i> <span style="padding-left: 10px;">Email:</span> <i>{{data.user.email}}</i> </p>
+                  <p> <span style="padding-right: 5px;">Ime:</span> <i>{{data.user.firstname}}</i> </p>
                 </mat-card-title>
             </mat-card-header>
             <mat-card-content >
                 <div *ngFor="let zahtev of data.bundleZahtevi" style="height: 100%;;border-style: outset; background-color:rgb(198, 192, 233);">
-                    <p> <span style="padding-right: 10px;">Sifra vozila:</span> {{zahtev.oglas.vozilo.id}} </p>
-                    <p> <span style="padding-right: 10px;">Marka vozila:</span> {{zahtev.oglas.vozilo.markaVozila}} </p>
-                    <p> <span style="padding-right: 10px;">Model vozila:</span> {{zahtev.oglas.vozilo.modelVozila}} </p>
-                    <p> <span style="padding-right: 10px;">Preuzimanje:</span> {{zahtev.preuzimanje}} </p>
-                    <p> <span style="padding-left: 20px; padding-right: 10px;">Povratak:</span> {{zahtev.povratak}} </p>
+                    <div style="border-style: solid;">
+                        <p> <span style="padding-right: 10px;">Oglas Vazi od:</span> {{zahtev.oglas.slobodanOdDate}} </p>
+                        <p> <span style="padding-right: 10px;">Oglas vazi do:</span> {{zahtev.oglas.slobodanDoDate}} </p>
+                    </div>
+                    <div>
+                        <p> <span style="padding-right: 10px;">Sifra vozila:</span> {{zahtev.oglas.vozilo.id}} </p>
+                        <p> <span style="padding-right: 10px;">Marka vozila:</span> {{zahtev.oglas.vozilo.markaVozila}} </p>
+                        <p> <span style="padding-right: 10px;">Model vozila:</span> {{zahtev.oglas.vozilo.modelVozila}} </p>
+                        <p> <span style="padding-right: 10px;">Preuzimanje:</span> {{zahtev.preuzimanje}} </p>
+                        <p> <span style="padding-left: 20px; padding-right: 10px;">Povratak:</span> {{zahtev.povratak}} </p>
+                    </div>
                 </div>
             </mat-card-content>
             <mat-card-actions>

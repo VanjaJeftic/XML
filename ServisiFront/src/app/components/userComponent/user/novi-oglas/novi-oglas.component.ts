@@ -3,6 +3,7 @@ import {Vozilo} from 'src/app/models/vozilo';
 import { NoviOglasService } from 'src/app/services/novi-oglas.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 
 
 @Component({
@@ -12,9 +13,23 @@ import { Router } from '@angular/router';
 })
 export class NoviOglasComponent implements OnInit {
 
+  marke$;
+  model$;
+  klasa$;
+  gorivo$;
+  menjac$;
   public vozilo:Vozilo=new Vozilo();
   
-  constructor(private noviOglasService:NoviOglasService,private authService: AuthenticationService, private router: Router) { }
+  constructor(private noviOglasService:NoviOglasService,private authService: AuthenticationService, private router: Router,private modelService:AdminService) {
+
+    console.log("marke");
+    this.marke$= modelService.getMarkeVozila();
+    this.model$=modelService.getModelVozila();
+    this.klasa$=modelService.getKlaseVozila();
+    this.menjac$=modelService.getVrsteMenjacaVozila();
+    this.gorivo$=modelService.getTipoviGorivaVozila();
+
+   }
   
   imageName: any;
   selectedFile: File;

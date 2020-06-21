@@ -25,7 +25,7 @@ public class KomentarService {
     }
 
     public Komentar kreirajKomentar(KomentarDTO komentarDTO) {
-        KomentarDTO komentar2=new KomentarDTO();
+    	KomentarDTO komentar2=new KomentarDTO();
         komentar2.setId(komentarDTO.getId());
         komentar2.setDatum(komentarDTO.getDatum());
         komentar2.setSadrzaj(komentarDTO.getSadrzaj());

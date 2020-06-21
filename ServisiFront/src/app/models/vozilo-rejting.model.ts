@@ -14,4 +14,3 @@ export class VoziloRejting {
     ocena : number;
     komentari:Komentar[];
 }
-
