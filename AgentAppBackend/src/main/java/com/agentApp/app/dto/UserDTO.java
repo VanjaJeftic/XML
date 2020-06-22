@@ -4,6 +4,7 @@ import com.agentApp.app.models.Authority;
 import com.agentApp.app.models.User;
 import com.agentApp.app.models.Vozilo;
 
+import javax.persistence.Column;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -14,6 +15,8 @@ public class UserDTO {
 	private String password;
 	private java.sql.Timestamp lastPasswordResetDate;
 	private boolean enabled;
+	private String maticnibroj;
+	private String nazivfirme;
 	private String lastname;
 	private String firstname;
 	private String adress;
@@ -25,7 +28,7 @@ public class UserDTO {
 	private boolean nalogAktiviran;
 	private List<Authority> authorities;
 
-	public UserDTO(Long id, String username, String password, Timestamp lastPasswordResetDate, boolean enabled, String lastname, String firstname, String adress, String email, String city, String country, String phoneNumber, String uloga, boolean nalogAktiviran,List<Authority>authorities) {
+	public UserDTO(Long id, String username, String password, Timestamp lastPasswordResetDate, boolean enabled, String lastname, String firstname, String adress, String email, String city, String country, String phoneNumber, String uloga, boolean nalogAktiviran,List<Authority>authorities,String maticnibroj, String nazivfirme) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
@@ -41,6 +44,8 @@ public class UserDTO {
 		this.uloga = uloga;
 		this.nalogAktiviran = nalogAktiviran;
 		this.authorities=authorities;
+		this.maticnibroj=maticnibroj;
+		this.nazivfirme=nazivfirme;
 	}
 	
 	public UserDTO(Vozilo v) {
@@ -59,6 +64,7 @@ public class UserDTO {
 		this.uloga = v.getUser().getUloga();
 		this.nalogAktiviran = v.getUser().isNalogAktiviran();
 		this.authorities= (List<Authority>) v.getUser().getRoles();
+
 	}
 
 	public UserDTO() {
@@ -72,6 +78,22 @@ public class UserDTO {
 		this.username=u.getUsername();
 		this.firstname = u.getFirstname();
 		this.lastname = u.getLastname();
+	}
+
+	public String getMaticnibroj() {
+		return maticnibroj;
+	}
+
+	public void setMaticnibroj(String maticnibroj) {
+		this.maticnibroj = maticnibroj;
+	}
+
+	public String getNazivfirme() {
+		return nazivfirme;
+	}
+
+	public void setNazivfirme(String nazivfirme) {
+		this.nazivfirme = nazivfirme;
 	}
 
 	public List<Authority> getAuthorities() {

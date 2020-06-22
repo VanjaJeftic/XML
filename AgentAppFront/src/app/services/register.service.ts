@@ -12,14 +12,14 @@ export class RegisterService {
 
 
   public saveUser(user: User){
-    return this.http.post('https://localhost:8088/auth/register', user)
+    return this.http.post('http://localhost:8088/auth/register', user)
   }
 
 
   public proveriUseraSaSifrom(user:User){
     console.log("promena sifre");
     console.log("Username je: "+user);
-    return this.http.post('https://localhost:8088/auth/izmenaLozinke',user);
+    return this.http.post('http://localhost:8088/auth/izmenaLozinke',user);
   
   }
 
@@ -32,7 +32,7 @@ export class RegisterService {
     fd.append('password',password);
     header.append('Content-Type', 'application/json');
     console.log("Izmena sifre");
-    return this.http.post<User>('https://localhost:8088/auth/izmenaLozinke',fd);
+    return this.http.post<User>('http://localhost:8088/auth/izmenaLozinke',fd);
 
   }
 }

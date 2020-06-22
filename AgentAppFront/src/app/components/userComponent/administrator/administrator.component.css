@@ -3,12 +3,28 @@
     color:black;
   
   }
+
+  .dugmeRegAgenta {
+    background-color:lightpink;
+    color:black;
+  
+  }
+
+
+
   .dugmeKreiraj {
     background-color:#87b8cf;
     color:black;
     margin:30px;
   }
 
+  .dugmeRegistruj{
+    
+    background-color:lightpink;
+    color:black;
+    margin:30px;
+  
+  }
   
   .dugmeLista {
     background-color:#87b8cf;
