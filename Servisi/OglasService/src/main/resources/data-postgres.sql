@@ -19,5 +19,5 @@ insert into izvestaj (predjeniKm, komentar, vozilo_id, zahtev_id) values ('125',
 
 insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-06-24T19:00', '2020-06-26T20:00', 5);
 insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-06-26T19:00', '2020-06-29T20:00', 7);
-insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-06-22T19:00', '2020-06-24T20:00', 7);
-insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-06-23T19:00', '2020-06-27T20:00', 7);
+insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-07-22T19:00', '2020-07-24T20:00', 7);
+insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-07-23T19:00', '2020-07-27T20:00', 7);
