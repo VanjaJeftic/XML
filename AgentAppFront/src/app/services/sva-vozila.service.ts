@@ -10,7 +10,7 @@ export class SvaVozilaService {
 
   public getVozila() {
     console.log("Pribavljamo vozila");
-    return this.http.get('https://localhost:8088/vozilo/vozila/');
+    return this.http.get('http://localhost:8088/vozilo/vozila/');
   }
 }
 

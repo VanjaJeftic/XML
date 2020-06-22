@@ -11,7 +11,7 @@ export class NoviOglasService {
 
   public saveOglas(oglas:Oglas){
     console.log("Saljel "+oglas.mesto+oglas.cena+oglas.slobodanOd)
-    return this.http.post('https://localhost:8088/oglas/novi',oglas).subscribe(
+    return this.http.post('http://localhost:8088/oglas/novi',oglas).subscribe(
       data=>{console.log('Vratio je '+data)}
     );
   }

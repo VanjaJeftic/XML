@@ -66,7 +66,40 @@ public class UserService {
 	public List<User> findOnlyUsers(String uloga){
 		return userRepository.findAllByUloga(uloga);
 	}
-	
+
+
+	public User saveAgent(UserDTO user) {
+		System.out.println("Servis agent");
+		User u = userRepository.findByUsername(user.getUsername());		//Username => mail
+		User u2=userRepository.findByUsername(user.getUsername());
+
+
+		if( u == null && u2==null) {
+			//u = userRepository.save(user);
+			User newUser = new User();
+			newUser.setUsername(user.getUsername());
+			newUser.setPassword(passwordEncoder.encode(user.getPassword()));
+			newUser.setFirstname(user.getFirstname());
+			newUser.setLastname(user.getLastname());
+			newUser.setEnabled(true);
+			newUser.setAdress(user.getAdress());
+			newUser.setNalogAktiviran(true);
+			newUser.setUloga("ROLE_AGENT");								//Ovo i ne treba
+			newUser.setEmail(user.getEmail());
+			List<Authority> auth = authService.findByname("ROLE_AGENT");
+			newUser.setAuthorities(auth);
+
+			u = this.userRepository.save(newUser);
+			return u;
+		}
+		return null;
+	}
+
+
+
+
+
+
 	//Za Registraciju
 	public User saveUser(UserDTO user) {
 		System.out.println("Servis user");

@@ -10,6 +10,8 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import com.agentApp.app.dto.UserDTO;
+import com.agentApp.app.models.Agent;
 import com.agentApp.app.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -36,6 +38,39 @@ public class EmailService {
      * Anotacija za oznacavanje asinhronog zadatka
      * Vise informacija na: https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#scheduling
      */
+
+
+    public void registrovanjeAgenta(UserDTO k) {
+        // TODO Auto-generated method stub
+        System.out.println("Slanje emaila za agenta");
+
+        SimpleMailMessage mail = new SimpleMailMessage();
+        mail.setTo(k.getEmail());
+        mail.setFrom(env.getProperty("spring.mail.username"));
+        mail.setSubject("Registovanje agenta");
+        mail.setText("Pozdrav " + k.getFirstname() + ",\n\nRegistrovani ste kao agent. Vasa lozinka i korsinicko ime su sledeci->>\n\n Korisnicko ime:  "+ k.getUsername() +"\n\n Lozinka: "+ k.getPassword());
+        javaMailSender.send(mail);
+
+        System.out.println("Email poslat!");
+
+    }
+
+
+    public void registrovanjeFirme(UserDTO k) {
+        // TODO Auto-generated method stub
+        System.out.println("Slanje emaila za firmu");
+
+        SimpleMailMessage mail = new SimpleMailMessage();
+        mail.setTo(k.getEmail());
+        mail.setFrom(env.getProperty("spring.mail.username"));
+        mail.setSubject("Registovanje firme");
+        mail.setText("Pozdrav " + k.getFirstname() + ",\n\nRegistrovani ste kao firma. Vasa lozinka i korsinicko ime su sledeci->>\n\n Korisnicko ime:  "+ k.getUsername() +"\n\n Lozinka: "+ k.getPassword());
+        javaMailSender.send(mail);
+
+        System.out.println("Email poslat!");
+
+    }
+
 
 
 

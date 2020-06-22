@@ -40,25 +40,31 @@ public class User implements UserDetails {
 	@Column(name = "enabled")
     private boolean enabled;
 	
-	@Column(name = "lastname", nullable = false)
+	@Column(name = "lastname", nullable = true)
 	private String lastname;
 	
-	@Column(name = "firstname", nullable = false)
+	@Column(name = "firstname", nullable = true)
 	private String firstname;
 	
-	@Column(name = "adress", nullable = false)
+	@Column(name = "adress", nullable = true)
 	private String adress;
 
 	@Column(name = "email", nullable = false,unique = true)
 	private String email;
 
-	@Column(name = "city", nullable = false)
+	@Column(name = "city", nullable = true)
 	private String city;
 	
-	@Column(name = "country", nullable = false)
+	@Column(name = "country", nullable = true)
 	private String country;
-	
-	@Column(name = "phonenumber", nullable = false)
+
+	@Column(name = "maticnibroj", nullable = true)
+	private String maticnibroj;
+
+	@Column(name = "nazivfirme", nullable = true)
+	private String nazivfirme;
+
+	@Column(name = "phonenumber", nullable = true)
 	private String phoneNumber;
 	
 	@Column(name = "uloga", nullable = false)
@@ -106,6 +112,9 @@ public class User implements UserDetails {
 		this.uloga = dto.getUloga();
 		this.nalogAktiviran = dto.isNalogAktiviran();
 		this.roles = dto.getAuthorities();
+		this.maticnibroj=dto.getMaticnibroj();
+		this.nazivfirme=dto.getNazivfirme();
+
 
 	}
 
@@ -119,6 +128,24 @@ public class User implements UserDetails {
 
 	public User() {
 		
+	}
+
+	public String getMaticnibroj() {
+		return maticnibroj;
+	}
+
+
+
+	public void setMaticnibroj(String maticnibroj) {
+		this.maticnibroj = maticnibroj;
+	}
+
+	public String getNazivfirme() {
+		return nazivfirme;
+	}
+
+	public void setNazivfirme(String nazivfirme) {
+		this.nazivfirme = nazivfirme;
 	}
 
 	public Long getId() {

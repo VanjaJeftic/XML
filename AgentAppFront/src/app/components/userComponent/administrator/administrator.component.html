@@ -2,6 +2,20 @@
   <div><a href="/" class="navlogo">Rent-A-Car Administrator</a>  
   </div>
   <span class="nav-tool-items">
+
+   
+    <button class="dugmeRegistruj"  mat-button [matMenuTriggerFor]="menu3">
+      <mat-icon>admin_panel_settings</mat-icon>
+      Registrovanje
+    </button>
+    <mat-menu #menu3="matMenu">
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugmeRegAgenta" (click)="openDialogRegAgenta()"><mat-icon>perm_identity</mat-icon>Registruj agenta</a>
+      <a mat-button mat-raised-button  routerLinkActive="active" class="dugmeRegAgenta" (click)="openDialogRegFirme()"><mat-icon>apartment</mat-icon>Registruj firmu</a>
+    </mat-menu>
+
+
+
+
 <span>
    
 

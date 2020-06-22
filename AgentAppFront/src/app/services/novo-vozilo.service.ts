@@ -30,7 +30,7 @@ export class NovoVoziloService {
    // fd.append("username",localStorage.getItem("username"));
     //fd.append("userId",localStorage.getItem("userId"));
     console.log("Pre slanja");
-    return this.http.post('https://localhost:8088/vozilo',fd,{ observe: 'response' }).subscribe((response) => {
+    return this.http.post('http://localhost:8088/vozilo',fd,{ observe: 'response' }).subscribe((response) => {
               if (response.status === 200) {
     
                 this.message = 'Image uploaded successfully';

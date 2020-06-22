@@ -59,6 +59,8 @@ import { DijalogInfoKorisnikaComponent } from './components/userComponent/dijalo
 import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
 import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
 import { SviKomentariOglasaDijalogComponent } from './components/userComponent/svi-komentari-oglasa-dijalog/svi-komentari-oglasa-dijalog.component';
+import { DijalogRegistracijaAgentaComponent } from './components/userComponent/dijalog-registracija-agenta/dijalog-registracija-agenta.component';
+import { DijalogRegistracijaFirmeComponent } from './components/userComponent/dijalog-registracija-firme/dijalog-registracija-firme.component';
 
 
 
@@ -108,7 +110,9 @@ import { SviKomentariOglasaDijalogComponent } from './components/userComponent/s
     DijalogInfoKorisnikaComponent,
     ListOdobrenihKomentaraAdminComponent,
     ListaOdbijenihKomentaraAdminComponent,
-    SviKomentariOglasaDijalogComponent
+    SviKomentariOglasaDijalogComponent,
+    DijalogRegistracijaAgentaComponent,
+    DijalogRegistracijaFirmeComponent
   ],
   imports: [
     BrowserModule,
@@ -125,7 +129,8 @@ import { SviKomentariOglasaDijalogComponent } from './components/userComponent/s
   
   ],
 
-  entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,PorukaComponent
+  entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,PorukaComponent,
+    DijalogRegistracijaAgentaComponent, DijalogRegistracijaFirmeComponent
 
   ],
 
