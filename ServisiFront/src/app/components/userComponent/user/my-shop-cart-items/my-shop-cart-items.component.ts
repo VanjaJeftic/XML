@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../../../../services/authentication.service';
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 import { ZahtevService } from './../../../../services/zahtev.service';
@@ -22,12 +23,24 @@ export class MyShopCartItemsComponent implements OnInit {
   isButtonDisabled = false;
   cartEmpty = true;
 
-  constructor(private zahtevService: ZahtevService, private router: Router, private snackBar: MatSnackBar) { }
+  constructor(private zahtevService: ZahtevService, private router: Router, private snackBar: MatSnackBar, 
+                  private authService: AuthenticationService) { }
 
   ngOnInit() {
     this.shopCartItems = JSON.parse(window.localStorage.getItem('ShopCartItem'));
+  
     if(this.shopCartItems != null || this.shopCartItems != undefined){
       this.cartEmpty = false;
+      for(let z of this.shopCartItems){
+        let preuzimanje = z.preuzimanje;
+        let preuzimanjeArray = preuzimanje.split('T');
+        z.preuzimanje = preuzimanjeArray[0].concat(' ', preuzimanjeArray[1]);
+  
+        let povratak = z.povratak;
+        let povratakArray = povratak.split('T');
+        z.povratak = povratakArray[0].concat(' ', povratakArray[1]);
+        
+      }
     }
   }
 
@@ -51,6 +64,16 @@ export class MyShopCartItemsComponent implements OnInit {
     this.sendShopCart.podnosilac = parseInt(localStorage.getItem('userId'));
 
     console.log(this.sendShopCart);
+    for(let z of this.sendShopCart.zahtevi){
+      let preuzimanje = z.preuzimanje;
+      let povratak = z.povratak;
+
+      let preuzimanjeArray = preuzimanje.split(' ');
+      z.preuzimanje = preuzimanjeArray[0].concat('T', preuzimanjeArray[1]);
+
+      let povratakArray = povratak.split(' ');
+      z.povratak = povratakArray[0].concat('T', povratakArray[1]);
+    }
     this.zahtevService.rezervisi(this.sendShopCart).subscribe(
       data => {
         this.snackBar.open('Zahtevi su kreirani! Sacekajte odgovor vlasnika', 'U redu', { duration: 10000 });
@@ -67,5 +90,10 @@ export class MyShopCartItemsComponent implements OnInit {
 
   onDetaljnije(zahtev){
     this.router.navigateByUrl('vozilo/' + zahtev.oglas.vozilo.id);
+  }
+
+  onOdjaviMe(){
+    window.localStorage.clear();
+    this.authService.logout();
   }
 }

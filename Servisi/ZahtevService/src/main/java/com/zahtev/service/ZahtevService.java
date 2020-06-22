@@ -70,6 +70,17 @@ public class ZahtevService {
 		return ids;
 	}
 	
+	public List<Zahtev> getPendingZahtevi(){
+		List<Zahtev> zahtevi = zahtevRepository.findAll();
+		List<Zahtev> pending = new ArrayList<>();
+		for(Zahtev z : zahtevi) {
+			if(z.getStatus().equals("PENDING")) {
+				pending.add(z);
+			}
+		}
+		return pending;
+	}
+	
 	//Dobavlja sve zahteve koji imaju isti BundleID
 	public List<Zahtev> getAllByGroupID(Long id){
 		List<Zahtev> zahteviGroup = new ArrayList<Zahtev>();
@@ -143,6 +154,8 @@ public class ZahtevService {
 		Set<ZahtevViewDTO> bundleZahtevi = new HashSet<>();
 		
 		Set<Long> ids = this.getAllGroupIDs();
+		
+		this.odbijStareZahteve();
 		
 		//Grupise sve bundle zahteve
 		for(Long id : ids) {
@@ -259,6 +272,7 @@ public class ZahtevService {
 			boolean postoji = oglasConnection.verify(z.getOglas().getId());
 			if(postoji) {
 				Zahtev newZahtev = new Zahtev(z);
+				newZahtev.setKreiran(LocalDateTime.now());
 				newZahtev.setPodnosilac_id(podnosilac);
 				newZahtev.setStatus("PENDING");
 				if(z.isBundle()) {
@@ -276,6 +290,7 @@ public class ZahtevService {
 			for(ZahtevDTO zahtev : forBundle) {
 				if(zahtev.getOglas().getVozilo().getUser().getId().equals(vlasnik)) {
 					Zahtev newZahtev = new Zahtev(zahtev);
+					newZahtev.setKreiran(LocalDateTime.now());
 					newZahtev.setBundle_id(groupID);
 					newZahtev.setStatus("PENDING");
 					newZahtev.setPodnosilac_id(podnosilac);
@@ -364,5 +379,20 @@ public class ZahtevService {
 		
 		
 		return true;
+	}
+	
+	private void odbijStareZahteve() {
+		List<Zahtev> zahtevi = this.getPendingZahtevi();
+		LocalDateTime now = LocalDateTime.now();
+		
+		for(Zahtev z : zahtevi) {
+			if(z.getKreiran().isBefore( (now.minusDays(2)) )) {
+				z.setStatus("CANCELED");
+				this.zahtevRepository.save(z);
+				if(z.isBundle()) {
+					this.odbijOstaleZahteveZaBundle(z.getOglas_id(), z.getBundle_id());
+				}
+			}
+		}
 	}
 }

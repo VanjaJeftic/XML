@@ -41,6 +41,9 @@ public class Zahtev implements Serializable{
 	@Column(name = "status")
 	private String status;
 	
+	@Column(name = "kreiran")
+	private LocalDateTime kreiran;
+	
 	public Zahtev() {
 		// TODO Auto-generated constructor stub
 	}
@@ -125,6 +128,12 @@ public class Zahtev implements Serializable{
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public LocalDateTime getKreiran() {
+		return kreiran;
+	}
+	public void setKreiran(LocalDateTime kreiran) {
+		this.kreiran = kreiran;
 	}
 	
 	
