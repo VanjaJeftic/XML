@@ -61,6 +61,9 @@ import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/pr
 import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
 import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
 import { ResetLozinkeComponent } from './components/userComponent/reset-lozinke/reset-lozinke.component';
+import { PrikazPorukaComponent } from './components/userComponent/prikaz-poruka/prikaz-poruka.component';
+import { PorukeRazmenjeneComponent } from './components/userComponent/poruke-razmenjene/poruke-razmenjene.component';
+import { PorukaComponent } from './components/userComponent/prikaz-poruka/poruka/poruka.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +110,10 @@ import { ResetLozinkeComponent } from './components/userComponent/reset-lozinke/
     PrikazKomentaraKorisnikaComponent ,
     ListOdobrenihKomentaraAdminComponent ,
     ListaOdbijenihKomentaraAdminComponent,
-    ResetLozinkeComponent
+    ResetLozinkeComponent,
+    PrikazPorukaComponent,
+    PorukeRazmenjeneComponent,
+    PorukaComponent
     
   ],
   imports: [
@@ -128,7 +134,8 @@ import { ResetLozinkeComponent } from './components/userComponent/reset-lozinke/
     
 
   ],
-  entryComponents: [KomentarDialogComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,ResetLozinkeComponent
+  entryComponents: [KomentarDialogComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent,DijalogInfoKorisnikaComponent,
+    SviKomentariOglasaDijalogComponent,ResetLozinkeComponent,PorukaComponent
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

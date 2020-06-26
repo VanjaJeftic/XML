@@ -1,0 +1,24 @@
+<table class="table ml-2 mt-2">
+    <thead style="background-color: #0074E1;">
+      <tr>
+        <th scope="col" colspan="5" style="text-align: center; color: white">
+          Poruke
+        </th>
+      </tr>
+      <tr style="color: white">
+        <th scope="col">#</th>
+        <th scope="col">Datum</th>
+        <th scope="col">Sadrzaj</th>
+        <th scope="col">Korisnik</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="poruka" style="color: #788897">
+      <tr *ngFor="let poruka of poruke$ | async; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{poruka.dat | date:"medium"}}</td>
+        <td>{{poruka.sadrzaj}}</td>
+        <td>{{poruka.kreator}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button mat-raised-button color="primary" (click)="onPosalji()">Nova poruka</button>

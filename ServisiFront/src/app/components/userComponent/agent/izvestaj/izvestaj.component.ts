@@ -46,6 +46,8 @@ export class IzvestajComponent implements OnInit {
     );
   }
 
+  
+
   onZahtevi(){
     this.router.navigateByUrl('agent/zahtev');
   }

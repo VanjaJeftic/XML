@@ -36,6 +36,8 @@ import { IznajmljenaVozilaComponent } from './components/userComponent/user/izna
 import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
 import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
 import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
+import { PorukeRazmenjeneComponent } from './components/userComponent/poruke-razmenjene/poruke-razmenjene.component';
+import { PrikazPorukaComponent } from './components/userComponent/prikaz-poruka/prikaz-poruka.component';
 
 
 
@@ -81,6 +83,8 @@ const routes: Routes = [
   {path: 'listaKomentaraAdmina', component:PrikazKomentaraKorisnikaComponent},
   {path: 'listaOdbobrenihKomentaraAdmina',component:ListOdobrenihKomentaraAdminComponent},
   {path: 'listaOdbijenihKomentaraAdmina',component:ListaOdbijenihKomentaraAdminComponent},
+  { path: 'zahteviMess', component:PorukeRazmenjeneComponent},
+  { path: 'prikazPoruke',component:PrikazPorukaComponent},
 
 ];
 

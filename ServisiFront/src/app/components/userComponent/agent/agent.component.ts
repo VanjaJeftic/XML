@@ -34,6 +34,10 @@ export class AgentComponent implements OnInit {
     this.router.navigateByUrl('agent/oglas');
   }
 
+  zahteviMess(){
+    this.router.navigateByUrl('zahteviMess');
+  }
+
   onOdjaviMe(){
     this.authService.logout();
   }
