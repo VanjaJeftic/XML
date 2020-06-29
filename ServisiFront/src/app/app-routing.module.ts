@@ -37,6 +37,7 @@ import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent
 import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
 import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
 import { StatistikaComponent } from './components/userComponent/agent/statistika/statistika.component';
+import { KorisniciComponent } from './components/userComponent/administrator/korisnici/korisnici.component';
 
 
 
@@ -83,7 +84,7 @@ const routes: Routes = [
   {path: 'listaKomentaraAdmina', component:PrikazKomentaraKorisnikaComponent},
   {path: 'listaOdbobrenihKomentaraAdmina',component:ListOdobrenihKomentaraAdminComponent},
   {path: 'listaOdbijenihKomentaraAdmina',component:ListaOdbijenihKomentaraAdminComponent},
-
+  {path: 'korisnici',component:KorisniciComponent},
 ];
 
 @NgModule({

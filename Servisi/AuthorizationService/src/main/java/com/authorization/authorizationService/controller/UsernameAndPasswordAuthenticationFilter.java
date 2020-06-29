@@ -152,8 +152,10 @@ public class UsernameAndPasswordAuthenticationFilter extends UsernamePasswordAut
 			loggedUser.setUsername(username);
 			loggedUser.setUserId(user.getId());
 			loggedUser.setRoles(user.getRoles().get(0).getName());
+			loggedUser.setNalogAktivan(user.isNalogAktivan());
 			if(!userService.loadUserByUsername(username).isEnabled())
 				return null;
+			
 			return loggedUser;
 
 		}

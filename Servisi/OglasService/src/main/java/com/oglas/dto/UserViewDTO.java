@@ -10,6 +10,7 @@ public class UserViewDTO {
     private String prezime;
     private String email;
     
+    
     public UserViewDTO() {
 		// TODO Auto-generated constructor stub
 	}
@@ -54,6 +55,8 @@ public class UserViewDTO {
 	public void setPrezime(String prezime) {
 		this.prezime = prezime;
 	}
+
+	
 
 	
     

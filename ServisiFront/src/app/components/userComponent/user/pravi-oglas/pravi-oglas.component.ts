@@ -33,7 +33,7 @@ export class PraviOglasComponent implements OnInit {
     console.log(this.oglas.user_id+localStorage.getItem('userId'));
     let res=this.praviOglasService.saveOglas(this.oglas);
 
-    window.location.href = this.rout.url;
+   // 
   }
 
   public cancel(): void {
