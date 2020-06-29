@@ -25,13 +25,14 @@
         <tbody>
           <tr *ngFor="let user of userlist$ | async" >
             <td>{{ user.id }}</td>
-            <td>{{ user.firstname }}</td>
-            <td>{{ user.lastname }}</td>
+            <td>{{ user.ime }}</td>
+            <td>{{ user.prezime }}</td>
             <td>{{ user.username }}</td>
             <td><button class="btn btn-danger" (click)="deleteKorisnik(user)">Brisanje</button></td>
-            <td><button class="btn btn-info" (click)="blok(user)"> {{ user.nalogAktiviran == true ? 'Blokiraj' : 'Odblokiraj' }}</button></td>
+            <td><button class="btn btn-info" (click)="blok(user)"> {{ user.nalogAktivan == true ? 'Blokiraj' : 'Odblokiraj' }}</button></td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+

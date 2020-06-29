@@ -8,10 +8,19 @@ public class Logovan {
 	private String token;
     private String roles;
     private Long userId;
+    private Boolean nalogAktivan;
     
     
     
     
+    
+    
+	public Boolean getNalogAktivan() {
+		return nalogAktivan;
+	}
+	public void setNalogAktivan(Boolean nalogAktivan) {
+		this.nalogAktivan = nalogAktivan;
+	}
 	public Long getUserId() {
 		return userId;
 	}

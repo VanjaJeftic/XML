@@ -9,7 +9,7 @@ export class User {
     mesto:string;
     telefon:number;
     id:number;
-    
+    nalogAktivan:boolean;
     username:string;
     password:string;
     potvrdalozinke:string;

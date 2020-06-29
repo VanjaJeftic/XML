@@ -51,6 +51,7 @@ public class OglasController {
 	@Autowired
 	private SearchConnection searchConnection;
 
+
 	@Autowired
 	public OglasController(OglasService oglasService,VoziloService voziloService, UserConnection userConnection){
 		this.oglasService=oglasService;
@@ -81,6 +82,20 @@ public class OglasController {
 	//@PreAuthorize("hasAuthority('create_oglas')")
 	public ResponseEntity<?> create(@RequestBody OglasDTO ovDTO) {
 
+		String u=this.userConnection.getUserRole(ovDTO.getUser_id());
+		
+		 if(u.equals("ROLE_user")) {
+		        
+	        	System.out.println("Ko kreira "+u);
+	        	
+	        	int brAuta=oglasService.brOglasaKorisnika(ovDTO.getUser_id());
+	        	if(brAuta>3) {
+	        		System.out.println("Greska");
+	        		return new ResponseEntity<>(null, HttpStatus.CONFLICT);
+	        		
+	        	}
+	        }
+		
 		Oglas oglas = this.oglasService.createOrder(ovDTO);
 		logger.info("Kreiran order");
 		//Oglas search = this.searchConnection.createSearch(new Oglas(ovDTO));

@@ -47,10 +47,12 @@ export class LoginComponent implements OnInit {
         this.shared.username = this.uAt.username;
         localStorage.setItem('usernameStorage', this.username);
          
-        console.log("Username storage" + localStorage.getItem('usernameStorage'));
+       
         localStorage.setItem('token',this.uAt.token);
         localStorage.setItem('username',this.uAt.username);
         localStorage.setItem('userId',this.uAt.userId);
+        localStorage.setItem('nalogAktivan',this.uAt.nalogAktivan);
+        console.log("Username storage" + localStorage.getItem('usernameStorage')+localStorage.getItem('nalogAktivan'));
         //this.router.navigateByUrl("");
 
         if(this.uAt.roles=='ROLE_admin'){
@@ -61,13 +63,19 @@ export class LoginComponent implements OnInit {
           console.log("agent");
           window.alert("Uspesno ste se ulogovali");
           this.router.navigateByUrl('agent');
+        }else if(localStorage.getItem('nalogAktivan')=='false'){
+          window.alert("Nalog nije aktivan");
         }else if(this.uAt.roles=='ROLE_user'){
           console.log("user");
           window.alert("Uspesno ste se ulogovali");
           this.router.navigateByUrl('user');
-        }else {
+        }else{
           alert('Nazalost, doslo je do greske, proverite da li kucate dobre kredencijale');
         }
-    });
+    },
+    error=>{
+      alert('Vas nalog nije aktivan!');
+    }
+    );
   }
 }
