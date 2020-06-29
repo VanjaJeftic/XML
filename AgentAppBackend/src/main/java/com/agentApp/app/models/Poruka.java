@@ -18,8 +18,8 @@ public class Poruka {
     @Column(name = "datum")
     private LocalDateTime datum;
     
-    @Column(name="zahtev_id")
-    private Long zahtev;
+    @Column(name="bundle_id")
+    private Long bundle;
 
     @Column(name="koIznm")
     private boolean iznm;
@@ -56,15 +56,16 @@ public class Poruka {
     }
 
 
-	public Long getZahtev() {
-		return zahtev;
-	}
-
-	public void setZahtev(Long zahtev) {
-		this.zahtev = zahtev;
-	}
 
 	
+	public Long getBundle() {
+		return bundle;
+	}
+
+	public void setBundle(Long bundle) {
+		this.bundle = bundle;
+	}
+
 	public boolean isIznm() {
 		return iznm;
 	}

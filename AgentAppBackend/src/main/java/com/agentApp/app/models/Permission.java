@@ -20,7 +20,7 @@ public class Permission implements  GrantedAuthority {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany
+    @ManyToMany( cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JsonIgnore
     protected List<Authority> roles;
     

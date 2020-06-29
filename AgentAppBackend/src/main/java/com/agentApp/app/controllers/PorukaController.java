@@ -121,23 +121,23 @@ public class PorukaController {
 				if(z.getPodnosilac().getUser().getId().equals(u.getId())) {
 					Poruka mess =this.porukaService.findByZahtev(z.getId());
 					
-					if(mess != null) {
+				//	if(mess != null) {
 						OglasDTO oglasDTO = new OglasDTO(z.getOglas(), z.getOglas().getVozilo());
 						zbdto.getBundleZahtevi().add(new ZahtevDTO(z, oglasDTO));
 						bundleZahtevi.add(zbdto);
 						logger.info("Dodati bundle zahtevi");
-					}	
+					//}	
 				}
 				}else {
 					if(z.getOglas().getVozilo().getUser().getId().equals(u.getId())) {
 						Poruka mess =this.porukaService.findByZahtev(z.getId());
 						
-						if(mess != null) {
+						//if(mess != null) {
 							OglasDTO oglasDTO = new OglasDTO(z.getOglas(), z.getOglas().getVozilo());
 							zbdto.getBundleZahtevi().add(new ZahtevDTO(z, oglasDTO));
 							bundleZahtevi.add(zbdto);
 							logger.info("Dodati bundle zahtevi");
-						}	
+						//}	
 					}
 					}
 			}
@@ -149,7 +149,7 @@ public class PorukaController {
 	
 	@PostMapping
 	public ResponseEntity<String> add(@RequestBody PorukaDTO porukaDTO,Principal p){
-		System.out.println("PORUKA "+porukaDTO.getSadrzaj()+porukaDTO.getZahtev() +p.getName());
+		System.out.println("PORUKA "+porukaDTO.getSadrzaj()+porukaDTO.getBundle() +p.getName());
 		if(porukaService.create(porukaDTO,p.getName())) {
 			return new ResponseEntity<String>(HttpStatus.CREATED);
 		}else {

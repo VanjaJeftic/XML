@@ -79,6 +79,10 @@ public class VoziloController {
 	        User u=userService.findByUsername(p.getName());
 	        UserDTO udto=new UserDTO(u);
 	        ovDTO.setUser(udto);
+	        
+	        
+	       
+	        
 	        Vozilo vozilo=this.voziloService.createVozilo(ovDTO);
 	        logger.info("uspesno je kreirano vozilo");
 	        System.out.println("Original Image Byte Size - " + file.getBytes().length);

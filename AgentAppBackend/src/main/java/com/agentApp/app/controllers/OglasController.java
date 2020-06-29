@@ -1,5 +1,6 @@
 package com.agentApp.app.controllers;
 
+import java.security.Principal;
 import java.util.List;
 
 import com.agentApp.app.dto.OglasDTO;
@@ -19,7 +20,9 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RestController;
 import com.agentApp.app.dto.OglasDTO;
 import com.agentApp.app.models.Oglas;
+import com.agentApp.app.models.User;
 import com.agentApp.app.services.OglasService;
+import com.agentApp.app.services.UserService;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -30,6 +33,9 @@ public class OglasController {
 
 	@Autowired
 	private OglasService oglasService;
+	
+	@Autowired
+	private UserService userService;
 	
 	@GetMapping
 	public ResponseEntity<?> getAllOglasi(){
@@ -47,11 +53,26 @@ public class OglasController {
 
 	@PostMapping("/novi")
 	@PreAuthorize("hasAuthority('create_oglas')")
-	public ResponseEntity<?> create(@RequestBody OglasDTO ovDTO) {
-
+	public ResponseEntity<?> create(@RequestBody OglasDTO ovDTO,Principal p) {
+		 
+		User u=userService.findByUsername(p.getName());
+		
+        if(u.getRoles().get(0).getName().equals("ROLE_USER")) {
+        
+        	System.out.println("Ko kreira "+u.getRoles().get(0).getName());
+        	
+        	int brAuta=oglasService.brOglasaKorisnika(u);
+        	if(brAuta>3) {
+        		System.out.println("Greska");
+        		return new ResponseEntity<>(null, HttpStatus.CONFLICT);
+        		
+        	}
+        }
+        
 		Oglas oglas = this.oglasService.createOrder(ovDTO);
-		//Oglas search = this.searchConnection.createSearch(new Oglas(ovDTO));
+		
 		logger.info("Kreirana je narudzbina preko oglasa");
+		
 		return new ResponseEntity<>(oglas, HttpStatus.OK);
 	}
 

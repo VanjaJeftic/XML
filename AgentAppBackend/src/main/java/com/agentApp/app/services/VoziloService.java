@@ -117,5 +117,18 @@ public class VoziloService {
 		
 		return agenta;
 	}
+
+	public int brVozilaKorisnika(User u) {
+		int brojVozila=0;
+		List<Vozilo> vozila=voziloRepository.findAll();
+    	for(Vozilo v:vozila) {
+    		if(v.getUser().getId().equals(u.getId())) {
+    			brojVozila++;
+    		}
+    		System.out.println(brojVozila);
+    	}
+    	
+    	return brojVozila;
+	}
 	
 }

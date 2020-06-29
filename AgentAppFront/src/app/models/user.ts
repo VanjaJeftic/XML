@@ -10,4 +10,5 @@ export class User {
     country:string;
     email:EmailValidator;
     phoneNumber:string;
+    nalogAktiviran:boolean;
 }
