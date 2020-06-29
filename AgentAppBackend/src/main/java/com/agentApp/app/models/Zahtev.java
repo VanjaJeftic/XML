@@ -55,8 +55,8 @@ public class Zahtev implements Serializable {
     @Column(name="status")
     private String status;
     
-    @OneToMany(mappedBy = "zahtev")
-    protected List<Poruka> poruka;
+ ///   @OneToMany(mappedBy = "zahtev")
+   // protected List<Poruka> poruka;
 
     public Long getId() {
         return id;
@@ -133,13 +133,13 @@ public class Zahtev implements Serializable {
     	this.bundle = zahtevDTO.isBundle();
     }
 
-	public List<Poruka> getPoruka() {
+	/*public List<Poruka> getPoruka() {
 		return poruka;
 	}
 
 	public void setPoruka(List<Poruka> poruka) {
 		this.poruka = poruka;
-	}
+	}*/
     
     
     

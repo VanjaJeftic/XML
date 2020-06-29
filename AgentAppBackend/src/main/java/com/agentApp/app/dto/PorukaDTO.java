@@ -13,7 +13,7 @@ public class PorukaDTO {
 	  
 	    private LocalDateTime datum;
 
-	    private Long zahtev;
+	    private Long bundle;
 
 	    private boolean iznm;
 	    
@@ -46,16 +46,17 @@ public class PorukaDTO {
 			this.datum = datum;
 		}
 
-		public Long getZahtev() {
-			return zahtev;
-		}
-
-		public void setZahtev(Long zahtev) {
-			this.zahtev = zahtev;
-		}
-
 		
 		
+		
+		public Long getBundle() {
+			return bundle;
+		}
+
+		public void setBundle(Long bundle) {
+			this.bundle = bundle;
+		}
+
 		public boolean isIznm() {
 			return iznm;
 		}

@@ -61,6 +61,7 @@ import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponen
 import { SviKomentariOglasaDijalogComponent } from './components/userComponent/svi-komentari-oglasa-dijalog/svi-komentari-oglasa-dijalog.component';
 import { DijalogRegistracijaAgentaComponent } from './components/userComponent/dijalog-registracija-agenta/dijalog-registracija-agenta.component';
 import { DijalogRegistracijaFirmeComponent } from './components/userComponent/dijalog-registracija-firme/dijalog-registracija-firme.component';
+import { KorisniciComponent } from './components/userComponent/administrator/korisnici/korisnici.component';
 
 
 
@@ -112,7 +113,8 @@ import { DijalogRegistracijaFirmeComponent } from './components/userComponent/di
     ListaOdbijenihKomentaraAdminComponent,
     SviKomentariOglasaDijalogComponent,
     DijalogRegistracijaAgentaComponent,
-    DijalogRegistracijaFirmeComponent
+    DijalogRegistracijaFirmeComponent,
+    KorisniciComponent
   ],
   imports: [
     BrowserModule,

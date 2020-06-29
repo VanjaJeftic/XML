@@ -3,6 +3,7 @@ package com.agentApp.app.models;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -35,7 +36,7 @@ public class Authority{
 	@Column(name = "name")
 	String name;
 	
-	 @ManyToMany(fetch = FetchType.EAGER)
+	 @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	    @JoinTable(name = "permission_authority", joinColumns = {
 	            @JoinColumn(name = "authority_id", referencedColumnName = "id")}, inverseJoinColumns = {
 	            @JoinColumn(name = "permission_id", referencedColumnName = "id")})

@@ -15,13 +15,13 @@ export class PrikazPorukaComponent implements OnInit {
 
 
   poruke$;
-  zahtevId : any;
+  bundleId : any;
 
   constructor(private porukaService : PorukaService,
     private router:Router,
     private activatedRoute: ActivatedRoute, private dialog: MatDialog) {
-      this.zahtevId=localStorage.getItem("zahtevId");
-      this.poruke$=  this.porukaService.getAllPoruke(this.zahtevId);
+      this.bundleId=localStorage.getItem("zahtevId");
+      this.poruke$=  this.porukaService.getAllPoruke(this.bundleId);
       console.log("Kod prikaza "+localStorage.getItem("zahtevId"));
      }
 
@@ -34,8 +34,8 @@ export class PrikazPorukaComponent implements OnInit {
     onPosalji(){
   
 
-      const dialogRef = this.dialog.open(PorukaComponent, {data: this.zahtevId});
-      console.log("Saljem u poruku"+this.zahtevId);
+      const dialogRef = this.dialog.open(PorukaComponent, {data: this.bundleId});
+      console.log("Saljem u poruku"+this.bundleId);
       dialogRef.afterClosed().subscribe(
       result => {
         location.reload();
