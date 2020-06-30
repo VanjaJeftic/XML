@@ -1,0 +1,1 @@
+insert into porukice(sadrzaj,bundle_id,ko_iznm,kreator,dat,datum) values('HELLO',8,true,'vesna','2018-07-07T00:40:38.198318200','2018-07-07T00:40:38.198318200');

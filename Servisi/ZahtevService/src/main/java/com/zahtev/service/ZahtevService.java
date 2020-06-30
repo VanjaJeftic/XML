@@ -395,4 +395,39 @@ public class ZahtevService {
 			}
 		}
 	}
+	
+	public Set<ZahtevViewDTO> sviBundleZahteviPoruke(Long agent){
+		
+		Set<ZahtevViewDTO> bundleZahtevi = new HashSet<>();
+		
+		Set<Long> ids = this.getAllGroupIDs();
+		
+		//Grupise sve bundle zahteve
+		for(Long id : ids) {
+			List<Zahtev> zahteviGrouped = this.getAllByAcceptedGroupID(id);
+			
+			ZahtevViewDTO zvdto = new ZahtevViewDTO();
+			
+			if(zahteviGrouped != null) {
+				if(zahteviGrouped.size() > 0) {
+					UserDTO userDTO = this.userConnetcion.getUser(zahteviGrouped.get(0).getPodnosilac_id());
+					zvdto.setUser(userDTO);
+				}
+			}
+			
+			for(Zahtev z : zahteviGrouped) {
+				zvdto.setBundleID(z.getBundle_id());
+				OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
+				
+				if(oglas.getVozilo().getUser().getId().equals(agent)) {
+					
+						zvdto.getBundleZahtevi().add(new ZahtevDTO(z, oglas));
+						bundleZahtevi.add(zvdto);
+					
+				}
+			}
+		}
+		return bundleZahtevi;
+	}
+	
 }

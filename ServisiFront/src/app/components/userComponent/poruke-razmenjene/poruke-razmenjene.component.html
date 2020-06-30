@@ -1,0 +1,41 @@
+<p>poruke-razmenjene works!</p>
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="/user" class="navlogo">Rent-A-Car Agent</a></div>
+    <span class="nav-tool-items">
+       <!-- <a mat-button mat-raised-button routerLink="/novoVozilo" routerLinkActive="active" (click)="novo()">Novo vozilo</a>
+        <a mat-button mat-raised-button routerLink="/svaVozila" routerLinkActive="active" (click)="sva()">Sva vozila</a>
+        <a mat-button mat-raised-button routerLink="/posalji" routerLinkActive="active" (click)="prihvaceni()">Prihvaceni</a>
+        <a mat-button mat-raised-button routerLink="/cart" routerLinkActive="active" (click)="shopCart()">Shopping Cart</a>
+       --><a mat-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
+    
+        </span>
+</mat-toolbar>  
+
+<mat-card style="margin-top: 80px;margin-left: 25%;margin-right: 35%;">
+    <mat-card-header >
+        <mat-card-title>Razmenjene poruke o zahtevima</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content style="width: 100%;">
+        <mat-card *ngFor="let data of zahtevi" style="width: 100%;height: 100%;margin-top: 10%;background-color: lavender;">
+            <mat-card-header>
+                <mat-card-title style="border-style: outset;background-color: rgb(189, 226, 247);">
+                  <p>Vlasnik: {{data.bundleZahtevi[0].oglas.vozilo.user.username}}</p>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content >
+                <div *ngFor="let zahtev of data.bundleZahtevi" style="height: 100%;;border-style: outset; background-color:rgb(198, 192, 233);">
+                    <p> <span style="padding-right: 10px;">Sifra vozila:</span> {{zahtev.oglas.vozilo.id}} </p>
+                    <p> <span style="padding-right: 10px;">Marka vozila:</span> {{zahtev.oglas.vozilo.markaVozila}} </p>
+                    <p> <span style="padding-right: 10px;">Model vozila:</span> {{zahtev.oglas.vozilo.modelVozila}} </p>
+                    <p> <span style="padding-right: 10px;">Preuzimanje:</span> {{zahtev.preuzimanje}} </p>
+                    <p> <span style="padding-left: 20px; padding-right: 10px;">Povratak:</span> {{zahtev.povratak}} </p>
+                </div>
+                <div style="position: absolute;top: 70%;left: 70%;">
+                    <button mat-raised-button color="primary" style="border-radius: 10px;" (click)="onPoruke(data)">Pogledaj poruke</button>
+                </div>
+            </mat-card-content>
+            
+        </mat-card>
+    </mat-card-content>
+</mat-card>
