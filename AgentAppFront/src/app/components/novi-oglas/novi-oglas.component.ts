@@ -27,21 +27,23 @@ export class NoviOglasComponent implements OnInit {
     this.oglas.cdw=e.target.checked;
   }
 
+  public cancel(): void {
+    this.dialogRef.close();
+    this.snackBar.open('Odustali ste!', 'U redu', { duration: 1000 });
+  }
+
   public onSubmit(): void{
-    window.alert("Uspesno ste doodali novi oglas");
+  //  window.alert("Uspesno ste doodali novi oglas");
   //  this.oglas.user_id=localStorage.getItem('userId');
     console.log("Vozilo id"+this.data.id);
     this.oglas.vozilo_id=this.data.id;
     //console.log(this.oglas.user_id+localStorage.getItem('userId'));
     let res=this.noviOglasService.saveOglas(this.oglas);
 
-    window.location.href = this.rout.url;
+   // window.location.href = this.rout.url;
   }
 
-  public cancel(): void {
-    this.dialogRef.close();
-    this.snackBar.open('Odustali ste!', 'U redu', { duration: 1000 });
-  }
+ 
 
 
 

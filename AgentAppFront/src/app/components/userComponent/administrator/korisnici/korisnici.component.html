@@ -1,0 +1,37 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="/" class="navlogo">Rent-A-Car</a></div>
+    <span class="nav-tool-items">
+      <a mat-button mat-raised-button routerLink="/administrator" routerLinkActive="active">Vrati se korak nazad</a>
+    </span>
+  </mat-toolbar>
+  <br><br>
+  <div class="card my-5">
+    <div class="card-body">
+      <div class="labelNaslov">
+      <label>Lista korisnika</label>
+    </div>
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Ime korisnika</th>
+            <th scope="col">Prezime korisnika</th>
+            <th scope="col">Username</th>
+            <th scope="col">Obrisi korisnika</th>
+            <th scope="col">Blok</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userlist$ | async" >
+            <td>{{ user.id }}</td>
+            <td>{{ user.firstname }}</td>
+            <td>{{ user.lastname }}</td>
+            <td>{{ user.username }}</td>
+            <td><button class="btn btn-danger" (click)="deleteKorisnik(user)">Brisanje</button></td>
+            <td><button class="btn btn-info" (click)="blok(user)"> {{ user.nalogAktiviran == true ? 'Blokiraj' : 'Odblokiraj' }}</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

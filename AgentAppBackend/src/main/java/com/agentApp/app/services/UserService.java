@@ -1,11 +1,13 @@
 package com.agentApp.app.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.agentApp.app.dto.UserDTO;
 import com.agentApp.app.models.Authority;
 import com.agentApp.app.models.Korisnik;
 import com.agentApp.app.models.User;
+import com.agentApp.app.repository.KorisnikRepository;
 import com.agentApp.app.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,6 +26,12 @@ public class UserService {
 	@Autowired
 	private AuthorityService authService;
 	
+	@Autowired
+	private AuthorityService authRepo;
+	
+	@Autowired
+	private KorisnikRepository korisnikRepo;
+	
 	public User findByUsername(String username) {
 		User u = userRepository.findByUsername(username);
 		return u;
@@ -34,6 +42,19 @@ public class UserService {
 		return userRepository.findAll();
 	}
 
+	public List<User> findUsers(){
+		List<User> svi=userRepository.findAll();
+		List<User> users=new ArrayList<User>();
+		for(User u:svi) {
+			if(u.getRoles().get(0).getName().equals("ROLE_USER")) {
+				users.add(u);
+			}
+		}
+		
+		return users;
+			
+	}
+	
 	public User findById(Long id) {
 
 		return userRepository.findById(id).orElseGet(null);
@@ -143,4 +164,45 @@ public class UserService {
 		}
 		return null;
 	}
+	
+	public boolean ukloniUsera(Long id) {
+		if(id!=null) {
+			System.out.println("Brisem korisnika");
+			Korisnik k=this.korisnikRepo.findOneByUserId(id);
+			this.korisnikRepo.deleteById(k.getId());
+			this.userRepository.deleteById(id);
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	 public boolean blokirajUsera(Long id) {
+
+	        System.out.println("blokiran user je: " + id);
+	        if (id != null) {
+	            System.out.println("Usao da blokieam u auth servcice");
+	            User u=this.userRepository.findById(id).get();
+	            u.setNalogAktiviran(false);
+	            this.userRepository.save(u);
+	            return true;
+	        } else {
+	        	System.out.println("Nisam blokirao korisnika");
+	            return false;
+	        }
+	    }
+
+	    public boolean odblokirajUsera(Long id) {
+	      
+	        if (id != null) {
+	        	System.out.println("Odblokiram u servisu");
+	        	 User u=this.userRepository.findById(id).get();
+		         u.setNalogAktiviran(true);
+		         this.userRepository.save(u);
+	            return true;
+	        } else {
+	        	System.out.println("Nisam odblokirao korisnika");
+	            return false;
+	        }
+	    }
 }

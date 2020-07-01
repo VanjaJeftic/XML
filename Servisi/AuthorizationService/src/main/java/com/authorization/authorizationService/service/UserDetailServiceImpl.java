@@ -161,6 +161,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
         if (user != null) {
         	 System.out.println("udjoh da blokiram" + id);
             user.setNalogAktivan(false);
+            user.setEnabled(false);
             userDetailRepository.save(user);
             return true;
         } else {
@@ -173,6 +174,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
         User user = userDetailRepository.findById(id).orElse(null);
         if (user != null) {
             user.setNalogAktivan(true);
+            user.setEnabled(true);
             userDetailRepository.save(user);
             return true;
         } else {
@@ -209,8 +211,6 @@ public class UserDetailServiceImpl implements UserDetailsService {
     	return u;
     }
 
-
-
     public User noviagent(UserDTO user) {
         User u=new User();
         u.setNalogAktivan(true);
@@ -242,4 +242,16 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
 
 
+    public List<User> findUsers(){
+		List<User> svi=userDetailRepository.findAll();
+		List<User> users=new ArrayList<User>();
+		for(User u:svi) {
+			if(u.getRoles().get(0).getName().equals("ROLE_user")) {
+				users.add(u);
+			}
+		}
+		
+		return users;
+			
+	}
 }

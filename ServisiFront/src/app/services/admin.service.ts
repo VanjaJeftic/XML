@@ -197,6 +197,31 @@ export class AdminService {
     return this.http.get('https://localhost:8662/komentar/komentar/sviOdobreni');
   }
 
+  
+  public getKorisnici() {
+    console.log("Pribavljamo korisnike");
+    return this.http.get('https://localhost:8662/auth/korisnik/korisnici');
+  }
+
+  
+  public deleteKorisnik(user) {
+    console.log("brisanje korisnika servis");
+    window.location.reload();
+    return this.http.delete('https://localhost:8662/admin/user/delete' + "/"+ user.id);
+  }
+
+  public blok(user) {
+    console.log("blokitanje korisnika servis");
+    window.location.reload();
+    return this.http.get('https://localhost:8662/auth/korisnik/blokirajUsera' + "/"+ user.id);
+  }
+
+  public unblok(user) {
+    console.log("odblokiranje korisnika servis");
+    window.location.reload();
+    return this.http.get('https://localhost:8662/auth/korisnik/odblokirajUsera' + "/"+ user.id);
+  }
+
 
 
 

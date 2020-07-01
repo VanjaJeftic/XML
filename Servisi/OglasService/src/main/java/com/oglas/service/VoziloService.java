@@ -1,10 +1,11 @@
 package com.oglas.service;
 
-
 import com.oglas.connections.UserConnection;
 import com.oglas.dto.VoziloDTO;
 import com.oglas.exceptions.NotFoundException;
+import com.oglas.model.Oglas;
 import com.oglas.model.Vozilo;
+import com.oglas.repository.OglasRepository;
 import com.oglas.repository.VoziloRepository;
 
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ import org.springframework.stereotype.Service;
 public class VoziloService {
 
     private VoziloRepository voziloRepository;
+    @Autowired
+    private OglasRepository oglasRepository;
     private UserConnection userConnection;
 
     @Autowired
@@ -76,6 +79,35 @@ public class VoziloService {
     	return agenta;
     }
     
-    
+    public List<Vozilo> getVozilaBezOglasa(Long id) {
+		// TODO Auto-generated method stub
+		List<Vozilo> agenta=new ArrayList<>();
+		List<Vozilo> vozila=(List<Vozilo>) voziloRepository.findAll();
+		List<Oglas> oglasi=(List<Oglas>) oglasRepository.findAll();
+		System.out.println("AAAA "+oglasi.size());
+		//Boolean uOglasu=false;
+		
+		for(Vozilo v:vozila) {
+			if(v.getUser_id().equals(id)) {
+				Boolean uOglasu=false;
+				for(Oglas oo:oglasi) {
+					if(oo.getVozilo_id()==v.getId()) {
+						uOglasu=true;
+						System.out.println("UOGLASU "+uOglasu);
+					}else {
+						System.out.println("Nije u oglasu");
+					}
+				}
+				if(uOglasu==false) {
+					System.out.println("Ubacujem vozilo, ispunjava uslov");
+					agenta.add(v);
+				}
+				
+			}
+		}
+		
+		return agenta;
+	}
+
 
 }

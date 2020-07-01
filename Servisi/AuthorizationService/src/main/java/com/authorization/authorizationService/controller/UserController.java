@@ -15,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -220,4 +219,21 @@ public class UserController {
     	return userService.getUser(id);
     }
 
+    @GetMapping("/korisnici")
+	public ResponseEntity<List<User>> getAllKorisnici(){
+    	
+    	System.out.println("Sve korisnike dobavi");
+		List<User> users = userService.findUsers();
+		
+		return ( new ResponseEntity<>(users, HttpStatus.OK) );
+	}
+    
+
+    @GetMapping("/role/{id}")
+    public String getUserRole(@PathVariable("id") Long id){
+    	User u=userService.getUser(id);
+        return u.getRoles().get(0).getName();
+
+    }
+    
 }

@@ -50,7 +50,11 @@ export class LoginComponent implements OnInit {
         console.log(error.status);
         if(error.status == 400){
           this.dataInvalid = true;
-        }else {
+        }else if(error.status == 423){
+          alert('Nalog nije aktivan');
+        }
+        
+        else {
           alert('Ups, servis izgleda nije u funkciji. Probaj ponovo!');
         }
       }

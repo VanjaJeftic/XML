@@ -41,6 +41,7 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
         		.antMatchers("/oglas/vozilo/novoVozilo").permitAll()
         		.antMatchers("/oglas/vozilo/**").permitAll()
         		.antMatchers("/zahtev/**").permitAll()
+        		.antMatchers("/zahtev/poruke/**").permitAll()
         		.antMatchers("/komentar/**").permitAll()
         		.antMatchers("/komentar/komentar/**").permitAll()
                 .antMatchers("/search/**").permitAll()
@@ -53,12 +54,16 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/user/odblokirajUsera/**").permitAll()
                 .antMatchers("/admin/user/delete/**").permitAll()
                 .antMatchers("/auth/korisnik/verify/**").permitAll()
+                .antMatchers("/auth/korisnik/role/**").permitAll()
                 .antMatchers("/auth/korisnik/blokirajUsera/**").permitAll()
                 .antMatchers("/auth/korisnik/odblokirajUsera/**").permitAll()
                 .antMatchers("/auth/korisnik/blokirajUsera/**").permitAll()
                 .antMatchers("/auth/korisnik/delete/**").permitAll()
+                .antMatchers("/auth/korisnik/korisnici").permitAll()
                 .antMatchers("/admin/**").permitAll()
                 .antMatchers("/auth/**").permitAll()
+                .antMatchers("/message/**").permitAll()
+                .antMatchers("/message/poruka/**").permitAll()
                 .anyRequest().authenticated();
     }
 

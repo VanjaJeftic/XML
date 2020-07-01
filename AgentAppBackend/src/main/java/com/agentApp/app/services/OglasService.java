@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.agentApp.app.dto.OglasDTO;
 import com.agentApp.app.models.Oglas;
+import com.agentApp.app.models.User;
 import com.agentApp.app.models.Vozilo;
 import com.agentApp.app.repository.OglasRepository;
 import com.agentApp.app.repository.VoziloRepository;
@@ -59,5 +60,19 @@ public class OglasService {
     	}
     	return found;
     }
+
+	public int brOglasaKorisnika(User u) {
+		// TODO Auto-generated method stub
+		int brOglasa=0;
+		List<Oglas> oglasi=oglasRepository.findAll();
+    	for(Oglas v:oglasi) {
+    		if(v.getVozilo().getUser().getId().equals(u.getId())) {
+    			brOglasa++;
+    		}
+    		System.out.println(brOglasa);
+    	}
+    	
+    	return brOglasa;
+	}
 
 }

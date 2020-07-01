@@ -163,6 +163,12 @@ export class AdminService {
     return this.http.get('http://localhost:8088/model');
   }
 
+  
+  public getKorisnici() {
+    console.log("Pribavljamo korisnike");
+    return this.http.get('http://localhost:8088/korisnici');
+  }
+
   public deleteModel(model) {
     console.log("brisanje modela servis");
     window.location.reload();
@@ -199,6 +205,24 @@ export class AdminService {
     return this.http.post('http://localhost:8088/model',modelVozila).subscribe(
       data=>{console.log('Vratio je '+data)}
     );
+  }
+
+  public deleteKorisnik(user) {
+    console.log("brisanje korisnika servis");
+    window.location.reload();
+    return this.http.delete('http://localhost:8088/user' + "/"+ user.id);
+  }
+
+  public blok(user) {
+    console.log("blokitanje korisnika servis");
+    window.location.reload();
+    return this.http.get('http://localhost:8088/blokirajUsera' + "/"+ user.id);
+  }
+
+  public unblok(user) {
+    console.log("odblokiranje korisnika servis");
+    window.location.reload();
+    return this.http.get('http://localhost:8088/odblokirajUsera' + "/"+ user.id);
   }
 
 

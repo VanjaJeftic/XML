@@ -36,6 +36,7 @@ import { PrikazPorukaComponent } from './components/userComponent/user/prikaz-po
 import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
 import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
 import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
+import { KorisniciComponent } from './components/userComponent/administrator/korisnici/korisnici.component';
 
 
 const routes: Routes = [
@@ -77,6 +78,7 @@ const routes: Routes = [
   {path: 'listaKomentaraAdmina', component:PrikazKomentaraKorisnikaComponent},
   {path: 'listaOdbobrenihKomentaraAdmina',component:ListOdobrenihKomentaraAdminComponent},
   {path: 'listaOdbijenihKomentaraAdmina',component:ListaOdbijenihKomentaraAdminComponent},
+  {path: 'korisnici',component:KorisniciComponent},
 
 
 

@@ -25,7 +25,7 @@ public class PorukaService {
 	
 	public boolean create(PorukaDTO porukaDTO, String username) {
 		
-		if(  porukaDTO.getSadrzaj()==null || porukaDTO.getZahtev()==null) {
+		if(  porukaDTO.getSadrzaj()==null || porukaDTO.getBundle()==null) {
 		
 		return false;
 		}		
@@ -34,7 +34,7 @@ public class PorukaService {
 			Poruka p=new Poruka();
 			p.setDatum(lt);
 			p.setSadrzaj(porukaDTO.getSadrzaj());
-			p.setZahtev(porukaDTO.getZahtev());
+			p.setBundle(porukaDTO.getBundle());
 			p.setIznm(porukaDTO.isIznm());
 			p.setDat(lt.toString());
 			p.setKreator(username);
@@ -49,7 +49,7 @@ public class PorukaService {
 	public Poruka findByZahtev(Long id) {
 		List<Poruka> poruke=this.porukaRepository.findAll();
 		for(Poruka pp:poruke) {
-			if(pp.getZahtev()==id) {
+			if(pp.getBundle()==id) {
 				return pp;
 			}
 		}
@@ -60,7 +60,7 @@ public class PorukaService {
 		List<Poruka> poruke=this.porukaRepository.findAll();
 		List<Poruka> vrati=new ArrayList<Poruka>();
 		for(Poruka pp:poruke) {
-			if(pp.getZahtev()==id) {
+			if(pp.getBundle()==id) {
 				vrati.add(pp);
 				System.out.println(pp.getDatum());
 			}

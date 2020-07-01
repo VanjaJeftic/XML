@@ -6,6 +6,7 @@ import com.oglas.dto.UserViewDTO;
 import com.oglas.exceptions.NotFoundException;
 import com.oglas.model.Oglas;
 import com.oglas.repository.OglasRepository;
+import com.oglas.repository.VoziloRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,8 @@ public class OglasService {
 
 	@Autowired
     private OglasRepository oglasRepository;
+	@Autowired
+    private VoziloRepository voziloRepository;
 	@Autowired
     private UserConnection userConnection;
 
@@ -97,4 +100,20 @@ public class OglasService {
     	}
     	return found;
     }
+    
+    public int brOglasaKorisnika(Long u) {
+		// TODO Auto-generated method stub
+		int brOglasa=0;
+		List<Oglas> oglasi= (List<Oglas>)oglasRepository.findAll();
+    	for(Oglas vo:oglasi) {
+    		//Vozilo v=voziloRepository.findById(vo.getVozilo_id());
+    		if(vo.getUser_id().equals(u)) {
+    			brOglasa++;
+    		}
+    		System.out.println(brOglasa);
+    	}
+    	
+    	return brOglasa;
+	}
+
 }

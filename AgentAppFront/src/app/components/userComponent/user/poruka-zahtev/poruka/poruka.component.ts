@@ -20,7 +20,7 @@ export class PorukaComponent implements OnInit {
               console.log("Kod modela"+localStorage.getItem("zahtevId"));
               this.zahtev=model;
              // this.poruka.zahtev=this.zahtev;
-             this.poruka.zahtev=localStorage.getItem("zahtevId");
+             this.poruka.bundle=localStorage.getItem("zahtevId");
               
              }
 
@@ -28,7 +28,7 @@ export class PorukaComponent implements OnInit {
   }
 
   onPosalji(){
-    console.log("Sta je ovde ?"+this.poruka.zahtev);
+    console.log("Sta je ovde ?"+this.poruka.bundle);
     this.porukaService.dodajPoruku(this.poruka).subscribe(
       data => {
         this.snackBar.open('Poruka je uspesno poslata', 'U redu', { duration: 10000 });

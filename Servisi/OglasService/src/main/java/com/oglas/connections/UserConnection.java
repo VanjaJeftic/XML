@@ -15,4 +15,7 @@ public interface UserConnection {
     @GetMapping("korisnik/{id}")
     UserViewDTO getUser(@PathVariable("id") Long id);
 
+    @GetMapping("korisnik/role/{id}")
+	String getUserRole(@PathVariable("id") Long id);
+
 }

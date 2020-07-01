@@ -177,7 +177,7 @@ public class VoziloController {
     List<Vozilo> mojaVozila(@PathVariable("id") String id){
     	Long user=Long.parseLong(id);
 		logger.info("Lista vozila");
-    	return voziloService.getVozila(user);
+    	return voziloService.getVozilaBezOglasa(user);
     	
     }
     

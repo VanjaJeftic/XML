@@ -66,6 +66,10 @@ import { PregledKomentaraVozilaDialogComponent } from './components/userComponen
 import { RezervacijaDialogComponent } from './components/userComponent/user/vozilo-details/rezervacija-dialog/rezervacija-dialog.component';
 import { DijalogRegistracijaAgentaComponent } from './components/userComponent/dijalog-registracija-agenta/dijalog-registracija-agenta.component';
 import { DijalogRegistracijaFirmeComponent } from './components/userComponent/dijalog-registracija-firme/dijalog-registracija-firme.component';
+import { KorisniciComponent } from './components/userComponent/administrator/korisnici/korisnici.component';
+import { PorukeRazmenjeneComponent } from './components/userComponent/poruke-razmenjene/poruke-razmenjene.component';
+import { PrikazPorukaComponent } from './components/userComponent/poruke-razmenjene/prikaz-poruka/prikaz-poruka.component';
+import { PorukaComponent } from './components/userComponent/poruke-razmenjene/poruka/poruka.component';
 
 @NgModule({
   declarations: [
@@ -118,6 +122,10 @@ import { DijalogRegistracijaFirmeComponent } from './components/userComponent/di
     RezervacijaDialogComponent,
     DijalogRegistracijaAgentaComponent,
     DijalogRegistracijaFirmeComponent
+    KorisniciComponent,
+    PorukeRazmenjeneComponent,
+    PrikazPorukaComponent,
+    PorukaComponent
     
   ],
   imports: [
@@ -138,8 +146,10 @@ import { DijalogRegistracijaFirmeComponent } from './components/userComponent/di
     
 
   ],
-  entryComponents: [PregledKomentaraVozilaDialogComponent,KomentarDialogComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,ResetLozinkeComponent, RezervacijaDialogComponent,
-    DijalogRegistracijaAgentaComponent, DijalogRegistracijaFirmeComponent
+
+  entryComponents: [PregledKomentaraVozilaDialogComponent,KomentarDialogComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,ResetLozinkeComponent, RezervacijaDialogComponent,PorukaComponent,
+   DijalogRegistracijaAgentaComponent, DijalogRegistracijaFirmeComponent
+
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

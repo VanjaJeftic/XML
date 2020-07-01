@@ -201,4 +201,8 @@ export class UserComponent implements OnInit {
     });
     return author_name;
   }
+
+  zahteviMess(){
+    this.router.navigateByUrl('zahteviMess');
+  }
 }
