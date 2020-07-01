@@ -41,6 +41,7 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
         		.antMatchers("/oglas/vozilo/novoVozilo").permitAll()
         		.antMatchers("/oglas/vozilo/**").permitAll()
         		.antMatchers("/zahtev/**").permitAll()
+        		.antMatchers("/zahtev/poruke/**").permitAll()
         		.antMatchers("/komentar/**").permitAll()
         		.antMatchers("/komentar/komentar/**").permitAll()
                 .antMatchers("/search/**").permitAll()
@@ -61,6 +62,8 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/auth/korisnik/korisnici").permitAll()
                 .antMatchers("/admin/**").permitAll()
                 .antMatchers("/auth/**").permitAll()
+                .antMatchers("/message/**").permitAll()
+                .antMatchers("/message/poruka/**").permitAll()
                 .anyRequest().authenticated();
     }
 

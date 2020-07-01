@@ -108,4 +108,10 @@ public class ZahtevController {
 		}
 		return new ResponseEntity<List<ZahtevDTO>>(zahteviPodnosioca, HttpStatus.OK);
 	}
+	
+	@GetMapping("/poruke/{id}") //ID - ulogovani agent
+	public Set<ZahtevViewDTO> sviPrihvaceniZaPoruke(@PathVariable("id") Long agent){
+		
+		return this.zahtevService.sviBundleZahteviPoruke(agent);
+	}
 }

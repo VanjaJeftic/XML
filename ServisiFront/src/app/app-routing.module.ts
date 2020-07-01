@@ -38,6 +38,8 @@ import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponen
 import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/prikaz-komentara-korisnika/prikaz-komentara-korisnika.component';
 import { StatistikaComponent } from './components/userComponent/agent/statistika/statistika.component';
 import { KorisniciComponent } from './components/userComponent/administrator/korisnici/korisnici.component';
+import { PorukeRazmenjeneComponent } from './components/userComponent/poruke-razmenjene/poruke-razmenjene.component';
+import { PrikazPorukaComponent } from './components/userComponent/poruke-razmenjene/prikaz-poruka/prikaz-poruka.component';
 
 
 
@@ -52,7 +54,7 @@ const routes: Routes = [
   { path: 'user/zahtev', component: MojiZahteviComponent },
   { path: 'user/izvestaj', component: MojiIzvestajiComponent },
   { path: 'user/iznajmljena-vozila', component: IznajmljenaVozilaComponent },
-  
+
   { path: 'vozilo/novoVozilo', component: NoviOglasComponent },
   { path: 'vozilo/:id', component: VoziloDetailsComponent },
 
@@ -81,10 +83,12 @@ const routes: Routes = [
   { path: 'izmenaModelaVozila', component:IzmenaModelaVozilaComponent},
   { path: 'svavozila',component:SvaVozilaComponent},
   { path: 'agent/oglas',component:PostaviOglasComponent},
-  {path: 'listaKomentaraAdmina', component:PrikazKomentaraKorisnikaComponent},
-  {path: 'listaOdbobrenihKomentaraAdmina',component:ListOdobrenihKomentaraAdminComponent},
-  {path: 'listaOdbijenihKomentaraAdmina',component:ListaOdbijenihKomentaraAdminComponent},
-  {path: 'korisnici',component:KorisniciComponent},
+  { path: 'listaKomentaraAdmina', component:PrikazKomentaraKorisnikaComponent},
+  { path: 'listaOdbobrenihKomentaraAdmina',component:ListOdobrenihKomentaraAdminComponent},
+  { path: 'listaOdbijenihKomentaraAdmina',component:ListaOdbijenihKomentaraAdminComponent},
+  { path: 'korisnici',component:KorisniciComponent},
+  { path: 'zahteviMess', component:PorukeRazmenjeneComponent},
+  { path: 'prikazPoruke',component:PrikazPorukaComponent},
 ];
 
 @NgModule({

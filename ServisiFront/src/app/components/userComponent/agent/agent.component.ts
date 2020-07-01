@@ -17,4 +17,9 @@ export class AgentComponent implements OnInit {
   onOdjaviMe(){
     this.authService.logout();
   }
+
+  
+  zahteviMess(){
+    this.router.navigateByUrl('zahteviMess');
+  }
 }
