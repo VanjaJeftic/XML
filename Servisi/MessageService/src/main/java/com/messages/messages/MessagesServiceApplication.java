@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
-@EntityScan("com.messages.model")
+@EntityScan("com.messages.messages.model")
 public class MessagesServiceApplication {
 
 	public static void main(String[] args) {

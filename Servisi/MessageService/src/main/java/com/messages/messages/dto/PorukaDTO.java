@@ -1,4 +1,4 @@
-package com.messages.dto;
+package com.messages.messages.dto;
 
 import java.time.LocalDateTime;
 

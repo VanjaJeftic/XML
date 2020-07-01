@@ -1,4 +1,4 @@
-package com.messages.model;
+package com.messages.messages.model;
 
 import java.time.LocalDateTime;
 

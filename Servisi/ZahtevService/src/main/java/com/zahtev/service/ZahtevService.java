@@ -418,12 +418,20 @@ public class ZahtevService {
 			for(Zahtev z : zahteviGrouped) {
 				zvdto.setBundleID(z.getBundle_id());
 				OglasDTO oglas = this.oglasConnection.getOneOglas(z.getOglas_id());
-				
+				String uloga=userConnetcion.getUserRole(agent);
+				System.out.println("Uloga "+uloga);
+				if(uloga.equals("ROLE_agent")) {
 				if(oglas.getVozilo().getUser().getId().equals(agent)) {
 					
 						zvdto.getBundleZahtevi().add(new ZahtevDTO(z, oglas));
 						bundleZahtevi.add(zvdto);
 					
+				}
+				}else {
+					if(z.getPodnosilac_id().equals(agent)) {
+						zvdto.getBundleZahtevi().add(new ZahtevDTO(z, oglas));
+						bundleZahtevi.add(zvdto);
+					}
 				}
 			}
 		}

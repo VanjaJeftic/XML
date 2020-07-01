@@ -1,4 +1,4 @@
-package com.messages.service;
+package com.messages.messages.service;
 
 
 import java.time.LocalDateTime;
@@ -8,9 +8,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.messages.dto.PorukaDTO;
-import com.messages.model.Poruka;
-import com.messages.repository.PorukaRepository;
+import com.messages.messages.dto.PorukaDTO;
+import com.messages.messages.model.Poruka;
+import com.messages.messages.repository.PorukaRepository;
 
 @Service
 public class PorukaService {

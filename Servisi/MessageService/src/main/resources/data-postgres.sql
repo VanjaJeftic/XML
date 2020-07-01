@@ -1,1 +1,3 @@
-insert into porukice(sadrzaj,bundle_id,ko_iznm,kreator,dat,datum) values('HELLO',8,true,'vesna','2018-07-07T00:40:38.198318200','2018-07-07T00:40:38.198318200');
+insert into porukice(sadrzaj,bundle_id,ko_iznm,kreator,dat,datum) values('HELLO8',8,true,'vesna','2018-07-07T00:40:38.198318200','2018-07-07T00:40:38.198318200');
+insert into porukice(sadrzaj,bundle_id,ko_iznm,kreator,dat,datum) values('HELLO7',7,true,'vesna','2018-07-07T00:40:38.198318200','2018-07-07T00:40:38.198318200');
+insert into porukice(sadrzaj,bundle_id,ko_iznm,kreator,dat,datum) values('HELLO3',3,true,'vesna','2018-07-07T00:40:38.198318200','2018-07-07T00:40:38.198318200');

@@ -17,7 +17,7 @@ export class PorukaService {
       'Accept' : 'application/json',
       'Content-Type' : 'application/json'
     });
-    return this.http.post(this.putanje+  poruka, {headers: headers});
+    return this.http.post('https://localhost:8662/message/poruka/', poruka, {headers: headers});
   }
 
   getAllPoruke(zahtevId: any) {

@@ -1,4 +1,4 @@
-package com.messages.controller;
+package com.messages.messages.controller;
 
 
 import java.util.List;
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.messages.dto.PorukaDTO;
-import com.messages.model.Poruka;
-import com.messages.service.PorukaService;
+import com.messages.messages.dto.PorukaDTO;
+import com.messages.messages.model.Poruka;
+import com.messages.messages.service.PorukaService;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -27,6 +27,11 @@ public class PorukaController {
 
 	@Autowired
 	private PorukaService porukaService;
+	@Autowired
+	public PorukaController(PorukaService porukaService) {
+		
+		this.porukaService=porukaService;
+	}
 	
 	protected final static Logger logger = LoggerFactory.getLogger(PorukaController.class);
 
@@ -34,7 +39,7 @@ public class PorukaController {
 	@PostMapping
 	public ResponseEntity<?> add(@RequestBody PorukaDTO porukaDTO){
 		System.out.println("PORUKA "+porukaDTO.getSadrzaj()+porukaDTO.getBundle());
-		if(porukaService.create(porukaDTO,"aaa")) {
+		if(porukaService.create(porukaDTO,porukaDTO.getKreator())) {
 			return new ResponseEntity<>(HttpStatus.CREATED);
 		}else {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
