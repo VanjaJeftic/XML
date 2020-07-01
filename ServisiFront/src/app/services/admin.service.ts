@@ -8,6 +8,7 @@ import { VrstaMenjaca } from '../models/vrsta-menjaca';
 import { ModelVozila } from '../models/model-vozila';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
+import { Agent } from '../models/agent';
 
 @Injectable({
   providedIn: 'root'
@@ -156,6 +157,16 @@ export class AdminService {
       data=>{console.log('Vratio je '+data)});
   }
 
+  public registrujAgenta(agent: Agent){
+    console.log("registrovanje agenta: "+ agent.username);
+    return this.http.post('https://localhost:8662/auth/korisnik/noviAgent', agent);
+  }
+
+  
+  public registrujFirmu(agent: Agent){
+    console.log("registrovanje firme: "+ agent.username);
+    return this.http.post('https://localhost:8662/auth/korisnik/novaFirma', agent);
+  }
 
   public izmenaPoljaOdbijenKomentar(id:number){
     window.location.reload();

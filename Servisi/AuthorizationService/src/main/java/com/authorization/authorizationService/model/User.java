@@ -29,6 +29,8 @@ public class User implements Serializable {
         this.mesto=user.getMesto();
         this.telefon=user.getTelefon();
         this.potvrdalozinke=user.getPotvrdalozinke();
+        this.maticnibroj=user.getMaticnibroj();
+        this.nazivfirme=user.getNazivfirme();
     }
 
     @Id
@@ -50,6 +52,9 @@ public class User implements Serializable {
     @Column(name = "adresa")
     private String adresa;
 
+    @Column(name = "nazivfirme")
+    private String nazivfirme;
+
     @Column(name = "mesto")
     private String mesto;
 
@@ -61,6 +66,9 @@ public class User implements Serializable {
 
     @Column(name = "email")
     private String email;
+
+    @Column(name="maticnibroj")
+    private String maticnibroj;
 
     @Column(name = "enabled")
     private boolean enabled;
@@ -81,6 +89,14 @@ public class User implements Serializable {
     private List<Role> roles;
 
     public User(User user) {
+    }
+
+    public String getNazivfirme() {
+        return nazivfirme;
+    }
+
+    public void setNazivfirme(String nazivfirme) {
+        this.nazivfirme = nazivfirme;
     }
 
     public String getIme() {
@@ -193,6 +209,14 @@ public class User implements Serializable {
 
     public void setCredentialsNonExpired(boolean credentialsNonExpired) {
         this.credentialsNonExpired = credentialsNonExpired;
+    }
+
+    public String getMaticnibroj() {
+        return maticnibroj;
+    }
+
+    public void setMaticnibroj(String maticnibroj) {
+        this.maticnibroj = maticnibroj;
     }
 
     public boolean isAccountNonLocked() {

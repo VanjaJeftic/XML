@@ -64,6 +64,8 @@ import { ResetLozinkeComponent } from './components/userComponent/reset-lozinke/
 import { StatistikaComponent } from './components/userComponent/agent/statistika/statistika.component';
 import { PregledKomentaraVozilaDialogComponent } from './components/userComponent/agent/moja-vozila/pregled-komentara-vozila-dialog/pregled-komentara-vozila-dialog.component';
 import { RezervacijaDialogComponent } from './components/userComponent/user/vozilo-details/rezervacija-dialog/rezervacija-dialog.component';
+import { DijalogRegistracijaAgentaComponent } from './components/userComponent/dijalog-registracija-agenta/dijalog-registracija-agenta.component';
+import { DijalogRegistracijaFirmeComponent } from './components/userComponent/dijalog-registracija-firme/dijalog-registracija-firme.component';
 import { KorisniciComponent } from './components/userComponent/administrator/korisnici/korisnici.component';
 import { PorukeRazmenjeneComponent } from './components/userComponent/poruke-razmenjene/poruke-razmenjene.component';
 import { PrikazPorukaComponent } from './components/userComponent/poruke-razmenjene/prikaz-poruka/prikaz-poruka.component';
@@ -118,6 +120,8 @@ import { PorukaComponent } from './components/userComponent/poruke-razmenjene/po
     StatistikaComponent,
     PregledKomentaraVozilaDialogComponent,
     RezervacijaDialogComponent,
+    DijalogRegistracijaAgentaComponent,
+    DijalogRegistracijaFirmeComponent
     KorisniciComponent,
     PorukeRazmenjeneComponent,
     PrikazPorukaComponent,
@@ -142,7 +146,10 @@ import { PorukaComponent } from './components/userComponent/poruke-razmenjene/po
     
 
   ],
-  entryComponents: [PregledKomentaraVozilaDialogComponent,KomentarDialogComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,ResetLozinkeComponent, RezervacijaDialogComponent,PorukaComponent
+
+  entryComponents: [PregledKomentaraVozilaDialogComponent,KomentarDialogComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,ResetLozinkeComponent, RezervacijaDialogComponent,PorukaComponent,
+   DijalogRegistracijaAgentaComponent, DijalogRegistracijaFirmeComponent
+
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

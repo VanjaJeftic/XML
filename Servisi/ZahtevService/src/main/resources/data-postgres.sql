@@ -24,3 +24,6 @@ insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, pov
 insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, povratak, status, kreiran) values (1, 11, false, 5, '2021-09-12T11:00', '2021-09-24T21:00', 'PENDING', '2020-06-22T18:00');
 
 insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, povratak, status, kreiran) values (1, 12, false, 5, '2020-09-12T11:00', '2020-09-24T21:00', 'PENDING', '2020-06-19T18:00');
+
+
+insert into zahtev (oglas_id, bundle_id, bundle, podnosilac_id, preuzimanje, povratak, status, kreiran) values (5, 13, true, 3, '2020-05-22T19:00', '2020-05-24T20:00', 'ACCEPTED', '2020-06-22T18:00');

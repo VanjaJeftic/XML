@@ -21,6 +21,7 @@ public class Poruka {
     @Column(name="bundle_id")
     private Long bundle;
 
+
     @Column(name="koIznm")
     private boolean iznm;
     
