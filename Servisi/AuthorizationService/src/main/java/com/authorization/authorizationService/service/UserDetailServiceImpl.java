@@ -73,7 +73,40 @@ public class UserDetailServiceImpl implements UserDetailsService {
         User u = userDetailRepository.findByUsername(username);
         return u;
     }
+/*
+    public User saveAgent(UserDTO user) {
+        System.out.println("Servis agent");
+        User u = userDetailRepository.findByUsername(user.getUsername());		//Username => mail
+        User u2=userDetailRepository.findByUsername(user.getUsername());
 
+
+        if( u == null && u2==null) {
+            //u = userRepository.save(user);
+            User newUser = new User();
+            newUser.setUsername(user.getUsername());
+            newUser.setPassword(passwordEncoder.encode(user.getPassword()));
+            newUser.setIme(user.getIme());
+            newUser.setPrezime(user.getPrezime());
+            newUser.setEnabled(true);
+            newUser.setAdresa(user.getAdresa());
+            newUser.setNalogAktivan(true);
+            List<Role> role=new ArrayList<Role>();
+            role.add(roleRepo.findByName("ROLE_agent"));
+            newUser.setRoles(role);							//Ovo i ne treba
+            newUser.setEmail(user.getEmail());
+            //List<Authority> auth = authService.findByname("ROLE_AGENT");
+            //newUser.setAuthorities(auth);
+
+            u = this.userDetailRepository.save(newUser);
+            return u;
+        }
+        return null;
+    }
+*/
+    public User createUserAgent(UserDTO userdto) {
+        User user = this.userDetailRepository.save(noviagent(userdto));
+        return user;
+    }
 
     public User createUser(UserDTO userdto) {
         User user = this.userDetailRepository.save(novi(userdto));
@@ -175,4 +208,38 @@ public class UserDetailServiceImpl implements UserDetailsService {
     	
     	return u;
     }
+
+
+
+    public User noviagent(UserDTO user) {
+        User u=new User();
+        u.setNalogAktivan(true);
+        u.setUsername(user.getUsername());
+        u.setPassword(encoder.encode(user.getPassword()));
+        System.out.println("NOVI USER + enkodirana sifra" + encoder.encode(user.getPassword()));
+        u.setEmail(user.getEmail());
+        u.setEnabled(true);
+        u.setAccountNonExpired(true);
+        u.setAccountNonLocked(true);
+        u.setCredentialsNonExpired(true);
+        u.setMaticnibroj(user.getMaticnibroj());
+        u.setMesto(user.getMesto());
+        System.out.println("Mesto je  "+user.getMesto());
+        u.setNazivfirme(user.getNazivfirme());
+        List<Role> role=new ArrayList<Role>();
+        role.add(roleRepo.findByName("ROLE_agent"));
+        u.setRoles(role);
+        u.setIme(user.getIme());
+        u.setPrezime(user.getPrezime());
+        u.setAdresa(user.getAdresa());
+        u.setMesto(user.getMesto());
+        u.setTelefon(user.getTelefon());
+       // u.setPotvrdalozinke(encoder.encode(user.getPotvrdalozinke()));
+
+
+        return u;
+    }
+
+
+
 }

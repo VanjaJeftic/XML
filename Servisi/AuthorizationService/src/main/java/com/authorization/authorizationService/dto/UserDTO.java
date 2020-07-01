@@ -16,16 +16,25 @@ public class UserDTO {
     private String mesto;
     private Integer telefon;
     private String potvrdalozinke;
-
+    private String maticnibroj;
     private boolean enabled;
     private boolean accountNonExpired;
     private boolean credentialsNonExpired;
     private boolean accountNonLocked;
     private List<Role> roles;
     private boolean nalogAktivan;
+    private String nazivfirme;
 
     public UserDTO() {
 
+    }
+
+    public String getNazivfirme() {
+        return nazivfirme;
+    }
+
+    public void setNazivfirme(String nazivfirme) {
+        this.nazivfirme = nazivfirme;
     }
 
     public String getIme() {
@@ -148,6 +157,14 @@ public class UserDTO {
         this.credentialsNonExpired = credentialsNonExpired;
     }
 
+    public String getMaticnibroj() {
+        return maticnibroj;
+    }
+
+    public void setMaticnibroj(String maticnibroj) {
+        this.maticnibroj = maticnibroj;
+    }
+
     public boolean isAccountNonLocked() {
         return accountNonLocked;
     }
@@ -156,7 +173,7 @@ public class UserDTO {
         this.accountNonLocked = accountNonLocked;
     }
 
-    public UserDTO(List<Role>roles,Long id, String username, String password, String email, boolean enabled, boolean accountNonExpired,boolean nalogAktivan, boolean credentialsNonExpired, boolean accountNonLocked, String ime, String prezime, String adresa, String mesto, Integer telefon, String potvrdalozinke) {
+    public UserDTO(List<Role>roles,Long id, String username, String password, String email, boolean enabled, boolean accountNonExpired,boolean nalogAktivan, boolean credentialsNonExpired, boolean accountNonLocked, String ime, String prezime, String adresa, String mesto, Integer telefon, String potvrdalozinke, String maticnibroj, String nazivfirme) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -173,5 +190,7 @@ public class UserDTO {
         this.mesto=mesto;
         this.telefon=telefon;
         this.potvrdalozinke=potvrdalozinke;
+        this.maticnibroj=maticnibroj;
+        this.nazivfirme=nazivfirme;
     }
 }

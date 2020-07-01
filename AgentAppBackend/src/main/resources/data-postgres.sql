@@ -166,3 +166,6 @@ insert into izvestaj (predjeniKm, komentar, vozilo_id, zahtev_id) values ('125',
 insert into komentar (oglas_id, korisnik_id, datum, ocena,sadrzaj,odgovor_id,odobren,odbijen,usernameusera) values (1,4,'2020-06-22T19:00',7,'Komentar za oglas 1 test', 1, false, false,'dijana');
 insert into komentar (oglas_id, korisnik_id, datum, ocena, sadrzaj,odgovor_id,odobren,odbijen,usernameusera) values (2,4,'2020-06-22T19:00',9,'Komentar test 2', 1, false, false,'dijana');
 insert into komentar (oglas_id, korisnik_id, datum, ocena, sadrzaj,odgovor_id,odobren,odbijen,usernameusera) values (1,4,'2020-06-22T19:00',9,'Komentar za oglas 1', 1, true, false, 'dijana');
+
+insert into zahtev (id,oglas_id, podnosilac_id, bundle, bundle_id, status, preuzimanje, povratak) values (16,2, 2, true, 16, 'ACCEPTED', '2020-06-20T19:00', '2020-06-24T20:00');
+insert into poruka (sadrzaj, datum, ko_iznm, bundle_id, kreator,dat) values ('Poruka sadrzaj','2020-06-23T13:47:52.265056100','true',16,'user','2020-06-23T13:47:52.265056100' );

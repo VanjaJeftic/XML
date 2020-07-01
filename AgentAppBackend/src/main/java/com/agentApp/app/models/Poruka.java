@@ -18,7 +18,7 @@ public class Poruka {
     @Column(name = "datum")
     private LocalDateTime datum;
     
-    @Column(name="zahtev_id")
+    @Column(name="bundle_id")
     private Long zahtev;
 
     @Column(name="koIznm")

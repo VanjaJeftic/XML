@@ -64,6 +64,8 @@ import { ResetLozinkeComponent } from './components/userComponent/reset-lozinke/
 import { StatistikaComponent } from './components/userComponent/agent/statistika/statistika.component';
 import { PregledKomentaraVozilaDialogComponent } from './components/userComponent/agent/moja-vozila/pregled-komentara-vozila-dialog/pregled-komentara-vozila-dialog.component';
 import { RezervacijaDialogComponent } from './components/userComponent/user/vozilo-details/rezervacija-dialog/rezervacija-dialog.component';
+import { DijalogRegistracijaAgentaComponent } from './components/userComponent/dijalog-registracija-agenta/dijalog-registracija-agenta.component';
+import { DijalogRegistracijaFirmeComponent } from './components/userComponent/dijalog-registracija-firme/dijalog-registracija-firme.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +115,9 @@ import { RezervacijaDialogComponent } from './components/userComponent/user/vozi
     ResetLozinkeComponent,
     StatistikaComponent,
     PregledKomentaraVozilaDialogComponent,
-    RezervacijaDialogComponent
+    RezervacijaDialogComponent,
+    DijalogRegistracijaAgentaComponent,
+    DijalogRegistracijaFirmeComponent
     
   ],
   imports: [
@@ -134,7 +138,8 @@ import { RezervacijaDialogComponent } from './components/userComponent/user/vozi
     
 
   ],
-  entryComponents: [PregledKomentaraVozilaDialogComponent,KomentarDialogComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,ResetLozinkeComponent, RezervacijaDialogComponent
+  entryComponents: [PregledKomentaraVozilaDialogComponent,KomentarDialogComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,ResetLozinkeComponent, RezervacijaDialogComponent,
+    DijalogRegistracijaAgentaComponent, DijalogRegistracijaFirmeComponent
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
