@@ -141,6 +141,14 @@ public class VoziloController {
 	    	return voziloService.getVozilaBezOglasa(user);
 	    	
 	    }
+	    
+	    @GetMapping
+	    public ResponseEntity<?> vozila(Principal p){
+	    	User user=userService.findByUsername(p.getName());
+	    	return new ResponseEntity<List<Vozilo>>(voziloService.getVozila(user), HttpStatus.OK);
+	    		    	
+	    }
+	    
 //	    @GetMapping
 //	    public ResponseEntity<?> vozila(Principal p){
 //	    	User user=userService.findByUsername(p.getName());

@@ -26,7 +26,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Oglas implements Serializable {
 
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -36,9 +41,6 @@ public class Oglas implements Serializable {
 
     @Column(name="mesto")
     private String mesto;
-
-   // @Column(name="slike")
-    //private ArrayList<String> slike;
 
     @Column(name="cena")
     private Double cena;
@@ -55,14 +57,32 @@ public class Oglas implements Serializable {
     @Column(name="slobodando")
     private LocalDateTime slobodando;
     
-    
     @Column(name="cdw")
     private Boolean cdw;
 
+    @Column(name="maxkm")
+    private Boolean maxkm;
+    
+    @Column(name="ogranicenje_km")
+    private String ogranicenjekm;
+    
+    @Column(name="oddat")
+    private String oddat;
+    
+    @Column(name="dodat")
+    private String dodat;
+    
+    @Column(name="ustavci")
+    private Boolean ustavci;
+    
     @JsonIgnore
     @OneToMany(mappedBy = "oglas", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Zahtev> zahtevi = new HashSet<>();
 
+    @JsonIgnore
+    @OneToOne(mappedBy = "oglas")
+    private StavkaCenovnika stavka;
+    
     public Long getId() {
         return id;
     }
@@ -157,7 +177,63 @@ public class Oglas implements Serializable {
 		this.mesto=oglasdto.getMesto();
 		this.slobodando=oglasdto.getSlobodanDo();
 		this.slobodanOd=oglasdto.getSlobodanOd();
+		this.maxkm=oglasdto.getMaxkm();
+		this.ogranicenjekm=oglasdto.getOgranicenjekm();
+		this.dodat=oglasdto.getSlobodanDo().toString();
+		this.oddat=oglasdto.getSlobodanOd().toString();
 		//Vozilo v=new Vozilo(oglasdto.getVozilo());
 		//this.vozilo=v;
 	}
+
+	public Boolean getMaxkm() {
+		return maxkm;
+	}
+
+	public void setMaxkm(Boolean maxkm) {
+		this.maxkm = maxkm;
+	}
+
+	public String getOgranicenjekm() {
+		return ogranicenjekm;
+	}
+
+	public void setOgranicenjekm(String ogranicenjekm) {
+		this.ogranicenjekm = ogranicenjekm;
+	}
+
+	public String getOddat() {
+		return oddat;
+	}
+
+	public void setOddat(String oddat) {
+		this.oddat = oddat;
+	}
+
+	public String getDodat() {
+		return dodat;
+	}
+
+	public void setDodat(String dodat) {
+		this.dodat = dodat;
+	}
+
+	public Boolean getUstavci() {
+		return ustavci;
+	}
+
+	public void setUstavci(Boolean ustavci) {
+		this.ustavci = ustavci;
+	}
+
+	public StavkaCenovnika getStavka() {
+		return stavka;
+	}
+
+	public void setStavka(StavkaCenovnika stavka) {
+		this.stavka = stavka;
+	}
+	
+
+	
+	
 }

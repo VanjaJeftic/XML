@@ -14,4 +14,5 @@ export class Vozilo {
     predjeniKm:String;
     brsedistadeca:String;
     id:number;
+    uoglasu:boolean;
 }

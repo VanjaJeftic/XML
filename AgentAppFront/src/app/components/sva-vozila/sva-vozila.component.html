@@ -28,7 +28,7 @@
             <td>{{ vozilo.markaVozila.naziv }}</td>
             <td>{{ vozilo.modelVozila.naziv }}</td>
             <td>{{ vozilo.klasaVozila.naziv }}</td>
-            <td><a mat-button (click)="openDialogOglas(vozilo.id)">
+            <td><a mat-button *ngIf="!vozilo.uoglasu" (click)="openDialogOglas(vozilo.id)">
                   postavi oglas
               </a></td>
           </tr>

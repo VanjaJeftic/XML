@@ -97,6 +97,10 @@ public class User implements UserDetails {
 	@JsonIgnore
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	private Set<Vozilo> vozila = new HashSet<Vozilo>();
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	private Set<Cenovnik> cenovnik = new HashSet<Cenovnik>();
 
 
 	public User(UserDTO dto) {
@@ -299,6 +303,16 @@ public class User implements UserDetails {
 	public void setRoles(List<Authority> roles) {
 		this.roles = roles;
 	}
+
+	public Set<Cenovnik> getCenovnik() {
+		return cenovnik;
+	}
+
+	public void setCenovnik(Set<Cenovnik> cenovnik) {
+		this.cenovnik = cenovnik;
+	}
+	
+	
 	
 	
 }

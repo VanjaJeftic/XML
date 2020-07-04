@@ -13,4 +13,10 @@ export class Oglas {
 
     slobodanDoDate: string;     //Dodato zbog nekih gresaka u predstavljanju Date polja
     slobodanOdDate: string;
+
+    maxkm:boolean;
+    ogranicenjekm:string;
+    oddat:string;
+    dodat:string;
+    ustavci:boolean;
 }

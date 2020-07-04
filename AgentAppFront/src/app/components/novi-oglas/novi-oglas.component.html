@@ -15,9 +15,10 @@
             <input matInput placeholder="Cena" [(ngModel)]="oglas.cena" maxlength="25" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
         
+          <!--
           <mat-form-field class="full-width">
             <input matInput placeholder="Popust" [(ngModel)]="oglas.popust" maxlength="5" [ngModelOptions]="{standalone: true}" required>
-          </mat-form-field>
+          </mat-form-field>-->
   
           <mat-form-field>
             <mat-label>slobodan od</mat-label>
@@ -39,6 +40,16 @@
             <input type="checkbox" [(ngModel)]="cdw"  [ngModelOptions]="{standalone: true}" data-md-icheck (change)="toggleVisibility($event)"/>
             CDW
           </div>  
+
+          <div form-group>
+            <input type="checkbox" [(ngModel)]="maxkm"  [ngModelOptions]="{standalone: true}" data-md-icheck (change)="toggleVisibility2($event)" (change)="updateState()"/>
+            Kilometraza ogranicena
+          </div> 
+
+          <mat-form-field *ngIf="showKmFiled" class="full-width">
+            <input  matInput placeholder="Maksimalna dozvoljena kilometraza" [(ngModel)]="oglas.ogranicenjekm" maxlength="10" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+
       </mat-card-content>
   
 
