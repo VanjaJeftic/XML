@@ -1,6 +1,5 @@
 package com.agentApp.app.dto;
 
-import com.agentApp.app.models.User;
 import com.agentApp.app.models.Vozilo;
 
 public class VoziloDTO {
@@ -25,6 +24,7 @@ public class VoziloDTO {
 
     private boolean cdw;//kupovine Collision Damage Waiver protekcije
 
+    private boolean uoglasu;
 	
 	public String getMarkaVozila() {
 		return markaVozila;
@@ -121,8 +121,18 @@ public class VoziloDTO {
 		this.vrstaMenjaca = v.getVrstamenjaca().getNaziv();
 		this.predjeniKm = v.getPredjeniKm();
 		this.brsedistadeca = v.getBrSedistaDeca();
-		//this.cdw = v.get
+		this.uoglasu = false;
 	}
+
+	public boolean isUoglasu() {
+		return uoglasu;
+	}
+
+	public void setUoglasu(boolean uoglasu) {
+		this.uoglasu = uoglasu;
+	}
+	
+	
 	
 	
 }

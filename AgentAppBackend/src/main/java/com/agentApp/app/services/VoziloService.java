@@ -57,6 +57,7 @@ public class VoziloService {
 	      	v.setVrstamenjaca(menjacRepo.findByNaziv(vozilodto.getVrstaMenjaca()));
 	      	v.setPredjeniKm(vozilodto.getPredjeniKm());
 	      	v.setUser(userService.findByUsername(vozilodto.getUser().getUsername()));
+	      	v.setUoglasu(false);
 	        Vozilo vozilo = this.voziloRepository.save(v);
 
 	        return vozilo;

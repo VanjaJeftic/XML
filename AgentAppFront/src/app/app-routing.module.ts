@@ -37,6 +37,9 @@ import { PrikazKomentaraKorisnikaComponent } from './components/userComponent/pr
 import { ListaOdbijenihKomentaraAdminComponent } from './components/userComponent/lista-odbijenih-komentara-admin/lista-odbijenih-komentara-admin.component';
 import { ListOdobrenihKomentaraAdminComponent } from './components/userComponent/list-odobrenih-komentara-admin/list-odobrenih-komentara-admin.component';
 import { KorisniciComponent } from './components/userComponent/administrator/korisnici/korisnici.component';
+import { CenovnikComponent } from './components/userComponent/cenovnici/cenovnik/cenovnik.component';
+import { CenovniciComponent } from './components/userComponent/cenovnici/cenovnici.component';
+import { SviOglasiComponent } from './components/svi-oglasi/svi-oglasi.component';
 
 
 const routes: Routes = [
@@ -75,11 +78,12 @@ const routes: Routes = [
   { path: 'posalji', component:PorukaZahtevComponent},
   { path: 'zahteviMess', component:PorukeRazmenjeneComponent},
   { path: 'prikazPoruke',component:PrikazPorukaComponent},
-  {path: 'listaKomentaraAdmina', component:PrikazKomentaraKorisnikaComponent},
-  {path: 'listaOdbobrenihKomentaraAdmina',component:ListOdobrenihKomentaraAdminComponent},
-  {path: 'listaOdbijenihKomentaraAdmina',component:ListaOdbijenihKomentaraAdminComponent},
-  {path: 'korisnici',component:KorisniciComponent},
-
+  { path: 'listaKomentaraAdmina', component:PrikazKomentaraKorisnikaComponent},
+  { path: 'listaOdbobrenihKomentaraAdmina',component:ListOdobrenihKomentaraAdminComponent},
+  { path: 'listaOdbijenihKomentaraAdmina',component:ListaOdbijenihKomentaraAdminComponent},
+  { path: 'korisnici',component:KorisniciComponent},
+  { path: 'cenovnici',component:CenovniciComponent},
+  { path: 'oglasi',component:SviOglasiComponent},
 
 
 ];

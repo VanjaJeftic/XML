@@ -26,6 +26,16 @@ public class OglasDTO {
     private Boolean cdw;
     
     private Long vozilo_id;
+    
+    private Boolean maxkm;
+    
+    private String ogranicenjekm;
+    
+    private String oddat;
+    
+    private String dodat;
+    
+    private boolean ustavci;
 	
 	public OglasDTO() {
 		// TODO Auto-generated constructor stub
@@ -103,7 +113,7 @@ public class OglasDTO {
 	}
 
 	public void setSlobodando(LocalDateTime slobodando) {
-		this.slobodanDo = slobodanDo;
+		this.slobodanDo = slobodando;
 	}
 
 	public Boolean getCdw() {
@@ -120,6 +130,36 @@ public class OglasDTO {
 
 	public void setVozilo_id(Long vozilo_id) {
 		this.vozilo_id = vozilo_id;
+	}
+	public Boolean getMaxkm() {
+		return maxkm;
+	}
+	public void setMaxkm(Boolean maxkm) {
+		this.maxkm = maxkm;
+	}
+	public String getOgranicenjekm() {
+		return ogranicenjekm;
+	}
+	public void setOgranicenjekm(String ogranicenjekm) {
+		this.ogranicenjekm = ogranicenjekm;
+	}
+	public String getOddat() {
+		return oddat;
+	}
+	public void setOddat(String oddat) {
+		this.oddat = oddat;
+	}
+	public String getDodat() {
+		return dodat;
+	}
+	public void setDodat(String dodat) {
+		this.dodat = dodat;
+	}
+	public boolean isUstavci() {
+		return ustavci;
+	}
+	public void setUstavci(boolean ustavci) {
+		this.ustavci = ustavci;
 	}
 	
 	

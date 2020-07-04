@@ -62,6 +62,10 @@ import { SviKomentariOglasaDijalogComponent } from './components/userComponent/s
 import { DijalogRegistracijaAgentaComponent } from './components/userComponent/dijalog-registracija-agenta/dijalog-registracija-agenta.component';
 import { DijalogRegistracijaFirmeComponent } from './components/userComponent/dijalog-registracija-firme/dijalog-registracija-firme.component';
 import { KorisniciComponent } from './components/userComponent/administrator/korisnici/korisnici.component';
+import { CenovniciComponent } from './components/userComponent/cenovnici/cenovnici.component';
+import { CenovnikComponent } from './components/userComponent/cenovnici/cenovnik/cenovnik.component';
+import { StavkaCenovnikaComponent } from './components/userComponent/cenovnici/stavka-cenovnika/stavka-cenovnika.component';
+import { SviOglasiComponent } from './components/svi-oglasi/svi-oglasi.component';
 
 
 
@@ -114,7 +118,11 @@ import { KorisniciComponent } from './components/userComponent/administrator/kor
     SviKomentariOglasaDijalogComponent,
     DijalogRegistracijaAgentaComponent,
     DijalogRegistracijaFirmeComponent,
-    KorisniciComponent
+    KorisniciComponent,
+    CenovniciComponent,
+    CenovnikComponent,
+    StavkaCenovnikaComponent,
+    SviOglasiComponent
   ],
   imports: [
     BrowserModule,
@@ -132,7 +140,7 @@ import { KorisniciComponent } from './components/userComponent/administrator/kor
   ],
 
   entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,PorukaComponent,
-    DijalogRegistracijaAgentaComponent, DijalogRegistracijaFirmeComponent
+    DijalogRegistracijaAgentaComponent, DijalogRegistracijaFirmeComponent,CenovnikComponent,StavkaCenovnikaComponent
 
   ],
 

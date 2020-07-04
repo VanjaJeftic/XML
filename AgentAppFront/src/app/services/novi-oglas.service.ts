@@ -23,4 +23,9 @@ export class NoviOglasService {
       }
     );
   }
+
+  public getOglasi() {
+    console.log("Pribavljamo oglase");
+    return this.http.get('http://localhost:8088/oglas/oglasi');
+  }
 }

@@ -1,5 +1,6 @@
 package com.agentApp.app.services;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -35,8 +36,10 @@ public class OglasService {
 	public Oglas createOrder(OglasDTO oglasdto) {
 		Vozilo v=new Vozilo();
 		v=voziloRepository.findById(oglasdto.getVozilo_id()).get();
+		v.setUoglasu(true);
+		Vozilo vozilo=voziloRepository.save(v);
 		Oglas o=new Oglas(oglasdto);
-		o.setVozilo(v);
+		o.setVozilo(vozilo);
 	    Oglas oglas = this.oglasRepository.save(o);
 
 	    return oglas;
@@ -73,6 +76,20 @@ public class OglasService {
     	}
     	
     	return brOglasa;
+	}
+
+	public List<Oglas> findMyOglas(User p) {
+		// TODO Auto-generated method stub
+		List<Oglas> oglasi=this.oglasRepository.findAll();
+		List<Oglas> trazeni=new ArrayList<Oglas>();
+		for(Oglas o:oglasi) {
+			if(o.getVozilo().getUser().getId().equals(p.getId())) {
+				trazeni.add(o);
+			}
+		}
+		
+		return trazeni;
+		
 	}
 
 }

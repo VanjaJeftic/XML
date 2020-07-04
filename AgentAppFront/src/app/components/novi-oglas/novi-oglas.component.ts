@@ -11,8 +11,10 @@ import { Router } from '@angular/router';
 })
 export class NoviOglasComponent implements OnInit {
 
+  showKmFiled: boolean = false;
   
   marked=false;
+  maxkm=false;
   cdw=false;
   public oglas:Oglas=new Oglas();
 
@@ -27,6 +29,9 @@ export class NoviOglasComponent implements OnInit {
     this.oglas.cdw=e.target.checked;
   }
 
+  toggleVisibility2(e){
+    this.oglas.maxkm=e.target.checked;
+  }
   public cancel(): void {
     this.dialogRef.close();
     this.snackBar.open('Odustali ste!', 'U redu', { duration: 1000 });
@@ -43,8 +48,16 @@ export class NoviOglasComponent implements OnInit {
    // window.location.href = this.rout.url;
   }
 
- 
+  updateState(){
+    // Reset 
+    this.showKmFiled = false;
+    // Itearte over plans 
+   
+        if(this.maxkm==true ){
+          this.showKmFiled = true;
+        }
+      }
+
+  }
 
 
-
-}

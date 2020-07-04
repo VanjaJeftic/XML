@@ -61,6 +61,9 @@ public class Vozilo implements Serializable {
     @Column(name="cdw")
     private boolean cdw;//kupovine Collision Damage Waiver protekcije
 
+    @Column(name="uoglasu")
+    private boolean uoglasu;
+    
     //@JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -69,6 +72,8 @@ public class Vozilo implements Serializable {
     @JsonIgnore
     @OneToOne(mappedBy = "vozilo")
     private Oglas oglas;
+    
+  
     
     @JsonIgnore
     @OneToMany(mappedBy = "vozilo", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -192,4 +197,18 @@ public class Vozilo implements Serializable {
 		this.BrSedistaDeca=vozilo.getBrsedistadeca();
 		
 	}
+
+	
+
+	public boolean isUoglasu() {
+		return uoglasu;
+	}
+
+	public void setUoglasu(boolean uoglasu) {
+		this.uoglasu = uoglasu;
+	}
+	
+	
+	
+	
 }

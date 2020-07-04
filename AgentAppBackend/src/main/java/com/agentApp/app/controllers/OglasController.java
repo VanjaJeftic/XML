@@ -59,7 +59,7 @@ public class OglasController {
 		
         if(u.getRoles().get(0).getName().equals("ROLE_USER")) {
         
-        	System.out.println("Ko kreira "+u.getRoles().get(0).getName());
+        	System.out.println("Ko kreira "+u.getRoles().get(0).getName()+ovDTO.getMaxkm()+ovDTO.getOgranicenjekm());
         	
         	int brAuta=oglasService.brOglasaKorisnika(u);
         	if(brAuta>3) {
@@ -77,11 +77,21 @@ public class OglasController {
 	}
 
 	@GetMapping("/oglas/{oglas}")
+	//@PreAuthorize("hasAuthority('read_oglas')")
 	public ResponseEntity<?> getOglas(@ModelAttribute("oglas") Oglas dto){
 		//Oglas o = oglasService.findOneOglas(id);
 		logger.info("Pronadjen je oblas");
 		return new ResponseEntity<Oglas>(dto, HttpStatus.OK);
 	}
 
+	@GetMapping("/oglasi")
+	//@PreAuthorize("hasAuthority('read_oglas')")
+	List<Oglas> getOglasiMoji(Principal p){
+		
+		System.out.println("Moji oglasi");
+		User u = this.userService.findByUsername(p.getName());
+		List<Oglas> svi=this.oglasService.findMyOglas(u);
+		return svi;
+	}
 
 }

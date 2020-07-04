@@ -165,4 +165,12 @@ export class UserComponent implements OnInit {
     let datum: string = (d[2]>=10?d[2]:"0"+d[2]) + "-" + (d[1]>=10?d[1]:"0"+d[1]) + "-" + d[0] + ", " + (d[3]>=10?d[3]:"0"+d[3]) + ":" + (d[4]>=10?d[4]:"0"+d[4]);
     return datum;
   }
+
+  cenovnici(){
+    this.router.navigateByUrl('cenovnici');
+  }
+
+  sviMojiOglasi(){
+    this.router.navigateByUrl('oglasi');
+  }
 }
