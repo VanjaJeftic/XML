@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.agentApp.app.dto.OglasDTO;
+import com.agentApp.app.exception.NotFoundException;
 import com.agentApp.app.models.Oglas;
 import com.agentApp.app.models.User;
 import com.agentApp.app.models.Vozilo;
@@ -90,6 +91,33 @@ public class OglasService {
 		
 		return trazeni;
 		
+	}
+	
+	public void delete(Long id) {
+		oglasRepository.deleteById(id);
+		return;
+	}
+	
+	public Oglas updateOglas(OglasDTO oglasDTO) {
+		
+		Oglas o=this.oglasRepository.findById(oglasDTO.getId())
+				.orElseThrow(() -> new NotFoundException("Oglas with that id does not exist!"));
+		
+		o.setCdw(oglasDTO.getCdw());
+		o.setCena(oglasDTO.getCena());
+		o.setDodat(oglasDTO.getDodat());
+		o.setId(oglasDTO.getId());
+		o.setMaxkm(oglasDTO.getMaxkm());
+		o.setMesto(oglasDTO.getMesto());
+		o.setOddat(oglasDTO.getOddat());
+		o.setOgranicenjekm(oglasDTO.getOgranicenjekm());
+		o.setSlobodanDo(oglasDTO.getSlobodanDo());
+		o.setSlobodanOd(oglasDTO.getSlobodanOd());
+		Vozilo v=new Vozilo();
+		v=voziloRepository.findById(oglasDTO.getVozilo_id()).get();
+		o.setVozilo(v);
+		
+		return this.oglasRepository.save(o);
 	}
 
 }

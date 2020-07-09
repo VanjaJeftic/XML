@@ -1,0 +1,51 @@
+<div class="dialog" fxLayout="row" fxLayoutAlign="center center" >
+    <mat-card >
+      <mat-card-header>
+        <mat-card-title>Dodaj stavku cenovnika</mat-card-title>
+      </mat-card-header>
+  
+      <form class="form" (submit)="onSubmit()">
+  
+        <mat-card-content>
+
+            <select id="cenovnik" [(ngModel)]="stavkaCenovnika.cenovnik" [ngModelOptions]="{standalone: true}" class="form-control">
+                <option value=""></option>
+                <option *ngFor="let c of cenovnici$ | async" >
+                    {{ c.naziv }}
+                </option>
+            </select> 
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Cena po danu" maxlength="30" [(ngModel)]="stavkaCenovnika.cena_po_danu" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Cena po km" [(ngModel)]="stavkaCenovnika.cena_po_km" maxlength="25" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+        
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Cena za Collision Damage Waiver" [(ngModel)]="stavkaCenovnika.cena_za_cdw" maxlength="25" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Broj dana nakon koji popust vazi" [(ngModel)]="stavkaCenovnika.br_dana_popust" maxlength="25" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Popust" [(ngModel)]="stavkaCenovnika.popust" maxlength="25" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+          
+
+
+      </mat-card-content>
+  
+
+     
+      <br>
+        <button mat-stroked-button color="primary" class="btn-block" type="submit">Potvrdi</button><button mat-stroked-button color="primary" class="btn-block" (click)="cancel()">Odustani</button>
+        
+        
+      </form>
+    </mat-card>
+  </div>
+

@@ -23,6 +23,7 @@ import org.springframework.http.ResponseEntity;
 //import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -103,7 +104,7 @@ public class OglasController {
 		return new ResponseEntity<>(oglas, HttpStatus.OK);
 	}
 
-	@PutMapping("/update")
+	@PutMapping
 	//@PreAuthorize("hasAuthority('update_oglas')")
 	public ResponseEntity<?> update(@RequestBody OglasDTO oglasDTO) {
 		Optional<Oglas> oglasdata = oglasRepository.findById(oglasDTO.getId());
@@ -119,7 +120,7 @@ public class OglasController {
 
 	}
 
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/{id}")
 	//@PreAuthorize("hasRole('ROLE_operator')")
 	//@PreAuthorize("hasAuthority('delete_oglas')")
 	public ResponseEntity<HttpStatus> delete(@PathVariable("id") Long id) {
@@ -146,6 +147,14 @@ public class OglasController {
 //		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		
 	}
-
+	
+	@GetMapping("/oglasi/{userId}")
+	List<Oglas> getOglasiMoji(@PathVariable("userId") Long user_id){
+		
+		System.out.println("Moji oglasi");
+		List<Oglas> svi=this.oglasService.findMojiOglas(user_id);
+		return svi;
+	}
+	
 
 }

@@ -1,7 +1,5 @@
 package com.agentApp.app.services;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +11,8 @@ import com.agentApp.app.exception.NotFoundException;
 import com.agentApp.app.models.Cenovnik;
 import com.agentApp.app.models.Oglas;
 import com.agentApp.app.models.StavkaCenovnika;
-import com.agentApp.app.models.Vozilo;
 import com.agentApp.app.repository.CenovnikRepository;
 import com.agentApp.app.repository.StavkaCenovnikaRepository;
-import com.agentApp.app.repository.VoziloRepository;
 import com.agentApp.app.repository.OglasRepository;
 
 @Service
@@ -27,12 +23,6 @@ public class StavkaCenovnikaService {
 	
 	@Autowired
 	StavkaCenovnikaRepository stavkaRepository;
-	
-	@Autowired
-	private VoziloRepository voziloRepository;
-	
-	@Autowired
-	private OglasService oglasService;
 	
 	@Autowired
 	private OglasRepository oglasRepository;

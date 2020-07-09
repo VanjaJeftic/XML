@@ -1,0 +1,9 @@
+.goRight {
+    align-self: flex-end;
+    justify-content: right;
+  }
+
+  button {
+    margin-left: 5px;  
+
+  }

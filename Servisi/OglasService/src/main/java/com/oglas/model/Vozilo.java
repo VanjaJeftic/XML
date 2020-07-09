@@ -76,6 +76,9 @@ public class Vozilo {
     //@JsonIgnore
     @OneToMany(mappedBy = "vozilo", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Izvestaj> izvestaji = new HashSet<>();
+    
+    @Column(name="uoglasu")
+    private boolean uoglasu;
 
     public Long getId() {
         return id;
@@ -203,6 +206,16 @@ public class Vozilo {
         this.user_id = voziloDTO.getUser_id();
     }
 
+	public boolean isUoglasu() {
+		return uoglasu;
+	}
+
+	public void setUoglasu(boolean uoglasu) {
+		this.uoglasu = uoglasu;
+	}
+
+    
+    
 
 
 }

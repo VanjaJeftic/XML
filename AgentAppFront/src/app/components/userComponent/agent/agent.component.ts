@@ -50,4 +50,8 @@ export class AgentComponent implements OnInit {
     this.router.navigateByUrl('cenovnici');
   }
 
+  sviMojiOglasi(){
+    this.router.navigateByUrl('oglasi');
+  }
+
 }

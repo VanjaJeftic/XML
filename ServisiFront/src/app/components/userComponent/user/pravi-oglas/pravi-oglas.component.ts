@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
 })
 export class PraviOglasComponent implements OnInit {
 
+  showKmFiled: boolean = false;
+  
+  maxkm=false;
+
   marked=false;
   cdw=false;
   public oglas:Oglas=new Oglas();
@@ -23,6 +27,11 @@ export class PraviOglasComponent implements OnInit {
 
   toggleVisibility(e){
     this.oglas.cdw=e.target.checked;
+  }
+
+  
+  toggleVisibility2(e){
+    this.oglas.maxkm=e.target.checked;
   }
 
   public onSubmit(): void{
@@ -40,6 +49,17 @@ export class PraviOglasComponent implements OnInit {
     this.dialogRef.close();
     this.snackBar.open('Odustali ste!', 'U redu', { duration: 1000 });
   }
+
+  
+  updateState(){
+    // Reset 
+    this.showKmFiled = false;
+    // Itearte over plans 
+   
+        if(this.maxkm==true ){
+          this.showKmFiled = true;
+        }
+      }
 
 
 

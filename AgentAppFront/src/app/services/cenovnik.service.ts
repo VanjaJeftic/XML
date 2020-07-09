@@ -44,5 +44,31 @@ export class CenovnikService {
     );
   }
 
+  public deleteCenovnik(cenovnik) {
+    console.log("brisanje cenovnika servis");
+    window.location.reload();
+    return this.http.delete('http://localhost:8088/cenovnik' + "/"+ cenovnik.id);
+  }
+
+  public izmenaOglasa(cenovnik:Cenovnik){
+    return this.http.put('http://localhost:8088/cenovnik',cenovnik,{responseType: 'text'}).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
+    
+  }
+
+  public deleteStavka(stavka) {
+    console.log("brisanje stavke servis");
+    window.location.reload();
+    return this.http.delete('http://localhost:8088/stavka' + "/"+ stavka.id);
+  }
+
+  public izmenaStavke(stavka:StavkaCenovnika){
+    return this.http.put('http://localhost:8088/stavka',stavka,{responseType: 'text'}).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
+    
+  }
+
 
 }

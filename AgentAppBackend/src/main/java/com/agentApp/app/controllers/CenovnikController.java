@@ -65,11 +65,13 @@ public class CenovnikController {
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<HttpStatus> deleteCenovnik(@PathVariable("id") Long id){
-		
+	
 		try {
+			System.out.println("Brisem");
 			cenovnikService.deleteCenovnik(id);
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>(HttpStatus.OK);
 		}catch(Exception e) {
+			System.out.println("Ne brisem");
 			return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
 		}
 	}

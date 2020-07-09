@@ -28,7 +28,7 @@ public class Cenovnik {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-    @ManyToOne
+    @ManyToOne(cascade =  {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
     
@@ -42,7 +42,7 @@ public class Cenovnik {
     private String dat;
     
     @JsonIgnore
-	@OneToMany(mappedBy = "cenovnik", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "cenovnik", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Set<StavkaCenovnika> stavka = new HashSet<StavkaCenovnika>();
 
 	public Long getId() {

@@ -10,6 +10,7 @@
   <div class="card my-5">
     <div class="card-body">
       <div class="labelNaslov">
+        <br>  <div class="goRight"><button  mat-button  mat-raised-button color="primary"  layout-align="center center" (click)="novo()">Novo vozilo</button></div><br>
       <label>Lista vozila</label>
     </div>
       <table class="table table-striped table-responsive-md btn-table">
@@ -19,6 +20,8 @@
             <th scope="col">Marka vozila</th>
             <th scope="col">Model vozila</th>
             <th scope="col">Klasa vozila</th>
+            <th scope="col">Izmeni</th>
+            <th scope="col">Brisi</th>
             <th scope="col">Oglas</th>
           </tr>
         </thead>
@@ -28,6 +31,8 @@
             <td>{{ vozilo.markaVozila.naziv }}</td>
             <td>{{ vozilo.modelVozila.naziv }}</td>
             <td>{{ vozilo.klasaVozila.naziv }}</td>
+            <td><button class="btn btn-info" (click)="izmeniVozilo(vozilo)">Izmeni</button></td>
+            <td><button class="btn btn-danger" (click)="deleteVozilo(vozilo)">Brisanje</button></td>
             <td><a mat-button *ngIf="!vozilo.uoglasu" (click)="openDialogOglas(vozilo.id)">
                   postavi oglas
               </a></td>

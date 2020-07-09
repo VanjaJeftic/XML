@@ -49,6 +49,18 @@
             <td mat-cell *matCellDef="let element"> <button mat-button (click)="onOglas(element)">NoviOglas</button> </td>
         </ng-container>
 
+          <!-- Izmeni -->
+          <ng-container matColumnDef="Izmena">
+            <th mat-header-cell *matHeaderCellDef> Izmeni </th>
+            <td mat-cell *matCellDef="let element"> <button mat-button (click)="izmenaVozila(element)">Izmeni</button> </td>
+        </ng-container>
+
+          <!-- Obrisi -->
+          <ng-container matColumnDef="Brisanje">
+            <th mat-header-cell *matHeaderCellDef> Obrisi </th>
+            <td mat-cell *matCellDef="let element"> <button mat-button (click)="deleteVozilo(element)">Obrisi</button> </td>
+        </ng-container>
+
         <!-- Zauzmi Termin -->
         <ng-container matColumnDef="Detaljnije">
           <th mat-header-cell *matHeaderCellDef> Detaljnije </th>

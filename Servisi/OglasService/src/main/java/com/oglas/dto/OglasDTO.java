@@ -27,6 +27,16 @@ public class OglasDTO {
     private LocalDateTime slobodando;
     
     private Boolean cdw;
+    
+  private Boolean maxkm;
+    
+    private String ogranicenjekm;
+    
+    private String oddat;
+    
+    private String dodat;
+    
+    private boolean ustavci;
 
     public Boolean getCdw() {
 		return cdw;
@@ -136,5 +146,46 @@ public class OglasDTO {
         this.cdw=cdw;
     }
 
+	public Boolean getMaxkm() {
+		return maxkm;
+	}
+
+	public void setMaxkm(Boolean maxkm) {
+		this.maxkm = maxkm;
+	}
+
+	public String getOgranicenjekm() {
+		return ogranicenjekm;
+	}
+
+	public void setOgranicenjekm(String ogranicenjekm) {
+		this.ogranicenjekm = ogranicenjekm;
+	}
+
+	public String getOddat() {
+		return oddat;
+	}
+
+	public void setOddat(String oddat) {
+		this.oddat = oddat;
+	}
+
+	public String getDodat() {
+		return dodat;
+	}
+
+	public void setDodat(String dodat) {
+		this.dodat = dodat;
+	}
+
+	public boolean isUstavci() {
+		return ustavci;
+	}
+
+	public void setUstavci(boolean ustavci) {
+		this.ustavci = ustavci;
+	}
+
+    
 
 }

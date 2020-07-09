@@ -10,15 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.RestController;
-import com.agentApp.app.dto.OglasDTO;
+
 import com.agentApp.app.models.Oglas;
 import com.agentApp.app.models.User;
 import com.agentApp.app.services.OglasService;
@@ -51,7 +44,7 @@ public class OglasController {
 		return new ResponseEntity<Oglas>(o, HttpStatus.OK);
 	}
 
-	@PostMapping("/novi")
+	@PostMapping
 	@PreAuthorize("hasAuthority('create_oglas')")
 	public ResponseEntity<?> create(@RequestBody OglasDTO ovDTO,Principal p) {
 		 
@@ -93,5 +86,30 @@ public class OglasController {
 		List<Oglas> svi=this.oglasService.findMyOglas(u);
 		return svi;
 	}
+	
+	@PutMapping
+	public ResponseEntity<?> updateOglas(@RequestBody OglasDTO oglasDTO){
+		
+		Oglas oglas=oglasService.findOneOglas(oglasDTO.getId());
+		
+		if(oglas.getId()!=null) {
+			this.oglasService.updateOglas(oglasDTO);
+			return new ResponseEntity<>("Succesful update of oglas!",HttpStatus.OK);
+			
+		}else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}
 
+	@DeleteMapping("/{id}")
+	public ResponseEntity<HttpStatus> deleteOglas(@PathVariable("id") Long id){
+		
+		try {
+			oglasService.delete(id);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}catch(Exception e) {
+			return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
+		}
+	}
+	
 }

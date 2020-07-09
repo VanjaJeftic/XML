@@ -109,5 +109,24 @@ public class VoziloService {
 		return agenta;
 	}
 
+	
+	public Vozilo updateVozilo(VoziloDTO voziloDTO) {
+		Vozilo v=this.voziloRepository.findById(voziloDTO.getId())
+				.orElseThrow(() -> new NotFoundException("vozilo with that id does not exist!"));
 
+		v.setBrsedistadeca(voziloDTO.getBrsedistadeca());
+		v.setId(voziloDTO.getId());
+		v.setKlasaVozila(voziloDTO.getKlasaVozila());
+      	v.setMarkaVozila(voziloDTO.getMarkaVozila());
+      	v.setModelVozila(voziloDTO.getModelVozila());
+      	v.setTipGoriva(voziloDTO.getTipGoriva());
+      	v.setVrstaMenjaca(voziloDTO.getVrstaMenjaca());
+		v.setPredjeniKm(voziloDTO.getPredjeniKm());
+		v.setUser_id(voziloDTO.getUser_id());
+		
+		return this.voziloRepository.save(v);
+	}
+	
 }
+
+

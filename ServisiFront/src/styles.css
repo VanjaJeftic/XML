@@ -2,7 +2,7 @@
 @import "~css-star-rating/css/star-rating"; 
 .container {display:flex;flex-basis: column;min-width: 400px;}
 html,body{height:100%;margin:0;padding:0;}
-body{background-position:center;background-size:cover;background-repeat:no-repeat;min-height:100vh;font-family:'Roboto', sans-serif;}
+body{background-image:url("./app/images/photo2.jpg");background-position:center;background-size:cover;background-repeat:no-repeat;min-height:100vh;font-family:'Roboto', sans-serif;}
 .app-header{justify-content:space-between;position:fixed;top:0;left:0;right:0;z-index:2;box-shadow:0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);}
 .app-footer{text-align:center;justify-content:space-between;height:50px;position:auto;bottom:0;left:0;right:0;z-index:2;box-shadow:0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);}
 .login-wrapper{height:100%;opacity: 0.9;margin-top:70px;margin-bottom: 30px;}

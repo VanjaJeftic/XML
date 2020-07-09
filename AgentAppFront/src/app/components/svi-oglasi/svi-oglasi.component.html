@@ -6,6 +6,8 @@
         <a mat-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
      </span>
   </mat-toolbar> 
+
+  
   <br><br>
   <div class="card my-5">
     <div class="card-body">
@@ -18,9 +20,12 @@
             <th scope="col">#</th>
             <th scope="col">Grad</th>
             <th scope="col">Cena</th>
-            <th scope="col">od</th>
-            <th scope="col">do</th>
-            <th scope="col">cenovnik</th>
+            <th scope="col">OD</th>
+            <th scope="col">DO</th>
+            <th scope="col">Izmeni</th>
+            <th scope="col">Obriši</th>
+            <th scope="col">Pogledaj</th>
+            <th scope="col">Dodaj</th>
           </tr>
         </thead>
         <tbody>
@@ -30,6 +35,9 @@
             <td>{{  (oglas)?.cena }}</td>
             <td>{{  (oglas)?.oddat | date}}</td>
             <td>{{  (oglas)?.dodat | date }}</td>
+            <td><button class="btn btn-info" (click)="blok(oglas)">Izmeni</button></td>
+            <td><button class="btn btn-danger" (click)="deleteOglas(oglas)">Brisanje</button></td>
+            <td><button *ngIf="oglas.ustavci"  class="btn btn-info" (click)="blok(user)">Cene</button></td>
             <td><a mat-button *ngIf="!oglas.ustavci" (click)="openDialogOglas( (oglas)?.id)">
                   dodaj stavku
               </a></td>

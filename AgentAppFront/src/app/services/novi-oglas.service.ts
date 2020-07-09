@@ -13,7 +13,7 @@ export class NoviOglasService {
 
   public saveOglas(oglas:Oglas){
     console.log("Saljel "+oglas.mesto+oglas.cena+oglas.slobodanOd)
-    return this.http.post('http://localhost:8088/oglas/novi',oglas).subscribe(
+    return this.http.post('http://localhost:8088/oglas',oglas).subscribe(
       data => {
         this.snackBar.open('Oglas je uspesno kreiran', 'U redu', { duration: 10000 });
         window.location.href = this.rout.url;
@@ -28,4 +28,18 @@ export class NoviOglasService {
     console.log("Pribavljamo oglase");
     return this.http.get('http://localhost:8088/oglas/oglasi');
   }
+
+  public deleteOglas(oglas) {
+    console.log("brisanje oglasa servis");
+    window.location.reload();
+    return this.http.delete('http://localhost:8088/oglas' + "/"+ oglas.id);
+  }
+
+  public izmenaOglasa(oglas:Oglas){
+    return this.http.put('http://localhost:8088/oglas',oglas,{responseType: 'text'}).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
+    
+  }
+
 }

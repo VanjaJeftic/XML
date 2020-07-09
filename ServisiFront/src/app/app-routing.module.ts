@@ -40,6 +40,11 @@ import { StatistikaComponent } from './components/userComponent/agent/statistika
 import { KorisniciComponent } from './components/userComponent/administrator/korisnici/korisnici.component';
 import { PorukeRazmenjeneComponent } from './components/userComponent/poruke-razmenjene/poruke-razmenjene.component';
 import { PrikazPorukaComponent } from './components/userComponent/poruke-razmenjene/prikaz-poruka/prikaz-poruka.component';
+import { CenovniciComponent } from './components/userComponent/cenovnici/cenovnici.component';
+import { IzmeniCenovnikComponent } from './components/userComponent/cenovnici/izmeni-cenovnik/izmeni-cenovnik.component';
+import { IzmenaVozilaComponent } from './components/userComponent/user/izmena-vozila/izmena-vozila.component';
+import { SviOglasiComponent } from './components/userComponent/svi-oglasi/svi-oglasi.component';
+import { IzmeniStavkuComponent } from './components/userComponent/cenovnici/izmeni-stavku/izmeni-stavku.component';
 
 
 
@@ -89,6 +94,12 @@ const routes: Routes = [
   { path: 'korisnici',component:KorisniciComponent},
   { path: 'zahteviMess', component:PorukeRazmenjeneComponent},
   { path: 'prikazPoruke',component:PrikazPorukaComponent},
+  { path: 'cenovnici',component:CenovniciComponent},
+  { path: 'izmenaCenovnika',component:IzmeniCenovnikComponent},
+  { path: 'izmenaVozila',component:IzmenaVozilaComponent},
+  { path: 'svioglasi', component:SviOglasiComponent},
+  { path: 'izmenaStavke',component:IzmeniStavkuComponent},
+
 ];
 
 @NgModule({

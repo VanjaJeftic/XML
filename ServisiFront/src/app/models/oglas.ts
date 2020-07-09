@@ -10,4 +10,10 @@ export class Oglas {
     cdw:boolean;
     user_id:string;
 
+    maxkm:boolean;
+    ogranicenjekm:string;
+    oddat:string;
+    dodat:string;
+    ustavci:boolean;
+
 }

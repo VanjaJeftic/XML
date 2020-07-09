@@ -41,7 +41,21 @@ public class Oglas implements Serializable {
     @Column(name="cdw")
     private Boolean cdw;
     
+
+    @Column(name="maxkm")
+    private Boolean maxkm;
     
+    @Column(name="ogranicenje_km")
+    private String ogranicenjekm;
+    
+    @Column(name="oddat")
+    private String oddat;
+    
+    @Column(name="dodat")
+    private String dodat;
+    
+    @Column(name="ustavci")
+    private Boolean ustavci;
 
     public Boolean getCdw() {
 		return cdw;
@@ -134,11 +148,53 @@ public class Oglas implements Serializable {
         this.slobodando=dto.getSlobodando();
         this.slobodanOd=dto.getSlobodanod();
         this.cdw=dto.getCdw();
+        this.maxkm=dto.getMaxkm();
+		this.ogranicenjekm=dto.getOgranicenjekm();
+		this.dodat=dto.getSlobodando().toString();
+		this.oddat=dto.getSlobodanod().toString();
     }
+    
+    public Boolean getMaxkm() {
+		return maxkm;
+	}
 
+	public void setMaxkm(Boolean maxkm) {
+		this.maxkm = maxkm;
+	}
 
+	public String getOgranicenjekm() {
+		return ogranicenjekm;
+	}
 
-    public Oglas() {
+	public void setOgranicenjekm(String ogranicenjekm) {
+		this.ogranicenjekm = ogranicenjekm;
+	}
+
+	public String getOddat() {
+		return oddat;
+	}
+
+	public void setOddat(String oddat) {
+		this.oddat = oddat;
+	}
+
+	public String getDodat() {
+		return dodat;
+	}
+
+	public void setDodat(String dodat) {
+		this.dodat = dodat;
+	}
+
+	public Boolean getUstavci() {
+		return ustavci;
+	}
+
+	public void setUstavci(Boolean ustavci) {
+		this.ustavci = ustavci;
+	}
+
+	public Oglas() {
     }
 
  }
