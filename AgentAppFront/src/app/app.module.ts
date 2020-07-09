@@ -66,6 +66,12 @@ import { CenovniciComponent } from './components/userComponent/cenovnici/cenovni
 import { CenovnikComponent } from './components/userComponent/cenovnici/cenovnik/cenovnik.component';
 import { StavkaCenovnikaComponent } from './components/userComponent/cenovnici/stavka-cenovnika/stavka-cenovnika.component';
 import { SviOglasiComponent } from './components/svi-oglasi/svi-oglasi.component';
+import { IzmeniCenovnikComponent } from './components/userComponent/cenovnici/izmeni-cenovnik/izmeni-cenovnik.component';
+import { IzmenaVozilaComponent } from './components/sva-vozila/izmena-vozila/izmena-vozila.component';
+import { IzmeniOglasComponent } from './components/svi-oglasi/izmeni-oglas/izmeni-oglas.component';
+import { IzmeniStavkuComponent } from './components/userComponent/cenovnici/izmeni-stavku/izmeni-stavku.component';
+import { StavkeComponent } from './components/userComponent/cenovnici/stavke/stavke.component';
+
 
 
 
@@ -122,7 +128,13 @@ import { SviOglasiComponent } from './components/svi-oglasi/svi-oglasi.component
     CenovniciComponent,
     CenovnikComponent,
     StavkaCenovnikaComponent,
-    SviOglasiComponent
+    SviOglasiComponent,
+    IzmeniCenovnikComponent,
+    IzmenaVozilaComponent,
+    IzmeniOglasComponent,
+    IzmeniStavkuComponent,
+    StavkeComponent,
+
   ],
   imports: [
     BrowserModule,

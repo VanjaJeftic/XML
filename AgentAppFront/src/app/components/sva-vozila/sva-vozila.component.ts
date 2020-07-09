@@ -80,4 +80,9 @@ export class SvaVozilaComponent implements OnInit {
     });
      
   };
+
+  izmenaVozila(vozilo) {
+    localStorage.setItem("vozilo", JSON.stringify(vozilo)); 
+    this.router.navigate(["/izmenaVozila"]);
+ }
 }

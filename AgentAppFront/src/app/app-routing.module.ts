@@ -40,6 +40,11 @@ import { KorisniciComponent } from './components/userComponent/administrator/kor
 import { CenovnikComponent } from './components/userComponent/cenovnici/cenovnik/cenovnik.component';
 import { CenovniciComponent } from './components/userComponent/cenovnici/cenovnici.component';
 import { SviOglasiComponent } from './components/svi-oglasi/svi-oglasi.component';
+import { IzmeniCenovnikComponent } from './components/userComponent/cenovnici/izmeni-cenovnik/izmeni-cenovnik.component';
+import { IzmenaVozilaComponent } from './components/sva-vozila/izmena-vozila/izmena-vozila.component';
+import { IzmeniOglasComponent } from './components/svi-oglasi/izmeni-oglas/izmeni-oglas.component';
+import { IzmeniStavkuComponent } from './components/userComponent/cenovnici/izmeni-stavku/izmeni-stavku.component';
+import { StavkeComponent } from './components/userComponent/cenovnici/stavke/stavke.component';
 
 
 const routes: Routes = [
@@ -84,6 +89,13 @@ const routes: Routes = [
   { path: 'korisnici',component:KorisniciComponent},
   { path: 'cenovnici',component:CenovniciComponent},
   { path: 'oglasi',component:SviOglasiComponent},
+  { path: 'izmenaCenovnika',component:IzmeniCenovnikComponent},
+  { path: 'izmenaVozila',component:IzmenaVozilaComponent},
+  { path: 'izmenaOglasa',component:IzmeniOglasComponent},
+  { path: 'izmenaStavke',component:IzmeniStavkuComponent},
+  { path: 'stavke',component:StavkeComponent},
+
+
 
 
 ];

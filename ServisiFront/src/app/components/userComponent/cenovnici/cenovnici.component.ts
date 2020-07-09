@@ -40,6 +40,12 @@ export class CenovniciComponent implements OnInit {
     this.router.navigateByUrl('cenovnici');
   }
 
+  stavkeC(cenovnik){
+    localStorage.setItem("cenovnikId",cenovnik);
+    this.router.navigateByUrl('stavke');
+  }
+
+
   deleteCenovnik(cenovnik: Cenovnik, filter:any): void {
    
     console.log("brisanje modela");
@@ -66,5 +72,7 @@ export class CenovniciComponent implements OnInit {
     localStorage.setItem("cenovnik", JSON.stringify(cenovnik)); 
     this.router.navigate(["/izmenaCenovnika"]);
  }
+
+ 
 
 }

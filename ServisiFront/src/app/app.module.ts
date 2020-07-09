@@ -77,6 +77,9 @@ import { IzmeniStavkuComponent } from './components/userComponent/cenovnici/izme
 import { IzmeniCenovnikComponent } from './components/userComponent/cenovnici/izmeni-cenovnik/izmeni-cenovnik.component';
 import { SviOglasiComponent } from './components/userComponent/svi-oglasi/svi-oglasi.component';
 import { IzmenaVozilaComponent } from './components/userComponent/user/izmena-vozila/izmena-vozila.component';
+import { StavkaInfoComponent } from './components/userComponent/cenovnici/stavka-info/stavka-info.component';
+import { IzmeniOglasComponent } from './components/userComponent/svi-oglasi/izmeni-oglas/izmeni-oglas.component';
+import { StavkeComponent } from './components/userComponent/cenovnici/stavke/stavke.component';
 
 @NgModule({
   declarations: [
@@ -140,6 +143,9 @@ import { IzmenaVozilaComponent } from './components/userComponent/user/izmena-vo
     IzmeniCenovnikComponent,
     SviOglasiComponent,
     IzmenaVozilaComponent,
+    StavkaInfoComponent,
+    IzmeniOglasComponent,
+    StavkeComponent,
     
   ],
   imports: [

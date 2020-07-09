@@ -35,7 +35,7 @@
             <td>{{  (oglas)?.cena }}</td>
             <td>{{  (oglas)?.oddat | date}}</td>
             <td>{{  (oglas)?.dodat | date }}</td>
-            <td><button class="btn btn-info" (click)="izmeniOglas(oglas)">Izmeni</button></td>
+            <td><button class="btn btn-info" (click)="izmenaOglasa(oglas)">Izmeni</button></td>
             <td><button class="btn btn-danger" (click)="deleteOglas(oglas)">Brisanje</button></td>
             <td><button *ngIf="oglas.ustavci"  class="btn btn-info" (click)="izmenaStavke(oglas.id)">Cene</button></td>
             <td><a mat-button *ngIf="!oglas.ustavci" (click)="openDialogOglas( (oglas)?.id)">

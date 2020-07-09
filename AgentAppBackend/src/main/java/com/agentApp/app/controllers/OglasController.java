@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 import com.agentApp.app.models.Oglas;
@@ -90,6 +91,8 @@ public class OglasController {
 	@PutMapping
 	public ResponseEntity<?> updateOglas(@RequestBody OglasDTO oglasDTO){
 		
+		System.out.println("Hajde da updatujemo");
+				
 		Oglas oglas=oglasService.findOneOglas(oglasDTO.getId());
 		
 		if(oglas.getId()!=null) {
