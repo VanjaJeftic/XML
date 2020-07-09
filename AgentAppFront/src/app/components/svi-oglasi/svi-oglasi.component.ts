@@ -14,6 +14,7 @@ import { StavkaCenovnikaComponent } from '../userComponent/cenovnici/stavka-ceno
 })
 export class SviOglasiComponent implements OnInit {
   
+  oglasi: Oglas[];
   oglaslist$: Observable<any>;
   constructor(private oglasServis:NoviOglasService,public dialog: MatDialog,private authService: AuthenticationService, private router: Router) {
 
@@ -55,4 +56,27 @@ export class SviOglasiComponent implements OnInit {
   onMojaVozila(){
     this.router.navigateByUrl('svavozila');
   }
+
+  deleteOglas(oglas: Oglas, filter:any): void {
+   
+    console.log("brisanje modela");
+    this.oglasServis.deleteOglas(oglas)
+      .subscribe( data => {
+        window.alert("Uspesno ste izbrisali oglas!");
+        if(!filter) return this.oglasi;
+        
+        this.oglasi = this.oglasi.filter(u => u !== oglas);
+      },err =>{
+        
+        console.log(err);
+       window.alert("Greska!");
+ 
+     },
+     () => {
+       //window.alert("Uspesno ste obrisali klasu vozila!");
+      console.log(`We're done here!`);
+    });
+     
+  };
+
 }

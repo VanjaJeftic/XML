@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.agentApp.app.dto.VoziloDTO;
+import com.agentApp.app.exception.NotFoundException;
 import com.agentApp.app.models.Oglas;
 import com.agentApp.app.models.User;
 import com.agentApp.app.models.Vozilo;
@@ -130,6 +131,28 @@ public class VoziloService {
     	}
     	
     	return brojVozila;
+	}
+	
+	public void delete(Long id) {
+		voziloRepository.deleteById(id);
+		return;
+	}
+	
+	public Vozilo updateVozilo(VoziloDTO voziloDTO) {
+		Vozilo v=this.voziloRepository.findById(voziloDTO.getId())
+				.orElseThrow(() -> new NotFoundException("vozilo with that id does not exist!"));
+
+		v.setBrSedistaDeca(voziloDTO.getBrsedistadeca());
+		v.setId(voziloDTO.getId());
+		v.setKlasaVozila(klasaRepo.findByNaziv(voziloDTO.getKlasaVozila()));
+      	v.setMarkaVozila(markaRepo.findByNaziv(voziloDTO.getMarkaVozila()).get(0));
+      	v.setModelVozila(modelRepo.findByNaziv(voziloDTO.getModelVozila()));
+      	v.setTipgoriva(gorivoRepo.findByNaziv(voziloDTO.getTipGoriva()));
+      	v.setVrstamenjaca(menjacRepo.findByNaziv(voziloDTO.getVrstaMenjaca()));
+		v.setPredjeniKm(voziloDTO.getPredjeniKm());
+		v.setUser(userService.findByUsername(voziloDTO.getUser().getUsername()));
+		
+		return this.voziloRepository.save(v);
 	}
 	
 }

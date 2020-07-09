@@ -5,6 +5,7 @@ import com.oglas.dto.OglasDTO;
 import com.oglas.dto.UserViewDTO;
 import com.oglas.exceptions.NotFoundException;
 import com.oglas.model.Oglas;
+import com.oglas.model.Vozilo;
 import com.oglas.repository.OglasRepository;
 import com.oglas.repository.VoziloRepository;
 
@@ -37,7 +38,10 @@ public class OglasService {
     public Oglas createOrder(OglasDTO oglasdto) {
 
        // this.userConnection.verify(oglasdto.getUser_id());
-
+    	Vozilo v=new Vozilo();
+    	v=voziloRepository.findById(oglasdto.getVozilo_id()).get();
+		v.setUoglasu(true);
+		this.voziloRepository.save(v);
         Oglas oglas = this.oglasRepository.save(new Oglas(oglasdto));
 
         return oglas;
@@ -57,7 +61,10 @@ public class OglasService {
         oglas.setSlobodanOd(oglasdto.getSlobodanod());
         oglas.setSlobodando(oglasdto.getSlobodando());
         oglas.setCdw(oglasdto.getCdw());
-
+        oglas.setDodat(oglasdto.getDodat());
+        oglas.setMaxkm(oglasdto.getMaxkm());
+        oglas.setOddat(oglasdto.getOddat());
+        oglas.setOgranicenjekm(oglasdto.getOgranicenjekm());
         return this.oglasRepository.save(oglas);
     }
 
@@ -114,6 +121,19 @@ public class OglasService {
     	}
     	
     	return brOglasa;
+	}
+
+	public List<Oglas> findMojiOglas(Long user_id) {
+		// TODO Auto-generated method stub
+		List<Oglas> oglasi=(List<Oglas>) this.oglasRepository.findAll();
+		List<Oglas> trazeni=new ArrayList<Oglas>();
+		for(Oglas o:oglasi) {
+			if(o.getUser_id().equals(user_id)) {
+				trazeni.add(o);
+			}
+		}
+		
+		return trazeni;
 	}
 
 }

@@ -23,4 +23,23 @@ export class PraviOglasService {
       }
     );
   }
+
+  
+  public getOglasi() {
+    console.log("Pribavljamo oglase");
+    return this.http.get('https://localhost:8662/oglas/oglasi'+"/"+localStorage.getItem("userId"));
+  }
+
+  public deleteOglas(oglas) {
+    console.log("brisanje oglasa servis");
+    window.location.reload();
+    return this.http.delete('http://localhost:8662/oglas/oglas' + "/"+ oglas.id);
+  }
+
+  public izmenaOglasa(oglas:Oglas){
+    return this.http.put('http://localhost:8662/oglas/oglas',oglas,{responseType: 'text'}).subscribe(
+      data=>{console.log('Vratio je '+data)}
+    );
+    
+  }
 }

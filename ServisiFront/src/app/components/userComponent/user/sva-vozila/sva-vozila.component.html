@@ -21,6 +21,8 @@
             <th scope="col">Marka vozila</th>
             <th scope="col">Model vozila</th>
             <th scope="col">Klasa vozila</th>
+            <th scope="col">Izmeni vozilo</th>
+            <th scope="col">Izbrisi vozilo</th>
             <th scope="col">Oglas</th>
           </tr>
         </thead>
@@ -30,7 +32,9 @@
             <td>{{ vozilo.markaVozila }}</td>
             <td>{{ vozilo.modelVozila }}</td>
             <td>{{ vozilo.klasaVozila }}</td>
-            <td><a mat-button (click)="openDialogOglas(vozilo.id)">
+            <td><button class="btn btn-info" (click)="izmenaVozila(vozilo)">Izmeni</button></td>
+            <td><button class="btn btn-danger" (click)="deleteVozilo(vozilo)">Brisanje</button></td>
+            <td><a mat-button *ngIf="!vozilo.uoglasu" (click)="openDialogOglas(vozilo.id)">
                   postavi oglas
               </a></td>
           </tr>

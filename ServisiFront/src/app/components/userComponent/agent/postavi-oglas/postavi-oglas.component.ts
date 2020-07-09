@@ -6,6 +6,8 @@ import { AuthenticationService } from './../../../../services/authentication.ser
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource, MatDialog } from '@angular/material';
 import { PraviOglasComponent } from '../../user/pravi-oglas/pravi-oglas.component';
+import { SvaVozilaService } from 'src/app/services/sva-vozila.service';
+import { Vozilo } from 'src/app/models/vozilo';
 
 @Component({
   selector: 'app-postavi-oglas',
@@ -14,10 +16,11 @@ import { PraviOglasComponent } from '../../user/pravi-oglas/pravi-oglas.componen
 })
 export class PostaviOglasComponent implements OnInit {
 
-  displayedColumns: string[] = ['Klasa', 'Model', 'Marka', 'KM' ,'Zauzece', 'Detaljnije']
+  displayedColumns: string[] = ['Klasa', 'Model', 'Marka', 'KM' ,'Zauzece', 'Izmena','Brisanje','Detaljnije']
   voziloSource;
+  vozila:Vozilo[];
 
-  constructor(private authService: AuthenticationService, private voziloService: VoziloService,
+  constructor(private vozilaServis:SvaVozilaService,private authService: AuthenticationService, private voziloService: VoziloService,
               private dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
@@ -59,5 +62,32 @@ export class PostaviOglasComponent implements OnInit {
   onOdjaviMe(){
     this.authService.logout();
   }
+
+  izmenaVozila(element) {
+    localStorage.setItem("vozilo", JSON.stringify(element)); 
+    this.router.navigate(["/izmenaVozila"]);
+ }
+
+ deleteVozilo(element: Vozilo, filter:any): void {
+   
+  console.log("brisanje modela");
+  this.vozilaServis.deleteVozilo(element)
+    .subscribe( data => {
+      window.alert("Uspesno ste izbrisali vozilo!");
+      if(!filter) return this.vozila;
+      
+      this.vozila = this.vozila.filter(u => u !== element);
+    },err =>{
+      
+      console.log(err);
+     window.alert("Greska!");
+
+   },
+   () => {
+     //window.alert("Uspesno ste obrisali klasu vozila!");
+    console.log(`We're done here!`);
+  });
+   
+};
 
 }

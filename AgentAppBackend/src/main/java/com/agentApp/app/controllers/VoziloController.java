@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
@@ -16,9 +17,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.ResponseEntity.BodyBuilder;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -155,4 +159,29 @@ public class VoziloController {
 //	    	return new ResponseEntity<List<Vozilo>>(voziloService.getVozilaForAgent(user.getId()), HttpStatus.OK);
 //	    	
 //	    }
+	    
+	    @DeleteMapping("/{id}")
+		public ResponseEntity<HttpStatus> deleteVozilo(@PathVariable("id") Long id){
+			
+			try {
+				voziloService.delete(id);
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}catch(Exception e) {
+				return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
+			}
+		}
+	    
+	    @PutMapping
+		public ResponseEntity<?> updateVozilo(@RequestBody VoziloDTO voziloDTO){
+			
+			Optional<Vozilo> vozilo=voziloRepository.findById(voziloDTO.getId());
+			
+			if(vozilo.isPresent()) {
+				this.voziloService.updateVozilo(voziloDTO);
+				
+				return new ResponseEntity<>("Succesful updated cenovnik",HttpStatus.OK);
+			}else {
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
+		}
 }

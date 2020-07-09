@@ -20,7 +20,8 @@ public class VoziloDTO {
     private String vrstaMenjaca;
 
     private String predjeniKm;
-
+    
+    private boolean uoglasu;
 
     private String brsedistadeca;
 
@@ -128,4 +129,13 @@ public class VoziloDTO {
         this.user_id = user_id;
     }
 
+	public boolean isUoglasu() {
+		return uoglasu;
+	}
+
+	public void setUoglasu(boolean uoglasu) {
+		this.uoglasu = uoglasu;
+	}
+
+    
 }

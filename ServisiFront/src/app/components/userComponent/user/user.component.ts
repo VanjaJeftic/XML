@@ -205,4 +205,9 @@ export class UserComponent implements OnInit {
   zahteviMess(){
     this.router.navigateByUrl('zahteviMess');
   }
+
+  cenovnici(){
+    this.router.navigateByUrl('cenovnici');
+  }
+
 }

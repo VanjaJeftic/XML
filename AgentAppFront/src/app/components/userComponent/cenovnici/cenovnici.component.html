@@ -19,6 +19,8 @@
             <th scope="col">#</th>
             <th scope="col">Naziv</th>
             <th scope="col">Vazi od</th>
+            <th scope="col">Izmeni</th>
+            <th scope="col">Obrisi</th>
             <th scope="col">Stavke</th>
           </tr>
         </thead>
@@ -27,8 +29,10 @@
             <td>{{ cenovnik.id }}</td>
             <td>{{ cenovnik.naziv }}</td>
             <td>{{ cenovnik.dat | date}}</td>
+            <td><button class="btn btn-info" (click)="izmeni(cenovnik)">Izmeni</button></td>
+            <td><button class="btn btn-danger" (click)="deleteCenovnik(cenovnik)">Brisanje</button></td>
             <td><a mat-button (click)="openDialogOglas(vozilo.id)">
-                  postavi oglas
+                  detaljnije
               </a></td>
           </tr>
         </tbody>

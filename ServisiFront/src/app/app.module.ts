@@ -70,6 +70,13 @@ import { KorisniciComponent } from './components/userComponent/administrator/kor
 import { PorukeRazmenjeneComponent } from './components/userComponent/poruke-razmenjene/poruke-razmenjene.component';
 import { PrikazPorukaComponent } from './components/userComponent/poruke-razmenjene/prikaz-poruka/prikaz-poruka.component';
 import { PorukaComponent } from './components/userComponent/poruke-razmenjene/poruka/poruka.component';
+import { CenovniciComponent } from './components/userComponent/cenovnici/cenovnici.component';
+import { CenovnikComponent } from './components/userComponent/cenovnici/cenovnik/cenovnik.component';
+import { StavkaCenovnikaComponent } from './components/userComponent/cenovnici/stavka-cenovnika/stavka-cenovnika.component';
+import { IzmeniStavkuComponent } from './components/userComponent/cenovnici/izmeni-stavku/izmeni-stavku.component';
+import { IzmeniCenovnikComponent } from './components/userComponent/cenovnici/izmeni-cenovnik/izmeni-cenovnik.component';
+import { SviOglasiComponent } from './components/userComponent/svi-oglasi/svi-oglasi.component';
+import { IzmenaVozilaComponent } from './components/userComponent/user/izmena-vozila/izmena-vozila.component';
 
 @NgModule({
   declarations: [
@@ -121,11 +128,18 @@ import { PorukaComponent } from './components/userComponent/poruke-razmenjene/po
     PregledKomentaraVozilaDialogComponent,
     RezervacijaDialogComponent,
     DijalogRegistracijaAgentaComponent,
-    DijalogRegistracijaFirmeComponent
+    DijalogRegistracijaFirmeComponent,
     KorisniciComponent,
     PorukeRazmenjeneComponent,
     PrikazPorukaComponent,
-    PorukaComponent
+    PorukaComponent,
+    CenovniciComponent,
+    CenovnikComponent,
+    StavkaCenovnikaComponent,
+    IzmeniStavkuComponent,
+    IzmeniCenovnikComponent,
+    SviOglasiComponent,
+    IzmenaVozilaComponent,
     
   ],
   imports: [
@@ -148,7 +162,7 @@ import { PorukaComponent } from './components/userComponent/poruke-razmenjene/po
   ],
 
   entryComponents: [PregledKomentaraVozilaDialogComponent,KomentarDialogComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent, MojIzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,ResetLozinkeComponent, RezervacijaDialogComponent,PorukaComponent,
-   DijalogRegistracijaAgentaComponent, DijalogRegistracijaFirmeComponent
+   DijalogRegistracijaAgentaComponent, DijalogRegistracijaFirmeComponent,CenovnikComponent,StavkaCenovnikaComponent
 
   ],
   providers: [{

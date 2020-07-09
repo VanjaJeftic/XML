@@ -41,6 +41,17 @@
             <input type="checkbox" [(ngModel)]="cdw"  [ngModelOptions]="{standalone: true}" data-md-icheck (change)="toggleVisibility($event)"/>
             CDW
           </div>  
+
+          <div form-group>
+            <input type="checkbox" [(ngModel)]="maxkm"  [ngModelOptions]="{standalone: true}" data-md-icheck (change)="toggleVisibility2($event)" (change)="updateState()"/>
+            Kilometraza ogranicena
+          </div> 
+
+          <mat-form-field *ngIf="showKmFiled" class="full-width">
+            <input  matInput placeholder="Maksimalna dozvoljena kilometraza" [(ngModel)]="oglas.ogranicenjekm" maxlength="10" [ngModelOptions]="{standalone: true}" required>
+          </mat-form-field>
+
+
       </mat-card-content>
   
 

@@ -53,4 +53,31 @@ export class SvaVozilaComponent implements OnInit {
   onMojaVozila(){
     this.router.navigateByUrl('svavozila');
   }
+
+   
+  novo(){
+    this.router.navigateByUrl('novoVozilo');
+  }
+
+  deleteVozilo(vozilo: Vozilo, filter:any): void {
+   
+    console.log("brisanje modela");
+    this.vozilaServis.deleteVozilo(vozilo)
+      .subscribe( data => {
+        window.alert("Uspesno ste izbrisali oglas!");
+        if(!filter) return this.vozila;
+        
+        this.vozila = this.vozila.filter(u => u !== vozilo);
+      },err =>{
+        
+        console.log(err);
+       window.alert("Greska!");
+ 
+     },
+     () => {
+       //window.alert("Uspesno ste obrisali klasu vozila!");
+      console.log(`We're done here!`);
+    });
+     
+  };
 }

@@ -8,4 +8,5 @@ export class Vozilo {
     tipGoriva:string;
     predjeniKm:string;
     brsedistadeca:string;
+    uoglasu:boolean;
 }

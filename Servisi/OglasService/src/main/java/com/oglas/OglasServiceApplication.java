@@ -6,7 +6,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages={
+"com.oglas", "com.oglas.dto.CenovnikDTO","com.oglas.model","com.oglas.controllers","com.oglas.service"})
 @EnableEurekaClient
 @EnableFeignClients
 public class OglasServiceApplication {
