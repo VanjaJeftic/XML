@@ -62,4 +62,14 @@ export class CenovniciComponent implements OnInit {
      
   };
 
+  izmenaCenovnika(cenovnik) {
+    localStorage.setItem("cenovnik", JSON.stringify(cenovnik)); 
+    this.router.navigate(["/izmenaCenovnika"]);
+ }
+
+ stavkeC(cenovnik){
+  localStorage.setItem("cenovnikId",cenovnik);
+  this.router.navigateByUrl('stavke');
+}
+
 }

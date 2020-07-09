@@ -81,5 +81,13 @@ export class CenovnikService {
     return this.http.get<StavkaCenovnika>('https://localhost:8662/oglas/stavka/oglas'+"/"+ oglas);
   }
 
+  public getStavke(cenovnik:number):  Observable<StavkaCenovnika>{
+    console.log("Pribavljamo stavku");
+
+    return this.http.get<StavkaCenovnika>('https://localhost:8662/oglas/stavka'+"/"+ cenovnik);
+  }
+
+
+
 
 }

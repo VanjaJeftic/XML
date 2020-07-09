@@ -29,11 +29,11 @@
             <td>{{ cenovnik.id }}</td>
             <td>{{ cenovnik.naziv }}</td>
             <td>{{ cenovnik.dat | date}}</td>
-            <td><button class="btn btn-info" (click)="izmeni(cenovnik)">Izmeni</button></td>
+            <td><button class="btn btn-info" (click)="izmenaCenovnika(cenovnik)">Izmeni</button></td>
             <td><button class="btn btn-danger" (click)="deleteCenovnik(cenovnik)">Brisanje</button></td>
-            <td><a mat-button (click)="openDialogOglas(vozilo.id)">
-                  detaljnije
-              </a></td>
+            <td><a mat-button (click)="stavkeC(cenovnik.id)">
+              detaljnije
+          </a></td>
           </tr>
         </tbody>
       </table>    

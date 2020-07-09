@@ -104,7 +104,7 @@ public class OglasController {
 		return new ResponseEntity<>(oglas, HttpStatus.OK);
 	}
 
-	@PutMapping
+	@PutMapping("/oglas")
 	//@PreAuthorize("hasAuthority('update_oglas')")
 	public ResponseEntity<?> update(@RequestBody OglasDTO oglasDTO) {
 		Optional<Oglas> oglasdata = oglasRepository.findById(oglasDTO.getId());

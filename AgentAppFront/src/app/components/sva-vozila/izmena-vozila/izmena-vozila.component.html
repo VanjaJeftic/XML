@@ -1,0 +1,93 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="/" class="navlogo">Rent-A-Car</a></div>
+    <span class="nav-tool-items">
+      <a mat-button mat-raised-button routerLink="/administrator" routerLinkActive="active">Vrati se korak nazad</a>
+    </span>
+  </mat-toolbar>
+  
+    <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+      <mat-card >
+        <mat-card-header>
+          <mat-card-title>Izmena Vozila</mat-card-title>
+        </mat-card-header>
+    
+        <form class="form" (submit)="onSubmitIzmenaCenovnika()">
+    
+            <mat-label>Marka vozila</mat-label>
+            <select id="markaVozila" [(ngModel)]="vozilo.markaVozila"  [ngModelOptions]="{standalone: true}" class="form-control">
+              <option value=""></option>
+              <option *ngFor="let m of marke$ | async" >
+                  {{ m.naziv }}
+              </option>
+          </select>   
+  
+             <!-- <mat-form-field class="full-width">
+              <input matInput placeholder="Model vozila" [(ngModel)]="vozilo.modelVozila" [ngModelOptions]="{standalone: true}" required>
+            </mat-form-field>--> 
+            <mat-label>Model vozila</mat-label>
+            <select id="modelVozila" [(ngModel)]="vozilo.modelVozila" [ngModelOptions]="{standalone: true}" class="form-control">
+              <option value=""></option>
+              <option *ngFor="let m of model$ | async" >
+                  {{ m.naziv }}
+              </option>
+          </select>   
+          
+            <!--  <mat-form-field class="full-width">
+              <input matInput placeholder="Klasa vozila" [(ngModel)]="vozilo.klasaVozila" [ngModelOptions]="{standalone: true}" required>
+            </mat-form-field>--> 
+  
+            <mat-label>Klasa vozila</mat-label>
+          <select id="klasaVozila" [(ngModel)]="vozilo.klasaVozila" [ngModelOptions]="{standalone: true}" class="form-control">
+              <option value=""></option>
+              <option *ngFor="let m of klasa$ | async" >
+                  {{ m.naziv }}
+              </option>
+          </select>   
+            <!--  <mat-form-field class="full-width">
+              <input matInput placeholder="Vrsta menjaca" [(ngModel)]="vozilo.vrstaMenjaca" [ngModelOptions]="{standalone: true}" required>
+            </mat-form-field>--> 
+            <mat-label>Vrsta menjaca</mat-label>
+            <select id="vrstaMenjaca" [(ngModel)]="vozilo.vrstaMenjaca" [ngModelOptions]="{standalone: true}" class="form-control">
+              <option value=""></option>
+              <option *ngFor="let m of menjac$ | async" >
+                  {{ m.naziv }}
+              </option>
+          </select>   
+  
+             <!-- <mat-form-field class="full-width">
+              <input matInput placeholder="Tip goriva" [(ngModel)]="vozilo.tipGoriva" [ngModelOptions]="{standalone: true}" required>
+            </mat-form-field>--> 
+            <mat-label>Tip goriva</mat-label>
+            <select id="tipGoriva" [(ngModel)]="vozilo.tipGoriva" [ngModelOptions]="{standalone: true}" class="form-control">
+              <option value=""></option>
+              <option *ngFor="let m of gorivo$ | async" >
+                  {{ m.naziv }}
+              </option>
+          </select>   
+  
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Predjni kilometri" maxlength="30" [(ngModel)]="vozilo.predjeniKm" [ngModelOptions]="{standalone: true}" required>
+            </mat-form-field>
+  
+            <mat-form-field class="full-width">
+  
+              <input matInput placeholder="Broj sedista za decu" maxlength="10" [(ngModel)]="vozilo.brsedistadeca" [ngModelOptions]="{standalone: true}" required>
+  
+            </mat-form-field>
+    
+            <!--upload slike odavde-->
+  
+            <div class="container row">
+              <div class="col-md-6">
+                  <input type="file" (change)="onSelect($event)"  [(ngModel)]="image" [ngModelOptions]="{standalone: true}" required multiple/>
+                  <img *ngFor= 'let url of urls' [src]="url" height="100"/>
+              </div>
+          </div>
+          <hr />
+          
+          <button mat-stroked-button class="buttonPotvrdi" type="submit">Potvrdi</button>
+    
+        </form>
+      </mat-card>
+    </div>
+

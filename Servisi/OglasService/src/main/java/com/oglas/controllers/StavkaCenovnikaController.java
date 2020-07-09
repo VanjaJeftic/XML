@@ -83,7 +83,7 @@ public class StavkaCenovnikaController {
 		Cenovnik c=cenovnikRepository.findById(id).get();
 		
 		for(StavkaCenovnika stavka:stavke) {
-			if(stavka.getCenovnik().equals(c.getNaziv())) {
+			if(stavka.getCenovnik().getId().equals(id)) {
 				
 				trazene.add(stavka);
 			}

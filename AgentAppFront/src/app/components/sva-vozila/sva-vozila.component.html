@@ -31,7 +31,7 @@
             <td>{{ vozilo.markaVozila.naziv }}</td>
             <td>{{ vozilo.modelVozila.naziv }}</td>
             <td>{{ vozilo.klasaVozila.naziv }}</td>
-            <td><button class="btn btn-info" (click)="izmeniVozilo(vozilo)">Izmeni</button></td>
+            <td><button class="btn btn-info" (click)="izmenaVozila(vozilo)">Izmeni</button></td>
             <td><button class="btn btn-danger" (click)="deleteVozilo(vozilo)">Brisanje</button></td>
             <td><a mat-button *ngIf="!vozilo.uoglasu" (click)="openDialogOglas(vozilo.id)">
                   postavi oglas

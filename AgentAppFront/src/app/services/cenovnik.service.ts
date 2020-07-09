@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 import { Cenovnik } from '../models/cenovnik';
 import { StavkaCenovnika } from '../models/stavka-cenovnika';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -50,7 +51,7 @@ export class CenovnikService {
     return this.http.delete('http://localhost:8088/cenovnik' + "/"+ cenovnik.id);
   }
 
-  public izmenaOglasa(cenovnik:Cenovnik){
+  public izmenaCenovnika(cenovnik:Cenovnik){
     return this.http.put('http://localhost:8088/cenovnik',cenovnik,{responseType: 'text'}).subscribe(
       data=>{console.log('Vratio je '+data)}
     );
@@ -69,6 +70,20 @@ export class CenovnikService {
     );
     
   }
+
+  
+  public getStavka(oglas:number):  Observable<StavkaCenovnika>{
+    console.log("Pribavljamo stavku");
+
+    return this.http.get<StavkaCenovnika>('http://localhost:8088/stavka/oglas'+"/"+ oglas);
+  }
+
+  public getStavke(cenovnik:number):  Observable<StavkaCenovnika>{
+    console.log("Pribavljamo stavku");
+
+    return this.http.get<StavkaCenovnika>('http://localhost:8088/stavka'+"/"+ cenovnik);
+  }
+
 
 
 }
