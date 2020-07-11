@@ -82,6 +82,13 @@ public class VoziloController {
     	Vozilo v = voziloService.getVozilo(id);
 		return v;
     }
+    
+    @GetMapping("/search/getOne/{id}")
+    public VoziloDTO getOneForSearch(@PathVariable("id") Long id){
+    	System.out.println("VOZILO FUNKCIJA \n\n\n\n\n");
+    	VoziloDTO v = new VoziloDTO(voziloService.getVozilo(id));
+		return v;
+    }
 
     @PostMapping("/novoVozilo")
     public BodyBuilder sacuvajVozilo(@RequestParam("vozilomarka") String markaVozila,

@@ -9,7 +9,7 @@ import com.search.SearchService.dto.VoziloDTO;
 @FeignClient(name = "eureka-oglas-service")
 public interface VoziloConnection {
 
-		@GetMapping("/{id}")
-		VoziloDTO getVoziloById(@PathVariable("id") Long id);
+		@GetMapping("/vozilo/search/getOne/{id}")
+		VoziloDTO getOneForSearch(@PathVariable("id") Long id);
 	
 }

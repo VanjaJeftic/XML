@@ -1,6 +1,7 @@
 package com.oglas.dto;
 
 import com.oglas.model.ImageModel;
+import com.oglas.model.Vozilo;
 
 import javax.persistence.*;
 
@@ -137,5 +138,16 @@ public class VoziloDTO {
 		this.uoglasu = uoglasu;
 	}
 
+    public VoziloDTO(Vozilo v) {
+    	this.markaVozila = v.getMarkaVozila();
+        this.modelVozila = v.getModelVozila();
+        this.klasaVozila = v.getKlasaVozila();
+        this.tipGoriva = v.getTipgoriva();
+        this.vrstaMenjaca = v.getVrstamenjaca();
+        this.predjeniKm = v.getPredjeniKm();
+        this.brsedistadeca = v.getBrSedistaDeca();
+        this.cdw = v.isCdw();
+        this.user_id = v.getUser_id();
+    }
     
 }

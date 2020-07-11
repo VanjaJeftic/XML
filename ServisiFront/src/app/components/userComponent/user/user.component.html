@@ -39,125 +39,210 @@
     </mat-card-title>
   </mat-card-header>
   <!-- LEVA STRANA -->
-  <mat-card-content class="content-container" style="display: inline-flex; width: 100%;">
-    <mat-grid-list class="content-left" cols="2" rowHeight="5:4">
-      <mat-grid-tile *ngFor="let oglas of oglasiSource" style="margin: 15px;">
-        <!-- OGLAS TEMPLATE -->
-        <mat-card class="oglas-card">
-          <mat-card-header style="padding: 0.5rem;">
-            <!-- <div mat-card-avatar class="example-header-image"></div> -->
-            <mat-card-title>
-              {{oglas.markaVozila}} {{oglas.modelVozila}} {{oglas.klasaVozila}}
-            </mat-card-title>
-            <mat-card-subtitle>
-              <!-- autor: {{getUsername(oglas.author)}} -->
-            </mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
+  <mat-card-content class="content-container" style="width: 100%;">
+    <div style="display:inline-flex;">
+      <div class="content-left">
+        <div class="flex-container">
+          <div *ngFor="let oglas of oglasiSource" class="flex-item">
+            <h3 class="title-section-left">{{oglas.markaVozila}} {{oglas.modelVozila}}</h3>
+            <button class="title-section-right" mat-raised-button color="warn" style="border-radius: 10px;"
+              (click)="onRezervisi(oglas)">Rezervisi</button>
+            <hr>
             <p>
-              <span style="color: rgb(93, 93, 93);">Mesto: </span>{{oglas.mesto}}
+              <span>Klasa: </span>{{oglas.klasaVozila}}
             </p>
             <p>
-              <span style="color: rgb(93, 93, 93);">Slobodan: </span>{{getDatum(oglas.slobodanOd)}} -
+              <span>Mesto: </span>{{oglas.mesto}}
+            </p>
+            <p>
+              <span>Slobodan: </span>{{getDatum(oglas.slobodanOd)}} -
               {{getDatum(oglas.slobodanDo)}}
             </p>
             <p>
-              <span style="color: rgb(93, 93, 93);">Tip goriva: </span>{{oglas.tipGoriva}}
+              <span>Tip goriva: </span>{{oglas.tipGoriva}}
             </p>
             <p>
-              <span style="color: rgb(93, 93, 93);">Vrsta menjaca: </span>{{oglas.vrstaMenjaca}}
+              <span>Vrsta menjaca: </span>{{oglas.vrstaMenjaca}}
             </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <mat-grid-list style="padding-top: 0.8rem;" cols="13" rowHeight="2:2">
-              <mat-grid-tile [colspan]="5" [rowspan]="1"></mat-grid-tile>
-              <mat-grid-tile [colspan]="4" [rowspan]="2"></mat-grid-tile>
-              <mat-grid-tile style="border:1px solid blue; border-radius: 5px;" [colspan]="4" [rowspan]="2">
-                <h2>{{oglas.cena}} $</h2>
-              </mat-grid-tile>
-              <mat-grid-tile [colspan]="5" [rowspan]="1">
-                <button mat-raised-button color="primary" style="border-radius: 10px;"
-                  (click)="onRezervisi(oglas)">Rezervisi</button>
-              </mat-grid-tile>
-              <mat-grid-tile [colspan]="5" [rowspan]="1">
-                <button mat-raised-button color="primary" style="border-radius: 10px;" (click)="openDialogPrikazKomentara(oglas)">Komentari</button>
-              </mat-grid-tile>
-            </mat-grid-list>
-          </mat-card-actions>
-        </mat-card>
-      </mat-grid-tile>
-
-     
-
-
-    </mat-grid-list>
-    <!-- DESNA STRANA -->
-    <div class="content-right">
-      <div class="search-container">
-        <mat-grid-list cols="5" rowHeight="3:3">
+            <p>
+              <span>Predjeni kilometri: </span>{{oglas.predjeniKm}}km
+            </p>
+            <p>
+              <span>Planirani kilometri: </span>{{oglas.planiraniKm}}km
+            </p>
+            <p>
+              <span>Broj sedista za decu: </span>{{oglas.brSedistaDeca}}
+            </p>
+            <p>
+              <span>CDW: </span>{{oglas.cdw}}
+            </p>
+            <button class="footer-section-left" mat-stroked-button color="warn" style="border-radius: 10px;"
+              (click)="openDialogPrikazKomentara(oglas)">Komentari</button>
+            <h4 class="footer-section-right">{{oglas.cena}}$</h4>
+          </div>
+        </div>
+      </div>
+      <!-- DESNA STRANA -->
+      <div class="content-right">
+        <div class="search-container">
+          <mat-grid-list cols="5" rowHeight="3:3">
           <mat-grid-tile [colspan]="3">
-            <h2>Pretraga</h2>
+            <h2>Sortiranje</h2>
           </mat-grid-tile>
-          <mat-grid-tile [colspan]="1">
-            <div>
-              <button mat-mini-fab style="background-color: rgb(107, 182, 138);" (click)="resetuj()"
-                aria-label="Resetuj">
-                <mat-icon>autorenew</mat-icon>
-              </button>
-            </div>
+          <mat-grid-tile [colspan]="2">
+             
           </mat-grid-tile>
-          <mat-grid-tile [colspan]="1">
-            <div>
-              <button mat-mini-fab color="primary"
-                (click)="onPretrazi()"
-                aria-label="Pretraga">
-                <mat-icon>search</mat-icon>
-              </button>
-            </div>
-          </mat-grid-tile>
-        </mat-grid-list>
-        <hr>
-        <mat-form-field appearance="outline">
-          <mat-label>Mesto:</mat-label>
-          <input matInput [(ngModel)]="pomocniSearchModel.mesto" placeholder="Unesite mesto">
-          <mat-icon matSuffix>location_city</mat-icon>
-        </mat-form-field>
-        <hr>
-        <mat-form-field appearance="outline">
-          <mat-label>Datum iznajmljivanja i povratka:</mat-label>
-          <input matInput [min]="startAt" [(ngModel)]="datumValue" placeholder="Odaberite datum" [owlDateTime]="dt1"
-            [selectMode]="'range'" [owlDateTimeTrigger]="dt1" placeholder="Date Time">
-          <mat-icon matSuffix>date_range</mat-icon>
-          <owl-date-time #dt1></owl-date-time>
-        </mat-form-field>
-        <hr>
-        <mat-form-field appearance="outline">
-          <mat-label>Marka:</mat-label>
-          <input [(ngModel)]="pomocniSearchModel.marka" matInput placeholder="Unesite marku">
-          <mat-icon matSuffix>directions_car</mat-icon>
-        </mat-form-field>
-        <hr>
-        <mat-form-field appearance="outline">
-          <mat-label>Model:</mat-label>
-          <input [(ngModel)]="pomocniSearchModel.model" matInput placeholder="Unesite model">
-          <mat-icon matSuffix>directions_car</mat-icon>
-        </mat-form-field>
-        <hr>
-        <mat-form-field appearance="outline">
-          <mat-label>Minimalna cena:</mat-label>
-          <input [(ngModel)]="pomocniSearchModel.minimalnaCena" type="number" matInput placeholder="Unesite cenu">
-          <mat-icon matSuffix>attach_money</mat-icon>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>Maksimalna cena:</mat-label>
-          <input [(ngModel)]="pomocniSearchModel.maksimalnaCena" type="number" matInput placeholder="Unesite cenu">
-          <mat-icon matSuffix>attach_money</mat-icon>
-        </mat-form-field>
-        <hr>
-        <button mat-raised-button color="primary"
-          (click)="onPretrazi()"
-          color="primary" style="width: 100%;">Pretrazi
-          <mat-icon>search</mat-icon></button>
+          </mat-grid-list>
+          <mat-form-field appearance="outline">
+            <mat-label>Sortiraj po...</mat-label>
+            <mat-icon matSuffix>sort</mat-icon>
+            <mat-select [(ngModel)]="pomocniFilterModel" (ngModelChange)="sortData($event)">
+              <mat-option [value]="">-</mat-option>
+              <mat-option *ngFor="let filtriranje of listaFiltriranja" [value]="filtriranje">
+                {{filtriranje}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="search-container">
+          <mat-grid-list cols="5" rowHeight="3:3">
+            <mat-grid-tile [colspan]="3">
+              <h2>Pretraga</h2>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1">
+              <div>
+                <button mat-mini-fab style="background-color: rgb(107, 182, 138);" (click)="resetuj()"
+                  aria-label="Resetuj">
+                  <mat-icon>autorenew</mat-icon>
+                </button>
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1">
+              <div>
+                <button mat-mini-fab color="primary" (click)="onPretrazi()" aria-label="Pretraga">
+                  <mat-icon>search</mat-icon>
+                </button>
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <hr>
+          <mat-form-field appearance="outline">
+            <mat-label>Mesto:</mat-label>
+            <input matInput [(ngModel)]="pomocniSearchModel.mesto" placeholder="Unesite mesto">
+            <mat-icon matSuffix>location_city</mat-icon>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Datum iznajmljivanja i povratka:</mat-label>
+            <input matInput [min]="startAt" [(ngModel)]="datumValue" placeholder="Odaberite datum" [owlDateTime]="dt1"
+              [selectMode]="'range'" [owlDateTimeTrigger]="dt1" placeholder="Date Time">
+            <mat-icon matSuffix>date_range</mat-icon>
+            <owl-date-time #dt1></owl-date-time>
+          </mat-form-field>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Napredna pretraga
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <hr>
+            <mat-form-field appearance="outline">
+              <mat-label>Marka:</mat-label>
+              <mat-icon matSuffix>directions_car</mat-icon>
+              <mat-select [(ngModel)]="pomocniSearchModel.marka" (ngModelChange)="proveriMarku()">
+                <mat-option [value]="">Sve marke</mat-option>
+                <mat-option *ngFor="let marka of listaMarki" [value]="marka">
+                  {{marka}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Model:</mat-label>
+              <mat-icon matSuffix>directions_car</mat-icon>
+              <mat-select [(value)]="pomocniSearchModel.model">
+                <mat-option [value]="">Svi modeli</mat-option>
+                <mat-option *ngFor="let model of listaModela" [value]="model">
+                  {{model}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Klasa:</mat-label>
+              <mat-select [(ngModel)]="pomocniSearchModel.klasa">
+                <mat-option [value]="">Sve klase</mat-option>
+                <mat-option *ngFor="let klasa of listaKlasa" [value]="klasa">
+                  {{klasa}}
+                </mat-option>
+              </mat-select>
+              <mat-icon matSuffix>commute</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Vrsta goriva:</mat-label>
+              <mat-icon matSuffix>filter_alt</mat-icon>
+              <mat-select [(value)]="pomocniSearchModel.vrstaGoriva">
+                <mat-option [value]="">Sve vrste goriva</mat-option>
+                <mat-option *ngFor="let gorivo of listaGoriva" [value]="gorivo">
+                  {{gorivo}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Tip menjaca:</mat-label>
+              <mat-icon matSuffix>settings_input_hdmi</mat-icon>
+              <mat-select [(value)]="pomocniSearchModel.tipMenjaca">
+                <mat-option [value]="">Svi tipovi menjaca</mat-option>
+                <mat-option *ngFor="let menjac of listaMenjaca" [value]="menjac">
+                  {{menjac}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Minimalna cena:</mat-label>
+              <input [(ngModel)]="pomocniSearchModel.minimalnaCena" type="number" matInput placeholder="Unesite cenu">
+              <mat-icon matSuffix>attach_money</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Maksimalna cena:</mat-label>
+              <input [(ngModel)]="pomocniSearchModel.maksimalnaCena" type="number" matInput placeholder="Unesite cenu">
+              <mat-icon matSuffix>attach_money</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Predjeni kilometri:</mat-label>
+              <input [(ngModel)]="pomocniSearchModel.predjeniKilometri" matInput
+                placeholder="Unesite predjene kilometre">
+              <mat-icon matSuffix>not_listed_location</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Planirani kilometri:</mat-label>
+              <input [(ngModel)]="pomocniSearchModel.planiraniKilometri" matInput
+                placeholder="Unesite planirane kilometre">
+              <mat-icon matSuffix>location_on</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>CDW:</mat-label>
+              <mat-icon matSuffix>security</mat-icon>
+              <mat-select [(value)]="pomocniSearchModel.cdw">
+                <mat-option [value]="">Svi cdw-ovi</mat-option>
+                <mat-option *ngFor="let cdw of listaCDW" [value]="cdw">
+                  {{cdw}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Broj sedista za decu:</mat-label>
+              <mat-icon matSuffix>airline_seat_recline_normal</mat-icon>
+              <mat-select [(value)]="pomocniSearchModel.brSedistaDeca">
+                <mat-option [value]="">Sva sedista</mat-option>
+                <mat-option *ngFor="let sedista of listaSedista" [value]="sedista">
+                  {{sedista}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <hr>
+          </mat-expansion-panel>
+          <hr>
+          <button mat-raised-button color="primary" (click)="onPretrazi()" color="primary" style="width: 100%;">Pretrazi
+            <mat-icon>search</mat-icon></button>
+        </div>
       </div>
     </div>
   </mat-card-content>

@@ -50,11 +50,17 @@ public class Search implements Serializable {
     @Column(name="predjenikm")
     private String predjeniKm;
     
+    @Column(name="planiranikm")
+    private String planiraniKm;
+    
     @Column(name="brsedistadeca")
     private String brSedistaDeca;
     
     @Column(name = "author")
     private String author;
+    
+    @Column(name="cdw")
+    private String cdw;
 
 	public Long getId() {
 		return id;
@@ -169,12 +175,29 @@ public class Search implements Serializable {
 		this.author = author;
 	}
 
+	public String getPlaniraniKm() {
+		return planiraniKm;
+	}
+
+	public void setPlaniraniKm(String planiraniKm) {
+		this.planiraniKm = planiraniKm;
+	}
+
+    public String getCdw() {
+		return cdw;
+	}
+
+	public void setCdw(String cdw) {
+		this.cdw = cdw;
+	}
+
+
 	public Search() {
     }
 	
 	public Search(OglasDTO oglas, VoziloDTO vozilo) {
 		this.mesto = oglas.getMesto();
-		this.slobodanOd = oglas.getSlobodanOd();
+		this.slobodanOd = oglas.getSlobodanod();
 		this.slobodanDo = oglas.getSlobodando();
 		this.cena = oglas.getCena();
 		this.popust = oglas.getPopust();
@@ -184,7 +207,12 @@ public class Search implements Serializable {
 		this.tipGoriva = vozilo.getTipGoriva();
 		this.vrstaMenjaca = vozilo.getVrstaMenjaca();
 		this.predjeniKm = vozilo.getPredjeniKm();
-		this.brSedistaDeca = vozilo.getBrSedistaDeca();
+		this.brSedistaDeca = vozilo.getBrsedistadeca();
+		if(vozilo.isCdw()) {
+			this.cdw="Da";
+		} else {
+			this.cdw="Ne";
+		}
 		this.author = oglas.getUser_id().toString();
     }
 }

@@ -36,7 +36,7 @@ export class PraviOglasComponent implements OnInit {
 
   public onSubmit(): void{
    
-    this.oglas.user_id=localStorage.getItem('userId');
+    this.oglas.user_id=+localStorage.getItem('userId');
     console.log(this.data.id);
     this.oglas.vozilo_id=this.data.id;
     console.log(this.oglas.user_id+localStorage.getItem('userId'));

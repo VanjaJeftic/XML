@@ -8,7 +8,7 @@ export class Oglas {
     slobodanod:Date;
     slovodando:Date;
     cdw:boolean;
-    user_id:string;
+    user_id:number;
 
     maxkm:boolean;
     ogranicenjekm:string;
