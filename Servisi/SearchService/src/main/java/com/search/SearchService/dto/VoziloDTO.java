@@ -9,7 +9,9 @@ public class VoziloDTO {
     private String tipGoriva;
     private String vrstaMenjaca;
     private String predjeniKm;
-    private String BrSedistaDeca;
+    private String brsedistadeca;
+    private boolean cdw;
+    private Long user_id;
     
 	public Long getId() {
 		return id;
@@ -67,12 +69,28 @@ public class VoziloDTO {
 		this.predjeniKm = predjeniKm;
 	}
 
-	public String getBrSedistaDeca() {
-		return BrSedistaDeca;
+    public String getBrsedistadeca() {
+		return brsedistadeca;
 	}
 
-	public void setBrSedistaDeca(String brSedistaDeca) {
-		BrSedistaDeca = brSedistaDeca;
+	public void setBrsedistadeca(String brsedistadeca) {
+		this.brsedistadeca = brsedistadeca;
+	}
+
+    public boolean isCdw() {
+        return cdw;
+    }
+
+    public void setCdw(boolean cdw) {
+        this.cdw = cdw;
+    }
+
+	public Long getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(Long user_id) {
+		this.user_id = user_id;
 	}
 
 	public VoziloDTO() {

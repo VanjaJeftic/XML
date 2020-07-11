@@ -99,7 +99,7 @@ public class OglasController {
 		
 		Oglas oglas = this.oglasService.createOrder(ovDTO);
 		logger.info("Kreiran order");
-		//Oglas search = this.searchConnection.createSearch(new Oglas(ovDTO));
+		OglasDTO search = this.searchConnection.create(ovDTO);
 
 		return new ResponseEntity<>(oglas, HttpStatus.OK);
 	}

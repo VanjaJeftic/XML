@@ -7,6 +7,13 @@ public class SearchDTO {
     private String model;
     private String minimalnaCena;
     private String maksimalnaCena;
+    private String vrstaGoriva;
+    private String tipMenjaca;
+    private String klasa;
+    private int predjeniKilometri;
+    private int planiraniKilometri;
+    private int brSedistaZaDecu;
+    private String cdw;
     
     public SearchDTO() {
     	super();
@@ -58,6 +65,62 @@ public class SearchDTO {
 
 	public void setMaksimalnaCena(String maksimalnaCena) {
 		this.maksimalnaCena = maksimalnaCena;
+	}
+
+	public String getVrstaGoriva() {
+		return vrstaGoriva;
+	}
+
+	public void setVrstaGoriva(String vrstaGoriva) {
+		this.vrstaGoriva = vrstaGoriva;
+	}
+
+	public String getTipMenjaca() {
+		return tipMenjaca;
+	}
+
+	public void setTipMenjaca(String tipMenjaca) {
+		this.tipMenjaca = tipMenjaca;
+	}
+
+	public String getKlasa() {
+		return klasa;
+	}
+
+	public void setKlasa(String klasa) {
+		this.klasa = klasa;
+	}
+
+	public int getPredjeniKilometri() {
+		return predjeniKilometri;
+	}
+
+	public void setPredjeniKilometri(int predjeniKilometri) {
+		this.predjeniKilometri = predjeniKilometri;
+	}
+
+	public int getPlaniraniKilometri() {
+		return planiraniKilometri;
+	}
+
+	public void setPlaniraniKilometri(int planiraniKilometri) {
+		this.planiraniKilometri = planiraniKilometri;
+	}
+
+	public int getBrSedistaZaDecu() {
+		return brSedistaZaDecu;
+	}
+
+	public void setBrSedistaZaDecu(int brSedistaZaDecu) {
+		this.brSedistaZaDecu = brSedistaZaDecu;
+	}
+
+	public String getCdw() {
+		return cdw;
+	}
+
+	public void setCdw(String cdw) {
+		this.cdw = cdw;
 	}
     
     

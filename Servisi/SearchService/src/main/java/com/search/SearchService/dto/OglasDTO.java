@@ -17,7 +17,7 @@ public class OglasDTO {
 
     private Double cenaspopust;
 
-    private LocalDateTime slobodanOd;
+    private LocalDateTime slobodanod;
 
     private LocalDateTime slobodando;
     
@@ -39,23 +39,25 @@ public class OglasDTO {
         this.id = id;
     }
 
-    public Long getVozilo_id() {
-        return vozilo_id;
-    }
 
-    public void setVozilo_id(Long vozilo_id) {
-        this.vozilo_id = vozilo_id;
-    }
 
-    public Long getUser_id() {
-        return user_id;
-    }
+	public Long getVozilo_id() {
+		return vozilo_id;
+	}
 
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
-    }
+	public void setVozilo_id(Long vozilo_id) {
+		this.vozilo_id = vozilo_id;
+	}
 
-    public String getMesto() {
+	public Long getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(Long user_id) {
+		this.user_id = user_id;
+	}
+
+	public String getMesto() {
         return mesto;
     }
 
@@ -87,15 +89,15 @@ public class OglasDTO {
         this.cenaspopust = cenaspopust;
     }
 
-    public LocalDateTime getSlobodanOd() {
-        return slobodanOd;
-    }
+    public LocalDateTime getSlobodanod() {
+		return slobodanod;
+	}
 
-    public void setSlobodanOd(LocalDateTime slobodanOd) {
-        this.slobodanOd = slobodanOd;
-    }
+	public void setSlobodanod(LocalDateTime slobodanod) {
+		this.slobodanod = slobodanod;
+	}
 
-    public LocalDateTime getSlobodando() {
+	public LocalDateTime getSlobodando() {
         return slobodando;
     }
 

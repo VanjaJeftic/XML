@@ -4,8 +4,8 @@ import { Oglas } from './../../../models/oglas';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from './../../../services/authentication.service';
-import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource, MatSnackBar, MatDialog } from '@angular/material';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatSnackBar, MatDialog, MatSort, Sort } from '@angular/material';
 import { stringify } from 'querystring';
 import { SearchService } from 'src/app/services/search.service';
 import { Search } from 'src/app/models/search.model';
@@ -27,11 +27,23 @@ export class UserComponent implements OnInit {
 
   sviOglasi: Search[] = [];
   oglasiSource: Search[] = [];
+  oglasiSorted: Search[]=[];
   startAt: Date = new Date();
   pomocniSearchModel : SearchView = new SearchView();
+  pomocniFilterModel : String = new String();
   spinner:boolean= true;
   datumValue : string = "";
   oglasIdzaPrenos:number;
+  listaMarki : String[] = [];
+  listaModela : String[] = [];
+  listaGoriva : String[] = ["Benzin","Dizel", "Benzin + Gas (TNG)", "Metan CNG", "Elektricni pogon", "Hibridni pogon"];
+  listaMenjaca : String[] = [];
+  listaKlasa : String[] = ["Limuzina","Hecbek","Karavan","Kupe","Kabriolet/Roadster","Monovolumen (miniVan)","Dzip/SUV","Pickup",];
+  listaCDW : String[] = ["Da","Ne"];
+  listaSedista : String[] = ["2","3","4","5","6","7","8","9"];
+  listaFiltriranja : String[] = ["Po ceni uzlazno","Po ceni silazno","Po oceni uzlazno","Po oceni silazno","Po kilometrima uzlazno","Po kilometrima silazno"];
+
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(public dialog4: MatDialog, public dialog3: MatDialog,public dialog2: MatDialog,public dialog: MatDialog,public snackBar: MatSnackBar, dateTimeAdapter: DateTimeAdapter<any>,private authService: AuthenticationService, private oglasService: OglasService, private router: Router, private searchService: SearchService) {
     dateTimeAdapter.setLocale('en-GB');
@@ -68,18 +80,77 @@ export class UserComponent implements OnInit {
 
 
 
-  ngOnInit() {
-
-    this.searchService.getAll().subscribe(
-      data => {
-        this.oglasiSource = data;
-        console.log(this.oglasiSource);
-        this.sviOglasi = data;
-        this.spinner = false;
+ ngOnInit() {
+  
+  this.searchService.getAll().subscribe(
+    data => {
+      this.oglasiSource = data;
+      this.oglasiSorted= data;
+      console.log(this.oglasiSource);
+      this.sviOglasi = data;
+      this.spinner = false;
+      //provera za ispis marki kod napredne pretrage
+      for(let i of this.oglasiSource) {
+        let postoji:boolean = false;
+        this.listaMarki.map(oglas=>{
+          if(i.markaVozila == oglas) {
+            postoji = true;
+          }
+        });
+        if(!postoji) {
+          this.listaMarki.push(i.markaVozila);
+        }
       }
-    );
-    this.startAt.setHours(this.startAt.getHours() + 48);
+      for(let n of this.oglasiSource) {
+        let postoji:boolean = false;
+        this.listaMenjaca.map(oglas=>{
+          if(n.vrstaMenjaca== oglas) {
+            postoji = true;
+          }
+        });
+        if(!postoji) {
+          this.listaMenjaca.push(n.vrstaMenjaca);
+        }
+      }
+      console.log(this.listaMenjaca);
+    }
+  );
+  this.startAt.setHours(this.startAt.getHours() + 48);
 
+}
+
+  sortData(odabranaOpcija) {
+    let sort: Sort;
+    switch(odabranaOpcija){
+      case "Po ceni uzlazno":
+        sort = {"active":"cena","direction":"asc"};
+        break;
+      case "Po ceni silazno":
+        sort = {"active":"cena","direction":"desc"};
+        break;
+      case "Po kilometrima silazno":
+        sort = {"active":"predjeniKm","direction":"desc"};
+        break;
+      case "Po kilometrima uzlazno":
+        sort = {"active":"predjeniKm","direction":"asc"};
+        break;
+    }
+    
+    const data = this.oglasiSource.slice();
+    if (!sort.active || sort.direction === '') {
+      this.oglasiSorted = data;
+      return;
+    }
+
+    this.oglasiSorted = data.sort((a, b) => {
+      const isAsc = sort.direction === 'asc';
+      switch (sort.active) {
+        case 'cena': return compare(a.cena, b.cena, isAsc);
+        case 'predjeniKm': return compare(a.predjeniKm, b.predjeniKm, isAsc);
+        default: return 0;
+      }
+    });
+    this.oglasiSource = this.oglasiSorted;
   }
 
   onRezervisi(selectedOglas){
@@ -159,13 +230,14 @@ export class UserComponent implements OnInit {
     this.datumValue = "";
     this.pomocniSearchModel = new SearchView();
     this.oglasiSource = this.sviOglasi;
+    this.pomocniFilterModel = "";
   }
 
   onPretrazi() {
     this.spinner=true;
     console.log(this.pomocniSearchModel);
     this.pomocniSearchModel.datumi = this.datumValue.toString();
-    let splitedDatum = this.pomocniSearchModel.datumi.split(' ~ ');
+    let splitedDatum = this.pomocniSearchModel.datumi.split(',');
     if (splitedDatum[1] != "") {
       this.searchService.pretrazi(this.pomocniSearchModel).subscribe(res => {
         this.oglasiSource = res;
@@ -190,7 +262,7 @@ export class UserComponent implements OnInit {
 
   getDatum(da: Date) {
     let d: Date = new Date(da.toString());
-    let datum: string = (d.getDay() >= 10 ? d.getDay() : "0" + d.getDay()) + "-" + (d.getMonth() >= 10 ? d.getMonth() : "0" + d.getMonth()) + "-" + d.getFullYear() + ", " + (d.getHours() >= 10 ? d.getHours() : "0" + d.getHours()) + ":" + (d.getMinutes() >= 10 ? d.getMinutes() : "0" + d.getMinutes());
+    let datum: string = (d.getDate() >= 10 ? d.getDate() : "0" + d.getDate()) + "-" + (d.getMonth()+1 >= 10 ? d.getMonth()+1 : "0" + (d.getMonth()+1)) + "-" + d.getFullYear() + ", " + (d.getHours() >= 10 ? d.getHours() : "0" + d.getHours()) + ":" + (d.getMinutes() >= 10 ? d.getMinutes() : "0" + d.getMinutes());
     return datum;
   }
 
@@ -210,4 +282,23 @@ export class UserComponent implements OnInit {
     this.router.navigateByUrl('cenovnici');
   }
 
+  proveriMarku() {
+    console.log(this.pomocniSearchModel.marka)
+    if(this.pomocniSearchModel.marka==null || this.pomocniSearchModel.marka==""){
+      this.listaModela = [];
+      this.pomocniSearchModel.model="";
+      return;
+    }
+    this.listaModela = [];
+    for(let p of this.sviOglasi) {
+      if(p.markaVozila == this.pomocniSearchModel.marka && !(this.listaModela.includes(p.modelVozila))) {
+        this.listaModela.push(p.modelVozila);
+      }
+    }
+  }
+
+}
+
+function compare(a: number | string, b: number | string, isAsc: boolean) {
+  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
