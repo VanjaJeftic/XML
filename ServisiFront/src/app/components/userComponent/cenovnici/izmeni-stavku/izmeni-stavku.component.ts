@@ -16,11 +16,12 @@ export class IzmeniStavkuComponent implements OnInit {
     this.cenovnici$=cenovnikServis.getCenovnici();
   }
 
-  public stavka:StavkaCenovnika=new StavkaCenovnika();
+  public stavkaCenovnika:StavkaCenovnika=new StavkaCenovnika();
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-  this.stavka = JSON.parse(localStorage.getItem('stavka')); 
+  this.stavkaCenovnika = JSON.parse(localStorage.getItem('stavkaCenovnika')); 
+  console.log("Sta imam tu "+this.stavkaCenovnika.cenovnik+this.stavkaCenovnika.id);
     });
 }
 
@@ -28,7 +29,7 @@ export class IzmeniStavkuComponent implements OnInit {
 public onSubmitIzmenaStavke(): void{
   window.alert("Uspesno ste izmenili cenovnik");
   event.preventDefault();
-  let res=this.cenovnikServis.izmenaStavke(this.stavka);
+  let res=this.cenovnikServis.izmenaStavke(this.stavkaCenovnika);
   this.router.navigateByUrl('/svioglasi');
 }
 

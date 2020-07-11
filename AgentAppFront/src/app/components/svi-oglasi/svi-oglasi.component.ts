@@ -6,6 +6,8 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StavkaCenovnikaComponent } from '../userComponent/cenovnici/stavka-cenovnika/stavka-cenovnika.component';
+import { CenovnikService } from 'src/app/services/cenovnik.service';
+import { StavkaCenovnika } from 'src/app/models/stavka-cenovnika';
 
 @Component({
   selector: 'app-svi-oglasi',
@@ -16,7 +18,7 @@ export class SviOglasiComponent implements OnInit {
   
   oglasi: Oglas[];
   oglaslist$: Observable<any>;
-  constructor(private oglasServis:NoviOglasService,public dialog: MatDialog,private authService: AuthenticationService, private router: Router) {
+  constructor(private oglasServis:NoviOglasService,public dialog: MatDialog,private authService: AuthenticationService, private router: Router,private cenovnikServis:CenovnikService) {
 
     this.oglaslist$=oglasServis.getOglasi();
    }
@@ -79,4 +81,21 @@ export class SviOglasiComponent implements OnInit {
      
   };
 
+  izmenaOglasa(oglas) {
+    localStorage.setItem("oglas", JSON.stringify(oglas)); 
+    this.router.navigate(["/izmenaOglasa"]);
+ }
+
+ public stavka:StavkaCenovnika=new StavkaCenovnika();
+ izmenaStavke(idoglasa) {
+  this.cenovnikServis.getStavka(idoglasa).subscribe(
+    data => {
+      console.log(data);
+      this.stavka = data;
+      localStorage.setItem("stavkaCenovnika", JSON.stringify(this.stavka)); 
+    }
+  );
+
+  this.router.navigate(["/izmenaStavke"]);
+  }
 }

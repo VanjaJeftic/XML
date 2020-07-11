@@ -1,0 +1,70 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="/" class="navlogo">Rent-A-Car</a></div>
+    <span class="nav-tool-items">
+      <a mat-button mat-raised-button routerLink="/administrator" routerLinkActive="active">Vrati se korak nazad</a>
+    </span>
+  </mat-toolbar>
+  
+    <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+      <mat-card >
+        <mat-card-header>
+          <mat-card-title>Izmena Oglasa</mat-card-title>
+        </mat-card-header>
+    
+        <form class="form" (submit)="onSubmitIzmenaOglasa()">
+        <mat-card-content>
+            <mat-form-field class="full-width">
+  
+              <input matInput placeholder="Mesto" [(ngModel)]="oglas.mesto" maxlength="30" [ngModelOptions]="{standalone: true}" required>
+            </mat-form-field>
+  
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Cena" [(ngModel)]="oglas.cena" maxlength="30" [ngModelOptions]="{standalone: true}" required>
+            </mat-form-field>
+          
+            <!--<mat-form-field class="full-width">
+              <input matInput placeholder="Popust" [(ngModel)]="oglas.popust" maxlength="10" [ngModelOptions]="{standalone: true}" required>
+  
+            </mat-form-field>
+        -->
+            <mat-form-field>
+              <mat-label>slobodan od</mat-label>
+              <input matInput [matDatepicker]="picker"  [(ngModel)]="oglas.oddat"  [ngModelOptions]="{standalone: true}">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+  
+            <mat-form-field>
+              <mat-label>slobodan do</mat-label>
+              <input matInput [matDatepicker]="picker1"  [(ngModel)]="oglas.dodat"  [ngModelOptions]="{standalone: true}">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+  
+            
+  
+            <div form-group>
+              <input type="checkbox" [(ngModel)]="cdw"  [ngModelOptions]="{standalone: true}" data-md-icheck (change)="toggleVisibility($event)"/>
+              CDW
+            </div>  
+  
+            <div form-group>
+              <input type="checkbox" [(ngModel)]="maxkm"  [ngModelOptions]="{standalone: true}" data-md-icheck (change)="toggleVisibility2($event)" (change)="updateState()"/>
+              Kilometraza ogranicena
+            </div> 
+  
+            <mat-form-field *ngIf="showKmFiled" class="full-width">
+              <input  matInput placeholder="Maksimalna dozvoljena kilometraza" [(ngModel)]="oglas.ogranicenjekm" maxlength="10" [ngModelOptions]="{standalone: true}" required>
+            </mat-form-field>
+  
+  
+        </mat-card-content>
+    
+  
+       
+        <br>
+          <button mat-stroked-button color="primary" class="btn-block" type="submit">Potvrdi</button><button mat-stroked-button color="primary" class="btn-block" (click)="cancel()">Odustani</button>
+    </form>
+      </mat-card>
+    </div>
+

@@ -45,6 +45,8 @@ import { IzmeniCenovnikComponent } from './components/userComponent/cenovnici/iz
 import { IzmenaVozilaComponent } from './components/userComponent/user/izmena-vozila/izmena-vozila.component';
 import { SviOglasiComponent } from './components/userComponent/svi-oglasi/svi-oglasi.component';
 import { IzmeniStavkuComponent } from './components/userComponent/cenovnici/izmeni-stavku/izmeni-stavku.component';
+import { IzmeniOglasComponent } from './components/userComponent/svi-oglasi/izmeni-oglas/izmeni-oglas.component';
+import { StavkeComponent } from './components/userComponent/cenovnici/stavke/stavke.component';
 
 
 
@@ -99,6 +101,8 @@ const routes: Routes = [
   { path: 'izmenaVozila',component:IzmenaVozilaComponent},
   { path: 'svioglasi', component:SviOglasiComponent},
   { path: 'izmenaStavke',component:IzmeniStavkuComponent},
+  { path: 'izmenaOglasa',component:IzmeniOglasComponent},
+  { path: 'stavke', component:StavkeComponent},
 
 ];
 

@@ -94,9 +94,10 @@ export class SviOglasiComponent implements OnInit {
     data => {
       console.log(data);
       this.stavka = data;
+      localStorage.setItem("stavkaCenovnika", JSON.stringify(this.stavka)); 
     }
   );
-  localStorage.setItem("stavkaCenovnika", JSON.stringify(this.stavka)); 
+  
   this.router.navigate(["/izmenaStavke"]);
 }
 

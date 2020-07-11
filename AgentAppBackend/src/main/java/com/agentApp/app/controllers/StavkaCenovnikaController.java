@@ -83,7 +83,7 @@ public class StavkaCenovnikaController {
 		Cenovnik c=cenovnikRepository.findById(id).get();
 		
 		for(StavkaCenovnika stavka:stavke) {
-			if(stavka.getCenovnik().equals(c.getNaziv())) {
+			if(stavka.getCenovnik().getId().equals(id)) {
 				
 				trazene.add(stavka);
 			}
@@ -109,5 +109,20 @@ public class StavkaCenovnikaController {
 		
 	}
 	
+	@GetMapping("/oglas/{oglas}")
+	StavkaCenovnika getStavkaCenovnikaOglas(@PathVariable("oglas") Long id){
+		
+		List<StavkaCenovnika> stavke=stavkaRepository.findAll();
+		
+		for(StavkaCenovnika stavka:stavke) {
+			if(stavka.getOglas().getId().equals(id)) {
+				
+				return stavka;
+			}
+		}
+		
+		return null;
+		
+	}
 	
 }

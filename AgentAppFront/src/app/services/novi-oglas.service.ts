@@ -36,8 +36,13 @@ export class NoviOglasService {
   }
 
   public izmenaOglasa(oglas:Oglas){
+    console.log("Izmeni servis "+oglas.id +" "+oglas.cena )
     return this.http.put('http://localhost:8088/oglas',oglas,{responseType: 'text'}).subscribe(
-      data=>{console.log('Vratio je '+data)}
+      data=>{
+      
+      console.log('Vratio je '+data);
+      window.alert("Uspesno ste izmenili oglas");
+    }
     );
     
   }

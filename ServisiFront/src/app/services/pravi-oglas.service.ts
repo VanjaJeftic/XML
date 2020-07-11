@@ -33,11 +33,11 @@ export class PraviOglasService {
   public deleteOglas(oglas) {
     console.log("brisanje oglasa servis");
     window.location.reload();
-    return this.http.delete('http://localhost:8662/oglas/oglas' + "/"+ oglas.id);
+    return this.http.delete('https://localhost:8662/oglas/oglas' + "/"+ oglas.id);
   }
 
   public izmenaOglasa(oglas:Oglas){
-    return this.http.put('http://localhost:8662/oglas/oglas',oglas,{responseType: 'text'}).subscribe(
+    return this.http.put('https://localhost:8662/oglas/oglas',oglas,{responseType: 'text'}).subscribe(
       data=>{console.log('Vratio je '+data)}
     );
     
