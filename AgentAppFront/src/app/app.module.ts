@@ -132,7 +132,7 @@ import { StavkeComponent } from './components/userComponent/cenovnici/stavke/sta
     CenovnikComponent,
     StavkaCenovnikaComponent,
     SviOglasiComponent,
-    RezervacijaDialogComponent
+    RezervacijaDialogComponent,
     IzmeniCenovnikComponent,
     IzmenaVozilaComponent,
     IzmeniOglasComponent,
