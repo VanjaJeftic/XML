@@ -49,4 +49,10 @@ public class IzvestajController {
 		
 		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
+	
+	@GetMapping
+	public ResponseEntity<?> getSavedID(){
+		Long id = this.izvestajService.getLastGroupID();
+		return new ResponseEntity<Long>(id, HttpStatus.OK);
+	}
 }

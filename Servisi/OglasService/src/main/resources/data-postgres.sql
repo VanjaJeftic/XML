@@ -15,11 +15,15 @@ insert into oglas ( user_id, vozilo_id, mesto, cena, popust, cenaspopust, slobod
 insert into vozilo ( markavozila_id, modelvozila_id, klasavozila_id, tipgoriva_id, vrstamenjaca_id, predjenikm, brsedistadeca, cdw, user_id, uoglasu) values ( 'Marka7','Model7','Klasa7','Gorivo7','Menjac7','700','4',true, 2,true);
 insert into oglas ( user_id, vozilo_id, mesto, cena, popust, cenaspopust, slobodanod, slobodando) values ( 2, 7, 'Sarajevo', 20, 20, 20 , '2020-06-14T19:00', '2020-08-22T20:00');
 
+insert into vozilo ( markavozila_id, modelvozila_id, klasavozila_id, tipgoriva_id, vrstamenjaca_id, predjenikm, brsedistadeca, cdw, user_id, uoglasu) values ( 'Fiat','R8','old tajmer','dizel','automatski','6000','2',true, 2,true);	--Za izvestaje SOAP
+insert into oglas ( user_id, vozilo_id, mesto, cena, popust, cenaspopust, slobodanod, slobodando) values ( 2, 8, 'Banja Luka', 120, 20, 20 , '2020-09-01T19:00', '2020-09-15T20:00');			--Za izvestaje SOAP
+
 insert into izvestaj (predjeniKm, komentar, vozilo_id, zahtev_id) values ('125', 'Vozilo vraceno na vrijeme', 7, 10);
 
 insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-06-24T19:00', '2020-06-26T20:00', 5);
 insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-06-26T19:00', '2020-06-29T20:00', 7);
 insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-07-22T19:00', '2020-07-24T20:00', 7);
 insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-07-23T19:00', '2020-07-27T20:00', 7);
+insert into terminzauzeca (zauzetod, zauzetdo, vehicle_id) values ('2020-09-2T19:00', '2020-09-10T20:00', 8);	--Za izvestaje SOAP
 
 insert into cenovnik(owner,naziv,vaziod,dat) values(3,'prvi','2020-06-23T13:47:52.265056100','2020-06-23T13:47:52.265056100');

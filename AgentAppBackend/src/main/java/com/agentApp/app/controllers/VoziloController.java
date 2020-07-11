@@ -99,6 +99,19 @@ public class VoziloController {
 	        logger.info("Uspesno je sacuvana slika");
 	        return ResponseEntity.status(HttpStatus.OK);
 	    }
+	    
+	    @GetMapping("/image/{id}")
+	    public ImageModel getImage(@PathVariable("id") Long id) {
+	    	List<ImageModel> images = this.imageModelRepository.findAll();
+	    	ImageModel imageModel = null;
+	    	for(ImageModel image : images) {
+	    		if(image.getVozilo_id() == id) {
+	    			imageModel = new ImageModel(image.getName(), image.getType(), 
+	    					decompressBytes(image.getPicByte()), image.getVozilo_id() );
+	    		}
+	    	}
+	    	return imageModel;
+	    }
 	  
 
 	    public static byte[] compressBytes(byte[] data) {

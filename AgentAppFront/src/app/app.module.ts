@@ -66,6 +66,9 @@ import { CenovniciComponent } from './components/userComponent/cenovnici/cenovni
 import { CenovnikComponent } from './components/userComponent/cenovnici/cenovnik/cenovnik.component';
 import { StavkaCenovnikaComponent } from './components/userComponent/cenovnici/stavka-cenovnika/stavka-cenovnika.component';
 import { SviOglasiComponent } from './components/svi-oglasi/svi-oglasi.component';
+
+import { RezervacijaDialogComponent } from './components/userComponent/user/vozilo-details/rezervacija-dialog/rezervacija-dialog.component';
+
 import { IzmeniCenovnikComponent } from './components/userComponent/cenovnici/izmeni-cenovnik/izmeni-cenovnik.component';
 import { IzmenaVozilaComponent } from './components/sva-vozila/izmena-vozila/izmena-vozila.component';
 import { IzmeniOglasComponent } from './components/svi-oglasi/izmeni-oglas/izmeni-oglas.component';
@@ -129,6 +132,7 @@ import { StavkeComponent } from './components/userComponent/cenovnici/stavke/sta
     CenovnikComponent,
     StavkaCenovnikaComponent,
     SviOglasiComponent,
+    RezervacijaDialogComponent
     IzmeniCenovnikComponent,
     IzmenaVozilaComponent,
     IzmeniOglasComponent,
@@ -152,7 +156,7 @@ import { StavkeComponent } from './components/userComponent/cenovnici/stavke/sta
   ],
 
   entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,PorukaComponent,
-    DijalogRegistracijaAgentaComponent, DijalogRegistracijaFirmeComponent,CenovnikComponent,StavkaCenovnikaComponent
+    DijalogRegistracijaAgentaComponent, DijalogRegistracijaFirmeComponent,CenovnikComponent,StavkaCenovnikaComponent, RezervacijaDialogComponent
 
   ],
 

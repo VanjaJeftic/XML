@@ -52,4 +52,10 @@ public class UserDTO {
 		this.email = email;
 	}
 
+	@Override
+	public String toString() {
+		return "UserDTO [id=" + id + ", username=" + username + ", ime=" + ime + ", prezime=" + prezime + ", email="
+				+ email + "]";
+	}
+	
 }

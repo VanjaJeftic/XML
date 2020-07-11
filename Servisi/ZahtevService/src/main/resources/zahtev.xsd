@@ -20,6 +20,40 @@
         </xs:complexType>
     </xs:element>
     
+    <!-- Za slanje novo izvestaja na servise -->
+    <xs:element name="newIzvestajRequest">
+    	<xs:complexType>
+            <xs:sequence>
+                <xs:element name="izvestaj" type="tns:izvestaj"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="newIzvestajResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="izvestajID" type="xs:long" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Za dobavljanje zahtevID -->
+    <xs:element name="getIzvestajIdRequest">
+    	<xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getIzvestajIDResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="izvestajID" type="xs:long" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
     <!-- Za dobavljanje svih zahteva iz servisa -->
     
     <xs:element name="getZahteviRequest">
@@ -37,6 +71,26 @@
     		</xs:sequence>
     	</xs:complexType>
     </xs:element>
+    
+    <!-- Za dobavljanje Izvestaja -->
+    
+    <xs:element name="getIzvestajRequest">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element name="id" type="xs:long" />
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getIzvestajResponse">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element name="bundleZahtevi" maxOccurs="unbounded" type="tns:bundleRequests" />
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <!-- ******************************************************************** -->
     
     <xs:complexType name="bundleRequests">
     	<xs:sequence>

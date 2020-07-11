@@ -23,4 +23,8 @@ export class OglasService {
     });
     return this.http.put('https://localhost:8662/oglas/izvestaj', izvestaj, {headers: headers});
    }
+
+   getSlika(id: number){
+     return this.http.get('https://localhost:8662/oglas/vozilo/image/' + id);
+   }
 }

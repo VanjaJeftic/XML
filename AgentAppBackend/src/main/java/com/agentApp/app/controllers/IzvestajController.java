@@ -47,6 +47,7 @@ public class IzvestajController {
 		User u = userService.findByUsername(p.getName());
 		
 		Set<ZahtevBundleDTO> bundleZahtevi = new HashSet<>();
+		Set<ZahtevBundleDTO> bundleZahteviIzvestaj = this.izvestajService.getIzvestajiFromServisi(u.getId());
 		
 		Set<Long> ids = zahtevService.getAllGroupIDs();
 		
@@ -75,19 +76,34 @@ public class IzvestajController {
 				}
 			}
 		}
+		
+		for(ZahtevBundleDTO z : bundleZahteviIzvestaj) {
+			bundleZahtevi.add(z);
+		}
+		
 		return bundleZahtevi;
 	}
 	
 	@PutMapping
 	public ResponseEntity<?> save(@RequestBody IzvestajDTO izvestajDTO){
-		Izvestaj i = this.izvestajService.sacuvajIzvestaj(izvestajDTO);
-		
-		if(i != null) {
-			this.izvestajService.ukloniTerminZauzeca(i);
-			logger.info("Uklonjen termin zauzeca");
+		System.out.println("Novi izvestaj je: " + izvestajDTO);
+		Izvestaj i = null;
+		if(!this.zahtevService.isZahtevHere(izvestajDTO.getZahtev())) {
+			System.out.println("Zahtev je na servisu");
+			this.izvestajService.sendIzvestajNaServis(izvestajDTO);
 			return new ResponseEntity<>(HttpStatus.CREATED);
+		}else {
+			i = this.izvestajService.sacuvajIzvestaj(izvestajDTO);
+			
+			if(i != null) {
+				this.izvestajService.ukloniTerminZauzeca(i);
+				logger.info("Uklonjen termin zauzeca");
+				return new ResponseEntity<>(HttpStatus.CREATED);
+			}
+			logger.info("Izvestaj nije stigao do back-a");
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
-		logger.info("Izvestaj nije stigao do back-a");
-		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		
+		
 	}
 }

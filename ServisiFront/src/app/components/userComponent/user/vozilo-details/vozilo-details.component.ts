@@ -26,6 +26,10 @@ export class VoziloDetailsComponent implements OnInit {
 
   isButtonDisabled = false;
 
+  retrievedImage: any;
+  base64Data: any;
+  retrieveResonse: any;
+
   constructor(private route: ActivatedRoute, private oglasService: OglasService, private authService: AuthenticationService,
               private router: Router, public snackBar: MatSnackBar, private dialog: MatDialog) { }
 
@@ -35,6 +39,14 @@ export class VoziloDetailsComponent implements OnInit {
       data => {
         console.log(data);
         this.oglas = data;
+        this.oglasService.getSlika(this.oglas.vozilo.id).subscribe(
+          res => {
+            this.retrieveResonse = res;
+            this.base64Data = this.retrieveResonse.picByte;
+            this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
+            console.log('Slika je: ' + this.retrievedImage);
+          }
+        );
       }
     );
   }

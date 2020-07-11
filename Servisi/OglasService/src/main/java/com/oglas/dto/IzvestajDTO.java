@@ -19,6 +19,7 @@ public class IzvestajDTO {
 		this.predjeniKm = i.getPredjeniKm();
 		this.komentar = i.getKomentar();
 		this.zahtev = i.getZahtev();
+		this.vozilo = i.getVozilo().getId();
 	}
 
 	public String getPredjeniKm() {

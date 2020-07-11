@@ -244,6 +244,7 @@ public class ZahtevService {
 				
 				if(oglas.getVozilo().getUser().getId().equals(agent)) {
 					IzvestajDTO izvestaj = this.oglasConnection.getIzvestaj(oglas.getVozilo().getId(), z.getId());
+					System.out.println("IzvestajDTO iz oglasa: " + izvestaj);
 					if(izvestaj == null) {
 						zvdto.getBundleZahtevi().add(new ZahtevDTO(z, oglas));
 						bundleZahtevi.add(zvdto);

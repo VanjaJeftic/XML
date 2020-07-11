@@ -67,6 +67,10 @@ public class VoziloService {
     	return this.voziloRepository.findById(id).get();
     }
     
+    public Vozilo saveVozilo(Vozilo v) {
+    	return this.voziloRepository.save(v);
+    }
+    
  
     public List<Vozilo> getVozila(Long id){
     	List<Vozilo> agenta = new ArrayList<>();

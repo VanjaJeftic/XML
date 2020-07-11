@@ -87,5 +87,12 @@ public class VoziloDTO {
 	public void setBrsedistadeca(String brsedistadeca) {
 		this.brsedistadeca = brsedistadeca;
 	}
+
+	@Override
+	public String toString() {
+		return "VoziloDTO [id=" + id + ", markaVozila=" + markaVozila + ", modelVozila=" + modelVozila
+				+ ", klasaVozila=" + klasaVozila + ", vrstaMenjaca=" + vrstaMenjaca + ", tipGoriva=" + tipGoriva
+				+ ", predjeniKm=" + predjeniKm + ", brsedistadeca=" + brsedistadeca + ", user=" + user + "]";
+	}
 	
 }
