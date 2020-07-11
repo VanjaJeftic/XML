@@ -54,6 +54,12 @@ public class OglasDTO {
 	public void setSlobodanDo(LocalDateTime slobodanDo) {
 		this.slobodanDo = slobodanDo;
 	}
+
+	@Override
+	public String toString() {
+		return "OglasDTO [id=" + id + ", mesto=" + mesto + ", vozilo=" + vozilo + ", slobodanOd=" + slobodanOd
+				+ ", slobodanDo=" + slobodanDo + "]";
+	}
 	
 	
 }

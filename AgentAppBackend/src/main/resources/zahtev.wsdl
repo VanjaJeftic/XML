@@ -19,6 +19,40 @@
         </xs:complexType>
     </xs:element>
     
+    <!-- Za slanje novo izvestaja na servise -->
+    <xs:element name="newIzvestajRequest">
+    	<xs:complexType>
+            <xs:sequence>
+                <xs:element name="izvestaj" type="tns:izvestaj"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="newIzvestajResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="izvestajID" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Za dobavljanje zahtevID -->
+    <xs:element name="getIzvestajIdRequest">
+    	<xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getIzvestajIDResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="izvestajID" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
     <!-- Za dobavljanje svih zahteva iz servisa -->
     
     <xs:element name="getZahteviRequest">
@@ -36,6 +70,26 @@
     		</xs:sequence>
     	</xs:complexType>
     </xs:element>
+    
+    <!-- Za dobavljanje Izvestaja -->
+    
+    <xs:element name="getIzvestajRequest">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element name="id" type="xs:long"/>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getIzvestajResponse">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element maxOccurs="unbounded" name="bundleZahtevi" type="tns:bundleRequests"/>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <!-- ******************************************************************** -->
     
     <xs:complexType name="bundleRequests">
     	<xs:sequence>
@@ -127,12 +181,32 @@
     <wsdl:part element="tns:getAcceptResponse" name="getAcceptResponse">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="newIzvestajRequest">
+    <wsdl:part element="tns:newIzvestajRequest" name="newIzvestajRequest">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="getZahteviRequest">
     <wsdl:part element="tns:getZahteviRequest" name="getZahteviRequest">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="newIzvestajResponse">
+    <wsdl:part element="tns:newIzvestajResponse" name="newIzvestajResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getIzvestajResponse">
+    <wsdl:part element="tns:getIzvestajResponse" name="getIzvestajResponse">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="getAcceptRequest">
     <wsdl:part element="tns:getAcceptRequest" name="getAcceptRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getIzvestajIdRequest">
+    <wsdl:part element="tns:getIzvestajIdRequest" name="getIzvestajIdRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getIzvestajIDResponse">
+    <wsdl:part element="tns:getIzvestajIDResponse" name="getIzvestajIDResponse">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="getBundleIdRequest">
@@ -147,6 +221,10 @@
     <wsdl:part element="tns:getZahteviResponse" name="getZahteviResponse">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="getIzvestajRequest">
+    <wsdl:part element="tns:getIzvestajRequest" name="getIzvestajRequest">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:portType name="ZahtevServicePort">
     <wsdl:operation name="getAccept">
       <wsdl:input message="tns:getAcceptRequest" name="getAcceptRequest">
@@ -154,10 +232,30 @@
       <wsdl:output message="tns:getAcceptResponse" name="getAcceptResponse">
     </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="newIzvestaj">
+      <wsdl:input message="tns:newIzvestajRequest" name="newIzvestajRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:newIzvestajResponse" name="newIzvestajResponse">
+    </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getZahtevi">
       <wsdl:input message="tns:getZahteviRequest" name="getZahteviRequest">
     </wsdl:input>
       <wsdl:output message="tns:getZahteviResponse" name="getZahteviResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIzvestaj">
+      <wsdl:input message="tns:getIzvestajRequest" name="getIzvestajRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getIzvestajResponse" name="getIzvestajResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIzvestajId">
+      <wsdl:input message="tns:getIzvestajIdRequest" name="getIzvestajIdRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getIzvestajID">
+      <wsdl:output message="tns:getIzvestajIDResponse" name="getIzvestajIDResponse">
     </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getBundleId">
@@ -180,12 +278,42 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="newIzvestaj">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="newIzvestajRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="newIzvestajResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getZahtevi">
       <soap:operation soapAction=""/>
       <wsdl:input name="getZahteviRequest">
         <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output name="getZahteviResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIzvestaj">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getIzvestajRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getIzvestajResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIzvestajId">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getIzvestajIdRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getIzvestajID">
+      <soap:operation soapAction=""/>
+      <wsdl:output name="getIzvestajIDResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>

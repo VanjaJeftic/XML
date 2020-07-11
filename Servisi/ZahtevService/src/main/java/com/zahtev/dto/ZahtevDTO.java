@@ -126,5 +126,11 @@ public class ZahtevDTO {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	@Override
+	public String toString() {
+		return "ZahtevDTO [id=" + id + ", oglas=" + oglas + ", bundle_id=" + bundle_id + ", bundle=" + bundle
+				+ ", preuzimanje=" + preuzimanje + ", povratak=" + povratak + ", status=" + status + ", izvestaj="
+				+ izvestaj + "]";
+	}
 	
 }

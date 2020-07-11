@@ -32,4 +32,8 @@ export class OglasService {
     return this.http.put(this.putanje.get_izvestaj_url, izvestaj, {headers: headers});
   }
 
+  getSlika(id: number){
+    return this.http.get(this.putanje.get_vozilo_url + '/image/' + id);
+  }
+
 }

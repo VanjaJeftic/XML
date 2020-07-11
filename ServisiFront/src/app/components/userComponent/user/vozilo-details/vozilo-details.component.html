@@ -9,25 +9,25 @@
 <div style="margin-top: 120px;margin-left: 100px; margin-right: 100px;" *ngIf="oglas">
     <div style="float: left;">
         <div style="border-bottom-style: solid;">
-            <p> <span> <h4> Vlasnik: </h4> </span> <i> <h4 style="margin-left: 20px;">{{oglas.vozilo.user.username}}</h4> </i> </p>
+            <p> <span> <h4 style="color:red"> Vlasnik: </h4> </span> <i> <h4 style="margin-left: 20px; color:blue">{{oglas.vozilo.user.username}}</h4> </i> </p>
         </div>
         <div style="border-bottom-style: solid;">
-            <p> <span> <h4> Mesto preuzimanja: </h4> </span> <i> <h4 style="margin-left: 20px;">{{oglas.mesto}}</h4> </i> </p>
+            <p> <span> <h4 style="color:red"> Mesto preuzimanja: </h4> </span> <i> <h4 style="margin-left: 20px; color:blue">{{oglas.mesto}}</h4> </i> </p>
         </div>
         <div style="border-bottom-style: solid;">
-            <p> <span> <h4> Marka vozila: </h4> </span> <i> <h4 style="margin-left: 20px;">{{oglas.vozilo.markaVozila}}</h4> </i> </p>
+            <p> <span> <h4 style="color:red"> Marka vozila: </h4> </span> <i> <h4 style="margin-left: 20px; color:blue">{{oglas.vozilo.markaVozila}}</h4> </i> </p>
         </div>
         <div style="border-bottom-style: solid;">
-            <p> <span> <h4> Klasa vozila: </h4> </span> <i> <h4 style="margin-left: 20px;">{{oglas.vozilo.klasaVozila}}</h4> </i> </p>
+            <p> <span> <h4 style="color:red"> Klasa vozila: </h4> </span> <i> <h4 style="margin-left: 20px; color:blue">{{oglas.vozilo.klasaVozila}}</h4> </i> </p>
         </div>
         <div style="border-bottom-style: solid;">
-            <p> <span> <h4> Model vozila: </h4> </span> <i> <h4 style="margin-left: 20px;">{{oglas.vozilo.modelVozila}}</h4> </i> </p>
+            <p> <span> <h4 style="color:red"> Model vozila: </h4> </span> <i> <h4 style="margin-left: 20px; color:blue">{{oglas.vozilo.modelVozila}}</h4> </i> </p>
         </div>
         <div style="border-bottom-style: solid;">
-            <p> <span> <h4> Tip goriva: </h4> </span> <i> <h4 style="margin-left: 20px;">{{oglas.vozilo.tipGoriva}}</h4> </i> </p>
+            <p> <span> <h4 style="color:red"> Tip goriva: </h4> </span> <i> <h4 style="margin-left: 20px; color:blue">{{oglas.vozilo.tipGoriva}}</h4> </i> </p>
         </div>
         <div style="border-bottom-style: solid;">
-            <p> <span> <h4> Vrsta menjaca: </h4> </span> <i> <h4 style="margin-left: 20px;">{{oglas.vozilo.vrstaMenjaca}}</h4> </i> </p>
+            <p> <span> <h4 style="color:red"> Vrsta menjaca: </h4> </span> <i> <h4 style="margin-left: 20px; color:blue">{{oglas.vozilo.vrstaMenjaca}}</h4> </i> </p>
         </div>
 
         <!-- *********************************************************************************************************** -->
@@ -38,8 +38,12 @@
         </div>
 
     </div>
-    <div style="float: right;">
-        <!-- <img src="C:/Users/Korisnik/Desktop/tesla.png" /> -->
+    <div style="float: right; ">
+        <div style="height: 800px; width: 800px;">
+            <div *ngIf=retrievedImage >
+                <img [src]="retrievedImage" style="max-width: 100%; max-height: 100%" >
+            </div>
+        </div>
     </div>
 </div>
 

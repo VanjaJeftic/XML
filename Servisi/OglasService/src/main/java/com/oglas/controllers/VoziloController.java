@@ -127,6 +127,19 @@ public class VoziloController {
      //   Vozilo vozilo=this.voziloService.createVozilo(ovDTO);
      //   return new ResponseEntity<>(vozilo, HttpStatus.OK);
    // }
+    
+    @GetMapping("/image/{id}")
+    public ImageModel getImage(@PathVariable("id") Long id) {
+    	List<ImageModel> images = this.imageModelRepository.findAll();
+    	ImageModel imageModel = null;
+    	for(ImageModel image : images) {
+    		if(image.getVozilo_id() == id) {
+    			imageModel = new ImageModel(image.getName(), image.getType(), 
+    					decompressBytes(image.getPicByte()), image.getVozilo_id() );
+    		}
+    	}
+    	return imageModel;
+    }
 
     public static byte[] compressBytes(byte[] data) {
         Deflater deflater = new Deflater();

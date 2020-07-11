@@ -145,11 +145,16 @@ insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id
 insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id, tipgoriva_id, vrstamenjaca_id,uoglasu) values (4, true, 2, 2, 2, 2, 2,true);
 insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id, tipgoriva_id, vrstamenjaca_id,uoglasu) values (4, true, 2, 2, 2, 2, 2,false);
 
+insert into vozilo (user_id, cdw, klasavozila_id, markavozila_id, modelvozila_id, tipgoriva_id, vrstamenjaca_id,uoglasu, voziloservis) values (2, true, 2, 2, 2, 2, 2,true, 8);	--Za izvestaje SOAP
+
 insert into oglas (vozilo_id, mesto, slobodanod, slobodando,cena,oddat,dodat,ustavci) values (1, 'Novi Sad','2020-06-01T17:09:42.411', '2020-06-15T17:09:42.411',99,'2020-06-01T17:09:42.411', '2020-06-15T17:09:42.411',false);
 insert into oglas (vozilo_id, mesto, slobodanod, slobodando,cena,oddat,dodat,ustavci) values (1, 'Beograd','2020-06-01T17:09:42.411', '2020-06-15T17:09:42.411',99,'2020-06-01T17:09:42.411', '2020-06-15T17:09:42.411',false);
 insert into oglas (vozilo_id, mesto, slobodanod, slobodando,cena,oddat,dodat,ustavci) values (2, 'Ugljevik','2020-06-01T17:09:42.411', '2020-06-15T17:09:42.411',99,'2020-06-01T17:09:42.411', '2020-06-15T17:09:42.411',false);
 insert into oglas (vozilo_id, mesto, slobodanod, slobodando,cena,oddat,dodat,ustavci) values (2, 'Bijeljina','2020-08-01T17:09:42.411', '2020-08-15T17:09:42.411',9988,'2020-08-01T17:09:42.411', '2020-08-15T17:09:42.411',false);
 insert into oglas (vozilo_id, mesto, slobodanod, slobodando,cena,oddat,dodat,ustavci) values (3, 'Sarajevo','2020-06-01T17:09:42.411', '2020-06-15T17:09:42.411',9988,'2020-06-01T17:09:42.411', '2020-06-15T17:09:42.411',false);
+
+insert into oglas (vozilo_id, mesto, slobodanod, slobodando,cena,oddat,dodat,ustavci) values (5, 'Banja Luka','2020-09-01T17:09:42.411', '2020-09-15T17:09:42.411',120,'2020-06-01T17:09:42.411', '2020-06-15T17:09:42.411',false); --Za izvestaje SOAP
+
 
 insert into zahtev (oglas_id, podnosilac_id, bundle, bundle_id, status, preuzimanje, povratak) values (1, 1, false, 12, 'PENDING', '2020-06-24T19:00', '2020-06-26T20:00');
 insert into zahtev (oglas_id, podnosilac_id, bundle, bundle_id, status, preuzimanje, povratak) values (1, 2, false, 13, 'PENDING', '2020-06-22T19:00', '2020-06-25T20:00');

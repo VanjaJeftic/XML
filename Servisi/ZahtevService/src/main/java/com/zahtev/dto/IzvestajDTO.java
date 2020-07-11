@@ -43,5 +43,11 @@ public class IzvestajDTO {
 	public void setZahtev(Long zahtev) {
 		this.zahtev = zahtev;
 	}
+
+	@Override
+	public String toString() {
+		return "IzvestajDTO [predjeniKm=" + predjeniKm + ", komentar=" + komentar + ", vozilo=" + vozilo + ", zahtev="
+				+ zahtev + "]";
+	}
 	
 }

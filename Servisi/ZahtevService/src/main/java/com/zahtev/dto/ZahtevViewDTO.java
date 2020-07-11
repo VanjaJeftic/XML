@@ -38,5 +38,10 @@ public class ZahtevViewDTO {
 	public void setUser(UserDTO user) {
 		this.user = user;
 	}
+
+	@Override
+	public String toString() {
+		return "ZahtevViewDTO [bundleID=" + bundleID + ", bundleZahtevi=" + bundleZahtevi + ", user=" + user + "]";
+	}
 	
 }

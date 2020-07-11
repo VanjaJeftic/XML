@@ -18,6 +18,7 @@ public class IzvestajDTO {
 		this.predjeniKm = i.getPredjeniKm();
 		this.komentar = i.getKomentar();
 		this.zahtev = i.getZahtev().getId();
+		this.vozilo = i.getId();
 	}
 
 	public String getPredjeniKm() {
@@ -51,4 +52,11 @@ public class IzvestajDTO {
 	public void setZahtev(Long zahtev) {
 		this.zahtev = zahtev;
 	}
+	@Override
+	public String toString() {
+		return "IzvestajDTO [predjeniKm=" + predjeniKm + ", komentar=" + komentar + ", vozilo=" + vozilo + ", zahtev="
+				+ zahtev + "]";
+	}
+	
+	
 }

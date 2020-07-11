@@ -66,6 +66,7 @@ import { CenovniciComponent } from './components/userComponent/cenovnici/cenovni
 import { CenovnikComponent } from './components/userComponent/cenovnici/cenovnik/cenovnik.component';
 import { StavkaCenovnikaComponent } from './components/userComponent/cenovnici/stavka-cenovnika/stavka-cenovnika.component';
 import { SviOglasiComponent } from './components/svi-oglasi/svi-oglasi.component';
+import { RezervacijaDialogComponent } from './components/userComponent/user/vozilo-details/rezervacija-dialog/rezervacija-dialog.component';
 
 
 
@@ -122,7 +123,8 @@ import { SviOglasiComponent } from './components/svi-oglasi/svi-oglasi.component
     CenovniciComponent,
     CenovnikComponent,
     StavkaCenovnikaComponent,
-    SviOglasiComponent
+    SviOglasiComponent,
+    RezervacijaDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -140,7 +142,7 @@ import { SviOglasiComponent } from './components/svi-oglasi/svi-oglasi.component
   ],
 
   entryComponents: [NoviOglasComponent,KomentarFormaComponent, TerminZauzecaDialogComponent, IzvestajDialogComponent,DijalogInfoKorisnikaComponent,SviKomentariOglasaDijalogComponent,PorukaComponent,
-    DijalogRegistracijaAgentaComponent, DijalogRegistracijaFirmeComponent,CenovnikComponent,StavkaCenovnikaComponent
+    DijalogRegistracijaAgentaComponent, DijalogRegistracijaFirmeComponent,CenovnikComponent,StavkaCenovnikaComponent, RezervacijaDialogComponent
 
   ],
 

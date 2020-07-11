@@ -111,6 +111,15 @@ public class ZahtevService {
 		return this.getZahteviBundleDTOServisi(res);
 		
 	}
+	public boolean isZahtevHere(Long id) {
+		List<Zahtev> zahtevi = this.zahtevRepository.findAll();
+		for(Zahtev z : zahtevi) {
+			if(z.getId() == id) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	private Set<ZahtevBundleDTO> getZahteviBundleDTOServisi(GetZahteviResponse res){
 		Set<ZahtevBundleDTO> zahtevi = new HashSet<>();

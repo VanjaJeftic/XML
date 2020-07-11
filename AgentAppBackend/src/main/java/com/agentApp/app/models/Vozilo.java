@@ -82,6 +82,9 @@ public class Vozilo implements Serializable {
     @JsonIgnore
     @OneToMany(mappedBy = "vozilo", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Izvestaj> izvestaji = new HashSet<>();
+    
+    @Column(name = "voziloservis")
+    private Long idVoziloServis;
 
     public Long getId() {
         return id;
@@ -206,6 +209,14 @@ public class Vozilo implements Serializable {
 
 	public void setUoglasu(boolean uoglasu) {
 		this.uoglasu = uoglasu;
+	}
+
+	public Long getIdVoziloServis() {
+		return idVoziloServis;
+	}
+
+	public void setIdVoziloServis(Long idVoziloServis) {
+		this.idVoziloServis = idVoziloServis;
 	}
 	
 	

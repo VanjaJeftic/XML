@@ -5,7 +5,48 @@
     </span>
 </mat-toolbar>  
 
-<div class="dialog" fxLayout="row" fxLayoutAlign="center center" style="margin-top: 120px;margin-left: 400px;" *ngIf="oglas">
+<div style="margin-top: 120px;margin-left: 100px; margin-right: 100px;" *ngIf="oglas">
+    <div style="float: left;">
+        <div style="border-bottom-style: solid;">
+            <p> <span> <h4 style="color:red"> Vlasnik: </h4> </span> <i> <h4 style="margin-left: 20px; color:blue">{{oglas.vozilo.user.username}}</h4> </i> </p>
+        </div>
+        <div style="border-bottom-style: solid;">
+            <p> <span> <h4 style="color:red"> Mesto preuzimanja: </h4> </span> <i> <h4 style="margin-left: 20px; color:blue">{{oglas.mesto}}</h4> </i> </p>
+        </div>
+        <div style="border-bottom-style: solid;">
+            <p> <span> <h4 style="color:red"> Marka vozila: </h4> </span> <i> <h4 style="margin-left: 20px; color:blue">{{oglas.vozilo.markaVozila.naziv}}</h4> </i> </p>
+        </div>
+        <div style="border-bottom-style: solid;">
+            <p> <span> <h4 style="color:red"> Klasa vozila: </h4> </span> <i> <h4 style="margin-left: 20px; color:blue">{{oglas.vozilo.klasaVozila.naziv}}</h4> </i> </p>
+        </div>
+        <div style="border-bottom-style: solid;">
+            <p> <span> <h4 style="color:red"> Model vozila: </h4> </span> <i> <h4 style="margin-left: 20px; color:blue">{{oglas.vozilo.modelVozila.naziv}}</h4> </i> </p>
+        </div>
+        <div style="border-bottom-style: solid;">
+            <p> <span> <h4 style="color:red"> Tip goriva: </h4> </span> <i> <h4 style="margin-left: 20px; color:blue">{{oglas.vozilo.tipgoriva.naziv}}</h4> </i> </p>
+        </div>
+        <div style="border-bottom-style: solid;">
+            <p> <span> <h4 style="color:red"> Vrsta menjaca: </h4> </span> <i> <h4 style="margin-left: 20px; color:blue">{{oglas.vozilo.vrstamenjaca.naziv}}</h4> </i> </p>
+        </div>
+
+        <!-- *********************************************************************************************************** -->
+
+        <div>
+            <button mat-raised-button color="primary" (click)="onRezervisi()"
+                [disabled]="isButtonDisabled">Rezervisi</button>
+        </div>
+
+    </div>
+    <div style="float: right; ">
+        <div style="height: 800px; width: 800px;">
+            <div *ngIf=retrievedImage >
+                <img [src]="retrievedImage" style="max-width: 100%; max-height: 100%" >
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="dialog" fxLayout="row" fxLayoutAlign="center center" style="margin-top: 120px;margin-left: 400px;" *ngIf="oglas">
     <mat-card class="box">
         <mat-card-header>
             <mat-card-title>Rezervisi</mat-card-title>
@@ -48,9 +89,6 @@
                     <input [(ngModel)]="oglas.vozilo.vrstamenjaca.naziv" maxlength="30" matInput [ngModelOptions]="{standalone: true}" required disabled>
                 </mat-form-field>
 
-                <!-- ******************************************************************************************************* -->
-
-                <!-- Datum Preuzimanja -->
                 <mat-form-field class="full-width">
                     <input [(ngModel)]="datumPreuzimanja" matInput [matDatepicker]="picker1" placeholder="Datum Preuzimanja"
                         [ngModelOptions]="{standalone: true}" required disabled>
@@ -58,16 +96,15 @@
                     <mat-datepicker #picker1 disabled="false"></mat-datepicker>
                 </mat-form-field>
 
-                <!-- Vreme Preuzimanja -->
+               
                 <p style="color: rgb(153, 152, 152);">Vreme Preuzimanja:</p>
                 <div class="ngx-timepicker-field-example">
                     <ngx-timepicker-field [(ngModel)]="timeFrom" [ngModelOptions]="{standalone: true}"
                         [defaultTime]="'12:00'" [format]="24" [controlOnly]="true"></ngx-timepicker-field>
                 </div>
 
-                <!-- ******************************************************************************************************* -->
-
-                <!-- Datum Povratka -->
+              
+              
                 <mat-form-field class="full-width">
                     <input [(ngModel)]="datumPovratka" matInput  [matDatepicker]="picker2" placeholder="Datum Povratka"
                         [ngModelOptions]="{standalone: true}" required disabled>
@@ -75,7 +112,7 @@
                     <mat-datepicker #picker2 disabled="false"></mat-datepicker>
                 </mat-form-field>
 
-                <!-- Vreme Povratka -->
+             
                 <p style="color: rgb(153, 152, 152);">Vreme Povratka:</p>
                 <div class="ngx-timepicker-field-example">
                     <ngx-timepicker-field [(ngModel)]="timeTo" [ngModelOptions]="{standalone: true}"
@@ -87,4 +124,4 @@
                 [disabled]="!formControl.valid">Rezervisi</button>
         </form>
     </mat-card>
-</div>
+</div> -->

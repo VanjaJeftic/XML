@@ -25,6 +25,8 @@ public class VoziloDTO {
     private boolean cdw;//kupovine Collision Damage Waiver protekcije
 
     private boolean uoglasu;
+    
+    private Long idVoziloServis;
 	
 	public String getMarkaVozila() {
 		return markaVozila;
@@ -130,6 +132,14 @@ public class VoziloDTO {
 
 	public void setUoglasu(boolean uoglasu) {
 		this.uoglasu = uoglasu;
+	}
+
+	public Long getIdVoziloServis() {
+		return idVoziloServis;
+	}
+
+	public void setIdVoziloServis(Long idVoziloServis) {
+		this.idVoziloServis = idVoziloServis;
 	}
 	
 	
