@@ -41,7 +41,7 @@ export class UserComponent implements OnInit {
   listaKlasa : String[] = ["Limuzina","Hecbek","Karavan","Kupe","Kabriolet/Roadster","Monovolumen (miniVan)","Dzip/SUV","Pickup",];
   listaCDW : String[] = ["Da","Ne"];
   listaSedista : String[] = ["2","3","4","5","6","7","8","9"];
-  listaFiltriranja : String[] = ["Po ceni uzlazno","Po ceni silazno","Po oceni uzlazno","Po oceni silazno","Po kilometrima uzlazno","Po kilometrima silazno"];
+  listaFiltriranja : String[] = ["Po ceni uzlazno","Po ceni silazno","Po kilometrima uzlazno","Po kilometrima silazno"];
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
