@@ -30,6 +30,7 @@ import com.agentApp.app.models.UserTokenState;
 import com.agentApp.app.services.UserService;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping(value = "/auth", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticationController {
 
