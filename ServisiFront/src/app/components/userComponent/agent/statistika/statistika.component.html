@@ -3,8 +3,8 @@
     <span class="nav-tool-items">
         <a mat-button mat-raised-button routerLink="/agent/izvestaj" routerLinkActive="active">Unesi Izvestaj</a>
         <a mat-button mat-raised-button routerLink="/agent/zahtev" routerLinkActive="active">Zahtevi</a>
-        <a mat-button mat-raised-button routerLink="/vozilo/novoVozilo" routerLinkActive="active" >Novo vozilo</a>
-        <a mat-button mat-raised-button routerLink="/agent/oglas" routerLinkActive="active" >Novi oglas</a>
+        <a mat-button mat-raised-button routerLink="/vozilo/novoVozilo" routerLinkActive="active">Novo vozilo</a>
+        <a mat-button mat-raised-button routerLink="/agent/oglas" routerLinkActive="active">Novi oglas</a>
         <a mat-button mat-raised-button routerLink="/agent/vozila" routerLinkActive="active">Moja Vozila</a>
         <a mat-button mat-raised-button routerLink="/agent/statistika" routerLinkActive="active">statistika</a>
         <a mat-button mat-raised-button routerLink="" routerLinkActive="active" (click)="onOdjaviMe()">Odjavi Me</a>
@@ -18,22 +18,31 @@
     <hr>
     <mat-card-content style=" margin-left: 10vh;">
         <h3 style="margin-top: 50px;">Najvise predjenih kilometara</h3>
-        <h5 style="color:gray">{{najvecaKm.markaVozila}} {{najvecaKm.modelVozila}} {{najvecaKm.klasaVozila}}</h5>
-        <h5 style="color:gray">Presao(km): {{najvecaKm.predjeniKm}}km</h5>
+        <h5 style="color:gray" *ngIf="listaTopKomentara.length==0">Trenutno nemate ni jedno vozilo</h5>
+        <div *ngFor="let najviseKm of listaTopPredjenihKm">
+            <h5 style="color:gray">{{najviseKm.markaVozila}} {{najviseKm.modelVozila}} {{najviseKm.klasaVozila}}</h5>
+            <h5 style="color:gray">Presao(km): {{najviseKm.predjeniKm}}km</h5>
+        </div>
         <h3 style="margin-top: 50px;">Najveca ocena</h3>
-        <h5 style="color:gray">{{najvecaOcena.markaVozila}} {{najvecaOcena.modelVozila}} {{najvecaOcena.klasaVozila}}
-        </h5>
-        <h5 style="color:gray">Ocena: {{ocena}}/5</h5>
-        <div style="width: 200px;">
-            <star-rating staticColor="ok" [showHalfStars]="true" [rating]="ocena">
-            </star-rating>
+        <h5 style="color:gray" *ngIf="listaTopOcena.length==0">Trenutno nemate vozila sa ocenom</h5>
+        <div *ngFor="let najvecaOc of listaTopOcena">
+            <h5 style="color:gray">{{najvecaOc.markaVozila}} {{najvecaOc.modelVozila}} {{najvecaOc.klasaVozila}}
+            </h5>
+            <h5 style="color:gray">Ocena: {{najvecaOc.ocena}}/5</h5>
+            <div style="width: 200px;">
+                <star-rating staticColor="ok" [showHalfStars]="true" [rating]="najvecaOc.ocena">
+                </star-rating>
+            </div>
         </div>
         <h3 style="margin-top: 50px;">Najvise komentara</h3>
-        <h5 style="color:gray">{{najviseKomentara.markaVozila}} {{najviseKomentara.modelVozila}}
-            {{najviseKomentara.klasaVozila}}</h5>
-        <h5 style="color:gray">Broj komentara: {{komentariList.length}}</h5>
+        <h5 style="color:gray" *ngIf="listaTopKomentara.length==0">Trenutno nemate vozila sa komentarima</h5>
+        <div *ngFor="let najviseKom of listaTopKomentara">
+        <h5 style="color:gray">{{najviseKom.markaVozila}} {{najviseKom.modelVozila}}
+            {{najviseKom.klasaVozila}}</h5>
+        <h5 style="color:gray">Broj komentara: {{najviseKom.komentari.length}}</h5>
         <mat-chip-list aria-label="Fish selection">
-            <mat-chip color="primary" *ngFor="let k of komentariList" selected>{{k.sadrzaj}}</mat-chip>
+            <mat-chip color="primary" *ngFor="let k of najviseKom.komentari" selected>{{k.sadrzaj}}</mat-chip>
         </mat-chip-list>
+    </div>
     </mat-card-content>
 </mat-card>
