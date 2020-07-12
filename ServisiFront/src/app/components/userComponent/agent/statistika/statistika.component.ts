@@ -55,7 +55,10 @@ export class StatistikaComponent implements OnInit {
                 for (let k of komentari) {
                   if (k.ocena != 10) {
                     brojac = brojac + 1;
+                    brojac>=2?brojac=2:brojac=1;
                     prosecnaOcena = (prosecnaOcena + k.ocena) / brojac;
+                    console.log(prosecnaOcena);
+                    console.log(brojac);
                     pomocnoVozilo.ocena = prosecnaOcena;
                   }
                   pomocnoVozilo.komentari.push(k);

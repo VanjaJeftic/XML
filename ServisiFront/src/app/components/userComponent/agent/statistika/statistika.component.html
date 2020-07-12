@@ -18,7 +18,7 @@
     <hr>
     <mat-card-content style=" margin-left: 10vh;">
         <h3 style="margin-top: 50px;">Najvise predjenih kilometara</h3>
-        <h5 style="color:gray" *ngIf="listaTopKomentara.length==0">Trenutno nemate ni jedno vozilo</h5>
+        <h5 style="color:gray" *ngIf="listaTopPredjenihKm.length == 0">Trenutno nemate ni jedno vozilo</h5>
         <div *ngFor="let najviseKm of listaTopPredjenihKm">
             <h5 style="color:gray">{{najviseKm.markaVozila}} {{najviseKm.modelVozila}} {{najviseKm.klasaVozila}}</h5>
             <h5 style="color:gray">Presao(km): {{najviseKm.predjeniKm}}km</h5>
